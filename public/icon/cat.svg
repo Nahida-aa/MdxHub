@@ -1,0 +1,40 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景渐变 -->
+    <defs>
+        <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#4A148C" />
+            <stop offset="100%" stop-color="#1A237E" />
+        </radialGradient>
+        <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#AFAFD7" />
+            <stop offset="100%" stop-color="#4A90E2" />
+        </linearGradient>
+    </defs>
+    <rect width="500" height="500" fill="url(#bgGradient)" />
+    
+    <!-- 月亮 -->
+    <path d="M 250 150 A 100 100 0 1 0 250 350 A 80 80 0 1 1 250 150" fill="url(#moonGradient)" stroke="#FFFFFF" stroke-width="4" />
+    
+    <!-- 小黑猫 -->
+    <g id="black-cat" transform="translate(200, 180)">
+        <circle cx="50" cy="50" r="40" fill="black" /> <!-- 头部 -->
+        <polygon points="30,20 40,40 20,30" fill="black" /> <!-- 左耳 -->
+        <polygon points="70,20 60,40 80,30" fill="black" /> <!-- 右耳 -->
+        <circle cx="40" cy="50" r="8" fill="white" /> <!-- 左眼白色部分 -->
+        <circle cx="60" cy="50" r="8" fill="white" /> <!-- 右眼白色部分 -->
+        <circle cx="45" cy="50" r="4" fill="black" /> <!-- 左眼瞳孔 -->
+        <circle cx="55" cy="50" r="4" fill="black" /> <!-- 右眼瞳孔 -->
+        <circle cx="50" cy="60" r="3" fill="pink" /> <!-- 鼻子 -->
+        <path d="M 40 65 Q 50 75, 60 65" stroke="white" stroke-width="2" fill="none" /> <!-- 微笑 -->
+        <path d="M 50 90 Q 70 110, 90 130" stroke="black" stroke-width="8" fill="none" stroke-linecap="round" /> <!-- 尾巴 -->
+    </g>
+    
+    <!-- 星星点缀 -->
+    <g fill="#FFD700">
+        <polygon points="80,80 85,95 100,95 88,105 92,120 80,110 68,120 72,105 60,95 75,95" />
+        <polygon points="420,120 425,130 435,130 427,138 430,150 420,143 410,150 413,138 405,130 415,130" />
+        <polygon points="350,400 355,410 365,410 357,418 360,430 350,423 340,430 343,418 335,410 345,410" />
+        <polygon points="150,350 155,360 165,360 157,368 160,380 150,373 140,380 143,368 135,360 145,360" />
+        <polygon points="400,250 405,260 415,260 407,268 410,280 400,273 390,280 393,268 385,260 395,260" />
+    </g>
+</svg>

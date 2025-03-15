@@ -1,0 +1,17 @@
+/* .neon-loading-animate {
+  @apply animate-[neon-loading_2s_linear_infinite];
+} */
+@keyframes neon-loading {
+  0% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: 295;
+  }
+  50% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 295;
+    stroke-dashoffset: -295;
+  }
+}

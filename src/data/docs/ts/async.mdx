@@ -1,0 +1,47 @@
+# ts/async
+
+```ts filename=main.ts
+import u, { learnAsync1 } from "./utils.ts";
+
+const main = async () => {
+  // const message = await learnAsync();
+  // const message2 = await u();
+  await Promise.all([learnAsync1(), u()]);
+}
+main();
+```
+
+```ts filename=utils.ts
+export const learnAsync1 = () => {
+  const learnAsyncRet = new Promise<string>((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.1; // 10% 的概率成功
+      if (success) {
+        // console.log('learnAsync1: I have learned async!');
+        console.log('learnAsync1: 3秒');
+        resolve('learnAsync1: I have learned async!');
+      } else {
+        reject('Failed to learn async.');
+      }
+    }, 3000);
+  });
+  return learnAsyncRet
+}
+
+const learnAsync2 = async () => {
+  // 延时一秒, 后打印 已延时一秒
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('learnAsync2: 已延时一秒');
+      resolve("learnAsync2: Promise: OK");
+    }, 1000);
+  });
+  // 延时3秒, 后打印 已延时1+3秒
+  setTimeout(() => {
+      console.log('learnAsync2: 已延时1+3秒');
+  }, 3000);
+  const ret = "learnAsync2, 共花费4秒"
+  return ret
+};
+export default learnAsync2
+```
