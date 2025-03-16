@@ -2,8 +2,8 @@
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/Nahida-aa/MdxHub?style=social)](https://GitHub.com/Nahida-aa/MdxHub/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/Nahida-aa/MdxHub?style=social)](https://GitHub.com/Nahida-aa/MdxHub/network/)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftimlrxx)](https://twitter.com/timlrxx)
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx)](https://github.com/sponsors/timlrx)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FNahida-aa)](https://twitter.com/Nahida-aa)
+[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/Nahida-aa)](https://github.com/sponsors/Nahida-aa)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Nahida-aa/MdxHub)
 

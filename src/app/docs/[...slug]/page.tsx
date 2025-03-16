@@ -1,0 +1,21 @@
+import { Suspense } from 'react';
+import { LoadingS } from '~/components/ui/loading/Loading';
+
+export const generateStaticParams = async() => {
+  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }]
+}
+
+export default async function Page ({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string[] }>,
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const { slug } = await params
+  const { page = '1', sort = 'asc', query = '' } = await searchParams
+  return <Suspense fallback={<LoadingS />}>
+    <h1>Page</h1>
+    <p>This is the Page page.</p>
+  </Suspense>
+}

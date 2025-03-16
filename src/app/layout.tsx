@@ -1,7 +1,6 @@
 import '~/css/index.css'
 // import 'pliny/search/algolia.css'
 // import 'remark-github-blockquote-alert/alert.css'
-
 import { Space_Grotesk } from 'next/font/google'
 // import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 // import { SearchProvider, SearchConfig } from 'pliny/search'
@@ -16,6 +15,8 @@ import { SidebarInset, SidebarProvider } from '~/components/ui/sidebar'
 import { AppSidebar } from '~/components/layout/sidebar'
 import { ModeToggleGradientIcon } from '~/components/common/ModeToggle'
 import {ScrollShadow} from "@heroui/scroll-shadow";
+import { Toaster } from "~/components/ui/sonner"
+import { ProgressBar } from "~/components/layout/header/ProgressBar";
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -91,7 +92,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-    <body className={`antialiased`}>
+    <body className={`antialiased max-h-screen`}>
       <Providers attribute="class" defaultTheme={siteMetadata.theme} enableSystem>
         {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} /> */}
         {/* <SectionContainer> */}
@@ -102,15 +103,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <SidebarInset className='bg-background/20 '>
               <Header  />
 
-              <section className=" flex flex-1 flex-col ">{children}</section>
+              {/* <ScrollShadow  className='max-h-screen' > */}
+
+              {/* <section className=" flex flex-1 flex-col max-h-full">
+              </section> */}
+                {children}
     
               <Footer />
+              {/* </ScrollShadow> */}
             </SidebarInset>
 {/* </ScrollShadow> */}
           </SidebarProvider>
           {/* <ModeToggleGradientIcon /> */}
           {/* </SearchProvider> */}
         {/* </SectionContainer> */}
+        <ProgressBar />
+        <Toaster position="top-right" richColors   />
       </Providers>
     </body>
   </html>

@@ -23,6 +23,7 @@ import { motion } from 'framer-motion';
 import { ModeToggleGradientIcon } from '~/components/common/ModeToggle';
 import {Button as UIButton} from "@heroui/react";
 import { SearchModal } from '~/components/common/search';
+import { StartedButton } from './_comp/Started';
 
 export const Content = () => <div>
     <p>
@@ -99,17 +100,8 @@ export default async function Page ({
     className?: string
   }
   const gapDelay = 0.05
-  const titleTextLs: TextItem[] = [
-    { text: "Welcome to ", initialDelay: 0, rootAs: "span" },
-    { text: "MdxHub !", initialDelay: 1.5, rootAs: "span", className: "gradient" },
-  ]
   // 动态计算每个元素的 initialDelay
   let accumulatedDelay = 0
-  const titleTextLsWithDelay = titleTextLs.map((element, index) => {
-    const delay = accumulatedDelay
-    accumulatedDelay += element.text.length * gapDelay
-    return { ...element, initialDelay: delay }
-  })
   // console.log(titleTextLsWithDelay)
   const subTitleTextLs: TextItem[] = [
     { text: "Beautiful, fast, and modern. 探索多领域の文档中心", rootAs: "span" },
@@ -123,13 +115,13 @@ export default async function Page ({
 
   // const { page = '1', sort = 'asc', query = '' } = await searchParams
   return <Suspense fallback={<LoadingS />}>
-    
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className=" max-w-2xl text-start justify-center">
+      
+    <section className="flex flex-1 max-h-full flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <div className=" max-w-2xl  flex flex-col items-center justify-center gap-6">
         <h1 className={`${title()}`}>
         Welcome to <span className='gradient'>MdxHub</span>
         </h1>
-        <div className={`${subtitle({ class: "mt-4" })}`}>
+        <div className={`${subtitle()} flex flex-col items-center justify-center`}>
           {subTitleTextLsWithDelay.map((v: TextItem, i: number) => {
             return <TextUpView
               rootAs={v.rootAs}
@@ -141,35 +133,23 @@ export default async function Page ({
             </TextUpView>
           })}
         </div>
+        <div className="flex gap-4 max-w-2xl justify-center w-full">
+          <StartedButton text="Started" href={siteConfig.links.docs} />
+          <SearchModal />
+        </div>
       </div>
 
-      <div className="flex gap-3">
-        <Link
-          // isExternal
-          className={`${buttonStyles({
-            // color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })} bg-pink-blue-animated`}
-          href={siteConfig.links.docs}
-        >
-          <span className='gradient'>Get Started</span>
-        </Link>
-        <SearchModal />
-      </div>
 
       <ModeToggleGradientIcon />
-      <div className="mt-8 bg-[calc(var(--color-blue-400))] bg-b">
+      {/* <div className="mt-8 bg-[calc(var(--color-blue-400))] bg-b">
         <Snippet hideCopyButton hideSymbol variant="bordered">
           <span>
             Get started by editing <Code color="primary">app/page.tsx</Code>
           </span>
         </Snippet>
-      </div>
+      </div> */}
       <Content />
-      {/* <ScrollShadow >
 
-</ScrollShadow> */}
       <Content />
 
     </section>
