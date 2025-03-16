@@ -1,0 +1,16 @@
+# command
+
+## file
+
+| action | bash | zsh | cmd | powershell |
+| --- | --- | --- | --- | --- |
+| list file\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |
+| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |
+| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |
+| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |
+| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |
+| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |
+| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |
+| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |
+| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |
+| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\*.*` | `Remove-Item -Recurse dirname\*` |

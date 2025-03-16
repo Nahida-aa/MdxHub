@@ -3,3 +3,8 @@
 @import "./gradient.css";
 @import "./color.css";
 @import "./animate.css";
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+}

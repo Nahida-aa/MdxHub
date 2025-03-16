@@ -14,6 +14,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "~/components/ui/sidebar"
+import {ScrollShadow} from "@heroui/scroll-shadow";
 
 // This is sample data.
 const data = {
@@ -157,6 +158,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         />
         <SearchForm />
       </SidebarHeader>
+      <ScrollShadow hideScrollBar >
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}
         {data.navMain.map((item) => (
@@ -175,7 +177,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarGroupContent>
           </SidebarGroup>
         ))}
+          
       </SidebarContent>
+      </ScrollShadow>
       <SidebarRail />
     </Sidebar>
   )

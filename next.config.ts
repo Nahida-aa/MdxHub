@@ -98,6 +98,14 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  // webpack: (config, options) => {
+  //   config.module.rules.push({
+  //     test: /\.svg$/,
+  //     use: ['@svgr/webpack'],
+  //   })
+
+  //   return config
+  // },
   experimental: {
     turbo: {
       rules: {
@@ -108,14 +116,7 @@ const nextConfig: NextConfig = {
       },
     }, // 启用 Turbopack
   },
-  // webpack: (config, options) => {
-  //   config.module.rules.push({
-  //     test: /\.svg$/,
-  //     use: ['@svgr/webpack'],
-  //   })
-
-  //   return config
-  // },
+  transpilePackages: ['next-mdx-remote'],
 }
 
 

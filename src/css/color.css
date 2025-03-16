@@ -82,3 +82,27 @@
       background-position: 0% 50%;
     }
   }
+
+/* Text Colors */
+
+.text-pink-blue-foreground {
+  @apply text-primary-300;
+}
+
+.text-pink-blue-foreground:is(.dark *) {
+  @apply text-primary-400;
+}
+
+/* .text-white:is(.dark *) {
+  @apply text-black;
+} */
+
+svg.text-white:hover,
+a .text-white:hover {
+  @apply text-primary-300;
+}
+
+svg.text-white:hover:is(.dark *),
+a .text-white:hover:is(.dark *) {
+  @apply text-primary-400;
+}
