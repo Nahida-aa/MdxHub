@@ -11,7 +11,7 @@ export const StartedButton = ({ text, ...props }: StartedButtonProps) => {
     // color: "primary",
     radius: "full",
     variant: "shadow",
-  })} group bg-pink-blue-animated h-11 text-base text-pink-blue-foreground `}
+  })} group bg-pink-blue-animated h-11 text-base/4 items-center  text-pink-blue-foreground `}
   href={props.href}
 >
   {text}

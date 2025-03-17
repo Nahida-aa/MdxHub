@@ -3,9 +3,9 @@
 
 import { usePathname } from 'next/navigation'
 import { slug } from 'github-slugger'
-import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+// import { formatDate } from 'pliny/utils/formatDate'
+// import { CoreContent } from 'pliny/utils/contentlayer'
+// import type { Blog } from 'contentlayer/generated'
 import Link from 'src/components/Link'
 import Tag from 'src/components/Tag'
 import siteMetadata from 'src/data/siteMetadata'
@@ -16,9 +16,9 @@ interface PaginationProps {
   currentPage: number
 }
 interface ListLayoutProps {
-  posts: CoreContent<Blog>[]
+  // posts: CoreContent<Blog>[]
   title: string
-  initialDisplayPosts?: CoreContent<Blog>[]
+  // initialDisplayPosts?: CoreContent<Blog>[]
   pagination?: PaginationProps
 }
 
@@ -63,9 +63,9 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
 }
 
 export default function ListLayoutWithTags({
-  posts,
+  // posts,
   title,
-  initialDisplayPosts = [],
+  // initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
   const pathname = usePathname()
@@ -73,7 +73,7 @@ export default function ListLayoutWithTags({
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
 
-  const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
+  // const displayPosts = initialDisplayPosts.length > 0 ? initialDisplayPosts : posts
 
   return (
     <>
@@ -121,7 +121,7 @@ export default function ListLayoutWithTags({
           </div>
           <div>
             <ul>
-              {displayPosts.map((post) => {
+              {/* {displayPosts.map((post) => {
                 const { path, date, title, summary, tags } = post
                 return (
                   <li key={path} className="py-5">
@@ -152,7 +152,7 @@ export default function ListLayoutWithTags({
                     </article>
                   </li>
                 )
-              })}
+              })} */}
             </ul>
             {pagination && pagination.totalPages > 1 && (
               <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />

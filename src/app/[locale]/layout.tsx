@@ -8,7 +8,7 @@ import {Header} from '~/components/layout/header/Header'
 import SectionContainer from 'src/components/SectionContainer'
 import Footer from 'src/components/Footer'
 import siteMetadata from 'src/data/siteMetadata'
-import { ThemeProviders } from '../components/providers/theme-providers'
+import { ThemeProviders } from '../../components/providers/theme-providers'
 import { Metadata } from 'next'
 import { Providers } from '~/components/providers'
 import { SidebarInset, SidebarProvider } from '~/components/ui/sidebar'
@@ -16,7 +16,12 @@ import { AppSidebar } from '~/components/layout/sidebar'
 import { ModeToggleGradientIcon } from '~/components/common/ModeToggle'
 import {ScrollShadow} from "@heroui/scroll-shadow";
 import { Toaster } from "~/components/ui/sonner"
-import { ProgressBar } from "~/components/layout/header/ProgressBar";
+import { ProgressBar, ProgressBarWithSuspense } from "~/components/layout/header/ProgressBar";
+import { dir } from 'i18next'
+import initTranslations from '~/app/i18n/i18n'
+import TranslationsProvider from '~/app/i18n/TranslationsProvider'
+import { i18nConfig } from '~/app/i18n/i18nConfig'
+
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -64,10 +69,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export async function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }))
+}
+
+export default async function RootLayout({params, children }: { params: Promise<{ locale: string }>,
+  children: React.ReactNode }) {
+  const { locale } = await params
+  const { t, resources } = await initTranslations(locale, ['common']);
   const basePath = process.env.BASE_PATH || ''
 
-  return <html lang={siteMetadata.language} className={`${space_grotesk.variable} scroll-smooth`} suppressHydrationWarning>
+  return <html lang={locale} dir={dir(locale)} className={`${space_grotesk.variable} scroll-smooth`} suppressHydrationWarning>
     {/* // 为 iOS 设备指定应用图标 */}
     <link rel="apple-touch-icon" sizes="76x76" href={`${basePath}/icon/cat-76.webp`}/>
     {/* 如果没有指定 <link rel="icon">，浏览器会自动向根目录发起请求，尝试加载 favicon.ico */} 
@@ -92,7 +104,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-    <body className={`antialiased max-h-screen`}>
+    <body className={`antialiased max-h-screen`}><TranslationsProvider
+      namespaces={['common']}
+      locale={locale}
+      resources={resources}>
       <Providers attribute="class" defaultTheme={siteMetadata.theme} enableSystem>
         {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} /> */}
         {/* <SectionContainer> */}
@@ -117,9 +132,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* <ModeToggleGradientIcon /> */}
           {/* </SearchProvider> */}
         {/* </SectionContainer> */}
-        <ProgressBar />
+        <ProgressBarWithSuspense />
         <Toaster position="top-right" richColors   />
       </Providers>
+    </TranslationsProvider>
     </body>
   </html>
 }

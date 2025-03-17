@@ -10,6 +10,7 @@ import { NavList } from './NavList'
 import { motion } from 'framer-motion'
 import { ModeToggleGradientIcon } from '~/components/common/ModeToggle';
 import { useEffect, useState } from 'react';
+import LanguageChanger from '~/app/i18n/LanguageChanger';
 
 export const Header = ({
   className=''
@@ -48,7 +49,7 @@ export const Header = ({
   <motion.header className={`px-4 rounded-md  mx-auto bg-background/30 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isScrolled ? 'shadow-md' : ''} dark:shadow-gray-800 ${siteMetadata.stickyNav? 'sticky  top-0 z-50' : ''}
   ${className}`} 
   // ${siteMetadata.stickyNav? 'sticky  top-0 z-50' : ''}
-   initial={{ width: '100%' }} animate={{
+  initial={{ width: '100%' }} animate={{
           width: isScrolled ? '90%' : '100%',
           top: isVisble() ? '' : '-60px',
         }}
@@ -77,11 +78,12 @@ export const Header = ({
         </div>
         <SearchButton />
         <MobileNav /> */}
-      <nav className='flex items-center gap-4 text-sm xl:gap-6'>
+      <nav className='flex text-center items-center gap-4 text-sm xl:gap-6'>
         <NavList />
       </nav>
       <ModeToggleGradientIcon />
-        {/* <ThemeSwitch /> */}
+      {/* <ThemeSwitch /> */}
+      <LanguageChanger />
     </section>
     {/* <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
 

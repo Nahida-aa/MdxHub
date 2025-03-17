@@ -1,0 +1,9 @@
+{
+  "Welcome_to": "欢迎来到",
+  "Started": "开始",
+  "Quick_search": "快速搜索",
+  "counter_one": "one selected",
+  "counter_other": "{{count}} selected",
+  "counter_zero": "none selected",
+  "back-to-home": "Back to home"
+}

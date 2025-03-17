@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import NProgress from 'nprogress'
 import '~/css/nprogress.css'
+import { LoadingS } from '~/components/ui/loading/Loading'
 
 export function ProgressBar() {
   const pathname = usePathname()
@@ -23,4 +24,11 @@ export function ProgressBar() {
   }, [pathname, searchParams])
 
   return null
+}
+export const ProgressBarWithSuspense = () => {
+  return (
+    <Suspense fallback={<LoadingS />}>
+      <ProgressBar />
+    </Suspense>
+  )
 }

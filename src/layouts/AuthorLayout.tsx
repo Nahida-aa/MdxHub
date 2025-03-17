@@ -1,15 +1,17 @@
 import { ReactNode } from 'react'
-import type { Authors } from 'contentlayer/generated'
+// import type { Authors } from 'contentlayer/generated'
 import SocialIcon from 'src/components/social-icons'
 import Image from 'src/components/Image'
 
 interface Props {
   children: ReactNode
-  content: Omit<Authors, '_id' | '_raw' | 'body'>
+  // content: Omit<Authors, '_id' | '_raw' | 'body'>
 }
 
-export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, email, twitter, linkedin, github } = content
+export default function AuthorLayout({ children,
+  //  content 
+  }: Props) {
+  // const { name, avatar, occupation, company, email, twitter, linkedin, github } = content
 
   return (
     <>
@@ -21,7 +23,7 @@ export default function AuthorLayout({ children, content }: Props) {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
-            {avatar && (
+            {/* {avatar && (
               <Image
                 src={avatar}
                 alt="avatar"
@@ -38,7 +40,7 @@ export default function AuthorLayout({ children, content }: Props) {
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
               <SocialIcon kind="x" href={twitter} />
-            </div>
+            </div> */}
           </div>
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">
             {children}

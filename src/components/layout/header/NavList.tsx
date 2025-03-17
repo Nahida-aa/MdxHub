@@ -2,11 +2,14 @@
 
 import Link from "~/components/Link"
 import headerNavLinks from "~/data/headerNavLinks"
-import { usePathname } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
+import { useTranslation } from "react-i18next"
 
 
 export const NavList = () => {
   const pathname = usePathname()
+  const locale = useParams()?.locale
+  const { t } = useTranslation(['common'])
   return <>
     {headerNavLinks.map((link) => (
       <Link
@@ -14,7 +17,7 @@ export const NavList = () => {
         href={link.href}
         className={`block font-medium text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400 ${pathname === link.href ? 'gradient' : ''}`}
       >
-        {link.title}
+        {t(`${link.title}`)}
       </Link>))}
   </>
 }
