@@ -6,9 +6,11 @@ import {Modal,ModalContent,ModalHeader,ModalBody,ModalFooter,useDisclosure,} fro
 import {Command,CommandEmpty,CommandGroup,CommandInput,CommandItem,CommandList,CommandSeparator,CommandShortcut,CommandDialog} from "~/components/ui/command"
 import { useEffect, useState } from "react";
 import { DialogTitle } from "../ui/dialog";
+import { useTranslation } from "react-i18next";
 
 const SearchModalButton = ({ ...props }: UIButtonProps) => {
-  return <UIButton {...props} className="h-11 w-60 grid grid-cols-[auto_1fr_auto]  text-left text-gray-950/50  dark:bg-white/5 dark:text-white/50" radius="full" startContent={<Search size={16} />}  endContent={<Kbd keys={["ctrl"]} className="h-5 rounded-full bg-transparent shadow-none ">K</Kbd>} variant="bordered" >Quick search</UIButton>
+  const {t} = useTranslation("common")
+  return <UIButton {...props} className="h-11 w-60 grid grid-cols-[auto_1fr_auto]  text-left text-gray-950/50  dark:bg-white/5 dark:text-white/50 text-base/4" radius="full" startContent={<Search size={16} />}  endContent={<Kbd keys={["ctrl"]} className="h-5 rounded-full bg-transparent shadow-none ">K</Kbd>} variant="bordered" >{t('Quick_search')}</UIButton>
 }
 
 export const SearchModal = ({ ...props }: React.ComponentProps<"button">) => {

@@ -1,16 +1,19 @@
 import { Suspense } from 'react';
 import { LoadingS } from '~/components/ui/loading/Loading';
-import { genPageMetadata } from '../seo';
-export const metadata = genPageMetadata({ title: 'Docs' })
+
+export const generateStaticParams = async() => {
+  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }]
+}
 
 export default async function Page ({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>,
+  params: Promise<{ slug: string[] }>,
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const { slug } = await params
+  console.log(`slug:`, slug);
   const { page = '1', sort = 'asc', query = '' } = await searchParams
   return <Suspense fallback={<LoadingS />}>
     <h1>Page</h1>

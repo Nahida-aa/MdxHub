@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+// import { formatDate } from 'pliny/utils/formatDate'
+// import { CoreContent } from 'pliny/utils/contentlayer'
+// import type { Blog } from 'contentlayer/generated'
 import Link from 'src/components/Link'
 import Tag from 'src/components/Tag'
 import siteMetadata from 'src/data/siteMetadata'
@@ -14,9 +14,9 @@ interface PaginationProps {
   currentPage: number
 }
 interface ListLayoutProps {
-  posts: CoreContent<Blog>[]
+  // posts: CoreContent<Blog>[]
   title: string
-  initialDisplayPosts?: CoreContent<Blog>[]
+  // initialDisplayPosts?: CoreContent<Blog>[]
   pagination?: PaginationProps
 }
 
@@ -61,20 +61,20 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
 }
 
 export default function ListLayout({
-  posts,
+  // posts,
   title,
-  initialDisplayPosts = [],
+  // initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = posts.filter((post) => {
-    const searchContent = post.title + post.summary + post.tags?.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
-  })
+  // const filteredBlogPosts = posts.filter((post) => {
+  //   const searchContent = post.title + post.summary + post.tags?.join(' ')
+  //   return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  // })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
-  const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+  // const displayPosts =
+  //   initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
 
   return (
     <>
@@ -111,8 +111,8 @@ export default function ListLayout({
           </div>
         </div>
         <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
-          {displayPosts.map((post) => {
+          {/* {!filteredBlogPosts.length && 'No posts found.'} */}
+          {/* {displayPosts.map((post) => {
             const { path, date, title, summary, tags } = post
             return (
               <li key={path} className="py-4">
@@ -141,7 +141,7 @@ export default function ListLayout({
                 </article>
               </li>
             )
-          })}
+          })} */}
         </ul>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (

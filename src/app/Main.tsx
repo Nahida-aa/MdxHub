@@ -1,8 +1,8 @@
 import Link from 'src/components/Link'
 import Tag from 'src/components/Tag'
 import siteMetadata from 'src/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
+// import { formatDate } from 'pliny/utils/formatDate'
+// import NewsletterForm from 'pliny/ui/NewsletterForm'
 
 const MAX_DISPLAY = 5
 
@@ -29,7 +29,7 @@ export default function Home({ posts }) {
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                        {/* <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time> */}
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
@@ -83,7 +83,7 @@ export default function Home({ posts }) {
       )}
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          {/* <NewsletterForm /> */}
         </div>
       )}
     </>
