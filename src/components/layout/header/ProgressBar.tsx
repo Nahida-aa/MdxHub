@@ -6,7 +6,7 @@ import NProgress from 'nprogress'
 import '~/css/nprogress.css'
 import { LoadingS } from '~/components/ui/loading/Loading'
 
-export function ProgressBar() {
+export const ProgressBar = () => {
   const pathname = usePathname()
   const searchParams = useSearchParams();
 

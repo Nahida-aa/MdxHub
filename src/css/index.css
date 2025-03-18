@@ -1,10 +1,16 @@
 @import "./tailwind.css";
-@import "./prism.css";
+/* @import "./prism.css"; */
 @import "./gradient.css";
 @import "./color.css";
 @import "./animate.css";
+@import "./md/base.css";
+@import "./md/code.css";
+/* @import '../../public/katex/katex.min.css'; */
+/* @import 'rehype-callouts/theme/github'; */
+@import 'rehype-callouts/theme/obsidian';
 
 * {
     scrollbar-width: thin;
+    /* scrollbar-color: hsl(var(--border)) hsl(240 6% 10); */
     scrollbar-color: hsl(var(--border)) transparent;
 }

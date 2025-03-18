@@ -36,6 +36,7 @@ export default function LanguageChanger() {
   // };
 
   const changeLocale =(newLocale: string)=>{
+    console.log("changeLocale: 0")
     // set cookie for next-i18n-router
     const days = 30;
     const date = new Date();
@@ -50,6 +51,7 @@ export default function LanguageChanger() {
     ) {
       router.push('/' + newLocale + currentPathname);
     } else {
+      console.log("准备切换路由")
       router.push(
         currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
       );
@@ -60,7 +62,7 @@ export default function LanguageChanger() {
 
   return (
     <Select defaultValue={currentLocale} onValueChange={changeLocale}>
-      <SelectTrigger className="">
+      <SelectTrigger className="min-w-10 max-w-10 w-10  gap-1 border-none focus:outline-0 focus:ring-0 p-0">
         <SelectValue  />
       </SelectTrigger>
       <SelectContent>

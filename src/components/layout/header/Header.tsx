@@ -11,6 +11,7 @@ import { motion } from 'framer-motion'
 import { ModeToggleGradientIcon } from '~/components/common/ModeToggle';
 import { useEffect, useState } from 'react';
 import LanguageChanger from '~/app/i18n/LanguageChanger';
+import { ModeToggleGradientIconV0 } from '~/components/common/mode-toggle';
 
 export const Header = ({
   className=''
@@ -46,7 +47,7 @@ export const Header = ({
   const isVisble = ()=> headerVisible || !isScrolled
 
   return <>
-  <motion.header className={`px-4 rounded-md  mx-auto bg-background/30 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isScrolled ? 'shadow-md' : ''} dark:shadow-gray-800 ${siteMetadata.stickyNav? 'sticky  top-0 z-50' : ''}
+  <motion.header className={`px-4  rounded-md mx-auto bg-background/0 backdrop-blur supports-[backdrop-filter]:bg-background/10 ${isScrolled ? 'shadow-md' : ''} dark:shadow-gray-800 ${siteMetadata.stickyNav? 'sticky  top-0 z-50' : ''} 
   ${className}`} 
   // ${siteMetadata.stickyNav? 'sticky  top-0 z-50' : ''}
   initial={{ width: '100%' }} animate={{
@@ -56,7 +57,10 @@ export const Header = ({
         transition={{ duration: 0.5 }}
   >
     <div className='flex items-center justify-between h-12'>
-    <section className='mr-4 hidden md:flex'>
+    <section >
+      <div></div>
+      <section className='mr-4 hidden md:flex'>
+
       <Link href="/" aria-label={siteMetadata.headerTitle} className='mr-4 flex items-center gap-2 lg:mr-6'>
         <div className="flex items-center justify-between">
           {/* <div className="mr-3">
@@ -71,9 +75,9 @@ export const Header = ({
           )}
         </div>
       </Link>
-      
+      </section>
     </section>
-    <section className='flex gap-6'>
+    <section className='flex gap-3'>
     {/* <div className="no-scrollbar hidden max-w-40 items-center space-x-4 overflow-x-auto sm:flex sm:space-x-6 md:max-w-72 lg:max-w-96">
         </div>
         <SearchButton />
@@ -81,7 +85,9 @@ export const Header = ({
       <nav className='flex text-center items-center gap-4 text-sm xl:gap-6'>
         <NavList />
       </nav>
+
       <ModeToggleGradientIcon />
+      {/* <ModeToggleGradientIconV0 /> */}
       {/* <ThemeSwitch /> */}
       <LanguageChanger />
     </section>
