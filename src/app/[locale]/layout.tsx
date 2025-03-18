@@ -1,4 +1,5 @@
 import '~/css/index.css'
+// import 'rehype-callouts/theme/obsidian'
 // import 'pliny/search/algolia.css'
 // import 'remark-github-blockquote-alert/alert.css'
 import { Space_Grotesk } from 'next/font/google'
@@ -21,6 +22,10 @@ import { dir } from 'i18next'
 import initTranslations from '~/app/i18n/i18n'
 import TranslationsProvider from '~/app/i18n/TranslationsProvider'
 import { i18nConfig } from '~/app/i18n/i18nConfig'
+import { Suspense } from 'react'
+import { LoadingS } from '~/components/ui/loading/Loading'
+// import 'rehype-callouts/theme/github'
+// import 'rehype-callouts/theme/vitepress'
 
 
 const space_grotesk = Space_Grotesk({
@@ -73,13 +78,9 @@ export async function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }))
 }
 
-export default async function RootLayout({params, children }: { params: Promise<{ locale: string }>,
-  children: React.ReactNode }) {
-  const { locale } = await params
-  const { t, resources } = await initTranslations(locale, ['common']);
-  const basePath = process.env.BASE_PATH || ''
+const basePath = process.env.BASE_PATH || ''
 
-  return <html lang={locale} dir={dir(locale)} className={`${space_grotesk.variable} scroll-smooth`} suppressHydrationWarning>
+const Head =() => <head>
     {/* // 为 iOS 设备指定应用图标 */}
     <link rel="apple-touch-icon" sizes="76x76" href={`${basePath}/icon/cat-76.webp`}/>
     {/* 如果没有指定 <link rel="icon">，浏览器会自动向根目录发起请求，尝试加载 favicon.ico */} 
@@ -104,7 +105,17 @@ export default async function RootLayout({params, children }: { params: Promise<
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-    <body className={`antialiased max-h-screen`}><TranslationsProvider
+</head>
+
+export default async function RootLayout({params, children }: { params: Promise<{ locale: string }>,
+  children: React.ReactNode }) {
+  const { locale } = await params
+  const { t, resources } = await initTranslations(locale, ['common']);
+  
+
+  return <html lang={locale} dir={dir(locale)} className={`${space_grotesk.variable} scroll-smooth bg-background`} suppressHydrationWarning>
+    <Head />
+    <body className={`antialiased max-h-screen `} ><TranslationsProvider
       namespaces={['common']}
       locale={locale}
       resources={resources}>
@@ -115,7 +126,11 @@ export default async function RootLayout({params, children }: { params: Promise<
           <SidebarProvider>
             <AppSidebar />
             {/* <ScrollShadow className='h-svh' > */}
-            <SidebarInset className='bg-background/20 '>
+            <SidebarInset className='block '>
+              <Suspense fallback={<LoadingS />}>
+            <section className="flex  items-center pb-[44rem] -mb-[44rem] h-gradient ">
+
+            </section>
               <Header  />
 
               {/* <ScrollShadow  className='max-h-screen' > */}
@@ -123,8 +138,16 @@ export default async function RootLayout({params, children }: { params: Promise<
               {/* <section className=" flex flex-1 flex-col max-h-full">
               </section> */}
                 {children}
-    
+              {/* <section className='z-1'>
+
+              </section> */}
+        <ProgressBar />
+        <Toaster position="top-right" richColors   />
+              {/* <section className="w-full text-amber-100/70 !max-w-none prose dark:prose-invert text-center pt-[35rem] -mt-[35rem] f-gradient" > */}
+              <section className="w-full z-0  text-amber-100/70 !max-w-none prose dark:prose-invert text-center pb-[7rem] pt-[35rem] -mt-[28rem] f-gradient" >
               <Footer />
+              </section>
+              </Suspense>
               {/* </ScrollShadow> */}
             </SidebarInset>
 {/* </ScrollShadow> */}
@@ -132,8 +155,6 @@ export default async function RootLayout({params, children }: { params: Promise<
           {/* <ModeToggleGradientIcon /> */}
           {/* </SearchProvider> */}
         {/* </SectionContainer> */}
-        <ProgressBarWithSuspense />
-        <Toaster position="top-right" richColors   />
       </Providers>
     </TranslationsProvider>
     </body>

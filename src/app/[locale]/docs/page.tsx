@@ -8,10 +8,10 @@ export default async function Page ({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>,
+  params: Promise<{ locale: string }>,
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
-  const { slug } = await params
+  const { locale } = await params
   const { page = '1', sort = 'asc', query = '' } = await searchParams
   return <Suspense fallback={<LoadingS />}>
     <h1>Page</h1>

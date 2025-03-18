@@ -1,0 +1,44 @@
+.prose [data-theme] {
+    @apply bg-transparent;
+}
+
+.prose pre {
+    @apply !px-0 rounded-lg;
+}
+
+.prose pre [data-line] {
+    @apply px-4 border-l-2 border-l-transparent;
+  }
+
+.prose pre [data-highlighted-line] {
+    background: rgba(200, 200, 255, 0.1);
+    @apply border-l-blue-400;
+}
+
+.prose pre span[data-highlighted-line-id="g"] {
+  @apply bg-green-400/20 border-l-green-400;
+}
+.prose pre span[data-highlighted-line-id="r"] {
+  @apply bg-red-400/20 border-l-red-400;
+}
+
+p code[data-theme],
+.prose [data-highlighted-chars] {
+    @apply !bg-zinc-600/50 rounded;
+    box-shadow: 0 0 0 2px rgb(82 82 91 / 0.5);
+  }
+
+code[data-line-numbers] {
+    counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+counter-increment: line;
+content: counter(line);
+@apply inline-block w-4 mr-4 text-right text-gray-500;
+}
+
+/* code[data-theme] {
+  @apply bg-transparent;
+} */
+

@@ -1,4 +1,18 @@
 import type { NextConfig } from "next";
+import createMDX, { NextMDXOptions } from '@next/mdx'
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeMathjax from 'rehype-mathjax'
+const rehypePrettyCode_options = {
+  // keepBackground: false, // 是否继承背景色
+  defaultLang: "plaintext",
+  // theme: moonlightTheme,
+  
+  tokensMap: {
+    fn: "entity.name.function",
+  },
+};
+
 // import { withContentlayer } from 'next-contentlayer2';
 
 const isDev = process.env.NODE_ENV === "development";
@@ -119,10 +133,30 @@ const nextConfig: NextConfig = {
   transpilePackages: ['next-mdx-remote'],
 }
 
-
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  options: {
+    remarkPlugins: [
+      // [remarkGfm, {}],
+      ['remark-gfm'],
+      ['remark-frontmatter', {type: 'yaml', marker: '-'}],
+      ['remark-mdx-frontmatter'],
+      // [remarkMath,{}],
+      ['remark-math', {}]
+    ],
+    rehypePlugins: [
+      ['rehype-callouts'],
+      // ['rehype-katex', { strict: true, throwOnError: true }]
+      // [rehypeMathjax,{}],
+      ['rehype-pretty-code', rehypePrettyCode_options],
+      ["rehype-mathjax"]
+    ],
+  },
+} as NextMDXOptions)
 
 const plugins = [
-  withBundleAnalyzer
+  withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
+  withBundleAnalyzer, 
 ]
 
 export default plugins.reduce((prev, item) => item(prev), nextConfig)

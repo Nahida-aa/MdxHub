@@ -7,6 +7,7 @@ import { Pre } from './pre/prismPre';
 // import { Table } from './gfm/table';
 import { H1,H2,H3,H4,H5,H6 } from './h_';
 import CustomImage from './Image';
+import { PreWithCopy } from './pre/preWithCopy';
 
 // import Age from './other/Age';
 // import { MDXProvider } from '@mdx-js/react';
@@ -51,13 +52,13 @@ export const MdxComponents = {
   h4: H4,
   h5: H5,
   h6: H6,
-  pre: Pre,
+  pre: PreWithCopy,
   // Image: RoundedImage,
   // code: Code,
   
   // 添加组件
   // Table,
-  Image: CustomImage,
+  // Image: CustomImage,
   // Age
 }
 // console.log(`mdxMdxComponents: MdxComponents:`);
