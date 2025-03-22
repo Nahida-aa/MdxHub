@@ -38,6 +38,12 @@ jobs:
           cache: npm
       - name: Install pnpm
         run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build project
+        run: pnpm run build
+      - name: Export project
+        run: pnpm run export
       - name: Detect package manager
         id: detect-package-manager
         run: |
