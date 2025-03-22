@@ -110,7 +110,7 @@ const buildNavTree = (docs: DocSearchValueBase[]): NavNode[] => {
 };
 
 // 生成导航列表
-export const generateNavigationList = async (locale: string, type: string) => {
+export const getNavigationList = async (locale: string, type: string) => {
   // const contentDir = path.join(process.cwd(), "src", "data");
   // const outputDir = path.join(process.cwd(), "public", "data");
 
@@ -131,8 +131,23 @@ export const generateNavigationList = async (locale: string, type: string) => {
 
   // console.log("Navigation list generated:", navTree);
   // // 输出导航列表到文件
-  const navFilePath = path.join(outputDir, locale, "nav.json");
-  await fs.writeFile(navFilePath, JSON.stringify(navTree, null, 2));
+  // const navFilePath = path.join(outputDir, locale, "nav.json");
+  // await fs.writeFile(navFilePath, JSON.stringify(navTree, null, 2));
   // console.log(`Navigation list generated at: ${navFilePath}`);
   return navTree;
 };
+
+export const generateNavigationList = async () => {
+  const locales = ["zh", "en"];
+  const types = ["docs"];
+  // console.log("generateNavigationList: ", navList);
+  // 输出导航列表到文件
+  for (const locale of locales) {
+    for (const type of types) {
+      const navList = await getNavigationList(locale, type);
+      const navFilePath = path.join(outputDir, locale, "nav.json");
+      await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
+    }
+  }
+  // await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
+}
