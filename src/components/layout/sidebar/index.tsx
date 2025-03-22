@@ -35,7 +35,8 @@ export async function AppSidebar({ locale, ...props }: AppSidebarProps) {
   console.log("AppSidebar: ", locale, type)
   const navTreeObj = {} as { [key: string]: NavNode[] }
   for (const type of types) {
-    navTreeObj[type] = await getNavigationList(locale, type)
+    // navTreeObj[type] = await import(`@/../public/data/${locale}/${type}/index.json`)
+    navTreeObj[type] = await import(`@/../public/data/${locale}/nav.json`)
   }
   const currentNavTree = navTreeObj[type]
   return (
