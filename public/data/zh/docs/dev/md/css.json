@@ -1,0 +1,25 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/css",
+  "slug": "dev/md/css",
+  "segments": [
+    "dev",
+    "md",
+    "css"
+  ],
+  "filePath": "docs/zh/dev/md/css/index.mdx",
+  "meta": {
+    "title": "md css",
+    "description": null,
+    "created_at": "2025-03-21T23:23:27.000Z",
+    "updated_at": "2025-03-21T23:23:27.000Z",
+    "tags": [
+      "md",
+      "css"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

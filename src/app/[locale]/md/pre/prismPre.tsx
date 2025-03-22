@@ -1,12 +1,12 @@
 "use client"
-import { Button } from '~/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { CheckIcon, Copy } from 'lucide-react'
 import { Highlight
   , themes // themes.vsDark, nightOwl, github, , duotoneDark, synthwave84, dracula, shadesOfPurple
 } from 'prism-react-renderer'
 import { useState } from 'react';
-import { ScrollArea, ScrollBar } from "~/components/ui/scroll-area"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 type CodeSnippet = {
   value: string

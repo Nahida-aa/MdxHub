@@ -1,0 +1,135 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/search",
+  "slug": "dev/search",
+  "segments": [
+    "dev",
+    "search"
+  ],
+  "filePath": "docs/zh/dev/search.mdx",
+  "meta": {
+    "title": "增添搜索引擎",
+    "description": "增加搜索功能, 支持全部内容搜索",
+    "created_at": "2025-03-19T17:49:42.000Z",
+    "updated_at": "2025-03-19T17:49:42.000Z",
+    "tags": [
+      "search",
+      "web"
+    ]
+  },
+  "order": 99,
+  "content": "\n## 结构选择\n\n| type | description |\n| --- | --- |\n| arr | 数组 |\n| arrTree | 数组树 |\n| kvArr | 键值数组 |\n| kvTree | 键值树 |\n\n### 需求\n\n- [ ] 搜索\n  - [ ] 支持全文搜索\n  - [ ] 支持搜索结果高亮\n  - [ ] 支持搜索结果分页\n  - [ ] 支持搜索结果排序\n- [ ] 详情页面\n- [ ] 树状侧边导航栏\n\n### 解析 标题\n\n## 搜索引擎\n\n**Fuse.js** 是一个轻量级的 JavaScript 模糊搜索库，专门用于在小型数据集（如数组或对象列表）中快速执行模糊搜索。它非常适合在前端应用中实现搜索功能，尤其是当你需要对非精确匹配的结果进行排序时。\n\n---\n\n### 核心功能\n1. **模糊搜索**：\n   - 支持对字符串进行模糊匹配，例如输入 \"appl\" 可以匹配到 \"apple\"。\n   \n2. **权重配置**：\n   - 可以为对象的不同字段设置权重，影响搜索结果的排序。\n\n3. **高性能**：\n   - 适合小型到中型数据集，搜索速度非常快。\n\n4. **灵活性**：\n   - 支持多字段搜索、阈值调整、结果高亮等功能。\n\n---\n\n### 安装\n你可以通过 npm 或 yarn 安装 Fuse.js：\n\n```bash\nnpm install fuse.js\n```\n\n或者使用 yarn：\n\n```bash\nyarn add fuse.js\n```\n\n---\n\n### 基本用法\n\n#### 示例数据\n假设你有以下数据：\n\n```javascript\nconst books = [\n  { title: \"The Great Gatsby\", author: \"F. Scott Fitzgerald\" },\n  { title: \"To Kill a Mockingbird\", author: \"Harper Lee\" },\n  { title: \"1984\", author: \"George Orwell\" },\n  { title: \"The Catcher in the Rye\", author: \"J.D. Salinger\" },\n  { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" }\n];\n```\n\n#### 创建 Fuse 实例\n```javascript\nimport Fuse from \"fuse.js\";\n\nconst options = {\n  keys: [\"title\", \"author\"], // 搜索的字段\n  threshold: 0.3, // 匹配的模糊程度，0 完全匹配，1 匹配最宽松\n};\n\nconst fuse = new Fuse(books, options);\n```\n\n#### 执行搜索\n```javascript\nconst result = fuse.search(\"hobbit\");\nconsole.log(result);\n```\n\n#### 输出结果\n```javascript\n[\n  {\n    item: { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" },\n    refIndex: 4\n  }\n]\n```\n\n---\n\n### 配置选项\n\n#### 常用选项\n- **`keys`**：\n  - 指定要搜索的字段（适用于对象数组）。\n  - 示例：`keys: [\"title\", \"author\"]`。\n\n- **`threshold`**：\n  - 控制模糊匹配的程度，范围是 `0` 到 `1`。\n  - `0` 表示完全匹配，`1` 表示最宽松的匹配。\n\n- **`includeScore`**：\n  - 是否在结果中包含匹配的分数（`score`）。\n  - 示例：`includeScore: true`。\n\n- **`includeMatches`**：\n  - 是否在结果中包含匹配的详细信息（如匹配的字段和位置）。\n  - 示例：`includeMatches: true`。\n\n- **`minMatchCharLength`**：\n  - 设置最小匹配字符长度。\n  - 示例：`minMatchCharLength: 3`。\n\n- **`distance`**：\n  - 控制模糊匹配时的字符距离，默认值为 `100`。\n\n---\n\n### 高级用法\n\n#### 多字段搜索\n如果你的数据是对象数组，可以指定多个字段进行搜索：\n\n```javascript\nconst options = {\n  keys: [\"title\", \"author\"],\n  threshold: 0.4,\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"George\");\nconsole.log(result);\n```\n\n#### 权重配置\n可以为不同字段设置权重，影响搜索结果的排序：\n\n```javascript\nconst options = {\n  keys: [\n    { name: \"title\", weight: 0.7 },\n    { name: \"author\", weight: 0.3 },\n  ],\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"George\");\nconsole.log(result);\n```\n\n#### 高亮匹配\n启用 `includeMatches` 选项，可以获取匹配的详细信息（如匹配的字段和位置）：\n\n```javascript\nconst options = {\n  keys: [\"title\", \"author\"],\n  includeMatches: true,\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"hobbit\");\nconsole.log(result);\n```\n\n输出结果：\n```javascript\n[\n  {\n    item: { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" },\n    matches: [\n      {\n        indices: [[0, 5]], // 匹配的位置\n        key: \"title\", // 匹配的字段\n        value: \"The Hobbit\" // 匹配的值\n      }\n    ]\n  }\n]\n```\n\n---\n\n### 使用场景\n1. **前端搜索框**：\n   - 在前端实现实时搜索功能，例如搜索博客文章、商品列表等。\n\n2. **多字段搜索**：\n   - 在对象数组中搜索多个字段，例如标题、描述、标签等。\n\n3. **模糊匹配**：\n   - 允许用户输入不完全正确的关键词，仍然能找到相关结果。\n\n4. **结果排序**：\n   - 根据匹配的分数对结果进行排序，优先显示最相关的结果。\n\n---\n\n### 优势和限制\n\n#### 优势\n- **轻量级**：库本身非常小，适合前端使用。\n- **易用性**：API 简单，配置灵活。\n- **模糊匹配**：支持宽松的匹配规则，用户体验更好。\n\n#### 限制\n- **适合小型数据集**：对于大型数据集（如几万条记录），性能可能会下降。\n- **不支持全文搜索**：不适合需要全文索引的大型搜索场景（如 Elasticsearch）。\n\n---\n\n### 总结\n**Fuse.js** 是一个强大且易用的模糊搜索库，适合在前端实现小型数据集的模糊搜索功能。如果你的数据量较小且需要灵活的模糊匹配，Fuse.js 是一个非常好的选择。\n\n如果你有更复杂的搜索需求（如全文搜索或大规模数据），可以考虑使用更强大的工具，如 Elasticsearch 或 Algolia。\n",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "结构选择",
+      "slug": "结构选择"
+    },
+    {
+      "depth": 3,
+      "value": "需求",
+      "slug": "需求"
+    },
+    {
+      "depth": 3,
+      "value": "解析 标题",
+      "slug": "解析-标题"
+    },
+    {
+      "depth": 2,
+      "value": "搜索引擎",
+      "slug": "搜索引擎"
+    },
+    {
+      "depth": 3,
+      "value": "核心功能",
+      "slug": "核心功能"
+    },
+    {
+      "depth": 3,
+      "value": "安装",
+      "slug": "安装"
+    },
+    {
+      "depth": 3,
+      "value": "基本用法",
+      "slug": "基本用法"
+    },
+    {
+      "depth": 4,
+      "value": "示例数据",
+      "slug": "示例数据"
+    },
+    {
+      "depth": 4,
+      "value": "创建 Fuse 实例",
+      "slug": "创建-fuse-实例"
+    },
+    {
+      "depth": 4,
+      "value": "执行搜索",
+      "slug": "执行搜索"
+    },
+    {
+      "depth": 4,
+      "value": "输出结果",
+      "slug": "输出结果"
+    },
+    {
+      "depth": 3,
+      "value": "配置选项",
+      "slug": "配置选项"
+    },
+    {
+      "depth": 4,
+      "value": "常用选项",
+      "slug": "常用选项"
+    },
+    {
+      "depth": 3,
+      "value": "高级用法",
+      "slug": "高级用法"
+    },
+    {
+      "depth": 4,
+      "value": "多字段搜索",
+      "slug": "多字段搜索"
+    },
+    {
+      "depth": 4,
+      "value": "权重配置",
+      "slug": "权重配置"
+    },
+    {
+      "depth": 4,
+      "value": "高亮匹配",
+      "slug": "高亮匹配"
+    },
+    {
+      "depth": 3,
+      "value": "使用场景",
+      "slug": "使用场景"
+    },
+    {
+      "depth": 3,
+      "value": "优势和限制",
+      "slug": "优势和限制"
+    },
+    {
+      "depth": 4,
+      "value": "优势",
+      "slug": "优势"
+    },
+    {
+      "depth": 4,
+      "value": "限制",
+      "slug": "限制"
+    },
+    {
+      "depth": 3,
+      "value": "总结",
+      "slug": "总结"
+    }
+  ]
+}

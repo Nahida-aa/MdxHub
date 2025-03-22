@@ -1,0 +1,26 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/next/15",
+  "slug": "next/15",
+  "segments": [
+    "next",
+    "15"
+  ],
+  "filePath": "docs/zh/next/15.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "nextjs15",
+      "slug": "nextjs15"
+    },
+    {
+      "depth": 2,
+      "value": "原生支持 pwa",
+      "slug": "原生支持-pwa"
+    }
+  ]
+}

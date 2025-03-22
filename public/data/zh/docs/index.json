@@ -1,0 +1,2069 @@
+[
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/i18",
+    "slug": "i18",
+    "segments": [
+      "i18"
+    ],
+    "filePath": "docs/zh/i18.mdx",
+    "meta": {
+      "title": "i18 国际化",
+      "description": null,
+      "created_at": "2025-03-17T20:14:57.000Z",
+      "updated_at": "2025-03-17T20:14:57.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\n```sh\npnpm add i18next react-i18next i18next-resources-to-backend next-i18n-router\n```\n",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/contentlayer",
+    "slug": "dev/contentlayer",
+    "segments": [
+      "dev",
+      "contentlayer"
+    ],
+    "filePath": "docs/zh/dev/contentlayer.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# contentlayer\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "contentlayer",
+        "slug": "contentlayer"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about",
+    "slug": "about",
+    "segments": [
+      "about"
+    ],
+    "filePath": "docs/zh/about/index.mdx",
+    "meta": {
+      "title": "关于",
+      "description": "关于本软件的开发",
+      "created_at": "2025-03-21T13:49:29.000Z",
+      "updated_at": "2025-03-21T13:49:29.000Z",
+      "tags": [
+        "about"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "本仓库内的文件监视功能",
+        "slug": "本仓库内的文件监视功能"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
+    "segments": [
+      "dev"
+    ],
+    "filePath": "docs/zh/dev/index.mdx",
+    "meta": {
+      "title": "dev",
+      "description": null,
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
+      "tags": [
+        "dev"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "常用框架\\库\\module",
+        "slug": "常用框架\\库\\module"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
+    "segments": [
+      "dev",
+      "test"
+    ],
+    "filePath": "docs/zh/dev/test.mdx",
+    "meta": {
+      "title": "测试",
+      "description": "用于测试 mdx",
+      "created_at": "2025-03-22T00:42:34.000Z",
+      "updated_at": "2025-03-22T00:42:34.000Z",
+      "tags": [
+        "test"
+      ]
+    },
+    "order": 99,
+    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "markdown",
+        "slug": "markdown"
+      },
+      {
+        "depth": 3,
+        "value": "标题",
+        "slug": "标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级标题1",
+        "slug": "四级标题1"
+      },
+      {
+        "depth": 3,
+        "value": "三级 标题",
+        "slug": "三级-标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级 标题2",
+        "slug": "四级-标题2"
+      },
+      {
+        "depth": 5,
+        "value": "五级 标题",
+        "slug": "五级-标题"
+      },
+      {
+        "depth": 6,
+        "value": "六级 标题",
+        "slug": "六级-标题"
+      },
+      {
+        "depth": 2,
+        "value": "GitHub flavored markdown (GFM)",
+        "slug": "github-flavored-markdown-(gfm)"
+      },
+      {
+        "depth": 3,
+        "value": "三级标题",
+        "slug": "三级标题"
+      },
+      {
+        "depth": 2,
+        "value": "代码块",
+        "slug": "代码块"
+      },
+      {
+        "depth": 2,
+        "value": "图表",
+        "slug": "图表"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/search",
+    "slug": "dev/search",
+    "segments": [
+      "dev",
+      "search"
+    ],
+    "filePath": "docs/zh/dev/search.mdx",
+    "meta": {
+      "title": "增添搜索引擎",
+      "description": "增加搜索功能, 支持全部内容搜索",
+      "created_at": "2025-03-19T17:49:42.000Z",
+      "updated_at": "2025-03-19T17:49:42.000Z",
+      "tags": [
+        "search",
+        "web"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 结构选择\n\n| type | description |\n| --- | --- |\n| arr | 数组 |\n| arrTree | 数组树 |\n| kvArr | 键值数组 |\n| kvTree | 键值树 |\n\n### 需求\n\n- [ ] 搜索\n  - [ ] 支持全文搜索\n  - [ ] 支持搜索结果高亮\n  - [ ] 支持搜索结果分页\n  - [ ] 支持搜索结果排序\n- [ ] 详情页面\n- [ ] 树状侧边导航栏\n\n### 解析 标题\n\n## 搜索引擎\n\n**Fuse.js** 是一个轻量级的 JavaScript 模糊搜索库，专门用于在小型数据集（如数组或对象列表）中快速执行模糊搜索。它非常适合在前端应用中实现搜索功能，尤其是当你需要对非精确匹配的结果进行排序时。\n\n---\n\n### 核心功能\n1. **模糊搜索**：\n   - 支持对字符串进行模糊匹配，例如输入 \"appl\" 可以匹配到 \"apple\"。\n   \n2. **权重配置**：\n   - 可以为对象的不同字段设置权重，影响搜索结果的排序。\n\n3. **高性能**：\n   - 适合小型到中型数据集，搜索速度非常快。\n\n4. **灵活性**：\n   - 支持多字段搜索、阈值调整、结果高亮等功能。\n\n---\n\n### 安装\n你可以通过 npm 或 yarn 安装 Fuse.js：\n\n```bash\nnpm install fuse.js\n```\n\n或者使用 yarn：\n\n```bash\nyarn add fuse.js\n```\n\n---\n\n### 基本用法\n\n#### 示例数据\n假设你有以下数据：\n\n```javascript\nconst books = [\n  { title: \"The Great Gatsby\", author: \"F. Scott Fitzgerald\" },\n  { title: \"To Kill a Mockingbird\", author: \"Harper Lee\" },\n  { title: \"1984\", author: \"George Orwell\" },\n  { title: \"The Catcher in the Rye\", author: \"J.D. Salinger\" },\n  { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" }\n];\n```\n\n#### 创建 Fuse 实例\n```javascript\nimport Fuse from \"fuse.js\";\n\nconst options = {\n  keys: [\"title\", \"author\"], // 搜索的字段\n  threshold: 0.3, // 匹配的模糊程度，0 完全匹配，1 匹配最宽松\n};\n\nconst fuse = new Fuse(books, options);\n```\n\n#### 执行搜索\n```javascript\nconst result = fuse.search(\"hobbit\");\nconsole.log(result);\n```\n\n#### 输出结果\n```javascript\n[\n  {\n    item: { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" },\n    refIndex: 4\n  }\n]\n```\n\n---\n\n### 配置选项\n\n#### 常用选项\n- **`keys`**：\n  - 指定要搜索的字段（适用于对象数组）。\n  - 示例：`keys: [\"title\", \"author\"]`。\n\n- **`threshold`**：\n  - 控制模糊匹配的程度，范围是 `0` 到 `1`。\n  - `0` 表示完全匹配，`1` 表示最宽松的匹配。\n\n- **`includeScore`**：\n  - 是否在结果中包含匹配的分数（`score`）。\n  - 示例：`includeScore: true`。\n\n- **`includeMatches`**：\n  - 是否在结果中包含匹配的详细信息（如匹配的字段和位置）。\n  - 示例：`includeMatches: true`。\n\n- **`minMatchCharLength`**：\n  - 设置最小匹配字符长度。\n  - 示例：`minMatchCharLength: 3`。\n\n- **`distance`**：\n  - 控制模糊匹配时的字符距离，默认值为 `100`。\n\n---\n\n### 高级用法\n\n#### 多字段搜索\n如果你的数据是对象数组，可以指定多个字段进行搜索：\n\n```javascript\nconst options = {\n  keys: [\"title\", \"author\"],\n  threshold: 0.4,\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"George\");\nconsole.log(result);\n```\n\n#### 权重配置\n可以为不同字段设置权重，影响搜索结果的排序：\n\n```javascript\nconst options = {\n  keys: [\n    { name: \"title\", weight: 0.7 },\n    { name: \"author\", weight: 0.3 },\n  ],\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"George\");\nconsole.log(result);\n```\n\n#### 高亮匹配\n启用 `includeMatches` 选项，可以获取匹配的详细信息（如匹配的字段和位置）：\n\n```javascript\nconst options = {\n  keys: [\"title\", \"author\"],\n  includeMatches: true,\n};\n\nconst fuse = new Fuse(books, options);\nconst result = fuse.search(\"hobbit\");\nconsole.log(result);\n```\n\n输出结果：\n```javascript\n[\n  {\n    item: { title: \"The Hobbit\", author: \"J.R.R. Tolkien\" },\n    matches: [\n      {\n        indices: [[0, 5]], // 匹配的位置\n        key: \"title\", // 匹配的字段\n        value: \"The Hobbit\" // 匹配的值\n      }\n    ]\n  }\n]\n```\n\n---\n\n### 使用场景\n1. **前端搜索框**：\n   - 在前端实现实时搜索功能，例如搜索博客文章、商品列表等。\n\n2. **多字段搜索**：\n   - 在对象数组中搜索多个字段，例如标题、描述、标签等。\n\n3. **模糊匹配**：\n   - 允许用户输入不完全正确的关键词，仍然能找到相关结果。\n\n4. **结果排序**：\n   - 根据匹配的分数对结果进行排序，优先显示最相关的结果。\n\n---\n\n### 优势和限制\n\n#### 优势\n- **轻量级**：库本身非常小，适合前端使用。\n- **易用性**：API 简单，配置灵活。\n- **模糊匹配**：支持宽松的匹配规则，用户体验更好。\n\n#### 限制\n- **适合小型数据集**：对于大型数据集（如几万条记录），性能可能会下降。\n- **不支持全文搜索**：不适合需要全文索引的大型搜索场景（如 Elasticsearch）。\n\n---\n\n### 总结\n**Fuse.js** 是一个强大且易用的模糊搜索库，适合在前端实现小型数据集的模糊搜索功能。如果你的数据量较小且需要灵活的模糊匹配，Fuse.js 是一个非常好的选择。\n\n如果你有更复杂的搜索需求（如全文搜索或大规模数据），可以考虑使用更强大的工具，如 Elasticsearch 或 Algolia。\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "结构选择",
+        "slug": "结构选择"
+      },
+      {
+        "depth": 3,
+        "value": "需求",
+        "slug": "需求"
+      },
+      {
+        "depth": 3,
+        "value": "解析 标题",
+        "slug": "解析-标题"
+      },
+      {
+        "depth": 2,
+        "value": "搜索引擎",
+        "slug": "搜索引擎"
+      },
+      {
+        "depth": 3,
+        "value": "核心功能",
+        "slug": "核心功能"
+      },
+      {
+        "depth": 3,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 3,
+        "value": "基本用法",
+        "slug": "基本用法"
+      },
+      {
+        "depth": 4,
+        "value": "示例数据",
+        "slug": "示例数据"
+      },
+      {
+        "depth": 4,
+        "value": "创建 Fuse 实例",
+        "slug": "创建-fuse-实例"
+      },
+      {
+        "depth": 4,
+        "value": "执行搜索",
+        "slug": "执行搜索"
+      },
+      {
+        "depth": 4,
+        "value": "输出结果",
+        "slug": "输出结果"
+      },
+      {
+        "depth": 3,
+        "value": "配置选项",
+        "slug": "配置选项"
+      },
+      {
+        "depth": 4,
+        "value": "常用选项",
+        "slug": "常用选项"
+      },
+      {
+        "depth": 3,
+        "value": "高级用法",
+        "slug": "高级用法"
+      },
+      {
+        "depth": 4,
+        "value": "多字段搜索",
+        "slug": "多字段搜索"
+      },
+      {
+        "depth": 4,
+        "value": "权重配置",
+        "slug": "权重配置"
+      },
+      {
+        "depth": 4,
+        "value": "高亮匹配",
+        "slug": "高亮匹配"
+      },
+      {
+        "depth": 3,
+        "value": "使用场景",
+        "slug": "使用场景"
+      },
+      {
+        "depth": 3,
+        "value": "优势和限制",
+        "slug": "优势和限制"
+      },
+      {
+        "depth": 4,
+        "value": "优势",
+        "slug": "优势"
+      },
+      {
+        "depth": 4,
+        "value": "限制",
+        "slug": "限制"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/html",
+    "slug": "html",
+    "segments": [
+      "html"
+    ],
+    "filePath": "docs/zh/html/index.mdx",
+    "meta": {
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
+      "tags": [
+        "html"
+      ]
+    },
+    "order": 99,
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "list",
+        "slug": "list"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
+    "segments": [
+      "alg"
+    ],
+    "filePath": "docs/zh/alg/index.mdx",
+    "meta": {
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
+      "tags": [
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/Array",
+    "slug": "alg/Array",
+    "segments": [
+      "alg",
+      "Array"
+    ],
+    "filePath": "docs/zh/alg/Array.mdx",
+    "meta": {
+      "title": "数组",
+      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
+      "created_at": "2025-03-22T15:50:04.000Z",
+      "updated_at": "2025-03-22T15:50:04.000Z",
+      "tags": [
+        "Array"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/todo",
+    "slug": "dev/todo",
+    "segments": [
+      "dev",
+      "todo"
+    ],
+    "filePath": "docs/zh/dev/todo.mdx",
+    "meta": {
+      "title": "todo",
+      "description": "todo next-mdx-remote",
+      "created_at": "2025-03-18T15:19:34Z",
+      "updated_at": "2025-03-18T15:19:34Z",
+      "tags": [
+        "todo",
+        "mdx"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基本",
+        "slug": "基本"
+      },
+      {
+        "depth": 3,
+        "value": "remark-breaks",
+        "slug": "remark-breaks"
+      },
+      {
+        "depth": 3,
+        "value": "This is a heading",
+        "slug": "this-is-a-heading"
+      },
+      {
+        "depth": 3,
+        "value": "code block",
+        "slug": "code-block"
+      },
+      {
+        "depth": 3,
+        "value": "math code block",
+        "slug": "math-code-block"
+      },
+      {
+        "depth": 2,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 3,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      },
+      {
+        "depth": 3,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "obsidian",
+        "slug": "obsidian"
+      },
+      {
+        "depth": 2,
+        "value": "next",
+        "slug": "next"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/python",
+    "slug": "alg/python",
+    "segments": [
+      "alg",
+      "python"
+    ],
+    "filePath": "docs/zh/alg/python.mdx",
+    "meta": {
+      "title": "python",
+      "description": null,
+      "created_at": "2025-03-22T06:13:49.000Z",
+      "updated_at": "2025-03-22T06:13:49.000Z",
+      "tags": [
+        "alg",
+        "python"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/struct",
+    "slug": "alg/struct",
+    "segments": [
+      "alg",
+      "struct"
+    ],
+    "filePath": "docs/zh/alg/struct.mdx",
+    "meta": {
+      "title": "数据结构",
+      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
+      "created_at": "2025-03-22T18:11:12.000Z",
+      "updated_at": "2025-03-22T18:11:12.000Z",
+      "tags": [
+        "alg",
+        "data-structure"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/system_time",
+    "slug": "linux/system_time",
+    "segments": [
+      "linux",
+      "system_time"
+    ],
+    "filePath": "docs/zh/linux/system_time.mdx",
+    "meta": {
+      "title": "系统时间",
+      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
+      "created_at": "2025-03-22T03:26:09.000Z",
+      "updated_at": "2025-03-22T03:26:09.000Z",
+      "tags": [
+        "linux",
+        "os",
+        "time"
+      ]
+    },
+    "order": 99,
+    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
+    "segments": [
+      "paper"
+    ],
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数据集",
+        "slug": "数据集"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/blog",
+    "slug": "alg/blog",
+    "segments": [
+      "alg",
+      "blog"
+    ],
+    "filePath": "docs/zh/alg/blog.mdx",
+    "meta": {
+      "title": "日志",
+      "description": null,
+      "created_at": "2025-03-22T06:07:24.000Z",
+      "updated_at": "2025-03-22T06:07:24.000Z",
+      "tags": [
+        "alg",
+        "log",
+        "blog"
+      ]
+    },
+    "order": 99,
+    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
+    "toc": [
+      {
+        "depth": 3,
+        "value": "1. 算法文档（docs）",
+        "slug": "1.-算法文档（docs）"
+      },
+      {
+        "depth": 3,
+        "value": "2. 算法日志（blog）",
+        "slug": "2.-算法日志（blog）"
+      },
+      {
+        "depth": 3,
+        "value": "3. 两者的区别",
+        "slug": "3.-两者的区别"
+      },
+      {
+        "depth": 3,
+        "value": "4. 如何结合使用",
+        "slug": "4.-如何结合使用"
+      },
+      {
+        "depth": 3,
+        "value": "5. 工具推荐",
+        "slug": "5.-工具推荐"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/systemd-timesyncd",
+    "slug": "linux/systemd-timesyncd",
+    "segments": [
+      "linux",
+      "systemd-timesyncd"
+    ],
+    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
+    "meta": {
+      "title": "systemd-timesyncd",
+      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
+      "created_at": "2025-03-22T03:16:43.000Z",
+      "updated_at": "2025-03-22T03:16:43.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next",
+    "slug": "next",
+    "segments": [
+      "next"
+    ],
+    "filePath": "docs/zh/next/index.mdx",
+    "meta": {
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
+      "tags": [
+        "next",
+        "ts",
+        "react",
+        "web"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux",
+    "slug": "linux",
+    "segments": [
+      "linux"
+    ],
+    "filePath": "docs/zh/linux/index.mdx",
+    "meta": {
+      "title": "linux",
+      "description": "linux 简介",
+      "created_at": "2025-03-22T05:22:44.000Z",
+      "updated_at": "2025-03-22T05:22:44.000Z",
+      "tags": [
+        "linux"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts",
+    "slug": "ts",
+    "segments": [
+      "ts"
+    ],
+    "filePath": "docs/zh/ts/index.mdx",
+    "meta": {
+      "title": "TypeScript",
+      "description": "TypeScript 是 JavaScript 的超集，可以编译成纯 JavaScript 代码, 也可以直接使用 deno, ts-node, bun 等运行",
+      "created_at": "2025-03-22T05:20:06.000Z",
+      "updated_at": "2025-03-22T05:20:06.000Z",
+      "tags": [
+        "ts"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/tsconfig",
+    "slug": "ts/tsconfig",
+    "segments": [
+      "ts",
+      "tsconfig"
+    ],
+    "filePath": "docs/zh/ts/tsconfig.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tsconfig",
+        "slug": "tsconfig"
+      },
+      {
+        "depth": 2,
+        "value": "compilerOptions",
+        "slug": "compileroptions"
+      },
+      {
+        "depth": 3,
+        "value": "moduleResolution",
+        "slug": "moduleresolution"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: node",
+        "slug": "moduleresolution:-node"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: bundler",
+        "slug": "moduleresolution:-bundler"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
+    "segments": [
+      "dev",
+      "md",
+      "docs"
+    ],
+    "filePath": "docs/zh/dev/md/docs.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/mdx",
+    "slug": "dev/md/mdx",
+    "segments": [
+      "dev",
+      "md",
+      "mdx"
+    ],
+    "filePath": "docs/zh/dev/md/mdx.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
+    "order": 99,
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/enum",
+    "slug": "alg/enum",
+    "segments": [
+      "alg",
+      "enum"
+    ],
+    "filePath": "docs/zh/alg/enum/index.mdx",
+    "meta": {
+      "title": "穷举法",
+      "description": "这是一个非常好的起点！暴力枚举是解决算法问题的基础方法之一，尤其是在解空间有限的情况下。虽然暴力枚举通常不是最优解，但它是理解问题和验证复杂算法的关键工具。",
+      "created_at": "2025-03-22T16:40:54.000Z",
+      "updated_at": "2025-03-22T16:40:54.000Z",
+      "tags": [
+        "alg",
+        "enum"
+      ]
+    },
+    "order": 99,
+    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "什么是暴力枚举？",
+        "slug": "什么是暴力枚举？"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的步骤",
+        "slug": "学习暴力枚举的步骤"
+      },
+      {
+        "depth": 3,
+        "value": "理解问题的解空间",
+        "slug": "理解问题的解空间"
+      },
+      {
+        "depth": 3,
+        "value": "生成所有可能的解",
+        "slug": "生成所有可能的解"
+      },
+      {
+        "depth": 3,
+        "value": "验证解是否满足条件",
+        "slug": "验证解是否满足条件"
+      },
+      {
+        "depth": 3,
+        "value": "优化暴力枚举",
+        "slug": "优化暴力枚举"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的练习题",
+        "slug": "学习暴力枚举的练习题"
+      },
+      {
+        "depth": 3,
+        "value": "简单枚举",
+        "slug": "简单枚举"
+      },
+      {
+        "depth": 3,
+        "value": "多层枚举",
+        "slug": "多层枚举"
+      },
+      {
+        "depth": 3,
+        "value": "排列与组合",
+        "slug": "排列与组合"
+      },
+      {
+        "depth": 3,
+        "value": "验证条件",
+        "slug": "验证条件"
+      },
+      {
+        "depth": 3,
+        "value": "复杂枚举",
+        "slug": "复杂枚举"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的资源",
+        "slug": "学习暴力枚举的资源"
+      },
+      {
+        "depth": 2,
+        "value": "学习路径建议",
+        "slug": "学习路径建议"
+      },
+      {
+        "depth": 2,
+        "value": "总结",
+        "slug": "总结"
+      },
+      {
+        "depth": 2,
+        "value": "竞赛题",
+        "slug": "竞赛题"
+      },
+      {
+        "depth": 3,
+        "value": "题目描述",
+        "slug": "题目描述"
+      },
+      {
+        "depth": 3,
+        "value": "输入描述",
+        "slug": "输入描述"
+      },
+      {
+        "depth": 3,
+        "value": "输出描述",
+        "slug": "输出描述"
+      },
+      {
+        "depth": 3,
+        "value": "知识点",
+        "slug": "知识点"
+      },
+      {
+        "depth": 3,
+        "value": "运行限制",
+        "slug": "运行限制"
+      },
+      {
+        "depth": 3,
+        "value": "解答",
+        "slug": "解答"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/code-blocks",
+    "slug": "dev/md/code-blocks",
+    "segments": [
+      "dev",
+      "md",
+      "code-blocks"
+    ],
+    "filePath": "docs/zh/dev/md/code-blocks.mdx",
+    "meta": {
+      "title": "code blocks",
+      "created_at": "2024-10-04",
+      "updated_at": "2024-11-09T13:04:17Z",
+      "tags": [
+        "mdx",
+        "sugar-high"
+      ],
+      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+    },
+    "order": 99,
+    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "syntax highlighting",
+        "slug": "syntax-highlighting"
+      },
+      {
+        "depth": 3,
+        "value": "Prism.js",
+        "slug": "prism.js"
+      },
+      {
+        "depth": 4,
+        "value": "prismjs",
+        "slug": "prismjs"
+      },
+      {
+        "depth": 4,
+        "value": "rehype-prism-plus",
+        "slug": "rehype-prism-plus"
+      },
+      {
+        "depth": 4,
+        "value": "如何协同工作",
+        "slug": "如何协同工作"
+      },
+      {
+        "depth": 4,
+        "value": "prism-react-renderer",
+        "slug": "prism-react-renderer"
+      },
+      {
+        "depth": 3,
+        "value": "Highlight.js",
+        "slug": "highlight.js"
+      },
+      {
+        "depth": 3,
+        "value": "monaco-editor",
+        "slug": "monaco-editor"
+      },
+      {
+        "depth": 2,
+        "value": "test",
+        "slug": "test"
+      },
+      {
+        "depth": 3,
+        "value": "示例代码",
+        "slug": "示例代码"
+      },
+      {
+        "depth": 2,
+        "value": "mdx",
+        "slug": "mdx"
+      },
+      {
+        "depth": 3,
+        "value": "compile time",
+        "slug": "compile-time"
+      },
+      {
+        "depth": 3,
+        "value": "runtime",
+        "slug": "runtime"
+      },
+      {
+        "depth": 2,
+        "value": "vscode-theme",
+        "slug": "vscode-theme"
+      },
+      {
+        "depth": 3,
+        "value": "VS Code 主题",
+        "slug": "vs-code-主题"
+      },
+      {
+        "depth": 3,
+        "value": "Monaco Editor 主题",
+        "slug": "monaco-editor-主题"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "VS Code 主题示例",
+        "slug": "vs-code-主题示例"
+      },
+      {
+        "depth": 4,
+        "value": "Monaco Editor 主题示例",
+        "slug": "monaco-editor-主题示例"
+      },
+      {
+        "depth": 3,
+        "value": "code-demo",
+        "slug": "code-demo"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 4,
+        "value": "tsx",
+        "slug": "tsx"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about/community/contribution-guide",
+    "slug": "about/community/contribution-guide",
+    "segments": [
+      "about",
+      "community",
+      "contribution-guide"
+    ],
+    "filePath": "docs/zh/about/04-community/01-contribution-guide.mdx",
+    "meta": {
+      "title": "文档贡献指南",
+      "nav_title": "贡献 指南",
+      "description": "了解如何贡献文档"
+    },
+    "order": 1,
+    "content": "\n\n\nThis page provides instructions on how to edit the Next.js documentation. Our goal is to ensure that everyone in the community feels empowered to contribute and improve our docs.\n\n## Why Contribute?\n\nOpen-source work is never done, and neither is documentation. Contributing to docs is a good way for beginners to get involved in open-source and for experienced developers to clarify more complex topics while sharing their knowledge with the community.\n\nBy contributing to the Next.js docs, you're helping us build a more robust learning resource for all developers. Whether you've found a typo, a confusing section, or you've realized that a particular topic is missing, your contributions are welcomed and appreciated.\n\n## How to Contribute\n\nThe docs content can be found on the [Next.js repo](https://github.com/vercel/next.js/tree/canary/docs). To contribute, you can edit the files directly on GitHub or clone the repo and edit the files locally.\n\n### GitHub Workflow\n\nIf you're new to GitHub, we recommend reading the [GitHub Open Source Guide](https://opensource.guide/how-to-contribute/#opening-a-pull-request) to learn how to fork a repository, create a branch, and submit a pull request.\n\n> **Good to know**: The underlying docs code lives in a private codebase that is synced to the Next.js public repo. This means that you can't preview the docs locally. However, you'll see your changes on [nextjs.org](https://nextjs.org/docs) after merging a pull request.\n\n### Writing MDX\n\nThe docs are written in [MDX](https://mdxjs.com/), a markdown format that supports JSX syntax. This allows us to embed React components in the docs. See the [GitHub Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for a quick overview of markdown syntax.\n\n### VSCode\n\n#### Previewing Changes Locally\n\nVSCode has a built-in markdown previewer that you can use to see your edits locally. To enable the previewer for MDX files, you'll need to add a configuration option to your user settings.\n\nOpen the command palette (`⌘ + ⇧ + P` on Mac or `Ctrl + Shift + P` on Windows) and search from `Preferences: Open User Settings (JSON)`.\n\nThen, add the following line to your `settings.json` file:\n\n```json filename=\"settings.json\"\n{\n  \"files.associations\": {\n    \"*.mdx\": \"markdown\"\n  }\n}\n```\n\nNext, open the command palette again, and search for `Markdown: Preview File` or `Markdown: Open Preview to the Side`. This will open a preview window where you can see your formatted changes.\n\n#### Extensions\n\nWe also recommend the following extensions for VSCode users:\n\n- [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): Intellisense and syntax highlighting for MDX.\n- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Format MDX files on save.\n\n### Review Process\n\nOnce you've submitted your contribution, the Next.js or Developer Experience teams will review your changes, provide feedback, and merge the pull request when it's ready.\n\nPlease let us know if you have any questions or need further assistance in your PR's comments. Thank you for contributing to the Next.js docs and being a part of our community!\n\n> **Tip:** Run `pnpm prettier-fix` to run Prettier before submitting your PR.\n\n## File Structure\n\nThe docs use **file-system routing**. Each folder and files inside [`/docs`](https://github.com/vercel/next.js/tree/canary/docs) represent a route segment. These segments are used to generate the URL paths, navigation, and breadcrumbs.\n\nThe file structure reflects the navigation that you see on the site, and by default, navigation items are sorted alphabetically. However, we can change the order of the items by prepending a two-digit number (`00-`) to the folder or file name.\n\nFor example, in the [functions API Reference](/docs/app/api-reference/functions), the pages are sorted alphabetically because it makes it easier for developers to find a specific function:\n\n```txt\n04-functions\n├── after.mdx\n├── cacheLife.mdx\n├── cacheTag.mdx\n└── ...\n```\n\nBut, in the [routing section](/docs/app/building-your-application/routing), the files are prefixed with a two-digit number, sorted in the order developers should learn these concepts:\n\n```txt\n01-routing\n├── 01-defining-routes.mdx\n├── 02-pages.mdx\n├── 03-layouts-and-templates.mdx\n└── ...\n```\n\nTo quickly find a page, you can use `⌘ + P` (Mac) or `Ctrl + P` (Windows) to open the search bar on VSCode. Then, type the slug of the page you're looking for. E.g. `defining-routes`\n\n> **Why not use a manifest?**\n>\n> We considered using a manifest file (another popular way to generate the docs navigation), but we found that a manifest would quickly get out of sync with the files. File-system routing forces us to think about the structure of the docs and feels more native to Next.js.\n\n## Metadata\n\nEach page has a metadata block at the top of the file separated by three dashes.\n\n### Required Fields\n\nThe following fields are **required**:\n\n| Field         | Description                                                                  |\n| ------------- | ---------------------------------------------------------------------------- |\n| `title`       | The page's `<h1>` title, used for SEO and OG Images.                         |\n| `description` | The page's description, used in the `<meta name=\"description\">` tag for SEO. |\n\n```yaml filename=\"required-fields.mdx\"\n---\ntitle: Page Title\ndescription: Page Description\n---\n```\n\nIt's good practice to limit the page title to 2-3 words (e.g. Optimizing Images) and the description to 1-2 sentences (e.g. Learn how to optimize images in Next.js).\n\n### Optional Fields\n\nThe following fields are **optional**:\n\n| Field       | Description                                                                                                                                        |\n| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `nav_title` | Overrides the page's title in the navigation. This is useful when the page's title is too long to fit. If not provided, the `title` field is used. |\n| `source`    | Pulls content into a shared page. See [Shared Pages](#shared-pages).                                                                               |\n| `related`   | A list of related pages at the bottom of the document. These will automatically be turned into cards. See [Related Links](#related-links).         |\n| `version`   | A stage of development. e.g. `experimental`,`legacy`,`unstable`,`RC`                                                                               |\n\n```yaml filename=\"optional-fields.mdx\"\n---\nnav_title: Nav Item Title\nsource: app/building-your-application/optimizing/images\nrelated:\n  description: See the image component API reference.\n  links:\n    - app/api-reference/components/image\nversion: experimental\n---\n```\n\n## `App` and `Pages` Docs\n\nSince most of the features in the **App Router** and **Pages Router** are completely different, their docs for each are kept in separate sections (`02-app` and `03-pages`). However, there are a few features that are shared between them.\n\n### Shared Pages\n\nTo avoid content duplication and risk the content becoming out of sync, we use the `source` field to pull content from one page into another. For example, the `<Link>` component behaves _mostly_ the same in **App** and **Pages**. Instead of duplicating the content, we can pull the content from `app/.../link.mdx` into `pages/.../link.mdx`:\n\n```mdx filename=\"app/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\n---\n\nThis API reference will help you understand how to use the props\nand configuration options available for the Link Component.\n```\n\n```mdx filename=\"pages/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\nsource: app/api-reference/components/link\n---\n\n{/* DO NOT EDIT THIS PAGE. */}\n{/* The content of this page is pulled from the source above. */}\n```\n\nWe can therefore edit the content in one place and have it reflected in both sections.\n\n### Shared Content\n\nIn shared pages, sometimes there might be content that is **App Router** or **Pages Router** specific. For example, the `<Link>` component has a `shallow` prop that is only available in **Pages** but not in **App**.\n\nTo make sure the content only shows in the correct router, we can wrap content blocks in an `<AppOnly>` or `<PagesOnly>` components:\n\n```mdx filename=\"app/.../link.mdx\"\nThis content is shared between App and Pages.\n\n<PagesOnly>\n\nThis content will only be shown on the Pages docs.\n\n</PagesOnly>\n\nThis content is shared between App and Pages.\n```\n\nYou'll likely use these components for examples and code blocks.\n\n## Code Blocks\n\nCode blocks should contain a minimum working example that can be copied and pasted. This means that the code should be able to run without any additional configuration.\n\nFor example, if you're showing how to use the `<Link>` component, you should include the `import` statement and the `<Link>` component itself.\n\n```tsx filename=\"app/page.tsx\"\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\nAlways run examples locally before committing them. This will ensure that the code is up-to-date and working.\n\n### Language and Filename\n\nCode blocks should have a header that includes the language and the `filename`. Add a `filename` prop to render a special Terminal icon that helps orientate users where to input the command. For example:\n\n````mdx filename=\"code-example.mdx\"\n```bash filename=\"Terminal\"\nnpx create-next-app\n```\n````\n\nMost examples in the docs are written in `tsx` and `jsx`, and a few in `bash`. However, you can use any supported language, here's the [full list](https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages).\n\nWhen writing JavaScript code blocks, we use the following language and extension combinations.\n\n|                                | Language | Extension |\n| ------------------------------ | -------- | --------- |\n| JavaScript files with JSX code | ```jsx   | .js       |\n| JavaScript files without JSX   | ```js    | .js       |\n| TypeScript files with JSX      | ```tsx   | .tsx      |\n| TypeScript files without JSX   | ```ts    | .ts       |\n\n> **Good to know**:\n>\n> - Make sure to use **`js`** extension with **JSX** code at JavaScript files.\n> - For example, ```jsx filename=\"app/layout.js\"\n\n### TS and JS Switcher\n\nAdd a language switcher to toggle between TypeScript and JavaScript. Code blocks should be TypeScript first with a JavaScript version to accommodate users.\n\nCurrently, we write TS and JS examples one after the other, and link them with `switcher` prop:\n\n````mdx filename=\"code-example.mdx\"\n```tsx filename=\"app/page.tsx\" switcher\n\n```\n\n```jsx filename=\"app/page.js\" switcher\n\n```\n````\n\n> **Good to know**: We plan to automatically compile TypeScript snippets to JavaScript in the future. In the meantime, you can use [transform.tools](https://transform.tools/typescript-to-javascript).\n\n### Line Highlighting\n\nCode lines can be highlighted. This is useful when you want to draw attention to a specific part of the code. You can highlight lines by passing a number to the `highlight` prop.\n\n**Single Line:** `highlight={1}`\n\n```tsx filename=\"app/page.tsx\" {1}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Multiple Lines:** `highlight={1,3}`\n\n```tsx filename=\"app/page.tsx\" highlight={1,3}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Range of Lines:** `highlight={1-5}`\n\n```tsx filename=\"app/page.tsx\" highlight={1-5}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n## Icons\n\nThe following icons are available for use in the docs:\n\n```mdx filename=\"mdx-icon.mdx\"\n<Check size={18} />\n<Cross size={18} />\n```\n\n**Output:**\n\n<Check size={18} />\n<Cross size={18} />\n\nWe do not use emojis in the docs.\n\n## Notes\n\nFor information that is important but not critical, use notes. Notes are a good way to add information without distracting the user from the main content.\n\n```mdx filename=\"notes.mdx\"\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n```\n\n**Output:**\n\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n\n## Related Links\n\nRelated Links guide the user's learning journey by adding links to logical next steps.\n\n- Links will be displayed in cards under the main content of the page.\n- Links will be automatically generated for pages that have child pages. For example, the [Optimizing](/docs/app/building-your-application/optimizing) section has links to all of its child pages.\n\nCreate related links using the `related` field in the page's metadata.\n\n```yaml filename=\"example.mdx\"\n---\nrelated:\n  description: Learn how to quickly get started with your first application.\n  links:\n    - app/building-your-application/routing/defining-routes\n    - app/building-your-application/data-fetching\n    - app/api-reference/file-conventions/page\n---\n```\n\n### Nested Fields\n\n| Field         | Required? | Description                                                                                                                                               |\n| ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `title`       | Optional  | The title of the card list. Defaults to **Next Steps**.                                                                                                   |\n| `description` | Optional  | The description of the card list.                                                                                                                         |\n| `links`       | Required  | A list of links to other doc pages. Each list item should be a relative URL path (without a leading slash) e.g. `app/api-reference/file-conventions/page` |\n\n## Diagrams\n\nDiagrams are a great way to explain complex concepts. We use [Figma](https://www.figma.com/) to create diagrams, following Vercel's design guide.\n\nThe diagrams currently live in the `/public` folder in our private Next.js site. If you'd like to update or add a diagram, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new?assignees=&labels=template%3A+documentation&projects=&template=4.docs_request.yml&title=Docs%3A+) with your ideas.\n\n## Custom Components and HTML\n\nThese are the React Components available for the docs: `<Image />` (next/image), `<PagesOnly />`, `<AppOnly />`, `<Cross />`, and `<Check />`. We do not allow raw HTML in the docs besides the `<details>` tag.\n\nIf you have ideas for new components, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new/choose).\n\n## Style Guide\n\nThis section contains guidelines for writing docs for those who are new to technical writing.\n\n### Page Templates\n\nWhile we don't have a strict template for pages, there are page sections you'll see repeated across the docs:\n\n- **Overview:** The first paragraph of a page should tell the user what the feature is and what it's used for. Followed by a minimum working example or its API reference.\n- **Convention:** If the feature has a convention, it should be explained here.\n- **Examples**: Show how the feature can be used with different use cases.\n- **API Tables**: API Pages should have an overview table at the of the page with jump-to-section links (when possible).\n- **Next Steps (Related Links)**: Add links to related pages to guide the user's learning journey.\n\nFeel free to add these sections as needed.\n\n### Page Types\n\nDocs pages are also split into two categories: Conceptual and Reference.\n\n- **Conceptual** pages are used to explain a concept or feature. They are usually longer and contain more information than reference pages. In the Next.js docs, conceptual pages are found in the **Building Your Application** section.\n- **Reference** pages are used to explain a specific API. They are usually shorter and more focused. In the Next.js docs, reference pages are found in the **API Reference** section.\n\n> **Good to know**: Depending on the page you're contributing to, you may need to follow a different voice and style. For example, conceptual pages are more instructional and use the word _you_ to address the user. Reference pages are more technical, they use more imperative words like \"create, update, accept\" and tend to omit the word _you_.\n\n### Voice\n\nHere are some guidelines to maintain a consistent style and voice across the docs:\n\n- Write clear, concise sentences. Avoid tangents.\n  - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.\n  - Swap out complex words for simpler ones. For example, _use_ instead of _utilize_.\n- Be mindful with the word _this_. It can be ambiguous and confusing, don't be afraid to repeat the subject of the sentence if unclear.\n  - For example, _Next.js uses React_ instead of _Next.js uses this_.\n- Use an active voice instead of passive. An active sentence is easier to read.\n  - For example, _Next.js uses React_ instead of _React is used by Next.js_. If you find yourself using words like _was_ and _by_ you may be using a passive voice.\n- Avoid using words like _easy_, _quick_, _simple_, _just_, etc. This is subjective and can be discouraging to users.\n- Avoid negative words like _don't_, _can't_, _won't_, etc. This can be discouraging to readers.\n  - For example, _\"You can use the `Link` component to create links between pages\"_ instead of _\"Don't use the `<a>` tag to create links between pages\"_.\n- Write in second person (you/your). This is more personal and engaging.\n- Use gender-neutral language. Use _developers_, _users_, or _readers_, when referring to the audience.\n- If adding code examples, ensure they are properly formatted and working.\n\nWhile these guidelines are not exhaustive, they should help you get started. If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).\n\n---\n\nThank you for contributing to the docs and being part of the Next.js community!\n\n{/* To do: Latest Contributors Component */}",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Why Contribute?",
+        "slug": "why-contribute?"
+      },
+      {
+        "depth": 2,
+        "value": "How to Contribute",
+        "slug": "how-to-contribute"
+      },
+      {
+        "depth": 3,
+        "value": "GitHub Workflow",
+        "slug": "github-workflow"
+      },
+      {
+        "depth": 3,
+        "value": "Writing MDX",
+        "slug": "writing-mdx"
+      },
+      {
+        "depth": 3,
+        "value": "VSCode",
+        "slug": "vscode"
+      },
+      {
+        "depth": 4,
+        "value": "Previewing Changes Locally",
+        "slug": "previewing-changes-locally"
+      },
+      {
+        "depth": 4,
+        "value": "Extensions",
+        "slug": "extensions"
+      },
+      {
+        "depth": 3,
+        "value": "Review Process",
+        "slug": "review-process"
+      },
+      {
+        "depth": 2,
+        "value": "File Structure",
+        "slug": "file-structure"
+      },
+      {
+        "depth": 2,
+        "value": "Metadata",
+        "slug": "metadata"
+      },
+      {
+        "depth": 3,
+        "value": "Required Fields",
+        "slug": "required-fields"
+      },
+      {
+        "depth": 3,
+        "value": "Optional Fields",
+        "slug": "optional-fields"
+      },
+      {
+        "depth": 2,
+        "value": "App and Pages Docs",
+        "slug": "app-and-pages-docs"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Pages",
+        "slug": "shared-pages"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Content",
+        "slug": "shared-content"
+      },
+      {
+        "depth": 2,
+        "value": "Code Blocks",
+        "slug": "code-blocks"
+      },
+      {
+        "depth": 3,
+        "value": "Language and Filename",
+        "slug": "language-and-filename"
+      },
+      {
+        "depth": 3,
+        "value": "TS and JS Switcher",
+        "slug": "ts-and-js-switcher"
+      },
+      {
+        "depth": 3,
+        "value": "Line Highlighting",
+        "slug": "line-highlighting"
+      },
+      {
+        "depth": 2,
+        "value": "Icons",
+        "slug": "icons"
+      },
+      {
+        "depth": 2,
+        "value": "Notes",
+        "slug": "notes"
+      },
+      {
+        "depth": 2,
+        "value": "Related Links",
+        "slug": "related-links"
+      },
+      {
+        "depth": 3,
+        "value": "Nested Fields",
+        "slug": "nested-fields"
+      },
+      {
+        "depth": 2,
+        "value": "Diagrams",
+        "slug": "diagrams"
+      },
+      {
+        "depth": 2,
+        "value": "Custom Components and HTML",
+        "slug": "custom-components-and-html"
+      },
+      {
+        "depth": 2,
+        "value": "Style Guide",
+        "slug": "style-guide"
+      },
+      {
+        "depth": 3,
+        "value": "Page Templates",
+        "slug": "page-templates"
+      },
+      {
+        "depth": 3,
+        "value": "Page Types",
+        "slug": "page-types"
+      },
+      {
+        "depth": 3,
+        "value": "Voice",
+        "slug": "voice"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
+    "segments": [
+      "linux",
+      "console",
+      "Command-line_shell"
+    ],
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/readme",
+    "slug": "linux/console/readme",
+    "segments": [
+      "linux",
+      "console",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/console/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "terminal",
+        "slug": "terminal"
+      },
+      {
+        "depth": 2,
+        "value": "Keyboard Shortcuts",
+        "slug": "keyboard-shortcuts"
+      },
+      {
+        "depth": 2,
+        "value": "start",
+        "slug": "start"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Paste",
+        "slug": "terminal:-paste"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Copy Selection",
+        "slug": "terminal:-copy-selection"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/input/readme",
+    "slug": "linux/input/readme",
+    "segments": [
+      "linux",
+      "input",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/input/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# input\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "input",
+        "slug": "input"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
+    "segments": [
+      "linux",
+      "network",
+      "NTP"
+    ],
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+    "meta": {
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
+      "tags": [
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
+    },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "tailwind"
+    ],
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tailwindCss\n\n## Colors\n\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
+      },
+      {
+        "depth": 2,
+        "value": "Colors",
+        "slug": "colors"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/community/contribution-guide",
+    "slug": "next/community/contribution-guide",
+    "segments": [
+      "next",
+      "community",
+      "contribution-guide"
+    ],
+    "filePath": "docs/zh/next/04-community/01-contribution-guide.mdx",
+    "meta": {
+      "title": "文档贡献指南",
+      "nav_title": "贡献 指南",
+      "description": "了解如何贡献文档到 Next.js 文档"
+    },
+    "order": 1,
+    "content": "\n欢迎来到 Next.js 文档贡献指南！我们很高兴你来到这里\n\n本页面提供了如何编辑 Next.js 文档的说明。我们的目标是确保社区中的每个人都能参与并改进我们的文档。\n\n## 为什么要贡献？\n\n开源工作永远不会完成，文档也是如此。为文档做贡献是初学者参与开源的好方法，同时也是经验丰富的开发者通过分享知识来澄清复杂主题的机会。\n\n通过为 Next.js 文档做贡献，你正在帮助我们为所有开发者构建一个更强大的学习资源。无论你发现了一个错别字、一个令人困惑的部分，还是意识到某个主题缺失，你的贡献都将受到欢迎和感谢。\n\n## 如何贡献\n\n文档内容可以在 [Next.js repo](https://github.com/vercel/next.js/tree/canary/docs) 仓库 中找到。你可以直接在 GitHub 上编辑文件，或者克隆仓库并在本地编辑文件。\n\nThe docs content can be found on the [Next.js repo](https://github.com/vercel/next.js/tree/canary/docs). To contribute, you can edit the files directly on GitHub or clone the repo and edit the files locally.\n\n### GitHub Workflow\n\nIf you're new to GitHub, we recommend reading the [GitHub Open Source Guide](https://opensource.guide/how-to-contribute/#opening-a-pull-request) to learn how to fork a repository, create a branch, and submit a pull request.\n\n> **Good to know**: The underlying docs code lives in a private codebase that is synced to the Next.js public repo. This means that you can't preview the docs locally. However, you'll see your changes on [nextjs.org](https://nextjs.org/docs) after merging a pull request.\n\n### Writing MDX\n\nThe docs are written in [MDX](https://mdxjs.com/), a markdown format that supports JSX syntax. This allows us to embed React components in the docs. See the [GitHub Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for a quick overview of markdown syntax.\n\n### VSCode\n\n#### Previewing Changes Locally\n\nVSCode has a built-in markdown previewer that you can use to see your edits locally. To enable the previewer for MDX files, you'll need to add a configuration option to your user settings.\n\nOpen the command palette (`⌘ + ⇧ + P` on Mac or `Ctrl + Shift + P` on Windows) and search from `Preferences: Open User Settings (JSON)`.\n\nThen, add the following line to your `settings.json` file:\n\n```json filename=\"settings.json\"\n{\n  \"files.associations\": {\n    \"*.mdx\": \"markdown\"\n  }\n}\n```\n\nNext, open the command palette again, and search for `Markdown: Preview File` or `Markdown: Open Preview to the Side`. This will open a preview window where you can see your formatted changes.\n\n#### Extensions\n\nWe also recommend the following extensions for VSCode users:\n\n- [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): Intellisense and syntax highlighting for MDX.\n- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Format MDX files on save.\n\n### Review Process\n\nOnce you've submitted your contribution, the Next.js or Developer Experience teams will review your changes, provide feedback, and merge the pull request when it's ready.\n\nPlease let us know if you have any questions or need further assistance in your PR's comments. Thank you for contributing to the Next.js docs and being a part of our community!\n\n> **Tip:** Run `pnpm prettier-fix` to run Prettier before submitting your PR.\n\n## File Structure\n\nThe docs use **file-system routing**. Each folder and files inside [`/docs`](https://github.com/vercel/next.js/tree/canary/docs) represent a route segment. These segments are used to generate the URL paths, navigation, and breadcrumbs.\n\nThe file structure reflects the navigation that you see on the site, and by default, navigation items are sorted alphabetically. However, we can change the order of the items by prepending a two-digit number (`00-`) to the folder or file name.\n\nFor example, in the [functions API Reference](/docs/app/api-reference/functions), the pages are sorted alphabetically because it makes it easier for developers to find a specific function:\n\n```txt\n04-functions\n├── after.mdx\n├── cacheLife.mdx\n├── cacheTag.mdx\n└── ...\n```\n\nBut, in the [routing section](/docs/app/building-your-application/routing), the files are prefixed with a two-digit number, sorted in the order developers should learn these concepts:\n\n```txt\n01-routing\n├── 01-defining-routes.mdx\n├── 02-pages.mdx\n├── 03-layouts-and-templates.mdx\n└── ...\n```\n\nTo quickly find a page, you can use `⌘ + P` (Mac) or `Ctrl + P` (Windows) to open the search bar on VSCode. Then, type the slug of the page you're looking for. E.g. `defining-routes`\n\n> **Why not use a manifest?**\n>\n> We considered using a manifest file (another popular way to generate the docs navigation), but we found that a manifest would quickly get out of sync with the files. File-system routing forces us to think about the structure of the docs and feels more native to Next.js.\n\n## Metadata\n\nEach page has a metadata block at the top of the file separated by three dashes.\n\n### Required Fields\n\nThe following fields are **required**:\n\n| Field         | Description                                                                  |\n| ------------- | ---------------------------------------------------------------------------- |\n| `title`       | The page's `<h1>` title, used for SEO and OG Images.                         |\n| `description` | The page's description, used in the `<meta name=\"description\">` tag for SEO. |\n\n```yaml filename=\"required-fields.mdx\"\n---\ntitle: Page Title\ndescription: Page Description\n---\n```\n\nIt's good practice to limit the page title to 2-3 words (e.g. Optimizing Images) and the description to 1-2 sentences (e.g. Learn how to optimize images in Next.js).\n\n### Optional Fields\n\nThe following fields are **optional**:\n\n| Field       | Description                                                                                                                                        |\n| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `nav_title` | Overrides the page's title in the navigation. This is useful when the page's title is too long to fit. If not provided, the `title` field is used. |\n| `source`    | Pulls content into a shared page. See [Shared Pages](#shared-pages).                                                                               |\n| `related`   | A list of related pages at the bottom of the document. These will automatically be turned into cards. See [Related Links](#related-links).         |\n| `version`   | A stage of development. e.g. `experimental`,`legacy`,`unstable`,`RC`                                                                               |\n\n```yaml filename=\"optional-fields.mdx\"\n---\nnav_title: Nav Item Title\nsource: app/building-your-application/optimizing/images\nrelated:\n  description: See the image component API reference.\n  links:\n    - app/api-reference/components/image\nversion: experimental\n---\n```\n\n## `App` and `Pages` Docs\n\nSince most of the features in the **App Router** and **Pages Router** are completely different, their docs for each are kept in separate sections (`02-app` and `03-pages`). However, there are a few features that are shared between them.\n\n### Shared Pages\n\nTo avoid content duplication and risk the content becoming out of sync, we use the `source` field to pull content from one page into another. For example, the `<Link>{:jsx}` component behaves _mostly_ the same in **App** and **Pages**. Instead of duplicating the content, we can pull the content from `app/.../link.mdx` into `pages/.../link.mdx`:\n\n```mdx filename=\"app/.../link.mdx\" title=\"app/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\n---\n\nThis API reference will help you understand how to use the props\nand configuration options available for the Link Component.\n```\n\n```mdx filename=\"pages/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\nsource: app/api-reference/components/link\n---\n\n{/* DO NOT EDIT THIS PAGE. */}\n{/* The content of this page is pulled from the source above. */}\n```\n\nWe can therefore edit the content in one place and have it reflected in both sections.\n\n### Shared Content\n\nIn shared pages, sometimes there might be content that is **App Router** or **Pages Router** specific. For example, the `<Link>{:jsx}` component has a `shallow` prop that is only available in **Pages** but not in **App**.\n\nTo make sure the content only shows in the correct router, we can wrap content blocks in an `<AppOnly>` or `<PagesOnly>` components:\n\n```mdx filename=\"app/.../link.mdx\"\nThis content is shared between App and Pages.\n\n<PagesOnly>\n\nThis content will only be shown on the Pages docs.\n\n</PagesOnly>\n\nThis content is shared between App and Pages.\n```\n\nYou'll likely use these components for examples and code blocks.\n\n## Code Blocks\n\nCode blocks should contain a minimum working example that can be copied and pasted. This means that the code should be able to run without any additional configuration.\n\nFor example, if you're showing how to use the `<Link>` component, you should include the `import` statement and the `<Link>` component itself.\n\n```tsx filename=\"app/page.tsx\"\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\nAlways run examples locally before committing them. This will ensure that the code is up-to-date and working.\n\n### Language and Filename\n\nCode blocks should have a header that includes the language and the `filename`. Add a `filename` prop to render a special Terminal icon that helps orientate users where to input the command. For example:\n\n````mdx filename=\"code-example.mdx\"\n```bash filename=\"Terminal\"\nnpx create-next-app\n```\n````\n\nMost examples in the docs are written in `tsx` and `jsx`, and a few in `bash`. However, you can use any supported language, here's the [full list](https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages).\n\nWhen writing JavaScript code blocks, we use the following language and extension combinations.\n\n|                                | Language | Extension |\n| ------------------------------ | -------- | --------- |\n| JavaScript files with JSX code | ```jsx   | .js       |\n| JavaScript files without JSX   | ```js    | .js       |\n| TypeScript files with JSX      | ```tsx   | .tsx      |\n| TypeScript files without JSX   | ```ts    | .ts       |\n\n> **Good to know**:\n>\n> - Make sure to use **`js`** extension with **JSX** code at JavaScript files.\n> - For example, ```jsx filename=\"app/layout.js\"\n\n### TS and JS Switcher\n\nAdd a language switcher to toggle between TypeScript and JavaScript. Code blocks should be TypeScript first with a JavaScript version to accommodate users.\n\nCurrently, we write TS and JS examples one after the other, and link them with `switcher` prop:\n\n````mdx filename=\"code-example.mdx\"\n```tsx filename=\"app/page.tsx\" switcher\n\n```\n\n```jsx filename=\"app/page.js\" switcher\n\n```\n````\n\n> **Good to know**: We plan to automatically compile TypeScript snippets to JavaScript in the future. In the meantime, you can use [transform.tools](https://transform.tools/typescript-to-javascript).\n\n### Line Highlighting\n\nCode lines can be highlighted. This is useful when you want to draw attention to a specific part of the code. You can highlight lines by passing a number to the `highlight` prop.\n\n**Single Line:** `highlight={1}`\n\n```tsx filename=\"app/page.tsx\" {1}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Multiple Lines:** `highlight={1,3}`\n\n```tsx filename=\"app/page.tsx\" highlight={1,3}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Range of Lines:** `highlight={1-5}`\n\n```tsx filename=\"app/page.tsx\" highlight={1-5}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n## Icons\n\nThe following icons are available for use in the docs:\n\n```mdx filename=\"mdx-icon.mdx\"\n<Check size={18} />\n<Cross size={18} />\n```\n\n**Output:**\n\n<Check size={18} />\n<Cross size={18} />\n\nWe do not use emojis in the docs.\n\n## Notes\n\nFor information that is important but not critical, use notes. Notes are a good way to add information without distracting the user from the main content.\n\n```mdx filename=\"notes.mdx\"\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n```\n\n**Output:**\n\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n\n## Related Links\n\nRelated Links guide the user's learning journey by adding links to logical next steps.\n\n- Links will be displayed in cards under the main content of the page.\n- Links will be automatically generated for pages that have child pages. For example, the [Optimizing](/docs/app/building-your-application/optimizing) section has links to all of its child pages.\n\nCreate related links using the `related` field in the page's metadata.\n\n```yaml filename=\"example.mdx\"\n---\nrelated:\n  description: Learn how to quickly get started with your first application.\n  links:\n    - app/building-your-application/routing/defining-routes\n    - app/building-your-application/data-fetching\n    - app/api-reference/file-conventions/page\n---\n```\n\n### Nested Fields\n\n| Field         | Required? | Description                                                                                                                                               |\n| ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `title`       | Optional  | The title of the card list. Defaults to **Next Steps**.                                                                                                   |\n| `description` | Optional  | The description of the card list.                                                                                                                         |\n| `links`       | Required  | A list of links to other doc pages. Each list item should be a relative URL path (without a leading slash) e.g. `app/api-reference/file-conventions/page` |\n\n## Diagrams\n\nDiagrams are a great way to explain complex concepts. We use [Figma](https://www.figma.com/) to create diagrams, following Vercel's design guide.\n\nThe diagrams currently live in the `/public` folder in our private Next.js site. If you'd like to update or add a diagram, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new?assignees=&labels=template%3A+documentation&projects=&template=4.docs_request.yml&title=Docs%3A+) with your ideas.\n\n## Custom Components and HTML\n\nThese are the React Components available for the docs: `<Image />` (next/image), `<PagesOnly />`, `<AppOnly />`, `<Cross />`, and `<Check />`. We do not allow raw HTML in the docs besides the `<details>` tag.\n\nIf you have ideas for new components, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new/choose).\n\n## Style Guide\n\nThis section contains guidelines for writing docs for those who are new to technical writing.\n\n### Page Templates\n\nWhile we don't have a strict template for pages, there are page sections you'll see repeated across the docs:\n\n- **Overview:** The first paragraph of a page should tell the user what the feature is and what it's used for. Followed by a minimum working example or its API reference.\n- **Convention:** If the feature has a convention, it should be explained here.\n- **Examples**: Show how the feature can be used with different use cases.\n- **API Tables**: API Pages should have an overview table at the of the page with jump-to-section links (when possible).\n- **Next Steps (Related Links)**: Add links to related pages to guide the user's learning journey.\n\nFeel free to add these sections as needed.\n\n### Page Types\n\nDocs pages are also split into two categories: Conceptual and Reference.\n\n- **Conceptual** pages are used to explain a concept or feature. They are usually longer and contain more information than reference pages. In the Next.js docs, conceptual pages are found in the **Building Your Application** section.\n- **Reference** pages are used to explain a specific API. They are usually shorter and more focused. In the Next.js docs, reference pages are found in the **API Reference** section.\n\n> **Good to know**: Depending on the page you're contributing to, you may need to follow a different voice and style. For example, conceptual pages are more instructional and use the word _you_ to address the user. Reference pages are more technical, they use more imperative words like \"create, update, accept\" and tend to omit the word _you_.\n\n### Voice\n\nHere are some guidelines to maintain a consistent style and voice across the docs:\n\n- Write clear, concise sentences. Avoid tangents.\n  - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.\n  - Swap out complex words for simpler ones. For example, _use_ instead of _utilize_.\n- Be mindful with the word _this_. It can be ambiguous and confusing, don't be afraid to repeat the subject of the sentence if unclear.\n  - For example, _Next.js uses React_ instead of _Next.js uses this_.\n- Use an active voice instead of passive. An active sentence is easier to read.\n  - For example, _Next.js uses React_ instead of _React is used by Next.js_. If you find yourself using words like _was_ and _by_ you may be using a passive voice.\n- Avoid using words like _easy_, _quick_, _simple_, _just_, etc. This is subjective and can be discouraging to users.\n- Avoid negative words like _don't_, _can't_, _won't_, etc. This can be discouraging to readers.\n  - For example, _\"You can use the `Link` component to create links between pages\"_ instead of _\"Don't use the `<a>` tag to create links between pages\"_.\n- Write in second person (you/your). This is more personal and engaging.\n- Use gender-neutral language. Use _developers_, _users_, or _readers_, when referring to the audience.\n- If adding code examples, ensure they are properly formatted and working.\n\nWhile these guidelines are not exhaustive, they should help you get started. If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).\n\n---\n\nThank you for contributing to the docs and being part of the Next.js community!\n\n{/* To do: Latest Contributors Component */}",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "为什么要贡献？",
+        "slug": "为什么要贡献？"
+      },
+      {
+        "depth": 2,
+        "value": "如何贡献",
+        "slug": "如何贡献"
+      },
+      {
+        "depth": 3,
+        "value": "GitHub Workflow",
+        "slug": "github-workflow"
+      },
+      {
+        "depth": 3,
+        "value": "Writing MDX",
+        "slug": "writing-mdx"
+      },
+      {
+        "depth": 3,
+        "value": "VSCode",
+        "slug": "vscode"
+      },
+      {
+        "depth": 4,
+        "value": "Previewing Changes Locally",
+        "slug": "previewing-changes-locally"
+      },
+      {
+        "depth": 4,
+        "value": "Extensions",
+        "slug": "extensions"
+      },
+      {
+        "depth": 3,
+        "value": "Review Process",
+        "slug": "review-process"
+      },
+      {
+        "depth": 2,
+        "value": "File Structure",
+        "slug": "file-structure"
+      },
+      {
+        "depth": 2,
+        "value": "Metadata",
+        "slug": "metadata"
+      },
+      {
+        "depth": 3,
+        "value": "Required Fields",
+        "slug": "required-fields"
+      },
+      {
+        "depth": 3,
+        "value": "Optional Fields",
+        "slug": "optional-fields"
+      },
+      {
+        "depth": 2,
+        "value": "App and Pages Docs",
+        "slug": "app-and-pages-docs"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Pages",
+        "slug": "shared-pages"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Content",
+        "slug": "shared-content"
+      },
+      {
+        "depth": 2,
+        "value": "Code Blocks",
+        "slug": "code-blocks"
+      },
+      {
+        "depth": 3,
+        "value": "Language and Filename",
+        "slug": "language-and-filename"
+      },
+      {
+        "depth": 3,
+        "value": "TS and JS Switcher",
+        "slug": "ts-and-js-switcher"
+      },
+      {
+        "depth": 3,
+        "value": "Line Highlighting",
+        "slug": "line-highlighting"
+      },
+      {
+        "depth": 2,
+        "value": "Icons",
+        "slug": "icons"
+      },
+      {
+        "depth": 2,
+        "value": "Notes",
+        "slug": "notes"
+      },
+      {
+        "depth": 2,
+        "value": "Related Links",
+        "slug": "related-links"
+      },
+      {
+        "depth": 3,
+        "value": "Nested Fields",
+        "slug": "nested-fields"
+      },
+      {
+        "depth": 2,
+        "value": "Diagrams",
+        "slug": "diagrams"
+      },
+      {
+        "depth": 2,
+        "value": "Custom Components and HTML",
+        "slug": "custom-components-and-html"
+      },
+      {
+        "depth": 2,
+        "value": "Style Guide",
+        "slug": "style-guide"
+      },
+      {
+        "depth": 3,
+        "value": "Page Templates",
+        "slug": "page-templates"
+      },
+      {
+        "depth": 3,
+        "value": "Page Types",
+        "slug": "page-types"
+      },
+      {
+        "depth": 3,
+        "value": "Voice",
+        "slug": "voice"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/color",
+    "slug": "dev/md/css/color",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "color"
+    ],
+    "filePath": "docs/zh/dev/md/css/color.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# Color\n\n$$\ny=\\sin(x)\n$$\n\n## format\n\n### rgb\n\n```css\n.dc {\n  color: rgb(88, 101, 242);\n}\n```\n\n### HSL\n\n`HSL` 是一种表示颜色的格式，全称为 **Hue（色相）、Saturation（饱和度）、Lightness（亮度）**。它是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 和其他设计工具中，用于定义颜色。\n\n### HSL 的结构\n\nHSL 的格式如下：\n\n```css\nhsl(hue, saturation, lightness)\n```\n\n- **`hue`（色相）**：\n  - 表示颜色的基本类型，例如红色、绿色、蓝色等。\n  - 取值范围为 `0` 到 `360`，表示色轮上的角度：\n    - `0`：红色\n    - `120`：绿色\n    - `240`：蓝色\n    - 其他值是这些颜色之间的过渡，例如 `60` 是黄色，`180` 是青色。\n    \n- **`saturation`（饱和度）**：\n  - 表示颜色的强度或纯度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全无色（灰色）。\n    - `100%`：完全饱和（最纯的颜色）。\n\n- **`lightness`（亮度）**：\n  - 表示颜色的明暗程度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全黑色。\n    - `100%`：完全白色。\n    - `50%`：标准亮度。\n\n### 示例\n\n#### 基本颜色\n\n```css\n/* 红色 */\nhsl(0, 100%, 50%)\n\n/* 绿色 */\nhsl(120, 100%, 50%)\n\n/* 蓝色 */\nhsl(240, 100%, 50%)\n```\n\n#### 调整饱和度\n\n```css\n/* 低饱和度的红色（接近灰色） */\nhsl(0, 20%, 50%)\n\n/* 高饱和度的红色 */\nhsl(0, 100%, 50%)\n```\n\n#### 调整亮度\n\n```css\n/* 暗红色 */\nhsl(0, 100%, 20%)\n\n/* 明亮的红色 */\nhsl(0, 100%, 80%)\n```\n\n### HSLA 格式\n\n`HSLA` 是 HSL 的扩展，支持透明度（Alpha 通道）。格式如下：\n\n```css\nhsla(hue, saturation, lightness, alpha)\n```\n\n- **`alpha`（透明度）**：\n  - 表示颜色的透明度。\n  - 取值范围为 `0`（完全透明）到 `1`（完全不透明）。\n\n#### 示例\n\n```css\n/* 半透明的红色 */\nhsla(0, 100%, 50%, 0.5)\n\n/* 半透明的蓝色 */\nhsla(240, 100%, 50%, 0.3)\n```\n\n### HSL 的优点\n\n1. **直观**：相比于 RGB，HSL 更加直观，特别是在调整颜色的亮度和饱和度时。\n2. **易于调整**：可以轻松调整颜色的亮度和饱和度，而不需要重新计算 RGB 值。\n3. **设计友好**：HSL 更接近设计师的思维方式，因为它基于色相、饱和度和亮度。\n\n### 总结\n\nHSL 是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 中定义颜色。它的格式为 `hsl(hue, saturation, lightness)`，其中 `hue` 表示颜色的类型，`saturation` 表示颜色的纯度，`lightness` 表示颜色的明暗程度。扩展格式 `hsla` 还支持透明度。HSL 的直观性和易用性使其在设计和开发中非常流行。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "Color",
+        "slug": "color"
+      },
+      {
+        "depth": 2,
+        "value": "format",
+        "slug": "format"
+      },
+      {
+        "depth": 3,
+        "value": "rgb",
+        "slug": "rgb"
+      },
+      {
+        "depth": 3,
+        "value": "HSL",
+        "slug": "hsl"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的结构",
+        "slug": "hsl-的结构"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "基本颜色",
+        "slug": "基本颜色"
+      },
+      {
+        "depth": 4,
+        "value": "调整饱和度",
+        "slug": "调整饱和度"
+      },
+      {
+        "depth": 4,
+        "value": "调整亮度",
+        "slug": "调整亮度"
+      },
+      {
+        "depth": 3,
+        "value": "HSLA 格式",
+        "slug": "hsla-格式"
+      },
+      {
+        "depth": 4,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的优点",
+        "slug": "hsl-的优点"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/lanqiao/easy",
+    "slug": "alg/lanqiao/easy",
+    "segments": [
+      "alg",
+      "lanqiao",
+      "easy"
+    ],
+    "filePath": "docs/zh/alg/lanqiao/easy/index.mdx",
+    "meta": {
+      "title": "蓝桥简单题",
+      "description": null,
+      "created_at": "2025-03-22T06:38:45.000Z",
+      "updated_at": "2025-03-22T06:38:45.000Z",
+      "tags": [
+        "alg",
+        "lanqiao"
+      ]
+    },
+    "order": 99,
+    "content": "\n",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/app/building-your-application/optimizing/package-bundling",
+    "slug": "next/app/building-your-application/optimizing/package-bundling",
+    "segments": [
+      "next",
+      "app",
+      "building-your-application",
+      "optimizing",
+      "package-bundling"
+    ],
+    "filePath": "docs/zh/next/01-app/03-building-your-application/06-optimizing/06-package-bundling.mdx",
+    "meta": {
+      "title": "Optimizing Package Bundling",
+      "nav_title": "Package Bundling",
+      "description": "Learn how to optimize your application's server and client bundles.",
+      "related": {
+        "description": "Learn more about optimizing your application for production.",
+        "links": [
+          "app/building-your-application/deploying/production-checklist"
+        ]
+      }
+    },
+    "order": 6,
+    "content": "\nBundling external packages can significantly improve the performance of your application. <AppOnly>By default, packages imported inside Server Components and Route Handlers are automatically bundled by Next.js. This page will guide you through how to analyze and further optimize package bundling.</AppOnly> <PagesOnly>By default, packages imported into your application are not bundled. This can impact performance or might not work if external packages are not pre-bundled, for example, if imported from a monorepo or `node_modules`. This page will guide you through how to analyze and configure package bundling.</PagesOnly>\n\n> 捆绑外部包可以显著提高应用程序的性能。<AppOnly>默认情况下，在服务器组件和路由处理程序中导入的包会自动由 Next.js 进行捆绑。本页面将指导您如何分析和进一步优化包的捆绑。</AppOnly> <PagesOnly>默认情况下，导入到应用程序中的包不会被捆绑。这可能会影响性能，或者如果外部包没有预先捆绑（例如，从 monorepo 或 node_modules 导入），可能无法正常工作。本页面将指导您如何分析和配置包的捆绑。</PagesOnly>\n\n## Analyzing JavaScript bundles\n\n[`@next/bundle-analyzer`](https://www.npmjs.com/package/@next/bundle-analyzer) is a plugin for Next.js that helps you manage the size of your application bundles. It generates a visual report of the size of each package and their dependencies. You can use the information to remove large dependencies, split, or [lazy-load](/docs/app/building-your-application/optimizing/lazy-loading) your code.\n\n### Installation\n\nInstall the plugin by running the following command:\n\n```bash\nnpm i @next/bundle-analyzer\n# or\nyarn add @next/bundle-analyzer\n# or\npnpm add @next/bundle-analyzer\n```\n\nThen, add the bundle analyzer's settings to your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {}\n\nconst withBundleAnalyzer = require('@next/bundle-analyzer')({\n  enabled: process.env.ANALYZE === 'true',\n})\n\nmodule.exports = withBundleAnalyzer(nextConfig)\n```\n\n### Generating a report\n\nRun the following command to analyze your bundles:\n\n```bash\nANALYZE=true npm run build\n# or\nANALYZE=true yarn build\n# or\nANALYZE=true pnpm build\n```\n\nThe report will open three new tabs in your browser, which you can inspect. Periodically evaluating your application's bundles can help you maintain application performance over time.\n\n## Optimizing package imports\n\nSome packages, such as icon libraries, can export hundreds of modules, which can cause performance issues in development and production.\n\nYou can optimize how these packages are imported by adding the [`optimizePackageImports`](/docs/app/api-reference/config/next-config-js/optimizePackageImports) option to your `next.config.js`. This option will only load the modules you _actually_ use, while still giving you the convenience of writing import statements with many named exports.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  experimental: {\n    optimizePackageImports: ['icon-library'],\n  },\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js also optimizes some libraries automatically, thus they do not need to be included in the optimizePackageImports list. See the [full list](https://nextjs.org/docs/app/api-reference/config/next-config-js/optimizePackageImports).\n\n<PagesOnly>\n\n## Bundling specific packages\n\nTo bundle specific packages, you can use the [`transpilePackages`](/docs/app/api-reference/config/next-config-js/transpilePackages) option in your `next.config.js`. This option is useful for bundling external packages that are not pre-bundled, for example, in a monorepo or imported from `node_modules`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  transpilePackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n## Bundling all packages\n\nTo automatically bundle all packages (default behavior in the App Router), you can use the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  bundlePagesRouterDependencies: true,\n}\n\nmodule.exports = nextConfig\n```\n\n## Opting specific packages out of bundling\n\nIf you have the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option enabled, you can opt specific packages out of automatic bundling using the [`serverExternalPackages`](/docs/pages/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`:\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  // Automatically bundle external packages in the Pages Router:\n  bundlePagesRouterDependencies: true,\n  // Opt specific packages out of bundling for both App and Pages Router:\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n</PagesOnly>\n\n<AppOnly>\n\n## Opting specific packages out of bundling\n\nSince packages imported inside Server Components and Route Handlers are automatically bundled by Next.js, you can opt specific packages out of bundling using the [`serverExternalPackages`](/docs/app/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js includes a list of popular packages that currently are working on compatibility and automatically opt-ed out. See the [full list](/docs/app/api-reference/config/next-config-js/serverExternalPackages).\n\n</AppOnly>",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Analyzing JavaScript bundles",
+        "slug": "analyzing-javascript-bundles"
+      },
+      {
+        "depth": 3,
+        "value": "Installation",
+        "slug": "installation"
+      },
+      {
+        "depth": 3,
+        "value": "Generating a report",
+        "slug": "generating-a-report"
+      },
+      {
+        "depth": 2,
+        "value": "Optimizing package imports",
+        "slug": "optimizing-package-imports"
+      },
+      {
+        "depth": 2,
+        "value": "Bundling specific packages",
+        "slug": "bundling-specific-packages"
+      },
+      {
+        "depth": 2,
+        "value": "Bundling all packages",
+        "slug": "bundling-all-packages"
+      },
+      {
+        "depth": 2,
+        "value": "Opting specific packages out of bundling",
+        "slug": "opting-specific-packages-out-of-bundling"
+      },
+      {
+        "depth": 2,
+        "value": "Opting specific packages out of bundling",
+        "slug": "opting-specific-packages-out-of-bundling"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/app/api-reference/config/next-config-js/turbo",
+    "slug": "next/app/api-reference/config/next-config-js/turbo",
+    "segments": [
+      "next",
+      "app",
+      "api-reference",
+      "config",
+      "next-config-js",
+      "turbo"
+    ],
+    "filePath": "docs/zh/next/01-app/04-api-reference/05-config/01-next-config-js/turbo.mdx",
+    "meta": {
+      "title": "turbo",
+      "description": "Configure Next.js with Turbopack-specific options",
+      "version": "experimental"
+    },
+    "order": 99,
+    "content": "\n{/* The content of this doc is shared between the app and pages router. You can use the `<PagesOnly>Content</PagesOnly>` component to add content that is specific to the Pages Router. Any shared content should not be wrapped in a component. */}\n\nThe `turbo` option lets you customize [Turbopack](/docs/app/api-reference/turbopack) to transform different files and change how modules are resolved.\n\n```ts filename=\"next.config.ts\" switcher\nimport type { NextConfig } from 'next'\n\nconst nextConfig: NextConfig = {\n  experimental: {\n    turbo: {\n      // ...\n    },\n  },\n}\n\nexport default nextConfig\n```\n\n```js filename=\"next.config.js\" switcher\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  experimental: {\n    turbo: {\n      // ...\n    },\n  },\n}\n\nmodule.exports = nextConfig\n```\n\n> **Good to know**:\n>\n> - Turbopack for Next.js does not require loaders nor loader configuration for built-in functionality. Turbopack has built-in support for CSS and compiling modern JavaScript, so there's no need for `css-loader`, `postcss-loader`, or `babel-loader` if you're using `@babel/preset-env`.\n\n## Reference\n\n### Options\n\nThe following options are available for the `turbo` configuration:\n\n| Option              | Description                                                             |\n| ------------------- | ----------------------------------------------------------------------- |\n| `rules`             | List of supported webpack loaders to apply when running with Turbopack. |\n| `resolveAlias`      | Map aliased imports to modules to load in their place.                  |\n| `resolveExtensions` | List of extensions to resolve when importing files.                     |\n| `moduleIdStrategy`  | Assign module IDs                                                       |\n| `treeShaking`       | Enable tree shaking for the turbopack dev server and build.             |\n| `memoryLimit`       | A target memory limit for turbo, in bytes.                              |\n\n### Supported loaders\n\nThe following loaders have been tested to work with Turbopack's webpack loader implementation:\n\n- [`babel-loader`](https://www.npmjs.com/package/babel-loader)\n- [`@svgr/webpack`](https://www.npmjs.com/package/@svgr/webpack)\n- [`svg-inline-loader`](https://www.npmjs.com/package/svg-inline-loader)\n- [`yaml-loader`](https://www.npmjs.com/package/yaml-loader)\n- [`string-replace-loader`](https://www.npmjs.com/package/string-replace-loader)\n- [`raw-loader`](https://www.npmjs.com/package/raw-loader)\n- [`sass-loader`](https://www.npmjs.com/package/sass-loader)\n\n## Examples\n\n### Configuring webpack loaders\n\nIf you need loader support beyond what's built in, many webpack loaders already work with Turbopack. There are currently some limitations:\n\n- Only a core subset of the webpack loader API is implemented. Currently, there is enough coverage for some popular loaders, and we'll expand our API support in the future.\n- Only loaders that return JavaScript code are supported. Loaders that transform files like stylesheets or images are not currently supported.\n- Options passed to webpack loaders must be plain JavaScript primitives, objects, and arrays. For example, it's not possible to pass `require()` plugin modules as option values.\n\nTo configure loaders, add the names of the loaders you've installed and any options in `next.config.js`, mapping file extensions to a list of loaders:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      rules: {\n        '*.svg': {\n          loaders: ['@svgr/webpack'],\n          as: '*.js',\n        },\n      },\n    },\n  },\n}\n```\n\n> **Good to know**: Prior to Next.js version 13.4.4, `turbo.rules` was named `turbo.loaders` and only accepted file extensions like `.mdx` instead of `*.mdx`.\n\n### Resolving aliases\n\nTurbopack can be configured to modify module resolution through aliases, similar to webpack's [`resolve.alias`](https://webpack.js.org/configuration/resolve/#resolvealias) configuration.\n\nTo configure resolve aliases, map imported patterns to their new destination in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      resolveAlias: {\n        underscore: 'lodash',\n        mocha: { browser: 'mocha/browser-entry.js' },\n      },\n    },\n  },\n}\n```\n\nThis aliases imports of the `underscore` package to the `lodash` package. In other words, `import underscore from 'underscore'` will load the `lodash` module instead of `underscore`.\n\nTurbopack also supports conditional aliasing through this field, similar to Node.js' [conditional exports](https://nodejs.org/docs/latest-v18.x/api/packages.html#conditional-exports). At the moment only the `browser` condition is supported. In the case above, imports of the `mocha` module will be aliased to `mocha/browser-entry.js` when Turbopack targets browser environments.\n\n### Resolving custom extensions\n\nTurbopack can be configured to resolve modules with custom extensions, similar to webpack's [`resolve.extensions`](https://webpack.js.org/configuration/resolve/#resolveextensions) configuration.\n\nTo configure resolve extensions, use the `resolveExtensions` field in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      resolveExtensions: [\n        '.mdx',\n        '.tsx',\n        '.ts',\n        '.jsx',\n        '.js',\n        '.mjs',\n        '.json',\n      ],\n    },\n  },\n}\n```\n\nThis overwrites the original resolve extensions with the provided list. Make sure to include the default extensions.\n\nFor more information and guidance for how to migrate your app to Turbopack from webpack, see [Turbopack's documentation on webpack compatibility](https://turbo.build/pack/docs/migrating-from-webpack).\n\n### Assigning module IDs\n\nTurbopack currently supports two strategies for assigning module IDs:\n\n- `'named'` assigns readable module IDs based on the module's path and functionality.\n- `'deterministic'` assigns small hashed numeric module IDs, which are mostly consistent between builds and therefore help with long-term caching.\n\nIf not set, Turbopack will use `'named'` for development builds and `'deterministic'` for production builds.\n\nTo configure the module IDs strategy, use the `moduleIdStrategy` field in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      moduleIdStrategy: 'deterministic',\n    },\n  },\n}\n```\n\n## Version History\n\n| Version  | Changes                          |\n| -------- | -------------------------------- |\n| `13.0.0` | `experimental.turbo` introduced. |",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Reference",
+        "slug": "reference"
+      },
+      {
+        "depth": 3,
+        "value": "Options",
+        "slug": "options"
+      },
+      {
+        "depth": 3,
+        "value": "Supported loaders",
+        "slug": "supported-loaders"
+      },
+      {
+        "depth": 2,
+        "value": "Examples",
+        "slug": "examples"
+      },
+      {
+        "depth": 3,
+        "value": "Configuring webpack loaders",
+        "slug": "configuring-webpack-loaders"
+      },
+      {
+        "depth": 3,
+        "value": "Resolving aliases",
+        "slug": "resolving-aliases"
+      },
+      {
+        "depth": 3,
+        "value": "Resolving custom extensions",
+        "slug": "resolving-custom-extensions"
+      },
+      {
+        "depth": 3,
+        "value": "Assigning module IDs",
+        "slug": "assigning-module-ids"
+      },
+      {
+        "depth": 2,
+        "value": "Version History",
+        "slug": "version-history"
+      }
+    ]
+  }
+]

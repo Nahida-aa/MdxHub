@@ -3,13 +3,17 @@ import createMDX, { NextMDXOptions } from '@next/mdx'
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeMathjax from 'rehype-mathjax'
+
 const rehypePrettyCode_options = {
   // keepBackground: false, // 是否继承背景色
   defaultLang: "plaintext",
   // theme: moonlightTheme,
   
   tokensMap: {
+    var: "variable",
+    str: "string",
     fn: "entity.name.function",
+    cls: "entity.name.class",
   },
 };
 
@@ -135,12 +139,14 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
+  extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
       // [remarkGfm, {}],
       ['remark-gfm'],
-      ['remark-frontmatter', {type: 'yaml', marker: '-'}],
-      ['remark-mdx-frontmatter'],
+      ['@vcarl/remark-headings'],
+      ['remark-frontmatter', {type: 'yaml', marker: '-'}], // 解析 frontmatter 到 语法树
+      ['remark-mdx-frontmatter'], // 导出 frontmatter
       // [remarkMath,{}],
       ['remark-math', {}]
     ],

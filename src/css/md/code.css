@@ -15,18 +15,35 @@
     @apply border-l-blue-400;
 }
 
-.prose pre span[data-highlighted-line-id="g"] {
-  @apply bg-green-400/20 border-l-green-400;
-}
-.prose pre span[data-highlighted-line-id="r"] {
-  @apply bg-red-400/20 border-l-red-400;
-}
 
-p code[data-theme],
+
+span code[data-theme],
 .prose [data-highlighted-chars] {
     @apply !bg-zinc-600/50 rounded;
     box-shadow: 0 0 0 2px rgb(82 82 91 / 0.5);
   }
+
+.prose pre mark[data-chars-id="g"],
+.prose pre span[data-highlighted-line-id="g"] {
+  @apply bg-green-400/20 border-l-green-400;
+}
+.prose pre mark[data-chars-id="r"],
+.prose pre span[data-highlighted-line-id="r"] {
+  @apply bg-red-400/20 border-l-red-400;
+}
+.prose pre mark[data-chars-id="y"],
+.prose pre span[data-highlighted-line-id="y"] {
+  @apply bg-yellow-400/20 border-l-yellow-400;
+}
+
+.prose pre span[data-highlighted-line-id="b"] {
+  @apply bg-blue-400/20 border-l-blue-400;
+}
+
+.prose pre mark[data-chars-id="b"]{
+  @apply !bg-blue-400/20;
+  box-shadow: 0 0 0 2px var(--color-blue-400)/20;
+}
 
 code[data-line-numbers] {
     counter-reset: line;

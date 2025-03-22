@@ -1,0 +1,45 @@
+[
+  {
+    "segment": "dev",
+    "title": "dev",
+    "order": 99,
+    "children": [
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/en/docs/dev/todo",
+        "type": "file"
+      }
+    ],
+    "url": "/en/docs/dev",
+    "type": "dir"
+  },
+  {
+    "segment": "next",
+    "title": "next",
+    "order": 99,
+    "children": [
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "Contribution Guide",
+            "order": 1,
+            "children": [],
+            "url": "/en/docs/next/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/en/docs/next/community",
+        "type": "dir"
+      }
+    ],
+    "url": "/en/docs/next",
+    "type": "dir"
+  }
+]

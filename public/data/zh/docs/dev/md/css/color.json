@@ -1,0 +1,83 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/css/color",
+  "slug": "dev/md/css/color",
+  "segments": [
+    "dev",
+    "md",
+    "css",
+    "color"
+  ],
+  "filePath": "docs/zh/dev/md/css/color.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# Color\n\n$$\ny=\\sin(x)\n$$\n\n## format\n\n### rgb\n\n```css\n.dc {\n  color: rgb(88, 101, 242);\n}\n```\n\n### HSL\n\n`HSL` 是一种表示颜色的格式，全称为 **Hue（色相）、Saturation（饱和度）、Lightness（亮度）**。它是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 和其他设计工具中，用于定义颜色。\n\n### HSL 的结构\n\nHSL 的格式如下：\n\n```css\nhsl(hue, saturation, lightness)\n```\n\n- **`hue`（色相）**：\n  - 表示颜色的基本类型，例如红色、绿色、蓝色等。\n  - 取值范围为 `0` 到 `360`，表示色轮上的角度：\n    - `0`：红色\n    - `120`：绿色\n    - `240`：蓝色\n    - 其他值是这些颜色之间的过渡，例如 `60` 是黄色，`180` 是青色。\n    \n- **`saturation`（饱和度）**：\n  - 表示颜色的强度或纯度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全无色（灰色）。\n    - `100%`：完全饱和（最纯的颜色）。\n\n- **`lightness`（亮度）**：\n  - 表示颜色的明暗程度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全黑色。\n    - `100%`：完全白色。\n    - `50%`：标准亮度。\n\n### 示例\n\n#### 基本颜色\n\n```css\n/* 红色 */\nhsl(0, 100%, 50%)\n\n/* 绿色 */\nhsl(120, 100%, 50%)\n\n/* 蓝色 */\nhsl(240, 100%, 50%)\n```\n\n#### 调整饱和度\n\n```css\n/* 低饱和度的红色（接近灰色） */\nhsl(0, 20%, 50%)\n\n/* 高饱和度的红色 */\nhsl(0, 100%, 50%)\n```\n\n#### 调整亮度\n\n```css\n/* 暗红色 */\nhsl(0, 100%, 20%)\n\n/* 明亮的红色 */\nhsl(0, 100%, 80%)\n```\n\n### HSLA 格式\n\n`HSLA` 是 HSL 的扩展，支持透明度（Alpha 通道）。格式如下：\n\n```css\nhsla(hue, saturation, lightness, alpha)\n```\n\n- **`alpha`（透明度）**：\n  - 表示颜色的透明度。\n  - 取值范围为 `0`（完全透明）到 `1`（完全不透明）。\n\n#### 示例\n\n```css\n/* 半透明的红色 */\nhsla(0, 100%, 50%, 0.5)\n\n/* 半透明的蓝色 */\nhsla(240, 100%, 50%, 0.3)\n```\n\n### HSL 的优点\n\n1. **直观**：相比于 RGB，HSL 更加直观，特别是在调整颜色的亮度和饱和度时。\n2. **易于调整**：可以轻松调整颜色的亮度和饱和度，而不需要重新计算 RGB 值。\n3. **设计友好**：HSL 更接近设计师的思维方式，因为它基于色相、饱和度和亮度。\n\n### 总结\n\nHSL 是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 中定义颜色。它的格式为 `hsl(hue, saturation, lightness)`，其中 `hue` 表示颜色的类型，`saturation` 表示颜色的纯度，`lightness` 表示颜色的明暗程度。扩展格式 `hsla` 还支持透明度。HSL 的直观性和易用性使其在设计和开发中非常流行。\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "Color",
+      "slug": "color"
+    },
+    {
+      "depth": 2,
+      "value": "format",
+      "slug": "format"
+    },
+    {
+      "depth": 3,
+      "value": "rgb",
+      "slug": "rgb"
+    },
+    {
+      "depth": 3,
+      "value": "HSL",
+      "slug": "hsl"
+    },
+    {
+      "depth": 3,
+      "value": "HSL 的结构",
+      "slug": "hsl-的结构"
+    },
+    {
+      "depth": 3,
+      "value": "示例",
+      "slug": "示例"
+    },
+    {
+      "depth": 4,
+      "value": "基本颜色",
+      "slug": "基本颜色"
+    },
+    {
+      "depth": 4,
+      "value": "调整饱和度",
+      "slug": "调整饱和度"
+    },
+    {
+      "depth": 4,
+      "value": "调整亮度",
+      "slug": "调整亮度"
+    },
+    {
+      "depth": 3,
+      "value": "HSLA 格式",
+      "slug": "hsla-格式"
+    },
+    {
+      "depth": 4,
+      "value": "示例",
+      "slug": "示例"
+    },
+    {
+      "depth": 3,
+      "value": "HSL 的优点",
+      "slug": "hsl-的优点"
+    },
+    {
+      "depth": 3,
+      "value": "总结",
+      "slug": "总结"
+    }
+  ]
+}

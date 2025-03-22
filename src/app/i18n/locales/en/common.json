@@ -1,4 +1,8 @@
 {
   "Docs": "Docs",
-  "Playground": "Playground"
+  "Playground": "Playground",
+    "sorryPageNotFound": "Sorry we couldn't find this page.",
+  "redirectToHomepage": "But don't worry, you can find plenty of other things on our homepage.",
+  "back-to-home": "Back to home",
+  "back-to-prev": "Back to previous page"
 }

@@ -25,6 +25,8 @@ import { SerializeOptions } from 'node_modules/next-mdx-remote/dist/types';
 import mdxErrorHandler from './plugins/error-handler';
 import rehypeCallouts from 'rehype-callouts'
 import remarkBreaks from 'remark-breaks'
+import remarkHeadings from '@vcarl/remark-headings';
+import { DocMeta } from './types';
 
 const rehypePrettyCode_options:RehypePrettyCode_options = {
   // keepBackground: false, // 是否继承背景色
@@ -32,7 +34,10 @@ const rehypePrettyCode_options:RehypePrettyCode_options = {
   // theme: moonlightTheme,
   
   tokensMap: {
+    var: "variable",
+    str: "string",
     fn: "entity.name.function",
+    cls: "entity.name.class",
   },
 };
 
@@ -51,14 +56,16 @@ export async function CustomMDX(props: MDXRemoteProps) {
         mdxErrorHandler,
         remarkGfm,
         remarkBreaks,// 处理换行符
+        // remarkHeadings, // 提前 标题, 但是 compileMDX 不支持 返回 别的 内容: ...rest 为空
         remarkMath, // 将 math 标记为 code and pre/code
         // remarkMark
+        
       ],
       rehypePlugins: [ // 处理 html 插件
         rehypeCallouts,
         [rehypePrettyCode, rehypePrettyCode_options],
         // rehypeAutolinkHeadings, // 不知道为什么不起作用, 然后自己实现
-        rehypeSlug, // 为标题添加 id
+        // rehypeSlug, // 为标题添加 id 貌似 不需要, 因为我自定义组件时实现了, 自定义组件保证 id 的正确性
         // rehypeKatex, // 需要 css
         rehypeMathjax, // 不需要 css
         // 下面的插件必须最后使用
@@ -83,17 +90,18 @@ export async function CustomMDX(props: MDXRemoteProps) {
     components
   }
 
-  // const { content, frontmatter } = await compileMDX<{ title: string }>(mdxRemoteProps)
+  const { content, frontmatter } = await compileMDX<DocMeta>(mdxRemoteProps)
   // const { content } = await compileMDX(mdxRemoteProps)
   // console.log(`content:`)
   // console.log(content)
-
-  // return content
+  // const c = () => {content}
+  // console.log(`compileMDX:rest: `, rest) // 拿不到, 除非修改源码或者将数据提取到frontmatter
+  return { content, frontmatter }
   // return <><h1>{frontmatter.title}</h1>
   // {content}</>
-  return <MDXRemote {...mdxRemoteProps}
-    // {...props}
-    // options={{...options, ...(props.options||{}) }}
-    // components={components}
-  />
+  // return <MDXRemote {...mdxRemoteProps}
+  //   // {...props}
+  //   // options={{...options, ...(props.options||{}) }}
+  //   // components={components}
+  // />
 }

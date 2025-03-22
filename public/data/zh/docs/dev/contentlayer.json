@@ -1,0 +1,21 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/contentlayer",
+  "slug": "dev/contentlayer",
+  "segments": [
+    "dev",
+    "contentlayer"
+  ],
+  "filePath": "docs/zh/dev/contentlayer.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# contentlayer\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "contentlayer",
+      "slug": "contentlayer"
+    }
+  ]
+}

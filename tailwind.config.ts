@@ -26,7 +26,7 @@ const config: Config = {
   		},
   		fontFamily: {
   			sans: [
-  				'var(--font-space-grotesk)',
+  				// 'var(--font-space-grotesk)',
           ...fontFamily.sans
         ]
   		},

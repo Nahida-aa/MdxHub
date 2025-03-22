@@ -1,0 +1,480 @@
+[
+  {
+    "segment": "i18",
+    "title": "i18 国际化",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/i18",
+    "type": "file"
+  },
+  {
+    "segment": "dev",
+    "title": "dev",
+    "order": 99,
+    "children": [
+      {
+        "segment": "contentlayer",
+        "title": "contentlayer",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/contentlayer",
+        "type": "file"
+      },
+      {
+        "segment": "test",
+        "title": "测试",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/test",
+        "type": "file"
+      },
+      {
+        "segment": "search",
+        "title": "增添搜索引擎",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/search",
+        "type": "file"
+      },
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/todo",
+        "type": "file"
+      },
+      {
+        "segment": "md",
+        "title": "md",
+        "order": 99,
+        "children": [
+          {
+            "segment": "docs",
+            "title": "docs",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/docs",
+            "type": "file"
+          },
+          {
+            "segment": "mdx",
+            "title": "mdx",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/mdx",
+            "type": "file"
+          },
+          {
+            "segment": "slug",
+            "title": "md slug",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/slug",
+            "type": "file"
+          },
+          {
+            "segment": "github",
+            "title": "GitHub",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/github",
+            "type": "file"
+          },
+          {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
+            "segment": "css",
+            "title": "css",
+            "order": 99,
+            "children": [
+              {
+                "segment": "tailwind",
+                "title": "tailwind",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/tailwind",
+                "type": "file"
+              },
+              {
+                "segment": "color",
+                "title": "color",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/color",
+                "type": "file"
+              }
+            ],
+            "url": "/zh/docs/dev/md/css",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/dev/md",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/dev",
+    "type": "dir"
+  },
+  {
+    "segment": "html",
+    "title": "html",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/html",
+    "type": "file"
+  },
+  {
+    "segment": "about",
+    "title": "关于",
+    "order": 99,
+    "children": [
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "贡献 指南",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/about/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/about/community",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/about",
+    "type": "file"
+  },
+  {
+    "segment": "alg",
+    "title": "算法",
+    "order": 99,
+    "children": [
+      {
+        "segment": "Array",
+        "title": "数组",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/Array",
+        "type": "file"
+      },
+      {
+        "segment": "python",
+        "title": "python",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/python",
+        "type": "file"
+      },
+      {
+        "segment": "struct",
+        "title": "数据结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/struct",
+        "type": "file"
+      },
+      {
+        "segment": "blog",
+        "title": "日志",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/enum",
+        "type": "file"
+      },
+      {
+        "segment": "lanqiao",
+        "title": "lanqiao",
+        "order": 99,
+        "children": [
+          {
+            "segment": "easy",
+            "title": "蓝桥简单题",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/lanqiao/easy",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/alg/lanqiao",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/alg",
+    "type": "file"
+  },
+  {
+    "segment": "linux",
+    "title": "linux",
+    "order": 99,
+    "children": [
+      {
+        "segment": "system_time",
+        "title": "系统时间",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/linux/system_time",
+        "type": "file"
+      },
+      {
+        "segment": "systemd-timesyncd",
+        "title": "systemd-timesyncd",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/linux/systemd-timesyncd",
+        "type": "file"
+      },
+      {
+        "segment": "command",
+        "title": "command",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/command/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/command",
+        "type": "dir"
+      },
+      {
+        "segment": "console",
+        "title": "console",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Command-line_shell",
+            "title": "Command-line_shell",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/Command-line_shell",
+            "type": "file"
+          },
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/console",
+        "type": "dir"
+      },
+      {
+        "segment": "file_systems",
+        "title": "file_systems",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/file_systems/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
+        "segment": "input",
+        "title": "input",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/input/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/input",
+        "type": "dir"
+      },
+      {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/linux",
+    "type": "file"
+  },
+  {
+    "segment": "next",
+    "title": "next",
+    "order": 99,
+    "children": [
+      {
+        "segment": "15",
+        "title": "15",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/next/15",
+        "type": "file"
+      },
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "贡献 指南",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/next/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/next/community",
+        "type": "dir"
+      },
+      {
+        "segment": "app",
+        "title": "app",
+        "order": 99,
+        "children": [
+          {
+            "segment": "building-your-application",
+            "title": "building-your-application",
+            "order": 99,
+            "children": [
+              {
+                "segment": "optimizing",
+                "title": "optimizing",
+                "order": 99,
+                "children": [
+                  {
+                    "segment": "package-bundling",
+                    "title": "Package Bundling",
+                    "order": 6,
+                    "children": [],
+                    "url": "/zh/docs/next/app/building-your-application/optimizing/package-bundling",
+                    "type": "file"
+                  }
+                ],
+                "url": "/zh/docs/next/app/building-your-application/optimizing",
+                "type": "dir"
+              }
+            ],
+            "url": "/zh/docs/next/app/building-your-application",
+            "type": "dir"
+          },
+          {
+            "segment": "api-reference",
+            "title": "api-reference",
+            "order": 99,
+            "children": [
+              {
+                "segment": "config",
+                "title": "config",
+                "order": 99,
+                "children": [
+                  {
+                    "segment": "next-config-js",
+                    "title": "next-config-js",
+                    "order": 99,
+                    "children": [
+                      {
+                        "segment": "turbo",
+                        "title": "turbo",
+                        "order": 99,
+                        "children": [],
+                        "url": "/zh/docs/next/app/api-reference/config/next-config-js/turbo",
+                        "type": "file"
+                      }
+                    ],
+                    "url": "/zh/docs/next/app/api-reference/config/next-config-js",
+                    "type": "dir"
+                  }
+                ],
+                "url": "/zh/docs/next/app/api-reference/config",
+                "type": "dir"
+              }
+            ],
+            "url": "/zh/docs/next/app/api-reference",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/next/app",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/next",
+    "type": "dir"
+  },
+  {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
+    "type": "file"
+  },
+  {
+    "segment": "ts",
+    "title": "ts",
+    "order": 99,
+    "children": [
+      {
+        "segment": "async",
+        "title": "async",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/ts/async",
+        "type": "file"
+      },
+      {
+        "segment": "tsconfig",
+        "title": "tsconfig",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/ts/tsconfig",
+        "type": "file"
+      }
+    ],
+    "url": "/zh/docs/ts",
+    "type": "dir"
+  }
+]

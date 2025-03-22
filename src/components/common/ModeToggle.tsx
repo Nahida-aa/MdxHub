@@ -2,12 +2,12 @@
 
 import * as React from "react"
 import { Moon, MoonStar, Sun } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { motion  } from "framer-motion"
 
 import { Suspense, useEffect, useState } from 'react';
-import { LoadingS } from '~/components/ui/loading/Loading';
+import { LoadingS } from '@/components/ui/loading/Loading';
 
 const LoadIcon = () => <button className="size-10 p-auto">
 <motion.svg viewBox="0 0 100 100" strokeWidth="4" strokeLinecap="round"><motion.path d="M70 49.5C70 60.8218 60.8218 70 49.5 70C38.1782 70 29 60.8218 29 49.5C29 38.1782 38.1782 29 49.5 29C39 45 49.5 59.5 70 49.5Z"  stroke="#60a5fa" fillOpacity='0.35' strokeOpacity='1'
@@ -94,7 +94,7 @@ export const ModeToggleGradientIcon =({
   const moonPath =
     "M70 49.5C70 60.8218 60.8218 70 49.5 70C38.1782 70 29 60.8218 29 49.5C29 38.1782 38.1782 29 49.5 29C39 45 49.5 59.5 70 49.5Z"
   return <Suspense fallback={<LoadIcon />}>
-  <button  className="flex items-center justify-center relative gap-0 size-10 p-auto [&_svg]:size-6" 
+  <button  className={`flex items-center justify-center relative gap-0 size-10 p-auto [&_svg]:size-6 ${className}` }
     onClick={() => theme === "dark" ? setTheme("light") : setTheme("dark")}>
     <motion.svg
       strokeWidth="4"

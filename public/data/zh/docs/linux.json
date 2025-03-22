@@ -1,0 +1,22 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux",
+  "slug": "linux",
+  "segments": [
+    "linux"
+  ],
+  "filePath": "docs/zh/linux/index.mdx",
+  "meta": {
+    "title": "linux",
+    "description": "linux 简介",
+    "created_at": "2025-03-22T05:22:44.000Z",
+    "updated_at": "2025-03-22T05:22:44.000Z",
+    "tags": [
+      "linux"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

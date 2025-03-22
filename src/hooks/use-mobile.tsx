@@ -1,5 +1,5 @@
 import * as React from "react"
-
+// md
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
@@ -17,3 +17,7 @@ export function useIsMobile() {
 
   return !!isMobile
 }
+
+// is 平板设备
+// 定义 lg 断点
+const LG_BREAKPOINT = 1200

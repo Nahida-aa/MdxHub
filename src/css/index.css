@@ -11,6 +11,7 @@
 
 * {
     scrollbar-width: thin;
+    /* scrollbar-width: none; */
     /* scrollbar-color: hsl(var(--border)) hsl(240 6% 10); */
     scrollbar-color: hsl(var(--border)) transparent;
 }

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { LoadingS } from '~/components/ui/loading/Loading';
+import { LoadingS } from '@/components/ui/loading/Loading';
 
 // export default async function Page () {
 //   return <svg viewBox='0 0 200 200'>

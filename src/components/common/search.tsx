@@ -3,36 +3,63 @@ import {Button as UIButton, ButtonProps as UIButtonProps} from "@heroui/button";
 import { Search } from "lucide-react";
 import {Kbd} from "@heroui/kbd";
 import {Modal,ModalContent,ModalHeader,ModalBody,ModalFooter,useDisclosure,} from "@heroui/modal";
-import {Command,CommandEmpty,CommandGroup,CommandInput,CommandItem,CommandList,CommandSeparator,CommandShortcut,CommandDialog} from "~/components/ui/command"
-import { useEffect, useState } from "react";
+import {Command,CommandEmpty,CommandGroup,CommandInput,CommandItem,CommandList,CommandSeparator,CommandShortcut,CommandDialog, CommandDialogProps} from "@/components/ui/command"
+import { createContext, useContext, useEffect, useState } from "react";
 import { DialogTitle } from "../ui/dialog";
 import { useTranslation } from "react-i18next";
 
-const SearchModalButton = ({ ...props }: UIButtonProps) => {
-  const {t} = useTranslation("common")
-  return <UIButton {...props} className="h-11 w-60 grid grid-cols-[auto_1fr_auto]  text-left text-gray-950/50  dark:bg-white/5 dark:text-white/50 text-base/4" radius="full" startContent={<Search size={16} />}  endContent={<Kbd keys={["ctrl"]} className="h-5 rounded-full bg-transparent shadow-none ">K</Kbd>} variant="bordered" >{t('Quick_search')}</UIButton>
-}
+const SearchModalContext = createContext({
+  open: false,
+  searchKeyword: '',
+  setOpen: (open: boolean) => {},
+  setSearchKeyword: (keyword: string) => {},
+});
+export const useSearchModal = () => useContext(SearchModalContext);
+export const SearchModalProvider = ({ children }) => {
+  const [open, setOpen] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState('');
 
-export const SearchModal = ({ ...props }: React.ComponentProps<"button">) => {
-  const [open, setOpen] = useState(false)
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const onOpen = () => setOpen(true)
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen(!open);
       }
-    }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+    };
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  return (
+    <SearchModalContext.Provider value={{ open, searchKeyword, setOpen, setSearchKeyword }}>
+      {children}
+    </SearchModalContext.Provider>
+  );
+};
+
+type SearchModalButtonProps = UIButtonProps & {
+  text?: string
+}
+export const SearchModalButton = ({ ...props }: SearchModalButtonProps) => {
+  const { setOpen } = useSearchModal();
+  return <UIButton onPress={() => setOpen(true)} {...props} className={`h-11 w-60 grid grid-cols-[auto_1fr_auto]  text-left text-gray-950/50  dark:bg-white/5 dark:text-white/50 text-base/4 ${props.className}`} radius="full"
+  startContent={<Search size={16} />}  
+  endContent={<Kbd keys={["ctrl"]} className="h-5 w-fit rounded-full bg-transparent shadow-none ">K</Kbd>} 
+  variant="bordered" >
+    {props.text}
+  </UIButton>
+}
+
+type SearchModalProps = CommandDialogProps
+
+export const SearchModal = ({ ...props }: SearchModalProps) => {
+  const { open, setOpen, searchKeyword, setSearchKeyword } = useSearchModal();
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchKeyword(e.target.value)
     console.log("handleSearch: setSearchKeyword", searchKeyword)
   }
-  return <><SearchModalButton onPress={onOpen} />
-
+  return <>
   <CommandDialog open={open} onOpenChange={setOpen}  className="bg-popover/60"  CloseButton={<Kbd  className=" rounded-full h-5 text-xs   ">Esc</Kbd>}  >
     <DialogTitle />
     <CommandInput placeholder="What are you searching for?" className="border-0 focus:shadow-none  focus:ring-0"

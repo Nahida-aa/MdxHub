@@ -1,0 +1,28 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/css/tailwind",
+  "slug": "dev/md/css/tailwind",
+  "segments": [
+    "dev",
+    "md",
+    "css",
+    "tailwind"
+  ],
+  "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# tailwindCss\n\n## Colors\n\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "tailwindCss",
+      "slug": "tailwindcss"
+    },
+    {
+      "depth": 2,
+      "value": "Colors",
+      "slug": "colors"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/next/app/building-your-application/optimizing/package-bundling",
+  "slug": "next/app/building-your-application/optimizing/package-bundling",
+  "segments": [
+    "next",
+    "app",
+    "building-your-application",
+    "optimizing",
+    "package-bundling"
+  ],
+  "filePath": "docs/zh/next/01-app/03-building-your-application/06-optimizing/06-package-bundling.mdx",
+  "meta": {
+    "title": "Optimizing Package Bundling",
+    "nav_title": "Package Bundling",
+    "description": "Learn how to optimize your application's server and client bundles.",
+    "related": {
+      "description": "Learn more about optimizing your application for production.",
+      "links": [
+        "app/building-your-application/deploying/production-checklist"
+      ]
+    }
+  },
+  "order": 6,
+  "content": "\nBundling external packages can significantly improve the performance of your application. <AppOnly>By default, packages imported inside Server Components and Route Handlers are automatically bundled by Next.js. This page will guide you through how to analyze and further optimize package bundling.</AppOnly> <PagesOnly>By default, packages imported into your application are not bundled. This can impact performance or might not work if external packages are not pre-bundled, for example, if imported from a monorepo or `node_modules`. This page will guide you through how to analyze and configure package bundling.</PagesOnly>\n\n> 捆绑外部包可以显著提高应用程序的性能。<AppOnly>默认情况下，在服务器组件和路由处理程序中导入的包会自动由 Next.js 进行捆绑。本页面将指导您如何分析和进一步优化包的捆绑。</AppOnly> <PagesOnly>默认情况下，导入到应用程序中的包不会被捆绑。这可能会影响性能，或者如果外部包没有预先捆绑（例如，从 monorepo 或 node_modules 导入），可能无法正常工作。本页面将指导您如何分析和配置包的捆绑。</PagesOnly>\n\n## Analyzing JavaScript bundles\n\n[`@next/bundle-analyzer`](https://www.npmjs.com/package/@next/bundle-analyzer) is a plugin for Next.js that helps you manage the size of your application bundles. It generates a visual report of the size of each package and their dependencies. You can use the information to remove large dependencies, split, or [lazy-load](/docs/app/building-your-application/optimizing/lazy-loading) your code.\n\n### Installation\n\nInstall the plugin by running the following command:\n\n```bash\nnpm i @next/bundle-analyzer\n# or\nyarn add @next/bundle-analyzer\n# or\npnpm add @next/bundle-analyzer\n```\n\nThen, add the bundle analyzer's settings to your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {}\n\nconst withBundleAnalyzer = require('@next/bundle-analyzer')({\n  enabled: process.env.ANALYZE === 'true',\n})\n\nmodule.exports = withBundleAnalyzer(nextConfig)\n```\n\n### Generating a report\n\nRun the following command to analyze your bundles:\n\n```bash\nANALYZE=true npm run build\n# or\nANALYZE=true yarn build\n# or\nANALYZE=true pnpm build\n```\n\nThe report will open three new tabs in your browser, which you can inspect. Periodically evaluating your application's bundles can help you maintain application performance over time.\n\n## Optimizing package imports\n\nSome packages, such as icon libraries, can export hundreds of modules, which can cause performance issues in development and production.\n\nYou can optimize how these packages are imported by adding the [`optimizePackageImports`](/docs/app/api-reference/config/next-config-js/optimizePackageImports) option to your `next.config.js`. This option will only load the modules you _actually_ use, while still giving you the convenience of writing import statements with many named exports.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  experimental: {\n    optimizePackageImports: ['icon-library'],\n  },\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js also optimizes some libraries automatically, thus they do not need to be included in the optimizePackageImports list. See the [full list](https://nextjs.org/docs/app/api-reference/config/next-config-js/optimizePackageImports).\n\n<PagesOnly>\n\n## Bundling specific packages\n\nTo bundle specific packages, you can use the [`transpilePackages`](/docs/app/api-reference/config/next-config-js/transpilePackages) option in your `next.config.js`. This option is useful for bundling external packages that are not pre-bundled, for example, in a monorepo or imported from `node_modules`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  transpilePackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n## Bundling all packages\n\nTo automatically bundle all packages (default behavior in the App Router), you can use the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  bundlePagesRouterDependencies: true,\n}\n\nmodule.exports = nextConfig\n```\n\n## Opting specific packages out of bundling\n\nIf you have the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option enabled, you can opt specific packages out of automatic bundling using the [`serverExternalPackages`](/docs/pages/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`:\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  // Automatically bundle external packages in the Pages Router:\n  bundlePagesRouterDependencies: true,\n  // Opt specific packages out of bundling for both App and Pages Router:\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n</PagesOnly>\n\n<AppOnly>\n\n## Opting specific packages out of bundling\n\nSince packages imported inside Server Components and Route Handlers are automatically bundled by Next.js, you can opt specific packages out of bundling using the [`serverExternalPackages`](/docs/app/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js includes a list of popular packages that currently are working on compatibility and automatically opt-ed out. See the [full list](/docs/app/api-reference/config/next-config-js/serverExternalPackages).\n\n</AppOnly>",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "Analyzing JavaScript bundles",
+      "slug": "analyzing-javascript-bundles"
+    },
+    {
+      "depth": 3,
+      "value": "Installation",
+      "slug": "installation"
+    },
+    {
+      "depth": 3,
+      "value": "Generating a report",
+      "slug": "generating-a-report"
+    },
+    {
+      "depth": 2,
+      "value": "Optimizing package imports",
+      "slug": "optimizing-package-imports"
+    },
+    {
+      "depth": 2,
+      "value": "Bundling specific packages",
+      "slug": "bundling-specific-packages"
+    },
+    {
+      "depth": 2,
+      "value": "Bundling all packages",
+      "slug": "bundling-all-packages"
+    },
+    {
+      "depth": 2,
+      "value": "Opting specific packages out of bundling",
+      "slug": "opting-specific-packages-out-of-bundling"
+    },
+    {
+      "depth": 2,
+      "value": "Opting specific packages out of bundling",
+      "slug": "opting-specific-packages-out-of-bundling"
+    }
+  ]
+}

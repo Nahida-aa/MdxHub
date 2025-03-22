@@ -1,0 +1,60 @@
+---
+title: html
+description: 全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。
+created_at: 2025-03-22T02:26:21Z
+updated_at: 2025-03-22T02:26:21Z
+tags: [html]
+---
+
+## list
+
+https://www.heroui.com/docs/components/listbox
+
+```tsx /items={toc}/ /(item) =>/
+import {
+  Listbox,
+  ListboxSection,
+  ListboxItem
+} from "@heroui/listbox";
+
+<Listbox className='gap-2' aria-label="Dynamic Actions" items={toc} onAction={(key) => {}}>
+{(item) => (
+  <ListboxItem
+    key={item.slug}
+    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}
+  >
+    <motion.a className={clsx(
+      "text-muted-foreground hover:text-primary-foreground",
+      {
+        "text-primary font-bold": isClient && activeSlug === item.slug,
+      }
+    )}
+      href={`#${item.slug}`}
+    >
+          {item.value}
+    </motion.a>
+  </ListboxItem>
+  )}
+</Listbox>
+```
+
+可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式
+
+改用 `Array.map(){:ts}` 来遍历比较合适
+
+```tsx {2}#b
+<ul>
+  {toc.map((item, index) => <li key={index}>
+    <Link className={clsx(
+      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,
+      {
+        "text-primary font-bold": isClient && activeSlug === item.slug,
+      }
+    )}
+      href={`#${item.slug}`}
+    >
+      item.value}
+    </Link>
+  </li>)}
+</ul>
+```

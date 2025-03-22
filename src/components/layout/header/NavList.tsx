@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "~/components/Link"
-import headerNavLinks from "~/data/headerNavLinks"
+import Link from "@/components/Link"
+import headerNavLinks from "@/data/headerNavLinks"
 import { useParams, usePathname } from 'next/navigation'
 import { useTranslation } from "react-i18next"
 

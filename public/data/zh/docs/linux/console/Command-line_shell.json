@@ -1,0 +1,16 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/console/Command-line_shell",
+  "slug": "linux/console/Command-line_shell",
+  "segments": [
+    "linux",
+    "console",
+    "Command-line_shell"
+  ],
+  "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "",
+  "toc": []
+}

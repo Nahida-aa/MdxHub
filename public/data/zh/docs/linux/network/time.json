@@ -1,0 +1,41 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/network/time",
+  "slug": "linux/network/time",
+  "segments": [
+    "linux",
+    "network",
+    "time"
+  ],
+  "filePath": "docs/zh/linux/08-network/01-time.mdx",
+  "meta": {
+    "title": "时间同步",
+    "description": "时间同步",
+    "created_at": "2025-03-22T01:12:59.000Z",
+    "updated_at": "2025-03-22T01:12:59.000Z",
+    "tags": [
+      "linux",
+      "time"
+    ]
+  },
+  "order": 1,
+  "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。 \n\n### NTP 服务器模式\n\n## 使用\n",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "安装",
+      "slug": "安装"
+    },
+    {
+      "depth": 3,
+      "value": "NTP 服务器模式",
+      "slug": "ntp-服务器模式"
+    },
+    {
+      "depth": 2,
+      "value": "使用",
+      "slug": "使用"
+    }
+  ]
+}

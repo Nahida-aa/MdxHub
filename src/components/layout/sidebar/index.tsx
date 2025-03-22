@@ -1,10 +1,11 @@
 import * as React from "react"
 
-import { SearchForm } from "~/components/common/search-form"
-import { VersionSwitcher } from "~/components/layout/sidebar/version-switcher"
+import { SearchForm } from "@/components/common/search-form"
+import { SideSwitcher } from "@/components/layout/sidebar/side-switcher"
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -13,173 +14,68 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "~/components/ui/sidebar"
+} from "@/components/ui/sidebar"
 import {ScrollShadow} from "@heroui/scroll-shadow";
+import { generateNav } from "@/app/[locale]/docs/lib/gen";
+import { generateNavigationList, NavNode } from "@/lib/md/get";
+import { ContentNavTree } from "./nav-tree";
+import { headers, cookies } from 'next/headers'
+import { Button } from "@/components/ui/button";
+import { Settings } from "lucide-react";
+import { ModeToggleGradientIcon } from "@/components/common/ModeToggle";
 
-// This is sample data.
-const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
-  navMain: [
-    {
-      title: "Getting Started",
-      url: "#",
-      items: [
-        {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Building Your Application",
-      url: "#",
-      items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
-    },
-  ],
+const types = ["docs"]
+
+type AppSidebarProps = React.ComponentProps<typeof Sidebar> & {
+  locale: string
 }
-
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export async function AppSidebar({ locale, ...props }: AppSidebarProps) {
+  const cookieStore = await cookies()
+  const type = cookieStore.get('type')?.value || types[0]
+  console.log("AppSidebar: ", locale, type)
+  const navTreeObj = {} as { [key: string]: NavNode[] }
+  for (const type of types) {
+    navTreeObj[type] = await generateNavigationList(locale, type)
+  }
+  const currentNavTree = navTreeObj[type]
   return (
-    <Sidebar {...props}>
+    <Sidebar {...props} className="Sidebar bg-transparent justify-between">
       <SidebarHeader>
-        <VersionSwitcher
-          versions={data.versions}
-          defaultVersion={data.versions[0]}
+        <SideSwitcher
+          list={types}
+          defaultItem={types[0]}
         />
-        <SearchForm />
+        {/* <SearchForm /> */}
       </SidebarHeader>
-      <ScrollShadow hideScrollBar >
-      <SidebarContent>
-        {/* We create a SidebarGroup for each parent. */}
-        {data.navMain.map((item) => (
-          <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
-          
-      </SidebarContent>
+      <ScrollShadow hideScrollBar className="h-full" >
+        <SidebarContent>
+          {/* We create a SidebarGroup for each parent. */}
+          <ContentNavTree currentNavTree={currentNavTree} />
+            
+        </SidebarContent>
       </ScrollShadow>
+      <SidebarFooter>
+      <SidebarMenu className='flex-row justify-between'>
+          <SidebarMenuItem className="flex items-center">
+            {/* <SidebarMenuButton asChild 
+            // onClick={() => {
+            //     // toggleSidebar()
+            //     // router.push('/setting');
+            //     // setOpenMobile(false);
+            //   }}
+            </SidebarMenuButton>
+            > */}
+              <button  className='flex size-10 h-10 [&_svg]:size-5 items-center justify-center p-1.5'>
+              <Settings />
+              </button>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            {/* <SidebarMenuButton asChild> */}
+              <ModeToggleGradientIcon  className='size-10 active:bg-sidebar-accent [&_svg]:size-5' />
+            {/* </SidebarMenuButton> */}
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

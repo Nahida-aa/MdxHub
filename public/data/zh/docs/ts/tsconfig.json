@@ -1,0 +1,51 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/ts/tsconfig",
+  "slug": "ts/tsconfig",
+  "segments": [
+    "ts",
+    "tsconfig"
+  ],
+  "filePath": "docs/zh/ts/tsconfig.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "tsconfig",
+      "slug": "tsconfig"
+    },
+    {
+      "depth": 2,
+      "value": "compilerOptions",
+      "slug": "compileroptions"
+    },
+    {
+      "depth": 3,
+      "value": "moduleResolution",
+      "slug": "moduleresolution"
+    },
+    {
+      "depth": 4,
+      "value": "moduleResolution: node",
+      "slug": "moduleresolution:-node"
+    },
+    {
+      "depth": 5,
+      "value": "特点",
+      "slug": "特点"
+    },
+    {
+      "depth": 4,
+      "value": "moduleResolution: bundler",
+      "slug": "moduleresolution:-bundler"
+    },
+    {
+      "depth": 5,
+      "value": "特点",
+      "slug": "特点"
+    }
+  ]
+}

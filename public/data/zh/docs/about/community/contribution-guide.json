@@ -1,0 +1,166 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/about/community/contribution-guide",
+  "slug": "about/community/contribution-guide",
+  "segments": [
+    "about",
+    "community",
+    "contribution-guide"
+  ],
+  "filePath": "docs/zh/about/04-community/01-contribution-guide.mdx",
+  "meta": {
+    "title": "文档贡献指南",
+    "nav_title": "贡献 指南",
+    "description": "了解如何贡献文档"
+  },
+  "order": 1,
+  "content": "\n\n\nThis page provides instructions on how to edit the Next.js documentation. Our goal is to ensure that everyone in the community feels empowered to contribute and improve our docs.\n\n## Why Contribute?\n\nOpen-source work is never done, and neither is documentation. Contributing to docs is a good way for beginners to get involved in open-source and for experienced developers to clarify more complex topics while sharing their knowledge with the community.\n\nBy contributing to the Next.js docs, you're helping us build a more robust learning resource for all developers. Whether you've found a typo, a confusing section, or you've realized that a particular topic is missing, your contributions are welcomed and appreciated.\n\n## How to Contribute\n\nThe docs content can be found on the [Next.js repo](https://github.com/vercel/next.js/tree/canary/docs). To contribute, you can edit the files directly on GitHub or clone the repo and edit the files locally.\n\n### GitHub Workflow\n\nIf you're new to GitHub, we recommend reading the [GitHub Open Source Guide](https://opensource.guide/how-to-contribute/#opening-a-pull-request) to learn how to fork a repository, create a branch, and submit a pull request.\n\n> **Good to know**: The underlying docs code lives in a private codebase that is synced to the Next.js public repo. This means that you can't preview the docs locally. However, you'll see your changes on [nextjs.org](https://nextjs.org/docs) after merging a pull request.\n\n### Writing MDX\n\nThe docs are written in [MDX](https://mdxjs.com/), a markdown format that supports JSX syntax. This allows us to embed React components in the docs. See the [GitHub Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for a quick overview of markdown syntax.\n\n### VSCode\n\n#### Previewing Changes Locally\n\nVSCode has a built-in markdown previewer that you can use to see your edits locally. To enable the previewer for MDX files, you'll need to add a configuration option to your user settings.\n\nOpen the command palette (`⌘ + ⇧ + P` on Mac or `Ctrl + Shift + P` on Windows) and search from `Preferences: Open User Settings (JSON)`.\n\nThen, add the following line to your `settings.json` file:\n\n```json filename=\"settings.json\"\n{\n  \"files.associations\": {\n    \"*.mdx\": \"markdown\"\n  }\n}\n```\n\nNext, open the command palette again, and search for `Markdown: Preview File` or `Markdown: Open Preview to the Side`. This will open a preview window where you can see your formatted changes.\n\n#### Extensions\n\nWe also recommend the following extensions for VSCode users:\n\n- [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): Intellisense and syntax highlighting for MDX.\n- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Format MDX files on save.\n\n### Review Process\n\nOnce you've submitted your contribution, the Next.js or Developer Experience teams will review your changes, provide feedback, and merge the pull request when it's ready.\n\nPlease let us know if you have any questions or need further assistance in your PR's comments. Thank you for contributing to the Next.js docs and being a part of our community!\n\n> **Tip:** Run `pnpm prettier-fix` to run Prettier before submitting your PR.\n\n## File Structure\n\nThe docs use **file-system routing**. Each folder and files inside [`/docs`](https://github.com/vercel/next.js/tree/canary/docs) represent a route segment. These segments are used to generate the URL paths, navigation, and breadcrumbs.\n\nThe file structure reflects the navigation that you see on the site, and by default, navigation items are sorted alphabetically. However, we can change the order of the items by prepending a two-digit number (`00-`) to the folder or file name.\n\nFor example, in the [functions API Reference](/docs/app/api-reference/functions), the pages are sorted alphabetically because it makes it easier for developers to find a specific function:\n\n```txt\n04-functions\n├── after.mdx\n├── cacheLife.mdx\n├── cacheTag.mdx\n└── ...\n```\n\nBut, in the [routing section](/docs/app/building-your-application/routing), the files are prefixed with a two-digit number, sorted in the order developers should learn these concepts:\n\n```txt\n01-routing\n├── 01-defining-routes.mdx\n├── 02-pages.mdx\n├── 03-layouts-and-templates.mdx\n└── ...\n```\n\nTo quickly find a page, you can use `⌘ + P` (Mac) or `Ctrl + P` (Windows) to open the search bar on VSCode. Then, type the slug of the page you're looking for. E.g. `defining-routes`\n\n> **Why not use a manifest?**\n>\n> We considered using a manifest file (another popular way to generate the docs navigation), but we found that a manifest would quickly get out of sync with the files. File-system routing forces us to think about the structure of the docs and feels more native to Next.js.\n\n## Metadata\n\nEach page has a metadata block at the top of the file separated by three dashes.\n\n### Required Fields\n\nThe following fields are **required**:\n\n| Field         | Description                                                                  |\n| ------------- | ---------------------------------------------------------------------------- |\n| `title`       | The page's `<h1>` title, used for SEO and OG Images.                         |\n| `description` | The page's description, used in the `<meta name=\"description\">` tag for SEO. |\n\n```yaml filename=\"required-fields.mdx\"\n---\ntitle: Page Title\ndescription: Page Description\n---\n```\n\nIt's good practice to limit the page title to 2-3 words (e.g. Optimizing Images) and the description to 1-2 sentences (e.g. Learn how to optimize images in Next.js).\n\n### Optional Fields\n\nThe following fields are **optional**:\n\n| Field       | Description                                                                                                                                        |\n| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `nav_title` | Overrides the page's title in the navigation. This is useful when the page's title is too long to fit. If not provided, the `title` field is used. |\n| `source`    | Pulls content into a shared page. See [Shared Pages](#shared-pages).                                                                               |\n| `related`   | A list of related pages at the bottom of the document. These will automatically be turned into cards. See [Related Links](#related-links).         |\n| `version`   | A stage of development. e.g. `experimental`,`legacy`,`unstable`,`RC`                                                                               |\n\n```yaml filename=\"optional-fields.mdx\"\n---\nnav_title: Nav Item Title\nsource: app/building-your-application/optimizing/images\nrelated:\n  description: See the image component API reference.\n  links:\n    - app/api-reference/components/image\nversion: experimental\n---\n```\n\n## `App` and `Pages` Docs\n\nSince most of the features in the **App Router** and **Pages Router** are completely different, their docs for each are kept in separate sections (`02-app` and `03-pages`). However, there are a few features that are shared between them.\n\n### Shared Pages\n\nTo avoid content duplication and risk the content becoming out of sync, we use the `source` field to pull content from one page into another. For example, the `<Link>` component behaves _mostly_ the same in **App** and **Pages**. Instead of duplicating the content, we can pull the content from `app/.../link.mdx` into `pages/.../link.mdx`:\n\n```mdx filename=\"app/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\n---\n\nThis API reference will help you understand how to use the props\nand configuration options available for the Link Component.\n```\n\n```mdx filename=\"pages/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\nsource: app/api-reference/components/link\n---\n\n{/* DO NOT EDIT THIS PAGE. */}\n{/* The content of this page is pulled from the source above. */}\n```\n\nWe can therefore edit the content in one place and have it reflected in both sections.\n\n### Shared Content\n\nIn shared pages, sometimes there might be content that is **App Router** or **Pages Router** specific. For example, the `<Link>` component has a `shallow` prop that is only available in **Pages** but not in **App**.\n\nTo make sure the content only shows in the correct router, we can wrap content blocks in an `<AppOnly>` or `<PagesOnly>` components:\n\n```mdx filename=\"app/.../link.mdx\"\nThis content is shared between App and Pages.\n\n<PagesOnly>\n\nThis content will only be shown on the Pages docs.\n\n</PagesOnly>\n\nThis content is shared between App and Pages.\n```\n\nYou'll likely use these components for examples and code blocks.\n\n## Code Blocks\n\nCode blocks should contain a minimum working example that can be copied and pasted. This means that the code should be able to run without any additional configuration.\n\nFor example, if you're showing how to use the `<Link>` component, you should include the `import` statement and the `<Link>` component itself.\n\n```tsx filename=\"app/page.tsx\"\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\nAlways run examples locally before committing them. This will ensure that the code is up-to-date and working.\n\n### Language and Filename\n\nCode blocks should have a header that includes the language and the `filename`. Add a `filename` prop to render a special Terminal icon that helps orientate users where to input the command. For example:\n\n````mdx filename=\"code-example.mdx\"\n```bash filename=\"Terminal\"\nnpx create-next-app\n```\n````\n\nMost examples in the docs are written in `tsx` and `jsx`, and a few in `bash`. However, you can use any supported language, here's the [full list](https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages).\n\nWhen writing JavaScript code blocks, we use the following language and extension combinations.\n\n|                                | Language | Extension |\n| ------------------------------ | -------- | --------- |\n| JavaScript files with JSX code | ```jsx   | .js       |\n| JavaScript files without JSX   | ```js    | .js       |\n| TypeScript files with JSX      | ```tsx   | .tsx      |\n| TypeScript files without JSX   | ```ts    | .ts       |\n\n> **Good to know**:\n>\n> - Make sure to use **`js`** extension with **JSX** code at JavaScript files.\n> - For example, ```jsx filename=\"app/layout.js\"\n\n### TS and JS Switcher\n\nAdd a language switcher to toggle between TypeScript and JavaScript. Code blocks should be TypeScript first with a JavaScript version to accommodate users.\n\nCurrently, we write TS and JS examples one after the other, and link them with `switcher` prop:\n\n````mdx filename=\"code-example.mdx\"\n```tsx filename=\"app/page.tsx\" switcher\n\n```\n\n```jsx filename=\"app/page.js\" switcher\n\n```\n````\n\n> **Good to know**: We plan to automatically compile TypeScript snippets to JavaScript in the future. In the meantime, you can use [transform.tools](https://transform.tools/typescript-to-javascript).\n\n### Line Highlighting\n\nCode lines can be highlighted. This is useful when you want to draw attention to a specific part of the code. You can highlight lines by passing a number to the `highlight` prop.\n\n**Single Line:** `highlight={1}`\n\n```tsx filename=\"app/page.tsx\" {1}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Multiple Lines:** `highlight={1,3}`\n\n```tsx filename=\"app/page.tsx\" highlight={1,3}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Range of Lines:** `highlight={1-5}`\n\n```tsx filename=\"app/page.tsx\" highlight={1-5}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n## Icons\n\nThe following icons are available for use in the docs:\n\n```mdx filename=\"mdx-icon.mdx\"\n<Check size={18} />\n<Cross size={18} />\n```\n\n**Output:**\n\n<Check size={18} />\n<Cross size={18} />\n\nWe do not use emojis in the docs.\n\n## Notes\n\nFor information that is important but not critical, use notes. Notes are a good way to add information without distracting the user from the main content.\n\n```mdx filename=\"notes.mdx\"\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n```\n\n**Output:**\n\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n\n## Related Links\n\nRelated Links guide the user's learning journey by adding links to logical next steps.\n\n- Links will be displayed in cards under the main content of the page.\n- Links will be automatically generated for pages that have child pages. For example, the [Optimizing](/docs/app/building-your-application/optimizing) section has links to all of its child pages.\n\nCreate related links using the `related` field in the page's metadata.\n\n```yaml filename=\"example.mdx\"\n---\nrelated:\n  description: Learn how to quickly get started with your first application.\n  links:\n    - app/building-your-application/routing/defining-routes\n    - app/building-your-application/data-fetching\n    - app/api-reference/file-conventions/page\n---\n```\n\n### Nested Fields\n\n| Field         | Required? | Description                                                                                                                                               |\n| ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `title`       | Optional  | The title of the card list. Defaults to **Next Steps**.                                                                                                   |\n| `description` | Optional  | The description of the card list.                                                                                                                         |\n| `links`       | Required  | A list of links to other doc pages. Each list item should be a relative URL path (without a leading slash) e.g. `app/api-reference/file-conventions/page` |\n\n## Diagrams\n\nDiagrams are a great way to explain complex concepts. We use [Figma](https://www.figma.com/) to create diagrams, following Vercel's design guide.\n\nThe diagrams currently live in the `/public` folder in our private Next.js site. If you'd like to update or add a diagram, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new?assignees=&labels=template%3A+documentation&projects=&template=4.docs_request.yml&title=Docs%3A+) with your ideas.\n\n## Custom Components and HTML\n\nThese are the React Components available for the docs: `<Image />` (next/image), `<PagesOnly />`, `<AppOnly />`, `<Cross />`, and `<Check />`. We do not allow raw HTML in the docs besides the `<details>` tag.\n\nIf you have ideas for new components, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new/choose).\n\n## Style Guide\n\nThis section contains guidelines for writing docs for those who are new to technical writing.\n\n### Page Templates\n\nWhile we don't have a strict template for pages, there are page sections you'll see repeated across the docs:\n\n- **Overview:** The first paragraph of a page should tell the user what the feature is and what it's used for. Followed by a minimum working example or its API reference.\n- **Convention:** If the feature has a convention, it should be explained here.\n- **Examples**: Show how the feature can be used with different use cases.\n- **API Tables**: API Pages should have an overview table at the of the page with jump-to-section links (when possible).\n- **Next Steps (Related Links)**: Add links to related pages to guide the user's learning journey.\n\nFeel free to add these sections as needed.\n\n### Page Types\n\nDocs pages are also split into two categories: Conceptual and Reference.\n\n- **Conceptual** pages are used to explain a concept or feature. They are usually longer and contain more information than reference pages. In the Next.js docs, conceptual pages are found in the **Building Your Application** section.\n- **Reference** pages are used to explain a specific API. They are usually shorter and more focused. In the Next.js docs, reference pages are found in the **API Reference** section.\n\n> **Good to know**: Depending on the page you're contributing to, you may need to follow a different voice and style. For example, conceptual pages are more instructional and use the word _you_ to address the user. Reference pages are more technical, they use more imperative words like \"create, update, accept\" and tend to omit the word _you_.\n\n### Voice\n\nHere are some guidelines to maintain a consistent style and voice across the docs:\n\n- Write clear, concise sentences. Avoid tangents.\n  - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.\n  - Swap out complex words for simpler ones. For example, _use_ instead of _utilize_.\n- Be mindful with the word _this_. It can be ambiguous and confusing, don't be afraid to repeat the subject of the sentence if unclear.\n  - For example, _Next.js uses React_ instead of _Next.js uses this_.\n- Use an active voice instead of passive. An active sentence is easier to read.\n  - For example, _Next.js uses React_ instead of _React is used by Next.js_. If you find yourself using words like _was_ and _by_ you may be using a passive voice.\n- Avoid using words like _easy_, _quick_, _simple_, _just_, etc. This is subjective and can be discouraging to users.\n- Avoid negative words like _don't_, _can't_, _won't_, etc. This can be discouraging to readers.\n  - For example, _\"You can use the `Link` component to create links between pages\"_ instead of _\"Don't use the `<a>` tag to create links between pages\"_.\n- Write in second person (you/your). This is more personal and engaging.\n- Use gender-neutral language. Use _developers_, _users_, or _readers_, when referring to the audience.\n- If adding code examples, ensure they are properly formatted and working.\n\nWhile these guidelines are not exhaustive, they should help you get started. If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).\n\n---\n\nThank you for contributing to the docs and being part of the Next.js community!\n\n{/* To do: Latest Contributors Component */}",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "Why Contribute?",
+      "slug": "why-contribute?"
+    },
+    {
+      "depth": 2,
+      "value": "How to Contribute",
+      "slug": "how-to-contribute"
+    },
+    {
+      "depth": 3,
+      "value": "GitHub Workflow",
+      "slug": "github-workflow"
+    },
+    {
+      "depth": 3,
+      "value": "Writing MDX",
+      "slug": "writing-mdx"
+    },
+    {
+      "depth": 3,
+      "value": "VSCode",
+      "slug": "vscode"
+    },
+    {
+      "depth": 4,
+      "value": "Previewing Changes Locally",
+      "slug": "previewing-changes-locally"
+    },
+    {
+      "depth": 4,
+      "value": "Extensions",
+      "slug": "extensions"
+    },
+    {
+      "depth": 3,
+      "value": "Review Process",
+      "slug": "review-process"
+    },
+    {
+      "depth": 2,
+      "value": "File Structure",
+      "slug": "file-structure"
+    },
+    {
+      "depth": 2,
+      "value": "Metadata",
+      "slug": "metadata"
+    },
+    {
+      "depth": 3,
+      "value": "Required Fields",
+      "slug": "required-fields"
+    },
+    {
+      "depth": 3,
+      "value": "Optional Fields",
+      "slug": "optional-fields"
+    },
+    {
+      "depth": 2,
+      "value": "App and Pages Docs",
+      "slug": "app-and-pages-docs"
+    },
+    {
+      "depth": 3,
+      "value": "Shared Pages",
+      "slug": "shared-pages"
+    },
+    {
+      "depth": 3,
+      "value": "Shared Content",
+      "slug": "shared-content"
+    },
+    {
+      "depth": 2,
+      "value": "Code Blocks",
+      "slug": "code-blocks"
+    },
+    {
+      "depth": 3,
+      "value": "Language and Filename",
+      "slug": "language-and-filename"
+    },
+    {
+      "depth": 3,
+      "value": "TS and JS Switcher",
+      "slug": "ts-and-js-switcher"
+    },
+    {
+      "depth": 3,
+      "value": "Line Highlighting",
+      "slug": "line-highlighting"
+    },
+    {
+      "depth": 2,
+      "value": "Icons",
+      "slug": "icons"
+    },
+    {
+      "depth": 2,
+      "value": "Notes",
+      "slug": "notes"
+    },
+    {
+      "depth": 2,
+      "value": "Related Links",
+      "slug": "related-links"
+    },
+    {
+      "depth": 3,
+      "value": "Nested Fields",
+      "slug": "nested-fields"
+    },
+    {
+      "depth": 2,
+      "value": "Diagrams",
+      "slug": "diagrams"
+    },
+    {
+      "depth": 2,
+      "value": "Custom Components and HTML",
+      "slug": "custom-components-and-html"
+    },
+    {
+      "depth": 2,
+      "value": "Style Guide",
+      "slug": "style-guide"
+    },
+    {
+      "depth": 3,
+      "value": "Page Templates",
+      "slug": "page-templates"
+    },
+    {
+      "depth": 3,
+      "value": "Page Types",
+      "slug": "page-types"
+    },
+    {
+      "depth": 3,
+      "value": "Voice",
+      "slug": "voice"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/network/NTP",
+  "slug": "linux/network/NTP",
+  "segments": [
+    "linux",
+    "network",
+    "NTP"
+  ],
+  "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+  "meta": {
+    "title": "时间同步",
+    "description": "时间同步",
+    "created_at": "2025-03-22T01:12:59.000Z",
+    "updated_at": "2025-03-22T01:12:59.000Z",
+    "tags": [
+      "linux",
+      "time"
+    ],
+    "related": {
+      "links": [
+        "linux/systemd-timesyncd",
+        "linux/system_time"
+      ]
+    }
+  },
+  "order": 1,
+  "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "安装",
+      "slug": "安装"
+    },
+    {
+      "depth": 2,
+      "value": "配置",
+      "slug": "配置"
+    },
+    {
+      "depth": 3,
+      "value": "连接到 NTP 服务器",
+      "slug": "连接到-ntp-服务器"
+    },
+    {
+      "depth": 3,
+      "value": "NTP 服务器模式",
+      "slug": "ntp-服务器模式"
+    },
+    {
+      "depth": 2,
+      "value": "使用",
+      "slug": "使用"
+    }
+  ]
+}

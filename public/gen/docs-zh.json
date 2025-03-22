@@ -1,0 +1,1151 @@
+{
+  "i18": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/i18",
+    "slug": "i18",
+    "segments": [
+      "i18"
+    ],
+    "filePath": "docs/zh/i18.mdx",
+    "order": 99,
+    "meta": {
+      "title": "i18 国际化",
+      "description": null,
+      "created_at": "2025-03-17T20:14:57.000Z",
+      "updated_at": "2025-03-17T20:14:57.000Z",
+      "tags": []
+    },
+    "content": "\n```sh\npnpm add i18next react-i18next i18next-resources-to-backend next-i18n-router\n```\n",
+    "toc": []
+  },
+  "dev/contentlayer": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/contentlayer",
+    "slug": "dev/contentlayer",
+    "segments": [
+      "dev",
+      "contentlayer"
+    ],
+    "filePath": "docs/zh/dev/contentlayer.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# contentlayer\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "contentlayer",
+        "slug": "contentlayer"
+      }
+    ]
+  },
+  "dev": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
+    "segments": [
+      "dev"
+    ],
+    "filePath": "docs/zh/dev/index.mdx",
+    "order": 99,
+    "meta": {
+      "title": "dev",
+      "description": null,
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
+      "tags": [
+        "dev"
+      ]
+    },
+    "content": "\n## 常用框架\n\n- [Next.js](./nextjs)\n- [Hono.js](./honojs)\n\n## 常用工具\n\n- [git](./git)\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "常用框架",
+        "slug": "常用框架"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
+      }
+    ]
+  },
+  "dev/search": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/search",
+    "slug": "dev/search",
+    "segments": [
+      "dev",
+      "search"
+    ],
+    "filePath": "docs/zh/dev/search.mdx",
+    "order": 99,
+    "meta": {
+      "title": "增添搜索引擎",
+      "description": "增加搜索功能, 支持全部内容搜索",
+      "created_at": "2025-03-19T17:49:42.000Z",
+      "updated_at": "2025-03-19T17:49:42.000Z",
+      "tags": [
+        "search",
+        "web"
+      ]
+    },
+    "content": "\n## 结构选择\n\n| type | description |\n| --- | --- |\n| arr | 数组 |\n| arrTree | 数组树 |\n| kvArr | 键值数组 |\n| kvTree | 键值树 |\n\n### 需求\n\n- [ ] 搜索\n  - [ ] 支持全文搜索\n  - [ ] 支持搜索结果高亮\n  - [ ] 支持搜索结果分页\n  - [ ] 支持搜索结果排序\n- [ ] 详情页面\n- [ ] 树状侧边导航栏\n\n### 解析 标题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "结构选择",
+        "slug": "结构选择"
+      },
+      {
+        "depth": 3,
+        "value": "需求",
+        "slug": "需求"
+      },
+      {
+        "depth": 3,
+        "value": "解析 标题",
+        "slug": "解析-标题"
+      }
+    ]
+  },
+  "dev/test": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
+    "segments": [
+      "dev",
+      "test"
+    ],
+    "filePath": "docs/zh/dev/test.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "",
+    "toc": []
+  },
+  "dev/todo": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/todo",
+    "slug": "dev/todo",
+    "segments": [
+      "dev",
+      "todo"
+    ],
+    "filePath": "docs/zh/dev/todo.mdx",
+    "order": 99,
+    "meta": {
+      "title": "todo",
+      "description": "todo next-mdx-remote",
+      "created_at": "2025-03-18T15:19:34Z",
+      "updated_at": "2025-03-18T15:19:34Z",
+      "tags": [
+        "todo",
+        "mdx"
+      ]
+    },
+    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基本",
+        "slug": "基本"
+      },
+      {
+        "depth": 3,
+        "value": "remark-breaks",
+        "slug": "remark-breaks"
+      },
+      {
+        "depth": 3,
+        "value": "This is a heading",
+        "slug": "this-is-a-heading"
+      },
+      {
+        "depth": 3,
+        "value": "code block",
+        "slug": "code-block"
+      },
+      {
+        "depth": 3,
+        "value": "math code block",
+        "slug": "math-code-block"
+      },
+      {
+        "depth": 2,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 3,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      },
+      {
+        "depth": 3,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "obsidian",
+        "slug": "obsidian"
+      },
+      {
+        "depth": 2,
+        "value": "next",
+        "slug": "next"
+      }
+    ]
+  },
+  "next/15": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  "ts/async": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
+  },
+  "ts/tsconfig": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/tsconfig",
+    "slug": "ts/tsconfig",
+    "segments": [
+      "ts",
+      "tsconfig"
+    ],
+    "filePath": "docs/zh/ts/tsconfig.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tsconfig",
+        "slug": "tsconfig"
+      },
+      {
+        "depth": 2,
+        "value": "compilerOptions",
+        "slug": "compileroptions"
+      },
+      {
+        "depth": 3,
+        "value": "moduleResolution",
+        "slug": "moduleresolution"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: node",
+        "slug": "moduleresolution:-node"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: bundler",
+        "slug": "moduleresolution:-bundler"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      }
+    ]
+  },
+  "dev/md/code-blocks": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/code-blocks",
+    "slug": "dev/md/code-blocks",
+    "segments": [
+      "dev",
+      "md",
+      "code-blocks"
+    ],
+    "filePath": "docs/zh/dev/md/code-blocks.mdx",
+    "order": 99,
+    "meta": {
+      "title": "code blocks",
+      "created_at": "2024-10-04",
+      "updated_at": "2024-11-09T13:04:17Z",
+      "tags": [
+        "mdx",
+        "sugar-high"
+      ],
+      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+    },
+    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "syntax highlighting",
+        "slug": "syntax-highlighting"
+      },
+      {
+        "depth": 3,
+        "value": "Prism.js",
+        "slug": "prism.js"
+      },
+      {
+        "depth": 4,
+        "value": "prismjs",
+        "slug": "prismjs"
+      },
+      {
+        "depth": 4,
+        "value": "rehype-prism-plus",
+        "slug": "rehype-prism-plus"
+      },
+      {
+        "depth": 4,
+        "value": "如何协同工作",
+        "slug": "如何协同工作"
+      },
+      {
+        "depth": 4,
+        "value": "prism-react-renderer",
+        "slug": "prism-react-renderer"
+      },
+      {
+        "depth": 3,
+        "value": "Highlight.js",
+        "slug": "highlight.js"
+      },
+      {
+        "depth": 3,
+        "value": "monaco-editor",
+        "slug": "monaco-editor"
+      },
+      {
+        "depth": 2,
+        "value": "test",
+        "slug": "test"
+      },
+      {
+        "depth": 3,
+        "value": "示例代码",
+        "slug": "示例代码"
+      },
+      {
+        "depth": 2,
+        "value": "mdx",
+        "slug": "mdx"
+      },
+      {
+        "depth": 3,
+        "value": "compile time",
+        "slug": "compile-time"
+      },
+      {
+        "depth": 3,
+        "value": "runtime",
+        "slug": "runtime"
+      },
+      {
+        "depth": 2,
+        "value": "vscode-theme",
+        "slug": "vscode-theme"
+      },
+      {
+        "depth": 3,
+        "value": "VS Code 主题",
+        "slug": "vs-code-主题"
+      },
+      {
+        "depth": 3,
+        "value": "Monaco Editor 主题",
+        "slug": "monaco-editor-主题"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "VS Code 主题示例",
+        "slug": "vs-code-主题示例"
+      },
+      {
+        "depth": 4,
+        "value": "Monaco Editor 主题示例",
+        "slug": "monaco-editor-主题示例"
+      },
+      {
+        "depth": 3,
+        "value": "code-demo",
+        "slug": "code-demo"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 4,
+        "value": "tsx",
+        "slug": "tsx"
+      }
+    ]
+  },
+  "dev/md/docs": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
+    "segments": [
+      "dev",
+      "md",
+      "docs"
+    ],
+    "filePath": "docs/zh/dev/md/docs.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "",
+    "toc": []
+  },
+  "dev/md/github": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "order": 99,
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  "dev/md/mdx": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/mdx",
+    "slug": "dev/md/mdx",
+    "segments": [
+      "dev",
+      "md",
+      "mdx"
+    ],
+    "filePath": "docs/zh/dev/md/mdx.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "",
+    "toc": []
+  },
+  "dev/md/slug": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "order": 99,
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  "about": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about",
+    "slug": "about",
+    "segments": [
+      "about"
+    ],
+    "filePath": "docs/zh/about/index.mdx",
+    "order": 99,
+    "meta": {
+      "title": "关于",
+      "description": "关于本软件的开发",
+      "created_at": "2025-03-21T13:49:29.000Z",
+      "updated_at": "2025-03-21T13:49:29.000Z",
+      "tags": [
+        "about"
+      ]
+    },
+    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "本仓库内的文件监视功能",
+        "slug": "本仓库内的文件监视功能"
+      }
+    ]
+  },
+  "linux/command/readme": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
+      }
+    ]
+  },
+  "linux/console/Command-line_shell": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
+    "segments": [
+      "linux",
+      "console",
+      "Command-line_shell"
+    ],
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "",
+    "toc": []
+  },
+  "linux/console/readme": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/readme",
+    "slug": "linux/console/readme",
+    "segments": [
+      "linux",
+      "console",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/console/readme.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "terminal",
+        "slug": "terminal"
+      },
+      {
+        "depth": 2,
+        "value": "Keyboard Shortcuts",
+        "slug": "keyboard-shortcuts"
+      },
+      {
+        "depth": 2,
+        "value": "start",
+        "slug": "start"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Paste",
+        "slug": "terminal:-paste"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Copy Selection",
+        "slug": "terminal:-copy-selection"
+      }
+    ]
+  },
+  "linux/file_systems/readme": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  "linux/input/readme": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/input/readme",
+    "slug": "linux/input/readme",
+    "segments": [
+      "linux",
+      "input",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/input/readme.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# input\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "input",
+        "slug": "input"
+      }
+    ]
+  },
+  "next/04-community/contribution-guide": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/04-community/contribution-guide",
+    "slug": "next/04-community/contribution-guide",
+    "segments": [
+      "next",
+      "04-community",
+      "contribution-guide"
+    ],
+    "filePath": "docs/zh/next/04-community/01-contribution-guide.mdx",
+    "order": 1,
+    "meta": {
+      "title": "Docs Contribution Guide",
+      "nav_title": "Contribution Guide",
+      "description": "Learn how to contribute to Next.js Documentation"
+    },
+    "content": "\nWelcome to the Next.js Docs Contribution Guide! We're excited to have you here.\n\nThis page provides instructions on how to edit the Next.js documentation. Our goal is to ensure that everyone in the community feels empowered to contribute and improve our docs.\n\n## Why Contribute?\n\nOpen-source work is never done, and neither is documentation. Contributing to docs is a good way for beginners to get involved in open-source and for experienced developers to clarify more complex topics while sharing their knowledge with the community.\n\nBy contributing to the Next.js docs, you're helping us build a more robust learning resource for all developers. Whether you've found a typo, a confusing section, or you've realized that a particular topic is missing, your contributions are welcomed and appreciated.\n\n## How to Contribute\n\nThe docs content can be found on the [Next.js repo](https://github.com/vercel/next.js/tree/canary/docs). To contribute, you can edit the files directly on GitHub or clone the repo and edit the files locally.\n\n### GitHub Workflow\n\nIf you're new to GitHub, we recommend reading the [GitHub Open Source Guide](https://opensource.guide/how-to-contribute/#opening-a-pull-request) to learn how to fork a repository, create a branch, and submit a pull request.\n\n> **Good to know**: The underlying docs code lives in a private codebase that is synced to the Next.js public repo. This means that you can't preview the docs locally. However, you'll see your changes on [nextjs.org](https://nextjs.org/docs) after merging a pull request.\n\n### Writing MDX\n\nThe docs are written in [MDX](https://mdxjs.com/), a markdown format that supports JSX syntax. This allows us to embed React components in the docs. See the [GitHub Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for a quick overview of markdown syntax.\n\n### VSCode\n\n#### Previewing Changes Locally\n\nVSCode has a built-in markdown previewer that you can use to see your edits locally. To enable the previewer for MDX files, you'll need to add a configuration option to your user settings.\n\nOpen the command palette (`⌘ + ⇧ + P` on Mac or `Ctrl + Shift + P` on Windows) and search from `Preferences: Open User Settings (JSON)`.\n\nThen, add the following line to your `settings.json` file:\n\n```json filename=\"settings.json\"\n{\n  \"files.associations\": {\n    \"*.mdx\": \"markdown\"\n  }\n}\n```\n\nNext, open the command palette again, and search for `Markdown: Preview File` or `Markdown: Open Preview to the Side`. This will open a preview window where you can see your formatted changes.\n\n#### Extensions\n\nWe also recommend the following extensions for VSCode users:\n\n- [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): Intellisense and syntax highlighting for MDX.\n- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Format MDX files on save.\n\n### Review Process\n\nOnce you've submitted your contribution, the Next.js or Developer Experience teams will review your changes, provide feedback, and merge the pull request when it's ready.\n\nPlease let us know if you have any questions or need further assistance in your PR's comments. Thank you for contributing to the Next.js docs and being a part of our community!\n\n> **Tip:** Run `pnpm prettier-fix` to run Prettier before submitting your PR.\n\n## File Structure\n\nThe docs use **file-system routing**. Each folder and files inside [`/docs`](https://github.com/vercel/next.js/tree/canary/docs) represent a route segment. These segments are used to generate the URL paths, navigation, and breadcrumbs.\n\nThe file structure reflects the navigation that you see on the site, and by default, navigation items are sorted alphabetically. However, we can change the order of the items by prepending a two-digit number (`00-`) to the folder or file name.\n\nFor example, in the [functions API Reference](/docs/app/api-reference/functions), the pages are sorted alphabetically because it makes it easier for developers to find a specific function:\n\n```txt\n04-functions\n├── after.mdx\n├── cacheLife.mdx\n├── cacheTag.mdx\n└── ...\n```\n\nBut, in the [routing section](/docs/app/building-your-application/routing), the files are prefixed with a two-digit number, sorted in the order developers should learn these concepts:\n\n```txt\n01-routing\n├── 01-defining-routes.mdx\n├── 02-pages.mdx\n├── 03-layouts-and-templates.mdx\n└── ...\n```\n\nTo quickly find a page, you can use `⌘ + P` (Mac) or `Ctrl + P` (Windows) to open the search bar on VSCode. Then, type the slug of the page you're looking for. E.g. `defining-routes`\n\n> **Why not use a manifest?**\n>\n> We considered using a manifest file (another popular way to generate the docs navigation), but we found that a manifest would quickly get out of sync with the files. File-system routing forces us to think about the structure of the docs and feels more native to Next.js.\n\n## Metadata\n\nEach page has a metadata block at the top of the file separated by three dashes.\n\n### Required Fields\n\nThe following fields are **required**:\n\n| Field         | Description                                                                  |\n| ------------- | ---------------------------------------------------------------------------- |\n| `title`       | The page's `<h1>` title, used for SEO and OG Images.                         |\n| `description` | The page's description, used in the `<meta name=\"description\">` tag for SEO. |\n\n```yaml filename=\"required-fields.mdx\"\n---\ntitle: Page Title\ndescription: Page Description\n---\n```\n\nIt's good practice to limit the page title to 2-3 words (e.g. Optimizing Images) and the description to 1-2 sentences (e.g. Learn how to optimize images in Next.js).\n\n### Optional Fields\n\nThe following fields are **optional**:\n\n| Field       | Description                                                                                                                                        |\n| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `nav_title` | Overrides the page's title in the navigation. This is useful when the page's title is too long to fit. If not provided, the `title` field is used. |\n| `source`    | Pulls content into a shared page. See [Shared Pages](#shared-pages).                                                                               |\n| `related`   | A list of related pages at the bottom of the document. These will automatically be turned into cards. See [Related Links](#related-links).         |\n| `version`   | A stage of development. e.g. `experimental`,`legacy`,`unstable`,`RC`                                                                               |\n\n```yaml filename=\"optional-fields.mdx\"\n---\nnav_title: Nav Item Title\nsource: app/building-your-application/optimizing/images\nrelated:\n  description: See the image component API reference.\n  links:\n    - app/api-reference/components/image\nversion: experimental\n---\n```\n\n## `App` and `Pages` Docs\n\nSince most of the features in the **App Router** and **Pages Router** are completely different, their docs for each are kept in separate sections (`02-app` and `03-pages`). However, there are a few features that are shared between them.\n\n### Shared Pages\n\nTo avoid content duplication and risk the content becoming out of sync, we use the `source` field to pull content from one page into another. For example, the `<Link>` component behaves _mostly_ the same in **App** and **Pages**. Instead of duplicating the content, we can pull the content from `app/.../link.mdx` into `pages/.../link.mdx`:\n\n```mdx filename=\"app/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\n---\n\nThis API reference will help you understand how to use the props\nand configuration options available for the Link Component.\n```\n\n```mdx filename=\"pages/.../link.mdx\"\n---\ntitle: <Link>\ndescription: API reference for the <Link> component.\nsource: app/api-reference/components/link\n---\n\n{/* DO NOT EDIT THIS PAGE. */}\n{/* The content of this page is pulled from the source above. */}\n```\n\nWe can therefore edit the content in one place and have it reflected in both sections.\n\n### Shared Content\n\nIn shared pages, sometimes there might be content that is **App Router** or **Pages Router** specific. For example, the `<Link>` component has a `shallow` prop that is only available in **Pages** but not in **App**.\n\nTo make sure the content only shows in the correct router, we can wrap content blocks in an `<AppOnly>` or `<PagesOnly>` components:\n\n```mdx filename=\"app/.../link.mdx\"\nThis content is shared between App and Pages.\n\n<PagesOnly>\n\nThis content will only be shown on the Pages docs.\n\n</PagesOnly>\n\nThis content is shared between App and Pages.\n```\n\nYou'll likely use these components for examples and code blocks.\n\n## Code Blocks\n\nCode blocks should contain a minimum working example that can be copied and pasted. This means that the code should be able to run without any additional configuration.\n\nFor example, if you're showing how to use the `<Link>` component, you should include the `import` statement and the `<Link>` component itself.\n\n```tsx filename=\"app/page.tsx\"\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\nAlways run examples locally before committing them. This will ensure that the code is up-to-date and working.\n\n### Language and Filename\n\nCode blocks should have a header that includes the language and the `filename`. Add a `filename` prop to render a special Terminal icon that helps orientate users where to input the command. For example:\n\n````mdx filename=\"code-example.mdx\"\n```bash filename=\"Terminal\"\nnpx create-next-app\n```\n````\n\nMost examples in the docs are written in `tsx` and `jsx`, and a few in `bash`. However, you can use any supported language, here's the [full list](https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages).\n\nWhen writing JavaScript code blocks, we use the following language and extension combinations.\n\n|                                | Language | Extension |\n| ------------------------------ | -------- | --------- |\n| JavaScript files with JSX code | ```jsx   | .js       |\n| JavaScript files without JSX   | ```js    | .js       |\n| TypeScript files with JSX      | ```tsx   | .tsx      |\n| TypeScript files without JSX   | ```ts    | .ts       |\n\n> **Good to know**:\n>\n> - Make sure to use **`js`** extension with **JSX** code at JavaScript files.\n> - For example, ```jsx filename=\"app/layout.js\"\n\n### TS and JS Switcher\n\nAdd a language switcher to toggle between TypeScript and JavaScript. Code blocks should be TypeScript first with a JavaScript version to accommodate users.\n\nCurrently, we write TS and JS examples one after the other, and link them with `switcher` prop:\n\n````mdx filename=\"code-example.mdx\"\n```tsx filename=\"app/page.tsx\" switcher\n\n```\n\n```jsx filename=\"app/page.js\" switcher\n\n```\n````\n\n> **Good to know**: We plan to automatically compile TypeScript snippets to JavaScript in the future. In the meantime, you can use [transform.tools](https://transform.tools/typescript-to-javascript).\n\n### Line Highlighting\n\nCode lines can be highlighted. This is useful when you want to draw attention to a specific part of the code. You can highlight lines by passing a number to the `highlight` prop.\n\n**Single Line:** `highlight={1}`\n\n```tsx filename=\"app/page.tsx\" {1}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Multiple Lines:** `highlight={1,3}`\n\n```tsx filename=\"app/page.tsx\" highlight={1,3}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n**Range of Lines:** `highlight={1-5}`\n\n```tsx filename=\"app/page.tsx\" highlight={1-5}\nimport Link from 'next/link'\n\nexport default function Page() {\n  return <Link href=\"/about\">About</Link>\n}\n```\n\n## Icons\n\nThe following icons are available for use in the docs:\n\n```mdx filename=\"mdx-icon.mdx\"\n<Check size={18} />\n<Cross size={18} />\n```\n\n**Output:**\n\n<Check size={18} />\n<Cross size={18} />\n\nWe do not use emojis in the docs.\n\n## Notes\n\nFor information that is important but not critical, use notes. Notes are a good way to add information without distracting the user from the main content.\n\n```mdx filename=\"notes.mdx\"\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n```\n\n**Output:**\n\n> **Good to know**: This is a single line note.\n\n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n\n## Related Links\n\nRelated Links guide the user's learning journey by adding links to logical next steps.\n\n- Links will be displayed in cards under the main content of the page.\n- Links will be automatically generated for pages that have child pages. For example, the [Optimizing](/docs/app/building-your-application/optimizing) section has links to all of its child pages.\n\nCreate related links using the `related` field in the page's metadata.\n\n```yaml filename=\"example.mdx\"\n---\nrelated:\n  description: Learn how to quickly get started with your first application.\n  links:\n    - app/building-your-application/routing/defining-routes\n    - app/building-your-application/data-fetching\n    - app/api-reference/file-conventions/page\n---\n```\n\n### Nested Fields\n\n| Field         | Required? | Description                                                                                                                                               |\n| ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `title`       | Optional  | The title of the card list. Defaults to **Next Steps**.                                                                                                   |\n| `description` | Optional  | The description of the card list.                                                                                                                         |\n| `links`       | Required  | A list of links to other doc pages. Each list item should be a relative URL path (without a leading slash) e.g. `app/api-reference/file-conventions/page` |\n\n## Diagrams\n\nDiagrams are a great way to explain complex concepts. We use [Figma](https://www.figma.com/) to create diagrams, following Vercel's design guide.\n\nThe diagrams currently live in the `/public` folder in our private Next.js site. If you'd like to update or add a diagram, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new?assignees=&labels=template%3A+documentation&projects=&template=4.docs_request.yml&title=Docs%3A+) with your ideas.\n\n## Custom Components and HTML\n\nThese are the React Components available for the docs: `<Image />` (next/image), `<PagesOnly />`, `<AppOnly />`, `<Cross />`, and `<Check />`. We do not allow raw HTML in the docs besides the `<details>` tag.\n\nIf you have ideas for new components, please open a [GitHub issue](https://github.com/vercel/next.js/issues/new/choose).\n\n## Style Guide\n\nThis section contains guidelines for writing docs for those who are new to technical writing.\n\n### Page Templates\n\nWhile we don't have a strict template for pages, there are page sections you'll see repeated across the docs:\n\n- **Overview:** The first paragraph of a page should tell the user what the feature is and what it's used for. Followed by a minimum working example or its API reference.\n- **Convention:** If the feature has a convention, it should be explained here.\n- **Examples**: Show how the feature can be used with different use cases.\n- **API Tables**: API Pages should have an overview table at the of the page with jump-to-section links (when possible).\n- **Next Steps (Related Links)**: Add links to related pages to guide the user's learning journey.\n\nFeel free to add these sections as needed.\n\n### Page Types\n\nDocs pages are also split into two categories: Conceptual and Reference.\n\n- **Conceptual** pages are used to explain a concept or feature. They are usually longer and contain more information than reference pages. In the Next.js docs, conceptual pages are found in the **Building Your Application** section.\n- **Reference** pages are used to explain a specific API. They are usually shorter and more focused. In the Next.js docs, reference pages are found in the **API Reference** section.\n\n> **Good to know**: Depending on the page you're contributing to, you may need to follow a different voice and style. For example, conceptual pages are more instructional and use the word _you_ to address the user. Reference pages are more technical, they use more imperative words like \"create, update, accept\" and tend to omit the word _you_.\n\n### Voice\n\nHere are some guidelines to maintain a consistent style and voice across the docs:\n\n- Write clear, concise sentences. Avoid tangents.\n  - If you find yourself using a lot of commas, consider breaking the sentence into multiple sentences or use a list.\n  - Swap out complex words for simpler ones. For example, _use_ instead of _utilize_.\n- Be mindful with the word _this_. It can be ambiguous and confusing, don't be afraid to repeat the subject of the sentence if unclear.\n  - For example, _Next.js uses React_ instead of _Next.js uses this_.\n- Use an active voice instead of passive. An active sentence is easier to read.\n  - For example, _Next.js uses React_ instead of _React is used by Next.js_. If you find yourself using words like _was_ and _by_ you may be using a passive voice.\n- Avoid using words like _easy_, _quick_, _simple_, _just_, etc. This is subjective and can be discouraging to users.\n- Avoid negative words like _don't_, _can't_, _won't_, etc. This can be discouraging to readers.\n  - For example, _\"You can use the `Link` component to create links between pages\"_ instead of _\"Don't use the `<a>` tag to create links between pages\"_.\n- Write in second person (you/your). This is more personal and engaging.\n- Use gender-neutral language. Use _developers_, _users_, or _readers_, when referring to the audience.\n- If adding code examples, ensure they are properly formatted and working.\n\nWhile these guidelines are not exhaustive, they should help you get started. If you'd like to dive deeper into technical writing, check out the [Google Technical Writing Course](https://developers.google.com/tech-writing/overview).\n\n---\n\nThank you for contributing to the docs and being part of the Next.js community!\n\n{/* To do: Latest Contributors Component */}",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Why Contribute?",
+        "slug": "why-contribute?"
+      },
+      {
+        "depth": 2,
+        "value": "How to Contribute",
+        "slug": "how-to-contribute"
+      },
+      {
+        "depth": 3,
+        "value": "GitHub Workflow",
+        "slug": "github-workflow"
+      },
+      {
+        "depth": 3,
+        "value": "Writing MDX",
+        "slug": "writing-mdx"
+      },
+      {
+        "depth": 3,
+        "value": "VSCode",
+        "slug": "vscode"
+      },
+      {
+        "depth": 4,
+        "value": "Previewing Changes Locally",
+        "slug": "previewing-changes-locally"
+      },
+      {
+        "depth": 4,
+        "value": "Extensions",
+        "slug": "extensions"
+      },
+      {
+        "depth": 3,
+        "value": "Review Process",
+        "slug": "review-process"
+      },
+      {
+        "depth": 2,
+        "value": "File Structure",
+        "slug": "file-structure"
+      },
+      {
+        "depth": 2,
+        "value": "Metadata",
+        "slug": "metadata"
+      },
+      {
+        "depth": 3,
+        "value": "Required Fields",
+        "slug": "required-fields"
+      },
+      {
+        "depth": 3,
+        "value": "Optional Fields",
+        "slug": "optional-fields"
+      },
+      {
+        "depth": 2,
+        "value": "App and Pages Docs",
+        "slug": "app-and-pages-docs"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Pages",
+        "slug": "shared-pages"
+      },
+      {
+        "depth": 3,
+        "value": "Shared Content",
+        "slug": "shared-content"
+      },
+      {
+        "depth": 2,
+        "value": "Code Blocks",
+        "slug": "code-blocks"
+      },
+      {
+        "depth": 3,
+        "value": "Language and Filename",
+        "slug": "language-and-filename"
+      },
+      {
+        "depth": 3,
+        "value": "TS and JS Switcher",
+        "slug": "ts-and-js-switcher"
+      },
+      {
+        "depth": 3,
+        "value": "Line Highlighting",
+        "slug": "line-highlighting"
+      },
+      {
+        "depth": 2,
+        "value": "Icons",
+        "slug": "icons"
+      },
+      {
+        "depth": 2,
+        "value": "Notes",
+        "slug": "notes"
+      },
+      {
+        "depth": 2,
+        "value": "Related Links",
+        "slug": "related-links"
+      },
+      {
+        "depth": 3,
+        "value": "Nested Fields",
+        "slug": "nested-fields"
+      },
+      {
+        "depth": 2,
+        "value": "Diagrams",
+        "slug": "diagrams"
+      },
+      {
+        "depth": 2,
+        "value": "Custom Components and HTML",
+        "slug": "custom-components-and-html"
+      },
+      {
+        "depth": 2,
+        "value": "Style Guide",
+        "slug": "style-guide"
+      },
+      {
+        "depth": 3,
+        "value": "Page Templates",
+        "slug": "page-templates"
+      },
+      {
+        "depth": 3,
+        "value": "Page Types",
+        "slug": "page-types"
+      },
+      {
+        "depth": 3,
+        "value": "Voice",
+        "slug": "voice"
+      }
+    ]
+  },
+  "dev/md/css/color": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/color",
+    "slug": "dev/md/css/color",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "color"
+    ],
+    "filePath": "docs/zh/dev/md/css/color.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# Color\n\n$$\ny=\\sin(x)\n$$\n\n## format\n\n### rgb\n\n```css\n.dc {\n  color: rgb(88, 101, 242);\n}\n```\n\n### HSL\n\n`HSL` 是一种表示颜色的格式，全称为 **Hue（色相）、Saturation（饱和度）、Lightness（亮度）**。它是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 和其他设计工具中，用于定义颜色。\n\n### HSL 的结构\n\nHSL 的格式如下：\n\n```css\nhsl(hue, saturation, lightness)\n```\n\n- **`hue`（色相）**：\n  - 表示颜色的基本类型，例如红色、绿色、蓝色等。\n  - 取值范围为 `0` 到 `360`，表示色轮上的角度：\n    - `0`：红色\n    - `120`：绿色\n    - `240`：蓝色\n    - 其他值是这些颜色之间的过渡，例如 `60` 是黄色，`180` 是青色。\n    \n- **`saturation`（饱和度）**：\n  - 表示颜色的强度或纯度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全无色（灰色）。\n    - `100%`：完全饱和（最纯的颜色）。\n\n- **`lightness`（亮度）**：\n  - 表示颜色的明暗程度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全黑色。\n    - `100%`：完全白色。\n    - `50%`：标准亮度。\n\n### 示例\n\n#### 基本颜色\n\n```css\n/* 红色 */\nhsl(0, 100%, 50%)\n\n/* 绿色 */\nhsl(120, 100%, 50%)\n\n/* 蓝色 */\nhsl(240, 100%, 50%)\n```\n\n#### 调整饱和度\n\n```css\n/* 低饱和度的红色（接近灰色） */\nhsl(0, 20%, 50%)\n\n/* 高饱和度的红色 */\nhsl(0, 100%, 50%)\n```\n\n#### 调整亮度\n\n```css\n/* 暗红色 */\nhsl(0, 100%, 20%)\n\n/* 明亮的红色 */\nhsl(0, 100%, 80%)\n```\n\n### HSLA 格式\n\n`HSLA` 是 HSL 的扩展，支持透明度（Alpha 通道）。格式如下：\n\n```css\nhsla(hue, saturation, lightness, alpha)\n```\n\n- **`alpha`（透明度）**：\n  - 表示颜色的透明度。\n  - 取值范围为 `0`（完全透明）到 `1`（完全不透明）。\n\n#### 示例\n\n```css\n/* 半透明的红色 */\nhsla(0, 100%, 50%, 0.5)\n\n/* 半透明的蓝色 */\nhsla(240, 100%, 50%, 0.3)\n```\n\n### HSL 的优点\n\n1. **直观**：相比于 RGB，HSL 更加直观，特别是在调整颜色的亮度和饱和度时。\n2. **易于调整**：可以轻松调整颜色的亮度和饱和度，而不需要重新计算 RGB 值。\n3. **设计友好**：HSL 更接近设计师的思维方式，因为它基于色相、饱和度和亮度。\n\n### 总结\n\nHSL 是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 中定义颜色。它的格式为 `hsl(hue, saturation, lightness)`，其中 `hue` 表示颜色的类型，`saturation` 表示颜色的纯度，`lightness` 表示颜色的明暗程度。扩展格式 `hsla` 还支持透明度。HSL 的直观性和易用性使其在设计和开发中非常流行。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "Color",
+        "slug": "color"
+      },
+      {
+        "depth": 2,
+        "value": "format",
+        "slug": "format"
+      },
+      {
+        "depth": 3,
+        "value": "rgb",
+        "slug": "rgb"
+      },
+      {
+        "depth": 3,
+        "value": "HSL",
+        "slug": "hsl"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的结构",
+        "slug": "hsl-的结构"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "基本颜色",
+        "slug": "基本颜色"
+      },
+      {
+        "depth": 4,
+        "value": "调整饱和度",
+        "slug": "调整饱和度"
+      },
+      {
+        "depth": 4,
+        "value": "调整亮度",
+        "slug": "调整亮度"
+      },
+      {
+        "depth": 3,
+        "value": "HSLA 格式",
+        "slug": "hsla-格式"
+      },
+      {
+        "depth": 4,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的优点",
+        "slug": "hsl-的优点"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
+      }
+    ]
+  },
+  "dev/md/css/tailwind": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "tailwind"
+    ],
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "order": 99,
+    "meta": {},
+    "content": "# tailwindCss\n\n## Colors\n\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
+      },
+      {
+        "depth": 2,
+        "value": "Colors",
+        "slug": "colors"
+      }
+    ]
+  },
+  "next/01-app/03-building-your-application/06-optimizing/package-bundling": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/01-app/03-building-your-application/06-optimizing/package-bundling",
+    "slug": "next/01-app/03-building-your-application/06-optimizing/package-bundling",
+    "segments": [
+      "next",
+      "01-app",
+      "03-building-your-application",
+      "06-optimizing",
+      "package-bundling"
+    ],
+    "filePath": "docs/zh/next/01-app/03-building-your-application/06-optimizing/06-package-bundling.mdx",
+    "order": 6,
+    "meta": {
+      "title": "Optimizing Package Bundling",
+      "nav_title": "Package Bundling",
+      "description": "Learn how to optimize your application's server and client bundles.",
+      "related": {
+        "description": "Learn more about optimizing your application for production.",
+        "links": [
+          "app/building-your-application/deploying/production-checklist"
+        ]
+      }
+    },
+    "content": "\nBundling external packages can significantly improve the performance of your application. <AppOnly>By default, packages imported inside Server Components and Route Handlers are automatically bundled by Next.js. This page will guide you through how to analyze and further optimize package bundling.</AppOnly> <PagesOnly>By default, packages imported into your application are not bundled. This can impact performance or might not work if external packages are not pre-bundled, for example, if imported from a monorepo or `node_modules`. This page will guide you through how to analyze and configure package bundling.</PagesOnly>\n\n> 捆绑外部包可以显著提高应用程序的性能。<AppOnly>默认情况下，在服务器组件和路由处理程序中导入的包会自动由 Next.js 进行捆绑。本页面将指导您如何分析和进一步优化包的捆绑。</AppOnly> <PagesOnly>默认情况下，导入到应用程序中的包不会被捆绑。这可能会影响性能，或者如果外部包没有预先捆绑（例如，从 monorepo 或 node_modules 导入），可能无法正常工作。本页面将指导您如何分析和配置包的捆绑。</PagesOnly>\n\n## Analyzing JavaScript bundles\n\n[`@next/bundle-analyzer`](https://www.npmjs.com/package/@next/bundle-analyzer) is a plugin for Next.js that helps you manage the size of your application bundles. It generates a visual report of the size of each package and their dependencies. You can use the information to remove large dependencies, split, or [lazy-load](/docs/app/building-your-application/optimizing/lazy-loading) your code.\n\n### Installation\n\nInstall the plugin by running the following command:\n\n```bash\nnpm i @next/bundle-analyzer\n# or\nyarn add @next/bundle-analyzer\n# or\npnpm add @next/bundle-analyzer\n```\n\nThen, add the bundle analyzer's settings to your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {}\n\nconst withBundleAnalyzer = require('@next/bundle-analyzer')({\n  enabled: process.env.ANALYZE === 'true',\n})\n\nmodule.exports = withBundleAnalyzer(nextConfig)\n```\n\n### Generating a report\n\nRun the following command to analyze your bundles:\n\n```bash\nANALYZE=true npm run build\n# or\nANALYZE=true yarn build\n# or\nANALYZE=true pnpm build\n```\n\nThe report will open three new tabs in your browser, which you can inspect. Periodically evaluating your application's bundles can help you maintain application performance over time.\n\n## Optimizing package imports\n\nSome packages, such as icon libraries, can export hundreds of modules, which can cause performance issues in development and production.\n\nYou can optimize how these packages are imported by adding the [`optimizePackageImports`](/docs/app/api-reference/config/next-config-js/optimizePackageImports) option to your `next.config.js`. This option will only load the modules you _actually_ use, while still giving you the convenience of writing import statements with many named exports.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  experimental: {\n    optimizePackageImports: ['icon-library'],\n  },\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js also optimizes some libraries automatically, thus they do not need to be included in the optimizePackageImports list. See the [full list](https://nextjs.org/docs/app/api-reference/config/next-config-js/optimizePackageImports).\n\n<PagesOnly>\n\n## Bundling specific packages\n\nTo bundle specific packages, you can use the [`transpilePackages`](/docs/app/api-reference/config/next-config-js/transpilePackages) option in your `next.config.js`. This option is useful for bundling external packages that are not pre-bundled, for example, in a monorepo or imported from `node_modules`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  transpilePackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n## Bundling all packages\n\nTo automatically bundle all packages (default behavior in the App Router), you can use the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  bundlePagesRouterDependencies: true,\n}\n\nmodule.exports = nextConfig\n```\n\n## Opting specific packages out of bundling\n\nIf you have the [`bundlePagesRouterDependencies`](/docs/pages/api-reference/config/next-config-js/bundlePagesRouterDependencies) option enabled, you can opt specific packages out of automatic bundling using the [`serverExternalPackages`](/docs/pages/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`:\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  // Automatically bundle external packages in the Pages Router:\n  bundlePagesRouterDependencies: true,\n  // Opt specific packages out of bundling for both App and Pages Router:\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\n</PagesOnly>\n\n<AppOnly>\n\n## Opting specific packages out of bundling\n\nSince packages imported inside Server Components and Route Handlers are automatically bundled by Next.js, you can opt specific packages out of bundling using the [`serverExternalPackages`](/docs/app/api-reference/config/next-config-js/serverExternalPackages) option in your `next.config.js`.\n\n```js filename=\"next.config.js\"\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  serverExternalPackages: ['package-name'],\n}\n\nmodule.exports = nextConfig\n```\n\nNext.js includes a list of popular packages that currently are working on compatibility and automatically opt-ed out. See the [full list](/docs/app/api-reference/config/next-config-js/serverExternalPackages).\n\n</AppOnly>",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Analyzing JavaScript bundles",
+        "slug": "analyzing-javascript-bundles"
+      },
+      {
+        "depth": 3,
+        "value": "Installation",
+        "slug": "installation"
+      },
+      {
+        "depth": 3,
+        "value": "Generating a report",
+        "slug": "generating-a-report"
+      },
+      {
+        "depth": 2,
+        "value": "Optimizing package imports",
+        "slug": "optimizing-package-imports"
+      },
+      {
+        "depth": 2,
+        "value": "Bundling specific packages",
+        "slug": "bundling-specific-packages"
+      },
+      {
+        "depth": 2,
+        "value": "Bundling all packages",
+        "slug": "bundling-all-packages"
+      },
+      {
+        "depth": 2,
+        "value": "Opting specific packages out of bundling",
+        "slug": "opting-specific-packages-out-of-bundling"
+      },
+      {
+        "depth": 2,
+        "value": "Opting specific packages out of bundling",
+        "slug": "opting-specific-packages-out-of-bundling"
+      }
+    ]
+  },
+  "next/01-app/04-api-reference/05-config/01-next-config-js/turbo": {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/01-app/04-api-reference/05-config/01-next-config-js/turbo",
+    "slug": "next/01-app/04-api-reference/05-config/01-next-config-js/turbo",
+    "segments": [
+      "next",
+      "01-app",
+      "04-api-reference",
+      "05-config",
+      "01-next-config-js",
+      "turbo"
+    ],
+    "filePath": "docs/zh/next/01-app/04-api-reference/05-config/01-next-config-js/turbo.mdx",
+    "order": 99,
+    "meta": {
+      "title": "turbo",
+      "description": "Configure Next.js with Turbopack-specific options",
+      "version": "experimental"
+    },
+    "content": "\n{/* The content of this doc is shared between the app and pages router. You can use the `<PagesOnly>Content</PagesOnly>` component to add content that is specific to the Pages Router. Any shared content should not be wrapped in a component. */}\n\nThe `turbo` option lets you customize [Turbopack](/docs/app/api-reference/turbopack) to transform different files and change how modules are resolved.\n\n```ts filename=\"next.config.ts\" switcher\nimport type { NextConfig } from 'next'\n\nconst nextConfig: NextConfig = {\n  experimental: {\n    turbo: {\n      // ...\n    },\n  },\n}\n\nexport default nextConfig\n```\n\n```js filename=\"next.config.js\" switcher\n/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  experimental: {\n    turbo: {\n      // ...\n    },\n  },\n}\n\nmodule.exports = nextConfig\n```\n\n> **Good to know**:\n>\n> - Turbopack for Next.js does not require loaders nor loader configuration for built-in functionality. Turbopack has built-in support for CSS and compiling modern JavaScript, so there's no need for `css-loader`, `postcss-loader`, or `babel-loader` if you're using `@babel/preset-env`.\n\n## Reference\n\n### Options\n\nThe following options are available for the `turbo` configuration:\n\n| Option              | Description                                                             |\n| ------------------- | ----------------------------------------------------------------------- |\n| `rules`             | List of supported webpack loaders to apply when running with Turbopack. |\n| `resolveAlias`      | Map aliased imports to modules to load in their place.                  |\n| `resolveExtensions` | List of extensions to resolve when importing files.                     |\n| `moduleIdStrategy`  | Assign module IDs                                                       |\n| `treeShaking`       | Enable tree shaking for the turbopack dev server and build.             |\n| `memoryLimit`       | A target memory limit for turbo, in bytes.                              |\n\n### Supported loaders\n\nThe following loaders have been tested to work with Turbopack's webpack loader implementation:\n\n- [`babel-loader`](https://www.npmjs.com/package/babel-loader)\n- [`@svgr/webpack`](https://www.npmjs.com/package/@svgr/webpack)\n- [`svg-inline-loader`](https://www.npmjs.com/package/svg-inline-loader)\n- [`yaml-loader`](https://www.npmjs.com/package/yaml-loader)\n- [`string-replace-loader`](https://www.npmjs.com/package/string-replace-loader)\n- [`raw-loader`](https://www.npmjs.com/package/raw-loader)\n- [`sass-loader`](https://www.npmjs.com/package/sass-loader)\n\n## Examples\n\n### Configuring webpack loaders\n\nIf you need loader support beyond what's built in, many webpack loaders already work with Turbopack. There are currently some limitations:\n\n- Only a core subset of the webpack loader API is implemented. Currently, there is enough coverage for some popular loaders, and we'll expand our API support in the future.\n- Only loaders that return JavaScript code are supported. Loaders that transform files like stylesheets or images are not currently supported.\n- Options passed to webpack loaders must be plain JavaScript primitives, objects, and arrays. For example, it's not possible to pass `require()` plugin modules as option values.\n\nTo configure loaders, add the names of the loaders you've installed and any options in `next.config.js`, mapping file extensions to a list of loaders:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      rules: {\n        '*.svg': {\n          loaders: ['@svgr/webpack'],\n          as: '*.js',\n        },\n      },\n    },\n  },\n}\n```\n\n> **Good to know**: Prior to Next.js version 13.4.4, `turbo.rules` was named `turbo.loaders` and only accepted file extensions like `.mdx` instead of `*.mdx`.\n\n### Resolving aliases\n\nTurbopack can be configured to modify module resolution through aliases, similar to webpack's [`resolve.alias`](https://webpack.js.org/configuration/resolve/#resolvealias) configuration.\n\nTo configure resolve aliases, map imported patterns to their new destination in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      resolveAlias: {\n        underscore: 'lodash',\n        mocha: { browser: 'mocha/browser-entry.js' },\n      },\n    },\n  },\n}\n```\n\nThis aliases imports of the `underscore` package to the `lodash` package. In other words, `import underscore from 'underscore'` will load the `lodash` module instead of `underscore`.\n\nTurbopack also supports conditional aliasing through this field, similar to Node.js' [conditional exports](https://nodejs.org/docs/latest-v18.x/api/packages.html#conditional-exports). At the moment only the `browser` condition is supported. In the case above, imports of the `mocha` module will be aliased to `mocha/browser-entry.js` when Turbopack targets browser environments.\n\n### Resolving custom extensions\n\nTurbopack can be configured to resolve modules with custom extensions, similar to webpack's [`resolve.extensions`](https://webpack.js.org/configuration/resolve/#resolveextensions) configuration.\n\nTo configure resolve extensions, use the `resolveExtensions` field in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      resolveExtensions: [\n        '.mdx',\n        '.tsx',\n        '.ts',\n        '.jsx',\n        '.js',\n        '.mjs',\n        '.json',\n      ],\n    },\n  },\n}\n```\n\nThis overwrites the original resolve extensions with the provided list. Make sure to include the default extensions.\n\nFor more information and guidance for how to migrate your app to Turbopack from webpack, see [Turbopack's documentation on webpack compatibility](https://turbo.build/pack/docs/migrating-from-webpack).\n\n### Assigning module IDs\n\nTurbopack currently supports two strategies for assigning module IDs:\n\n- `'named'` assigns readable module IDs based on the module's path and functionality.\n- `'deterministic'` assigns small hashed numeric module IDs, which are mostly consistent between builds and therefore help with long-term caching.\n\nIf not set, Turbopack will use `'named'` for development builds and `'deterministic'` for production builds.\n\nTo configure the module IDs strategy, use the `moduleIdStrategy` field in `next.config.js`:\n\n```js filename=\"next.config.js\"\nmodule.exports = {\n  experimental: {\n    turbo: {\n      moduleIdStrategy: 'deterministic',\n    },\n  },\n}\n```\n\n## Version History\n\n| Version  | Changes                          |\n| -------- | -------------------------------- |\n| `13.0.0` | `experimental.turbo` introduced. |",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Reference",
+        "slug": "reference"
+      },
+      {
+        "depth": 3,
+        "value": "Options",
+        "slug": "options"
+      },
+      {
+        "depth": 3,
+        "value": "Supported loaders",
+        "slug": "supported-loaders"
+      },
+      {
+        "depth": 2,
+        "value": "Examples",
+        "slug": "examples"
+      },
+      {
+        "depth": 3,
+        "value": "Configuring webpack loaders",
+        "slug": "configuring-webpack-loaders"
+      },
+      {
+        "depth": 3,
+        "value": "Resolving aliases",
+        "slug": "resolving-aliases"
+      },
+      {
+        "depth": 3,
+        "value": "Resolving custom extensions",
+        "slug": "resolving-custom-extensions"
+      },
+      {
+        "depth": 3,
+        "value": "Assigning module IDs",
+        "slug": "assigning-module-ids"
+      },
+      {
+        "depth": 2,
+        "value": "Version History",
+        "slug": "version-history"
+      }
+    ]
+  }
+}
