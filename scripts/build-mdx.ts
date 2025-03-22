@@ -1,6 +1,6 @@
 // scripts/build-mdx.ts
 import path from "path"
-import { processAllMdxFiles } from "../src/lib/md/mdx-to-json"
+import { processAllMdxFiles } from "@/lib/md/mdx-to-json"
 import { i18nConfig } from "@/app/i18n/i18nConfig"
 
 const contentDir = path.join(process.cwd(), "src", "data")

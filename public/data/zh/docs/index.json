@@ -22,27 +22,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/contentlayer",
-    "slug": "dev/contentlayer",
-    "segments": [
-      "dev",
-      "contentlayer"
-    ],
-    "filePath": "docs/zh/dev/contentlayer.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# contentlayer\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "contentlayer",
-        "slug": "contentlayer"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/about",
     "slug": "about",
     "segments": [
@@ -71,112 +50,49 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev",
-    "slug": "dev",
+    "url": "/zh/docs/dev/contentlayer",
+    "slug": "dev/contentlayer",
     "segments": [
-      "dev"
+      "dev",
+      "contentlayer"
     ],
-    "filePath": "docs/zh/dev/index.mdx",
-    "meta": {
-      "title": "dev",
-      "description": null,
-      "created_at": "2025-03-21T09:48:56.000Z",
-      "updated_at": "2025-03-21T09:48:56.000Z",
-      "tags": [
-        "dev"
-      ]
-    },
+    "filePath": "docs/zh/dev/contentlayer.mdx",
+    "meta": {},
     "order": 99,
-    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
+    "content": "# contentlayer\n",
     "toc": [
       {
-        "depth": 2,
-        "value": "常用框架\\库\\module",
-        "slug": "常用框架\\库\\module"
-      },
-      {
-        "depth": 2,
-        "value": "常用工具",
-        "slug": "常用工具"
+        "depth": 1,
+        "value": "contentlayer",
+        "slug": "contentlayer"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/test",
-    "slug": "dev/test",
+    "url": "/zh/docs/html",
+    "slug": "html",
     "segments": [
-      "dev",
-      "test"
+      "html"
     ],
-    "filePath": "docs/zh/dev/test.mdx",
+    "filePath": "docs/zh/html/index.mdx",
     "meta": {
-      "title": "测试",
-      "description": "用于测试 mdx",
-      "created_at": "2025-03-22T00:42:34.000Z",
-      "updated_at": "2025-03-22T00:42:34.000Z",
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
       "tags": [
-        "test"
+        "html"
       ]
     },
     "order": 99,
-    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
     "toc": [
       {
         "depth": 2,
-        "value": "markdown",
-        "slug": "markdown"
-      },
-      {
-        "depth": 3,
-        "value": "标题",
-        "slug": "标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级标题1",
-        "slug": "四级标题1"
-      },
-      {
-        "depth": 3,
-        "value": "三级 标题",
-        "slug": "三级-标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级 标题2",
-        "slug": "四级-标题2"
-      },
-      {
-        "depth": 5,
-        "value": "五级 标题",
-        "slug": "五级-标题"
-      },
-      {
-        "depth": 6,
-        "value": "六级 标题",
-        "slug": "六级-标题"
-      },
-      {
-        "depth": 2,
-        "value": "GitHub flavored markdown (GFM)",
-        "slug": "github-flavored-markdown-(gfm)"
-      },
-      {
-        "depth": 3,
-        "value": "三级标题",
-        "slug": "三级标题"
-      },
-      {
-        "depth": 2,
-        "value": "代码块",
-        "slug": "代码块"
-      },
-      {
-        "depth": 2,
-        "value": "图表",
-        "slug": "图表"
+        "value": "list",
+        "slug": "list"
       }
     ]
   },
@@ -318,106 +234,114 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/html",
-    "slug": "html",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
     "segments": [
-      "html"
+      "dev"
     ],
-    "filePath": "docs/zh/html/index.mdx",
+    "filePath": "docs/zh/dev/index.mdx",
     "meta": {
-      "title": "html",
-      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
-      "created_at": "2025-03-22T02:26:21.000Z",
-      "updated_at": "2025-03-22T02:26:21.000Z",
+      "title": "dev",
+      "description": null,
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
       "tags": [
-        "html"
+        "dev"
       ]
     },
     "order": 99,
-    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
     "toc": [
       {
         "depth": 2,
-        "value": "list",
-        "slug": "list"
+        "value": "常用框架\\库\\module",
+        "slug": "常用框架\\库\\module"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg",
-    "slug": "alg",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
     "segments": [
-      "alg"
+      "dev",
+      "test"
     ],
-    "filePath": "docs/zh/alg/index.mdx",
+    "filePath": "docs/zh/dev/test.mdx",
     "meta": {
-      "title": "算法",
-      "description": "alg 即 algorithm",
-      "created_at": "2025-03-22T05:35:44.000Z",
-      "updated_at": "2025-03-22T05:35:44.000Z",
+      "title": "测试",
+      "description": "用于测试 mdx",
+      "created_at": "2025-03-22T00:42:34.000Z",
+      "updated_at": "2025-03-22T00:42:34.000Z",
       "tags": [
-        "alg"
+        "test"
       ]
     },
     "order": 99,
-    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
     "toc": [
       {
         "depth": 2,
-        "value": "基础",
-        "slug": "基础"
+        "value": "markdown",
+        "slug": "markdown"
       },
       {
         "depth": 3,
-        "value": "动态规划",
-        "slug": "动态规划"
+        "value": "标题",
+        "slug": "标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级标题1",
+        "slug": "四级标题1"
       },
       {
         "depth": 3,
-        "value": "贪心算法",
-        "slug": "贪心算法"
+        "value": "三级 标题",
+        "slug": "三级-标题"
       },
       {
-        "depth": 3,
-        "value": "分治法",
-        "slug": "分治法"
+        "depth": 4,
+        "value": "四级 标题2",
+        "slug": "四级-标题2"
+      },
+      {
+        "depth": 5,
+        "value": "五级 标题",
+        "slug": "五级-标题"
+      },
+      {
+        "depth": 6,
+        "value": "六级 标题",
+        "slug": "六级-标题"
       },
       {
         "depth": 2,
-        "value": "时间复杂度和空间复杂度",
-        "slug": "时间复杂度和空间复杂度"
+        "value": "GitHub flavored markdown (GFM)",
+        "slug": "github-flavored-markdown-(gfm)"
+      },
+      {
+        "depth": 3,
+        "value": "三级标题",
+        "slug": "三级标题"
       },
       {
         "depth": 2,
-        "value": "常见问题",
-        "slug": "常见问题"
+        "value": "代码块",
+        "slug": "代码块"
+      },
+      {
+        "depth": 2,
+        "value": "图表",
+        "slug": "图表"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/Array",
-    "slug": "alg/Array",
-    "segments": [
-      "alg",
-      "Array"
-    ],
-    "filePath": "docs/zh/alg/Array.mdx",
-    "meta": {
-      "title": "数组",
-      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
-      "created_at": "2025-03-22T15:50:04.000Z",
-      "updated_at": "2025-03-22T15:50:04.000Z",
-      "tags": [
-        "Array"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
   },
   {
     "locale": "zh",
@@ -522,150 +446,25 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
-    "segments": [
-      "next",
-      "15"
-    ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
-      },
-      {
-        "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/python",
-    "slug": "alg/python",
+    "url": "/zh/docs/alg/Array",
+    "slug": "alg/Array",
     "segments": [
       "alg",
-      "python"
+      "Array"
     ],
-    "filePath": "docs/zh/alg/python.mdx",
+    "filePath": "docs/zh/alg/Array.mdx",
     "meta": {
-      "title": "python",
-      "description": null,
-      "created_at": "2025-03-22T06:13:49.000Z",
-      "updated_at": "2025-03-22T06:13:49.000Z",
+      "title": "数组",
+      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
+      "created_at": "2025-03-22T15:50:04.000Z",
+      "updated_at": "2025-03-22T15:50:04.000Z",
       "tags": [
-        "alg",
-        "python"
+        "Array"
       ]
     },
     "order": 99,
     "content": "",
     "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/struct",
-    "slug": "alg/struct",
-    "segments": [
-      "alg",
-      "struct"
-    ],
-    "filePath": "docs/zh/alg/struct.mdx",
-    "meta": {
-      "title": "数据结构",
-      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
-      "created_at": "2025-03-22T18:11:12.000Z",
-      "updated_at": "2025-03-22T18:11:12.000Z",
-      "tags": [
-        "alg",
-        "data-structure"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/async",
-    "slug": "ts/async",
-    "segments": [
-      "ts",
-      "async"
-    ],
-    "filePath": "docs/zh/ts/async.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "ts/async",
-        "slug": "ts/async"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/system_time",
-    "slug": "linux/system_time",
-    "segments": [
-      "linux",
-      "system_time"
-    ],
-    "filePath": "docs/zh/linux/system_time.mdx",
-    "meta": {
-      "title": "系统时间",
-      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
-      "created_at": "2025-03-22T03:26:09.000Z",
-      "updated_at": "2025-03-22T03:26:09.000Z",
-      "tags": [
-        "linux",
-        "os",
-        "time"
-      ]
-    },
-    "order": 99,
-    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
-      }
-    ]
   },
   {
     "locale": "zh",
@@ -726,19 +525,22 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/systemd-timesyncd",
-    "slug": "linux/systemd-timesyncd",
+    "url": "/zh/docs/alg/python",
+    "slug": "alg/python",
     "segments": [
-      "linux",
-      "systemd-timesyncd"
+      "alg",
+      "python"
     ],
-    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
+    "filePath": "docs/zh/alg/python.mdx",
     "meta": {
-      "title": "systemd-timesyncd",
-      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
-      "created_at": "2025-03-22T03:16:43.000Z",
-      "updated_at": "2025-03-22T03:16:43.000Z",
-      "tags": []
+      "title": "python",
+      "description": null,
+      "created_at": "2025-03-22T06:13:49.000Z",
+      "updated_at": "2025-03-22T06:13:49.000Z",
+      "tags": [
+        "alg",
+        "python"
+      ]
     },
     "order": 99,
     "content": "",
@@ -747,22 +549,74 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
     "segments": [
-      "next"
+      "alg"
     ],
-    "filePath": "docs/zh/next/index.mdx",
+    "filePath": "docs/zh/alg/index.mdx",
     "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
       "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/struct",
+    "slug": "alg/struct",
+    "segments": [
+      "alg",
+      "struct"
+    ],
+    "filePath": "docs/zh/alg/struct.mdx",
+    "meta": {
+      "title": "数据结构",
+      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
+      "created_at": "2025-03-22T18:11:12.000Z",
+      "updated_at": "2025-03-22T18:11:12.000Z",
+      "tags": [
+        "alg",
+        "data-structure"
       ]
     },
     "order": 99,
@@ -794,6 +648,103 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux/system_time",
+    "slug": "linux/system_time",
+    "segments": [
+      "linux",
+      "system_time"
+    ],
+    "filePath": "docs/zh/linux/system_time.mdx",
+    "meta": {
+      "title": "系统时间",
+      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
+      "created_at": "2025-03-22T03:26:09.000Z",
+      "updated_at": "2025-03-22T03:26:09.000Z",
+      "tags": [
+        "linux",
+        "os",
+        "time"
+      ]
+    },
+    "order": 99,
+    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/systemd-timesyncd",
+    "slug": "linux/systemd-timesyncd",
+    "segments": [
+      "linux",
+      "systemd-timesyncd"
+    ],
+    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
+    "meta": {
+      "title": "systemd-timesyncd",
+      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
+      "created_at": "2025-03-22T03:16:43.000Z",
+      "updated_at": "2025-03-22T03:16:43.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next",
+    "slug": "next",
+    "segments": [
+      "next"
+    ],
+    "filePath": "docs/zh/next/index.mdx",
+    "meta": {
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
+      "tags": [
+        "next",
+        "ts",
+        "react",
+        "web"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/ts",
     "slug": "ts",
     "segments": [
@@ -812,6 +763,55 @@
     "order": 99,
     "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
+    "segments": [
+      "paper"
+    ],
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数据集",
+        "slug": "数据集"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -861,391 +861,6 @@
         "depth": 5,
         "value": "特点",
         "slug": "特点"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/docs",
-    "slug": "dev/md/docs",
-    "segments": [
-      "dev",
-      "md",
-      "docs"
-    ],
-    "filePath": "docs/zh/dev/md/docs.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/mdx",
-    "slug": "dev/md/mdx",
-    "segments": [
-      "dev",
-      "md",
-      "mdx"
-    ],
-    "filePath": "docs/zh/dev/md/mdx.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/github",
-    "slug": "dev/md/github",
-    "segments": [
-      "dev",
-      "md",
-      "github"
-    ],
-    "filePath": "docs/zh/dev/md/github.mdx",
-    "meta": {
-      "title": "GitHub",
-      "description": "GitHub flavored markdown (GFM)",
-      "created_at": "2025-03-17T14:44:46.000Z",
-      "updated_at": "2025-03-17T14:55:01.000Z",
-      "tags": [
-        "markdown",
-        "github"
-      ]
-    },
-    "order": 99,
-    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 2,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/slug",
-    "slug": "dev/md/slug",
-    "segments": [
-      "dev",
-      "md",
-      "slug"
-    ],
-    "filePath": "docs/zh/dev/md/slug.mdx",
-    "meta": {
-      "title": "md slug",
-      "description": null,
-      "created_at": "2025-03-17T18:03:47.000Z",
-      "updated_at": "2025-03-17T18:03:47.000Z",
-      "tags": [
-        "markdown",
-        "slug",
-        "url"
-      ]
-    },
-    "order": 99,
-    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/enum",
-    "slug": "alg/enum",
-    "segments": [
-      "alg",
-      "enum"
-    ],
-    "filePath": "docs/zh/alg/enum/index.mdx",
-    "meta": {
-      "title": "穷举法",
-      "description": "这是一个非常好的起点！暴力枚举是解决算法问题的基础方法之一，尤其是在解空间有限的情况下。虽然暴力枚举通常不是最优解，但它是理解问题和验证复杂算法的关键工具。",
-      "created_at": "2025-03-22T16:40:54.000Z",
-      "updated_at": "2025-03-22T16:40:54.000Z",
-      "tags": [
-        "alg",
-        "enum"
-      ]
-    },
-    "order": 99,
-    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "什么是暴力枚举？",
-        "slug": "什么是暴力枚举？"
-      },
-      {
-        "depth": 2,
-        "value": "学习暴力枚举的步骤",
-        "slug": "学习暴力枚举的步骤"
-      },
-      {
-        "depth": 3,
-        "value": "理解问题的解空间",
-        "slug": "理解问题的解空间"
-      },
-      {
-        "depth": 3,
-        "value": "生成所有可能的解",
-        "slug": "生成所有可能的解"
-      },
-      {
-        "depth": 3,
-        "value": "验证解是否满足条件",
-        "slug": "验证解是否满足条件"
-      },
-      {
-        "depth": 3,
-        "value": "优化暴力枚举",
-        "slug": "优化暴力枚举"
-      },
-      {
-        "depth": 2,
-        "value": "学习暴力枚举的练习题",
-        "slug": "学习暴力枚举的练习题"
-      },
-      {
-        "depth": 3,
-        "value": "简单枚举",
-        "slug": "简单枚举"
-      },
-      {
-        "depth": 3,
-        "value": "多层枚举",
-        "slug": "多层枚举"
-      },
-      {
-        "depth": 3,
-        "value": "排列与组合",
-        "slug": "排列与组合"
-      },
-      {
-        "depth": 3,
-        "value": "验证条件",
-        "slug": "验证条件"
-      },
-      {
-        "depth": 3,
-        "value": "复杂枚举",
-        "slug": "复杂枚举"
-      },
-      {
-        "depth": 2,
-        "value": "学习暴力枚举的资源",
-        "slug": "学习暴力枚举的资源"
-      },
-      {
-        "depth": 2,
-        "value": "学习路径建议",
-        "slug": "学习路径建议"
-      },
-      {
-        "depth": 2,
-        "value": "总结",
-        "slug": "总结"
-      },
-      {
-        "depth": 2,
-        "value": "竞赛题",
-        "slug": "竞赛题"
-      },
-      {
-        "depth": 3,
-        "value": "题目描述",
-        "slug": "题目描述"
-      },
-      {
-        "depth": 3,
-        "value": "输入描述",
-        "slug": "输入描述"
-      },
-      {
-        "depth": 3,
-        "value": "输出描述",
-        "slug": "输出描述"
-      },
-      {
-        "depth": 3,
-        "value": "知识点",
-        "slug": "知识点"
-      },
-      {
-        "depth": 3,
-        "value": "运行限制",
-        "slug": "运行限制"
-      },
-      {
-        "depth": 3,
-        "value": "解答",
-        "slug": "解答"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/code-blocks",
-    "slug": "dev/md/code-blocks",
-    "segments": [
-      "dev",
-      "md",
-      "code-blocks"
-    ],
-    "filePath": "docs/zh/dev/md/code-blocks.mdx",
-    "meta": {
-      "title": "code blocks",
-      "created_at": "2024-10-04",
-      "updated_at": "2024-11-09T13:04:17Z",
-      "tags": [
-        "mdx",
-        "sugar-high"
-      ],
-      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
-    },
-    "order": 99,
-    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "syntax highlighting",
-        "slug": "syntax-highlighting"
-      },
-      {
-        "depth": 3,
-        "value": "Prism.js",
-        "slug": "prism.js"
-      },
-      {
-        "depth": 4,
-        "value": "prismjs",
-        "slug": "prismjs"
-      },
-      {
-        "depth": 4,
-        "value": "rehype-prism-plus",
-        "slug": "rehype-prism-plus"
-      },
-      {
-        "depth": 4,
-        "value": "如何协同工作",
-        "slug": "如何协同工作"
-      },
-      {
-        "depth": 4,
-        "value": "prism-react-renderer",
-        "slug": "prism-react-renderer"
-      },
-      {
-        "depth": 3,
-        "value": "Highlight.js",
-        "slug": "highlight.js"
-      },
-      {
-        "depth": 3,
-        "value": "monaco-editor",
-        "slug": "monaco-editor"
-      },
-      {
-        "depth": 2,
-        "value": "test",
-        "slug": "test"
-      },
-      {
-        "depth": 3,
-        "value": "示例代码",
-        "slug": "示例代码"
-      },
-      {
-        "depth": 2,
-        "value": "mdx",
-        "slug": "mdx"
-      },
-      {
-        "depth": 3,
-        "value": "compile time",
-        "slug": "compile-time"
-      },
-      {
-        "depth": 3,
-        "value": "runtime",
-        "slug": "runtime"
-      },
-      {
-        "depth": 2,
-        "value": "vscode-theme",
-        "slug": "vscode-theme"
-      },
-      {
-        "depth": 3,
-        "value": "VS Code 主题",
-        "slug": "vs-code-主题"
-      },
-      {
-        "depth": 3,
-        "value": "Monaco Editor 主题",
-        "slug": "monaco-editor-主题"
-      },
-      {
-        "depth": 3,
-        "value": "示例",
-        "slug": "示例"
-      },
-      {
-        "depth": 4,
-        "value": "VS Code 主题示例",
-        "slug": "vs-code-主题示例"
-      },
-      {
-        "depth": 4,
-        "value": "Monaco Editor 主题示例",
-        "slug": "monaco-editor-主题示例"
-      },
-      {
-        "depth": 3,
-        "value": "code-demo",
-        "slug": "code-demo"
-      },
-      {
-        "depth": 4,
-        "value": "python",
-        "slug": "python"
-      },
-      {
-        "depth": 4,
-        "value": "tsx",
-        "slug": "tsx"
       }
     ]
   },
@@ -1418,18 +1033,387 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/console/Command-line_shell",
-    "slug": "linux/console/Command-line_shell",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
     "segments": [
-      "linux",
-      "console",
-      "Command-line_shell"
+      "dev",
+      "md",
+      "docs"
     ],
-    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+    "filePath": "docs/zh/dev/md/docs.mdx",
     "meta": {},
     "order": 99,
     "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/code-blocks",
+    "slug": "dev/md/code-blocks",
+    "segments": [
+      "dev",
+      "md",
+      "code-blocks"
+    ],
+    "filePath": "docs/zh/dev/md/code-blocks.mdx",
+    "meta": {
+      "title": "code blocks",
+      "created_at": "2024-10-04",
+      "updated_at": "2024-11-09T13:04:17Z",
+      "tags": [
+        "mdx",
+        "sugar-high"
+      ],
+      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+    },
+    "order": 99,
+    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "syntax highlighting",
+        "slug": "syntax-highlighting"
+      },
+      {
+        "depth": 3,
+        "value": "Prism.js",
+        "slug": "prism.js"
+      },
+      {
+        "depth": 4,
+        "value": "prismjs",
+        "slug": "prismjs"
+      },
+      {
+        "depth": 4,
+        "value": "rehype-prism-plus",
+        "slug": "rehype-prism-plus"
+      },
+      {
+        "depth": 4,
+        "value": "如何协同工作",
+        "slug": "如何协同工作"
+      },
+      {
+        "depth": 4,
+        "value": "prism-react-renderer",
+        "slug": "prism-react-renderer"
+      },
+      {
+        "depth": 3,
+        "value": "Highlight.js",
+        "slug": "highlight.js"
+      },
+      {
+        "depth": 3,
+        "value": "monaco-editor",
+        "slug": "monaco-editor"
+      },
+      {
+        "depth": 2,
+        "value": "test",
+        "slug": "test"
+      },
+      {
+        "depth": 3,
+        "value": "示例代码",
+        "slug": "示例代码"
+      },
+      {
+        "depth": 2,
+        "value": "mdx",
+        "slug": "mdx"
+      },
+      {
+        "depth": 3,
+        "value": "compile time",
+        "slug": "compile-time"
+      },
+      {
+        "depth": 3,
+        "value": "runtime",
+        "slug": "runtime"
+      },
+      {
+        "depth": 2,
+        "value": "vscode-theme",
+        "slug": "vscode-theme"
+      },
+      {
+        "depth": 3,
+        "value": "VS Code 主题",
+        "slug": "vs-code-主题"
+      },
+      {
+        "depth": 3,
+        "value": "Monaco Editor 主题",
+        "slug": "monaco-editor-主题"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "VS Code 主题示例",
+        "slug": "vs-code-主题示例"
+      },
+      {
+        "depth": 4,
+        "value": "Monaco Editor 主题示例",
+        "slug": "monaco-editor-主题示例"
+      },
+      {
+        "depth": 3,
+        "value": "code-demo",
+        "slug": "code-demo"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 4,
+        "value": "tsx",
+        "slug": "tsx"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/mdx",
+    "slug": "dev/md/mdx",
+    "segments": [
+      "dev",
+      "md",
+      "mdx"
+    ],
+    "filePath": "docs/zh/dev/md/mdx.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
+    "order": 99,
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/enum",
+    "slug": "alg/enum",
+    "segments": [
+      "alg",
+      "enum"
+    ],
+    "filePath": "docs/zh/alg/enum/index.mdx",
+    "meta": {
+      "title": "穷举法",
+      "description": "这是一个非常好的起点！暴力枚举是解决算法问题的基础方法之一，尤其是在解空间有限的情况下。虽然暴力枚举通常不是最优解，但它是理解问题和验证复杂算法的关键工具。",
+      "created_at": "2025-03-22T16:40:54.000Z",
+      "updated_at": "2025-03-22T16:40:54.000Z",
+      "tags": [
+        "alg",
+        "enum"
+      ]
+    },
+    "order": 99,
+    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "什么是暴力枚举？",
+        "slug": "什么是暴力枚举？"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的步骤",
+        "slug": "学习暴力枚举的步骤"
+      },
+      {
+        "depth": 3,
+        "value": "理解问题的解空间",
+        "slug": "理解问题的解空间"
+      },
+      {
+        "depth": 3,
+        "value": "生成所有可能的解",
+        "slug": "生成所有可能的解"
+      },
+      {
+        "depth": 3,
+        "value": "验证解是否满足条件",
+        "slug": "验证解是否满足条件"
+      },
+      {
+        "depth": 3,
+        "value": "优化暴力枚举",
+        "slug": "优化暴力枚举"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的练习题",
+        "slug": "学习暴力枚举的练习题"
+      },
+      {
+        "depth": 3,
+        "value": "简单枚举",
+        "slug": "简单枚举"
+      },
+      {
+        "depth": 3,
+        "value": "多层枚举",
+        "slug": "多层枚举"
+      },
+      {
+        "depth": 3,
+        "value": "排列与组合",
+        "slug": "排列与组合"
+      },
+      {
+        "depth": 3,
+        "value": "验证条件",
+        "slug": "验证条件"
+      },
+      {
+        "depth": 3,
+        "value": "复杂枚举",
+        "slug": "复杂枚举"
+      },
+      {
+        "depth": 2,
+        "value": "学习暴力枚举的资源",
+        "slug": "学习暴力枚举的资源"
+      },
+      {
+        "depth": 2,
+        "value": "学习路径建议",
+        "slug": "学习路径建议"
+      },
+      {
+        "depth": 2,
+        "value": "总结",
+        "slug": "总结"
+      },
+      {
+        "depth": 2,
+        "value": "竞赛题",
+        "slug": "竞赛题"
+      },
+      {
+        "depth": 3,
+        "value": "题目描述",
+        "slug": "题目描述"
+      },
+      {
+        "depth": 3,
+        "value": "输入描述",
+        "slug": "输入描述"
+      },
+      {
+        "depth": 3,
+        "value": "输出描述",
+        "slug": "输出描述"
+      },
+      {
+        "depth": 3,
+        "value": "知识点",
+        "slug": "知识点"
+      },
+      {
+        "depth": 3,
+        "value": "运行限制",
+        "slug": "运行限制"
+      },
+      {
+        "depth": 3,
+        "value": "解答",
+        "slug": "解答"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -1455,6 +1439,79 @@
         "depth": 2,
         "value": "file",
         "slug": "file"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
+    "segments": [
+      "linux",
+      "console",
+      "Command-line_shell"
+    ],
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
+    "segments": [
+      "linux",
+      "network",
+      "NTP"
+    ],
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+    "meta": {
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
+      "tags": [
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
+    },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
       }
     ]
   },
@@ -1541,91 +1598,6 @@
         "depth": 1,
         "value": "input",
         "slug": "input"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
-    "segments": [
-      "linux",
-      "network",
-      "NTP"
-    ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
-      },
-      {
-        "depth": 2,
-        "value": "配置",
-        "slug": "配置"
-      },
-      {
-        "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
-      },
-      {
-        "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css/tailwind",
-    "slug": "dev/md/css/tailwind",
-    "segments": [
-      "dev",
-      "md",
-      "css",
-      "tailwind"
-    ],
-    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tailwindCss\n\n## Colors\n\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tailwindCss",
-        "slug": "tailwindcss"
-      },
-      {
-        "depth": 2,
-        "value": "Colors",
-        "slug": "colors"
       }
     ]
   },
@@ -1875,6 +1847,34 @@
         "depth": 3,
         "value": "总结",
         "slug": "总结"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "tailwind"
+    ],
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tailwindCss\n\n## Colors\n\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
+      },
+      {
+        "depth": 2,
+        "value": "Colors",
+        "slug": "colors"
       }
     ]
   },
