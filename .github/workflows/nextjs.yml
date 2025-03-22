@@ -39,11 +39,11 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       - name: Build project
-        run: pnpm run build
+        run: npm run build
       - name: Export project
-        run: pnpm run export
+        run: npm run export
       - name: Detect package manager
         id: detect-package-manager
         run: |
