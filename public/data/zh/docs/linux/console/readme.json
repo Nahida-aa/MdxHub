@@ -1,0 +1,42 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/console/readme",
+  "slug": "linux/console/readme",
+  "segments": [
+    "linux",
+    "console",
+    "readme"
+  ],
+  "filePath": "docs/zh/linux/console/readme.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "terminal",
+      "slug": "terminal"
+    },
+    {
+      "depth": 2,
+      "value": "Keyboard Shortcuts",
+      "slug": "keyboard-shortcuts"
+    },
+    {
+      "depth": 2,
+      "value": "start",
+      "slug": "start"
+    },
+    {
+      "depth": 3,
+      "value": "Terminal: Paste",
+      "slug": "terminal:-paste"
+    },
+    {
+      "depth": 3,
+      "value": "Terminal: Copy Selection",
+      "slug": "terminal:-copy-selection"
+    }
+  ]
+}

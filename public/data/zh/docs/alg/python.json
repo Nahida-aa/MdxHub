@@ -1,0 +1,24 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/python",
+  "slug": "alg/python",
+  "segments": [
+    "alg",
+    "python"
+  ],
+  "filePath": "docs/zh/alg/python.mdx",
+  "meta": {
+    "title": "python",
+    "description": null,
+    "created_at": "2025-03-22T06:13:49.000Z",
+    "updated_at": "2025-03-22T06:13:49.000Z",
+    "tags": [
+      "alg",
+      "python"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

@@ -1,0 +1,23 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/Array",
+  "slug": "alg/Array",
+  "segments": [
+    "alg",
+    "Array"
+  ],
+  "filePath": "docs/zh/alg/Array.mdx",
+  "meta": {
+    "title": "数组",
+    "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
+    "created_at": "2025-03-22T15:50:04.000Z",
+    "updated_at": "2025-03-22T15:50:04.000Z",
+    "tags": [
+      "Array"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

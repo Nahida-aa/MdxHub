@@ -1,0 +1,22 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/file_systems/readme",
+  "slug": "linux/file_systems/readme",
+  "segments": [
+    "linux",
+    "file_systems",
+    "readme"
+  ],
+  "filePath": "docs/zh/linux/file_systems/readme.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# file_systems",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "file_systems",
+      "slug": "file_systems"
+    }
+  ]
+}

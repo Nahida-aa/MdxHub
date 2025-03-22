@@ -1,38 +1,34 @@
-import '~/css/index.css'
+import '@/css/index.css'
 // import 'rehype-callouts/theme/obsidian'
 // import 'pliny/search/algolia.css'
 // import 'remark-github-blockquote-alert/alert.css'
-import { Space_Grotesk } from 'next/font/google'
+// import { Space_Grotesk } from 'next/font/google'
 // import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 // import { SearchProvider, SearchConfig } from 'pliny/search'
-import {Header} from '~/components/layout/header/Header'
-import SectionContainer from 'src/components/SectionContainer'
+import {Header} from '@/components/layout/header/Header'
+// import SectionContainer from 'src/components/SectionContainer'
 import Footer from 'src/components/Footer'
 import siteMetadata from 'src/data/siteMetadata'
-import { ThemeProviders } from '../../components/providers/theme-providers'
+// import { ThemeProviders } from '../../components/providers/theme-providers'
 import { Metadata } from 'next'
-import { Providers } from '~/components/providers'
-import { SidebarInset, SidebarProvider } from '~/components/ui/sidebar'
-import { AppSidebar } from '~/components/layout/sidebar'
-import { ModeToggleGradientIcon } from '~/components/common/ModeToggle'
-import {ScrollShadow} from "@heroui/scroll-shadow";
-import { Toaster } from "~/components/ui/sonner"
-import { ProgressBar, ProgressBarWithSuspense } from "~/components/layout/header/ProgressBar";
+import { Providers } from '@/components/providers'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/layout/sidebar'
+// import { ModeToggleGradientIcon } from '@/components/common/ModeToggle'
+// import {ScrollShadow} from "@heroui/scroll-shadow";
+import { Toaster } from "@/components/ui/sonner"
+import { ProgressBar, ProgressBarWithSuspense } from "@/components/layout/header/ProgressBar";
 import { dir } from 'i18next'
-import initTranslations from '~/app/i18n/i18n'
-import TranslationsProvider from '~/app/i18n/TranslationsProvider'
-import { i18nConfig } from '~/app/i18n/i18nConfig'
+import initTranslations from '@/app/i18n/i18n'
+import TranslationsProvider from '@/app/i18n/TranslationsProvider'
+import { i18nConfig } from '@/app/i18n/i18nConfig'
 import { Suspense } from 'react'
-import { LoadingS } from '~/components/ui/loading/Loading'
-// import 'rehype-callouts/theme/github'
-// import 'rehype-callouts/theme/vitepress'
-
-
-const space_grotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-})
+import { LoadingS } from '@/components/ui/loading/Loading'
+import { SearchModal, SearchModalProvider } from '@/components/common/search'
+import { TailwindBG } from '@/components/layout/bg/tailwind'
+import { EnhancedSearchModal } from '@/components/search/enhanced-search-modal'
+import { SearchProvider } from '@/components/search/search-context'
+import { myFont } from '@/app/[locale]/font/font'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -112,25 +108,26 @@ export default async function RootLayout({params, children }: { params: Promise<
   const { locale } = await params
   const { t, resources } = await initTranslations(locale, ['common']);
   
-
-  return <html lang={locale} dir={dir(locale)} className={`${space_grotesk.variable} scroll-smooth bg-background`} suppressHydrationWarning>
+  // ${space_grotesk.variable}
+  return <html lang={locale} dir={dir(locale)} className={`${myFont.className} scroll-smooth bg-background`} suppressHydrationWarning>
     <Head />
     <body className={`antialiased max-h-screen `} ><TranslationsProvider
       namespaces={['common']}
       locale={locale}
       resources={resources}>
       <Providers attribute="class" defaultTheme={siteMetadata.theme} enableSystem>
+      <SearchProvider>
+        
         {/* <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} /> */}
         {/* <SectionContainer> */}
           {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
+            <section className="flex  items-center pb-[30vh] -mb-[30vh] h-gradient "></section>
+            <TailwindBG />
           <SidebarProvider>
-            <AppSidebar />
+            <AppSidebar locale={locale} />
             {/* <ScrollShadow className='h-svh' > */}
-            <SidebarInset className='block '>
+            <SidebarInset className=' justify-between bg-transparent'>
               <Suspense fallback={<LoadingS />}>
-            <section className="flex  items-center pb-[44rem] -mb-[44rem] h-gradient ">
-
-            </section>
               <Header  />
 
               {/* <ScrollShadow  className='max-h-screen' > */}
@@ -138,23 +135,26 @@ export default async function RootLayout({params, children }: { params: Promise<
               {/* <section className=" flex flex-1 flex-col max-h-full">
               </section> */}
                 {children}
-              {/* <section className='z-1'>
+              {/* <section className='z-0'>
 
               </section> */}
         <ProgressBar />
         <Toaster position="top-right" richColors   />
+        {/* <SearchModal /> */}
+        <EnhancedSearchModal />
               {/* <section className="w-full text-amber-100/70 !max-w-none prose dark:prose-invert text-center pt-[35rem] -mt-[35rem] f-gradient" > */}
-              <section className="w-full z-0  text-amber-100/70 !max-w-none prose dark:prose-invert text-center pb-[7rem] pt-[35rem] -mt-[28rem] f-gradient" >
               <Footer />
-              </section>
               </Suspense>
               {/* </ScrollShadow> */}
             </SidebarInset>
 {/* </ScrollShadow> */}
           </SidebarProvider>
+              <section className="w-full text-amber-100/70 !max-w-none prose dark:prose-invert text-center pt-[20vh] -mt-[20vh] f-gradient" ></section>
+              {/* pt-[47.25rem] -mt-[47.25rem] */}
           {/* <ModeToggleGradientIcon /> */}
           {/* </SearchProvider> */}
         {/* </SectionContainer> */}
+        </SearchProvider>
       </Providers>
     </TranslationsProvider>
     </body>

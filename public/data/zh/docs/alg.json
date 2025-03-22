@@ -1,0 +1,53 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg",
+  "slug": "alg",
+  "segments": [
+    "alg"
+  ],
+  "filePath": "docs/zh/alg/index.mdx",
+  "meta": {
+    "title": "算法",
+    "description": "alg 即 algorithm",
+    "created_at": "2025-03-22T05:35:44.000Z",
+    "updated_at": "2025-03-22T05:35:44.000Z",
+    "tags": [
+      "alg"
+    ]
+  },
+  "order": 99,
+  "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "基础",
+      "slug": "基础"
+    },
+    {
+      "depth": 3,
+      "value": "动态规划",
+      "slug": "动态规划"
+    },
+    {
+      "depth": 3,
+      "value": "贪心算法",
+      "slug": "贪心算法"
+    },
+    {
+      "depth": 3,
+      "value": "分治法",
+      "slug": "分治法"
+    },
+    {
+      "depth": 2,
+      "value": "时间复杂度和空间复杂度",
+      "slug": "时间复杂度和空间复杂度"
+    },
+    {
+      "depth": 2,
+      "value": "常见问题",
+      "slug": "常见问题"
+    }
+  ]
+}

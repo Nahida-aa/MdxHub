@@ -3,7 +3,7 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 import { motion, AnimatePresence } from "framer-motion"
-import { LoadingS } from "~/components/ui/loading/Loading"
+import { LoadingS } from "@/components/ui/loading/Loading"
 
 export const ModeToggleGradientIconV0 = ({
   className = "",

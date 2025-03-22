@@ -1,13 +1,11 @@
 import path from "path"
 import fs from "fs"
 import matter from 'gray-matter';
-
-const BASE_DIR = process.cwd();
-const APP_DIR = path.join(BASE_DIR, 'src', 'app')
+import { DocMeta } from "../types";
 
 export const getFile = (file_path: string) => {
   // console.log(`getFile: ${file_path}`)
-  const filePath = path.join(APP_DIR, '[locale]', 'md', `${file_path}`)
+  const filePath = path.join(process.cwd(),`${file_path}`)
   let rawContent = '';
 
   if (!fs.existsSync(filePath)) {
@@ -28,6 +26,9 @@ export const getFile = (file_path: string) => {
     return { metadata: null, content: null };
   }
 
-  const { data: metadata, content } = matter(rawContent);
+  const { data: metadata, content } = matter(rawContent) as unknown as {
+    data: DocMeta;
+    content: string
+  }
   return { metadata, content, rawContent }
 };

@@ -1,0 +1,22 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/input/readme",
+  "slug": "linux/input/readme",
+  "segments": [
+    "linux",
+    "input",
+    "readme"
+  ],
+  "filePath": "docs/zh/linux/input/readme.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# input\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "input",
+      "slug": "input"
+    }
+  ]
+}

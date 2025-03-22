@@ -68,6 +68,7 @@ input:-webkit-autofill:focus {
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
+    --popover-v: hsl(0 0% 100%);
     --popover-foreground: 20 14.3% 4.1%;
     --primary: 235 85% 66%;
     --primary-v: hsl(235, 85%, 66%);
@@ -135,7 +136,7 @@ input:-webkit-autofill:focus {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 224 72% 4.1;
+    --sidebar-background: 224 72% 4.1 0;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;

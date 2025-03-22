@@ -1,0 +1,27 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/linux/command/readme",
+  "slug": "linux/command/readme",
+  "segments": [
+    "linux",
+    "command",
+    "readme"
+  ],
+  "filePath": "docs/zh/linux/command/readme.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "command",
+      "slug": "command"
+    },
+    {
+      "depth": 2,
+      "value": "file",
+      "slug": "file"
+    }
+  ]
+}

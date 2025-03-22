@@ -1,0 +1,25 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/lanqiao/easy",
+  "slug": "alg/lanqiao/easy",
+  "segments": [
+    "alg",
+    "lanqiao",
+    "easy"
+  ],
+  "filePath": "docs/zh/alg/lanqiao/easy/index.mdx",
+  "meta": {
+    "title": "蓝桥简单题",
+    "description": null,
+    "created_at": "2025-03-22T06:38:45.000Z",
+    "updated_at": "2025-03-22T06:38:45.000Z",
+    "tags": [
+      "alg",
+      "lanqiao"
+    ]
+  },
+  "order": 99,
+  "content": "\n",
+  "toc": []
+}

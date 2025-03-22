@@ -1,0 +1,26 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/slug",
+  "slug": "dev/md/slug",
+  "segments": [
+    "dev",
+    "md",
+    "slug"
+  ],
+  "filePath": "docs/zh/dev/md/slug.mdx",
+  "meta": {
+    "title": "md slug",
+    "description": null,
+    "created_at": "2025-03-17T18:03:47.000Z",
+    "updated_at": "2025-03-17T18:03:47.000Z",
+    "tags": [
+      "markdown",
+      "slug",
+      "url"
+    ]
+  },
+  "order": 99,
+  "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+  "toc": []
+}

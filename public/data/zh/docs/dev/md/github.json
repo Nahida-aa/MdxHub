@@ -1,0 +1,56 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/github",
+  "slug": "dev/md/github",
+  "segments": [
+    "dev",
+    "md",
+    "github"
+  ],
+  "filePath": "docs/zh/dev/md/github.mdx",
+  "meta": {
+    "title": "GitHub",
+    "description": "GitHub flavored markdown (GFM)",
+    "created_at": "2025-03-17T14:44:46.000Z",
+    "updated_at": "2025-03-17T14:55:01.000Z",
+    "tags": [
+      "markdown",
+      "github"
+    ]
+  },
+  "order": 99,
+  "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "Autolink literals",
+      "slug": "autolink-literals"
+    },
+    {
+      "depth": 2,
+      "value": "Footnote",
+      "slug": "footnote"
+    },
+    {
+      "depth": 2,
+      "value": "Strikethrough",
+      "slug": "strikethrough"
+    },
+    {
+      "depth": 2,
+      "value": "Table",
+      "slug": "table"
+    },
+    {
+      "depth": 2,
+      "value": "Tasklist",
+      "slug": "tasklist"
+    },
+    {
+      "depth": 2,
+      "value": "Alerts",
+      "slug": "alerts"
+    }
+  ]
+}

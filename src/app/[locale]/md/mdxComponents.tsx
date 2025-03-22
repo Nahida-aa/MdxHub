@@ -8,6 +8,7 @@ import { Pre } from './pre/prismPre';
 import { H1,H2,H3,H4,H5,H6 } from './h_';
 import CustomImage from './Image';
 import { PreWithCopy } from './pre/preWithCopy';
+import { Check, Cross } from 'lucide-react';
 
 // import Age from './other/Age';
 // import { MDXProvider } from '@mdx-js/react';
@@ -60,6 +61,7 @@ export const MdxComponents = {
   // Table,
   // Image: CustomImage,
   // Age
+  Check, Cross
 }
 // console.log(`mdxMdxComponents: MdxComponents:`);
 // console.log(MdxComponents)

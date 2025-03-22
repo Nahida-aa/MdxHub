@@ -1,0 +1,28 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/html",
+  "slug": "html",
+  "segments": [
+    "html"
+  ],
+  "filePath": "docs/zh/html/index.mdx",
+  "meta": {
+    "title": "html",
+    "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+    "created_at": "2025-03-22T02:26:21.000Z",
+    "updated_at": "2025-03-22T02:26:21.000Z",
+    "tags": [
+      "html"
+    ]
+  },
+  "order": 99,
+  "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "list",
+      "slug": "list"
+    }
+  ]
+}

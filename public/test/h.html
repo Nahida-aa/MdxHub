@@ -1,0 +1,146 @@
+
+
+<article class="prose">
+  <h2>标题 A</h2>  <!-- h2-counter: 1 -->
+  <p>p</p>
+  <h3>子标题</h3>
+  <p>p</p>
+  <h2>标题 B</h2>  <!-- h2-counter: 2 -->
+  <h3>子标题</h3>   <!-- 预期：2.1，实际：2.3（若之前有 h3 计数残留） -->
+  <p>p</p>
+  <h3>子章节2</h3>
+  <p>p</p>
+  <h2>标题 C</h2>
+  <div>南方</div>
+  <h3>子标题</h3>
+  <p>p</p>
+  <h4>四级标题</h4>
+  <p>p</p>
+  <h3>三级标题</h3>
+  <p>p</p>
+  <h4>四级标题2</h4>
+</article>
+
+<style>
+.prose p a {
+    text-decoration: none;
+    border-bottom: 1px solid #fbcfe8;
+    @apply text-pink-200 border-b-pink-300 shadow-[0_0_0_0.2rem_text-transparent] hover:text-zinc-900 hover:bg-pink-200 rounded-[1px] hover:shadow-[0_0_0_0.2rem_#fbcfe8] hover:border-b-pink-200;
+}
+
+.prose .heading-element {
+    position: relative;
+  }
+  
+  .prose .heading-element:hover .anchor,
+  .prose .anchor:hover {
+    opacity: 1;
+  }
+
+.prose .anchor  {
+    text-decoration: none !important;
+    @apply absolute !no-underline;
+    top: 50%;
+    margin-left: -20px;
+    padding-right: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease; /* 添加过渡效果 */
+    font-size: 1.25em; 
+    color: #707681; 
+  }
+
+.prose *:hover>.anchor a {
+    @apply visible;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-semibold mt-6 mb-4 leading-[1.25];
+    /* color: #fdfdfd;
+    text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975; */
+    color: #f4eee4;
+    text-shadow: 0 0 2px #393a33, 0 0 8px #f1c91475, 0 0 2px #f3cf0575;
+    mark{
+      /* @apply bg-yellow-200 dark:bg-yellow-400; */
+      color: inherit;
+    }
+  }
+
+/* h2, h3, h4, h5, h6 添加序号 */
+.prose {
+  /* 初始化所有计数器 */
+  counter-reset: h2-counter h3-counter h4-counter h5-counter h6-counter;
+}
+
+/* h2 标题 */
+.prose h2 {
+  counter-increment: h2-counter;
+  counter-reset: h3-counter h4-counter h5-counter h6-counter; /* 重置所有子级计数器 */
+}
+
+.prose h2::before {
+  content: counter(h2-counter) " ";
+  @apply font-semibold;
+}
+
+/* h3 标题 */
+.prose h3 {
+  counter-increment: h3-counter; /* 全局递增 h3-counter */
+  counter-reset: h4-counter h5-counter h6-counter;
+}
+
+.prose h3::before {
+  content: counter(h2-counter) "." counter(h3-counter) " ";
+  @apply font-semibold;
+}
+
+/* h4 标题 */
+.prose h4 {
+  counter-increment: h4-counter;
+  counter-reset: h5-counter h6-counter;
+}
+
+.prose h4::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
+  @apply font-semibold;
+}
+
+/* h5 标题 */
+.prose h5 {
+  counter-increment: h5-counter;
+  counter-reset: h6-counter;
+}
+
+.prose h5::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) " ";
+  @apply font-semibold;
+}
+
+/* h6 标题 */
+.prose h6 {
+  counter-increment: h6-counter;
+}
+
+.prose h6::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) " ";
+  @apply font-semibold;
+}
+/* ------------------------------------------------------------------- */
+
+.prose p {
+@apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+.prose ul {
+@apply list-disc pl-6;
+}
+
+.prose ol {
+@apply list-decimal pl-6;
+}
+  </style>

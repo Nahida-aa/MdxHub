@@ -8,24 +8,25 @@ import Main from '../Main'
 //   // return <Main posts={posts} />
 // }
 import { Suspense } from 'react';
-import { LoadingS } from '~/components/ui/loading/Loading';
+import { LoadingS } from '@/components/ui/loading/Loading';
 import { Snippet } from "@heroui/snippet";
 import { Link } from "@heroui/link";
 import { Code } from "@heroui/code";
 import { button as buttonStyles } from "@heroui/theme";
 import {ScrollShadow} from "@heroui/scroll-shadow";
-import { siteConfig } from "~/config/site";
-import { title, subtitle } from "~/components/primitives";
-import { GithubIcon } from "~/components/icons";
-import { TextUpView } from '~/components/ui/transition/TextUpView';
+import { siteConfig } from "@/config/site";
+import { title, subtitle } from "@/components/primitives";
+import { GithubIcon } from "@/components/icons";
+import { TextUpView } from '@/components/ui/transition/TextUpView';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { ModeToggleGradientIcon } from '~/components/common/ModeToggle';
+import { ModeToggleGradientIcon } from '@/components/common/ModeToggle';
 import {Button as UIButton} from "@heroui/react";
-import { SearchModal } from '~/components/common/search';
+import { SearchModal, SearchModalButton } from '@/components/common/search';
 import { StartedButton } from '../_comp/Started';
 import initTranslations from '../i18n/i18n';
 import TranslationsProvider from '../i18n/TranslationsProvider';
+import { SearchButton } from '@/components/search/search-button';
 
 
 
@@ -38,6 +39,7 @@ export default async function Page ({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const { locale } = await params
+  console.log("home:locale: ", locale)
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
   type TextItem = {
     text: string
@@ -50,8 +52,11 @@ export default async function Page ({
   let accumulatedDelay = 0
   // console.log(titleTextLsWithDelay)
   const subTitleTextLs: TextItem[] = [
-    { text: "Beautiful, fast, and modern. 探索多领域の文档中心", rootAs: "span" },
-    { text: "建议使用 firefox core 的浏览器", rootAs: "p" },
+    { text: t('subTitleTextLs1'), rootAs: "span" },
+    { text: t('subTitleTextLs2'), rootAs: "p" },
+    { text: t('subTitleTextLs3'), rootAs: "p" },
+    { text: t('subTitleTextLs4'), rootAs: "p" },
+    { text: t('subTitleTextLs5'), rootAs: "p" },
   ]
   const subTitleTextLsWithDelay = subTitleTextLs.map((element, index) => {
     const delay = accumulatedDelay
@@ -83,10 +88,9 @@ export default async function Page ({
         </div>
         <div className="flex gap-4 max-w-2xl justify-center w-full">
           <StartedButton text={t('Started')} href={siteConfig.links.docs} />
-          <SearchModal />
+          <SearchButton text={t('Quick_search')} />
         </div>
       </div>
-
 
       <ModeToggleGradientIcon />
       {/* <div className="mt-8 bg-[calc(var(--color-blue-400))] bg-b">

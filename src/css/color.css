@@ -132,7 +132,7 @@ a .text-white:hover:is(.dark *) {
           );
   /* @apply bg-gradient-to-r from-pink-500 to-blue-500; */
 }
-.f-gradient:is(.dark *) {
+.f-o-gradient:is(.dark *) {
   background:linear-gradient(
     180deg,
     hsla(240deg, 6%, 10%, 0%),
@@ -155,4 +155,28 @@ a .text-white:hover:is(.dark *) {
     hsl(10deg, 15%, 64%, 98%),
     hsl(10deg, 13%, 65%, 100%)
   );
+}
+.f-gradient:is(.dark *) {
+  background-image: linear-gradient(
+      180deg,
+      hsla(240, 6%, 10%, 0%),    
+      hsla(232, 13%, 13%, 17%),
+      hsla(225, 20%, 17%, 28%),
+      hsla(220, 27%, 20%, 37%),
+      hsla(215, 34%, 22%, 44%),
+      hsla(213, 34%, 25%, 51%),
+      hsla(215, 28%, 29%, 57%),
+      hsla(216, 23%, 33%, 63%),
+      hsla(218, 19%, 37%, 68%),
+      hsla(219, 16%, 41%, 73%),
+      hsla(256, 10%, 46%, 78%),
+      hsla(308, 09%, 49%, 82%),
+      hsla(341, 14%, 55%, 85%),
+      hsla(3, 17%, 60%, 0.89),
+      hsla(12, 19%, 61%, 91%),
+      hsla(11, 18%, 62%, 94%),
+      hsla(11, 17%, 63%, 96%),
+      hsla(10, 15%, 64%, 98%),
+      hsla(10, 13%, 65%, 100%)
+    );
 }

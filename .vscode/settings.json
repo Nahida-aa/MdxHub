@@ -3,5 +3,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "recommendations": [
         "bradlc.vscode-tailwindcss"
-  ]
+  ],
+  "markdown.validate.enabled": true,
+  "python.analysis.autoImportCompletions": true
 }

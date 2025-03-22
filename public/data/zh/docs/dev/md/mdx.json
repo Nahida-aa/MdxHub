@@ -1,0 +1,16 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/md/mdx",
+  "slug": "dev/md/mdx",
+  "segments": [
+    "dev",
+    "md",
+    "mdx"
+  ],
+  "filePath": "docs/zh/dev/md/mdx.mdx",
+  "meta": {},
+  "order": 99,
+  "content": "",
+  "toc": []
+}

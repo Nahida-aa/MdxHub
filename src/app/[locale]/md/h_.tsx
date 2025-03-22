@@ -1,6 +1,6 @@
 // "use server";
 import React from 'react';
-import { text2slug } from '~/lib/utils/slug';
+import { text2slug } from '@/lib/utils/slug';
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from 'lucide-react';
 
 function createHeading(level: number) {
@@ -23,6 +23,23 @@ function createHeading(level: number) {
 
     const slug = text2slug(content);
 
+    return React.createElement(
+      `h${level}`,
+      { id: slug, className: 'heading-element', ...props },
+      <>
+        <a href={`#${slug}`} className="anchor ml-2 text-primary">
+          {level === 1 && <Heading1 size={16} />}
+          {level === 2 && <Heading2 size={16} />}
+          {level === 3 && <Heading3 size={16} />}
+          {level === 4 && <Heading4 size={16} />}
+          {level === 5 && <Heading5 size={16} />}
+          {level === 6 && <Heading6 size={16} />}
+        </a>
+        <span className='heading-text'>
+          {children}
+        </span>
+      </>
+    );
     return (
       <div className="heading-container">
         {React.createElement(`h${level}`, { id: slug, className: 'heading-element', ...props }, children)}

@@ -4,11 +4,11 @@
     @apply text-pink-200 border-b-pink-300 shadow-[0_0_0_0.2rem_text-transparent] hover:text-zinc-900 hover:bg-pink-200 rounded-[1px] hover:shadow-[0_0_0_0.2rem_#fbcfe8] hover:border-b-pink-200;
 }
 
-.prose  .heading-container {
+.prose .heading-element {
     position: relative;
   }
   
-  .prose .heading-container:hover .anchor,
+  .prose .heading-element:hover .anchor,
   .prose .anchor:hover {
     opacity: 1;
   }
@@ -24,7 +24,8 @@
     opacity: 0;
     transition: opacity 0.3s ease; /* 添加过渡效果 */
     font-size: 1.25em; 
-    color: #707681; 
+    /* color: #707681;  */
+    color: #fbcfe8; 
   }
 
 .prose *:hover>.anchor a {
@@ -48,6 +49,71 @@
     }
   }
 
+/* h2, h3, h4, h5, h6 添加序号 */
+.prose {
+  /* 初始化所有计数器 */
+  counter-reset: h2-counter h3-counter h4-counter h5-counter h6-counter;
+  /* counter-reset: h2-section h3-section h4-section h5-section h6-section; */
+  counter-reset: h2-section h3-section h4-section h5-section h6-section;
+}
+
+/* h2 标题 */
+.prose h2 {
+  counter-increment: h2-counter;
+  /* counter-increment: h2-section; */
+  counter-reset: h3-counter h4-counter h5-counter h6-counter; /* 重置所有子级计数器 */
+  counter-set: h3-counter h4-counter h5-counter h6-counter; /* 重置所有子级计数器 */
+  /* counter-set: h3-section h4-section h5-section h6-section; */
+}
+
+.prose h2 .heading-text::before {
+  content: counter(h2-counter) " ";
+  @apply font-semibold;
+}
+
+/* h3 标题 */
+.prose h3 {
+  counter-increment: h3-counter; /* 全局递增 h3-counter */
+  counter-reset: h4-counter h5-counter h6-counter;
+}
+
+.prose h3 .heading-text::before {
+  content: counter(h2-counter) "." counter(h3-counter) " ";
+  @apply font-semibold;
+}
+
+/* h4 标题 */
+.prose h4 {
+  counter-increment: h4-counter;
+  counter-reset: h5-counter h6-counter;
+}
+
+.prose h4 .heading-text::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
+  @apply font-semibold;
+}
+
+/* h5 标题 */
+.prose h5 {
+  counter-increment: h5-counter;
+  counter-reset: h6-counter;
+}
+
+.prose h5 .heading-text::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) " ";
+  @apply font-semibold;
+}
+
+/* h6 标题 */
+.prose h6 {
+  counter-increment: h6-counter;
+}
+
+.prose h6 .heading-text::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) " ";
+  @apply font-semibold;
+}
+/* ------------------------------------------------------------------- */
 
 .prose p {
 @apply my-4 text-neutral-800 dark:text-neutral-200;

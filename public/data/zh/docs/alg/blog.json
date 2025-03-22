@@ -1,0 +1,56 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/blog",
+  "slug": "alg/blog",
+  "segments": [
+    "alg",
+    "blog"
+  ],
+  "filePath": "docs/zh/alg/blog.mdx",
+  "meta": {
+    "title": "日志",
+    "description": null,
+    "created_at": "2025-03-22T06:07:24.000Z",
+    "updated_at": "2025-03-22T06:07:24.000Z",
+    "tags": [
+      "alg",
+      "log",
+      "blog"
+    ]
+  },
+  "order": 99,
+  "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
+  "toc": [
+    {
+      "depth": 3,
+      "value": "1. 算法文档（docs）",
+      "slug": "1.-算法文档（docs）"
+    },
+    {
+      "depth": 3,
+      "value": "2. 算法日志（blog）",
+      "slug": "2.-算法日志（blog）"
+    },
+    {
+      "depth": 3,
+      "value": "3. 两者的区别",
+      "slug": "3.-两者的区别"
+    },
+    {
+      "depth": 3,
+      "value": "4. 如何结合使用",
+      "slug": "4.-如何结合使用"
+    },
+    {
+      "depth": 3,
+      "value": "5. 工具推荐",
+      "slug": "5.-工具推荐"
+    },
+    {
+      "depth": 3,
+      "value": "总结",
+      "slug": "总结"
+    }
+  ]
+}
