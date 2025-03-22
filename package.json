@@ -117,10 +117,5 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.0.10"
-    }
   }
 }
