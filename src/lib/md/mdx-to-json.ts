@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
-import {compile} from '@mdx-js/mdx' // pnpm add -D @mdx-js/mdx
+// import {compile} from '@mdx-js/mdx' // pnpm add @mdx-js/mdx
 import { unified } from "unified" // pnpm add -D unified
 import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify"
