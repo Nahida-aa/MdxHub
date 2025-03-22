@@ -38,9 +38,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*
+.envI*
 !.env.example
-!.env.github
 
 # Contentlayer
 .contentlayer
