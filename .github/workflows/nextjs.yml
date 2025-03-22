@@ -36,13 +36,13 @@ jobs:
         with:
           node-version: "20"
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: pnpm install -g pnpm
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
       - name: Build project
-        run: npm run build
+        run: pnpm run build
       - name: Export project
-        run: npm run export
+        run: pnpm run export
       - name: Detect package manager
         id: detect-package-manager
         run: |
