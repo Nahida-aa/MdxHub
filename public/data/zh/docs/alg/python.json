@@ -19,6 +19,6 @@
     ]
   },
   "order": 99,
-  "content": "",
+  "content": "\n编程环境: Python 3.8.6\n编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```",
   "toc": []
 }

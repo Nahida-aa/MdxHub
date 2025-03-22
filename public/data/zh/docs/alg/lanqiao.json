@@ -1,0 +1,24 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/lanqiao",
+  "slug": "alg/lanqiao",
+  "segments": [
+    "alg",
+    "lanqiao"
+  ],
+  "filePath": "docs/zh/alg/lanqiao/index.mdx",
+  "meta": {
+    "title": "蓝桥简单题",
+    "description": null,
+    "created_at": "2025-03-22T06:38:45.000Z",
+    "updated_at": "2025-03-22T06:38:45.000Z",
+    "tags": [
+      "alg",
+      "lanqiao"
+    ]
+  },
+  "order": 99,
+  "content": "\nOI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - 对于\n\n",
+  "toc": []
+}

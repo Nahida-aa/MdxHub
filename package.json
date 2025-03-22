@@ -12,7 +12,8 @@
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "prettier-fix": "",
-    "test:watch": "ts-node --project tsconfig.node.json  tests/scripts/watch.ts"
+    "test:watch": "ts-node --project tsconfig.node.json  tests/scripts/watch.ts",
+    "export": "next export"
   },
   "dependencies": {
     "@headlessui/react": "1.7.19",

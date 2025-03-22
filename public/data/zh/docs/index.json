@@ -22,6 +22,27 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/dev/contentlayer",
+    "slug": "dev/contentlayer",
+    "segments": [
+      "dev",
+      "contentlayer"
+    ],
+    "filePath": "docs/zh/dev/contentlayer.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# contentlayer\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "contentlayer",
+        "slug": "contentlayer"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/about",
     "slug": "about",
     "segments": [
@@ -50,21 +71,33 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/contentlayer",
-    "slug": "dev/contentlayer",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
     "segments": [
-      "dev",
-      "contentlayer"
+      "dev"
     ],
-    "filePath": "docs/zh/dev/contentlayer.mdx",
-    "meta": {},
+    "filePath": "docs/zh/dev/index.mdx",
+    "meta": {
+      "title": "dev",
+      "description": null,
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
+      "tags": [
+        "dev"
+      ]
+    },
     "order": 99,
-    "content": "# contentlayer\n",
+    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
     "toc": [
       {
-        "depth": 1,
-        "value": "contentlayer",
-        "slug": "contentlayer"
+        "depth": 2,
+        "value": "常用框架\\库\\module",
+        "slug": "常用框架\\库\\module"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
       }
     ]
   },
@@ -234,39 +267,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev",
-    "slug": "dev",
-    "segments": [
-      "dev"
-    ],
-    "filePath": "docs/zh/dev/index.mdx",
-    "meta": {
-      "title": "dev",
-      "description": null,
-      "created_at": "2025-03-21T09:48:56.000Z",
-      "updated_at": "2025-03-21T09:48:56.000Z",
-      "tags": [
-        "dev"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "常用框架\\库\\module",
-        "slug": "常用框架\\库\\module"
-      },
-      {
-        "depth": 2,
-        "value": "常用工具",
-        "slug": "常用工具"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/dev/test",
     "slug": "dev/test",
     "segments": [
@@ -342,6 +342,177 @@
         "slug": "图表"
       }
     ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/x",
+    "slug": "dev/x",
+    "segments": [
+      "dev",
+      "x"
+    ],
+    "filePath": "docs/zh/dev/x.mdx",
+    "meta": {
+      "title": "x",
+      "description": "x",
+      "created_at": "2025-03-22T19:57:35.000Z",
+      "updated_at": "2025-03-22T19:57:35.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
+    "segments": [
+      "alg"
+    ],
+    "filePath": "docs/zh/alg/index.mdx",
+    "meta": {
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
+      "tags": [
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/Array",
+    "slug": "alg/Array",
+    "segments": [
+      "alg",
+      "Array"
+    ],
+    "filePath": "docs/zh/alg/Array.mdx",
+    "meta": {
+      "title": "数组",
+      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
+      "created_at": "2025-03-22T15:50:04.000Z",
+      "updated_at": "2025-03-22T15:50:04.000Z",
+      "tags": [
+        "Array"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/python",
+    "slug": "alg/python",
+    "segments": [
+      "alg",
+      "python"
+    ],
+    "filePath": "docs/zh/alg/python.mdx",
+    "meta": {
+      "title": "python",
+      "description": null,
+      "created_at": "2025-03-22T06:13:49.000Z",
+      "updated_at": "2025-03-22T06:13:49.000Z",
+      "tags": [
+        "alg",
+        "python"
+      ]
+    },
+    "order": 99,
+    "content": "\n编程环境: Python 3.8.6\n编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/struct",
+    "slug": "alg/struct",
+    "segments": [
+      "alg",
+      "struct"
+    ],
+    "filePath": "docs/zh/alg/struct.mdx",
+    "meta": {
+      "title": "数据结构",
+      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
+      "created_at": "2025-03-22T18:11:12.000Z",
+      "updated_at": "2025-03-22T18:11:12.000Z",
+      "tags": [
+        "alg",
+        "data-structure"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",
@@ -446,29 +617,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg/Array",
-    "slug": "alg/Array",
-    "segments": [
-      "alg",
-      "Array"
-    ],
-    "filePath": "docs/zh/alg/Array.mdx",
-    "meta": {
-      "title": "数组",
-      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
-      "created_at": "2025-03-22T15:50:04.000Z",
-      "updated_at": "2025-03-22T15:50:04.000Z",
-      "tags": [
-        "Array"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/blog",
     "slug": "alg/blog",
     "segments": [
@@ -525,98 +673,22 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg/python",
-    "slug": "alg/python",
+    "url": "/zh/docs/next",
+    "slug": "next",
     "segments": [
-      "alg",
-      "python"
+      "next"
     ],
-    "filePath": "docs/zh/alg/python.mdx",
+    "filePath": "docs/zh/next/index.mdx",
     "meta": {
-      "title": "python",
-      "description": null,
-      "created_at": "2025-03-22T06:13:49.000Z",
-      "updated_at": "2025-03-22T06:13:49.000Z",
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
       "tags": [
-        "alg",
-        "python"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg",
-    "slug": "alg",
-    "segments": [
-      "alg"
-    ],
-    "filePath": "docs/zh/alg/index.mdx",
-    "meta": {
-      "title": "算法",
-      "description": "alg 即 algorithm",
-      "created_at": "2025-03-22T05:35:44.000Z",
-      "updated_at": "2025-03-22T05:35:44.000Z",
-      "tags": [
-        "alg"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "基础",
-        "slug": "基础"
-      },
-      {
-        "depth": 3,
-        "value": "动态规划",
-        "slug": "动态规划"
-      },
-      {
-        "depth": 3,
-        "value": "贪心算法",
-        "slug": "贪心算法"
-      },
-      {
-        "depth": 3,
-        "value": "分治法",
-        "slug": "分治法"
-      },
-      {
-        "depth": 2,
-        "value": "时间复杂度和空间复杂度",
-        "slug": "时间复杂度和空间复杂度"
-      },
-      {
-        "depth": 2,
-        "value": "常见问题",
-        "slug": "常见问题"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/struct",
-    "slug": "alg/struct",
-    "segments": [
-      "alg",
-      "struct"
-    ],
-    "filePath": "docs/zh/alg/struct.mdx",
-    "meta": {
-      "title": "数据结构",
-      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
-      "created_at": "2025-03-22T18:11:12.000Z",
-      "updated_at": "2025-03-22T18:11:12.000Z",
-      "tags": [
-        "alg",
-        "data-structure"
+        "next",
+        "ts",
+        "react",
+        "web"
       ]
     },
     "order": 99,
@@ -644,6 +716,27 @@
     "order": 99,
     "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -694,50 +787,43 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
     "segments": [
-      "next",
-      "15"
+      "paper"
     ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
     "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
     "toc": [
       {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
-      },
-      {
         "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
+        "value": "数据集",
+        "slug": "数据集"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
     "segments": [
-      "next"
+      "dev",
+      "md",
+      "docs"
     ],
-    "filePath": "docs/zh/next/index.mdx",
-    "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
-      "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
-      ]
-    },
+    "filePath": "docs/zh/dev/md/docs.mdx",
+    "meta": {},
     "order": 99,
     "content": "",
     "toc": []
@@ -767,51 +853,18 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/ts/async",
-    "slug": "ts/async",
+    "url": "/zh/docs/dev/md/mdx",
+    "slug": "dev/md/mdx",
     "segments": [
-      "ts",
-      "async"
+      "dev",
+      "md",
+      "mdx"
     ],
-    "filePath": "docs/zh/ts/async.mdx",
+    "filePath": "docs/zh/dev/md/mdx.mdx",
     "meta": {},
     "order": 99,
-    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "ts/async",
-        "slug": "ts/async"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
-      }
-    ]
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",
@@ -1033,17 +1086,107 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/docs",
-    "slug": "dev/md/docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
     "segments": [
       "dev",
       "md",
-      "docs"
+      "github"
     ],
-    "filePath": "docs/zh/dev/md/docs.mdx",
-    "meta": {},
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
     "order": 99,
-    "content": "",
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/lanqiao",
+    "slug": "alg/lanqiao",
+    "segments": [
+      "alg",
+      "lanqiao"
+    ],
+    "filePath": "docs/zh/alg/lanqiao/index.mdx",
+    "meta": {
+      "title": "蓝桥简单题",
+      "description": null,
+      "created_at": "2025-03-22T06:38:45.000Z",
+      "updated_at": "2025-03-22T06:38:45.000Z",
+      "tags": [
+        "alg",
+        "lanqiao"
+      ]
+    },
+    "order": 99,
+    "content": "\nOI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - 对于\n\n",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
     "toc": []
   },
   {
@@ -1185,104 +1328,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/mdx",
-    "slug": "dev/md/mdx",
-    "segments": [
-      "dev",
-      "md",
-      "mdx"
-    ],
-    "filePath": "docs/zh/dev/md/mdx.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/slug",
-    "slug": "dev/md/slug",
-    "segments": [
-      "dev",
-      "md",
-      "slug"
-    ],
-    "filePath": "docs/zh/dev/md/slug.mdx",
-    "meta": {
-      "title": "md slug",
-      "description": null,
-      "created_at": "2025-03-17T18:03:47.000Z",
-      "updated_at": "2025-03-17T18:03:47.000Z",
-      "tags": [
-        "markdown",
-        "slug",
-        "url"
-      ]
-    },
-    "order": 99,
-    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/github",
-    "slug": "dev/md/github",
-    "segments": [
-      "dev",
-      "md",
-      "github"
-    ],
-    "filePath": "docs/zh/dev/md/github.mdx",
-    "meta": {
-      "title": "GitHub",
-      "description": "GitHub flavored markdown (GFM)",
-      "created_at": "2025-03-17T14:44:46.000Z",
-      "updated_at": "2025-03-17T14:55:01.000Z",
-      "tags": [
-        "markdown",
-        "github"
-      ]
-    },
-    "order": 99,
-    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 2,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/enum",
     "slug": "alg/enum",
     "segments": [
@@ -1301,7 +1346,7 @@
       ]
     },
     "order": 99,
-    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n",
+    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n### 问题描述\n\n小蓝有一张支票，上面记录了一些数字。小蓝不小心打翻了墨水导致了支票上的一个数字被污染了，现在小蓝想通过剩下的数字来推断出那个被污染的数字。\n\n设支票上被污染的数字为 xx ，没有被污染的数字共有 nn 个（设为 d1,d2,…,dnd1​,d2​,…,dn​ ），小蓝知道支票如果没有错误的话，上面没有被污染的数字应当是 xx 除了 11 和 xx 之外的其他所有因数，但是他无法确定支票是否错误。支票错误的情况有以下几种：\n\n- 支票没有被污染的数字中混入了不是 xx 的因数的数字；\n- 支票没有被污染的数字中缺失或重复 xx 的部分因数。\n\n小蓝想请你帮助他判断支票是否没有错误，若没有错误，小蓝希望你能帮他求出支票上被污染的数字。\n### 输入格式\n\n第一行包含一个整数 nn ，表示没有被污染的数字的个数。\n\n第二行包含 nn 个整数 d1,d2,…,dnd1​,d2​,…,dn​ ，表示支票上的数字。\n### 输出格式\n若支票没有错误，那么输出支票上被污染的数字；反之，若支票错误，被污染的数字不存在，则输出 −1−1 。\n### 样例输入\n```\n8\n8 2 12 6 4 24 16 3\n```\n### 样例输出\n```\n48\n```\n### 评测数据规模\n\n对于所有评测数据， $1≤n≤300$ , $2≤d_i≤10^6$\n### 运行限制\n|语言 |\t最大运行时间 |\t最大运行内存 |\n|---|---|---|\n|C |\t4s |\t256M |\n|C++ |\t4s |\t256M |\n|Python3 |\t6s |\t256M |\n|Java |\t5s |\t256M |\n|PyPy3 |\t6s |\t256M |\n|Go |\t6s |\t256M |\n|JavaScript |\t6s |\t256M |\n\n难度: 简单   标签: 思维, 数学",
     "toc": [
       {
         "depth": 2,
@@ -1412,192 +1457,41 @@
         "depth": 3,
         "value": "解答",
         "slug": "解答"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/command/readme",
-    "slug": "linux/command/readme",
-    "segments": [
-      "linux",
-      "command",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/command/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "command",
-        "slug": "command"
-      },
-      {
-        "depth": 2,
-        "value": "file",
-        "slug": "file"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/console/Command-line_shell",
-    "slug": "linux/console/Command-line_shell",
-    "segments": [
-      "linux",
-      "console",
-      "Command-line_shell"
-    ],
-    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
-    "segments": [
-      "linux",
-      "network",
-      "NTP"
-    ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
-      },
-      {
-        "depth": 2,
-        "value": "配置",
-        "slug": "配置"
       },
       {
         "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
+        "value": "问题描述",
+        "slug": "问题描述"
       },
       {
         "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/console/readme",
-    "slug": "linux/console/readme",
-    "segments": [
-      "linux",
-      "console",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/console/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "terminal",
-        "slug": "terminal"
-      },
-      {
-        "depth": 2,
-        "value": "Keyboard Shortcuts",
-        "slug": "keyboard-shortcuts"
-      },
-      {
-        "depth": 2,
-        "value": "start",
-        "slug": "start"
+        "value": "输入格式",
+        "slug": "输入格式"
       },
       {
         "depth": 3,
-        "value": "Terminal: Paste",
-        "slug": "terminal:-paste"
+        "value": "输出格式",
+        "slug": "输出格式"
       },
       {
         "depth": 3,
-        "value": "Terminal: Copy Selection",
-        "slug": "terminal:-copy-selection"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/file_systems/readme",
-    "slug": "linux/file_systems/readme",
-    "segments": [
-      "linux",
-      "file_systems",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/file_systems/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# file_systems",
-    "toc": [
+        "value": "样例输入",
+        "slug": "样例输入"
+      },
       {
-        "depth": 1,
-        "value": "file_systems",
-        "slug": "file_systems"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/input/readme",
-    "slug": "linux/input/readme",
-    "segments": [
-      "linux",
-      "input",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/input/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# input\n",
-    "toc": [
+        "depth": 3,
+        "value": "样例输出",
+        "slug": "样例输出"
+      },
       {
-        "depth": 1,
-        "value": "input",
-        "slug": "input"
+        "depth": 3,
+        "value": "评测数据规模",
+        "slug": "评测数据规模"
+      },
+      {
+        "depth": 3,
+        "value": "运行限制",
+        "slug": "运行限制"
       }
     ]
   },
@@ -1770,6 +1664,245 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
+    "segments": [
+      "linux",
+      "console",
+      "Command-line_shell"
+    ],
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/readme",
+    "slug": "linux/console/readme",
+    "segments": [
+      "linux",
+      "console",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/console/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "terminal",
+        "slug": "terminal"
+      },
+      {
+        "depth": 2,
+        "value": "Keyboard Shortcuts",
+        "slug": "keyboard-shortcuts"
+      },
+      {
+        "depth": 2,
+        "value": "start",
+        "slug": "start"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Paste",
+        "slug": "terminal:-paste"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Copy Selection",
+        "slug": "terminal:-copy-selection"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/input/readme",
+    "slug": "linux/input/readme",
+    "segments": [
+      "linux",
+      "input",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/input/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# input\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "input",
+        "slug": "input"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
+    "segments": [
+      "linux",
+      "network",
+      "NTP"
+    ],
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+    "meta": {
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
+      "tags": [
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
+    },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "tailwind"
+    ],
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tailwindCss\n\n## Colors\n\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
+      },
+      {
+        "depth": 2,
+        "value": "Colors",
+        "slug": "colors"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/dev/md/css/color",
     "slug": "dev/md/css/color",
     "segments": [
@@ -1849,84 +1982,6 @@
         "slug": "总结"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css/tailwind",
-    "slug": "dev/md/css/tailwind",
-    "segments": [
-      "dev",
-      "md",
-      "css",
-      "tailwind"
-    ],
-    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tailwindCss\n\n## Colors\n\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tailwindCss",
-        "slug": "tailwindcss"
-      },
-      {
-        "depth": 2,
-        "value": "Colors",
-        "slug": "colors"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css",
-    "slug": "dev/md/css",
-    "segments": [
-      "dev",
-      "md",
-      "css"
-    ],
-    "filePath": "docs/zh/dev/md/css/index.mdx",
-    "meta": {
-      "title": "md css",
-      "description": null,
-      "created_at": "2025-03-21T23:23:27.000Z",
-      "updated_at": "2025-03-21T23:23:27.000Z",
-      "tags": [
-        "md",
-        "css"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/lanqiao/easy",
-    "slug": "alg/lanqiao/easy",
-    "segments": [
-      "alg",
-      "lanqiao",
-      "easy"
-    ],
-    "filePath": "docs/zh/alg/lanqiao/easy/index.mdx",
-    "meta": {
-      "title": "蓝桥简单题",
-      "description": null,
-      "created_at": "2025-03-22T06:38:45.000Z",
-      "updated_at": "2025-03-22T06:38:45.000Z",
-      "tags": [
-        "alg",
-        "lanqiao"
-      ]
-    },
-    "order": 99,
-    "content": "\n",
-    "toc": []
   },
   {
     "locale": "zh",

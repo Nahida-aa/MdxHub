@@ -1,0 +1,21 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/x",
+  "slug": "dev/x",
+  "segments": [
+    "dev",
+    "x"
+  ],
+  "filePath": "docs/zh/dev/x.mdx",
+  "meta": {
+    "title": "x",
+    "description": "x",
+    "created_at": "2025-03-22T19:57:35.000Z",
+    "updated_at": "2025-03-22T19:57:35.000Z",
+    "tags": []
+  },
+  "order": 99,
+  "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+  "toc": []
+}

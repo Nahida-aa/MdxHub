@@ -125,3 +125,8 @@
 .prose ol {
 @apply list-decimal pl-6;
 }
+.prose {
+  svg{
+    @apply inline-block;
+  }
+}
