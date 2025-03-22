@@ -19,6 +19,12 @@
     ]
   },
   "order": 99,
-  "content": "\n编程环境: Python 3.8.6\n编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```",
-  "toc": []
+  "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n```py\n# 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n# 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# n*m 的 0 矩阵\nn, m = map(int, input().split())\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\nzero_matrix3 = [0]*m @ [0]*n\n```",
+  "toc": [
+    {
+      "depth": 3,
+      "value": "列表推导式",
+      "slug": "列表推导式"
+    }
+  ]
 }

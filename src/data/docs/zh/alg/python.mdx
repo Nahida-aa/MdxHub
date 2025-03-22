@@ -6,10 +6,28 @@ updated_at: 2025-03-22T06:13:49Z
 tags: [alg,python]
 ---
 
-编程环境: Python 3.8.6
-编辑器: IDLE (python 自带编辑器)
+- 编程环境: Python 3.8.6
+- 编辑器: IDLE (python 自带编辑器)
 
 ```sh
 # 启动虚拟环境中的 IDLE 编辑器
 python -m idlelib
+```
+
+### 列表推导式
+
+`[expression for item in iterable if condition]{:py}`
+```py
+# 生成 1 到 10 的平方
+[i**2 for i in range(1,11)]
+# 生成 1 ~ 20 的偶数
+[i for i in range(1,21) if i%2==0]
+# 将 输入的 1 2 3 4 转化为 list[int]
+[int(i) for i in input().split()]
+# n*m 的 0 矩阵
+n, m = map(int, input().split())
+zero_matrix = [[0 for i in range(m)] for i in range(n)]
+zero_matrix1 = [[0]*m for i in range(n)]
+zero_matrix2 = [[0]*m]*n
+zero_matrix3 = [0]*m @ [0]*n
 ```

@@ -9,8 +9,8 @@
   ],
   "filePath": "docs/zh/alg/lanqiao/index.mdx",
   "meta": {
-    "title": "蓝桥简单题",
-    "description": null,
+    "title": "蓝桥杯",
+    "description": "每年都有省赛和国赛, 省赛一般在四月上旬或中旬, 国赛一般在六月上旬, 比赛时长4小时(9:00~13:00), 省赛一等奖才能参加国赛",
     "created_at": "2025-03-22T06:38:45.000Z",
     "updated_at": "2025-03-22T06:38:45.000Z",
     "tags": [
@@ -19,6 +19,52 @@
     ]
   },
   "order": 99,
-  "content": "\nOI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - 对于\n\n",
-  "toc": []
+  "content": "\n时间较长可以带点吃的\n\n## 竞赛规则\n\n### 编程环境\n\n#### python\n- python 3.8.6\n- IDLE (python 自带编辑器)\n\n```sh\n# 启动 IDLE\nidle\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### OI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - $对于 30\\% 的评测用例, 1\\leq n\\leq 10^3, 1\\leq a_i\\leq 10^3$\n    - $对于 100\\% 的评测用例, 1\\leq n\\leq 2\\cdot10^5, 1\\leq a_i\\leq 10^{16}$\n\n### 结果填空题\n\n可以用别的语言, 工具, 或手算\n\n### 编程大题\n\n通过测试用例估算正解的时间复杂度, 一般要在 $n^7,n^8$ 以内, 例如用例是 \n- $n\\leq 10^3$, 那么时间复杂度 可以选 $O(n^2)$,\n- $n\\leq 10^5$, 那么时间复杂度 可以选 $O(n\\log n)$\n\n## 语法\n\n```py\n# 常用变量名\n# res\\ans\\ret 结果\n# cnt\\tot 用于计数\n# i\\idex\\k\\v 用于索引,键值\n# i\\j\\k\\x\\y\\z 用于循环\n# a\\b\\c 用于变量\n# s,n, arr, d, nums 用于字符串, 数字, 数组, 字典, 数字组\n# l,r 用于 left, right\n# 常见保留字 -----------------------------------------\nand, or, not, in, is,\nTrue, False, None, \nif, else, elif,\nglobal, nonlocal,\nwhile, for, break, continue, \nreturn, def, lambda, class, yield, pass,\ntry, except, finally, raise, assert\nimport, from, as, \nwith, del,  \n# 字符串 -----------------------------------------\ns = \"hello\"\ns[start:end:step] # 切片\n# import -----------------------------------------\nimport math\nimport numpy as np\n```\n\n### input\n\n```py\nimport sys\ninput = lambda: sys.stdin.readline().strip()\ns = input()\n# 读取一行  -----------------------------------------\n# 1 2 3\na, b, c = map(int, input().split())\n# 读取多行 -----------------------------------------\n# 2\n# 1\n# 3\n# lst = [1, 3]\nn = int(input())\nlst = [int(input()) for _ in range(n)]\n\n# 矩阵读取 -----------------------------------------\n# 2 3\n# 1 2 3\n# 4 5 6\n# matrix = [[1, 2, 3], [4, 5, 6]]\nn, m = map(int, input().split())\nmatrix = [list(map(int, input().split())) for _ in range(n)]\nprint(matrix)\n\n# 读取多行\nlines = sys.stdin.readlines()\n```\n\n### sort\n\n```py\nsorted(iterable, key=None, reverse=False)\niterable: 需要排序的可迭代对象\nkey: 用来进行比较的元素\nreverse: 排序规则, reverse = True 降序, reverse = False 升序（默认）\n\nlist.sort(key=None, reverse=False)\n```\n",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "竞赛规则",
+      "slug": "竞赛规则"
+    },
+    {
+      "depth": 3,
+      "value": "编程环境",
+      "slug": "编程环境"
+    },
+    {
+      "depth": 4,
+      "value": "python",
+      "slug": "python"
+    },
+    {
+      "depth": 3,
+      "value": "OI赛制",
+      "slug": "oi赛制"
+    },
+    {
+      "depth": 3,
+      "value": "结果填空题",
+      "slug": "结果填空题"
+    },
+    {
+      "depth": 3,
+      "value": "编程大题",
+      "slug": "编程大题"
+    },
+    {
+      "depth": 2,
+      "value": "语法",
+      "slug": "语法"
+    },
+    {
+      "depth": 3,
+      "value": "input",
+      "slug": "input"
+    },
+    {
+      "depth": 3,
+      "value": "sort",
+      "slug": "sort"
+    }
+  ]
 }
