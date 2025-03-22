@@ -321,8 +321,8 @@ Consider removing the following features that cannot be used in a static build:
 
 ## Support
 
-Using the template? Support this effort by giving a star on GitHub, sharing your own blog and giving a shoutout on Twitter or becoming a project [sponsor](https://github.com/sponsors/timlrx).
+Using the template? Support this effort by giving a star on GitHub, sharing your own blog and giving a shoutout on Twitter or becoming a project [sponsor](https://github.com/sponsors/Nahida-aa).
 
 ## Licence
 
-[MIT](https://github.com/Nahida-aa/MdxHub/blob/main/LICENSE) © [Timothy Lin](https://www.timlrx.com)
+[MIT](https://github.com/Nahida-aa/MdxHub/blob/main/LICENSE) © [Timothy Lin](https://www.xiaa.com)
