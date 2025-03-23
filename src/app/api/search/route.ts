@@ -6,8 +6,8 @@ import { SearchEngine } from "@/lib/search/search-engine"
 import type { SearchOptions } from "@/lib/search/types"
 
 
-export const dynamic = process.env.EXPORT ? 'force-static' : undefined
-export const revalidate = process.env.EXPORT ? 60 : undefined; // revalidate every 60 seconds
+// export const dynamic = process.env.EXPORT ? 'force-static' : undefined
+// export const revalidate = process.env.EXPORT ? 60 : undefined; // revalidate every 60 seconds
 
 // 创建搜索引擎实例
 let searchEngine: SearchEngine | null = null
