@@ -1,0 +1,20 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/i18n",
+  "slug": "i18n",
+  "segments": [
+    "i18n"
+  ],
+  "filePath": "docs/zh/i18n.mdx",
+  "meta": {
+    "title": "i18 国际化",
+    "description": null,
+    "created_at": "2025-03-17T20:14:57.000Z",
+    "updated_at": "2025-03-17T20:14:57.000Z",
+    "tags": []
+  },
+  "order": 99,
+  "content": "\n```sh\npnpm add i18next react-i18next i18next-resources-to-backend next-i18n-router\n```\n",
+  "toc": []
+}
