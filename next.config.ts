@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 import createMDX, { NextMDXOptions } from '@next/mdx'
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeMathjax from 'rehype-mathjax'
+// import remarkGfm from "remark-gfm";
+// import remarkMath from "remark-math";
+// import rehypeMathjax from 'rehype-mathjax'
 
 const rehypePrettyCode_options = {
   // keepBackground: false, // 是否继承背景色
@@ -75,6 +75,16 @@ const securityHeaders = [
   },
 ]
 
+// 检查是否在 GitHub 环境中
+console.log('process.env:', process.env);
+if (process.env.GITHUB_ACTIONS) {
+  const envPath = '.env.github';
+  console.log('GitHub Actions detected, loading environment variables from:', envPath);
+  // if (fs.existsSync(envPath)) {
+  //   dotenv.config({ path: envPath });
+  // }
+}
+
 const output = process.env.EXPORT ? 'export' : undefined
 const basePath = process.env.BASE_PATH || undefined
 const unoptimized = process.env.UNOPTIMIZED ? true : undefined
@@ -84,9 +94,9 @@ const nextConfig: NextConfig = {
   basePath,
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  eslint: {
-    dirs: ['app', 'components', 'layouts', 'scripts'],
-  },
+  // eslint: {
+  //   dirs: ['app', 'components', 'layouts', 'scripts'],
+  // },
   images: {
     remotePatterns: [
       {
