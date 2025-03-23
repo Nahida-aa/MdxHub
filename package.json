@@ -7,7 +7,7 @@
     "dev-w": "concurrently --kill-others \"next dev --turbopack\" \"pnpm watch:node\"",
     "dev": "pnpm gen && next dev --turbopack",
     "gen": "ts-node --project tsconfig.node.json scripts/build-mdx.ts",
-    "build": "next build",
+    "build": "pnpm exec playwright install && next build",
     "start": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
