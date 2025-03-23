@@ -147,7 +147,7 @@ const withMDX = createMDX({
       ['@vcarl/remark-headings'],
       ['remark-frontmatter', {type: 'yaml', marker: '-'}], // 解析 frontmatter 到 语法树
       ['remark-mdx-frontmatter'], // 导出 frontmatter
-      ['remark-mermaidjs'],
+      // ['remark-mermaidjs'],
       // [remarkMath,{}],
       ['remark-math', {}]
     ],

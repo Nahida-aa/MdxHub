@@ -3,10 +3,11 @@
 // import type { MDXComponents } from 'mdx/types'
 // import { MDXProvider } from '@mdx-js/react';
 // import { Code } from './code';
-import { Pre } from './pre/prismPre';
+// import { Pre } from './pre/prismPre';
 // import { Table } from './gfm/table';
 import { H1,H2,H3,H4,H5,H6 } from './h_';
 import CustomImage from './Image';
+import { Pre } from './pre';
 import { PreWithCopy } from './pre/preWithCopy';
 import { Check, Cross } from 'lucide-react';
 
@@ -53,7 +54,7 @@ export const MdxComponents = {
   h4: H4,
   h5: H5,
   h6: H6,
-  pre: PreWithCopy,
+  pre: Pre,
   // Image: RoundedImage,
   // code: Code,
   

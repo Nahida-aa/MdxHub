@@ -119,6 +119,9 @@ importers:
       lucide-react:
         specifier: ^0.479.0
         version: 0.479.0(react@19.0.0)
+      mermaid:
+        specifier: ^11.5.0
+        version: 11.5.0
       mermaid-isomorphic:
         specifier: ^3.0.1
         version: 3.0.1(playwright@1.51.1)

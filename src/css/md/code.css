@@ -3,12 +3,15 @@
 }
 
 .prose pre {
-    @apply !px-0 rounded-lg;
+    @apply !p-0 rounded-lg;
+}
+.prose pre code {
+  @apply py-3;
 }
 
 .prose pre [data-line] {
     @apply px-4 border-l-2 border-l-transparent;
-  }
+}
 
 .prose pre [data-highlighted-line] {
     background: rgba(200, 200, 255, 0.1);
