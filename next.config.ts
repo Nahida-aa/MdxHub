@@ -147,6 +147,7 @@ const withMDX = createMDX({
       ['@vcarl/remark-headings'],
       ['remark-frontmatter', {type: 'yaml', marker: '-'}], // 解析 frontmatter 到 语法树
       ['remark-mdx-frontmatter'], // 导出 frontmatter
+      ['remark-mermaidjs'],
       // [remarkMath,{}],
       ['remark-math', {}]
     ],
@@ -154,7 +155,7 @@ const withMDX = createMDX({
       ['rehype-callouts'],
       // ['rehype-katex', { strict: true, throwOnError: true }]
       // [rehypeMathjax,{}],
-      ['rehype-mermaid'],
+      // ['rehype-mermaid'],
       ['rehype-pretty-code', rehypePrettyCode_options],
       ["rehype-mathjax"],
     ],

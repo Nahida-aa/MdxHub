@@ -1,5 +1,13 @@
 [
   {
+    "segment": "learn",
+    "title": "学习",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/learn",
+    "type": "file"
+  },
+  {
     "segment": "i18n",
     "title": "i18 国际化",
     "order": 99,
@@ -8,11 +16,68 @@
     "type": "file"
   },
   {
-    "segment": "learn",
-    "title": "学习",
+    "segment": "alg",
+    "title": "算法",
+    "order": 99,
+    "children": [
+      {
+        "segment": "Array",
+        "title": "线性结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/Array",
+        "type": "file"
+      },
+      {
+        "segment": "blog",
+        "title": "日志",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
+        "segment": "python",
+        "title": "python",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/python",
+        "type": "file"
+      },
+      {
+        "segment": "struct",
+        "title": "数据结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/struct",
+        "type": "file"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/enum",
+        "type": "file"
+      },
+      {
+        "segment": "lanqiao",
+        "title": "蓝桥杯",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/lanqiao",
+        "type": "file"
+      }
+    ],
+    "url": "/zh/docs/alg",
+    "type": "file"
+  },
+  {
+    "segment": "html",
+    "title": "html",
     "order": 99,
     "children": [],
-    "url": "/zh/docs/learn",
+    "url": "/zh/docs/html",
     "type": "file"
   },
   {
@@ -55,19 +120,19 @@
         "type": "file"
       },
       {
-        "segment": "data",
-        "title": "数据存储",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/data",
-        "type": "file"
-      },
-      {
         "segment": "search",
         "title": "增添搜索引擎",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/search",
+        "type": "file"
+      },
+      {
+        "segment": "data",
+        "title": "数据存储",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/data",
         "type": "file"
       },
       {
@@ -100,6 +165,14 @@
         "order": 99,
         "children": [
           {
+            "segment": "docs",
+            "title": "docs",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/docs",
+            "type": "file"
+          },
+          {
             "segment": "code-blocks",
             "title": "code blocks",
             "order": 99,
@@ -116,11 +189,11 @@
             "type": "file"
           },
           {
-            "segment": "docs",
-            "title": "docs",
+            "segment": "slug",
+            "title": "md slug",
             "order": 99,
             "children": [],
-            "url": "/zh/docs/dev/md/docs",
+            "url": "/zh/docs/dev/md/slug",
             "type": "file"
           },
           {
@@ -132,16 +205,8 @@
             "type": "file"
           },
           {
-            "segment": "slug",
-            "title": "md slug",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/slug",
-            "type": "file"
-          },
-          {
             "segment": "css",
-            "title": "md css",
+            "title": "css",
             "order": 99,
             "children": [
               {
@@ -162,7 +227,7 @@
               }
             ],
             "url": "/zh/docs/dev/md/css",
-            "type": "file"
+            "type": "dir"
           }
         ],
         "url": "/zh/docs/dev/md",
@@ -170,71 +235,6 @@
       }
     ],
     "url": "/zh/docs/dev",
-    "type": "dir"
-  },
-  {
-    "segment": "html",
-    "title": "html",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
-    "type": "file"
-  },
-  {
-    "segment": "alg",
-    "title": "alg",
-    "order": 99,
-    "children": [
-      {
-        "segment": "blog",
-        "title": "日志",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/blog",
-        "type": "file"
-      },
-      {
-        "segment": "Array",
-        "title": "线性结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/Array",
-        "type": "file"
-      },
-      {
-        "segment": "python",
-        "title": "python",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/python",
-        "type": "file"
-      },
-      {
-        "segment": "struct",
-        "title": "数据结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/struct",
-        "type": "file"
-      },
-      {
-        "segment": "lanqiao",
-        "title": "蓝桥杯",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/lanqiao",
-        "type": "file"
-      },
-      {
-        "segment": "enum",
-        "title": "穷举法",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/enum",
-        "type": "file"
-      }
-    ],
-    "url": "/zh/docs/alg",
     "type": "dir"
   },
   {
@@ -276,31 +276,6 @@
         "type": "dir"
       },
       {
-        "segment": "console",
-        "title": "console",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/readme",
-            "type": "file"
-          },
-          {
-            "segment": "Command-line_shell",
-            "title": "Command-line_shell",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/Command-line_shell",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/console",
-        "type": "dir"
-      },
-      {
         "segment": "command",
         "title": "command",
         "order": 99,
@@ -335,6 +310,31 @@
         "type": "dir"
       },
       {
+        "segment": "console",
+        "title": "console",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/readme",
+            "type": "file"
+          },
+          {
+            "segment": "Command-line_shell",
+            "title": "Command-line_shell",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/Command-line_shell",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/console",
+        "type": "dir"
+      },
+      {
         "segment": "input",
         "title": "input",
         "order": 99,
@@ -357,7 +357,7 @@
   },
   {
     "segment": "next",
-    "title": "next",
+    "title": "Nextjs",
     "order": 99,
     "children": [
       {
@@ -457,7 +457,7 @@
       }
     ],
     "url": "/zh/docs/next",
-    "type": "dir"
+    "type": "file"
   },
   {
     "segment": "ts",
