@@ -75,14 +75,46 @@ const securityHeaders = [
   },
 ]
 
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [
+      // [remarkGfm, {}],
+      ['remark-gfm'],
+      ['@vcarl/remark-headings'],
+      ['remark-frontmatter', {type: 'yaml', marker: '-'}], // 解析 frontmatter 到 语法树
+      ['remark-mdx-frontmatter'], // 导出 frontmatter
+      // ['remark-mermaidjs'],
+      // [remarkMath,{}],
+      ['remark-math', {}]
+    ],
+    rehypePlugins: [
+      ['rehype-callouts'],
+      // ['rehype-katex', { strict: true, throwOnError: true }]
+      // [rehypeMathjax,{}],
+      // ['rehype-mermaid'],
+      ['rehype-pretty-code', rehypePrettyCode_options],
+      ["rehype-mathjax"],
+    ],
+  },
+} as NextMDXOptions)
+
+let plugins: any[] = []
+
 // 检查是否在 GitHub 环境中
 console.log('process.env:', process.env);
-if (process.env.GITHUB_ACTIONS) {
+if (process.env.GITHUB_ACTIONS) { // ‘true
   const envPath = '.env.github';
   console.log('GitHub Actions detected, loading environment variables from:', envPath);
   // if (fs.existsSync(envPath)) {
   //   dotenv.config({ path: envPath });
   // }
+} else {
+  plugins = [
+    withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
+    withBundleAnalyzer, 
+  ]
 }
 
 const output = process.env.EXPORT ? 'export' : undefined
@@ -93,31 +125,31 @@ const nextConfig: NextConfig = {
   output,
   // basePath,
   reactStrictMode: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  // pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   // eslint: {
   //   dirs: ['app', 'components', 'layouts', 'scripts'],
   // },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
-      {
-        hostname: 'avatar.vercel.sh',
-      },
-      {
-        hostname: 'avatars.githubusercontent.com',
-      },
-      {
-        hostname: 'raw.githubusercontent.com',
-      },
-      {
-        hostname: 'utfs.io',
-      },
-    ],
-    unoptimized,
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'picsum.photos',
+  //     },
+  //     {
+  //       hostname: 'avatar.vercel.sh',
+  //     },
+  //     {
+  //       hostname: 'avatars.githubusercontent.com',
+  //     },
+  //     {
+  //       hostname: 'raw.githubusercontent.com',
+  //     },
+  //     {
+  //       hostname: 'utfs.io',
+  //     },
+  //   ],
+  //   unoptimized,
+  // },
   // async headers() {
   //   return [
   //     {
@@ -147,34 +179,8 @@ const nextConfig: NextConfig = {
   // transpilePackages: ['next-mdx-remote'],
 }
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [
-      // [remarkGfm, {}],
-      ['remark-gfm'],
-      ['@vcarl/remark-headings'],
-      ['remark-frontmatter', {type: 'yaml', marker: '-'}], // 解析 frontmatter 到 语法树
-      ['remark-mdx-frontmatter'], // 导出 frontmatter
-      // ['remark-mermaidjs'],
-      // [remarkMath,{}],
-      ['remark-math', {}]
-    ],
-    rehypePlugins: [
-      ['rehype-callouts'],
-      // ['rehype-katex', { strict: true, throwOnError: true }]
-      // [rehypeMathjax,{}],
-      // ['rehype-mermaid'],
-      ['rehype-pretty-code', rehypePrettyCode_options],
-      ["rehype-mathjax"],
-    ],
-  },
-} as NextMDXOptions)
 
-const plugins = [
-  withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
-  withBundleAnalyzer, 
-]
+
+
 
 export default plugins.reduce((prev, item) => item(prev), nextConfig)
