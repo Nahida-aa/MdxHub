@@ -19,12 +19,27 @@
     ]
   },
   "order": 99,
-  "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n```py\n# 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n# 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# n*m 的 0 矩阵\nn, m = map(int, input().split())\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\nzero_matrix3 = [0]*m @ [0]*n\n```",
+  "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n## 迭代\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n\n等效语法:\n```py\nlst = []\nfor item in iterable:\n    if condition:\n        lst.append(expression)\n```\n\n示例:\n```py\n# 1. 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n# 2. 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n[i for i in range(2,21,2)]\nlist(range(2,21,2))\n# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n\n# 3. 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# [1, 2, 3, 4]\n\n# 4. n*m 的 0 矩阵\nn, m = map(int, input().split()) | [2, 3]\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\n# [[0, 0, 0], [0, 0, 0]]\n\n# 5. 斐波那契数列\nn = int(input())\nfib = [0, 1]\n[fib.append(fib[-1]+fib[-2]) for i in range(2, n)]\n# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]\n\n# 6. 将二维表展开为一维表\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflatten = [item for row in matrix for item in row]\n# 相当于:\nflatten = []\nfor row in matrix:\n    for item in row:\n        flatten.append(item)\n```\n\n### 字典推导式\n\n`{key: value for item in iterable if condition}{:py}`\n\n等效语法:\n```py\ndct = {}\nfor item in iterable:\n    if condition:\n        dct[key] = value\n```\n示例:\n```py\n# 统计字符串中每个字符出现的次数\ns = \"hello\"\n{char: s.count(char) for char in set(s)}\n# {'h': 1, 'e': 1, 'l': 2, 'o': 1}\n```\n\n### `range{:py}`\n\n`range(){:py}` 返回的是一个 `range{:py}` 对象, 是一个惰性序列(计算到对应位置时才会去计算对应的值), 节省内存. 如果需要 `list{:py}`, 可以用 `list(){:py}`\n\n`range(start, stop, step){:py}`\n- `start`: 起始值(包含), default: 0\n- `stop`: 结束值(不包含)\n- `step`: 步长, default: 1\n\n即左闭着右开(python 中统一使用左闭右开区间)\n\n```py\n# 1. 生成 1 到 10 的序列\nseq = range(1, 11)\nlist(seq) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# 2. 生成 1 到 10 的奇数\nodd = range(1, 11, 2)\nlist(odd) # [1, 3, 5, 7, 9]\n\n# 3. 生成 10 到 1 的序列\nseq = range(10, 0, -1)\nlist(seq) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n\n# 4. 生成 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4\nT = 5\nn = 3\nfor i in range(T*n):\n    a_i = i % T\n    print(a_i, end=' ')\n\n# 5. 生成二维网格坐标列表\nrow_count, col_count = 2, 3\ncoordinate_ls = [(i, j) for i in range(row_count) for j in range(col_count)]\n# [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]\n```\n",
   "toc": [
+    {
+      "depth": 2,
+      "value": "迭代",
+      "slug": "迭代"
+    },
     {
       "depth": 3,
       "value": "列表推导式",
       "slug": "列表推导式"
+    },
+    {
+      "depth": 3,
+      "value": "字典推导式",
+      "slug": "字典推导式"
+    },
+    {
+      "depth": 3,
+      "value": "range{:py}",
+      "slug": "range{:py}"
     }
   ]
 }

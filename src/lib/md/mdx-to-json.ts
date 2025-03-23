@@ -9,6 +9,8 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkHeadings from '@vcarl/remark-headings';
 import { text2slug } from "@/lib/utils/slug"
 import { DocMeta, DocSearchValue, Toc } from "@/app/[locale]/md/types"
+import { getNavigationList } from "./get";
+import { outputDir } from "../path";
 
 
 const DATA_DIR = path.join(process.cwd(), "src",'data')
@@ -160,3 +162,20 @@ const processMdxGenTocList = async (content: string): Promise<Toc[]> => {
   return toc
 }
 
+export const generateNavigationList = async (allDocsList:DocSearchValue[][]) => {
+  const locales = ["zh", "en"];
+  // const types = ["docs"];
+  // console.log("generateNavigationList: ", navList);
+  // 输出导航列表到文件
+
+  for (let i = 0; i < allDocsList.length; i++) {
+    const allDocs = allDocsList[i];
+    const locale = locales[i];
+    const navList = await getNavigationList(allDocs);
+    const navFilePath = path.join(outputDir, locale, "nav.json");
+    await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
+    // for (const type of types) {
+    // }
+  }
+  // await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
+}

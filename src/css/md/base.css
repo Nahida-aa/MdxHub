@@ -126,7 +126,21 @@
 @apply list-decimal pl-6;
 }
 .prose {
-  svg{
+  svg.lucide {
     @apply inline-block;
+  }
+  svg[aria-roledescription="flowchart-v2"] {
+    @apply block mx-auto;
+  }
+  .node rect,
+  g .default {
+    /* fill: #ECECFF; */
+    @apply fill-[#ECECFF] dark:!fill-[rgb(51,51,51)];
+  }
+  .edgeLabel p {
+    @apply bg-[rgba(232,232,232,0.8)] dark:!bg-[rgba(51,51,51,0.8)];
+  }
+  caption {
+    @apply block;
   }
 }

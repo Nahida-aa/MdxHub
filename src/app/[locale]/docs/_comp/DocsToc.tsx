@@ -90,9 +90,9 @@ export const DocsToc = ({ toc }: DocsTocProps) => {
       <ul>
         {numberedToc.map((item, index) => <li key={index}>
           <Link className={clsx(
-            `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,
+            `text-muted-foreground hover:text-primary ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,
             {
-              "text-primary-foreground font-bold": isClient && activeSlug === item.slug,
+              "text-primary font-bold": isClient && activeSlug === item.slug,
             }
           )}
             href={`#${item.slug}`}

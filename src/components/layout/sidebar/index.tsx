@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/sidebar"
 import {ScrollShadow} from "@heroui/scroll-shadow";
 import { generateNav } from "@/app/[locale]/docs/lib/gen";
-import { generateNavigationList, getNavigationList, NavNode } from "@/lib/md/get";
+import { NavNode } from "@/lib/md/get";
 import { ContentNavTree } from "./nav-tree";
 import { headers, cookies } from 'next/headers'
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,7 @@ export async function AppSidebar({ locale, ...props }: AppSidebarProps) {
   const navTreeObj = {} as { [key: string]: NavNode[] }
   for (const type of types) {
     // navTreeObj[type] = await import(`@/../public/data/${locale}/${type}/index.json`)
-    navTreeObj[type] = await import(`@/../public/data/${locale}/nav.json`)
+    navTreeObj[type] = (await import(`@/../public/data/${locale}/nav.json`)).default as NavNode[]
   }
   const currentNavTree = navTreeObj[type]
   return (

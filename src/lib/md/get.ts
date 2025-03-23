@@ -1,5 +1,5 @@
 import { DocMeta, DocSearchValue } from "@/app/[locale]/md/types"
-import { outputDir } from "../path";
+
 import path from "path";
 import fs from "fs/promises"
 import { MenuItemType } from "@/components/layout/sidebar/TreeNode";
@@ -110,13 +110,13 @@ const buildNavTree = (docs: DocSearchValueBase[]): NavNode[] => {
 };
 
 // 生成导航列表
-export const getNavigationList = async (locale: string, type: string) => {
+export const getNavigationList = async (allDocs:DocSearchValue[]) => {
   // const contentDir = path.join(process.cwd(), "src", "data");
   // const outputDir = path.join(process.cwd(), "public", "data");
 
   // 处理所有 MDX 文件，生成文档数据
   // const allDocs = await processAllMdxFiles(contentDir, outputDir, locale, type);
-  const allDocs = await getAllDocs(locale, type);
+  // const allDocs = await getAllDocs(locale, type);
 
   // 构建导航树
   const navTree = buildNavTree(
@@ -137,17 +137,4 @@ export const getNavigationList = async (locale: string, type: string) => {
   return navTree;
 };
 
-export const generateNavigationList = async () => {
-  const locales = ["zh", "en"];
-  const types = ["docs"];
-  // console.log("generateNavigationList: ", navList);
-  // 输出导航列表到文件
-  for (const locale of locales) {
-    for (const type of types) {
-      const navList = await getNavigationList(locale, type);
-      const navFilePath = path.join(outputDir, locale, "nav.json");
-      await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
-    }
-  }
-  // await fs.writeFile(navFilePath, JSON.stringify(navList, null, 2));
-}
+

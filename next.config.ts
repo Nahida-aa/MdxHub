@@ -154,8 +154,9 @@ const withMDX = createMDX({
       ['rehype-callouts'],
       // ['rehype-katex', { strict: true, throwOnError: true }]
       // [rehypeMathjax,{}],
+      ['rehype-mermaid'],
       ['rehype-pretty-code', rehypePrettyCode_options],
-      ["rehype-mathjax"]
+      ["rehype-mathjax"],
     ],
   },
 } as NextMDXOptions)

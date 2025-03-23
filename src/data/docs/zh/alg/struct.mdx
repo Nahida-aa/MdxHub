@@ -7,3 +7,254 @@ tags: [alg, data-structure]
 ---
 
 https://explorer-dong.github.io
+
+学习数据结构是编程和算法的基础，它为解决复杂问题提供了高效的工具和方法。以下是学习数据结构时需要掌握的主要内容，以及每种数据结构的用途和学习建议。
+
+## 基础数据结构
+
+### 数组（Array）
+- **特点**：
+  - 连续的内存空间，支持快速随机访问（时间复杂度 O(1)）。
+  - 插入和删除操作效率较低（需要移动元素）, 时间复杂度 O(n), 但在末尾插入和删除效率高（时间复杂度 O(1)）。
+- **用途**：
+  - 存储固定大小的元素集合。
+  - 常用于实现其他数据结构（如栈、队列）。
+- **学习内容**：
+  - 一维数组、多维数组。
+  - 常见操作：遍历、插入、删除、查找。
+- **代码示例**（Python）：python 中的 list 是动态数组
+  ```python
+  # 
+  arr = [1, 2, 3, 4]
+  arr.append(5)  # 插入
+  arr.remove(2)  # 删除
+  print(arr[1])  # 随机访问
+  ```
+
+### 链表（Linked List）
+- **特点**：
+  - 由节点组成，每个节点包含数据和指向下一个节点的指针。
+  - 插入和删除操作效率高（时间复杂度 O(1)），但随机访问效率低（时间复杂度 O(n)）。
+- **类型**：
+  - 单链表、双向链表、循环链表。
+- **用途**：
+  - 动态存储数据，适合频繁插入和删除的场景。
+  - 用于实现栈、队列等数据结构。
+- **学习内容**：
+  - 单链表、双向链表的实现。
+  - 常见操作：插入、删除、查找、反转链表。
+- **代码示例**（单链表）：
+  ```python
+  class Node:
+      def __init__(self, data):
+          self.data = data
+          self.next = None
+
+  class LinkedList:
+      def __init__(self):
+          self.head = None
+
+      def append(self, data):
+          new_node = Node(data)
+          if not self.head:
+              self.head = new_node
+              return
+          current = self.head
+          while current.next:
+              current = current.next
+          current.next = new_node
+  ```
+
+---
+
+### 栈 Stack
+- **特点**：
+  - 后进先出（LIFO）。
+  - 只允许在一端（栈顶）进行插入和删除操作。
+- **用途**：
+  - 用于递归调用、括号匹配、表达式求值等。
+- **学习内容**：
+  - 栈的实现（基于数组或链表）。
+  - 常见操作：`push`（入栈）、`pop`（出栈）、`peek`（查看栈顶元素）。
+- **代码示例**：
+  ```python
+  stack = []
+  stack.append(1)  # 入栈
+  stack.append(2)
+  print(stack.pop())  # 出栈
+  ```
+
+---
+
+### **1.4 队列（Queue）**
+- **特点**：
+  - 先进先出（FIFO）。
+  - 插入操作在队尾，删除操作在队首。
+- **类型**：
+  - 普通队列、双端队列（Deque）、优先队列。
+- **用途**：
+  - 用于任务调度、广度优先搜索（BFS）等。
+- **学习内容**：
+  - 队列的实现（基于数组或链表）。
+  - 双端队列的实现。
+- **代码示例**：
+  ```python
+  from collections import deque
+  queue = deque()
+  queue.append(1)  # 入队
+  queue.append(2)
+  print(queue.popleft())  # 出队
+  ```
+
+---
+
+## **2. 树和图**
+
+### **2.1 树（Tree）**
+- **特点**：
+  - 层次结构，每个节点有一个父节点和多个子节点。
+  - 特殊类型：二叉树、二叉搜索树（BST）、平衡二叉树（如 AVL 树）、堆（Heap）。
+- **用途**：
+  - 用于表示层级关系（如文件系统、DOM 树）。
+  - 二叉搜索树用于快速查找、插入和删除。
+- **学习内容**：
+  - 二叉树的遍历（前序、中序、后序、层序）。
+  - 二叉搜索树的插入、删除、查找。
+  - 堆的实现（最大堆、最小堆）。
+- **代码示例**（二叉树的遍历）：
+  ```python
+  class TreeNode:
+      def __init__(self, val=0, left=None, right=None):
+          self.val = val
+          self.left = left
+          self.right = right
+
+  def inorder_traversal(root):
+      if not root:
+          return []
+      return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)
+  ```
+
+---
+
+### **2.2 图（Graph）**
+- **特点**：
+  - 由节点（顶点）和边组成，可以是有向图或无向图。
+  - 表示复杂的关系（如社交网络、地图）。
+- **表示方法**：
+  - 邻接矩阵、邻接表。
+- **用途**：
+  - 用于路径规划（如最短路径）、网络流、拓扑排序等。
+- **学习内容**：
+  - 图的表示方法。
+  - 图的遍历（深度优先搜索 DFS、广度优先搜索 BFS）。
+  - 最短路径算法（Dijkstra、Floyd-Warshall）。
+- **代码示例**（BFS）：
+  ```python
+  from collections import deque
+
+  def bfs(graph, start):
+      visited = set()
+      queue = deque([start])
+      while queue:
+          node = queue.popleft()
+          if node not in visited:
+              visited.add(node)
+              print(node)
+              queue.extend(graph[node] - visited)
+  ```
+
+---
+
+## **3. 高级数据结构**
+
+### **3.1 哈希表（Hash Table）**
+- **特点**：
+  - 通过哈希函数将键映射到值，支持快速查找、插入和删除（平均时间复杂度 O(1)）。
+- **用途**：
+  - 用于实现字典、集合。
+  - 常用于查找问题（如两数之和）。
+- **学习内容**：
+  - 哈希函数的设计。
+  - 解决哈希冲突的方法（如链地址法、开放地址法）。
+- **代码示例**：
+  ```python
+  hash_table = {}
+  hash_table["key"] = "value"
+  print(hash_table["key"])
+  ```
+
+---
+
+### **3.2 字典树（Trie）**
+- **特点**：
+  - 一种树形结构，用于高效存储和查找字符串集合。
+- **用途**：
+  - 用于实现自动补全、前缀匹配。
+- **学习内容**：
+  - 插入、查找字符串。
+- **代码示例**：
+  ```python
+  class TrieNode:
+      def __init__(self):
+          self.children = {}
+          self.is_end = False
+
+  class Trie:
+      def __init__(self):
+          self.root = TrieNode()
+
+      def insert(self, word):
+          node = self.root
+          for char in word:
+              if char not in node.children:
+                  node.children[char] = TrieNode()
+              node = node.children[char]
+          node.is_end = True
+  ```
+
+---
+
+### **并查集（Union-Find）**
+- **特点**：
+  - 用于处理动态连通性问题。
+- **用途**：
+  - 用于解决图的连通性问题（如最小生成树 Kruskal 算法）。
+- **学习内容**：
+  - 路径压缩、按秩合并。
+- **代码示例**：
+  ```python
+  class UnionFind:
+      def __init__(self, n):
+          self.parent = list(range(n))
+
+      def find(self, x):
+          if self.parent[x] != x:
+              self.parent[x] = self.find(self.parent[x])
+          return self.parent[x]
+
+      def union(self, x, y):
+          root_x = self.find(x)
+          root_y = self.find(y)
+          if root_x != root_y:
+              self.parent[root_x] = root_y
+  ```
+
+---
+
+## **学习建议**
+
+1. **从基础到高级**：
+   - 先掌握数组、链表、栈、队列等基础数据结构。
+   - 再学习树、图等复杂数据结构。
+
+2. **结合算法学习**：
+   - 数据结构和算法密不可分，学习数据结构时可以结合经典算法（如排序、搜索、动态规划）。
+
+3. **多练习**：
+   - 在 LeetCode、Codeforces 等平台上刷题，巩固数据结构的应用。
+
+4. **参考书籍**：
+   - 《数据结构与算法分析》（C语言版/Java版）—— Mark Allen Weiss
+   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen
+

@@ -22,6 +22,32 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/learn",
+    "slug": "learn",
+    "segments": [
+      "learn"
+    ],
+    "filePath": "docs/zh/learn.mdx",
+    "meta": {
+      "title": "学习",
+      "description": null,
+      "created_at": "2025-03-23T14:55:10.000Z",
+      "updated_at": "2025-03-23T14:55:10.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\n## 站点地图\n\n<div align=\"center\">\n```mermaid\nflowchart LR\n    面向对象程序设计(面向对象程序设计)\n    数据结构与算法(数据结构与算法)\n    数字逻辑电路(数字逻辑电路)\n    计算机系统基础(计算机系统基础)\n    数据库(数据库)\n    操作系统(操作系统)\n    计算机组成(计算机组成)\n    计算机网络(计算机网络)\n\n    面向对象程序设计 --> 数据结构与算法 --> 计算机系统基础\n    数字逻辑电路 --> 计算机系统基础 --> 数据库 & 操作系统 & 计算机组成\n    计算机组成 & 操作系统 --> 计算机网络\n\n    Python高级应用(Python 高级应用)\n    数字图像处理(数字图像处理)\n    机器学习(机器学习)\n    深度学习(深度学习)\n    数据挖掘(数据挖掘)\n    自然语言处理(自然语言处理)\n    计算机视觉(计算机视觉)\n    数字信号处理(数字信号处理)\n    智慧教育(智慧教育)\n\n    Python高级应用 --> 数字图像处理 & 数字信号处理 & 机器学习\n    机器学习 --> 数据挖掘 & 深度学习\n    深度学习 --> 自然语言处理 & 计算机视觉 --> 智慧教育\n    数字图像处理 --> 计算机视觉\n\n    高等数学(高等数学)\n    线性代数(线性代数)\n    概率论(概率论)\n    最优化方法(最优化方法)\n    高等数学 & 线性代数 & 概率论 --> 最优化方法 --> 机器学习\n    面向对象程序设计 --> Python高级应用\n\n    %% 跳转链接\n    click 高等数学 \"./base/advanced-math/\"\n    click 线性代数 \"./base/linear-algebra/\"\n    click 概率论 \"./base/probability-and-statistics/\"\n    click 最优化方法 \"./base/optimization-method/\"\n\n    click 面向对象程序设计 \"./base/object-oriented-programming/\"\n    click 数字逻辑电路 \"./base/digital-logic-circuit/\"\n    click 计算机系统基础 \"./base/computer-system-basic/\"\n    click 数据库 \"./base/database/\"\n    click 数据结构与算法 \"./ds-and-algo/\"\n    click 操作系统 \"./base/operating-system/\"\n    click 计算机组成 \"./base/computer-organization/\"\n    click 计算机网络 \"./base/computer-network/\"\n\n    click Python高级应用 \"./base/python-application/\"\n    click 数字图像处理 \"./base/digital-image-processing/\"\n    click 机器学习 \"./base/machine-learning/\"\n    click 深度学习 \"./base/deep-learning/\"\n    click 数据挖掘 \"./base/data-mining/\"\n    click 自然语言处理 \"./base/natural-language-processing/\"\n    click 计算机视觉 \"./base/computer-vision/\"\n    click 数字信号处理 \"./base/digital-signal-processing/\"\n    click 智慧教育 \"./base/intelligent-education/\"\n```\n\n<caption> 拓扑图 1. AI / CS 学科笔记 </caption>\n\n```mermaid \ngraph LR\n  %% 实体定义\n  algo(数据结构与算法专栏)\n  dev_tools(开发工具专栏)\n  fe(前端开发专栏)\n  be(后端开发专栏)\n  dev_ops(运维开发专栏)\n  \n  %% 关系定义\n  algo --> be\n  dev_tools --> fe & be & dev_ops\n  \n  %% 跳转链接\n  click algo \"./ds-and-algo/\"\n  click dev_tools \"./dev-tools/\"\n  click fe \"./front-end/\"\n  click be \"./back-end/\"\n  click dev_ops \"./operation/\"\n```\n\n<caption> 拓扑图 2. 开发技术文章 </caption>\n</div>",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "站点地图",
+        "slug": "站点地图"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/dev/contentlayer",
     "slug": "dev/contentlayer",
     "segments": [
@@ -37,185 +63,6 @@
         "depth": 1,
         "value": "contentlayer",
         "slug": "contentlayer"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/todo",
-    "slug": "dev/todo",
-    "segments": [
-      "dev",
-      "todo"
-    ],
-    "filePath": "docs/zh/dev/todo.mdx",
-    "meta": {
-      "title": "todo",
-      "description": "todo next-mdx-remote",
-      "created_at": "2025-03-18T15:19:34Z",
-      "updated_at": "2025-03-18T15:19:34Z",
-      "tags": [
-        "todo",
-        "mdx"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "基本",
-        "slug": "基本"
-      },
-      {
-        "depth": 3,
-        "value": "remark-breaks",
-        "slug": "remark-breaks"
-      },
-      {
-        "depth": 3,
-        "value": "This is a heading",
-        "slug": "this-is-a-heading"
-      },
-      {
-        "depth": 3,
-        "value": "code block",
-        "slug": "code-block"
-      },
-      {
-        "depth": 3,
-        "value": "math code block",
-        "slug": "math-code-block"
-      },
-      {
-        "depth": 2,
-        "value": "github",
-        "slug": "github"
-      },
-      {
-        "depth": 3,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 3,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      },
-      {
-        "depth": 3,
-        "value": "github",
-        "slug": "github"
-      },
-      {
-        "depth": 3,
-        "value": "obsidian",
-        "slug": "obsidian"
-      },
-      {
-        "depth": 2,
-        "value": "next",
-        "slug": "next"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/test",
-    "slug": "dev/test",
-    "segments": [
-      "dev",
-      "test"
-    ],
-    "filePath": "docs/zh/dev/test.mdx",
-    "meta": {
-      "title": "测试",
-      "description": "用于测试 mdx",
-      "created_at": "2025-03-22T00:42:34.000Z",
-      "updated_at": "2025-03-22T00:42:34.000Z",
-      "tags": [
-        "test"
-      ]
-    },
-    "order": 99,
-    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "markdown",
-        "slug": "markdown"
-      },
-      {
-        "depth": 3,
-        "value": "标题",
-        "slug": "标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级标题1",
-        "slug": "四级标题1"
-      },
-      {
-        "depth": 3,
-        "value": "三级 标题",
-        "slug": "三级-标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级 标题2",
-        "slug": "四级-标题2"
-      },
-      {
-        "depth": 5,
-        "value": "五级 标题",
-        "slug": "五级-标题"
-      },
-      {
-        "depth": 6,
-        "value": "六级 标题",
-        "slug": "六级-标题"
-      },
-      {
-        "depth": 2,
-        "value": "GitHub flavored markdown (GFM)",
-        "slug": "github-flavored-markdown-(gfm)"
-      },
-      {
-        "depth": 3,
-        "value": "三级标题",
-        "slug": "三级标题"
-      },
-      {
-        "depth": 2,
-        "value": "代码块",
-        "slug": "代码块"
-      },
-      {
-        "depth": 2,
-        "value": "图表",
-        "slug": "图表"
       }
     ]
   },
@@ -251,55 +98,6 @@
         "slug": "常用工具"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/about",
-    "slug": "about",
-    "segments": [
-      "about"
-    ],
-    "filePath": "docs/zh/about/index.mdx",
-    "meta": {
-      "title": "关于",
-      "description": "关于本软件的开发",
-      "created_at": "2025-03-21T13:49:29.000Z",
-      "updated_at": "2025-03-21T13:49:29.000Z",
-      "tags": [
-        "about"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "本仓库内的文件监视功能",
-        "slug": "本仓库内的文件监视功能"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/x",
-    "slug": "dev/x",
-    "segments": [
-      "dev",
-      "x"
-    ],
-    "filePath": "docs/zh/dev/x.mdx",
-    "meta": {
-      "title": "x",
-      "description": "x",
-      "created_at": "2025-03-22T19:57:35.000Z",
-      "updated_at": "2025-03-22T19:57:35.000Z",
-      "tags": []
-    },
-    "order": 99,
-    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
-    "toc": []
   },
   {
     "locale": "zh",
@@ -439,6 +237,234 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
+    "segments": [
+      "dev",
+      "test"
+    ],
+    "filePath": "docs/zh/dev/test.mdx",
+    "meta": {
+      "title": "测试",
+      "description": "用于测试 mdx",
+      "created_at": "2025-03-22T00:42:34.000Z",
+      "updated_at": "2025-03-22T00:42:34.000Z",
+      "tags": [
+        "test"
+      ]
+    },
+    "order": 99,
+    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "markdown",
+        "slug": "markdown"
+      },
+      {
+        "depth": 3,
+        "value": "标题",
+        "slug": "标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级标题1",
+        "slug": "四级标题1"
+      },
+      {
+        "depth": 3,
+        "value": "三级 标题",
+        "slug": "三级-标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级 标题2",
+        "slug": "四级-标题2"
+      },
+      {
+        "depth": 5,
+        "value": "五级 标题",
+        "slug": "五级-标题"
+      },
+      {
+        "depth": 6,
+        "value": "六级 标题",
+        "slug": "六级-标题"
+      },
+      {
+        "depth": 2,
+        "value": "GitHub flavored markdown (GFM)",
+        "slug": "github-flavored-markdown-(gfm)"
+      },
+      {
+        "depth": 3,
+        "value": "三级标题",
+        "slug": "三级标题"
+      },
+      {
+        "depth": 2,
+        "value": "代码块",
+        "slug": "代码块"
+      },
+      {
+        "depth": 2,
+        "value": "图表",
+        "slug": "图表"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about",
+    "slug": "about",
+    "segments": [
+      "about"
+    ],
+    "filePath": "docs/zh/about/index.mdx",
+    "meta": {
+      "title": "关于",
+      "description": "关于本软件的开发",
+      "created_at": "2025-03-21T13:49:29.000Z",
+      "updated_at": "2025-03-21T13:49:29.000Z",
+      "tags": [
+        "about"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "本仓库内的文件监视功能",
+        "slug": "本仓库内的文件监视功能"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/x",
+    "slug": "dev/x",
+    "segments": [
+      "dev",
+      "x"
+    ],
+    "filePath": "docs/zh/dev/x.mdx",
+    "meta": {
+      "title": "x",
+      "description": "x",
+      "created_at": "2025-03-22T19:57:35.000Z",
+      "updated_at": "2025-03-22T19:57:35.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/todo",
+    "slug": "dev/todo",
+    "segments": [
+      "dev",
+      "todo"
+    ],
+    "filePath": "docs/zh/dev/todo.mdx",
+    "meta": {
+      "title": "todo",
+      "description": "todo next-mdx-remote",
+      "created_at": "2025-03-18T15:19:34Z",
+      "updated_at": "2025-03-18T15:19:34Z",
+      "tags": [
+        "todo",
+        "mdx"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基本",
+        "slug": "基本"
+      },
+      {
+        "depth": 3,
+        "value": "remark-breaks",
+        "slug": "remark-breaks"
+      },
+      {
+        "depth": 3,
+        "value": "This is a heading",
+        "slug": "this-is-a-heading"
+      },
+      {
+        "depth": 3,
+        "value": "code block",
+        "slug": "code-block"
+      },
+      {
+        "depth": 3,
+        "value": "math code block",
+        "slug": "math-code-block"
+      },
+      {
+        "depth": 2,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 3,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      },
+      {
+        "depth": 3,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "obsidian",
+        "slug": "obsidian"
+      },
+      {
+        "depth": 2,
+        "value": "next",
+        "slug": "next"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/alg",
     "slug": "alg",
     "segments": [
@@ -492,226 +518,66 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/html",
-    "slug": "html",
+    "url": "/zh/docs/dev/data",
+    "slug": "dev/data",
     "segments": [
-      "html"
+      "dev",
+      "data"
     ],
-    "filePath": "docs/zh/html/index.mdx",
+    "filePath": "docs/zh/dev/data.mdx",
     "meta": {
-      "title": "html",
-      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
-      "created_at": "2025-03-22T02:26:21.000Z",
-      "updated_at": "2025-03-22T02:26:21.000Z",
-      "tags": [
-        "html"
-      ]
-    },
-    "order": 99,
-    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "list",
-        "slug": "list"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/python",
-    "slug": "alg/python",
-    "segments": [
-      "alg",
-      "python"
-    ],
-    "filePath": "docs/zh/alg/python.mdx",
-    "meta": {
-      "title": "python",
+      "title": "数据存储",
       "description": null,
-      "created_at": "2025-03-22T06:13:49.000Z",
-      "updated_at": "2025-03-22T06:13:49.000Z",
+      "created_at": "2025-03-23T14:03:34.000Z",
+      "updated_at": "2025-03-23T14:03:34.000Z",
       "tags": [
-        "alg",
-        "python"
+        "data"
       ]
     },
     "order": 99,
-    "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n```py\n# 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n# 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# n*m 的 0 矩阵\nn, m = map(int, input().split())\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\nzero_matrix3 = [0]*m @ [0]*n\n```",
+    "content": "以下是使用 Markdown 的 Mermaid 绘图来讲解各种数据存储方式（块存储、文件存储、对象存储）的结构和特点。通过图示化的方式，可以更直观地理解它们的区别和应用场景。\n\n### 块存储（Block Storage）\n\n块存储将数据分成固定大小的块，每个块都有唯一的地址。它不关心数据的内容或文件结构，通常需要文件系统或应用程序来管理数据。\n\n```mermaid\ngraph TD\n    A[块存储] --> B[块1]\n    A --> C[块2]\n    A --> D[块3]\n    A --> E[块4]\n    F[文件系统] -->|组织块| A\n    G[应用程序] -->|访问| F\n```\n\n#### **特点**：\n- 数据以块为单位存储。\n- 需要文件系统（如 NTFS、EXT4, btrfs）来组织数据。\n- 高性能，适合随机读写。\n- 应用场景：数据库、虚拟机磁盘。\n\n### 文件存储（File Storage）\n\n文件存储以文件和目录的形式组织数据，用户通过文件路径访问数据。它是最常见的存储方式，适合需要共享文件的场景。\n\n```mermaid\ngraph TD\n    A[文件存储] --> B[文件1]\n    A --> C[文件2]\n    A --> D[文件3]\n    B -->|存储在| E[块1]\n    B -->|存储在| F[块2]\n    C -->|存储在| G[块3]\n    D -->|存储在| H[块4]\n    I[用户] -->|通过路径访问| A\n```\n\n#### 特点\n- 数据以文件和目录的形式存储。\n- 用户通过文件路径访问数据。\n- 适合文件共享和协作。\n- 应用场景：文件服务器、文档存储。\n\n---\n\n###  对象存储（Object Storage）\n\n对象存储将数据存储为对象，每个对象包含数据本身、元数据和唯一的标识符。用户通过 API 或 URL 访问对象。\n\n```mermaid\ngraph TD\n    A[对象存储] --> B[对象1]\n    A --> C[对象2]\n    A --> D[对象3]\n    B -->|包含| E[数据]\n    B -->|包含| F[元数据]\n    B -->|包含| G[唯一标识符]\n    H[用户] -->|通过 API 或 URL 访问| A\n```\n\n#### 特点\n- 数据以对象的形式存储，每个对象包含数据、元数据和唯一标识符。\n- 用户通过 REST API 或 SDK 访问数据。\n- 高扩展性，适合大规模数据存储。\n- 应用场景：图片、视频、备份数据。\n\n---\n\n### 数据存储方式对比\n\n```mermaid\ngraph TB\n    A[数据存储方式]\n    A --> B[块存储]\n    A --> C[文件存储]\n    A --> D[对象存储]\n\n    B --> E[以块为单位存储]\n    B --> F[需要文件系统管理]\n    B --> G[高性能，适合随机读写]\n    B --> H[应用：数据库、虚拟机磁盘]\n\n    C --> I[以文件和目录形式存储]\n    C --> J[通过路径访问]\n    C --> K[适合文件共享]\n    C --> L[应用：文件服务器、文档存储]\n\n    D --> M[以对象形式存储]\n    D --> N[包含数据、元数据和标识符]\n    D --> O[通过 API 或 URL 访问]\n    D --> P[高扩展性，适合大规模数据]\n    D --> Q[应用：图片、视频、备份]\n```\n\n---\n\n### 总结\n\n| 特性               | 块存储                          | 文件存储                          | 对象存储                          |\n|--------------------|----------------------------------|------------------------------------|------------------------------------|\n| **存储单位**       | 块                              | 文件和目录                        | 对象                              |\n| **访问方式**       | 块号                            | 文件路径                          | API 或 URL                        |\n| **管理方式**       | 需要文件系统                    | 文件系统直接管理                  | 元数据和标识符                    |\n| **性能**           | 高性能，适合随机读写            | 性能较低，适合顺序读写            | 高扩展性，适合大规模数据存储       |\n| **应用场景**       | 数据库、虚拟机磁盘              | 文件共享、文档存储                | 图片、视频、备份数据              |\n\n",
     "toc": [
       {
         "depth": 3,
-        "value": "列表推导式",
-        "slug": "列表推导式"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/Array",
-    "slug": "alg/Array",
-    "segments": [
-      "alg",
-      "Array"
-    ],
-    "filePath": "docs/zh/alg/Array.mdx",
-    "meta": {
-      "title": "数组",
-      "description": "基础存储结构，适合随机访问。操作：插入、删除、遍历。",
-      "created_at": "2025-03-22T15:50:04.000Z",
-      "updated_at": "2025-03-22T15:50:04.000Z",
-      "tags": [
-        "Array"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux",
-    "slug": "linux",
-    "segments": [
-      "linux"
-    ],
-    "filePath": "docs/zh/linux/index.mdx",
-    "meta": {
-      "title": "linux",
-      "description": "linux 简介",
-      "created_at": "2025-03-22T05:22:44.000Z",
-      "updated_at": "2025-03-22T05:22:44.000Z",
-      "tags": [
-        "linux"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
-    "segments": [
-      "next",
-      "15"
-    ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
+        "value": "块存储（Block Storage）",
+        "slug": "块存储（block-storage）"
       },
       {
-        "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/struct",
-    "slug": "alg/struct",
-    "segments": [
-      "alg",
-      "struct"
-    ],
-    "filePath": "docs/zh/alg/struct.mdx",
-    "meta": {
-      "title": "数据结构",
-      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
-      "created_at": "2025-03-22T18:11:12.000Z",
-      "updated_at": "2025-03-22T18:11:12.000Z",
-      "tags": [
-        "alg",
-        "data-structure"
-      ]
-    },
-    "order": 99,
-    "content": "\nhttps://explorer-dong.github.io",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
-    "segments": [
-      "next"
-    ],
-    "filePath": "docs/zh/next/index.mdx",
-    "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
-      "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/async",
-    "slug": "ts/async",
-    "segments": [
-      "ts",
-      "async"
-    ],
-    "filePath": "docs/zh/ts/async.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
-    "toc": [
+        "depth": 4,
+        "value": "特点：",
+        "slug": "特点："
+      },
       {
-        "depth": 1,
-        "value": "ts/async",
-        "slug": "ts/async"
+        "depth": 3,
+        "value": "文件存储（File Storage）",
+        "slug": "文件存储（file-storage）"
+      },
+      {
+        "depth": 4,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 3,
+        "value": "对象存储（Object Storage）",
+        "slug": "对象存储（object-storage）"
+      },
+      {
+        "depth": 4,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 3,
+        "value": "数据存储方式对比",
+        "slug": "数据存储方式对比"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/system_time",
-    "slug": "linux/system_time",
-    "segments": [
-      "linux",
-      "system_time"
-    ],
-    "filePath": "docs/zh/linux/system_time.mdx",
-    "meta": {
-      "title": "系统时间",
-      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
-      "created_at": "2025-03-22T03:26:09.000Z",
-      "updated_at": "2025-03-22T03:26:09.000Z",
-      "tags": [
-        "linux",
-        "os",
-        "time"
-      ]
-    },
-    "order": 99,
-    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
-    "toc": []
   },
   {
     "locale": "zh",
@@ -772,6 +638,426 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/html",
+    "slug": "html",
+    "segments": [
+      "html"
+    ],
+    "filePath": "docs/zh/html/index.mdx",
+    "meta": {
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
+      "tags": [
+        "html"
+      ]
+    },
+    "order": 99,
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "list",
+        "slug": "list"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/Array",
+    "slug": "alg/Array",
+    "segments": [
+      "alg",
+      "Array"
+    ],
+    "filePath": "docs/zh/alg/Array.mdx",
+    "meta": {
+      "title": "线性结构",
+      "description": null,
+      "created_at": "2025-03-22T15:50:04.000Z",
+      "updated_at": "2025-03-22T15:50:04.000Z",
+      "tags": [
+        "Array"
+      ]
+    },
+    "order": 99,
+    "content": "\n\n| 操作  | 动态数组  | 链表  | 栈   | 队列  | 双端队列 |\n|------|----------|------|------|------|---------|\n| 随机访问 | O(1) | O(n) | 不支持 | 不支持 | 不支持  |\n| 末尾插入/删除 | O(1)* | O(1) | O(1) | O(1), 仅插入 | O(1) |\n| 队首插入/删除 | O(n) | O(1)| 不支持| O(1), 仅删除  | O(1) |\n| 两端插入/删除 | O(n) | O(1) | 不支持 | 不支持 | O(1) |\n\n> [!tip] 动态数组和链表是通用的数据结构，而栈、队列和双端队列是针对特定场景优化的抽象。\n\n```py\n# 可迭代对象: 容器, 生成器, 迭代器\n# 容器可以这样判空, 不过生成器和迭代器不能这样判空\nif not container:\n   print('empty')\n```\n\n## 数组 Array\n\n是的，**Python 的 `list` 是动态数组**。虽然在 Python 中我们通常将 `list` 视为一个通用的容器，但其底层实现实际上是基于 **动态数组** 的。以下是详细的解释：\n\n### 什么是动态数组？\n动态数组是一种可以在运行时动态调整大小的数组。与静态数组不同，动态数组的容量可以根据需要扩展或收缩。\n\n- **特点**：\n  - 支持随机访问（时间复杂度 O(1)）。\n  - 当容量不足时，会分配更大的内存空间，并将现有元素复制到新数组中。\n  - 插入和删除操作的时间复杂度取决于位置：\n    - 在末尾插入：摊销时间复杂度为 O(1)。\n    - 在中间或开头插入/删除：时间复杂度为 O(n)。\n\n### Python `list`\nPython 的 `list` 是基于 **动态数组** 实现的，其底层使用了 C 语言的数组（在 [CPython](https://github.com/python/cpython) 中实现）。\n\n#### 特点\n1. **动态扩展**：\n   - 当 `list` 的容量不足时，Python 会自动分配更大的内存空间。\n   - 新的容量通常是当前容量的 **1.125 倍**（即增长因子为 9/8），以减少频繁的内存分配操作。\n\n2. **连续内存**：\n   - Python 的 `list` 在内存中是连续存储的，因此支持快速的随机访问（O(1)）。\n\n3. **支持多种数据类型**：\n   - Python 的 `list` 是一个通用容器，可以存储任意类型的对象（包括混合类型）。\n\n4. **插入和删除**：\n   - 在末尾插入元素效率最高（摊销 O(1)）。\n   - 在中间或开头插入/删除元素需要移动其他元素，时间复杂度为 O(n)。\n\n### 动态扩展的示例\n\n以下代码展示了 Python `list` 的动态扩展行为：\n\n```python\nimport sys\n\n# 创建一个空列表\nlst = []\nprint(f\"初始容量: {sys.getsizeof(lst)} 字节\")\n\n# 不断添加元素，观察内存变化\nfor i in range(20):\n    lst.append(i)\n    print(f\"添加元素 {i} 后，容量: {sys.getsizeof(lst)} 字节\")\n```\n\n#### **输出示例**：\n```plaintext\n初始容量: 56 字节\n添加元素 0 后，容量: 88 字节\n添加元素 1 后，容量: 88 字节\n添加元素 2 后，容量: 88 字节\n添加元素 3 后，容量: 88 字节\n添加元素 4 后，容量: 120 字节\n添加元素 5 后，容量: 120 字节\n添加元素 6 后，容量: 120 字节\n添加元素 7 后，容量: 120 字节\n添加元素 8 后，容量: 184 字节\n...\n```\n\n可以看到，`list` 的容量会在需要时动态扩展，而不是每次添加元素都重新分配内存。\n\n\n### Python `list` 的操作复杂度\n\n| 操作                | 时间复杂度 | 说明                                                                 |\n|---------------------|------------|----------------------------------------------------------------------|\n| 随机访问（`lst[i]`） | O(1)       | 由于底层是连续内存，支持快速随机访问。                               |\n| 末尾插入（`append`） | O(1)*      | 摊销时间复杂度为 O(1)，扩展时需要重新分配内存，代价较高。             |\n| 中间插入/删除        | O(n)       | 需要移动其他元素。                                                   |\n| 遍历  | O(n)       | 遍历所有元素的时间复杂度为 O(n)。                                    |\n| 查找元素（`in`） | O(n)       | 需要遍历整个列表，最坏情况下时间复杂度为 O(n)。                       |\n\n### 动态数组与链表的对比\n\n| 特性               | 动态数组（Python `list`） | 链表（`LinkedList`）          |\n|--------------------|---------------------------|--------------------------------|\n| 内存分配           | 连续内存                  | 非连续内存                     |\n| 随机访问           | O(1)                      | O(n)                          |\n| 插入/删除（末尾）   | O(1)*                     | O(1)                          |\n| 插入/删除（中间）   | O(n)                      | O(1)                          |\n| 内存使用效率       | 高                        | 较低（需要额外存储指针）       |\n\n### 总结\n\n- **Python 的 `list` 是动态数组**，底层基于连续内存实现，支持快速随机访问和动态扩展。\n- **动态扩展**：\n  - 当容量不足时，`list` 会分配更大的内存空间，并将现有元素复制到新数组中。\n  - 这种扩展机制使得 `list.append` 的摊销时间复杂度为 O(1)。\n- **适用场景**：\n  - 如果需要频繁随机访问或在末尾插入元素，`list` 是一个高效的选择。\n  - 如果需要频繁在中间或开头插入/删除元素，可以考虑使用链表（`LinkedList`）。\n\n## 链表 Linked List\n\n## 栈 Stack\n\n后进先出 (LIFO) 的数据结构，表示一种“递归”或“回溯”的逻辑.  \\\n- **函数调用栈**：每次函数调用都会将当前函数的状态压入栈，函数返回时从栈中弹出。\n- **括号匹配**：使用栈来检查括号是否匹配。\n- **深度优先搜索 (DFS)**：使用栈来模拟递归过程。\n- **表达式求值**：如中缀表达式转后缀表达式、后缀表达式求值。\n\npython 没有专门提供 `stack` , 建议用 `list` 来模拟栈的操作, 因为需要的操作的时间复杂度差不多\n\n```py\n# 创建栈\nstack = []\nstack.append(1)  # 栈变为 [1]\nstack.append(2)  # 栈变为 [1, 2]\nx = stack.pop()  # 弹出栈顶元素 2，栈变为 [1], x = 2\n# 获取栈顶元素\nprint(stack[-1])  # 输出 1\n```\n\n### 队列 Queue\n先进先出 (FIFO) 的数据结构, 表示一种 “排队” 或 “顺序处理” 的逻辑. \\\n- **任务调度**：如操作系统中的任务队列。\n- **广度优先搜索 (BFS)**：使用队列来按层次遍历图或树。\n- **数据流处理**：按顺序处理数据流中的元素。\n\npython 提供了 `collections.deque` , 这是一个双端队列 将其当作队列使用即可\n\n```py\nfrom collections import deque\n\n# 创建队列\nqueue = deque()\n\n# 尾部插入\nqueue.append(1)  # 队列变为 [1]\nqueue.append(2)  # 队列变为 [1, 2]\n# 头部插入\nqueue.appendleft(3)  # 队列变为 [3, 1, 2]\n\n# 头部删除\nqueue.popleft()  # 删除队首元素，队列变为 [1, 2]\n# 尾部删除\nqueue.pop()  # 删除队尾元素，队列变为 [1]\n# 长度\nprint(len(queue))  # 输出 1\n```\n\n### 双端队列 Deque\n支持两端插入和删除，表示一种“灵活的队列”. \\\n- **滑动窗口问题**：在固定大小的窗口内高效地找到最大值或最小值。\n- **双端任务调度**：如同时处理高优先级和低优先级任务。\n- **回文检查**：从两端同时检查字符串是否为回文。\n\n\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数组 Array",
+        "slug": "数组-array"
+      },
+      {
+        "depth": 3,
+        "value": "什么是动态数组？",
+        "slug": "什么是动态数组？"
+      },
+      {
+        "depth": 3,
+        "value": "Python list",
+        "slug": "python-list"
+      },
+      {
+        "depth": 4,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 3,
+        "value": "动态扩展的示例",
+        "slug": "动态扩展的示例"
+      },
+      {
+        "depth": 4,
+        "value": "输出示例：",
+        "slug": "输出示例："
+      },
+      {
+        "depth": 3,
+        "value": "Python list 的操作复杂度",
+        "slug": "python-list-的操作复杂度"
+      },
+      {
+        "depth": 3,
+        "value": "动态数组与链表的对比",
+        "slug": "动态数组与链表的对比"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
+      },
+      {
+        "depth": 2,
+        "value": "链表 Linked List",
+        "slug": "链表-linked-list"
+      },
+      {
+        "depth": 2,
+        "value": "栈 Stack",
+        "slug": "栈-stack"
+      },
+      {
+        "depth": 3,
+        "value": "队列 Queue",
+        "slug": "队列-queue"
+      },
+      {
+        "depth": 3,
+        "value": "双端队列 Deque",
+        "slug": "双端队列-deque"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/python",
+    "slug": "alg/python",
+    "segments": [
+      "alg",
+      "python"
+    ],
+    "filePath": "docs/zh/alg/python.mdx",
+    "meta": {
+      "title": "python",
+      "description": null,
+      "created_at": "2025-03-22T06:13:49.000Z",
+      "updated_at": "2025-03-22T06:13:49.000Z",
+      "tags": [
+        "alg",
+        "python"
+      ]
+    },
+    "order": 99,
+    "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n## 迭代\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n\n等效语法:\n```py\nlst = []\nfor item in iterable:\n    if condition:\n        lst.append(expression)\n```\n\n示例:\n```py\n# 1. 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n# 2. 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n[i for i in range(2,21,2)]\nlist(range(2,21,2))\n# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n\n# 3. 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# [1, 2, 3, 4]\n\n# 4. n*m 的 0 矩阵\nn, m = map(int, input().split()) | [2, 3]\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\n# [[0, 0, 0], [0, 0, 0]]\n\n# 5. 斐波那契数列\nn = int(input())\nfib = [0, 1]\n[fib.append(fib[-1]+fib[-2]) for i in range(2, n)]\n# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]\n\n# 6. 将二维表展开为一维表\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflatten = [item for row in matrix for item in row]\n# 相当于:\nflatten = []\nfor row in matrix:\n    for item in row:\n        flatten.append(item)\n```\n\n### 字典推导式\n\n`{key: value for item in iterable if condition}{:py}`\n\n等效语法:\n```py\ndct = {}\nfor item in iterable:\n    if condition:\n        dct[key] = value\n```\n示例:\n```py\n# 统计字符串中每个字符出现的次数\ns = \"hello\"\n{char: s.count(char) for char in set(s)}\n# {'h': 1, 'e': 1, 'l': 2, 'o': 1}\n```\n\n### `range{:py}`\n\n`range(){:py}` 返回的是一个 `range{:py}` 对象, 是一个惰性序列(计算到对应位置时才会去计算对应的值), 节省内存. 如果需要 `list{:py}`, 可以用 `list(){:py}`\n\n`range(start, stop, step){:py}`\n- `start`: 起始值(包含), default: 0\n- `stop`: 结束值(不包含)\n- `step`: 步长, default: 1\n\n即左闭着右开(python 中统一使用左闭右开区间)\n\n```py\n# 1. 生成 1 到 10 的序列\nseq = range(1, 11)\nlist(seq) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# 2. 生成 1 到 10 的奇数\nodd = range(1, 11, 2)\nlist(odd) # [1, 3, 5, 7, 9]\n\n# 3. 生成 10 到 1 的序列\nseq = range(10, 0, -1)\nlist(seq) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n\n# 4. 生成 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4\nT = 5\nn = 3\nfor i in range(T*n):\n    a_i = i % T\n    print(a_i, end=' ')\n\n# 5. 生成二维网格坐标列表\nrow_count, col_count = 2, 3\ncoordinate_ls = [(i, j) for i in range(row_count) for j in range(col_count)]\n# [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]\n```\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "迭代",
+        "slug": "迭代"
+      },
+      {
+        "depth": 3,
+        "value": "列表推导式",
+        "slug": "列表推导式"
+      },
+      {
+        "depth": 3,
+        "value": "字典推导式",
+        "slug": "字典推导式"
+      },
+      {
+        "depth": 3,
+        "value": "range{:py}",
+        "slug": "range{:py}"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux",
+    "slug": "linux",
+    "segments": [
+      "linux"
+    ],
+    "filePath": "docs/zh/linux/index.mdx",
+    "meta": {
+      "title": "linux",
+      "description": "linux 简介",
+      "created_at": "2025-03-22T05:22:44.000Z",
+      "updated_at": "2025-03-22T05:22:44.000Z",
+      "tags": [
+        "linux"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next",
+    "slug": "next",
+    "segments": [
+      "next"
+    ],
+    "filePath": "docs/zh/next/index.mdx",
+    "meta": {
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
+      "tags": [
+        "next",
+        "ts",
+        "react",
+        "web"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
+    "segments": [
+      "paper"
+    ],
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数据集",
+        "slug": "数据集"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/systemd-timesyncd",
+    "slug": "linux/systemd-timesyncd",
+    "segments": [
+      "linux",
+      "systemd-timesyncd"
+    ],
+    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
+    "meta": {
+      "title": "systemd-timesyncd",
+      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
+      "created_at": "2025-03-22T03:16:43.000Z",
+      "updated_at": "2025-03-22T03:16:43.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/system_time",
+    "slug": "linux/system_time",
+    "segments": [
+      "linux",
+      "system_time"
+    ],
+    "filePath": "docs/zh/linux/system_time.mdx",
+    "meta": {
+      "title": "系统时间",
+      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
+      "created_at": "2025-03-22T03:26:09.000Z",
+      "updated_at": "2025-03-22T03:26:09.000Z",
+      "tags": [
+        "linux",
+        "os",
+        "time"
+      ]
+    },
+    "order": 99,
+    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/struct",
+    "slug": "alg/struct",
+    "segments": [
+      "alg",
+      "struct"
+    ],
+    "filePath": "docs/zh/alg/struct.mdx",
+    "meta": {
+      "title": "数据结构",
+      "description": "数据结构是算法的基础，而算法是操作数据结构的具体方法",
+      "created_at": "2025-03-22T18:11:12.000Z",
+      "updated_at": "2025-03-22T18:11:12.000Z",
+      "tags": [
+        "alg",
+        "data-structure"
+      ]
+    },
+    "order": 99,
+    "content": "\nhttps://explorer-dong.github.io\n\n学习数据结构是编程和算法的基础，它为解决复杂问题提供了高效的工具和方法。以下是学习数据结构时需要掌握的主要内容，以及每种数据结构的用途和学习建议。\n\n## 基础数据结构\n\n### 数组（Array）\n- **特点**：\n  - 连续的内存空间，支持快速随机访问（时间复杂度 O(1)）。\n  - 插入和删除操作效率较低（需要移动元素）, 时间复杂度 O(n), 但在末尾插入和删除效率高（时间复杂度 O(1)）。\n- **用途**：\n  - 存储固定大小的元素集合。\n  - 常用于实现其他数据结构（如栈、队列）。\n- **学习内容**：\n  - 一维数组、多维数组。\n  - 常见操作：遍历、插入、删除、查找。\n- **代码示例**（Python）：python 中的 list 是动态数组\n  ```python\n  # \n  arr = [1, 2, 3, 4]\n  arr.append(5)  # 插入\n  arr.remove(2)  # 删除\n  print(arr[1])  # 随机访问\n  ```\n\n### 链表（Linked List）\n- **特点**：\n  - 由节点组成，每个节点包含数据和指向下一个节点的指针。\n  - 插入和删除操作效率高（时间复杂度 O(1)），但随机访问效率低（时间复杂度 O(n)）。\n- **类型**：\n  - 单链表、双向链表、循环链表。\n- **用途**：\n  - 动态存储数据，适合频繁插入和删除的场景。\n  - 用于实现栈、队列等数据结构。\n- **学习内容**：\n  - 单链表、双向链表的实现。\n  - 常见操作：插入、删除、查找、反转链表。\n- **代码示例**（单链表）：\n  ```python\n  class Node:\n      def __init__(self, data):\n          self.data = data\n          self.next = None\n\n  class LinkedList:\n      def __init__(self):\n          self.head = None\n\n      def append(self, data):\n          new_node = Node(data)\n          if not self.head:\n              self.head = new_node\n              return\n          current = self.head\n          while current.next:\n              current = current.next\n          current.next = new_node\n  ```\n\n---\n\n### 栈 Stack\n- **特点**：\n  - 后进先出（LIFO）。\n  - 只允许在一端（栈顶）进行插入和删除操作。\n- **用途**：\n  - 用于递归调用、括号匹配、表达式求值等。\n- **学习内容**：\n  - 栈的实现（基于数组或链表）。\n  - 常见操作：`push`（入栈）、`pop`（出栈）、`peek`（查看栈顶元素）。\n- **代码示例**：\n  ```python\n  stack = []\n  stack.append(1)  # 入栈\n  stack.append(2)\n  print(stack.pop())  # 出栈\n  ```\n\n---\n\n### **1.4 队列（Queue）**\n- **特点**：\n  - 先进先出（FIFO）。\n  - 插入操作在队尾，删除操作在队首。\n- **类型**：\n  - 普通队列、双端队列（Deque）、优先队列。\n- **用途**：\n  - 用于任务调度、广度优先搜索（BFS）等。\n- **学习内容**：\n  - 队列的实现（基于数组或链表）。\n  - 双端队列的实现。\n- **代码示例**：\n  ```python\n  from collections import deque\n  queue = deque()\n  queue.append(1)  # 入队\n  queue.append(2)\n  print(queue.popleft())  # 出队\n  ```\n\n---\n\n## **2. 树和图**\n\n### **2.1 树（Tree）**\n- **特点**：\n  - 层次结构，每个节点有一个父节点和多个子节点。\n  - 特殊类型：二叉树、二叉搜索树（BST）、平衡二叉树（如 AVL 树）、堆（Heap）。\n- **用途**：\n  - 用于表示层级关系（如文件系统、DOM 树）。\n  - 二叉搜索树用于快速查找、插入和删除。\n- **学习内容**：\n  - 二叉树的遍历（前序、中序、后序、层序）。\n  - 二叉搜索树的插入、删除、查找。\n  - 堆的实现（最大堆、最小堆）。\n- **代码示例**（二叉树的遍历）：\n  ```python\n  class TreeNode:\n      def __init__(self, val=0, left=None, right=None):\n          self.val = val\n          self.left = left\n          self.right = right\n\n  def inorder_traversal(root):\n      if not root:\n          return []\n      return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)\n  ```\n\n---\n\n### **2.2 图（Graph）**\n- **特点**：\n  - 由节点（顶点）和边组成，可以是有向图或无向图。\n  - 表示复杂的关系（如社交网络、地图）。\n- **表示方法**：\n  - 邻接矩阵、邻接表。\n- **用途**：\n  - 用于路径规划（如最短路径）、网络流、拓扑排序等。\n- **学习内容**：\n  - 图的表示方法。\n  - 图的遍历（深度优先搜索 DFS、广度优先搜索 BFS）。\n  - 最短路径算法（Dijkstra、Floyd-Warshall）。\n- **代码示例**（BFS）：\n  ```python\n  from collections import deque\n\n  def bfs(graph, start):\n      visited = set()\n      queue = deque([start])\n      while queue:\n          node = queue.popleft()\n          if node not in visited:\n              visited.add(node)\n              print(node)\n              queue.extend(graph[node] - visited)\n  ```\n\n---\n\n## **3. 高级数据结构**\n\n### **3.1 哈希表（Hash Table）**\n- **特点**：\n  - 通过哈希函数将键映射到值，支持快速查找、插入和删除（平均时间复杂度 O(1)）。\n- **用途**：\n  - 用于实现字典、集合。\n  - 常用于查找问题（如两数之和）。\n- **学习内容**：\n  - 哈希函数的设计。\n  - 解决哈希冲突的方法（如链地址法、开放地址法）。\n- **代码示例**：\n  ```python\n  hash_table = {}\n  hash_table[\"key\"] = \"value\"\n  print(hash_table[\"key\"])\n  ```\n\n---\n\n### **3.2 字典树（Trie）**\n- **特点**：\n  - 一种树形结构，用于高效存储和查找字符串集合。\n- **用途**：\n  - 用于实现自动补全、前缀匹配。\n- **学习内容**：\n  - 插入、查找字符串。\n- **代码示例**：\n  ```python\n  class TrieNode:\n      def __init__(self):\n          self.children = {}\n          self.is_end = False\n\n  class Trie:\n      def __init__(self):\n          self.root = TrieNode()\n\n      def insert(self, word):\n          node = self.root\n          for char in word:\n              if char not in node.children:\n                  node.children[char] = TrieNode()\n              node = node.children[char]\n          node.is_end = True\n  ```\n\n---\n\n### **并查集（Union-Find）**\n- **特点**：\n  - 用于处理动态连通性问题。\n- **用途**：\n  - 用于解决图的连通性问题（如最小生成树 Kruskal 算法）。\n- **学习内容**：\n  - 路径压缩、按秩合并。\n- **代码示例**：\n  ```python\n  class UnionFind:\n      def __init__(self, n):\n          self.parent = list(range(n))\n\n      def find(self, x):\n          if self.parent[x] != x:\n              self.parent[x] = self.find(self.parent[x])\n          return self.parent[x]\n\n      def union(self, x, y):\n          root_x = self.find(x)\n          root_y = self.find(y)\n          if root_x != root_y:\n              self.parent[root_x] = root_y\n  ```\n\n---\n\n## **学习建议**\n\n1. **从基础到高级**：\n   - 先掌握数组、链表、栈、队列等基础数据结构。\n   - 再学习树、图等复杂数据结构。\n\n2. **结合算法学习**：\n   - 数据结构和算法密不可分，学习数据结构时可以结合经典算法（如排序、搜索、动态规划）。\n\n3. **多练习**：\n   - 在 LeetCode、Codeforces 等平台上刷题，巩固数据结构的应用。\n\n4. **参考书籍**：\n   - 《数据结构与算法分析》（C语言版/Java版）—— Mark Allen Weiss\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础数据结构",
+        "slug": "基础数据结构"
+      },
+      {
+        "depth": 3,
+        "value": "数组（Array）",
+        "slug": "数组（array）"
+      },
+      {
+        "depth": 3,
+        "value": "链表（Linked List）",
+        "slug": "链表（linked-list）"
+      },
+      {
+        "depth": 3,
+        "value": "栈 Stack",
+        "slug": "栈-stack"
+      },
+      {
+        "depth": 3,
+        "value": "1.4 队列（Queue）",
+        "slug": "1.4-队列（queue）"
+      },
+      {
+        "depth": 2,
+        "value": "2. 树和图",
+        "slug": "2.-树和图"
+      },
+      {
+        "depth": 3,
+        "value": "2.1 树（Tree）",
+        "slug": "2.1-树（tree）"
+      },
+      {
+        "depth": 3,
+        "value": "2.2 图（Graph）",
+        "slug": "2.2-图（graph）"
+      },
+      {
+        "depth": 2,
+        "value": "3. 高级数据结构",
+        "slug": "3.-高级数据结构"
+      },
+      {
+        "depth": 3,
+        "value": "3.1 哈希表（Hash Table）",
+        "slug": "3.1-哈希表（hash-table）"
+      },
+      {
+        "depth": 3,
+        "value": "3.2 字典树（Trie）",
+        "slug": "3.2-字典树（trie）"
+      },
+      {
+        "depth": 3,
+        "value": "并查集（Union-Find）",
+        "slug": "并查集（union-find）"
+      },
+      {
+        "depth": 2,
+        "value": "学习建议",
+        "slug": "学习建议"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/ts/tsconfig",
     "slug": "ts/tsconfig",
     "segments": [
@@ -817,34 +1103,6 @@
         "depth": 5,
         "value": "特点",
         "slug": "特点"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
       }
     ]
   },
@@ -898,182 +1156,6 @@
         "ts"
       ]
     },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/github",
-    "slug": "dev/md/github",
-    "segments": [
-      "dev",
-      "md",
-      "github"
-    ],
-    "filePath": "docs/zh/dev/md/github.mdx",
-    "meta": {
-      "title": "GitHub",
-      "description": "GitHub flavored markdown (GFM)",
-      "created_at": "2025-03-17T14:44:46.000Z",
-      "updated_at": "2025-03-17T14:55:01.000Z",
-      "tags": [
-        "markdown",
-        "github"
-      ]
-    },
-    "order": 99,
-    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 2,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/systemd-timesyncd",
-    "slug": "linux/systemd-timesyncd",
-    "segments": [
-      "linux",
-      "systemd-timesyncd"
-    ],
-    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
-    "meta": {
-      "title": "systemd-timesyncd",
-      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
-      "created_at": "2025-03-22T03:16:43.000Z",
-      "updated_at": "2025-03-22T03:16:43.000Z",
-      "tags": []
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/slug",
-    "slug": "dev/md/slug",
-    "segments": [
-      "dev",
-      "md",
-      "slug"
-    ],
-    "filePath": "docs/zh/dev/md/slug.mdx",
-    "meta": {
-      "title": "md slug",
-      "description": null,
-      "created_at": "2025-03-17T18:03:47.000Z",
-      "updated_at": "2025-03-17T18:03:47.000Z",
-      "tags": [
-        "markdown",
-        "slug",
-        "url"
-      ]
-    },
-    "order": 99,
-    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
-    "segments": [
-      "linux",
-      "network",
-      "NTP"
-    ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
-      },
-      {
-        "depth": 2,
-        "value": "配置",
-        "slug": "配置"
-      },
-      {
-        "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
-      },
-      {
-        "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/console/Command-line_shell",
-    "slug": "linux/console/Command-line_shell",
-    "segments": [
-      "linux",
-      "console",
-      "Command-line_shell"
-    ],
-    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
-    "meta": {},
     "order": 99,
     "content": "",
     "toc": []
@@ -1211,6 +1293,185 @@
         "depth": 4,
         "value": "tsx",
         "slug": "tsx"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/lanqiao",
+    "slug": "alg/lanqiao",
+    "segments": [
+      "alg",
+      "lanqiao"
+    ],
+    "filePath": "docs/zh/alg/lanqiao/index.mdx",
+    "meta": {
+      "title": "蓝桥杯",
+      "description": "每年都有省赛和国赛, 省赛一般在四月上旬或中旬, 国赛一般在六月上旬, 比赛时长4小时(9:00~13:00), 省赛一等奖才能参加国赛",
+      "created_at": "2025-03-22T06:38:45.000Z",
+      "updated_at": "2025-03-22T06:38:45.000Z",
+      "tags": [
+        "alg",
+        "lanqiao"
+      ]
+    },
+    "order": 99,
+    "content": "\n时间较长可以带点吃的\n\n## 竞赛规则\n\n### 编程环境\n\n#### python\n- python 3.8.6\n- IDLE (python 自带编辑器)\n\n```sh\n# 启动 IDLE\nidle\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### OI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - $对于 30\\% 的评测用例, 1\\leq n\\leq 10^3, 1\\leq a_i\\leq 10^3$\n    - $对于 100\\% 的评测用例, 1\\leq n\\leq 2\\cdot10^5, 1\\leq a_i\\leq 10^{16}$\n\n### 结果填空题\n\n可以用别的语言, 工具, 或手算\n\n### 编程大题\n\n通过测试用例估算正解的时间复杂度, 一般要在 $n^7,n^8$ 以内, 例如用例是 \n- $n\\leq 10^3$, 那么时间复杂度 可以选 $O(n^2)$,\n- $n\\leq 10^5$, 那么时间复杂度 可以选 $O(n\\log n)$\n\n## 语法\n\n```py\n# 常用变量名\n# res\\ans\\ret 结果\n# cnt\\tot 用于计数\n# i\\idex\\k\\v 用于索引,键值\n# i\\j\\k\\x\\y\\z 用于循环\n# a\\b\\c 用于变量\n# s,n, arr, d, nums 用于字符串, 数字, 数组, 字典, 数字组\n# l,r 用于 left, right\n# 常见保留字 -----------------------------------------\nand, or, not, in, is,\nTrue, False, None, \nif, else, elif,\nglobal, nonlocal,\nwhile, for, break, continue, \nreturn, def, lambda, class, yield, pass,\ntry, except, finally, raise, assert\nimport, from, as, \nwith, del,  \n# 字符串 -----------------------------------------\ns = \"hello\"\ns[start:end:step] # 切片\n# import -----------------------------------------\nimport math\nimport numpy as np\n```\n\n### input\n\n```py\nimport sys\ninput = lambda: sys.stdin.readline().strip()\ns = input()\n# 读取一行  -----------------------------------------\n# 1 2 3\na, b, c = map(int, input().split())\n# 读取多行 -----------------------------------------\n# 2\n# 1\n# 3\n# lst = [1, 3]\nn = int(input())\nlst = [int(input()) for _ in range(n)]\n\n# 矩阵读取 -----------------------------------------\n# 2 3\n# 1 2 3\n# 4 5 6\n# matrix = [[1, 2, 3], [4, 5, 6]]\nn, m = map(int, input().split())\nmatrix = [list(map(int, input().split())) for _ in range(n)]\nprint(matrix)\n\n# 读取多行\nlines = sys.stdin.readlines()\n```\n\n### sort\n\n```py\nsorted(iterable, key=None, reverse=False)\niterable: 需要排序的可迭代对象\nkey: 用来进行比较的元素\nreverse: 排序规则, reverse = True 降序, reverse = False 升序（默认）\n\nlist.sort(key=None, reverse=False)\n```\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "竞赛规则",
+        "slug": "竞赛规则"
+      },
+      {
+        "depth": 3,
+        "value": "编程环境",
+        "slug": "编程环境"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 3,
+        "value": "OI赛制",
+        "slug": "oi赛制"
+      },
+      {
+        "depth": 3,
+        "value": "结果填空题",
+        "slug": "结果填空题"
+      },
+      {
+        "depth": 3,
+        "value": "编程大题",
+        "slug": "编程大题"
+      },
+      {
+        "depth": 2,
+        "value": "语法",
+        "slug": "语法"
+      },
+      {
+        "depth": 3,
+        "value": "input",
+        "slug": "input"
+      },
+      {
+        "depth": 3,
+        "value": "sort",
+        "slug": "sort"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
+    "order": 99,
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
       }
     ]
   },
@@ -1401,7 +1662,7 @@
       ]
     },
     "order": 99,
-    "content": "\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n### 问题描述\n\n小蓝有一张支票，上面记录了一些数字。小蓝不小心打翻了墨水导致了支票上的一个数字被污染了，现在小蓝想通过剩下的数字来推断出那个被污染的数字。\n\n设支票上被污染的数字为 xx ，没有被污染的数字共有 nn 个（设为 d1,d2,…,dnd1​,d2​,…,dn​ ），小蓝知道支票如果没有错误的话，上面没有被污染的数字应当是 xx 除了 11 和 xx 之外的其他所有因数，但是他无法确定支票是否错误。支票错误的情况有以下几种：\n\n- 支票没有被污染的数字中混入了不是 xx 的因数的数字；\n- 支票没有被污染的数字中缺失或重复 xx 的部分因数。\n\n小蓝想请你帮助他判断支票是否没有错误，若没有错误，小蓝希望你能帮他求出支票上被污染的数字。\n### 输入格式\n\n第一行包含一个整数 nn ，表示没有被污染的数字的个数。\n\n第二行包含 nn 个整数 d1,d2,…,dnd1​,d2​,…,dn​ ，表示支票上的数字。\n### 输出格式\n若支票没有错误，那么输出支票上被污染的数字；反之，若支票错误，被污染的数字不存在，则输出 −1−1 。\n### 样例输入\n```\n8\n8 2 12 6 4 24 16 3\n```\n### 样例输出\n```\n48\n```\n### 评测数据规模\n\n对于所有评测数据， $1≤n≤300$ , $2≤d_i≤10^6$\n### 运行限制\n|语言 |\t最大运行时间 |\t最大运行内存 |\n|---|---|---|\n|C |\t4s |\t256M |\n|C++ |\t4s |\t256M |\n|Python3 |\t6s |\t256M |\n|Java |\t5s |\t256M |\n|PyPy3 |\t6s |\t256M |\n|Go |\t6s |\t256M |\n|JavaScript |\t6s |\t256M |\n\n难度: 简单   标签: 思维, 数学",
+    "content": "\n```mermaid\nflowchart LR\n    A[\"穷举法 (Brute Force)\"] --> B[核心思想]\n    B --> C[尝试所有可能的解]\n    B --> D[逐一验证每个解是否满足条件]\n    B --> E[返回满足条件的解或最优解]\n\n    A --> F[特点]\n    F --> G[简单直接]\n    F --> H[适合解空间有限的问题]\n    F --> I[通常效率较低，时间复杂度较高]\n\n    A --> J[应用场景]\n    J --> K[\"组合问题 (如子集、排列、组合)\"]\n    J --> L[\"搜索问题 (如迷宫、棋盘问题)\"]\n    J --> M[\"验证问题 (如密码破解、暴力匹配)\"]\n```\n\n以下是关于**如何学习暴力枚举**的详细指导：\n\n---\n\n## 什么是暴力枚举？\n\n暴力枚举（Brute Force）是一种**穷举法**，即尝试所有可能的解，逐一验证每个解是否满足问题的条件。它的核心思想是：\n1. **生成所有可能的解**。\n2. **逐一验证每个解是否满足条件**。\n3. **返回满足条件的解（或最优解）**。\n\n---\n\n## 学习暴力枚举的步骤\n\n### **理解问题的解空间**\n- 解空间是指问题所有可能解的集合。\n- 在暴力枚举中，你需要明确解空间的大小，以及如何生成所有可能的解。\n\n**示例**：\n- 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。\n- 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。\n\n---\n\n### **生成所有可能的解**\n- 使用循环、递归或组合工具生成解空间。\n- 常见的生成方法：\n  - **单层循环**：用于简单的线性枚举。\n  - **多层嵌套循环**：用于枚举多维解空间。\n  - **递归**：用于生成排列、组合等复杂解空间。\n  - **工具库**：如 Python 的 `itertools`。\n\n**示例**：\n- **单层循环**：\n  ```python\n  for i in range(1, 5):  # 枚举 1 到 4\n      print(i)\n  ```\n\n- **多层嵌套循环**：\n  ```python\n  for i in range(1, 4):  # 第一层\n      for j in range(1, 4):  # 第二层\n          print(i, j)  # 枚举所有 (i, j) 对\n  ```\n\n- **递归生成排列**：\n  ```python\n  def permute(nums, path=[]):\n      if not nums:\n          print(path)  # 输出一个排列\n          return\n      for i in range(len(nums)):\n          permute(nums[:i] + nums[i+1:], path + [nums[i]])\n\n  permute([1, 2, 3])  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n- **使用工具库**：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)  # 输出 [1, 2, 3] 的所有排列\n  ```\n\n---\n\n### **验证解是否满足条件**\n- 对每个生成的解，验证它是否满足题目要求。\n- 验证逻辑通常是一个条件判断（`if` 语句）。\n\n**示例**：\n- 验证一个数是否是偶数：\n  ```python\n  for i in range(1, 10):\n      if i % 2 == 0:  # 验证是否是偶数\n          print(i)\n  ```\n\n- 验证一个排列是否满足特定条件：\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      if p[0] < p[1]:  # 验证第一个数小于第二个数\n          print(p)\n  ```\n\n---\n\n### **优化暴力枚举**\n暴力枚举的核心问题是**效率低**，尤其是当解空间很大时。因此，学习暴力枚举时，也需要掌握一些优化技巧：\n- **剪枝**：在生成解的过程中，提前排除不可能的解。\n  ```python\n  for i in range(1, 10):\n      if i % 2 != 0:  # 剪枝：跳过奇数\n          continue\n      print(i)\n  ```\n\n- **提前终止**：如果找到一个解就可以结束枚举，则不需要继续。\n  ```python\n  for i in range(1, 10):\n      if i == 5:  # 找到解后终止\n          print(\"Found:\", i)\n          break\n  ```\n\n- **减少嵌套循环**：通过数学公式或逻辑简化枚举过程。\n\n---\n\n## 学习暴力枚举的练习题\n\n### **简单枚举**\n- **题目**：枚举 1 到 100 中所有的偶数。\n  ```python\n  for i in range(1, 101):\n      if i % 2 == 0:\n          print(i)\n  ```\n\n### **多层枚举**\n- **题目**：枚举所有两位数的组合。\n  ```python\n  for i in range(10, 100):\n      for j in range(10, 100):\n          print(i, j)\n  ```\n\n### **排列与组合**\n- **题目**：生成数组 `[1, 2, 3]` 的所有排列。\n  ```python\n  from itertools import permutations\n\n  for p in permutations([1, 2, 3]):\n      print(p)\n  ```\n\n### **验证条件**\n- **题目**：从数组 `[1, 2, 3, 4]` 中选择两个数，要求它们的和为 5。\n  ```python\n  for i in range(1, 5):\n      for j in range(i + 1, 5):\n          if i + j == 5:\n              print(i, j)\n  ```\n\n### **复杂枚举**\n- **题目**：生成长度为 3 的二进制字符串。\n  ```python\n  for i in range(2):\n      for j in range(2):\n          for k in range(2):\n              print(f\"{i}{j}{k}\")\n  ```\n\n---\n\n## 学习暴力枚举的资源\n\n1. **书籍**：\n   - 《算法导论》（Introduction to Algorithms）—— Thomas H. Cormen\n   - 《编程之美》—— Microsoft Research\n\n2. **在线平台**：\n   - **LeetCode**：从简单题目开始，逐步挑战更复杂的题目。\n   - **HackerRank**：适合练习基础算法和枚举问题。\n   - **Codeforces**：适合练习竞赛题目。\n\n3. **工具**：\n   - 使用 Python 的 `itertools` 库简化排列和组合的生成。\n   - 使用可视化工具（如 [VisuAlgo](https://visualgo.net/)）帮助理解枚举过程。\n\n---\n\n## 学习路径建议\n\n1. **从简单问题开始**：\n   - 练习单层循环和多层循环的枚举。\n   - 理解如何生成解空间。\n\n2. **逐步增加复杂度**：\n   - 学习排列、组合的生成方法。\n   - 练习验证条件的逻辑。\n\n3. **优化暴力枚举**：\n   - 学习剪枝和提前终止的技巧。\n   - 理解如何减少不必要的计算。\n\n4. **结合实际问题**：\n   - 在实际问题中应用暴力枚举，逐步积累经验。\n\n---\n\n## 总结\n\n暴力枚举是算法学习的基础，掌握它可以帮助你更好地理解问题和验证复杂算法。学习暴力枚举的关键是：\n1. **理解解空间**：明确所有可能的解。\n2. **生成解空间**：使用循环、递归或工具库生成解。\n3. **验证解**：逐一验证每个解是否满足条件。\n4. **优化枚举**：通过剪枝和提前终止提高效率。\n\n通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！\n\n## 竞赛题\n\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```\n\n### 问题描述\n\n小蓝有一张支票，上面记录了一些数字。小蓝不小心打翻了墨水导致了支票上的一个数字被污染了，现在小蓝想通过剩下的数字来推断出那个被污染的数字。\n\n设支票上被污染的数字为 xx ，没有被污染的数字共有 nn 个（设为 d1,d2,…,dnd1​,d2​,…,dn​ ），小蓝知道支票如果没有错误的话，上面没有被污染的数字应当是 xx 除了 11 和 xx 之外的其他所有因数，但是他无法确定支票是否错误。支票错误的情况有以下几种：\n\n- 支票没有被污染的数字中混入了不是 xx 的因数的数字；\n- 支票没有被污染的数字中缺失或重复 xx 的部分因数。\n\n小蓝想请你帮助他判断支票是否没有错误，若没有错误，小蓝希望你能帮他求出支票上被污染的数字。\n### 输入格式\n\n第一行包含一个整数 nn ，表示没有被污染的数字的个数。\n\n第二行包含 nn 个整数 d1,d2,…,dnd1​,d2​,…,dn​ ，表示支票上的数字。\n### 输出格式\n若支票没有错误，那么输出支票上被污染的数字；反之，若支票错误，被污染的数字不存在，则输出 −1−1 。\n### 样例输入\n```\n8\n8 2 12 6 4 24 16 3\n```\n### 样例输出\n```\n48\n```\n### 评测数据规模\n\n对于所有评测数据， $1≤n≤300$ , $2≤d_i≤10^6$\n### 运行限制\n|语言 |\t最大运行时间 |\t最大运行内存 |\n|---|---|---|\n|C |\t4s |\t256M |\n|C++ |\t4s |\t256M |\n|Python3 |\t6s |\t256M |\n|Java |\t5s |\t256M |\n|PyPy3 |\t6s |\t256M |\n|Go |\t6s |\t256M |\n|JavaScript |\t6s |\t256M |\n\n难度: 简单   标签: 思维, 数学",
     "toc": [
       {
         "depth": 2,
@@ -1553,94 +1814,18 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/file_systems/readme",
-    "slug": "linux/file_systems/readme",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
     "segments": [
       "linux",
-      "file_systems",
-      "readme"
+      "console",
+      "Command-line_shell"
     ],
-    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
     "meta": {},
     "order": 99,
-    "content": "# file_systems",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "file_systems",
-        "slug": "file_systems"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/lanqiao",
-    "slug": "alg/lanqiao",
-    "segments": [
-      "alg",
-      "lanqiao"
-    ],
-    "filePath": "docs/zh/alg/lanqiao/index.mdx",
-    "meta": {
-      "title": "蓝桥杯",
-      "description": "每年都有省赛和国赛, 省赛一般在四月上旬或中旬, 国赛一般在六月上旬, 比赛时长4小时(9:00~13:00), 省赛一等奖才能参加国赛",
-      "created_at": "2025-03-22T06:38:45.000Z",
-      "updated_at": "2025-03-22T06:38:45.000Z",
-      "tags": [
-        "alg",
-        "lanqiao"
-      ]
-    },
-    "order": 99,
-    "content": "\n时间较长可以带点吃的\n\n## 竞赛规则\n\n### 编程环境\n\n#### python\n- python 3.8.6\n- IDLE (python 自带编辑器)\n\n```sh\n# 启动 IDLE\nidle\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### OI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - $对于 30\\% 的评测用例, 1\\leq n\\leq 10^3, 1\\leq a_i\\leq 10^3$\n    - $对于 100\\% 的评测用例, 1\\leq n\\leq 2\\cdot10^5, 1\\leq a_i\\leq 10^{16}$\n\n### 结果填空题\n\n可以用别的语言, 工具, 或手算\n\n### 编程大题\n\n通过测试用例估算正解的时间复杂度, 一般要在 $n^7,n^8$ 以内, 例如用例是 \n- $n\\leq 10^3$, 那么时间复杂度 可以选 $O(n^2)$,\n- $n\\leq 10^5$, 那么时间复杂度 可以选 $O(n\\log n)$\n\n## 语法\n\n```py\n# 常用变量名\n# res\\ans\\ret 结果\n# cnt\\tot 用于计数\n# i\\idex\\k\\v 用于索引,键值\n# i\\j\\k\\x\\y\\z 用于循环\n# a\\b\\c 用于变量\n# s,n, arr, d, nums 用于字符串, 数字, 数组, 字典, 数字组\n# l,r 用于 left, right\n# 常见保留字 -----------------------------------------\nand, or, not, in, is,\nTrue, False, None, \nif, else, elif,\nglobal, nonlocal,\nwhile, for, break, continue, \nreturn, def, lambda, class, yield, pass,\ntry, except, finally, raise, assert\nimport, from, as, \nwith, del,  \n# 字符串 -----------------------------------------\ns = \"hello\"\ns[start:end:step] # 切片\n# import -----------------------------------------\nimport math\nimport numpy as np\n```\n\n### input\n\n```py\nimport sys\ninput = lambda: sys.stdin.readline().strip()\ns = input()\n# 读取一行  -----------------------------------------\n# 1 2 3\na, b, c = map(int, input().split())\n# 读取多行 -----------------------------------------\n# 2\n# 1\n# 3\n# lst = [1, 3]\nn = int(input())\nlst = [int(input()) for _ in range(n)]\n\n# 矩阵读取 -----------------------------------------\n# 2 3\n# 1 2 3\n# 4 5 6\n# matrix = [[1, 2, 3], [4, 5, 6]]\nn, m = map(int, input().split())\nmatrix = [list(map(int, input().split())) for _ in range(n)]\nprint(matrix)\n\n# 读取多行\nlines = sys.stdin.readlines()\n```\n\n### sort\n\n```py\nsorted(iterable, key=None, reverse=False)\niterable: 需要排序的可迭代对象\nkey: 用来进行比较的元素\nreverse: 排序规则, reverse = True 降序, reverse = False 升序（默认）\n\nlist.sort(key=None, reverse=False)\n```\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "竞赛规则",
-        "slug": "竞赛规则"
-      },
-      {
-        "depth": 3,
-        "value": "编程环境",
-        "slug": "编程环境"
-      },
-      {
-        "depth": 4,
-        "value": "python",
-        "slug": "python"
-      },
-      {
-        "depth": 3,
-        "value": "OI赛制",
-        "slug": "oi赛制"
-      },
-      {
-        "depth": 3,
-        "value": "结果填空题",
-        "slug": "结果填空题"
-      },
-      {
-        "depth": 3,
-        "value": "编程大题",
-        "slug": "编程大题"
-      },
-      {
-        "depth": 2,
-        "value": "语法",
-        "slug": "语法"
-      },
-      {
-        "depth": 3,
-        "value": "input",
-        "slug": "input"
-      },
-      {
-        "depth": 3,
-        "value": "sort",
-        "slug": "sort"
-      }
-    ]
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",
@@ -1687,6 +1872,85 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
+    "segments": [
+      "linux",
+      "network",
+      "NTP"
+    ],
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+    "meta": {
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
+      "tags": [
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
+    },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/linux/input/readme",
     "slug": "linux/input/readme",
     "segments": [
@@ -1703,33 +1967,6 @@
         "depth": 1,
         "value": "input",
         "slug": "input"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/command/readme",
-    "slug": "linux/command/readme",
-    "segments": [
-      "linux",
-      "command",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/command/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "command",
-        "slug": "command"
-      },
-      {
-        "depth": 2,
-        "value": "file",
-        "slug": "file"
       }
     ]
   },
@@ -1902,6 +2139,31 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/dev/md/css/tailwind",
     "slug": "dev/md/css/tailwind",
     "segments": [
@@ -2009,31 +2271,6 @@
         "slug": "总结"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css",
-    "slug": "dev/md/css",
-    "segments": [
-      "dev",
-      "md",
-      "css"
-    ],
-    "filePath": "docs/zh/dev/md/css/index.mdx",
-    "meta": {
-      "title": "md css",
-      "description": null,
-      "created_at": "2025-03-21T23:23:27.000Z",
-      "updated_at": "2025-03-21T23:23:27.000Z",
-      "tags": [
-        "md",
-        "css"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
   },
   {
     "locale": "zh",

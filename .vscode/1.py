@@ -1,5 +1,6 @@
 import sys
 input = lambda: sys.stdin.readline().strip()
-n, m = map(int, input().split())
-zero_matrix3 = [[0]*m]*n
-print(zero_matrix3)
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flatten = [item for row in matrix for item in row]
+print(flatten)
+

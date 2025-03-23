@@ -47,5 +47,5 @@ yarn-error.log*
 .contentlayer
 
 # vscode
-.vscode
-!.vscode/settings.json
+# .vscode
+# !.vscode/settings.json

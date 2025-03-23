@@ -8,6 +8,14 @@
     "type": "file"
   },
   {
+    "segment": "learn",
+    "title": "学习",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/learn",
+    "type": "file"
+  },
+  {
     "segment": "dev",
     "title": "dev",
     "order": 99,
@@ -21,14 +29,6 @@
         "type": "file"
       },
       {
-        "segment": "test",
-        "title": "测试",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/test",
-        "type": "file"
-      },
-      {
         "segment": "search",
         "title": "增添搜索引擎",
         "order": 99,
@@ -37,11 +37,35 @@
         "type": "file"
       },
       {
+        "segment": "test",
+        "title": "测试",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/test",
+        "type": "file"
+      },
+      {
+        "segment": "x",
+        "title": "x",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/x",
+        "type": "file"
+      },
+      {
         "segment": "todo",
         "title": "todo",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/todo",
+        "type": "file"
+      },
+      {
+        "segment": "data",
+        "title": "数据存储",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/data",
         "type": "file"
       },
       {
@@ -66,6 +90,14 @@
             "type": "file"
           },
           {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
             "segment": "slug",
             "title": "md slug",
             "order": 99,
@@ -82,16 +114,8 @@
             "type": "file"
           },
           {
-            "segment": "code-blocks",
-            "title": "code blocks",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
-            "type": "file"
-          },
-          {
             "segment": "css",
-            "title": "css",
+            "title": "md css",
             "order": 99,
             "children": [
               {
@@ -112,7 +136,7 @@
               }
             ],
             "url": "/zh/docs/dev/md/css",
-            "type": "dir"
+            "type": "file"
           }
         ],
         "url": "/zh/docs/dev/md",
@@ -121,14 +145,6 @@
     ],
     "url": "/zh/docs/dev",
     "type": "dir"
-  },
-  {
-    "segment": "html",
-    "title": "html",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
-    "type": "file"
   },
   {
     "segment": "about",
@@ -162,8 +178,16 @@
     "order": 99,
     "children": [
       {
+        "segment": "blog",
+        "title": "日志",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
         "segment": "Array",
-        "title": "数组",
+        "title": "线性结构",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/Array",
@@ -186,11 +210,11 @@
         "type": "file"
       },
       {
-        "segment": "blog",
-        "title": "日志",
+        "segment": "lanqiao",
+        "title": "蓝桥杯",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/blog",
+        "url": "/zh/docs/alg/lanqiao",
         "type": "file"
       },
       {
@@ -200,26 +224,17 @@
         "children": [],
         "url": "/zh/docs/alg/enum",
         "type": "file"
-      },
-      {
-        "segment": "lanqiao",
-        "title": "lanqiao",
-        "order": 99,
-        "children": [
-          {
-            "segment": "easy",
-            "title": "蓝桥简单题",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/alg/lanqiao/easy",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/alg/lanqiao",
-        "type": "dir"
       }
     ],
     "url": "/zh/docs/alg",
+    "type": "file"
+  },
+  {
+    "segment": "html",
+    "title": "html",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/html",
     "type": "file"
   },
   {
@@ -228,19 +243,19 @@
     "order": 99,
     "children": [
       {
-        "segment": "system_time",
-        "title": "系统时间",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/linux/system_time",
-        "type": "file"
-      },
-      {
         "segment": "systemd-timesyncd",
         "title": "systemd-timesyncd",
         "order": 99,
         "children": [],
         "url": "/zh/docs/linux/systemd-timesyncd",
+        "type": "file"
+      },
+      {
+        "segment": "system_time",
+        "title": "系统时间",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/linux/system_time",
         "type": "file"
       },
       {
@@ -286,6 +301,23 @@
         "type": "dir"
       },
       {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      },
+      {
         "segment": "file_systems",
         "title": "file_systems",
         "order": 99,
@@ -317,23 +349,6 @@
           }
         ],
         "url": "/zh/docs/linux/input",
-        "type": "dir"
-      },
-      {
-        "segment": "network",
-        "title": "network",
-        "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
         "type": "dir"
       }
     ],
@@ -445,14 +460,6 @@
     "type": "dir"
   },
   {
-    "segment": "paper",
-    "title": "论文",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/paper",
-    "type": "file"
-  },
-  {
     "segment": "ts",
     "title": "ts",
     "order": 99,
@@ -476,5 +483,13 @@
     ],
     "url": "/zh/docs/ts",
     "type": "dir"
+  },
+  {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
+    "type": "file"
   }
 ]
