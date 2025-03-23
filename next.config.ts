@@ -112,6 +112,9 @@ if (process.env.GITHUB_ACTIONS) { // ‘true
   if (fs.existsSync(envPath)) {
     dotenv.config({ path: envPath });
   }
+  plugins = [
+    withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
+  ]
 } else {
   plugins = [
     withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
