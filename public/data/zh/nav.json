@@ -55,27 +55,11 @@
         "type": "file"
       },
       {
-        "segment": "test",
-        "title": "测试",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/test",
-        "type": "file"
-      },
-      {
         "segment": "data",
         "title": "数据存储",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/data",
-        "type": "file"
-      },
-      {
-        "segment": "todo",
-        "title": "todo",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/todo",
         "type": "file"
       },
       {
@@ -87,6 +71,14 @@
         "type": "file"
       },
       {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/todo",
+        "type": "file"
+      },
+      {
         "segment": "x",
         "title": "x",
         "order": 99,
@@ -95,10 +87,34 @@
         "type": "file"
       },
       {
+        "segment": "test",
+        "title": "测试",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/test",
+        "type": "file"
+      },
+      {
         "segment": "md",
         "title": "md",
         "order": 99,
         "children": [
+          {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
+            "segment": "github",
+            "title": "GitHub",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/github",
+            "type": "file"
+          },
           {
             "segment": "docs",
             "title": "docs",
@@ -116,14 +132,6 @@
             "type": "file"
           },
           {
-            "segment": "github",
-            "title": "GitHub",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/github",
-            "type": "file"
-          },
-          {
             "segment": "slug",
             "title": "md slug",
             "order": 99,
@@ -132,26 +140,10 @@
             "type": "file"
           },
           {
-            "segment": "code-blocks",
-            "title": "code blocks",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
-            "type": "file"
-          },
-          {
             "segment": "css",
-            "title": "css",
+            "title": "md css",
             "order": 99,
             "children": [
-              {
-                "segment": "tailwind",
-                "title": "tailwind",
-                "order": 99,
-                "children": [],
-                "url": "/zh/docs/dev/md/css/tailwind",
-                "type": "file"
-              },
               {
                 "segment": "color",
                 "title": "color",
@@ -159,10 +151,18 @@
                 "children": [],
                 "url": "/zh/docs/dev/md/css/color",
                 "type": "file"
+              },
+              {
+                "segment": "tailwind",
+                "title": "tailwind",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/tailwind",
+                "type": "file"
               }
             ],
             "url": "/zh/docs/dev/md/css",
-            "type": "dir"
+            "type": "file"
           }
         ],
         "url": "/zh/docs/dev/md",
@@ -182,15 +182,15 @@
   },
   {
     "segment": "alg",
-    "title": "算法",
+    "title": "alg",
     "order": 99,
     "children": [
       {
-        "segment": "python",
-        "title": "python",
+        "segment": "blog",
+        "title": "日志",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/python",
+        "url": "/zh/docs/alg/blog",
         "type": "file"
       },
       {
@@ -202,27 +202,19 @@
         "type": "file"
       },
       {
+        "segment": "python",
+        "title": "python",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/python",
+        "type": "file"
+      },
+      {
         "segment": "struct",
         "title": "数据结构",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/struct",
-        "type": "file"
-      },
-      {
-        "segment": "blog",
-        "title": "日志",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/blog",
-        "type": "file"
-      },
-      {
-        "segment": "enum",
-        "title": "穷举法",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/enum",
         "type": "file"
       },
       {
@@ -232,10 +224,18 @@
         "children": [],
         "url": "/zh/docs/alg/lanqiao",
         "type": "file"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/enum",
+        "type": "file"
       }
     ],
     "url": "/zh/docs/alg",
-    "type": "file"
+    "type": "dir"
   },
   {
     "segment": "linux",
@@ -257,6 +257,48 @@
         "children": [],
         "url": "/zh/docs/linux/systemd-timesyncd",
         "type": "file"
+      },
+      {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      },
+      {
+        "segment": "console",
+        "title": "console",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/readme",
+            "type": "file"
+          },
+          {
+            "segment": "Command-line_shell",
+            "title": "Command-line_shell",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/Command-line_shell",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/console",
+        "type": "dir"
       },
       {
         "segment": "command",
@@ -293,31 +335,6 @@
         "type": "dir"
       },
       {
-        "segment": "console",
-        "title": "console",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Command-line_shell",
-            "title": "Command-line_shell",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/Command-line_shell",
-            "type": "file"
-          },
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/console",
-        "type": "dir"
-      },
-      {
         "segment": "input",
         "title": "input",
         "order": 99,
@@ -333,27 +350,10 @@
         ],
         "url": "/zh/docs/linux/input",
         "type": "dir"
-      },
-      {
-        "segment": "network",
-        "title": "network",
-        "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
-        "type": "dir"
       }
     ],
     "url": "/zh/docs/linux",
-    "type": "dir"
+    "type": "file"
   },
   {
     "segment": "next",
