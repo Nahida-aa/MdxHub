@@ -91,7 +91,7 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined
 
 const nextConfig: NextConfig = {
   output,
-  basePath,
+  // basePath,
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   // eslint: {
@@ -118,14 +118,14 @@ const nextConfig: NextConfig = {
     ],
     unoptimized,
   },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders,
+  //     },
+  //   ]
+  // },
   // webpack: (config, options) => {
   //   config.module.rules.push({
   //     test: /\.svg$/,
@@ -134,17 +134,17 @@ const nextConfig: NextConfig = {
 
   //   return config
   // },
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    }, // 启用 Turbopack
-  },
-  transpilePackages: ['next-mdx-remote'],
+  // experimental: {
+  //   turbo: {
+  //     rules: {
+  //       '*.svg': {
+  //         loaders: ['@svgr/webpack'],
+  //         as: '*.js',
+  //       },
+  //     },
+  //   }, // 启用 Turbopack
+  // },
+  // transpilePackages: ['next-mdx-remote'],
 }
 
 const withMDX = createMDX({
