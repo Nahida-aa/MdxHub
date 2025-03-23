@@ -128,64 +128,60 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined
 
 const nextConfig: NextConfig = {
   output,
-  // basePath,
+  basePath,
   reactStrictMode: true,
-  // pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  // eslint: {
-  //   dirs: ['app', 'components', 'layouts', 'scripts'],
-  // },
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'picsum.photos',
-  //     },
-  //     {
-  //       hostname: 'avatar.vercel.sh',
-  //     },
-  //     {
-  //       hostname: 'avatars.githubusercontent.com',
-  //     },
-  //     {
-  //       hostname: 'raw.githubusercontent.com',
-  //     },
-  //     {
-  //       hostname: 'utfs.io',
-  //     },
-  //   ],
-  //   unoptimized,
-  // },
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/(.*)',
-  //       headers: securityHeaders,
-  //     },
-  //   ]
-  // },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  eslint: {
+    dirs: ['app', 'components', 'layouts', 'scripts'],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        hostname: 'avatar.vercel.sh',
+      },
+      {
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        hostname: 'raw.githubusercontent.com',
+      },
+      {
+        hostname: 'utfs.io',
+      },
+    ],
+    unoptimized,
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
   // webpack: (config, options) => {
   //   config.module.rules.push({
   //     test: /\.svg$/,
   //     use: ['@svgr/webpack'],
   //   })
 
-  //   return config
+    // return config
   // },
-  // experimental: {
-  //   turbo: {
-  //     rules: {
-  //       '*.svg': {
-  //         loaders: ['@svgr/webpack'],
-  //         as: '*.js',
-  //       },
-  //     },
-  //   }, // 启用 Turbopack
-  // },
-  // transpilePackages: ['next-mdx-remote'],
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    }, // 启用 Turbopack
+  },
+  transpilePackages: ['next-mdx-remote'],
 }
-
-
-
-
 
 export default plugins.reduce((prev, item) => item(prev), nextConfig)
