@@ -25,7 +25,7 @@ if not container:
 
 ## 数组 Array
 
-是的，**Python 的 `list` 是动态数组**。虽然在 Python 中我们通常将 `list` 视为一个通用的容器，但其底层实现实际上是基于 **动态数组** 的。以下是详细的解释：
+**Python 的 `list` 是动态数组**。虽然在 Python 中我们通常将 `list` 视为一个通用的容器，但其底层实现实际上是基于 **动态数组** 的。以下是详细的解释：
 
 ### 什么是动态数组？
 动态数组是一种可以在运行时动态调整大小的数组。与静态数组不同，动态数组的容量可以根据需要扩展或收缩。
@@ -119,6 +119,38 @@ for i in range(20):
 - **适用场景**：
   - 如果需要频繁随机访问或在末尾插入元素，`list` 是一个高效的选择。
   - 如果需要频繁在中间或开头插入/删除元素，可以考虑使用链表（`LinkedList`）。
+
+```py
+# 翻转
+arr = [1, 2, 3, 4]
+arr[::-1]  # [4, 3, 2, 1]
+```
+
+### 素数
+
+- 素数的定义：大于 1 且只能被 1 和自身整除的整数。
+- 非素数（合数）的定义。
+
+
+#### 生成素数
+
+##### 埃拉托色尼筛法：
+标记一定范围内的所有非素数，剩下的就是素数。
+
+代码示例：
+
+```py
+def sieve_of_eratosthenes(n):
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+    for i in range(2, int(n**0.5) + 1): # i*i <= n
+        if is_prime[i]: # e.g if 2 是素数
+            for j in range(i * i, n + 1, i): # 那么 2*2, 2*3, 2*4... 都不是素数
+                is_prime[j] = False
+    return [x for x in range(2, n + 1) if is_prime[x]] # 这里从 0开始也行, 因为我们把索引为素数的位置标记为了 True
+primes = sieve_of_eratosthenes(20)
+print(primes)  # [2, 3, 5, 7, 11, 13, 17, 19]
+```
 
 ## 链表 Linked List
 

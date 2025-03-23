@@ -126,6 +126,7 @@
 @apply list-decimal pl-6;
 }
 .prose {
+  .MathJax svg,
   svg.lucide {
     @apply inline-block;
   }

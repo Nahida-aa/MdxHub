@@ -59,12 +59,12 @@ export function extractCodeContent(codeElement: React.ReactElement<any>): string
 }
 
 // 检查是否是 Mermaid 代码块
-export function isMermaidCodeBlock(element: React.ReactElement): boolean {
+export function isLanguageCodeBlock(element: React.ReactElement, language: string): boolean {
   if (!element || !element.props) return false
 
   const props = element.props as CodeElementProps
 
-  return (props.className && props.className.includes("language-mermaid")) || props["data-language"] === "mermaid"
+  return (props.className && props.className.includes(`language-${language}`)) || props["data-language"] === language
 }
 
 export const Pre = ({children, ...props}: React.HTMLAttributes<HTMLPreElement>) => {
@@ -76,7 +76,7 @@ export const Pre = ({children, ...props}: React.HTMLAttributes<HTMLPreElement>) 
   console.log(codeElement)
   
   // 如果找到代码元素并且是 Mermaid 代码块
-  if (codeElement && isMermaidCodeBlock(codeElement)) {
+  if (codeElement && isLanguageCodeBlock(codeElement, 'mermaid')) {
     console.log('Pre: mermaid:')
     // 提取 代码
     const code = extractCodeContent(codeElement)

@@ -2,6 +2,32 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/learn",
+    "slug": "learn",
+    "segments": [
+      "learn"
+    ],
+    "filePath": "docs/zh/learn.mdx",
+    "meta": {
+      "title": "学习",
+      "description": null,
+      "created_at": "2025-03-23T14:55:10.000Z",
+      "updated_at": "2025-03-23T14:55:10.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\n## 站点地图\n\n\n```mermaid caption=\"拓扑图 1. AI \\ CS \\ ES 学科笔记\"\nflowchart LR\n    程序设计(程序设计)\n    数字逻辑电路(数字逻辑电路)\n    数据结构(数据结构)\n    算法(算法)\n    计算机系统基础(计算机系统基础)\n    数据库(数据库)\n    操作系统(操作系统)\n    计算机组成(计算机组成)\n    计算机网络(计算机网络)\n\n    程序设计 --> 数据结构 & 算法 --> 计算机系统基础\n    数字逻辑电路 --> 计算机系统基础 --> 数据库 & 操作系统 & 计算机组成\n    计算机组成 & 操作系统 --> 计算机网络\n\n    Python高级应用(Python 高级应用)\n    数字图像处理(数字图像处理)\n    机器学习(机器学习)\n    深度学习(深度学习)\n    数据挖掘(数据挖掘)\n    自然语言处理(自然语言处理)\n    计算机视觉(计算机视觉)\n    数字信号处理(数字信号处理)\n    智慧教育(智慧教育)\n\n    Python高级应用 --> 数字图像处理 & 数字信号处理 & 机器学习\n    机器学习 --> 深度学习 & 数据挖掘\n    深度学习 --> 自然语言处理 & 计算机视觉 --> 智慧教育\n    数字图像处理 --> 计算机视觉\n\n    微积分(微积分)\n    矩阵(矩阵)\n    概率论(概率论)\n    最优化方法(最优化方法)\n    微积分 & 矩阵 & 概率论 --> 最优化方法 --> 机器学习\n    程序设计 --> Python高级应用\n\n    %% 跳转链接\n    click 微积分 \"./base/advanced-math/\"\n    click 矩阵 \"./base/linear-algebra/\"\n    click 概率论 \"./base/probability-and-statistics/\"\n    click 最优化方法 \"./base/optimization-method/\"\n\n    click 程序设计 \"./base/object-oriented-programming/\"\n    click 数字逻辑电路 \"./base/digital-logic-circuit/\"\n    click 计算机系统基础 \"./base/computer-system-basic/\"\n    click 数据库 \"./base/database/\"\n    click 数据结构与算法 \"./ds-and-algo/\"\n    click 操作系统 \"./base/operating-system/\"\n    click 计算机组成 \"./base/computer-organization/\"\n    click 计算机网络 \"./base/computer-network/\"\n\n    click Python高级应用 \"./base/python-application/\"\n    click 数字图像处理 \"./base/digital-image-processing/\"\n    click 机器学习 \"./base/machine-learning/\"\n    click 深度学习 \"./base/deep-learning/\"\n    click 数据挖掘 \"./base/data-mining/\"\n    click 自然语言处理 \"./base/natural-language-processing/\"\n    click 计算机视觉 \"./base/computer-vision/\"\n    click 数字信号处理 \"./base/digital-signal-processing/\"\n    click 智慧教育 \"./base/intelligent-education/\"\n```\n<table>\n<caption> 拓扑图 1. AI \\ CS \\ ES 学科笔记 </caption>\n</table>\n\n```mermaid \ngraph LR\n  %% 实体定义\n  algo(数据结构与算法专栏)\n  dev_tools(开发工具专栏)\n  fe(前端开发专栏)\n  be(后端开发专栏)\n  dev_ops(运维开发专栏)\n  \n  %% 关系定义\n  algo --> be\n  dev_tools --> fe & be & dev_ops\n  \n  %% 跳转链接\n  click algo \"./ds-and-algo/\"\n  click dev_tools \"./dev-tools/\"\n  click fe \"./front-end/\"\n  click be \"./back-end/\"\n  click dev_ops \"./operation/\"\n```\n<table>\n<caption> 拓扑图 2. 开发技术文章 </caption>\n</table>\n\n```py {1}\n# fib\ndef fib(n):\n    if n <= 1:\n        return n\n    return fib(n - 1) + fib(n - 2)\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "站点地图",
+        "slug": "站点地图"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/i18n",
     "slug": "i18n",
     "segments": [
@@ -18,6 +44,27 @@
     "order": 99,
     "content": "\n```sh\npnpm add i18next react-i18next i18next-resources-to-backend next-i18n-router\n```\n",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/contentlayer",
+    "slug": "dev/contentlayer",
+    "segments": [
+      "dev",
+      "contentlayer"
+    ],
+    "filePath": "docs/zh/dev/contentlayer.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# contentlayer\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "contentlayer",
+        "slug": "contentlayer"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -44,27 +91,6 @@
         "depth": 2,
         "value": "本仓库内的文件监视功能",
         "slug": "本仓库内的文件监视功能"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/contentlayer",
-    "slug": "dev/contentlayer",
-    "segments": [
-      "dev",
-      "contentlayer"
-    ],
-    "filePath": "docs/zh/dev/contentlayer.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# contentlayer\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "contentlayer",
-        "slug": "contentlayer"
       }
     ]
   },
@@ -135,26 +161,28 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/learn",
-    "slug": "learn",
+    "url": "/zh/docs/html",
+    "slug": "html",
     "segments": [
-      "learn"
+      "html"
     ],
-    "filePath": "docs/zh/learn.mdx",
+    "filePath": "docs/zh/html/index.mdx",
     "meta": {
-      "title": "学习",
-      "description": null,
-      "created_at": "2025-03-23T14:55:10.000Z",
-      "updated_at": "2025-03-23T14:55:10.000Z",
-      "tags": []
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
+      "tags": [
+        "html"
+      ]
     },
     "order": 99,
-    "content": "\n## 站点地图\n\n\n```mermaid caption=\"拓扑图 1. AI \\ CS \\ ES 学科笔记\"\nflowchart LR\n    程序设计(程序设计)\n    数字逻辑电路(数字逻辑电路)\n    数据结构(数据结构)\n    算法(算法)\n    计算机系统基础(计算机系统基础)\n    数据库(数据库)\n    操作系统(操作系统)\n    计算机组成(计算机组成)\n    计算机网络(计算机网络)\n\n    程序设计 --> 数据结构 & 算法 --> 计算机系统基础\n    数字逻辑电路 --> 计算机系统基础 --> 数据库 & 操作系统 & 计算机组成\n    计算机组成 & 操作系统 --> 计算机网络\n\n    Python高级应用(Python 高级应用)\n    数字图像处理(数字图像处理)\n    机器学习(机器学习)\n    深度学习(深度学习)\n    数据挖掘(数据挖掘)\n    自然语言处理(自然语言处理)\n    计算机视觉(计算机视觉)\n    数字信号处理(数字信号处理)\n    智慧教育(智慧教育)\n\n    Python高级应用 --> 数字图像处理 & 数字信号处理 & 机器学习\n    机器学习 --> 深度学习 & 数据挖掘\n    深度学习 --> 自然语言处理 & 计算机视觉 --> 智慧教育\n    数字图像处理 --> 计算机视觉\n\n    微积分(微积分)\n    矩阵(矩阵)\n    概率论(概率论)\n    最优化方法(最优化方法)\n    微积分 & 矩阵 & 概率论 --> 最优化方法 --> 机器学习\n    程序设计 --> Python高级应用\n\n    %% 跳转链接\n    click 微积分 \"./base/advanced-math/\"\n    click 矩阵 \"./base/linear-algebra/\"\n    click 概率论 \"./base/probability-and-statistics/\"\n    click 最优化方法 \"./base/optimization-method/\"\n\n    click 程序设计 \"./base/object-oriented-programming/\"\n    click 数字逻辑电路 \"./base/digital-logic-circuit/\"\n    click 计算机系统基础 \"./base/computer-system-basic/\"\n    click 数据库 \"./base/database/\"\n    click 数据结构与算法 \"./ds-and-algo/\"\n    click 操作系统 \"./base/operating-system/\"\n    click 计算机组成 \"./base/computer-organization/\"\n    click 计算机网络 \"./base/computer-network/\"\n\n    click Python高级应用 \"./base/python-application/\"\n    click 数字图像处理 \"./base/digital-image-processing/\"\n    click 机器学习 \"./base/machine-learning/\"\n    click 深度学习 \"./base/deep-learning/\"\n    click 数据挖掘 \"./base/data-mining/\"\n    click 自然语言处理 \"./base/natural-language-processing/\"\n    click 计算机视觉 \"./base/computer-vision/\"\n    click 数字信号处理 \"./base/digital-signal-processing/\"\n    click 智慧教育 \"./base/intelligent-education/\"\n```\n<table>\n<caption> 拓扑图 1. AI \\ CS \\ ES 学科笔记 </caption>\n</table>\n\n```mermaid \ngraph LR\n  %% 实体定义\n  algo(数据结构与算法专栏)\n  dev_tools(开发工具专栏)\n  fe(前端开发专栏)\n  be(后端开发专栏)\n  dev_ops(运维开发专栏)\n  \n  %% 关系定义\n  algo --> be\n  dev_tools --> fe & be & dev_ops\n  \n  %% 跳转链接\n  click algo \"./ds-and-algo/\"\n  click dev_tools \"./dev-tools/\"\n  click fe \"./front-end/\"\n  click be \"./back-end/\"\n  click dev_ops \"./operation/\"\n```\n<table>\n<caption> 拓扑图 2. 开发技术文章 </caption>\n</table>",
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
     "toc": [
       {
         "depth": 2,
-        "value": "站点地图",
-        "slug": "站点地图"
+        "value": "list",
+        "slug": "list"
       }
     ]
   },
@@ -408,6 +436,80 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
+    "segments": [
+      "alg"
+    ],
+    "filePath": "docs/zh/alg/index.mdx",
+    "meta": {
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
+      "tags": [
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/x",
+    "slug": "dev/x",
+    "segments": [
+      "dev",
+      "x"
+    ],
+    "filePath": "docs/zh/dev/x.mdx",
+    "meta": {
+      "title": "x",
+      "description": "x",
+      "created_at": "2025-03-22T19:57:35.000Z",
+      "updated_at": "2025-03-22T19:57:35.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/dev/todo",
     "slug": "dev/todo",
     "segments": [
@@ -508,102 +610,56 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg",
-    "slug": "alg",
+    "url": "/zh/docs/alg/blog",
+    "slug": "alg/blog",
     "segments": [
-      "alg"
+      "alg",
+      "blog"
     ],
-    "filePath": "docs/zh/alg/index.mdx",
+    "filePath": "docs/zh/alg/blog.mdx",
     "meta": {
-      "title": "算法",
-      "description": "alg 即 algorithm",
-      "created_at": "2025-03-22T05:35:44.000Z",
-      "updated_at": "2025-03-22T05:35:44.000Z",
+      "title": "日志",
+      "description": null,
+      "created_at": "2025-03-22T06:07:24.000Z",
+      "updated_at": "2025-03-22T06:07:24.000Z",
       "tags": [
-        "alg"
+        "alg",
+        "log",
+        "blog"
       ]
     },
     "order": 99,
-    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
     "toc": [
       {
-        "depth": 2,
-        "value": "基础",
-        "slug": "基础"
+        "depth": 3,
+        "value": "1. 算法文档（docs）",
+        "slug": "1.-算法文档（docs）"
       },
       {
         "depth": 3,
-        "value": "动态规划",
-        "slug": "动态规划"
+        "value": "2. 算法日志（blog）",
+        "slug": "2.-算法日志（blog）"
       },
       {
         "depth": 3,
-        "value": "贪心算法",
-        "slug": "贪心算法"
+        "value": "3. 两者的区别",
+        "slug": "3.-两者的区别"
       },
       {
         "depth": 3,
-        "value": "分治法",
-        "slug": "分治法"
+        "value": "4. 如何结合使用",
+        "slug": "4.-如何结合使用"
       },
       {
-        "depth": 2,
-        "value": "时间复杂度和空间复杂度",
-        "slug": "时间复杂度和空间复杂度"
+        "depth": 3,
+        "value": "5. 工具推荐",
+        "slug": "5.-工具推荐"
       },
       {
-        "depth": 2,
-        "value": "常见问题",
-        "slug": "常见问题"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/x",
-    "slug": "dev/x",
-    "segments": [
-      "dev",
-      "x"
-    ],
-    "filePath": "docs/zh/dev/x.mdx",
-    "meta": {
-      "title": "x",
-      "description": "x",
-      "created_at": "2025-03-22T19:57:35.000Z",
-      "updated_at": "2025-03-22T19:57:35.000Z",
-      "tags": []
-    },
-    "order": 99,
-    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/html",
-    "slug": "html",
-    "segments": [
-      "html"
-    ],
-    "filePath": "docs/zh/html/index.mdx",
-    "meta": {
-      "title": "html",
-      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
-      "created_at": "2025-03-22T02:26:21.000Z",
-      "updated_at": "2025-03-22T02:26:21.000Z",
-      "tags": [
-        "html"
-      ]
-    },
-    "order": 99,
-    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "list",
-        "slug": "list"
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
       }
     ]
   },
@@ -699,88 +755,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
-    "segments": [
-      "next",
-      "15"
-    ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
-      },
-      {
-        "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/blog",
-    "slug": "alg/blog",
-    "segments": [
-      "alg",
-      "blog"
-    ],
-    "filePath": "docs/zh/alg/blog.mdx",
-    "meta": {
-      "title": "日志",
-      "description": null,
-      "created_at": "2025-03-22T06:07:24.000Z",
-      "updated_at": "2025-03-22T06:07:24.000Z",
-      "tags": [
-        "alg",
-        "log",
-        "blog"
-      ]
-    },
-    "order": 99,
-    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
-    "toc": [
-      {
-        "depth": 3,
-        "value": "1. 算法文档（docs）",
-        "slug": "1.-算法文档（docs）"
-      },
-      {
-        "depth": 3,
-        "value": "2. 算法日志（blog）",
-        "slug": "2.-算法日志（blog）"
-      },
-      {
-        "depth": 3,
-        "value": "3. 两者的区别",
-        "slug": "3.-两者的区别"
-      },
-      {
-        "depth": 3,
-        "value": "4. 如何结合使用",
-        "slug": "4.-如何结合使用"
-      },
-      {
-        "depth": 3,
-        "value": "5. 工具推荐",
-        "slug": "5.-工具推荐"
-      },
-      {
-        "depth": 3,
-        "value": "总结",
-        "slug": "总结"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/python",
     "slug": "alg/python",
     "segments": [
@@ -826,59 +800,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
-    "segments": [
-      "next"
-    ],
-    "filePath": "docs/zh/next/index.mdx",
-    "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
-      "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/linux",
     "slug": "linux",
     "segments": [
@@ -897,6 +818,32 @@
     "order": 99,
     "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -991,6 +938,59 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/next",
+    "slug": "next",
+    "segments": [
+      "next"
+    ],
+    "filePath": "docs/zh/next/index.mdx",
+    "meta": {
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
+      "tags": [
+        "next",
+        "ts",
+        "react",
+        "web"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
+    "segments": [
+      "paper"
+    ],
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数据集",
+        "slug": "数据集"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/ts/async",
     "slug": "ts/async",
     "segments": [
@@ -1058,6 +1058,57 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/ts/tsconfig",
+    "slug": "ts/tsconfig",
+    "segments": [
+      "ts",
+      "tsconfig"
+    ],
+    "filePath": "docs/zh/ts/tsconfig.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tsconfig",
+        "slug": "tsconfig"
+      },
+      {
+        "depth": 2,
+        "value": "compilerOptions",
+        "slug": "compileroptions"
+      },
+      {
+        "depth": 3,
+        "value": "moduleResolution",
+        "slug": "moduleresolution"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: node",
+        "slug": "moduleresolution:-node"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: bundler",
+        "slug": "moduleresolution:-bundler"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/ts",
     "slug": "ts",
     "segments": [
@@ -1108,57 +1159,6 @@
     "order": 99,
     "content": "",
     "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/tsconfig",
-    "slug": "ts/tsconfig",
-    "segments": [
-      "ts",
-      "tsconfig"
-    ],
-    "filePath": "docs/zh/ts/tsconfig.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tsconfig",
-        "slug": "tsconfig"
-      },
-      {
-        "depth": 2,
-        "value": "compilerOptions",
-        "slug": "compileroptions"
-      },
-      {
-        "depth": 3,
-        "value": "moduleResolution",
-        "slug": "moduleresolution"
-      },
-      {
-        "depth": 4,
-        "value": "moduleResolution: node",
-        "slug": "moduleresolution:-node"
-      },
-      {
-        "depth": 5,
-        "value": "特点",
-        "slug": "特点"
-      },
-      {
-        "depth": 4,
-        "value": "moduleResolution: bundler",
-        "slug": "moduleresolution:-bundler"
-      },
-      {
-        "depth": 5,
-        "value": "特点",
-        "slug": "特点"
-      }
-    ]
   },
   {
     "locale": "zh",
@@ -1329,6 +1329,32 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/dev/md/github",
     "slug": "dev/md/github",
     "segments": [
@@ -1385,28 +1411,86 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/slug",
-    "slug": "dev/md/slug",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
     "segments": [
-      "dev",
-      "md",
-      "slug"
+      "linux",
+      "network",
+      "NTP"
     ],
-    "filePath": "docs/zh/dev/md/slug.mdx",
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
     "meta": {
-      "title": "md slug",
-      "description": null,
-      "created_at": "2025-03-17T18:03:47.000Z",
-      "updated_at": "2025-03-17T18:03:47.000Z",
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
       "tags": [
-        "markdown",
-        "slug",
-        "url"
-      ]
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
     },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "meta": {},
     "order": 99,
-    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
-    "toc": []
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -1733,97 +1817,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/file_systems/readme",
-    "slug": "linux/file_systems/readme",
-    "segments": [
-      "linux",
-      "file_systems",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/file_systems/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# file_systems",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "file_systems",
-        "slug": "file_systems"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/command/readme",
-    "slug": "linux/command/readme",
-    "segments": [
-      "linux",
-      "command",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/command/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "command",
-        "slug": "command"
-      },
-      {
-        "depth": 2,
-        "value": "file",
-        "slug": "file"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/console/readme",
-    "slug": "linux/console/readme",
-    "segments": [
-      "linux",
-      "console",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/console/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "terminal",
-        "slug": "terminal"
-      },
-      {
-        "depth": 2,
-        "value": "Keyboard Shortcuts",
-        "slug": "keyboard-shortcuts"
-      },
-      {
-        "depth": 2,
-        "value": "start",
-        "slug": "start"
-      },
-      {
-        "depth": 3,
-        "value": "Terminal: Paste",
-        "slug": "terminal:-paste"
-      },
-      {
-        "depth": 3,
-        "value": "Terminal: Copy Selection",
-        "slug": "terminal:-copy-selection"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/lanqiao",
     "slug": "alg/lanqiao",
     "segments": [
@@ -1894,6 +1887,70 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/console/readme",
+    "slug": "linux/console/readme",
+    "segments": [
+      "linux",
+      "console",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/console/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# terminal\n\n```sh\n/usr/bin/bash '--init-file' '/opt/visual-studio-code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh'\n```\n\n## Keyboard Shortcuts\n\n在 vscode 中打开命令搜索框(输入>), 然后输入 key 找到 类似于 `Preferences: Open Keyboard Shortcuts (JSON)`，打开后可以看到所有的快捷键配置。\n\n| command | key | when | source |\n| --- | --- | --- | --- |\n\n## start\nnetworking\n### Terminal: Paste\n\n在 Bash 中，Ctrl + V 用于插入下一个按键的字面值。这在需要输入特殊字符或控制字符时非常有用。例如，如果你想输入一个实际的 Ctrl + C 字符而不是执行中断命令，你可以按 Ctrl + V 然后按 Ctrl + C。\n\n1. 打开 `@/.inputrc` 文件（如果文件不存在，可以创建一个）：\n\n```sh\ncode @/.inputrc\n```\n\n2. 在文件中添加以下内容：\n\n```sh\n\"\\C-v\": paste-from-clipboard\n```\n\n3. 保存并关闭文件。\n\n4. 重新启动 Visual Studio Code 或在终端中运行以下命令以使更改生效：\n\n```sh\nbind -f @/.inputrc\n```\n\n请注意，这个方法依赖于你的终端模拟器支持 `paste-from-clipboard` 功能。如果你的终端模拟器不支持这个功能，你可能需要使用 Visual Studio Code 本身的设置来更改粘贴快捷键。\n\n在 Visual Studio Code 中，你可以通过以下步骤更改终端的粘贴快捷键：\n\n1. 打开 Visual Studio Code。\n2. 进入设置：文件 > 首选项 > 键盘快捷方式。\n3. 搜索 terminal paste。\n4. 找到 Terminal: Paste 命令，点击右侧的铅笔图标，然后按 Ctrl + V 进行绑定。\n\n这样，你就可以在 Visual Studio Code 的终端中使用 Ctrl + V 进行粘贴了。\n\n### Terminal: Copy Selection",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "terminal",
+        "slug": "terminal"
+      },
+      {
+        "depth": 2,
+        "value": "Keyboard Shortcuts",
+        "slug": "keyboard-shortcuts"
+      },
+      {
+        "depth": 2,
+        "value": "start",
+        "slug": "start"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Paste",
+        "slug": "terminal:-paste"
+      },
+      {
+        "depth": 3,
+        "value": "Terminal: Copy Selection",
+        "slug": "terminal:-copy-selection"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/linux/input/readme",
     "slug": "linux/input/readme",
     "segments": [
@@ -1916,59 +1973,55 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
     "segments": [
-      "linux",
-      "network",
-      "NTP"
+      "dev",
+      "md",
+      "css",
+      "tailwind"
     ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tailwindCss\n\n## Colors\n\n",
     "toc": [
       {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
       },
       {
         "depth": 2,
-        "value": "配置",
-        "slug": "配置"
-      },
-      {
-        "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
-      },
-      {
-        "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
+        "value": "Colors",
+        "slug": "colors"
       }
     ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",
@@ -2135,59 +2188,6 @@
         "slug": "voice"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css/tailwind",
-    "slug": "dev/md/css/tailwind",
-    "segments": [
-      "dev",
-      "md",
-      "css",
-      "tailwind"
-    ],
-    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tailwindCss\n\n## Colors\n\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tailwindCss",
-        "slug": "tailwindcss"
-      },
-      {
-        "depth": 2,
-        "value": "Colors",
-        "slug": "colors"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css",
-    "slug": "dev/md/css",
-    "segments": [
-      "dev",
-      "md",
-      "css"
-    ],
-    "filePath": "docs/zh/dev/md/css/index.mdx",
-    "meta": {
-      "title": "md css",
-      "description": null,
-      "created_at": "2025-03-21T23:23:27.000Z",
-      "updated_at": "2025-03-21T23:23:27.000Z",
-      "tags": [
-        "md",
-        "css"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
   },
   {
     "locale": "zh",

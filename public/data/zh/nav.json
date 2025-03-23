@@ -1,36 +1,18 @@
 [
   {
+    "segment": "learn",
+    "title": "学习",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/learn",
+    "type": "file"
+  },
+  {
     "segment": "i18n",
     "title": "i18 国际化",
     "order": 99,
     "children": [],
     "url": "/zh/docs/i18n",
-    "type": "file"
-  },
-  {
-    "segment": "about",
-    "title": "关于",
-    "order": 99,
-    "children": [
-      {
-        "segment": "community",
-        "title": "community",
-        "order": 99,
-        "children": [
-          {
-            "segment": "contribution-guide",
-            "title": "贡献 指南",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/about/community/contribution-guide",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/about/community",
-        "type": "dir"
-      }
-    ],
-    "url": "/zh/docs/about",
     "type": "file"
   },
   {
@@ -71,19 +53,19 @@
         "type": "file"
       },
       {
-        "segment": "todo",
-        "title": "todo",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/todo",
-        "type": "file"
-      },
-      {
         "segment": "x",
         "title": "x",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/x",
+        "type": "file"
+      },
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/todo",
         "type": "file"
       },
       {
@@ -108,19 +90,19 @@
             "type": "file"
           },
           {
-            "segment": "github",
-            "title": "GitHub",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/github",
-            "type": "file"
-          },
-          {
             "segment": "slug",
             "title": "md slug",
             "order": 99,
             "children": [],
             "url": "/zh/docs/dev/md/slug",
+            "type": "file"
+          },
+          {
+            "segment": "github",
+            "title": "GitHub",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/github",
             "type": "file"
           },
           {
@@ -165,11 +147,37 @@
     "type": "dir"
   },
   {
-    "segment": "learn",
-    "title": "学习",
+    "segment": "about",
+    "title": "关于",
+    "order": 99,
+    "children": [
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "贡献 指南",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/about/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/about/community",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/about",
+    "type": "file"
+  },
+  {
+    "segment": "html",
+    "title": "html",
     "order": 99,
     "children": [],
-    "url": "/zh/docs/learn",
+    "url": "/zh/docs/html",
     "type": "file"
   },
   {
@@ -178,19 +186,19 @@
     "order": 99,
     "children": [
       {
-        "segment": "Array",
-        "title": "线性结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/Array",
-        "type": "file"
-      },
-      {
         "segment": "blog",
         "title": "日志",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
+        "segment": "Array",
+        "title": "线性结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/Array",
         "type": "file"
       },
       {
@@ -230,11 +238,121 @@
     "type": "file"
   },
   {
-    "segment": "html",
-    "title": "html",
+    "segment": "linux",
+    "title": "linux",
     "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
+    "children": [
+      {
+        "segment": "system_time",
+        "title": "系统时间",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/linux/system_time",
+        "type": "file"
+      },
+      {
+        "segment": "systemd-timesyncd",
+        "title": "systemd-timesyncd",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/linux/systemd-timesyncd",
+        "type": "file"
+      },
+      {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      },
+      {
+        "segment": "command",
+        "title": "command",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/command/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/command",
+        "type": "dir"
+      },
+      {
+        "segment": "console",
+        "title": "console",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Command-line_shell",
+            "title": "Command-line_shell",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/Command-line_shell",
+            "type": "file"
+          },
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/console",
+        "type": "dir"
+      },
+      {
+        "segment": "file_systems",
+        "title": "file_systems",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/file_systems/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
+        "segment": "input",
+        "title": "input",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/input/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/input",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/linux",
     "type": "file"
   },
   {
@@ -347,124 +465,6 @@
     "order": 99,
     "children": [],
     "url": "/zh/docs/paper",
-    "type": "file"
-  },
-  {
-    "segment": "linux",
-    "title": "linux",
-    "order": 99,
-    "children": [
-      {
-        "segment": "system_time",
-        "title": "系统时间",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/linux/system_time",
-        "type": "file"
-      },
-      {
-        "segment": "systemd-timesyncd",
-        "title": "systemd-timesyncd",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/linux/systemd-timesyncd",
-        "type": "file"
-      },
-      {
-        "segment": "console",
-        "title": "console",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Command-line_shell",
-            "title": "Command-line_shell",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/Command-line_shell",
-            "type": "file"
-          },
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/console",
-        "type": "dir"
-      },
-      {
-        "segment": "file_systems",
-        "title": "file_systems",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/file_systems/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/file_systems",
-        "type": "dir"
-      },
-      {
-        "segment": "command",
-        "title": "command",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/command/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/command",
-        "type": "dir"
-      },
-      {
-        "segment": "input",
-        "title": "input",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/input/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/input",
-        "type": "dir"
-      },
-      {
-        "segment": "network",
-        "title": "network",
-        "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
-        "type": "dir"
-      }
-    ],
-    "url": "/zh/docs/linux",
     "type": "file"
   },
   {
