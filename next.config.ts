@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 import createMDX, { NextMDXOptions } from '@next/mdx'
+import dotenv from 'dotenv';
+import fs from 'fs';
 // import remarkGfm from "remark-gfm";
 // import remarkMath from "remark-math";
 // import rehypeMathjax from 'rehype-mathjax'
@@ -107,9 +109,9 @@ console.log('process.env:', process.env);
 if (process.env.GITHUB_ACTIONS) { // ‘true
   const envPath = '.env.github';
   console.log('GitHub Actions detected, loading environment variables from:', envPath);
-  // if (fs.existsSync(envPath)) {
-  //   dotenv.config({ path: envPath });
-  // }
+  if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath });
+  }
 } else {
   plugins = [
     withMDX, // pnpm add @next/mdx, 仅需安装这个来实现
