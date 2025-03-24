@@ -6,27 +6,7 @@ updated_at: 2025-03-22T16:40:54Z
 tags: [alg,enum]
 ---
 
-```mermaid
-flowchart LR
-    A["穷举法 (Brute Force)"] --> B[核心思想]
-    B --> C[尝试所有可能的解]
-    B --> D[逐一验证每个解是否满足条件]
-    B --> E[返回满足条件的解或最优解]
-
-    A --> F[特点]
-    F --> G[简单直接]
-    F --> H[适合解空间有限的问题]
-    F --> I[通常效率较低，时间复杂度较高]
-
-    A --> J[应用场景]
-    J --> K["组合问题 (如子集、排列、组合)"]
-    J --> L["搜索问题 (如迷宫、棋盘问题)"]
-    J --> M["验证问题 (如密码破解、暴力匹配)"]
-```
-
 以下是关于**如何学习暴力枚举**的详细指导：
-
----
 
 ## 什么是暴力枚举？
 
@@ -34,8 +14,6 @@ flowchart LR
 1. **生成所有可能的解**。
 2. **逐一验证每个解是否满足条件**。
 3. **返回满足条件的解（或最优解）**。
-
----
 
 ## 学习暴力枚举的步骤
 
@@ -46,8 +24,6 @@ flowchart LR
 **示例**：
 - 如果问题是“从数组 `[1, 2, 3]{:py}` 中选择两个数”，解空间是所有可能的数对：`(1, 2), (1, 3), (2, 3){:py}`。
 - 如果问题是“排列字符串 `abc{:.str}` 的所有可能顺序”，解空间是所有排列：`abc, acb, bac, bca, cab, cba{:.str}`。
-
----
 
 ### **生成所有可能的解**
 - 使用循环、递归或组合工具生成解空间。
@@ -231,177 +207,129 @@ flowchart LR
 
 通过不断练习和总结，你会发现暴力枚举不仅简单，而且非常实用。如果你有具体的题目或问题，可以随时告诉我，我会帮助你分析和解答！
 
-## 竞赛题
+## 例题
 
-刑侦科推理试题-lanqiao-1792
+[LeetCode 1. 两数之和](https://leetcode-cn.com/problems/two-sum/description/) 
 
-### 题目描述
-```md
-有以下10道单选题，编程求这10道题的答案。
-1. 这道题的答案是：
-A. A  B. B   C. C  D. D
-2. 第5题的答案是：
-A. C  B. D  C. A  D. B
-3. 以下选项中哪一题的答案与其他三项不同：
-A. 第3题  B. 第6题  C. 第2题  D. 第4题
-4. 以下选项中哪两题的答案相同：
-A. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题
-5. 以下选项中哪一题的答案与本题相同：
-A. 第8题  B. 第4题  C. 第9题 D. 第7题
-6. 以下选项中哪两题的答案与第8题相同：
-A. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题
-7. 在这十道题中，被选中次数最少的选项字母为：
-A. C B. B C. A D. D
-8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：
-A. 第7题 B. 第5题 C. 第2题 D. 第10题
-9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：
-A. 第6题 B. 第10题 C. 第2题 D. 第9题
-10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：
-A. 3 B. 2 C. 4 D. 1
-```
-### 输入描述
+给定一个整数数组 `nums` 和一个整数目标值 `target` ,请你在该数组中找出 和为目标值 `target`  的那 两个 整数，并返回它们的数组下标。 <br/>
+你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。<br/>
+你可以按任意顺序返回答案。<br/>
 
-无输入。
-### 输出描述
+**示例 1:**<br/>
+**输入:** `nums = [2,7,11,15], target = 9`<br/>
+**输出:** `[0,1]`<br/>
+**解释:** 因为 `nums[0] + nums[1] == 9` ，返回 `[0, 1]` 。<br/>
 
-输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）
-### 知识点
+**示例 2:**<br/>
+**输入:** `nums = [3,2,4], target = 6`<br/>
+**输出:** `[1,2]`<br/>
 
-- 命题的表示
-- 命题的真值
-- 枚举
+**示例 3:**<br/>
+**输入:** `nums = [3,3], target = 6`<br/>
+**输出:** `[0,1]`<br/>
 
-### 运行限制
+**提示:**
+- $2 \leq nums.length \leq 10^4$
+- $-10^9 \leq nums[i] \leq 10^9$
+- $-10^9 \leq target \leq 10^9$
+- 只会存在一个有效答案<br/>
 
-- 最大运行时间: 1s
-- 最大运行内存: 32M
+**进阶:** 你可以想出一个时间复杂度小于 $O(n^2)$ 的算法吗？
 
-### 解答
-
-> [!TIP]
-> 我没有进行优化
-
+### 解法1: 穷举解空间
+1. 两层循环遍历数组，找到和为目标值的两个数。
 ```py
-from itertools import product
-from typing import Tuple
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    n = len(nums)
+    for i in range(n):
+        for j in range(n): # 注意到这里没有排除 i==j 的情况, 例如 [3, 3], 6 会导致结构为 [0, 0]
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return []
+```
+> [!bug]
+> 这个写法是错误的, 因为没有排除 `i==j` 的情况, 例如 `[3, 3], 6` 会导致结果为 `[0, 0]`
 
-# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple
-def is_valid(answers: Tuple[str, ...]) -> bool:
-    # 将答案映射到题目中 题目从 1 开始编号
-    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers
-    q_list = list(answers)
+**修复:**
+```py
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    n = len(nums)
+    for i in range(n):
+        for j in range(n):
+            if i == j: # 排除 i==j 的情况
+                continue
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return []
+```
+> [!success]
+> 这样就能得到正确答案啦 :), 但是时间复杂度是 $O(n^2)$ 的数量级, 因为我们需要遍历两遍数组
+### 解法2: 减少搜索空间(剪枝思想)+穷举
+**注意到:**
+例如: `[2, 7, 11], 9`, 我们最多会比较 $n\times n$次, 实际上最多只需要比较: `2 + 7`, `2 + 11`, `7 + 11`, 即$\frac{n^2-n}{2}$次, 写成矩阵(表格):
+```math
+\begin{bmatrix}
+0 & 2 & 7 & 11 \\
+2 & 2+2 & 2+7 & 2+11 \\
+7 & 7+2 & 7+7 & 7+11 \\
+11 & 11+2 & 11+7 & 11+11 \\
+\end{bmatrix}
+```
+> [!INFO]
+> 1. 如下证明可以参考: [等差数列求和](https://zh.wikipedia.org/wiki/%E7%AD%89%E5%B7%AE%E6%95%B0%E5%88%97%E6%B1%82%E5%92%8C) <br/>
+> $$
+> \frac{n^2-n}{2}=\sum_{i=1}^{n-1}i=1+2+3+...+(n-1)=\frac{n(n-1)}{2}
+> $$ 
+> 2. 我这里写了矩阵这个术语不要感到意外, 此处仅是用来展示一个表格, 不是用来运算
 
-    # 规则 1: 第1题的答案是 A. A B. B C. C D. D
-    # if q1 not in 'ABCD':
-    #     return False
+  
+如果我们直接遍历两遍, 相当于计算(判断)了9次, 实际上我们只需要又上小角落或左下角落的三个元素, 所以我们可以优化一下:
+```py
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    n = len(nums)
+    for i in range(n):
+        for j in range(i+1, n): # 优化: 从 i+1 开始
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return []
+```
+这样我们相当于只计算了:
+```math
+\begin{bmatrix}
+0 & 2 & 7 & 11 \\
+2 &  & 2+7 & 2+11 \\
+7 &  &  & 7+11 \\
+11 &  &  &  \\
+\end{bmatrix}
+```
+至此, 时间复杂度仍然是 $O(n^2)$ 的数量级, 只是比原来的大概少了$\frac{n^2+n}{2}$ (可以明显看到), 大概是因为 如果找到了答案, 就不会继续遍历了, 因此 都不会是完整的遍历, 不会刚好少了这么多
 
-    # 规则 2: 第5题的答案是 A. C B. D C. A D. B
-    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:
-        return False
+对于这个方法的另外一个写法:
+```py
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    n = len(nums)
+    for i in range(n):
+        y = target - nums[i]
+        if y in nums[i+1:]:
+            return [i, nums.index(y, i+1)]
+    return []
+```
+> [!warning]
+> 这个另外一个写法, 并不会降低时间复杂度, 甚至会增加时间复杂度, 因为 `in` 和 `index` 都是 $O(n)$ 的时间复杂度, 所以这个写法的时间复杂度是 $O(n^2)$
 
-    # 规则 3: 以下选项中哪一题的答案与其他三项不同
-    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }
-    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }
-    def existentiallySame(q3:str):
-        return q3 in other_answers[q3]
-    if existentiallySame(q3):
-        return False
+### 解法3: 记录前缀信息(前缀和思想)+哈希表
 
-    # 规则 4: 以下选项中哪两题的答案相同
-    q4_dict = { "A": (q1, q5), "B": (q2, q7), "C": (q1, q9), "D": (q6, q10)}
-    def both_questions_not_same(qn1:str,qn2:str):
-        return not qn1==qn2
-    if both_questions_not_same(*q4_dict[q4]):
-        return False
-
-    # 规则 5: 以下选项中哪一题的答案与本题相同
-    q5_dict = {"A": q8, "B": q4, "C": q9, "D": q7}
-    if q5_dict[q5]!=q5:
-        return False
-    
-    # 规则 6: 以下选项中哪两题的答案与第8题相同
-    q6_dict = { "A": (q2,q4), "B": (q1, q6), "C": (q3, q10), "D": (q5, q9)}
-    def not_eq8(qn1:str,qn2:str):
-        return not qn1==qn2==q8
-    if not_eq8(*q6_dict[q6]):
-        return False
-
-    # 规则 7: 在这十道题中，被选中次数最少的选项字母为
-    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母
-    counts = {c: answers.count(c) for c in 'ABCD'}
-    q7_dict = {'A': "C", "B": "B", "C": "A", "D": "D"}
-    if min(counts.values()) != counts[q7_dict[q7]]:
-        return False
-
-    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻
-    q8_dict = {'A': q7, "B": q5, "C": q2, "D": q10}
-    def isAdjacent(qn:str):
-        return abs(ord(q1)-ord(qn))==1
-    if isAdjacent(q8_dict[q8]):
-        return False
-
-    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反
-    q9_dict = {'A': q6, "B": q10, "C": q2, "D": q9}
-    is_q1_eq_q6 = q1 == q6
-    def isSame(qn:str):
-        return is_q1_eq_q6 == (qn == q5)
-    
-    if isSame(q9_dict[q9]):
-        return False
-
-    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为
-    d = max(counts.values()) - min(counts.values())
-    q10_dict = {'A': 3, "B": 2, "C": 4, "D": 1}
-    if d != q10_dict[q10]:
-        return False
-
-    return True
-
-# Enumerate 所有可能的答案组合
-for answers in product('ABCD', repeat=10):
-    if is_valid(answers):
-        print(' '.join(answers))
-        # break
+从上面的解法我们可以想到: 如果我们将已经遍历过的数字和对应的索引作为值存储到一个字典中, 那么我们在遍历的时候, 可以直接判断 `target - nums[i]` 是否在字典中, 如果在, 那么我们就找到了答案, 这样我们就可以将时间复杂度降低到 $O(n)$
+> [!tip]
+> 1. 字典的 `in` 和 `get` 方法的时间复杂度是 $O(1)$, `get`也可以用类似列表获取索引那样使用dict[key] 这种语法
+> 2. 关于字典的定义(设计): 我们把 数组中的数字 作为key, 索引作为 value, 是因为 我们需要直接比较 是否有符合的数字, 且当符合时, 需要返回索引, 故这个设计是合理的
+```py
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    hashmap = {} # key: 数字, value: 索引
+    for i, num in enumerate(nums):
+        if target - num in hashmap: # 判断是否有符合的数字, O(1)
+            return [hashmap[target - num], i] # 通过key拿到value, O(1)
+        hashmap[num] = i
+    return []
 ```
 
-### 问题描述
-
-小蓝有一张支票，上面记录了一些数字。小蓝不小心打翻了墨水导致了支票上的一个数字被污染了，现在小蓝想通过剩下的数字来推断出那个被污染的数字。
-
-设支票上被污染的数字为 xx ，没有被污染的数字共有 nn 个（设为 d1,d2,…,dnd1​,d2​,…,dn​ ），小蓝知道支票如果没有错误的话，上面没有被污染的数字应当是 xx 除了 11 和 xx 之外的其他所有因数，但是他无法确定支票是否错误。支票错误的情况有以下几种：
-
-- 支票没有被污染的数字中混入了不是 xx 的因数的数字；
-- 支票没有被污染的数字中缺失或重复 xx 的部分因数。
-
-小蓝想请你帮助他判断支票是否没有错误，若没有错误，小蓝希望你能帮他求出支票上被污染的数字。
-### 输入格式
-
-第一行包含一个整数 nn ，表示没有被污染的数字的个数。
-
-第二行包含 nn 个整数 d1,d2,…,dnd1​,d2​,…,dn​ ，表示支票上的数字。
-### 输出格式
-若支票没有错误，那么输出支票上被污染的数字；反之，若支票错误，被污染的数字不存在，则输出 −1−1 。
-### 样例输入
-```
-8
-8 2 12 6 4 24 16 3
-```
-### 样例输出
-```
-48
-```
-### 评测数据规模
-
-对于所有评测数据， $1≤n≤300$ , $2≤d_i≤10^6$
-### 运行限制
-|语言 |	最大运行时间 |	最大运行内存 |
-|---|---|---|
-|C |	4s |	256M |
-|C++ |	4s |	256M |
-|Python3 |	6s |	256M |
-|Java |	5s |	256M |
-|PyPy3 |	6s |	256M |
-|Go |	6s |	256M |
-|JavaScript |	6s |	256M |
-
-难度: 简单   标签: 思维, 数学

@@ -1,0 +1,61 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/enum/if",
+  "slug": "alg/enum/if",
+  "segments": [
+    "alg",
+    "enum",
+    "if"
+  ],
+  "filePath": "docs/zh/alg/enum/if.mdx",
+  "meta": {
+    "title": "条件判断",
+    "description": "命题逻辑是数学逻辑的一个分支，它研究命题之间的逻辑关系。在算法中，条件判断是一种常见的逻辑结构，用于根据不同的条件执行不同的操作。",
+    "created_at": "2025-03-25T02:26:38.000Z",
+    "updated_at": "2025-03-25T02:26:38.000Z",
+    "tags": [
+      "alg",
+      "if"
+    ]
+  },
+  "order": 99,
+  "content": "\n## 例题\n刑侦科推理试题-lanqiao-1792\n\n### 题目描述\n```md\n有以下10道单选题，编程求这10道题的答案。\n1. 这道题的答案是：\nA. A  B. B   C. C  D. D\n2. 第5题的答案是：\nA. C  B. D  C. A  D. B\n3. 以下选项中哪一题的答案与其他三项不同：\nA. 第3题  B. 第6题  C. 第2题  D. 第4题\n4. 以下选项中哪两题的答案相同：\nA. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题\n5. 以下选项中哪一题的答案与本题相同：\nA. 第8题  B. 第4题  C. 第9题 D. 第7题\n6. 以下选项中哪两题的答案与第8题相同：\nA. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题\n7. 在这十道题中，被选中次数最少的选项字母为：\nA. C B. B C. A D. D\n8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：\nA. 第7题 B. 第5题 C. 第2题 D. 第10题\n9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：\nA. 第6题 B. 第10题 C. 第2题 D. 第9题\n10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：\nA. 3 B. 2 C. 4 D. 1\n```\n### 输入描述\n\n无输入。\n### 输出描述\n\n输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）\n### 知识点\n\n- 命题的表示\n- 命题的真值\n- 枚举\n\n### 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 32M\n\n### 解答\n\n> [!TIP]\n> 我没有进行优化\n\n```py\nfrom itertools import product\nfrom typing import Tuple\n\n# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple\ndef is_valid(answers: Tuple[str, ...]) -> bool:\n    # 将答案映射到题目中 题目从 1 开始编号\n    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers\n    q_list = list(answers)\n\n    # 规则 1: 第1题的答案是 A. A B. B C. C D. D\n    # if q1 not in 'ABCD':\n    #     return False\n\n    # 规则 2: 第5题的答案是 A. C B. D C. A D. B\n    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:\n        return False\n\n    # 规则 3: 以下选项中哪一题的答案与其他三项不同\n    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }\n    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }\n    def existentiallySame(q3:str):\n        return q3 in other_answers[q3]\n    if existentiallySame(q3):\n        return False\n\n    # 规则 4: 以下选项中哪两题的答案相同\n    q4_dict = { \"A\": (q1, q5), \"B\": (q2, q7), \"C\": (q1, q9), \"D\": (q6, q10)}\n    def both_questions_not_same(qn1:str,qn2:str):\n        return not qn1==qn2\n    if both_questions_not_same(*q4_dict[q4]):\n        return False\n\n    # 规则 5: 以下选项中哪一题的答案与本题相同\n    q5_dict = {\"A\": q8, \"B\": q4, \"C\": q9, \"D\": q7}\n    if q5_dict[q5]!=q5:\n        return False\n    \n    # 规则 6: 以下选项中哪两题的答案与第8题相同\n    q6_dict = { \"A\": (q2,q4), \"B\": (q1, q6), \"C\": (q3, q10), \"D\": (q5, q9)}\n    def not_eq8(qn1:str,qn2:str):\n        return not qn1==qn2==q8\n    if not_eq8(*q6_dict[q6]):\n        return False\n\n    # 规则 7: 在这十道题中，被选中次数最少的选项字母为\n    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母\n    counts = {c: answers.count(c) for c in 'ABCD'}\n    q7_dict = {'A': \"C\", \"B\": \"B\", \"C\": \"A\", \"D\": \"D\"}\n    if min(counts.values()) != counts[q7_dict[q7]]:\n        return False\n\n    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻\n    q8_dict = {'A': q7, \"B\": q5, \"C\": q2, \"D\": q10}\n    def isAdjacent(qn:str):\n        return abs(ord(q1)-ord(qn))==1\n    if isAdjacent(q8_dict[q8]):\n        return False\n\n    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反\n    q9_dict = {'A': q6, \"B\": q10, \"C\": q2, \"D\": q9}\n    is_q1_eq_q6 = q1 == q6\n    def isSame(qn:str):\n        return is_q1_eq_q6 == (qn == q5)\n    \n    if isSame(q9_dict[q9]):\n        return False\n\n    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为\n    d = max(counts.values()) - min(counts.values())\n    q10_dict = {'A': 3, \"B\": 2, \"C\": 4, \"D\": 1}\n    if d != q10_dict[q10]:\n        return False\n\n    return True\n\n# Enumerate 所有可能的答案组合\nfor answers in product('ABCD', repeat=10):\n    if is_valid(answers):\n        print(' '.join(answers))\n        # break\n```",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "例题",
+      "slug": "例题"
+    },
+    {
+      "depth": 3,
+      "value": "题目描述",
+      "slug": "题目描述"
+    },
+    {
+      "depth": 3,
+      "value": "输入描述",
+      "slug": "输入描述"
+    },
+    {
+      "depth": 3,
+      "value": "输出描述",
+      "slug": "输出描述"
+    },
+    {
+      "depth": 3,
+      "value": "知识点",
+      "slug": "知识点"
+    },
+    {
+      "depth": 3,
+      "value": "运行限制",
+      "slug": "运行限制"
+    },
+    {
+      "depth": 3,
+      "value": "解答",
+      "slug": "解答"
+    }
+  ]
+}

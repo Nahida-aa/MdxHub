@@ -1,0 +1,22 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/enum/g",
+  "slug": "alg/enum/g",
+  "segments": [
+    "alg",
+    "enum",
+    "g"
+  ],
+  "filePath": "docs/zh/alg/enum/g.mdx",
+  "meta": {
+    "title": "g",
+    "description": null,
+    "created_at": "2025-03-25T07:43:08.000Z",
+    "updated_at": "2025-03-25T07:43:08.000Z",
+    "tags": []
+  },
+  "order": 99,
+  "content": "```mermaid\nflowchart LR\n    A[\"穷举法 (Brute Force)\"] --> B[核心思想]\n    B --> C[尝试所有可能的解]\n    B --> D[逐一验证每个解是否满足条件]\n    B --> E[返回满足条件的解或最优解]\n\n    A --> F[特点]\n    F --> G[简单直接]\n    F --> H[适合解空间有限的问题]\n    F --> I[通常效率较低，时间复杂度较高]\n\n    A --> J[应用场景]\n    J --> K[\"组合问题 (如子集、排列、组合)\"]\n    J --> L[\"搜索问题 (如迷宫、棋盘问题)\"]\n    J --> M[\"验证问题 (如密码破解、暴力匹配)\"]\n```",
+  "toc": []
+}

@@ -1,0 +1,58 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/greedy/lanqiao-218",
+  "slug": "alg/greedy/lanqiao-218",
+  "segments": [
+    "alg",
+    "greedy",
+    "lanqiao-218"
+  ],
+  "filePath": "docs/zh/alg/greedy/lanqiao-218.mdx",
+  "meta": {
+    "title": "lanqiao-218",
+    "description": null,
+    "created_at": "2025-03-24T19:01:09.000Z",
+    "updated_at": "2025-03-24T19:01:09.000Z",
+    "tags": []
+  },
+  "order": 99,
+  "content": "- 分糖果 - 蓝桥云课 (lanqiao.cn) - https://www.lanqiao.cn/problems/218/learning/?isWithAnswer=true&page=1&first_category_id=1&second_category_id=3&tags=%E8%B4%AA%E5%BF%83,%E6%8E%92%E5%BA%8F&tag_relation=intersection\n\n## 题目描述\n\n有 n 个小朋友围坐成一圈。老师给每个小朋友随机发偶数个糖果，然后进行下面的游戏：\n\n每个小朋友都把自己的糖果分一半给左手边的孩子。\n\n一轮分糖后，拥有奇数颗糖的孩子由老师补给 1 个糖果，从而变成偶数。\n\n反复进行这个游戏，直到所有小朋友的糖果数都相同为止。\n\n你的任务是预测在已知的初始糖果情形下，老师一共需要补发多少个糖果。\n## 输入描述\n\n程序首先读入一个整数 $N (2\\le N\\le100)$，表示小朋友的人数。\n\n接着是一行用空格分开的 N 个偶数（每个偶数不大于 1000，不小于 2）。\n## 输出描述\n\n要求程序输出一个整数，表示老师需要补发的糖果数。\n## 输入输出样例\n### 示例\n>输入\n```\n3\n2 2 4\n```\n> 输出\n```\n4\n```\n## 运行限制\n\n- 最大运行时间: 1s\n- 最大运行内存: 256M\n\n## 思路\n\n- 维护一个动态的 糖果数组 `nums`, 用于记录每轮分糖前的糖果数量\n- 记录初始糖果总数 `TOT = sum(nums){:py}` 为常数, 用于循环结束后判断老师需要补发的糖果数量\n- 开始循环\n  - 先 copy 一份糖果数组, 这样就有一份旧的 `nums` 和一份新的`nums1`, 我们需要计算出新的里面的具体的 value 这依赖于 旧的数组 `nums`\n  - `nums1[i] = nums[i]/2 + nums[(i+1)%n]/2{:py}`\n  - `if nums1[i]%2 == 1: nums1[i] += 1{:py}`\n  - 这样一轮而分糖结束了, 就要更新 `nums = nums1{:py}`, 以保证下一轮的分糖任务在新的糖果数组上进行\n  - 判断if 分个人的糖果数相同则结束循环: `if len(set(nums)) == 1: break{:py}`\n- 循环结束后, 计算老师需要补发的糖果数量: `print(int(sum(nums)-TOT)){:py}`\n\n```py\n# 获得输入\nn = int(input())\nnums = list(map(int, input().split()))\n# 初始化\nTOT = sum(nums)\n# 循环\nwhile True:\n    nums1 = nums.copy()\n    for i,v in enumerate(nums):\n        nums1[i] = v/2 + nums[(i+1)%n]/2\n        if nums1[i]%2 == 1: nums1[i] += 1\n    nums = nums1\n    if len(set(nums)) == 1: break\nprint(int(sum(nums)-TOT)) # 蓝桥杯可能 将 4.0 判为错误, 所以这里要转为 int\n```",
+  "toc": [
+    {
+      "depth": 2,
+      "value": "题目描述",
+      "slug": "题目描述"
+    },
+    {
+      "depth": 2,
+      "value": "输入描述",
+      "slug": "输入描述"
+    },
+    {
+      "depth": 2,
+      "value": "输出描述",
+      "slug": "输出描述"
+    },
+    {
+      "depth": 2,
+      "value": "输入输出样例",
+      "slug": "输入输出样例"
+    },
+    {
+      "depth": 3,
+      "value": "示例",
+      "slug": "示例"
+    },
+    {
+      "depth": 2,
+      "value": "运行限制",
+      "slug": "运行限制"
+    },
+    {
+      "depth": 2,
+      "value": "思路",
+      "slug": "思路"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+---
+title: bisect
+description: 二分查找是一种高效的查找算法，适用于有序数组或列表。它的核心思想是通过比较中间元素和目标值的大小，缩小查找范围，直到找到目标值或范围为空。
+created_at: 2025-03-25T04:40:00Z
+updated_at: 2025-03-25T04:40:00Z
+tags: [alg,bisect]
+---
+
+- **目标**: 掌握二分查找的思想和变种
+- **学习内容**:
+  1. 标准二分查找
+  2. 二分查找的变种（如查找左边界、右边界）, 二分查找变形问题
+  3. 二分查找的应用: 有序数组查找, 最优解的范围搜索, 查找边界, 旋转数组查找
+- **推荐题目**:
+  - [LeetCode 704. 二分查找](https://leetcode-cn.com/problems/binary-search/description/) (基础二分查找)
+  - [LeetCode 69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/description/) (二分查找)
+  - [LeetCode 34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/) (变种二分)
+  - [LeetCode 153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/description/) (二分查找)
+  - [LeetCode 33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/description/) (二分查找)
+  - [LeetCode 4. 寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/description/) (二分查找)
+
+## python 自带的二分查找库
+```py
+def bisect( 
+    a, # 给定一个升序数组
+    x, # 目标值
+    lo:int=0,
+    hi:int | None = None
+  ): # 返回第一个大于目标值的索引 在 a[lo:hi] 里
+  ...
+# 时间复杂度: O(logn)
+from bisect import bisect
+
+a = [1,9,9,9,200,500]
+print(bisect(a, 3)) # 1，a[1] = 9
+print(bisect(a, 9)) # 4，a[4] = 200
+print(bisect(a, -1)) # 0，a[0] = 1
+print(bisect(a, 1000)) # 6，a[6]: error
+
+a.reverse() # [500, 200, 9, 9, 9, 1]
+# 找到第一个小于 x 的索引
+a_rev_ = [-i for i in a] # [-500, -200, -9, -9, -9, -1]
+print(bisect(a_rev_, -3)) # 5，a_[5] = -1
+print(bisect(a_rev_, -9)) # 5，a_[5] = -1
+print(bisect(a_rev_, -1)) # 6，a_[6]: err
+print(bisect(a_rev_, -1000)) # 0，a_[0] = -500
+```
+
+## 例题
+
+[洛谷 P2249 【深基13.例1】查找](https://www.luogu.com.cn/problem/P2249)
+
+### 题目描述
+
+输入 $n$ 个不超过 $10^9$ 的单调不减的（就是后面的数字不小于前面的数字）非负整数 $a_1,a_2,\dots,a_{n}$，然后进行 $m$ 次询问。对于每次询问，给出一个整数 $q$，要求输出这个数字在序列中第一次出现的编号，如果没有找到的话输出 $-1$ 。
+
+### 输入格式
+
+第一行 $2$ 个整数 $n$ 和 $m$，表示数字个数和询问次数。
+
+第二行 $n$ 个整数，表示这些待查询的数字。
+
+第三行 $m$ 个整数，表示询问这些数字的编号，从 $1$ 开始编号。
+
+### 输出格式
+
+输出一行，$m$ 个整数，以空格隔开，表示答案。
+
+### 输入输出样例
+
+#### 输入
+
+```
+11 3
+1 3 3 3 5 7 9 11 13 15 15
+1 3 6
+```
+
+#### 输出
+
+```
+1 2 -1
+```
+
+### 说明/提示
+
+数据保证，$1 \leq n \leq 10^6$，$0 \leq a_i,q \leq 10^9$，$1 \leq m \leq 10^5$
+
+本题输入输出量较大，请使用较快的 IO 方式。
+
+### 题解
+
+#### 获得输入
+```py
+import sys
+input = lambda: sys.stdin.readline().strip()
+n, m = map(int, input().split())
+a_ls = list(map(int, input().split()))
+q_ls = list(map(int, input().split()))
+```
+
+#### 方法一: 二分查找
+```py
+from bisect import bisect
+from typing import List
+def m1(n:int, m:int, a_ls:List[int], q_ls:List[int]) -> List[int]:
+  s = set(a_ls)
+  res = []
+  for q in q_ls:
+    if q in s:
+      res.append(bisect(a_ls, q-1)+1)# + 1是因为题目的输出是从1开始编号
+    else:
+      res.append(-1)
+  return res
+print(*m1(n, m, a_ls, q_ls))
+```
+
+## 实战题:2563
+
+[LeetCode 2563. 统计公平对数目](https://leetcode-cn.com/problems/count-the-number-of-fair-pairs/description/)
+
+给你一个下标从 0 开始、长度为 `n` 的整数数组 `nums` 和两个整数 `lower` 和 `upper`, 返回**公平数对的数目**。
+如果 `(i, j)` 满足以下情况, 则认为它是一个**公平数对**:
+- `0 <= i < j < n`且
+- `lower <= nums[i] + nums[j] <= upper`
+**示例 1:**
+> 输入: nums = [0,1,7,4,4,5], lower = 3, upper = 6
+> 输出: 6
+> 解释: 共计 6 个公平数对: (0,3), (0,4), (0,5), (1,3), (1,4), (1,5)。
+**示例 2:**
+> 输入: nums = [1,7,9,2,5], lower = 11, upper = 11
+> 输出: 1
+> 解释: 共计 1 个公平数对: (2,3)。
+**提示:**
+- `1 <= nums.length <= 10^5`
+- `nums.length == n`
+- `-10^9 <= nums[i] <= 10^9`
+- `-10^9 <= lower <= upper <= 10^9`
+
+### 方法一: 枚举
+```py
+def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:
+  res = 0
+  for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+      if lower <= nums[i] + nums[j] <= upper:
+        res += 1
+  return res
+```
+### 方法二: 二分查找
+- 注意到排序不影响结果(总数)
+- 对 `lower <= nums[i] + nums[j] <= upper` 进行变形，得到 `lower - nums[i] <= nums[j] <= upper - nums[i]`，
+- 即对于每个 `i`，找到 `nums[j]` 在 `[lower - nums[i], upper - nums[i]]` 之间的个数。
+- `j` 的范围是 `[i+1, n)`，所以可以对 `nums` 进行排序，然后对于每个 `i`, 在 `j`的范围中，找到 `lower - nums[i]` 和 `upper - nums[i]` 的位置，然后计算这两个位置之间的个数。
+```py
+from bisect import bisect
+
+def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:
+  res = 0
+  nums.sort()
+  for i in range(len(nums)):
+    L = bisect(nums, lower - nums[i]-1, i+1)
+    R = bisect(nums, upper - nums[i], i+1)-1
+    res += R - L + 1 # 索引做差+1 得到之间的个数, 对于前后都是闭区间
+  return res
+```
+
+## 朴素二分查找
+python3.12 给 `bisect` 增加了 参数 `key: func`, 但是 python3.8 只有4个参数: `a, x, lo=0, hi=None`,
+
+因此需要学会自己实现二分查找, 以应对更多的情况
+
+**实现思路:**
+1. 对于区间 `[lo, hi)`, 划分为 `[lo, mid)` 和 `[mid, hi)`, `mid = (lo + hi) >> 1{:py}`
+2. `if x < a[mid]: hi = mid{:py}`, `else: lo = mid+1{:py}`
+3. 重复步骤1,2 直到 `lo == hi`
+
+```py
+def bisect(a, x, lo=0, hi=None, key=lambda f: f):
+  if hi is None: hi = len(a)
+  while lo < hi:
+    mid = (lo + hi) >> 1
+    if x < key(a[mid]): hi = mid # 补上未来版本的 key
+    else: lo = mid + 1
+  return lo
+```

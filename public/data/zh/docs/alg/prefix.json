@@ -1,0 +1,80 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/prefix",
+  "slug": "alg/prefix",
+  "segments": [
+    "alg",
+    "prefix"
+  ],
+  "filePath": "docs/zh/alg/prefix/index.mdx",
+  "meta": {
+    "title": "前缀和",
+    "description": null,
+    "created_at": "2025-03-25T03:49:30.000Z",
+    "updated_at": "2025-03-25T03:49:30.000Z",
+    "tags": [
+      "alg",
+      "prefix"
+    ]
+  },
+  "order": 99,
+  "content": "\n洛谷 P8218 【深进1.例1】求区间和 https://www.luogu.com.cn/problem/P8218\n\n# P8218 【深进1.例1】求区间和\n\n## 题目描述\n\n给定 $n$ 个正整数组成的数列 $a_1, a_2, \\cdots, a_n$ 和 $m$ 个区间 $[l_i,r_i]$，分别求这 $m$ 个区间的区间和。\n\n对于所有测试数据，$n,m\\le10^5,a_i\\le 10^4$\n\n## 输入格式\n\n第一行，为一个正整数 $n$ 。\n\n第二行，为 $n$ 个正整数 $a_1,a_2, \\cdots ,a_n$\n\n第三行，为一个正整数 $m$ 。\n\n接下来 $m$ 行，每行为两个正整数 $l_i,r_i$ ，满足$1\\le l_i\\le r_i\\le n$\n\n## 输出格式\n\n共 $m$ 行。\n\n第 $i$ 行为第 $i$ 组答案的询问。\n\n## 输入输出样例 #1\n\n### 输入 #1\n\n```\n4\n4 3 2 1\n2\n1 4\n2 3\n```\n\n### 输出 #1\n\n```\n10\n5\n```\n\n## 说明/提示\n\n样例解释：第 $1$ 到第 $4$ 个数加起来和为 $10$。第 $2$ 个数到第 $3$ 个数加起来和为 $5$。\n\n对于 $50 \\%$ 的数据：$n,m\\le 1000$；\n\n对于 $100 \\%$ 的数据：$1 \\le n, m\\le 10^5$，$1 \\le a_i\\le 10^4$\n\n## 题解\n\n输入:\n```py\nimport sys\ninput = sys.stdin.readline().strip()\nn = int(input())\na_ls = list(map(int, input().split()))\nm = int(input())\nl_ls = [0]*m\nr_ls = [0]*m\nfor _ in range(m):\n    l, r = map(int, input().split())\n    l_ls[_] = l\n    r_ls[_] = r\n```\n\n### 方法一: 穷举\n\n```py\ndef method1(n: int, a_ls: list[int], m: int, l_ls: list[int], r_ls: list[int]) -> list[int]:\n    res = []\n    for i in range(m): # o(m)\n        res.append(sum(a_ls[l_ls[i]-1:r_ls[i]])) # o(n)\n    return res\n```\n\n### 方法二: 前缀和\n\n```py\ndef method2(n: int, a_ls: list[int], m: int, l_ls: list[int], r_ls: list[int]) -> list[int]:\n    p_ls = [0]*(n+1)\n    for i in range(n): # o(n)\n        p_ls[i+1] = p_ls[i] + a_ls[i]\n    res = []\n    for i in range(m): # o(m)\n        res.append(prefix_sum[r_ls[i]] - prefix_sum[l_ls[i]-1])\n    return res\n```\n",
+  "toc": [
+    {
+      "depth": 1,
+      "value": "P8218 【深进1.例1】求区间和",
+      "slug": "p8218-【深进1.例1】求区间和"
+    },
+    {
+      "depth": 2,
+      "value": "题目描述",
+      "slug": "题目描述"
+    },
+    {
+      "depth": 2,
+      "value": "输入格式",
+      "slug": "输入格式"
+    },
+    {
+      "depth": 2,
+      "value": "输出格式",
+      "slug": "输出格式"
+    },
+    {
+      "depth": 2,
+      "value": "输入输出样例 #1",
+      "slug": "输入输出样例-#1"
+    },
+    {
+      "depth": 3,
+      "value": "输入 #1",
+      "slug": "输入-#1"
+    },
+    {
+      "depth": 3,
+      "value": "输出 #1",
+      "slug": "输出-#1"
+    },
+    {
+      "depth": 2,
+      "value": "说明/提示",
+      "slug": "说明/提示"
+    },
+    {
+      "depth": 2,
+      "value": "题解",
+      "slug": "题解"
+    },
+    {
+      "depth": 3,
+      "value": "方法一: 穷举",
+      "slug": "方法一:-穷举"
+    },
+    {
+      "depth": 3,
+      "value": "方法二: 前缀和",
+      "slug": "方法二:-前缀和"
+    }
+  ]
+}

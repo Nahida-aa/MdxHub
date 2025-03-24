@@ -10,9 +10,15 @@ s = set(a_ls)
 res = []
 for q in q_ls:
     if q in s:
-        res.append(bisect(a_ls, q-1)+1)
+        res.append(bisect(a_ls, q-1))
     else:
         res.append(-1)
-print(*res)
+print(res)
 
-
+# def bisect(a, x, lo=0, hi=None, key=lambda f: f):
+#   if hi is None: hi = len(a)
+#   while lo < hi:
+#     mid = (lo + hi) >> 1
+#     if x < key(a[mid]): hi = mid
+#     else: lo = mid + 1
+#   return lo

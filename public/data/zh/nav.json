@@ -8,14 +8,6 @@
     "type": "file"
   },
   {
-    "segment": "learn",
-    "title": "学习",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/learn",
-    "type": "file"
-  },
-  {
     "segment": "dev",
     "title": "dev",
     "order": 99,
@@ -29,11 +21,11 @@
         "type": "file"
       },
       {
-        "segment": "data",
-        "title": "数据存储",
+        "segment": "x",
+        "title": "x",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/dev/data",
+        "url": "/zh/docs/dev/x",
         "type": "file"
       },
       {
@@ -45,11 +37,19 @@
         "type": "file"
       },
       {
-        "segment": "x",
-        "title": "x",
+        "segment": "search",
+        "title": "增添搜索引擎",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/dev/x",
+        "url": "/zh/docs/dev/search",
+        "type": "file"
+      },
+      {
+        "segment": "data",
+        "title": "数据存储",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/data",
         "type": "file"
       },
       {
@@ -58,14 +58,6 @@
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/todo",
-        "type": "file"
-      },
-      {
-        "segment": "search",
-        "title": "增添搜索引擎",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/search",
         "type": "file"
       },
       {
@@ -107,19 +99,19 @@
             "type": "file"
           },
           {
-            "segment": "github",
-            "title": "GitHub",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/github",
-            "type": "file"
-          },
-          {
             "segment": "slug",
             "title": "md slug",
             "order": 99,
             "children": [],
             "url": "/zh/docs/dev/md/slug",
+            "type": "file"
+          },
+          {
+            "segment": "github",
+            "title": "GitHub",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/github",
             "type": "file"
           },
           {
@@ -136,19 +128,19 @@
             "order": 99,
             "children": [
               {
-                "segment": "tailwind",
-                "title": "tailwind",
-                "order": 99,
-                "children": [],
-                "url": "/zh/docs/dev/md/css/tailwind",
-                "type": "file"
-              },
-              {
                 "segment": "color",
                 "title": "color",
                 "order": 99,
                 "children": [],
                 "url": "/zh/docs/dev/md/css/color",
+                "type": "file"
+              },
+              {
+                "segment": "tailwind",
+                "title": "tailwind",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/tailwind",
                 "type": "file"
               }
             ],
@@ -161,6 +153,22 @@
       }
     ],
     "url": "/zh/docs/dev",
+    "type": "dir"
+  },
+  {
+    "segment": "learn",
+    "title": "学习",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/learn",
+    "type": "file"
+  },
+  {
+    "segment": "html",
+    "title": "html",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/html",
     "type": "dir"
   },
   {
@@ -190,24 +198,24 @@
     "type": "dir"
   },
   {
-    "segment": "html",
-    "title": "html",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
-    "type": "dir"
-  },
-  {
     "segment": "alg",
     "title": "算法",
     "order": 99,
     "children": [
       {
-        "segment": "python",
-        "title": "python",
+        "segment": "array",
+        "title": "线性结构",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/python",
+        "url": "/zh/docs/alg/array",
+        "type": "file"
+      },
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/todo",
         "type": "file"
       },
       {
@@ -219,11 +227,11 @@
         "type": "file"
       },
       {
-        "segment": "Array",
-        "title": "线性结构",
+        "segment": "python",
+        "title": "python",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/Array",
+        "url": "/zh/docs/alg/python",
         "type": "file"
       },
       {
@@ -235,10 +243,68 @@
         "type": "file"
       },
       {
+        "segment": "enum",
+        "title": "enum",
+        "order": 99,
+        "children": [
+          {
+            "segment": "g",
+            "title": "g",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/g",
+            "type": "file"
+          },
+          {
+            "segment": "pruning",
+            "title": "剪枝",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/pruning",
+            "type": "file"
+          },
+          {
+            "segment": "if",
+            "title": "条件判断",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/if",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/alg/enum",
+        "type": "dir"
+      },
+      {
+        "segment": "bisect",
+        "title": "bisect",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/bisect",
+        "type": "dir"
+      },
+      {
+        "segment": "prefix",
+        "title": "前缀和",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/prefix",
+        "type": "dir"
+      },
+      {
         "segment": "greedy",
         "title": "贪心算法",
         "order": 99,
-        "children": [],
+        "children": [
+          {
+            "segment": "lanqiao-218",
+            "title": "lanqiao-218",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/greedy/lanqiao-218",
+            "type": "file"
+          }
+        ],
         "url": "/zh/docs/alg/greedy",
         "type": "dir"
       },
@@ -251,11 +317,11 @@
         "type": "dir"
       },
       {
-        "segment": "enum",
-        "title": "穷举法",
+        "segment": "sort",
+        "title": "排序",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/enum",
+        "url": "/zh/docs/alg/sort",
         "type": "dir"
       }
     ],
@@ -301,6 +367,23 @@
         "type": "dir"
       },
       {
+        "segment": "command",
+        "title": "command",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/command/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/command",
+        "type": "dir"
+      },
+      {
         "segment": "console",
         "title": "console",
         "order": 99,
@@ -340,23 +423,6 @@
           }
         ],
         "url": "/zh/docs/linux/file_systems",
-        "type": "dir"
-      },
-      {
-        "segment": "command",
-        "title": "command",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/command/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/command",
         "type": "dir"
       },
       {

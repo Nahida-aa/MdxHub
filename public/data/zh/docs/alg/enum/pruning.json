@@ -1,0 +1,25 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/alg/enum/pruning",
+  "slug": "alg/enum/pruning",
+  "segments": [
+    "alg",
+    "enum",
+    "pruning"
+  ],
+  "filePath": "docs/zh/alg/enum/pruning.mdx",
+  "meta": {
+    "title": "剪枝",
+    "description": "提前终止不必要的计算, 减少搜索空间, 多用于回溯法、搜索问题",
+    "created_at": "2025-03-25T03:56:52.000Z",
+    "updated_at": "2025-03-25T03:56:52.000Z",
+    "tags": [
+      "alg",
+      "pruning"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

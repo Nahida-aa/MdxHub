@@ -1,0 +1,100 @@
+---
+title: 前缀和
+description: 
+created_at: 2025-03-25T03:49:30Z
+updated_at: 2025-03-25T03:49:30Z
+tags: [alg, prefix]
+---
+
+洛谷 P8218 【深进1.例1】求区间和 https://www.luogu.com.cn/problem/P8218
+
+# P8218 【深进1.例1】求区间和
+
+## 题目描述
+
+给定 $n$ 个正整数组成的数列 $a_1, a_2, \cdots, a_n$ 和 $m$ 个区间 $[l_i,r_i]$，分别求这 $m$ 个区间的区间和。
+
+对于所有测试数据，$n,m\le10^5,a_i\le 10^4$
+
+## 输入格式
+
+第一行，为一个正整数 $n$ 。
+
+第二行，为 $n$ 个正整数 $a_1,a_2, \cdots ,a_n$
+
+第三行，为一个正整数 $m$ 。
+
+接下来 $m$ 行，每行为两个正整数 $l_i,r_i$ ，满足$1\le l_i\le r_i\le n$
+
+## 输出格式
+
+共 $m$ 行。
+
+第 $i$ 行为第 $i$ 组答案的询问。
+
+## 输入输出样例 #1
+
+### 输入 #1
+
+```
+4
+4 3 2 1
+2
+1 4
+2 3
+```
+
+### 输出 #1
+
+```
+10
+5
+```
+
+## 说明/提示
+
+样例解释：第 $1$ 到第 $4$ 个数加起来和为 $10$。第 $2$ 个数到第 $3$ 个数加起来和为 $5$。
+
+对于 $50 \%$ 的数据：$n,m\le 1000$；
+
+对于 $100 \%$ 的数据：$1 \le n, m\le 10^5$，$1 \le a_i\le 10^4$
+
+## 题解
+
+输入:
+```py
+import sys
+input = sys.stdin.readline().strip()
+n = int(input())
+a_ls = list(map(int, input().split()))
+m = int(input())
+l_ls = [0]*m
+r_ls = [0]*m
+for _ in range(m):
+    l, r = map(int, input().split())
+    l_ls[_] = l
+    r_ls[_] = r
+```
+
+### 方法一: 穷举
+
+```py
+def method1(n: int, a_ls: list[int], m: int, l_ls: list[int], r_ls: list[int]) -> list[int]:
+    res = []
+    for i in range(m): # o(m)
+        res.append(sum(a_ls[l_ls[i]-1:r_ls[i]])) # o(n)
+    return res
+```
+
+### 方法二: 前缀和
+
+```py
+def method2(n: int, a_ls: list[int], m: int, l_ls: list[int], r_ls: list[int]) -> list[int]:
+    p_ls = [0]*(n+1)
+    for i in range(n): # o(n)
+        p_ls[i+1] = p_ls[i] + a_ls[i]
+    res = []
+    for i in range(m): # o(m)
+        res.append(prefix_sum[r_ls[i]] - prefix_sum[l_ls[i]-1])
+    return res
+```

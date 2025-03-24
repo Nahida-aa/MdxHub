@@ -1,0 +1,72 @@
+---
+title: lanqiao-218
+description: 
+created_at: 2025-03-24T19:01:09Z
+updated_at: 2025-03-24T19:01:09Z
+tags: []
+---
+- 分糖果 - 蓝桥云课 (lanqiao.cn) - https://www.lanqiao.cn/problems/218/learning/?isWithAnswer=true&page=1&first_category_id=1&second_category_id=3&tags=%E8%B4%AA%E5%BF%83,%E6%8E%92%E5%BA%8F&tag_relation=intersection
+
+## 题目描述
+
+有 n 个小朋友围坐成一圈。老师给每个小朋友随机发偶数个糖果，然后进行下面的游戏：
+
+每个小朋友都把自己的糖果分一半给左手边的孩子。
+
+一轮分糖后，拥有奇数颗糖的孩子由老师补给 1 个糖果，从而变成偶数。
+
+反复进行这个游戏，直到所有小朋友的糖果数都相同为止。
+
+你的任务是预测在已知的初始糖果情形下，老师一共需要补发多少个糖果。
+## 输入描述
+
+程序首先读入一个整数 $N (2\le N\le100)$，表示小朋友的人数。
+
+接着是一行用空格分开的 N 个偶数（每个偶数不大于 1000，不小于 2）。
+## 输出描述
+
+要求程序输出一个整数，表示老师需要补发的糖果数。
+## 输入输出样例
+### 示例
+>输入
+```
+3
+2 2 4
+```
+> 输出
+```
+4
+```
+## 运行限制
+
+- 最大运行时间: 1s
+- 最大运行内存: 256M
+
+## 思路
+
+- 维护一个动态的 糖果数组 `nums`, 用于记录每轮分糖前的糖果数量
+- 记录初始糖果总数 `TOT = sum(nums){:py}` 为常数, 用于循环结束后判断老师需要补发的糖果数量
+- 开始循环
+  - 先 copy 一份糖果数组, 这样就有一份旧的 `nums` 和一份新的`nums1`, 我们需要计算出新的里面的具体的 value 这依赖于 旧的数组 `nums`
+  - `nums1[i] = nums[i]/2 + nums[(i+1)%n]/2{:py}`
+  - `if nums1[i]%2 == 1: nums1[i] += 1{:py}`
+  - 这样一轮而分糖结束了, 就要更新 `nums = nums1{:py}`, 以保证下一轮的分糖任务在新的糖果数组上进行
+  - 判断if 分个人的糖果数相同则结束循环: `if len(set(nums)) == 1: break{:py}`
+- 循环结束后, 计算老师需要补发的糖果数量: `print(int(sum(nums)-TOT)){:py}`
+
+```py
+# 获得输入
+n = int(input())
+nums = list(map(int, input().split()))
+# 初始化
+TOT = sum(nums)
+# 循环
+while True:
+    nums1 = nums.copy()
+    for i,v in enumerate(nums):
+        nums1[i] = v/2 + nums[(i+1)%n]/2
+        if nums1[i]%2 == 1: nums1[i] += 1
+    nums = nums1
+    if len(set(nums)) == 1: break
+print(int(sum(nums)-TOT)) # 蓝桥杯可能 将 4.0 判为错误, 所以这里要转为 int
+```

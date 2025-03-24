@@ -1,0 +1,139 @@
+---
+title: 条件判断
+description: 命题逻辑是数学逻辑的一个分支，它研究命题之间的逻辑关系。在算法中，条件判断是一种常见的逻辑结构，用于根据不同的条件执行不同的操作。
+created_at: 2025-03-25T02:26:38Z
+updated_at: 2025-03-25T02:26:38Z
+tags: [alg,if]
+---
+
+## 例题
+刑侦科推理试题-lanqiao-1792
+
+### 题目描述
+```md
+有以下10道单选题，编程求这10道题的答案。
+1. 这道题的答案是：
+A. A  B. B   C. C  D. D
+2. 第5题的答案是：
+A. C  B. D  C. A  D. B
+3. 以下选项中哪一题的答案与其他三项不同：
+A. 第3题  B. 第6题  C. 第2题  D. 第4题
+4. 以下选项中哪两题的答案相同：
+A. 第1、5题 B. 第2、7题 C. 第1、9题 D. 第6、10题
+5. 以下选项中哪一题的答案与本题相同：
+A. 第8题  B. 第4题  C. 第9题 D. 第7题
+6. 以下选项中哪两题的答案与第8题相同：
+A. 第2、4题  B. 第1、6题  C. 第3、10题 D. 第5、9题
+7. 在这十道题中，被选中次数最少的选项字母为：
+A. C B. B C. A D. D
+8. 以下选项中哪一题的答案与第1题的答案在字母中不相邻：
+A. 第7题 B. 第5题 C. 第2题 D. 第10题
+9. 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反，那么X为：
+A. 第6题 B. 第10题 C. 第2题 D. 第9题
+10. 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为：
+A. 3 B. 2 C. 4 D. 1
+```
+### 输入描述
+
+无输入。
+### 输出描述
+
+输出这10道题的答案，用空格隔开。输出示例：B C A C A C D A B A。（显然这不是本题的答案）
+### 知识点
+
+- 命题的表示
+- 命题的真值
+- 枚举
+
+### 运行限制
+
+- 最大运行时间: 1s
+- 最大运行内存: 32M
+
+### 解答
+
+> [!TIP]
+> 我没有进行优化
+
+```py
+from itertools import product
+from typing import Tuple
+
+# py3.8写法 Tuple[str, ...]; py3.9写法 tuple[str] 即不用导入 Tuple
+def is_valid(answers: Tuple[str, ...]) -> bool:
+    # 将答案映射到题目中 题目从 1 开始编号
+    q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 = answers
+    q_list = list(answers)
+
+    # 规则 1: 第1题的答案是 A. A B. B C. C D. D
+    # if q1 not in 'ABCD':
+    #     return False
+
+    # 规则 2: 第5题的答案是 A. C B. D C. A D. B
+    if q5 != {'A': 'C', 'B': 'D', 'C': 'A', 'D': 'B'}[q2]:
+        return False
+
+    # 规则 3: 以下选项中哪一题的答案与其他三项不同
+    # q3_dict = { 'A': q3, 'B': q6, 'C': q2, 'D': q4 }
+    other_answers = { 'A': [q6, q2, q4], 'B': [q3, q2, q4], 'C': [q3, q6, q4],  'D': [q3, q6, q2] }
+    def existentiallySame(q3:str):
+        return q3 in other_answers[q3]
+    if existentiallySame(q3):
+        return False
+
+    # 规则 4: 以下选项中哪两题的答案相同
+    q4_dict = { "A": (q1, q5), "B": (q2, q7), "C": (q1, q9), "D": (q6, q10)}
+    def both_questions_not_same(qn1:str,qn2:str):
+        return not qn1==qn2
+    if both_questions_not_same(*q4_dict[q4]):
+        return False
+
+    # 规则 5: 以下选项中哪一题的答案与本题相同
+    q5_dict = {"A": q8, "B": q4, "C": q9, "D": q7}
+    if q5_dict[q5]!=q5:
+        return False
+    
+    # 规则 6: 以下选项中哪两题的答案与第8题相同
+    q6_dict = { "A": (q2,q4), "B": (q1, q6), "C": (q3, q10), "D": (q5, q9)}
+    def not_eq8(qn1:str,qn2:str):
+        return not qn1==qn2==q8
+    if not_eq8(*q6_dict[q6]):
+        return False
+
+    # 规则 7: 在这十道题中，被选中次数最少的选项字母为
+    # tip: 这里可以只比较值, 因为只要拿到最小值, 然后对应的 key 都可以称为次数最少的选项字母
+    counts = {c: answers.count(c) for c in 'ABCD'}
+    q7_dict = {'A': "C", "B": "B", "C": "A", "D": "D"}
+    if min(counts.values()) != counts[q7_dict[q7]]:
+        return False
+
+    # 规则 8: 以下选项中哪一题的答案与第1题的答案在字母中不相邻
+    q8_dict = {'A': q7, "B": q5, "C": q2, "D": q10}
+    def isAdjacent(qn:str):
+        return abs(ord(q1)-ord(qn))==1
+    if isAdjacent(q8_dict[q8]):
+        return False
+
+    # 规则 9: 已知“第1题与第6题的答案相同”与“第X题与第5题的答案相同”的真假性相反
+    q9_dict = {'A': q6, "B": q10, "C": q2, "D": q9}
+    is_q1_eq_q6 = q1 == q6
+    def isSame(qn:str):
+        return is_q1_eq_q6 == (qn == q5)
+    
+    if isSame(q9_dict[q9]):
+        return False
+
+    # 规则 10: 在这10道题的答案中，ABCD四个字母出现次数最多与最少者的差为
+    d = max(counts.values()) - min(counts.values())
+    q10_dict = {'A': 3, "B": 2, "C": 4, "D": 1}
+    if d != q10_dict[q10]:
+        return False
+
+    return True
+
+# Enumerate 所有可能的答案组合
+for answers in product('ABCD', repeat=10):
+    if is_valid(answers):
+        print(' '.join(answers))
+        # break
+```
