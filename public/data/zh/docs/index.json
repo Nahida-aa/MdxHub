@@ -48,95 +48,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/about",
-    "slug": "about",
-    "segments": [
-      "about"
-    ],
-    "filePath": "docs/zh/about/index.mdx",
-    "meta": {
-      "title": "关于",
-      "description": "关于本软件的开发",
-      "created_at": "2025-03-21T13:49:29.000Z",
-      "updated_at": "2025-03-21T13:49:29.000Z",
-      "tags": [
-        "about"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "本仓库内的文件监视功能",
-        "slug": "本仓库内的文件监视功能"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/html",
-    "slug": "html",
-    "segments": [
-      "html"
-    ],
-    "filePath": "docs/zh/html/index.mdx",
-    "meta": {
-      "title": "html",
-      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
-      "created_at": "2025-03-22T02:26:21.000Z",
-      "updated_at": "2025-03-22T02:26:21.000Z",
-      "tags": [
-        "html"
-      ]
-    },
-    "order": 99,
-    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "list",
-        "slug": "list"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev",
-    "slug": "dev",
-    "segments": [
-      "dev"
-    ],
-    "filePath": "docs/zh/dev/index.mdx",
-    "meta": {
-      "title": "dev",
-      "description": null,
-      "created_at": "2025-03-21T09:48:56.000Z",
-      "updated_at": "2025-03-21T09:48:56.000Z",
-      "tags": [
-        "dev"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "常用框架\\库\\module",
-        "slug": "常用框架\\库\\module"
-      },
-      {
-        "depth": 2,
-        "value": "常用工具",
-        "slug": "常用工具"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/dev/contentlayer",
     "slug": "dev/contentlayer",
     "segments": [
@@ -216,6 +127,348 @@
         "depth": 3,
         "value": "总结",
         "slug": "总结"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
+    "segments": [
+      "dev",
+      "test"
+    ],
+    "filePath": "docs/zh/dev/test.mdx",
+    "meta": {
+      "title": "测试",
+      "description": "用于测试 mdx",
+      "created_at": "2025-03-22T00:42:34.000Z",
+      "updated_at": "2025-03-22T00:42:34.000Z",
+      "tags": [
+        "test"
+      ]
+    },
+    "order": 99,
+    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "markdown",
+        "slug": "markdown"
+      },
+      {
+        "depth": 3,
+        "value": "标题",
+        "slug": "标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级标题1",
+        "slug": "四级标题1"
+      },
+      {
+        "depth": 3,
+        "value": "三级 标题",
+        "slug": "三级-标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级 标题2",
+        "slug": "四级-标题2"
+      },
+      {
+        "depth": 5,
+        "value": "五级 标题",
+        "slug": "五级-标题"
+      },
+      {
+        "depth": 6,
+        "value": "六级 标题",
+        "slug": "六级-标题"
+      },
+      {
+        "depth": 2,
+        "value": "GitHub flavored markdown (GFM)",
+        "slug": "github-flavored-markdown-(gfm)"
+      },
+      {
+        "depth": 3,
+        "value": "三级标题",
+        "slug": "三级标题"
+      },
+      {
+        "depth": 2,
+        "value": "代码块",
+        "slug": "代码块"
+      },
+      {
+        "depth": 2,
+        "value": "图表",
+        "slug": "图表"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
+    "segments": [
+      "dev"
+    ],
+    "filePath": "docs/zh/dev/index.mdx",
+    "meta": {
+      "title": "dev",
+      "description": null,
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
+      "tags": [
+        "dev"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "常用框架\\库\\module",
+        "slug": "常用框架\\库\\module"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/x",
+    "slug": "dev/x",
+    "segments": [
+      "dev",
+      "x"
+    ],
+    "filePath": "docs/zh/dev/x.mdx",
+    "meta": {
+      "title": "x",
+      "description": "x",
+      "created_at": "2025-03-22T19:57:35.000Z",
+      "updated_at": "2025-03-22T19:57:35.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about",
+    "slug": "about",
+    "segments": [
+      "about"
+    ],
+    "filePath": "docs/zh/about/index.mdx",
+    "meta": {
+      "title": "关于",
+      "description": "关于本软件的开发",
+      "created_at": "2025-03-21T13:49:29.000Z",
+      "updated_at": "2025-03-21T13:49:29.000Z",
+      "tags": [
+        "about"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "本仓库内的文件监视功能",
+        "slug": "本仓库内的文件监视功能"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/html",
+    "slug": "html",
+    "segments": [
+      "html"
+    ],
+    "filePath": "docs/zh/html/index.mdx",
+    "meta": {
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
+      "tags": [
+        "html"
+      ]
+    },
+    "order": 99,
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "list",
+        "slug": "list"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/todo",
+    "slug": "dev/todo",
+    "segments": [
+      "dev",
+      "todo"
+    ],
+    "filePath": "docs/zh/dev/todo.mdx",
+    "meta": {
+      "title": "todo",
+      "description": "todo next-mdx-remote",
+      "created_at": "2025-03-18T15:19:34Z",
+      "updated_at": "2025-03-18T15:19:34Z",
+      "tags": [
+        "todo",
+        "mdx"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基本",
+        "slug": "基本"
+      },
+      {
+        "depth": 3,
+        "value": "remark-breaks",
+        "slug": "remark-breaks"
+      },
+      {
+        "depth": 3,
+        "value": "This is a heading",
+        "slug": "this-is-a-heading"
+      },
+      {
+        "depth": 3,
+        "value": "code block",
+        "slug": "code-block"
+      },
+      {
+        "depth": 3,
+        "value": "math code block",
+        "slug": "math-code-block"
+      },
+      {
+        "depth": 2,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 3,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      },
+      {
+        "depth": 3,
+        "value": "github",
+        "slug": "github"
+      },
+      {
+        "depth": 3,
+        "value": "obsidian",
+        "slug": "obsidian"
+      },
+      {
+        "depth": 2,
+        "value": "next",
+        "slug": "next"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
+    "segments": [
+      "alg"
+    ],
+    "filePath": "docs/zh/alg/index.mdx",
+    "meta": {
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
+      "tags": [
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
       }
     ]
   },
@@ -357,202 +610,176 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/test",
-    "slug": "dev/test",
+    "url": "/zh/docs/alg/python",
+    "slug": "alg/python",
     "segments": [
-      "dev",
-      "test"
+      "alg",
+      "python"
     ],
-    "filePath": "docs/zh/dev/test.mdx",
+    "filePath": "docs/zh/alg/python.mdx",
     "meta": {
-      "title": "测试",
-      "description": "用于测试 mdx",
-      "created_at": "2025-03-22T00:42:34.000Z",
-      "updated_at": "2025-03-22T00:42:34.000Z",
+      "title": "python",
+      "description": null,
+      "created_at": "2025-03-22T06:13:49.000Z",
+      "updated_at": "2025-03-22T06:13:49.000Z",
       "tags": [
-        "test"
+        "alg",
+        "python"
       ]
     },
     "order": 99,
-    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
+    "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n## 迭代\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n\n等效语法:\n```py\nlst = []\nfor item in iterable:\n    if condition:\n        lst.append(expression)\n```\n\n示例:\n```py\n# 1. 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n# 2. 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n[i for i in range(2,21,2)]\nlist(range(2,21,2))\n# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n\n# 3. 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# [1, 2, 3, 4]\n\n# 4. n*m 的 0 矩阵\nn, m = map(int, input().split()) | [2, 3]\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\n# [[0, 0, 0], [0, 0, 0]]\n\n# 5. 斐波那契数列\nn = int(input())\nfib = [0, 1]\n[fib.append(fib[-1]+fib[-2]) for i in range(2, n)]\n# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]\n\n# 6. 将二维表展开为一维表\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflatten = [item for row in matrix for item in row]\n# 相当于:\nflatten = []\nfor row in matrix:\n    for item in row:\n        flatten.append(item)\n```\n\n### 字典推导式\n\n`{key: value for item in iterable if condition}{:py}`\n\n等效语法:\n```py\ndct = {}\nfor item in iterable:\n    if condition:\n        dct[key] = value\n```\n示例:\n```py\n# 统计字符串中每个字符出现的次数\ns = \"hello\"\n{char: s.count(char) for char in set(s)}\n# {'h': 1, 'e': 1, 'l': 2, 'o': 1}\n```\n\n### `range{:py}`\n\n`range(){:py}` 返回的是一个 `range{:py}` 对象, 是一个惰性序列(计算到对应位置时才会去计算对应的值), 节省内存. 如果需要 `list{:py}`, 可以用 `list(){:py}`\n\n`range(start, stop, step){:py}`\n- `start`: 起始值(包含), default: 0\n- `stop`: 结束值(不包含)\n- `step`: 步长, default: 1\n\n即左闭着右开(python 中统一使用左闭右开区间)\n\n```py\n# 1. 生成 1 到 10 的序列\nseq = range(1, 11)\nlist(seq) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# 2. 生成 1 到 10 的奇数\nodd = range(1, 11, 2)\nlist(odd) # [1, 3, 5, 7, 9]\n\n# 3. 生成 10 到 1 的序列\nseq = range(10, 0, -1)\nlist(seq) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n\n# 4. 生成 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4\nT = 5\nn = 3\nfor i in range(T*n):\n    a_i = i % T\n    print(a_i, end=' ')\n\n# 5. 生成二维网格坐标列表\nrow_count, col_count = 2, 3\ncoordinate_ls = [(i, j) for i in range(row_count) for j in range(col_count)]\n# [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]\n```\n",
     "toc": [
       {
         "depth": 2,
-        "value": "markdown",
-        "slug": "markdown"
+        "value": "迭代",
+        "slug": "迭代"
       },
       {
         "depth": 3,
-        "value": "标题",
-        "slug": "标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级标题1",
-        "slug": "四级标题1"
+        "value": "列表推导式",
+        "slug": "列表推导式"
       },
       {
         "depth": 3,
-        "value": "三级 标题",
-        "slug": "三级-标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级 标题2",
-        "slug": "四级-标题2"
-      },
-      {
-        "depth": 5,
-        "value": "五级 标题",
-        "slug": "五级-标题"
-      },
-      {
-        "depth": 6,
-        "value": "六级 标题",
-        "slug": "六级-标题"
-      },
-      {
-        "depth": 2,
-        "value": "GitHub flavored markdown (GFM)",
-        "slug": "github-flavored-markdown-(gfm)"
+        "value": "字典推导式",
+        "slug": "字典推导式"
       },
       {
         "depth": 3,
-        "value": "三级标题",
-        "slug": "三级标题"
-      },
-      {
-        "depth": 2,
-        "value": "代码块",
-        "slug": "代码块"
-      },
-      {
-        "depth": 2,
-        "value": "图表",
-        "slug": "图表"
+        "value": "range{:py}",
+        "slug": "range{:py}"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/todo",
-    "slug": "dev/todo",
+    "url": "/zh/docs/alg/blog",
+    "slug": "alg/blog",
     "segments": [
-      "dev",
-      "todo"
+      "alg",
+      "blog"
     ],
-    "filePath": "docs/zh/dev/todo.mdx",
+    "filePath": "docs/zh/alg/blog.mdx",
     "meta": {
-      "title": "todo",
-      "description": "todo next-mdx-remote",
-      "created_at": "2025-03-18T15:19:34Z",
-      "updated_at": "2025-03-18T15:19:34Z",
+      "title": "日志",
+      "description": null,
+      "created_at": "2025-03-22T06:07:24.000Z",
+      "updated_at": "2025-03-22T06:07:24.000Z",
       "tags": [
-        "todo",
-        "mdx"
+        "alg",
+        "log",
+        "blog"
       ]
     },
     "order": 99,
-    "content": "\n## 基本 \n\n### remark-breaks\n\nremark-breaks\\\nvdvd\n\n### This is a heading\n \nThis is a list in markdown:\n \n- One\n- Two\n- Three\n\n### code block\n\nThis is an array `[1, 2, 3]{:js}` of numbers 1 through 3.\n\nThe name of the function is `getStringLength{:.entity.name.function}`.\n\nThe name of the function is `getStringLength{:.fn}`.\n\n`console{:.var}`, `Mdx{:.cls}`, `JSON{:ts}`\n\n这是 `行内代码块` 示例。\n\n> [!WARNING]\n> 给 codeblock or pre 设置 switcher 属性可能是不太合理的方案\n\n```ts filename=\"x.ts\" {2}#a {3}#b switcher /fibonacci/2-3 title=\"title.ts\"\nimport { useFloating } from \"@floating-ui/react\";\n\n// 斐波那契\nconst fibonacci = (n: number): number => {\n  if (n <= 1) return n\n  return fibonacci(n - 1) + fibonacci(n - 2)\n}\n\nconsole.log(fibonacci(10))\n```\n\n```js  {3,5-7} showLineNumbers switcher caption=\"caption.ts\" /hello/ {10}#g {11}#r\nclass Name {\n  constructor(parameters) {\n    \n  }\n}\n// hello world\nconst hello = async (output:type) => { //这代码怎么不长呀\n  console.log(output)\n}\nconst main = async () => {\n  await hello('hello world')\n}\n\ntry {\n+ await main()\n- main()\n} catch (error) {\n  console.error(error)\n}\n```\n\n```sh {2}#g {3}#r\n# command line\n+pnpm install\n-npm install\n```\n\n### math code block\n\n$y=f(x)$\n\n$$\n\\begin{aligned}\n\\dot{x} & = \\sigma(y-x) \\\\\n\\dot{y} & = \\rho x - y - xz \\\\\n\\dot{z} & = -\\beta z + xy\n\\end{aligned}\n$$\n\n```math\n% 编写公式\n2+2=4\n2\\times 2=4\n```\n\n## github\n\n### Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n### Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n**Table**\n\n| 默认 | 左对齐  |  右对齐 |  居中  |\n| - | :- | -: | :-: |\n| 1 | 2 | 3 | 4 |\n|再来 | 一行 | $y=f(x)$ | `dd` |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n\n> [!bug] rehype-callouts bug\n> 换行无效\n\n\n### github\n> [!NOTE]\n> github note \n\n> [!TIP]\n> github tip\n\n> [!IMPORTANT]\n> github important.\n\n> [!WARNING]\n> github a warning.\n\n> [!CAUTION]\n> github caution.\n\n### obsidian\n\nhttps://help.obsidian.md/callouts\n\n> [!INFO]\n> Here's a callout block.\n\n> [!NOTE]- 笔记\n> This is a note.\n\n> [!todo]\n> Lorem ipsum dolor sit amet\n\n> [!tip]- 一个提示\n> This is a **collapsible** callout  \n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!abstract] obsidian 摘要\n> Lorem ipsum dolor sit amet\n\n> [!faq]\n> obsidian faq  \n> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.  \n> Aliases: `question`, `help`\n\n> [!question] Can callouts be nested?\n> > [!todo] Yes!, they can.\n> > > [!example]  You can even use multiple layers of nesting.\n\n> [!help]\n> Lorem ipsum dolor sit amet\n\n> [!warning]\n> Lorem ipsum dolor sit amet\n>\n> Aliases: `caution`, `attention`\n\n> [!success]-\n> ```md\n> > [!success]\n> > Lorem ipsum dolor sit amet\n> ```\n\n> [!failure]\n> Lorem ipsum dolor sit amet  \n> Aliases: `fail`, `missing`\n\n> [!danger]\n> Lorem ipsum dolor sit amet  \n> Aliases: `error`\n\n> [!bug]\n> Lorem ipsum dolor sit amet\n\n> [!quote]\n> Lorem ipsum dolor sit amet<br/>\n> Aliases: `cite`\n\n> It supports **Markdown**, [[Internal link|Wikilinks]], and [[Embed files|embeds]]!\n> ![[Engelbart.jpg]]\n\n## next\n\n> **Good to know**: This is a single line note.\n \n> **Good to know**:\n>\n> - We also use this format for multi-line notes.\n> - There are sometimes multiple items worth knowing or keeping in mind.\n",
+    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
     "toc": [
       {
-        "depth": 2,
-        "value": "基本",
-        "slug": "基本"
+        "depth": 3,
+        "value": "1. 算法文档（docs）",
+        "slug": "1.-算法文档（docs）"
       },
       {
         "depth": 3,
-        "value": "remark-breaks",
-        "slug": "remark-breaks"
+        "value": "2. 算法日志（blog）",
+        "slug": "2.-算法日志（blog）"
       },
       {
         "depth": 3,
-        "value": "This is a heading",
-        "slug": "this-is-a-heading"
+        "value": "3. 两者的区别",
+        "slug": "3.-两者的区别"
       },
       {
         "depth": 3,
-        "value": "code block",
-        "slug": "code-block"
+        "value": "4. 如何结合使用",
+        "slug": "4.-如何结合使用"
       },
       {
         "depth": 3,
-        "value": "math code block",
-        "slug": "math-code-block"
-      },
-      {
-        "depth": 2,
-        "value": "github",
-        "slug": "github"
+        "value": "5. 工具推荐",
+        "slug": "5.-工具推荐"
       },
       {
         "depth": 3,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 3,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      },
-      {
-        "depth": 3,
-        "value": "github",
-        "slug": "github"
-      },
-      {
-        "depth": 3,
-        "value": "obsidian",
-        "slug": "obsidian"
-      },
-      {
-        "depth": 2,
-        "value": "next",
-        "slug": "next"
+        "value": "总结",
+        "slug": "总结"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/x",
-    "slug": "dev/x",
+    "url": "/zh/docs/linux",
+    "slug": "linux",
     "segments": [
-      "dev",
-      "x"
+      "linux"
     ],
-    "filePath": "docs/zh/dev/x.mdx",
+    "filePath": "docs/zh/linux/index.mdx",
     "meta": {
-      "title": "x",
-      "description": "x",
-      "created_at": "2025-03-22T19:57:35.000Z",
-      "updated_at": "2025-03-22T19:57:35.000Z",
-      "tags": []
+      "title": "linux",
+      "description": "linux 简介",
+      "created_at": "2025-03-22T05:22:44.000Z",
+      "updated_at": "2025-03-22T05:22:44.000Z",
+      "tags": [
+        "linux"
+      ]
     },
     "order": 99,
-    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/system_time",
+    "slug": "linux/system_time",
+    "segments": [
+      "linux",
+      "system_time"
+    ],
+    "filePath": "docs/zh/linux/system_time.mdx",
+    "meta": {
+      "title": "系统时间",
+      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
+      "created_at": "2025-03-22T03:26:09.000Z",
+      "updated_at": "2025-03-22T03:26:09.000Z",
+      "tags": [
+        "linux",
+        "os",
+        "time"
+      ]
+    },
+    "order": 99,
+    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -666,156 +893,97 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg/blog",
-    "slug": "alg/blog",
+    "url": "/zh/docs/next",
+    "slug": "next",
     "segments": [
-      "alg",
-      "blog"
+      "next"
     ],
-    "filePath": "docs/zh/alg/blog.mdx",
+    "filePath": "docs/zh/next/index.mdx",
     "meta": {
-      "title": "日志",
-      "description": null,
-      "created_at": "2025-03-22T06:07:24.000Z",
-      "updated_at": "2025-03-22T06:07:24.000Z",
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
       "tags": [
-        "alg",
-        "log",
-        "blog"
+        "next",
+        "ts",
+        "react",
+        "web"
       ]
     },
     "order": 99,
-    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
     "toc": [
       {
-        "depth": 3,
-        "value": "1. 算法文档（docs）",
-        "slug": "1.-算法文档（docs）"
-      },
-      {
-        "depth": 3,
-        "value": "2. 算法日志（blog）",
-        "slug": "2.-算法日志（blog）"
-      },
-      {
-        "depth": 3,
-        "value": "3. 两者的区别",
-        "slug": "3.-两者的区别"
-      },
-      {
-        "depth": 3,
-        "value": "4. 如何结合使用",
-        "slug": "4.-如何结合使用"
-      },
-      {
-        "depth": 3,
-        "value": "5. 工具推荐",
-        "slug": "5.-工具推荐"
-      },
-      {
-        "depth": 3,
-        "value": "总结",
-        "slug": "总结"
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg",
-    "slug": "alg",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
     "segments": [
-      "alg"
+      "paper"
     ],
-    "filePath": "docs/zh/alg/index.mdx",
+    "filePath": "docs/zh/paper/index.mdx",
     "meta": {
-      "title": "算法",
-      "description": "alg 即 algorithm",
-      "created_at": "2025-03-22T05:35:44.000Z",
-      "updated_at": "2025-03-22T05:35:44.000Z",
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
       "tags": [
-        "alg"
+        "math， paper"
       ]
     },
     "order": 99,
-    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
     "toc": [
       {
         "depth": 2,
-        "value": "基础",
-        "slug": "基础"
-      },
-      {
-        "depth": 3,
-        "value": "动态规划",
-        "slug": "动态规划"
-      },
-      {
-        "depth": 3,
-        "value": "贪心算法",
-        "slug": "贪心算法"
-      },
-      {
-        "depth": 3,
-        "value": "分治法",
-        "slug": "分治法"
-      },
-      {
-        "depth": 2,
-        "value": "时间复杂度和空间复杂度",
-        "slug": "时间复杂度和空间复杂度"
-      },
-      {
-        "depth": 2,
-        "value": "常见问题",
-        "slug": "常见问题"
+        "value": "数据集",
+        "slug": "数据集"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg/python",
-    "slug": "alg/python",
+    "url": "/zh/docs/linux/systemd-timesyncd",
+    "slug": "linux/systemd-timesyncd",
     "segments": [
-      "alg",
-      "python"
+      "linux",
+      "systemd-timesyncd"
     ],
-    "filePath": "docs/zh/alg/python.mdx",
+    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
     "meta": {
-      "title": "python",
-      "description": null,
-      "created_at": "2025-03-22T06:13:49.000Z",
-      "updated_at": "2025-03-22T06:13:49.000Z",
-      "tags": [
-        "alg",
-        "python"
-      ]
+      "title": "systemd-timesyncd",
+      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
+      "created_at": "2025-03-22T03:16:43.000Z",
+      "updated_at": "2025-03-22T03:16:43.000Z",
+      "tags": []
     },
     "order": 99,
-    "content": "\n- 编程环境: Python 3.8.6\n- 编辑器: IDLE (python 自带编辑器)\n\n```sh\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n## 迭代\n\n### 列表推导式\n\n`[expression for item in iterable if condition]{:py}`\n\n等效语法:\n```py\nlst = []\nfor item in iterable:\n    if condition:\n        lst.append(expression)\n```\n\n示例:\n```py\n# 1. 生成 1 到 10 的平方\n[i**2 for i in range(1,11)]\n# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n# 2. 生成 1 ~ 20 的偶数\n[i for i in range(1,21) if i%2==0]\n[i for i in range(2,21,2)]\nlist(range(2,21,2))\n# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n\n# 3. 将 输入的 1 2 3 4 转化为 list[int]\n[int(i) for i in input().split()]\n# [1, 2, 3, 4]\n\n# 4. n*m 的 0 矩阵\nn, m = map(int, input().split()) | [2, 3]\nzero_matrix = [[0 for i in range(m)] for i in range(n)]\nzero_matrix1 = [[0]*m for i in range(n)]\nzero_matrix2 = [[0]*m]*n\n# [[0, 0, 0], [0, 0, 0]]\n\n# 5. 斐波那契数列\nn = int(input())\nfib = [0, 1]\n[fib.append(fib[-1]+fib[-2]) for i in range(2, n)]\n# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]\n\n# 6. 将二维表展开为一维表\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflatten = [item for row in matrix for item in row]\n# 相当于:\nflatten = []\nfor row in matrix:\n    for item in row:\n        flatten.append(item)\n```\n\n### 字典推导式\n\n`{key: value for item in iterable if condition}{:py}`\n\n等效语法:\n```py\ndct = {}\nfor item in iterable:\n    if condition:\n        dct[key] = value\n```\n示例:\n```py\n# 统计字符串中每个字符出现的次数\ns = \"hello\"\n{char: s.count(char) for char in set(s)}\n# {'h': 1, 'e': 1, 'l': 2, 'o': 1}\n```\n\n### `range{:py}`\n\n`range(){:py}` 返回的是一个 `range{:py}` 对象, 是一个惰性序列(计算到对应位置时才会去计算对应的值), 节省内存. 如果需要 `list{:py}`, 可以用 `list(){:py}`\n\n`range(start, stop, step){:py}`\n- `start`: 起始值(包含), default: 0\n- `stop`: 结束值(不包含)\n- `step`: 步长, default: 1\n\n即左闭着右开(python 中统一使用左闭右开区间)\n\n```py\n# 1. 生成 1 到 10 的序列\nseq = range(1, 11)\nlist(seq) # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n\n# 2. 生成 1 到 10 的奇数\nodd = range(1, 11, 2)\nlist(odd) # [1, 3, 5, 7, 9]\n\n# 3. 生成 10 到 1 的序列\nseq = range(10, 0, -1)\nlist(seq) # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n\n# 4. 生成 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4\nT = 5\nn = 3\nfor i in range(T*n):\n    a_i = i % T\n    print(a_i, end=' ')\n\n# 5. 生成二维网格坐标列表\nrow_count, col_count = 2, 3\ncoordinate_ls = [(i, j) for i in range(row_count) for j in range(col_count)]\n# [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]\n```\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "迭代",
-        "slug": "迭代"
-      },
-      {
-        "depth": 3,
-        "value": "列表推导式",
-        "slug": "列表推导式"
-      },
-      {
-        "depth": 3,
-        "value": "字典推导式",
-        "slug": "字典推导式"
-      },
-      {
-        "depth": 3,
-        "value": "range{:py}",
-        "slug": "range{:py}"
-      }
-    ]
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",
@@ -910,187 +1078,21 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux",
-    "slug": "linux",
+    "url": "/zh/docs/dev/deploy",
+    "slug": "dev/deploy",
     "segments": [
-      "linux"
+      "dev",
+      "deploy"
     ],
-    "filePath": "docs/zh/linux/index.mdx",
+    "filePath": "docs/zh/dev/deploy/index.mdx",
     "meta": {
-      "title": "linux",
-      "description": "linux 简介",
-      "created_at": "2025-03-22T05:22:44.000Z",
-      "updated_at": "2025-03-22T05:22:44.000Z",
+      "title": "部署",
+      "description": null,
+      "created_at": "2025-03-24T13:15:49.000Z",
+      "updated_at": "2025-03-24T13:15:49.000Z",
       "tags": [
-        "linux"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/systemd-timesyncd",
-    "slug": "linux/systemd-timesyncd",
-    "segments": [
-      "linux",
-      "systemd-timesyncd"
-    ],
-    "filePath": "docs/zh/linux/systemd-timesyncd.mdx",
-    "meta": {
-      "title": "systemd-timesyncd",
-      "description": "systemd-timesyncd 是一个用于跨网络同步系统时钟的守护服务。它实现了一个 SNTP 客户端。与 chrony 或 NTP 参考服务器等 NTP 实现相比，这个服务仅做了客户端实现，摒弃了完整 NTP 实现的复杂性。它只专注于从远程服务器查询然后同步到本地时钟。除非你打算为网络客户端提供 NTP 服务或者连接本地硬件时钟，否则这个简单的 NTP 客户端应该更适合大多数人。守护进程运行只需要最小特权，并且会跟网络服务 networkd 挂钩，仅在网络连接可用时才工作。每次收到一个新的 NTP 同步请求或每 60 秒时，后台服务就把当前时间保存到磁盘，并尽可能在系统启动时修正系统时间，这样处理的目的是为了适应像 Raspberry Pi 和嵌入式设备这种缺少 RTC 的系统，并确保这些系统时单点处理（即使它并不是总是正确的）。如果要使用这个守护进程，需要在安装系统时创建一个新的系统用户和组“systemd-timesync”。",
-      "created_at": "2025-03-22T03:16:43.000Z",
-      "updated_at": "2025-03-22T03:16:43.000Z",
-      "tags": []
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/system_time",
-    "slug": "linux/system_time",
-    "segments": [
-      "linux",
-      "system_time"
-    ],
-    "filePath": "docs/zh/linux/system_time.mdx",
-    "meta": {
-      "title": "系统时间",
-      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
-      "created_at": "2025-03-22T03:26:09.000Z",
-      "updated_at": "2025-03-22T03:26:09.000Z",
-      "tags": [
-        "linux",
-        "os",
-        "time"
-      ]
-    },
-    "order": 99,
-    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
-    "segments": [
-      "next",
-      "15"
-    ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
-      },
-      {
-        "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
-    "segments": [
-      "next"
-    ],
-    "filePath": "docs/zh/next/index.mdx",
-    "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
-      "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/async",
-    "slug": "ts/async",
-    "segments": [
-      "ts",
-      "async"
-    ],
-    "filePath": "docs/zh/ts/async.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "ts/async",
-        "slug": "ts/async"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts",
-    "slug": "ts",
-    "segments": [
-      "ts"
-    ],
-    "filePath": "docs/zh/ts/index.mdx",
-    "meta": {
-      "title": "TypeScript",
-      "description": "TypeScript 是 JavaScript 的超集，可以编译成纯 JavaScript 代码, 也可以直接使用 deno, ts-node, bun 等运行",
-      "created_at": "2025-03-22T05:20:06.000Z",
-      "updated_at": "2025-03-22T05:20:06.000Z",
-      "tags": [
-        "ts"
+        "dev",
+        "deploy"
       ]
     },
     "order": 99,
@@ -1145,6 +1147,297 @@
         "depth": 5,
         "value": "特点",
         "slug": "特点"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
+    "segments": [
+      "dev",
+      "md",
+      "docs"
+    ],
+    "filePath": "docs/zh/dev/md/docs.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/mdx",
+    "slug": "dev/md/mdx",
+    "segments": [
+      "dev",
+      "md",
+      "mdx"
+    ],
+    "filePath": "docs/zh/dev/md/mdx.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts",
+    "slug": "ts",
+    "segments": [
+      "ts"
+    ],
+    "filePath": "docs/zh/ts/index.mdx",
+    "meta": {
+      "title": "TypeScript",
+      "description": "TypeScript 是 JavaScript 的超集，可以编译成纯 JavaScript 代码, 也可以直接使用 deno, ts-node, bun 等运行",
+      "created_at": "2025-03-22T05:20:06.000Z",
+      "updated_at": "2025-03-22T05:20:06.000Z",
+      "tags": [
+        "ts"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
+      ]
+    },
+    "order": 99,
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/slug",
+    "slug": "dev/md/slug",
+    "segments": [
+      "dev",
+      "md",
+      "slug"
+    ],
+    "filePath": "docs/zh/dev/md/slug.mdx",
+    "meta": {
+      "title": "md slug",
+      "description": null,
+      "created_at": "2025-03-17T18:03:47.000Z",
+      "updated_at": "2025-03-17T18:03:47.000Z",
+      "tags": [
+        "markdown",
+        "slug",
+        "url"
+      ]
+    },
+    "order": 99,
+    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/greedy",
+    "slug": "alg/greedy",
+    "segments": [
+      "alg",
+      "greedy"
+    ],
+    "filePath": "docs/zh/alg/greedy/index.mdx",
+    "meta": {
+      "title": "贪心算法",
+      "description": "贪心算法（Greedy Algorithm）是一种在每一步选择中都做出局部最优解的算法. 它的核心思想是通过局部最优解，尝试得到全局最优解. 简单高效，适合某些特定问题. 需要证明贪心选择的正确性",
+      "created_at": "2025-03-23T22:32:27.000Z",
+      "updated_at": "2025-03-23T22:32:27.000Z",
+      "tags": [
+        "greedy",
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 为什么学习贪心算法？\n\n## 例题\n\n### 2024_CA_省C.训练士兵\n\n- 题目连接:洛谷: https://www.luogu.com.cn/problem/P10387\n\n#### 题目描述\n\n有 $n$ 名士兵，这些士兵需要接受一系列特殊的训练，以提升他们的战斗技能。对于第 $i$ 名士兵来说，进行一次训练所需的成本为 $p_i$ 枚金币，而要想成为顶尖战士，他至少需要进行 $c_i$ 次训练。  \n为了确保训练的高效性，王国推出了一种组团训练的方案。该方案包含每位士兵所需的一次训练，且总共只需支付 $S$ 枚金币（组团训练方案可以多次购买，即士兵可以进行多次组团训练）。  \n作为训练指挥官，请你计算出最少需要花费多少金币，才能使得所有的士兵都成为顶尖战士？\n\n#### 输入格式\n\n输入的第一行包含两个整数 $n$ 和 $S $，用一个空格分隔，表示士兵的数量和进行一次组团训练所需的金币数。  \n接下来的 $n$ 行，每行包含两个整数 $p_i$ 和 $c_i$，用一个空格分隔，表示第 $i$ 名士兵进行一次训练的金币成本和要成为顶尖战士所需的训练次数。\n\n#### 输出格式\n\n输出一行包含一个整数，表示使所有士兵成为顶尖战士所需的最少金币数。\n\n#### 输入输出样例\n\n##### 输入\n\n```\n3 6\n5 2\n2 4\n3 2\n```\n\n##### 输出\n\n```\n16\n```\n\n#### 说明/提示\n\n花费金币最少的训练方式为：进行 $2$ 次组团训练，花费 $2 × 6 = 12$ 枚金币，此时士兵 $1, 3$ 已成为顶尖战士；再花费 $4$ 枚金币，让士兵 $2$ 进行两次训练，成为顶尖战士。总花费为 $12 + 4 = 16$。\n\n对于 $40\\%$ 的评测用例，$1 ≤ n ≤ 10^3，1 ≤ p_i\n, c_i ≤ 10^5，1 ≤ S ≤ 10^7$。\n\n对于所有评测用例，$1 ≤ n ≤ 10^5，1 ≤ p_i\n, c_i ≤ 10^6，1 ≤ S ≤ 10^{10}$。\n\n#### 思路\n\n- 按照需要训练的次数 $c_i$ 从升序排序\n- 维护一个动态的 $cnt$, 表示已经组团训练的次数\n- 维护一个动态的 $tot$, 表示当前训练所有士兵一次的总成本, 用于和 $S$ 比较\n- 初始化总花费 $res:=0$, 遍历一遍 n, 表示按照 $c_i$ 的顺序训练士兵时, 选择组团训练还是单独训练\n  - 如果 $S \\leq tot$, 表示当前组团训练比单独训练剩下的士兵要便宜\n    - 则选择组团训练 $c_i-cnt$ 次, $res := res + (c_i-cnt) \\times S$\n    - 并更新 $cnt:=c_i$\n  - 否则, 表示当前训练所有士兵一次的总成本大于 $S$, 则选择单独训练\n    - 则单独将这个人训练 $c_i$ 次, $res := res + (c_i-cnt) \\times p_i$\n  - 这次迭代结束说明 第 $i$ 个士兵训练完成, 更新 $tot$\n    - $tot := tot - p_i$\n#### 代码示例: \n```py\n# 获得输入\nn, S = map(int, input().split())\nmatrix_p_c = [[0,0]] * n\nfor i in range(n):\n    matrix_p_c[i] = list(map(int, input().split()))\n# 按照需要训练的次数 $c_i$ 从升序排序\np, c = [0] * n, [0] * n\nmatrix_p_c.sort(key=lambda x: x[1])\nfor i in range(n):\n    p[i], c[i] = matrix_p_c[i][0], matrix_p_c[i][1]\n# 初始化\nres, cnt, tot = 0, 0, sum(p)\n# 遍历\nfor i in range(n):\n    if S <= tot:\n        res += (c[i] - cnt) * S\n        cnt = c[i]\n    else:\n        res += (c[i] - cnt) * p[i]\n    tot -= p[i]\nprint(res)\n```\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "为什么学习贪心算法？",
+        "slug": "为什么学习贪心算法？"
+      },
+      {
+        "depth": 2,
+        "value": "例题",
+        "slug": "例题"
+      },
+      {
+        "depth": 3,
+        "value": "2024_CA_省C.训练士兵",
+        "slug": "2024_ca_省c.训练士兵"
+      },
+      {
+        "depth": 4,
+        "value": "题目描述",
+        "slug": "题目描述"
+      },
+      {
+        "depth": 4,
+        "value": "输入格式",
+        "slug": "输入格式"
+      },
+      {
+        "depth": 4,
+        "value": "输出格式",
+        "slug": "输出格式"
+      },
+      {
+        "depth": 4,
+        "value": "输入输出样例",
+        "slug": "输入输出样例"
+      },
+      {
+        "depth": 5,
+        "value": "输入",
+        "slug": "输入"
+      },
+      {
+        "depth": 5,
+        "value": "输出",
+        "slug": "输出"
+      },
+      {
+        "depth": 4,
+        "value": "说明/提示",
+        "slug": "说明/提示"
+      },
+      {
+        "depth": 4,
+        "value": "思路",
+        "slug": "思路"
+      },
+      {
+        "depth": 4,
+        "value": "代码示例:",
+        "slug": "代码示例:"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/lanqiao",
+    "slug": "alg/lanqiao",
+    "segments": [
+      "alg",
+      "lanqiao"
+    ],
+    "filePath": "docs/zh/alg/lanqiao/index.mdx",
+    "meta": {
+      "title": "蓝桥杯",
+      "description": "每年都有省赛和国赛, 省赛一般在四月上旬或中旬, 国赛一般在六月上旬, 比赛时长4小时(9:00~13:00), 省赛一等奖才能参加国赛",
+      "created_at": "2025-03-22T06:38:45.000Z",
+      "updated_at": "2025-03-22T06:38:45.000Z",
+      "tags": [
+        "alg",
+        "lanqiao"
+      ]
+    },
+    "order": 99,
+    "content": "\n时间较长可以带点吃的\n\n## 竞赛规则\n\n### 编程环境\n\n#### python\n- python 3.8.6\n- IDLE (python 自带编辑器)\n\n```sh\n# 启动 IDLE\nidle\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### OI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - $对于 30\\% 的评测用例, 1\\leq n\\leq 10^3, 1\\leq a_i\\leq 10^3$\n    - $对于 100\\% 的评测用例, 1\\leq n\\leq 2\\cdot10^5, 1\\leq a_i\\leq 10^{16}$\n\n### 结果填空题\n\n可以用别的语言, 工具, 或手算\n\n### 编程大题\n\n通过测试用例估算正解的时间复杂度, 一般要在 $n^7,n^8$ 以内, 例如用例是 \n- $n\\leq 10^3$, 那么时间复杂度 可以选 $O(n^2)$,\n- $n\\leq 10^5$, 那么时间复杂度 可以选 $O(n\\log n)$\n\n## 语法\n\n```py\n# 常用变量名\n# res\\ans\\ret 结果\n# cnt\\tot 用于计数\n# i\\idex\\k\\v 用于索引,键值\n# i\\j\\k\\x\\y\\z 用于循环\n# a\\b\\c 用于变量\n# s,n, arr, d, nums 用于字符串, 数字, 数组, 字典, 数字组\n# l,r 用于 left, right\n# 常见保留字 -----------------------------------------\nand, or, not, in, is,\nTrue, False, None, \nif, else, elif,\nglobal, nonlocal,\nwhile, for, break, continue, \nreturn, def, lambda, class, yield, pass,\ntry, except, finally, raise, assert\nimport, from, as, \nwith, del,  \n# 字符串 -----------------------------------------\ns = \"hello\"\ns[start:end:step] # 切片\n# import -----------------------------------------\nimport math\nimport numpy as np\n```\n\n### input\n\n```py\nimport sys\ninput = lambda: sys.stdin.readline().strip()\ns = input()\n# 读取一行  -----------------------------------------\n# 1 2 3\na, b, c = map(int, input().split())\n# 读取多行 -----------------------------------------\n# 2\n# 1\n# 3\n# lst = [1, 3]\nn = int(input())\nlst = [int(input()) for _ in range(n)]\n\n# 矩阵读取 -----------------------------------------\n# 2 3\n# 1 2 3\n# 4 5 6\n# matrix = [[1, 2, 3], [4, 5, 6]]\nn, m = map(int, input().split())\nmatrix = [list(map(int, input().split())) for _ in range(n)]\nprint(matrix)\n\n# 读取多行\nlines = sys.stdin.readlines()\n```\n\n### sort\n\n```py\nsorted(iterable, key=None, reverse=False)\niterable: 需要排序的可迭代对象\nkey: 用来进行比较的元素\nreverse: 排序规则, reverse = True 降序, reverse = False 升序（默认）\n\nlist.sort(key=None, reverse=False)\n```\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "竞赛规则",
+        "slug": "竞赛规则"
+      },
+      {
+        "depth": 3,
+        "value": "编程环境",
+        "slug": "编程环境"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 3,
+        "value": "OI赛制",
+        "slug": "oi赛制"
+      },
+      {
+        "depth": 3,
+        "value": "结果填空题",
+        "slug": "结果填空题"
+      },
+      {
+        "depth": 3,
+        "value": "编程大题",
+        "slug": "编程大题"
+      },
+      {
+        "depth": 2,
+        "value": "语法",
+        "slug": "语法"
+      },
+      {
+        "depth": 3,
+        "value": "input",
+        "slug": "input"
+      },
+      {
+        "depth": 3,
+        "value": "sort",
+        "slug": "sort"
       }
     ]
   },
@@ -1317,246 +1610,71 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/docs",
-    "slug": "dev/md/docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
     "segments": [
-      "dev",
-      "md",
-      "docs"
+      "linux",
+      "network",
+      "NTP"
     ],
-    "filePath": "docs/zh/dev/md/docs.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/deploy",
-    "slug": "dev/deploy",
-    "segments": [
-      "dev",
-      "deploy"
-    ],
-    "filePath": "docs/zh/dev/deploy/index.mdx",
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
     "meta": {
-      "title": "部署",
-      "description": null,
-      "created_at": "2025-03-24T13:15:49.000Z",
-      "updated_at": "2025-03-24T13:15:49.000Z",
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
       "tags": [
-        "dev",
-        "deploy"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/github",
-    "slug": "dev/md/github",
-    "segments": [
-      "dev",
-      "md",
-      "github"
-    ],
-    "filePath": "docs/zh/dev/md/github.mdx",
-    "meta": {
-      "title": "GitHub",
-      "description": "GitHub flavored markdown (GFM)",
-      "created_at": "2025-03-17T14:44:46.000Z",
-      "updated_at": "2025-03-17T14:55:01.000Z",
-      "tags": [
-        "markdown",
-        "github"
-      ]
-    },
-    "order": 99,
-    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 2,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/code-blocks",
-    "slug": "dev/md/code-blocks",
-    "segments": [
-      "dev",
-      "md",
-      "code-blocks"
-    ],
-    "filePath": "docs/zh/dev/md/code-blocks.mdx",
-    "meta": {
-      "title": "code blocks",
-      "created_at": "2024-10-04",
-      "updated_at": "2024-11-09T13:04:17Z",
-      "tags": [
-        "mdx",
-        "sugar-high"
+        "linux",
+        "time"
       ],
-      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
     },
-    "order": 99,
-    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
     "toc": [
       {
         "depth": 2,
-        "value": "syntax highlighting",
-        "slug": "syntax-highlighting"
-      },
-      {
-        "depth": 3,
-        "value": "Prism.js",
-        "slug": "prism.js"
-      },
-      {
-        "depth": 4,
-        "value": "prismjs",
-        "slug": "prismjs"
-      },
-      {
-        "depth": 4,
-        "value": "rehype-prism-plus",
-        "slug": "rehype-prism-plus"
-      },
-      {
-        "depth": 4,
-        "value": "如何协同工作",
-        "slug": "如何协同工作"
-      },
-      {
-        "depth": 4,
-        "value": "prism-react-renderer",
-        "slug": "prism-react-renderer"
-      },
-      {
-        "depth": 3,
-        "value": "Highlight.js",
-        "slug": "highlight.js"
-      },
-      {
-        "depth": 3,
-        "value": "monaco-editor",
-        "slug": "monaco-editor"
+        "value": "安装",
+        "slug": "安装"
       },
       {
         "depth": 2,
-        "value": "test",
-        "slug": "test"
+        "value": "配置",
+        "slug": "配置"
       },
       {
         "depth": 3,
-        "value": "示例代码",
-        "slug": "示例代码"
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
       },
       {
         "depth": 2,
-        "value": "mdx",
-        "slug": "mdx"
-      },
-      {
-        "depth": 3,
-        "value": "compile time",
-        "slug": "compile-time"
-      },
-      {
-        "depth": 3,
-        "value": "runtime",
-        "slug": "runtime"
-      },
-      {
-        "depth": 2,
-        "value": "vscode-theme",
-        "slug": "vscode-theme"
-      },
-      {
-        "depth": 3,
-        "value": "VS Code 主题",
-        "slug": "vs-code-主题"
-      },
-      {
-        "depth": 3,
-        "value": "Monaco Editor 主题",
-        "slug": "monaco-editor-主题"
-      },
-      {
-        "depth": 3,
-        "value": "示例",
-        "slug": "示例"
-      },
-      {
-        "depth": 4,
-        "value": "VS Code 主题示例",
-        "slug": "vs-code-主题示例"
-      },
-      {
-        "depth": 4,
-        "value": "Monaco Editor 主题示例",
-        "slug": "monaco-editor-主题示例"
-      },
-      {
-        "depth": 3,
-        "value": "code-demo",
-        "slug": "code-demo"
-      },
-      {
-        "depth": 4,
-        "value": "python",
-        "slug": "python"
-      },
-      {
-        "depth": 4,
-        "value": "tsx",
-        "slug": "tsx"
+        "value": "使用",
+        "slug": "使用"
       }
     ]
   },
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/mdx",
-    "slug": "dev/md/mdx",
+    "url": "/zh/docs/linux/console/Command-line_shell",
+    "slug": "linux/console/Command-line_shell",
     "segments": [
-      "dev",
-      "md",
-      "mdx"
+      "linux",
+      "console",
+      "Command-line_shell"
     ],
-    "filePath": "docs/zh/dev/md/mdx.mdx",
+    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
     "meta": {},
     "order": 99,
     "content": "",
@@ -1565,111 +1683,22 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/slug",
-    "slug": "dev/md/slug",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
     "segments": [
-      "dev",
-      "md",
-      "slug"
+      "linux",
+      "file_systems",
+      "readme"
     ],
-    "filePath": "docs/zh/dev/md/slug.mdx",
-    "meta": {
-      "title": "md slug",
-      "description": null,
-      "created_at": "2025-03-17T18:03:47.000Z",
-      "updated_at": "2025-03-17T18:03:47.000Z",
-      "tags": [
-        "markdown",
-        "slug",
-        "url"
-      ]
-    },
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
     "order": 99,
-    "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/greedy",
-    "slug": "alg/greedy",
-    "segments": [
-      "alg",
-      "greedy"
-    ],
-    "filePath": "docs/zh/alg/greedy/index.mdx",
-    "meta": {
-      "title": "贪心算法",
-      "description": "贪心算法（Greedy Algorithm）是一种在每一步选择中都做出局部最优解的算法. 它的核心思想是通过局部最优解，尝试得到全局最优解. 简单高效，适合某些特定问题. 需要证明贪心选择的正确性",
-      "created_at": "2025-03-23T22:32:27.000Z",
-      "updated_at": "2025-03-23T22:32:27.000Z",
-      "tags": [
-        "greedy",
-        "alg"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 为什么学习贪心算法？\n\n## 例题\n\n### 2024_CA_省C.训练士兵\n\n- 题目连接:洛谷: https://www.luogu.com.cn/problem/P10387\n\n#### 题目描述\n\n在蓝桥王国中，有 $n$ 名士兵，这些士兵需要接受一系列特殊的训练，以提升他们的战斗技能。对于第 $i$ 名士兵来说，进行一次训练所需的成本为 $p_i$ 枚金币，而要想成为顶尖战士，他至少需要进行 $c_i$ 次训练。  \n为了确保训练的高效性，王国推出了一种组团训练的方案。该方案包含每位士兵所需的一次训练，且总共只需支付 $S$ 枚金币（组团训练方案可以多次购买，即士兵可以进行多次组团训练）。  \n作为训练指挥官，请你计算出最少需要花费多少金币，才能使得所有的士兵都成为顶尖战士？\n\n#### 输入格式\n\n输入的第一行包含两个整数 $n$ 和 $S $，用一个空格分隔，表示士兵的数量和进行一次组团训练所需的金币数。  \n接下来的 $n$ 行，每行包含两个整数 $p_i$ 和 $c_i$，用一个空格分隔，表示第 $i$ 名士兵进行一次训练的金币成本和要成为顶尖战士所需的训练次数。\n\n#### 输出格式\n\n输出一行包含一个整数，表示使所有士兵成为顶尖战士所需的最少金币数。\n\n#### 输入输出样例\n\n##### 输入\n\n```\n3 6\n5 2\n2 4\n3 2\n```\n\n##### 输出\n\n```\n16\n```\n\n#### 说明/提示\n\n花费金币最少的训练方式为：进行 $2$ 次组团训练，花费 $2 × 6 = 12$ 枚金币，此时士兵 $1, 3$ 已成为顶尖战士；再花费 $4$ 枚金币，让士兵 $2$ 进行两次训练，成为顶尖战士。总花费为 $12 + 4 = 16$。\n\n对于 $40\\%$ 的评测用例，$1 ≤ n ≤ 10^3，1 ≤ p_i\n, c_i ≤ 10^5，1 ≤ S ≤ 10^7$。\n\n对于所有评测用例，$1 ≤ n ≤ 10^5，1 ≤ p_i\n, c_i ≤ 10^6，1 ≤ S ≤ 10^{10}$。\n\n#### 思路\n\n- 按照需要训练的次数 $c_i$ 从升序排序\n- 维护一个动态的 $cnt$, 表示已经组团训练的次数\n- 维护一个动态的 $tot$, 表示当前训练所有士兵一次的总成本, 用于和 $S$ 比较\n- 初始化总花费 $res=0$, 遍历一遍 n, 表示按照 $c_i$ 的顺序训练士兵时, 选择组团训练还是单独训练\n  - 如果 $S \\leq tot$, 表示当前组团训练比单独训练剩下的士兵要便宜\n    - 则选择组团训练 $c_i-cnt$ 次, $res := res + (c_i-cnt) \\times S$\n    - 并更新 $cnt:=c_i$\n  - 否则, 表示当前训练所有士兵一次的总成本大于 $S$, 则选择单独训练\n    - 则单独将这个人训练 $c_i$ 次, $res := res + (c_i-cnt) \\times p_i$\n  - 这次迭代结束说明 第 $i$ 个士兵训练完成, 更新 $tot$\n    - $tot := tot - p_i$\n#### 代码示例: \n```py\n# 获得输入\nn, S = map(int, input().split())\nmatrix_p_c = [[0,0]] * n\nfor i in range(n):\n    matrix_p_c[i] = list(map(int, input().split()))\n# 按照需要训练的次数 $c_i$ 从升序排序\np, c = [0] * n, [0] * n\nmatrix_p_c.sort(key=lambda x: x[1])\nfor i in range(n):\n    p[i], c[i] = matrix_p_c[i][0], matrix_p_c[i][1]\n# 初始化\nres, cnt, tot = 0, 0, sum(p)\n# 遍历\nfor i in range(n):\n    if S <= tot:\n        res += (c[i] - cnt) * S\n        cnt = c[i]\n    else:\n        res += (c[i] - cnt) * p[i]\n    tot -= p[i]\nprint(res)\n```\n",
+    "content": "# file_systems",
     "toc": [
       {
-        "depth": 2,
-        "value": "为什么学习贪心算法？",
-        "slug": "为什么学习贪心算法？"
-      },
-      {
-        "depth": 2,
-        "value": "例题",
-        "slug": "例题"
-      },
-      {
-        "depth": 3,
-        "value": "2024_CA_省C.训练士兵",
-        "slug": "2024_ca_省c.训练士兵"
-      },
-      {
-        "depth": 4,
-        "value": "题目描述",
-        "slug": "题目描述"
-      },
-      {
-        "depth": 4,
-        "value": "输入格式",
-        "slug": "输入格式"
-      },
-      {
-        "depth": 4,
-        "value": "输出格式",
-        "slug": "输出格式"
-      },
-      {
-        "depth": 4,
-        "value": "输入输出样例",
-        "slug": "输入输出样例"
-      },
-      {
-        "depth": 5,
-        "value": "输入",
-        "slug": "输入"
-      },
-      {
-        "depth": 5,
-        "value": "输出",
-        "slug": "输出"
-      },
-      {
-        "depth": 4,
-        "value": "说明/提示",
-        "slug": "说明/提示"
-      },
-      {
-        "depth": 4,
-        "value": "思路",
-        "slug": "思路"
-      },
-      {
-        "depth": 4,
-        "value": "代码示例:",
-        "slug": "代码示例:"
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
       }
     ]
   },
@@ -1873,149 +1902,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
-    "segments": [
-      "linux",
-      "network",
-      "NTP"
-    ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
-      },
-      {
-        "depth": 2,
-        "value": "配置",
-        "slug": "配置"
-      },
-      {
-        "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
-      },
-      {
-        "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/lanqiao",
-    "slug": "alg/lanqiao",
-    "segments": [
-      "alg",
-      "lanqiao"
-    ],
-    "filePath": "docs/zh/alg/lanqiao/index.mdx",
-    "meta": {
-      "title": "蓝桥杯",
-      "description": "每年都有省赛和国赛, 省赛一般在四月上旬或中旬, 国赛一般在六月上旬, 比赛时长4小时(9:00~13:00), 省赛一等奖才能参加国赛",
-      "created_at": "2025-03-22T06:38:45.000Z",
-      "updated_at": "2025-03-22T06:38:45.000Z",
-      "tags": [
-        "alg",
-        "lanqiao"
-      ]
-    },
-    "order": 99,
-    "content": "\n时间较长可以带点吃的\n\n## 竞赛规则\n\n### 编程环境\n\n#### python\n- python 3.8.6\n- IDLE (python 自带编辑器)\n\n```sh\n# 启动 IDLE\nidle\n# 启动虚拟环境中的 IDLE 编辑器\npython -m idlelib\n```\n\n### OI赛制\n1. 无现场提交反馈. 也就是说, 你提交了代码, 你不知道对不对, 只有等到比赛结束, 才能知道对不对.\n2. 按点给分. 根据测试点通过的数量给分. \n  e.g:\n    - $对于 30\\% 的评测用例, 1\\leq n\\leq 10^3, 1\\leq a_i\\leq 10^3$\n    - $对于 100\\% 的评测用例, 1\\leq n\\leq 2\\cdot10^5, 1\\leq a_i\\leq 10^{16}$\n\n### 结果填空题\n\n可以用别的语言, 工具, 或手算\n\n### 编程大题\n\n通过测试用例估算正解的时间复杂度, 一般要在 $n^7,n^8$ 以内, 例如用例是 \n- $n\\leq 10^3$, 那么时间复杂度 可以选 $O(n^2)$,\n- $n\\leq 10^5$, 那么时间复杂度 可以选 $O(n\\log n)$\n\n## 语法\n\n```py\n# 常用变量名\n# res\\ans\\ret 结果\n# cnt\\tot 用于计数\n# i\\idex\\k\\v 用于索引,键值\n# i\\j\\k\\x\\y\\z 用于循环\n# a\\b\\c 用于变量\n# s,n, arr, d, nums 用于字符串, 数字, 数组, 字典, 数字组\n# l,r 用于 left, right\n# 常见保留字 -----------------------------------------\nand, or, not, in, is,\nTrue, False, None, \nif, else, elif,\nglobal, nonlocal,\nwhile, for, break, continue, \nreturn, def, lambda, class, yield, pass,\ntry, except, finally, raise, assert\nimport, from, as, \nwith, del,  \n# 字符串 -----------------------------------------\ns = \"hello\"\ns[start:end:step] # 切片\n# import -----------------------------------------\nimport math\nimport numpy as np\n```\n\n### input\n\n```py\nimport sys\ninput = lambda: sys.stdin.readline().strip()\ns = input()\n# 读取一行  -----------------------------------------\n# 1 2 3\na, b, c = map(int, input().split())\n# 读取多行 -----------------------------------------\n# 2\n# 1\n# 3\n# lst = [1, 3]\nn = int(input())\nlst = [int(input()) for _ in range(n)]\n\n# 矩阵读取 -----------------------------------------\n# 2 3\n# 1 2 3\n# 4 5 6\n# matrix = [[1, 2, 3], [4, 5, 6]]\nn, m = map(int, input().split())\nmatrix = [list(map(int, input().split())) for _ in range(n)]\nprint(matrix)\n\n# 读取多行\nlines = sys.stdin.readlines()\n```\n\n### sort\n\n```py\nsorted(iterable, key=None, reverse=False)\niterable: 需要排序的可迭代对象\nkey: 用来进行比较的元素\nreverse: 排序规则, reverse = True 降序, reverse = False 升序（默认）\n\nlist.sort(key=None, reverse=False)\n```\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "竞赛规则",
-        "slug": "竞赛规则"
-      },
-      {
-        "depth": 3,
-        "value": "编程环境",
-        "slug": "编程环境"
-      },
-      {
-        "depth": 4,
-        "value": "python",
-        "slug": "python"
-      },
-      {
-        "depth": 3,
-        "value": "OI赛制",
-        "slug": "oi赛制"
-      },
-      {
-        "depth": 3,
-        "value": "结果填空题",
-        "slug": "结果填空题"
-      },
-      {
-        "depth": 3,
-        "value": "编程大题",
-        "slug": "编程大题"
-      },
-      {
-        "depth": 2,
-        "value": "语法",
-        "slug": "语法"
-      },
-      {
-        "depth": 3,
-        "value": "input",
-        "slug": "input"
-      },
-      {
-        "depth": 3,
-        "value": "sort",
-        "slug": "sort"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/console/Command-line_shell",
-    "slug": "linux/console/Command-line_shell",
-    "segments": [
-      "linux",
-      "console",
-      "Command-line_shell"
-    ],
-    "filePath": "docs/zh/linux/console/Command-line_shell.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/linux/console/readme",
     "slug": "linux/console/readme",
     "segments": [
@@ -2058,28 +1944,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/linux/file_systems/readme",
-    "slug": "linux/file_systems/readme",
-    "segments": [
-      "linux",
-      "file_systems",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/file_systems/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# file_systems",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "file_systems",
-        "slug": "file_systems"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/linux/input/readme",
     "slug": "linux/input/readme",
     "segments": [
@@ -2096,6 +1960,142 @@
         "depth": 1,
         "value": "input",
         "slug": "input"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/code-blocks",
+    "slug": "dev/md/code-blocks",
+    "segments": [
+      "dev",
+      "md",
+      "code-blocks"
+    ],
+    "filePath": "docs/zh/dev/md/code-blocks.mdx",
+    "meta": {
+      "title": "code blocks",
+      "created_at": "2024-10-04",
+      "updated_at": "2024-11-09T13:04:17Z",
+      "tags": [
+        "mdx",
+        "sugar-high"
+      ],
+      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+    },
+    "order": 99,
+    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "syntax highlighting",
+        "slug": "syntax-highlighting"
+      },
+      {
+        "depth": 3,
+        "value": "Prism.js",
+        "slug": "prism.js"
+      },
+      {
+        "depth": 4,
+        "value": "prismjs",
+        "slug": "prismjs"
+      },
+      {
+        "depth": 4,
+        "value": "rehype-prism-plus",
+        "slug": "rehype-prism-plus"
+      },
+      {
+        "depth": 4,
+        "value": "如何协同工作",
+        "slug": "如何协同工作"
+      },
+      {
+        "depth": 4,
+        "value": "prism-react-renderer",
+        "slug": "prism-react-renderer"
+      },
+      {
+        "depth": 3,
+        "value": "Highlight.js",
+        "slug": "highlight.js"
+      },
+      {
+        "depth": 3,
+        "value": "monaco-editor",
+        "slug": "monaco-editor"
+      },
+      {
+        "depth": 2,
+        "value": "test",
+        "slug": "test"
+      },
+      {
+        "depth": 3,
+        "value": "示例代码",
+        "slug": "示例代码"
+      },
+      {
+        "depth": 2,
+        "value": "mdx",
+        "slug": "mdx"
+      },
+      {
+        "depth": 3,
+        "value": "compile time",
+        "slug": "compile-time"
+      },
+      {
+        "depth": 3,
+        "value": "runtime",
+        "slug": "runtime"
+      },
+      {
+        "depth": 2,
+        "value": "vscode-theme",
+        "slug": "vscode-theme"
+      },
+      {
+        "depth": 3,
+        "value": "VS Code 主题",
+        "slug": "vs-code-主题"
+      },
+      {
+        "depth": 3,
+        "value": "Monaco Editor 主题",
+        "slug": "monaco-editor-主题"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "VS Code 主题示例",
+        "slug": "vs-code-主题示例"
+      },
+      {
+        "depth": 4,
+        "value": "Monaco Editor 主题示例",
+        "slug": "monaco-editor-主题示例"
+      },
+      {
+        "depth": 3,
+        "value": "code-demo",
+        "slug": "code-demo"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 4,
+        "value": "tsx",
+        "slug": "tsx"
       }
     ]
   },
@@ -2262,6 +2262,142 @@
         "depth": 3,
         "value": "Voice",
         "slug": "voice"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/tailwind",
+    "slug": "dev/md/css/tailwind",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "tailwind"
+    ],
+    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tailwindCss\n\n## Colors\n\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tailwindCss",
+        "slug": "tailwindcss"
+      },
+      {
+        "depth": 2,
+        "value": "Colors",
+        "slug": "colors"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css/color",
+    "slug": "dev/md/css/color",
+    "segments": [
+      "dev",
+      "md",
+      "css",
+      "color"
+    ],
+    "filePath": "docs/zh/dev/md/css/color.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# Color\n\n$$\ny=\\sin(x)\n$$\n\n## format\n\n### rgb\n\n```css\n.dc {\n  color: rgb(88, 101, 242);\n}\n```\n\n### HSL\n\n`HSL` 是一种表示颜色的格式，全称为 **Hue（色相）、Saturation（饱和度）、Lightness（亮度）**。它是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 和其他设计工具中，用于定义颜色。\n\n### HSL 的结构\n\nHSL 的格式如下：\n\n```css\nhsl(hue, saturation, lightness)\n```\n\n- **`hue`（色相）**：\n  - 表示颜色的基本类型，例如红色、绿色、蓝色等。\n  - 取值范围为 `0` 到 `360`，表示色轮上的角度：\n    - `0`：红色\n    - `120`：绿色\n    - `240`：蓝色\n    - 其他值是这些颜色之间的过渡，例如 `60` 是黄色，`180` 是青色。\n    \n- **`saturation`（饱和度）**：\n  - 表示颜色的强度或纯度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全无色（灰色）。\n    - `100%`：完全饱和（最纯的颜色）。\n\n- **`lightness`（亮度）**：\n  - 表示颜色的明暗程度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全黑色。\n    - `100%`：完全白色。\n    - `50%`：标准亮度。\n\n### 示例\n\n#### 基本颜色\n\n```css\n/* 红色 */\nhsl(0, 100%, 50%)\n\n/* 绿色 */\nhsl(120, 100%, 50%)\n\n/* 蓝色 */\nhsl(240, 100%, 50%)\n```\n\n#### 调整饱和度\n\n```css\n/* 低饱和度的红色（接近灰色） */\nhsl(0, 20%, 50%)\n\n/* 高饱和度的红色 */\nhsl(0, 100%, 50%)\n```\n\n#### 调整亮度\n\n```css\n/* 暗红色 */\nhsl(0, 100%, 20%)\n\n/* 明亮的红色 */\nhsl(0, 100%, 80%)\n```\n\n### HSLA 格式\n\n`HSLA` 是 HSL 的扩展，支持透明度（Alpha 通道）。格式如下：\n\n```css\nhsla(hue, saturation, lightness, alpha)\n```\n\n- **`alpha`（透明度）**：\n  - 表示颜色的透明度。\n  - 取值范围为 `0`（完全透明）到 `1`（完全不透明）。\n\n#### 示例\n\n```css\n/* 半透明的红色 */\nhsla(0, 100%, 50%, 0.5)\n\n/* 半透明的蓝色 */\nhsla(240, 100%, 50%, 0.3)\n```\n\n### HSL 的优点\n\n1. **直观**：相比于 RGB，HSL 更加直观，特别是在调整颜色的亮度和饱和度时。\n2. **易于调整**：可以轻松调整颜色的亮度和饱和度，而不需要重新计算 RGB 值。\n3. **设计友好**：HSL 更接近设计师的思维方式，因为它基于色相、饱和度和亮度。\n\n### 总结\n\nHSL 是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 中定义颜色。它的格式为 `hsl(hue, saturation, lightness)`，其中 `hue` 表示颜色的类型，`saturation` 表示颜色的纯度，`lightness` 表示颜色的明暗程度。扩展格式 `hsla` 还支持透明度。HSL 的直观性和易用性使其在设计和开发中非常流行。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "Color",
+        "slug": "color"
+      },
+      {
+        "depth": 2,
+        "value": "format",
+        "slug": "format"
+      },
+      {
+        "depth": 3,
+        "value": "rgb",
+        "slug": "rgb"
+      },
+      {
+        "depth": 3,
+        "value": "HSL",
+        "slug": "hsl"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的结构",
+        "slug": "hsl-的结构"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "基本颜色",
+        "slug": "基本颜色"
+      },
+      {
+        "depth": 4,
+        "value": "调整饱和度",
+        "slug": "调整饱和度"
+      },
+      {
+        "depth": 4,
+        "value": "调整亮度",
+        "slug": "调整亮度"
+      },
+      {
+        "depth": 3,
+        "value": "HSLA 格式",
+        "slug": "hsla-格式"
+      },
+      {
+        "depth": 4,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 3,
+        "value": "HSL 的优点",
+        "slug": "hsl-的优点"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
       }
     ]
   },
@@ -2442,142 +2578,6 @@
         "slug": "总结"
       }
     ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css/color",
-    "slug": "dev/md/css/color",
-    "segments": [
-      "dev",
-      "md",
-      "css",
-      "color"
-    ],
-    "filePath": "docs/zh/dev/md/css/color.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# Color\n\n$$\ny=\\sin(x)\n$$\n\n## format\n\n### rgb\n\n```css\n.dc {\n  color: rgb(88, 101, 242);\n}\n```\n\n### HSL\n\n`HSL` 是一种表示颜色的格式，全称为 **Hue（色相）、Saturation（饱和度）、Lightness（亮度）**。它是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 和其他设计工具中，用于定义颜色。\n\n### HSL 的结构\n\nHSL 的格式如下：\n\n```css\nhsl(hue, saturation, lightness)\n```\n\n- **`hue`（色相）**：\n  - 表示颜色的基本类型，例如红色、绿色、蓝色等。\n  - 取值范围为 `0` 到 `360`，表示色轮上的角度：\n    - `0`：红色\n    - `120`：绿色\n    - `240`：蓝色\n    - 其他值是这些颜色之间的过渡，例如 `60` 是黄色，`180` 是青色。\n    \n- **`saturation`（饱和度）**：\n  - 表示颜色的强度或纯度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全无色（灰色）。\n    - `100%`：完全饱和（最纯的颜色）。\n\n- **`lightness`（亮度）**：\n  - 表示颜色的明暗程度。\n  - 取值范围为 `0%` 到 `100%`：\n    - `0%`：完全黑色。\n    - `100%`：完全白色。\n    - `50%`：标准亮度。\n\n### 示例\n\n#### 基本颜色\n\n```css\n/* 红色 */\nhsl(0, 100%, 50%)\n\n/* 绿色 */\nhsl(120, 100%, 50%)\n\n/* 蓝色 */\nhsl(240, 100%, 50%)\n```\n\n#### 调整饱和度\n\n```css\n/* 低饱和度的红色（接近灰色） */\nhsl(0, 20%, 50%)\n\n/* 高饱和度的红色 */\nhsl(0, 100%, 50%)\n```\n\n#### 调整亮度\n\n```css\n/* 暗红色 */\nhsl(0, 100%, 20%)\n\n/* 明亮的红色 */\nhsl(0, 100%, 80%)\n```\n\n### HSLA 格式\n\n`HSLA` 是 HSL 的扩展，支持透明度（Alpha 通道）。格式如下：\n\n```css\nhsla(hue, saturation, lightness, alpha)\n```\n\n- **`alpha`（透明度）**：\n  - 表示颜色的透明度。\n  - 取值范围为 `0`（完全透明）到 `1`（完全不透明）。\n\n#### 示例\n\n```css\n/* 半透明的红色 */\nhsla(0, 100%, 50%, 0.5)\n\n/* 半透明的蓝色 */\nhsla(240, 100%, 50%, 0.3)\n```\n\n### HSL 的优点\n\n1. **直观**：相比于 RGB，HSL 更加直观，特别是在调整颜色的亮度和饱和度时。\n2. **易于调整**：可以轻松调整颜色的亮度和饱和度，而不需要重新计算 RGB 值。\n3. **设计友好**：HSL 更接近设计师的思维方式，因为它基于色相、饱和度和亮度。\n\n### 总结\n\nHSL 是一种基于色相、饱和度和亮度的颜色模型，常用于 CSS 中定义颜色。它的格式为 `hsl(hue, saturation, lightness)`，其中 `hue` 表示颜色的类型，`saturation` 表示颜色的纯度，`lightness` 表示颜色的明暗程度。扩展格式 `hsla` 还支持透明度。HSL 的直观性和易用性使其在设计和开发中非常流行。\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "Color",
-        "slug": "color"
-      },
-      {
-        "depth": 2,
-        "value": "format",
-        "slug": "format"
-      },
-      {
-        "depth": 3,
-        "value": "rgb",
-        "slug": "rgb"
-      },
-      {
-        "depth": 3,
-        "value": "HSL",
-        "slug": "hsl"
-      },
-      {
-        "depth": 3,
-        "value": "HSL 的结构",
-        "slug": "hsl-的结构"
-      },
-      {
-        "depth": 3,
-        "value": "示例",
-        "slug": "示例"
-      },
-      {
-        "depth": 4,
-        "value": "基本颜色",
-        "slug": "基本颜色"
-      },
-      {
-        "depth": 4,
-        "value": "调整饱和度",
-        "slug": "调整饱和度"
-      },
-      {
-        "depth": 4,
-        "value": "调整亮度",
-        "slug": "调整亮度"
-      },
-      {
-        "depth": 3,
-        "value": "HSLA 格式",
-        "slug": "hsla-格式"
-      },
-      {
-        "depth": 4,
-        "value": "示例",
-        "slug": "示例"
-      },
-      {
-        "depth": 3,
-        "value": "HSL 的优点",
-        "slug": "hsl-的优点"
-      },
-      {
-        "depth": 3,
-        "value": "总结",
-        "slug": "总结"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css/tailwind",
-    "slug": "dev/md/css/tailwind",
-    "segments": [
-      "dev",
-      "md",
-      "css",
-      "tailwind"
-    ],
-    "filePath": "docs/zh/dev/md/css/tailwind.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tailwindCss\n\n## Colors\n\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tailwindCss",
-        "slug": "tailwindcss"
-      },
-      {
-        "depth": 2,
-        "value": "Colors",
-        "slug": "colors"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/css",
-    "slug": "dev/md/css",
-    "segments": [
-      "dev",
-      "md",
-      "css"
-    ],
-    "filePath": "docs/zh/dev/md/css/index.mdx",
-    "meta": {
-      "title": "md css",
-      "description": null,
-      "created_at": "2025-03-21T23:23:27.000Z",
-      "updated_at": "2025-03-21T23:23:27.000Z",
-      "tags": [
-        "md",
-        "css"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
   },
   {
     "locale": "zh",

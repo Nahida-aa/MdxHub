@@ -1,5 +1,5 @@
-.prose [data-theme] {
-    @apply bg-transparent;
+.prose pre[data-theme] {
+    /* @apply bg-transparent; */
 }
 
 .prose pre {
@@ -62,3 +62,19 @@ content: counter(line);
   @apply bg-transparent;
 } */
 
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  /* background-color: var(--shiki-light-bg); */
+  background-color: hsl(60, 47%, 97%);
+}
+ 
+@media (prefers-color-scheme:dark) {
+  .dark {
+    code[data-theme*=" "],
+    code[data-theme*=" "] span {
+      color: var(--shiki-dark);
+      background-color: var(--shiki-dark-bg);
+    }
+  }
+}

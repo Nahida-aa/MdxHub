@@ -16,6 +16,154 @@
     "type": "file"
   },
   {
+    "segment": "dev",
+    "title": "dev",
+    "order": 99,
+    "children": [
+      {
+        "segment": "contentlayer",
+        "title": "contentlayer",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/contentlayer",
+        "type": "file"
+      },
+      {
+        "segment": "data",
+        "title": "数据存储",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/data",
+        "type": "file"
+      },
+      {
+        "segment": "test",
+        "title": "测试",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/test",
+        "type": "file"
+      },
+      {
+        "segment": "x",
+        "title": "x",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/x",
+        "type": "file"
+      },
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/todo",
+        "type": "file"
+      },
+      {
+        "segment": "search",
+        "title": "增添搜索引擎",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/search",
+        "type": "file"
+      },
+      {
+        "segment": "deploy",
+        "title": "部署",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Kubernetes",
+            "title": "Kubernetes",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/deploy/Kubernetes",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/dev/deploy",
+        "type": "dir"
+      },
+      {
+        "segment": "md",
+        "title": "md",
+        "order": 99,
+        "children": [
+          {
+            "segment": "docs",
+            "title": "docs",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/docs",
+            "type": "file"
+          },
+          {
+            "segment": "mdx",
+            "title": "mdx",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/mdx",
+            "type": "file"
+          },
+          {
+            "segment": "github",
+            "title": "GitHub",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/github",
+            "type": "file"
+          },
+          {
+            "segment": "slug",
+            "title": "md slug",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/slug",
+            "type": "file"
+          },
+          {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
+            "segment": "css",
+            "title": "css",
+            "order": 99,
+            "children": [
+              {
+                "segment": "tailwind",
+                "title": "tailwind",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/tailwind",
+                "type": "file"
+              },
+              {
+                "segment": "color",
+                "title": "color",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/color",
+                "type": "file"
+              }
+            ],
+            "url": "/zh/docs/dev/md/css",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/dev/md",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/dev",
+    "type": "dir"
+  },
+  {
     "segment": "about",
     "title": "关于",
     "order": 99,
@@ -50,164 +198,16 @@
     "type": "dir"
   },
   {
-    "segment": "dev",
-    "title": "dev",
-    "order": 99,
-    "children": [
-      {
-        "segment": "contentlayer",
-        "title": "contentlayer",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/contentlayer",
-        "type": "file"
-      },
-      {
-        "segment": "data",
-        "title": "数据存储",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/data",
-        "type": "file"
-      },
-      {
-        "segment": "search",
-        "title": "增添搜索引擎",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/search",
-        "type": "file"
-      },
-      {
-        "segment": "test",
-        "title": "测试",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/test",
-        "type": "file"
-      },
-      {
-        "segment": "todo",
-        "title": "todo",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/todo",
-        "type": "file"
-      },
-      {
-        "segment": "x",
-        "title": "x",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/x",
-        "type": "file"
-      },
-      {
-        "segment": "md",
-        "title": "md",
-        "order": 99,
-        "children": [
-          {
-            "segment": "docs",
-            "title": "docs",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/docs",
-            "type": "file"
-          },
-          {
-            "segment": "github",
-            "title": "GitHub",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/github",
-            "type": "file"
-          },
-          {
-            "segment": "code-blocks",
-            "title": "code blocks",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
-            "type": "file"
-          },
-          {
-            "segment": "mdx",
-            "title": "mdx",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/mdx",
-            "type": "file"
-          },
-          {
-            "segment": "slug",
-            "title": "md slug",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/slug",
-            "type": "file"
-          },
-          {
-            "segment": "css",
-            "title": "css",
-            "order": 99,
-            "children": [
-              {
-                "segment": "color",
-                "title": "color",
-                "order": 99,
-                "children": [],
-                "url": "/zh/docs/dev/md/css/color",
-                "type": "file"
-              },
-              {
-                "segment": "tailwind",
-                "title": "tailwind",
-                "order": 99,
-                "children": [],
-                "url": "/zh/docs/dev/md/css/tailwind",
-                "type": "file"
-              }
-            ],
-            "url": "/zh/docs/dev/md/css",
-            "type": "dir"
-          }
-        ],
-        "url": "/zh/docs/dev/md",
-        "type": "dir"
-      },
-      {
-        "segment": "deploy",
-        "title": "部署",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Kubernetes",
-            "title": "Kubernetes",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/deploy/Kubernetes",
-            "type": "dir"
-          }
-        ],
-        "url": "/zh/docs/dev/deploy",
-        "type": "dir"
-      }
-    ],
-    "url": "/zh/docs/dev",
-    "type": "dir"
-  },
-  {
     "segment": "alg",
-    "title": "alg",
+    "title": "算法",
     "order": 99,
     "children": [
       {
-        "segment": "Array",
-        "title": "线性结构",
+        "segment": "python",
+        "title": "python",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/Array",
+        "url": "/zh/docs/alg/python",
         "type": "file"
       },
       {
@@ -219,11 +219,11 @@
         "type": "file"
       },
       {
-        "segment": "python",
-        "title": "python",
+        "segment": "Array",
+        "title": "线性结构",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/alg/python",
+        "url": "/zh/docs/alg/Array",
         "type": "file"
       },
       {
@@ -243,19 +243,19 @@
         "type": "dir"
       },
       {
-        "segment": "enum",
-        "title": "穷举法",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/enum",
-        "type": "dir"
-      },
-      {
         "segment": "lanqiao",
         "title": "蓝桥杯",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/lanqiao",
+        "type": "dir"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/enum",
         "type": "dir"
       }
     ],
@@ -268,14 +268,6 @@
     "order": 99,
     "children": [
       {
-        "segment": "systemd-timesyncd",
-        "title": "systemd-timesyncd",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/linux/systemd-timesyncd",
-        "type": "file"
-      },
-      {
         "segment": "system_time",
         "title": "系统时间",
         "order": 99,
@@ -284,21 +276,12 @@
         "type": "file"
       },
       {
-        "segment": "command",
-        "title": "command",
+        "segment": "systemd-timesyncd",
+        "title": "systemd-timesyncd",
         "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/command/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/command",
-        "type": "dir"
+        "children": [],
+        "url": "/zh/docs/linux/systemd-timesyncd",
+        "type": "file"
       },
       {
         "segment": "network",
@@ -357,6 +340,23 @@
           }
         ],
         "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
+        "segment": "command",
+        "title": "command",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/command/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/command",
         "type": "dir"
       },
       {
@@ -485,14 +485,6 @@
     "type": "dir"
   },
   {
-    "segment": "paper",
-    "title": "论文",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/paper",
-    "type": "dir"
-  },
-  {
     "segment": "ts",
     "title": "ts",
     "order": 99,
@@ -515,6 +507,14 @@
       }
     ],
     "url": "/zh/docs/ts",
+    "type": "dir"
+  },
+  {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
     "type": "dir"
   }
 ]

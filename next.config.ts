@@ -10,7 +10,10 @@ const rehypePrettyCode_options = {
   // keepBackground: false, // 是否继承背景色
   defaultLang: "plaintext",
   // theme: moonlightTheme,
-  
+  theme: {
+    dark: "github-dark-dimmed",
+    light: "github-light",
+  },
   tokensMap: {
     var: "variable",
     str: "string",

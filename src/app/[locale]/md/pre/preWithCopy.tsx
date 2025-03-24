@@ -30,12 +30,12 @@ export const PreWithCopy = (props: React.HTMLAttributes<HTMLPreElement>) => {
     <button
       onClick={copyToClipboard}
       aria-label="Copy code"
-      className="absolute right-2 top-2 h-8 w-8 rounded-md bg-[#2d333b] p-1.5 opacity-70 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#539bf5] hidden group-hover:block"
+      className="absolute right-2 top-2 h-8 w-8 rounded-md bg-[#2d333b] p-1.5 opacity-70 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#539bf5] hidden group-hover:flex items-center justify-center"
     >
       {copied ? (
-        <Check className="h-full w-full text-green-500" />
+        <Check className="h-full w-full text-green-500 size-5" />
       ) : (
-        <Copy className="h-full w-full text-[#adbac7]" />
+        <Copy className="h-full w-full text-[#adbac7] size-5" />
       )}
     </button>
   </div>

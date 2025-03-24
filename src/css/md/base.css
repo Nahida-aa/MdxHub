@@ -1,21 +1,22 @@
-.prose p a {
+.prose {
+  a {
     text-decoration: none;
     border-bottom: 1px solid #fbcfe8;
-    @apply text-pink-200 border-b-pink-300 shadow-[0_0_0_0.2rem_text-transparent] hover:text-zinc-900 hover:bg-pink-200 rounded-[1px] hover:shadow-[0_0_0_0.2rem_#fbcfe8] hover:border-b-pink-200;
-}
-
-.prose .heading-element {
+    @apply text-pink-400 border-b-pink-500 shadow-[0_0_0_0.2rem_text-transparent] hover:text-zinc-900 hover:bg-pink-200 rounded-[1px] hover:shadow-[0_0_0_0.2rem_#fbcfe8] hover:border-b-pink-200;
+  }
+  .heading-element {
     position: relative;
   }
-  
-  .prose .heading-element:hover .anchor,
-  .prose .anchor:hover {
+  .heading-element:hover .anchor,
+  .anchor:hover {
     opacity: 1;
   }
-
-.prose .anchor  {
+  .anchor  {
     text-decoration: none !important;
-    @apply absolute !no-underline;
+    @apply absolute !no-underline hover:shadow-none 
+    hover:bg-transparent 
+    hover:text-[#f472b6]
+    ;
     top: 50%;
     margin-left: -20px;
     padding-right: 10px;
@@ -25,29 +26,62 @@
     transition: opacity 0.3s ease; /* 添加过渡效果 */
     font-size: 1.25em; 
     /* color: #707681;  */
-    color: #fbcfe8; 
+    color: #f472b6; 
+  }
+  *:hover>.anchor a {
+    @apply visible ;
   }
 
-.prose *:hover>.anchor a {
-    @apply visible;
-  }
-  
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
+  h1,h2,h3,h4,h5,h6 {
     @apply font-semibold mt-6 mb-4 leading-[1.25];
-    /* color: #fdfdfd;
-    text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975; */
-    color: #f4eee4;
-    text-shadow: 0 0 2px #393a33, 0 0 8px #f1c91475, 0 0 2px #f3cf0575;
+    color: #fdfdfd;
+    text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975;
+    /* color: #8e9057;
+    text-shadow: 0 0 2px #cbcfb7, 0 0 8px #f1c91475, 0 0 2px #f3cf0575; */
     mark{
       /* @apply bg-yellow-200 dark:bg-yellow-400; */
       color: inherit;
     }
   }
+}
+.dark {
+  .prose {
+    .anchor  {
+      text-decoration: none !important;
+      @apply absolute !no-underline hover:shadow-none 
+      hover:bg-transparent 
+      hover:text-[#fbcfe8]
+      ;
+      top: 50%;
+      margin-left: -20px;
+      padding-right: 10px;
+      cursor: pointer;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease; /* 添加过渡效果 */
+      font-size: 1.25em; 
+      /* color: #707681;  */
+      color: #fbcfe8; 
+    }
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #fbcfe8;
+      @apply text-pink-200 border-b-pink-300 shadow-[0_0_0_0.2rem_text-transparent] hover:text-zinc-900 hover:bg-pink-200 rounded-[1px] hover:shadow-[0_0_0_0.2rem_#fbcfe8] hover:border-b-pink-200;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      @apply font-semibold mt-6 mb-4 leading-[1.25];
+      /* color: #fdfdfd;
+      text-shadow: 0 0 2px #001716, 0 0 3px #03edf975, 0 0 5px #03edf975, 0 0 8px #03edf975; */
+      color: #f4eee4;
+      text-shadow: 0 0 2px #393a33, 0 0 8px #f1c91475, 0 0 2px #f3cf0575;
+      mark{
+        /* @apply bg-yellow-200 dark:bg-yellow-400; */
+        color: inherit;
+      }
+    }
+  }
+}
+
 
 /* h2, h3, h4, h5, h6 添加序号 */
 .prose {
