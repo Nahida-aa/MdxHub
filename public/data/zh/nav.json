@@ -1,5 +1,13 @@
 [
   {
+    "segment": "i18n",
+    "title": "i18 国际化",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/i18n",
+    "type": "file"
+  },
+  {
     "segment": "learn",
     "title": "学习",
     "order": 99,
@@ -8,12 +16,38 @@
     "type": "file"
   },
   {
-    "segment": "i18n",
-    "title": "i18 国际化",
+    "segment": "about",
+    "title": "关于",
+    "order": 99,
+    "children": [
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "贡献 指南",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/about/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/about/community",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/about",
+    "type": "dir"
+  },
+  {
+    "segment": "html",
+    "title": "html",
     "order": 99,
     "children": [],
-    "url": "/zh/docs/i18n",
-    "type": "file"
+    "url": "/zh/docs/html",
+    "type": "dir"
   },
   {
     "segment": "dev",
@@ -69,33 +103,16 @@
         "type": "file"
       },
       {
-        "segment": "deploy",
-        "title": "部署",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Kubernetes",
-            "title": "Kubernetes",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/deploy/Kubernetes",
-            "type": "dir"
-          }
-        ],
-        "url": "/zh/docs/dev/deploy",
-        "type": "dir"
-      },
-      {
         "segment": "md",
         "title": "md",
         "order": 99,
         "children": [
           {
-            "segment": "code-blocks",
-            "title": "code blocks",
+            "segment": "docs",
+            "title": "docs",
             "order": 99,
             "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
+            "url": "/zh/docs/dev/md/docs",
             "type": "file"
           },
           {
@@ -107,19 +124,19 @@
             "type": "file"
           },
           {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
             "segment": "mdx",
             "title": "mdx",
             "order": 99,
             "children": [],
             "url": "/zh/docs/dev/md/mdx",
-            "type": "file"
-          },
-          {
-            "segment": "docs",
-            "title": "docs",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/docs",
             "type": "file"
           },
           {
@@ -158,43 +175,26 @@
         ],
         "url": "/zh/docs/dev/md",
         "type": "dir"
-      }
-    ],
-    "url": "/zh/docs/dev",
-    "type": "dir"
-  },
-  {
-    "segment": "html",
-    "title": "html",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
-    "type": "dir"
-  },
-  {
-    "segment": "about",
-    "title": "关于",
-    "order": 99,
-    "children": [
+      },
       {
-        "segment": "community",
-        "title": "community",
+        "segment": "deploy",
+        "title": "部署",
         "order": 99,
         "children": [
           {
-            "segment": "contribution-guide",
-            "title": "贡献 指南",
-            "order": 1,
+            "segment": "Kubernetes",
+            "title": "Kubernetes",
+            "order": 99,
             "children": [],
-            "url": "/zh/docs/about/community/contribution-guide",
-            "type": "file"
+            "url": "/zh/docs/dev/deploy/Kubernetes",
+            "type": "dir"
           }
         ],
-        "url": "/zh/docs/about/community",
+        "url": "/zh/docs/dev/deploy",
         "type": "dir"
       }
     ],
-    "url": "/zh/docs/about",
+    "url": "/zh/docs/dev",
     "type": "dir"
   },
   {
@@ -203,19 +203,19 @@
     "order": 99,
     "children": [
       {
-        "segment": "blog",
-        "title": "日志",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/blog",
-        "type": "file"
-      },
-      {
         "segment": "Array",
         "title": "线性结构",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/Array",
+        "type": "file"
+      },
+      {
+        "segment": "blog",
+        "title": "日志",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/blog",
         "type": "file"
       },
       {
@@ -301,23 +301,6 @@
         "type": "dir"
       },
       {
-        "segment": "file_systems",
-        "title": "file_systems",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/file_systems/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/file_systems",
-        "type": "dir"
-      },
-      {
         "segment": "network",
         "title": "network",
         "order": 99,
@@ -360,6 +343,23 @@
         "type": "dir"
       },
       {
+        "segment": "file_systems",
+        "title": "file_systems",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/file_systems/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
         "segment": "input",
         "title": "input",
         "order": 99,
@@ -382,7 +382,7 @@
   },
   {
     "segment": "next",
-    "title": "Nextjs",
+    "title": "next",
     "order": 99,
     "children": [
       {
@@ -485,8 +485,16 @@
     "type": "dir"
   },
   {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
+    "type": "dir"
+  },
+  {
     "segment": "ts",
-    "title": "TypeScript",
+    "title": "ts",
     "order": 99,
     "children": [
       {
@@ -507,14 +515,6 @@
       }
     ],
     "url": "/zh/docs/ts",
-    "type": "dir"
-  },
-  {
-    "segment": "paper",
-    "title": "论文",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/paper",
     "type": "dir"
   }
 ]
