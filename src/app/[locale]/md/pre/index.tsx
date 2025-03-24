@@ -69,18 +69,18 @@ export function isLanguageCodeBlock(element: React.ReactElement, language: strin
 
 export const Pre = ({children, ...props}: React.HTMLAttributes<HTMLPreElement>) => {
   console.log('Pre: children:')
-  console.log(children)
+  // console.log(children)
   const childArray = React.Children.toArray(children)
   const codeElement = childArray.find((child) => React.isValidElement(child) && child.type === "code") as React.ReactElement<'code'>
   console.log('Pre: codeElement:')
-  console.log(codeElement)
+  // console.log(codeElement)
   
   // 如果找到代码元素并且是 Mermaid 代码块
   if (codeElement && isLanguageCodeBlock(codeElement, 'mermaid')) {
-    console.log('Pre: mermaid:')
     // 提取 代码
     const code = extractCodeContent(codeElement)
-    console.log(code)
+    console.log('Pre: mermaid:code:')
+    // console.log(code)
     return <MermaidRenderer code={code} />
   }
   return <PreWithCopy {...props}>{children}</PreWithCopy>

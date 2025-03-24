@@ -2,6 +2,32 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/learn",
+    "slug": "learn",
+    "segments": [
+      "learn"
+    ],
+    "filePath": "docs/zh/learn.mdx",
+    "meta": {
+      "title": "学习",
+      "description": null,
+      "created_at": "2025-03-23T14:55:10.000Z",
+      "updated_at": "2025-03-23T14:55:10.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\n## 站点地图\n\n\n```mermaid caption=\"拓扑图 1. AI \\ CS \\ ES 学科笔记\"\nflowchart LR\n    程序设计(程序设计)\n    数字逻辑电路(数字逻辑电路)\n    数据结构(数据结构)\n    算法(算法)\n    计算机系统基础(计算机系统基础)\n    数据库(数据库)\n    操作系统(操作系统)\n    计算机组成(计算机组成)\n    计算机网络(计算机网络)\n\n    程序设计 --> 数据结构 & 算法 --> 计算机系统基础\n    数字逻辑电路 --> 计算机系统基础 --> 数据库 & 操作系统 & 计算机组成\n    计算机组成 & 操作系统 --> 计算机网络\n\n    Python高级应用(Python 高级应用)\n    数字图像处理(数字图像处理)\n    机器学习(机器学习)\n    深度学习(深度学习)\n    数据挖掘(数据挖掘)\n    自然语言处理(自然语言处理)\n    计算机视觉(计算机视觉)\n    数字信号处理(数字信号处理)\n    智慧教育(智慧教育)\n\n    Python高级应用 --> 数字图像处理 & 数字信号处理 & 机器学习\n    机器学习 --> 深度学习 & 数据挖掘\n    深度学习 --> 自然语言处理 & 计算机视觉 --> 智慧教育\n    数字图像处理 --> 计算机视觉\n\n    微积分(微积分)\n    矩阵(矩阵)\n    概率论(概率论)\n    最优化方法(最优化方法)\n    微积分 & 矩阵 & 概率论 --> 最优化方法 --> 机器学习\n    程序设计 --> Python高级应用\n\n    %% 跳转链接\n    click 微积分 \"./base/advanced-math/\"\n    click 矩阵 \"./base/linear-algebra/\"\n    click 概率论 \"./base/probability-and-statistics/\"\n    click 最优化方法 \"./base/optimization-method/\"\n\n    click 程序设计 \"./base/object-oriented-programming/\"\n    click 数字逻辑电路 \"./base/digital-logic-circuit/\"\n    click 计算机系统基础 \"./base/computer-system-basic/\"\n    click 数据库 \"./base/database/\"\n    click 数据结构与算法 \"./ds-and-algo/\"\n    click 操作系统 \"./base/operating-system/\"\n    click 计算机组成 \"./base/computer-organization/\"\n    click 计算机网络 \"./base/computer-network/\"\n\n    click Python高级应用 \"./base/python-application/\"\n    click 数字图像处理 \"./base/digital-image-processing/\"\n    click 机器学习 \"./base/machine-learning/\"\n    click 深度学习 \"./base/deep-learning/\"\n    click 数据挖掘 \"./base/data-mining/\"\n    click 自然语言处理 \"./base/natural-language-processing/\"\n    click 计算机视觉 \"./base/computer-vision/\"\n    click 数字信号处理 \"./base/digital-signal-processing/\"\n    click 智慧教育 \"./base/intelligent-education/\"\n```\n<table>\n<caption> 拓扑图 1. AI \\ CS \\ ES 学科笔记 </caption>\n</table>\n\n```mermaid \ngraph LR\n  %% 实体定义\n  algo(数据结构与算法专栏)\n  dev_tools(开发工具专栏)\n  fe(前端开发专栏)\n  be(后端开发专栏)\n  dev_ops(运维开发专栏)\n  \n  %% 关系定义\n  algo --> be\n  dev_tools --> fe & be & dev_ops\n  \n  %% 跳转链接\n  click algo \"./ds-and-algo/\"\n  click dev_tools \"./dev-tools/\"\n  click fe \"./front-end/\"\n  click be \"./back-end/\"\n  click dev_ops \"./operation/\"\n```\n<table>\n<caption> 拓扑图 2. 开发技术文章 </caption>\n</table>\n\n```py {1}\n# fib\ndef fib(n):\n    if n <= 1:\n        return n\n    return fib(n - 1) + fib(n - 2)\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "站点地图",
+        "slug": "站点地图"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/i18n",
     "slug": "i18n",
     "segments": [
@@ -43,26 +69,61 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/learn",
-    "slug": "learn",
+    "url": "/zh/docs/dev",
+    "slug": "dev",
     "segments": [
-      "learn"
+      "dev"
     ],
-    "filePath": "docs/zh/learn.mdx",
+    "filePath": "docs/zh/dev/index.mdx",
     "meta": {
-      "title": "学习",
+      "title": "dev",
       "description": null,
-      "created_at": "2025-03-23T14:55:10.000Z",
-      "updated_at": "2025-03-23T14:55:10.000Z",
-      "tags": []
+      "created_at": "2025-03-21T09:48:56.000Z",
+      "updated_at": "2025-03-21T09:48:56.000Z",
+      "tags": [
+        "dev"
+      ]
     },
     "order": 99,
-    "content": "\n## 站点地图\n\n\n```mermaid caption=\"拓扑图 1. AI \\ CS \\ ES 学科笔记\"\nflowchart LR\n    程序设计(程序设计)\n    数字逻辑电路(数字逻辑电路)\n    数据结构(数据结构)\n    算法(算法)\n    计算机系统基础(计算机系统基础)\n    数据库(数据库)\n    操作系统(操作系统)\n    计算机组成(计算机组成)\n    计算机网络(计算机网络)\n\n    程序设计 --> 数据结构 & 算法 --> 计算机系统基础\n    数字逻辑电路 --> 计算机系统基础 --> 数据库 & 操作系统 & 计算机组成\n    计算机组成 & 操作系统 --> 计算机网络\n\n    Python高级应用(Python 高级应用)\n    数字图像处理(数字图像处理)\n    机器学习(机器学习)\n    深度学习(深度学习)\n    数据挖掘(数据挖掘)\n    自然语言处理(自然语言处理)\n    计算机视觉(计算机视觉)\n    数字信号处理(数字信号处理)\n    智慧教育(智慧教育)\n\n    Python高级应用 --> 数字图像处理 & 数字信号处理 & 机器学习\n    机器学习 --> 深度学习 & 数据挖掘\n    深度学习 --> 自然语言处理 & 计算机视觉 --> 智慧教育\n    数字图像处理 --> 计算机视觉\n\n    微积分(微积分)\n    矩阵(矩阵)\n    概率论(概率论)\n    最优化方法(最优化方法)\n    微积分 & 矩阵 & 概率论 --> 最优化方法 --> 机器学习\n    程序设计 --> Python高级应用\n\n    %% 跳转链接\n    click 微积分 \"./base/advanced-math/\"\n    click 矩阵 \"./base/linear-algebra/\"\n    click 概率论 \"./base/probability-and-statistics/\"\n    click 最优化方法 \"./base/optimization-method/\"\n\n    click 程序设计 \"./base/object-oriented-programming/\"\n    click 数字逻辑电路 \"./base/digital-logic-circuit/\"\n    click 计算机系统基础 \"./base/computer-system-basic/\"\n    click 数据库 \"./base/database/\"\n    click 数据结构与算法 \"./ds-and-algo/\"\n    click 操作系统 \"./base/operating-system/\"\n    click 计算机组成 \"./base/computer-organization/\"\n    click 计算机网络 \"./base/computer-network/\"\n\n    click Python高级应用 \"./base/python-application/\"\n    click 数字图像处理 \"./base/digital-image-processing/\"\n    click 机器学习 \"./base/machine-learning/\"\n    click 深度学习 \"./base/deep-learning/\"\n    click 数据挖掘 \"./base/data-mining/\"\n    click 自然语言处理 \"./base/natural-language-processing/\"\n    click 计算机视觉 \"./base/computer-vision/\"\n    click 数字信号处理 \"./base/digital-signal-processing/\"\n    click 智慧教育 \"./base/intelligent-education/\"\n```\n<table>\n<caption> 拓扑图 1. AI \\ CS \\ ES 学科笔记 </caption>\n</table>\n\n```mermaid \ngraph LR\n  %% 实体定义\n  algo(数据结构与算法专栏)\n  dev_tools(开发工具专栏)\n  fe(前端开发专栏)\n  be(后端开发专栏)\n  dev_ops(运维开发专栏)\n  \n  %% 关系定义\n  algo --> be\n  dev_tools --> fe & be & dev_ops\n  \n  %% 跳转链接\n  click algo \"./ds-and-algo/\"\n  click dev_tools \"./dev-tools/\"\n  click fe \"./front-end/\"\n  click be \"./back-end/\"\n  click dev_ops \"./operation/\"\n```\n<table>\n<caption> 拓扑图 2. 开发技术文章 </caption>\n</table>\n\n```py {1}\n# fib\ndef fib(n):\n    if n <= 1:\n        return n\n    return fib(n - 1) + fib(n - 2)\n```",
+    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
     "toc": [
       {
         "depth": 2,
-        "value": "站点地图",
-        "slug": "站点地图"
+        "value": "常用框架\\库\\module",
+        "slug": "常用框架\\库\\module"
+      },
+      {
+        "depth": 2,
+        "value": "常用工具",
+        "slug": "常用工具"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/html",
+    "slug": "html",
+    "segments": [
+      "html"
+    ],
+    "filePath": "docs/zh/html/index.mdx",
+    "meta": {
+      "title": "html",
+      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
+      "created_at": "2025-03-22T02:26:21.000Z",
+      "updated_at": "2025-03-22T02:26:21.000Z",
+      "tags": [
+        "html"
+      ]
+    },
+    "order": 99,
+    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "list",
+        "slug": "list"
       }
     ]
   },
@@ -127,174 +188,6 @@
         "depth": 3,
         "value": "总结",
         "slug": "总结"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/test",
-    "slug": "dev/test",
-    "segments": [
-      "dev",
-      "test"
-    ],
-    "filePath": "docs/zh/dev/test.mdx",
-    "meta": {
-      "title": "测试",
-      "description": "用于测试 mdx",
-      "created_at": "2025-03-22T00:42:34.000Z",
-      "updated_at": "2025-03-22T00:42:34.000Z",
-      "tags": [
-        "test"
-      ]
-    },
-    "order": 99,
-    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "markdown",
-        "slug": "markdown"
-      },
-      {
-        "depth": 3,
-        "value": "标题",
-        "slug": "标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级标题1",
-        "slug": "四级标题1"
-      },
-      {
-        "depth": 3,
-        "value": "三级 标题",
-        "slug": "三级-标题"
-      },
-      {
-        "depth": 4,
-        "value": "四级 标题2",
-        "slug": "四级-标题2"
-      },
-      {
-        "depth": 5,
-        "value": "五级 标题",
-        "slug": "五级-标题"
-      },
-      {
-        "depth": 6,
-        "value": "六级 标题",
-        "slug": "六级-标题"
-      },
-      {
-        "depth": 2,
-        "value": "GitHub flavored markdown (GFM)",
-        "slug": "github-flavored-markdown-(gfm)"
-      },
-      {
-        "depth": 3,
-        "value": "三级标题",
-        "slug": "三级标题"
-      },
-      {
-        "depth": 2,
-        "value": "代码块",
-        "slug": "代码块"
-      },
-      {
-        "depth": 2,
-        "value": "图表",
-        "slug": "图表"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/html",
-    "slug": "html",
-    "segments": [
-      "html"
-    ],
-    "filePath": "docs/zh/html/index.mdx",
-    "meta": {
-      "title": "html",
-      "description": "全称 HyperText Markup Language，是一种用于创建网页的标准标记语言, 用于描述网页的结构和内容。",
-      "created_at": "2025-03-22T02:26:21.000Z",
-      "updated_at": "2025-03-22T02:26:21.000Z",
-      "tags": [
-        "html"
-      ]
-    },
-    "order": 99,
-    "content": "\n## list\n\nhttps://www.heroui.com/docs/components/listbox\n\n```tsx /items={toc}/ /(item) =>/\nimport {\n  Listbox,\n  ListboxSection,\n  ListboxItem\n} from \"@heroui/listbox\";\n\n<Listbox className='gap-2' aria-label=\"Dynamic Actions\" items={toc} onAction={(key) => {}}>\n{(item) => (\n  <ListboxItem\n    key={item.slug}\n    className={`${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 !bg-transparent `}\n  >\n    <motion.a className={clsx(\n      \"text-muted-foreground hover:text-primary-foreground\",\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n          {item.value}\n    </motion.a>\n  </ListboxItem>\n  )}\n</Listbox>\n```\n\n可能有一些优化机制导致不适合做文章的 TOC，因为不方便实现自动监视滚动位置来修改 list 中元素 的样式\n\n改用 `Array.map(){:ts}` 来遍历比较合适\n\n```tsx {2}#b\n<ul>\n  {toc.map((item, index) => <li key={index}>\n    <Link className={clsx(\n      `text-muted-foreground hover:text-primary-foreground ${item.depth===3 ?'pl-3':''} ${item.depth===4 ?'pl-6':''} ${item.depth===5 ?'pl-9':''} ${item.depth===6 ?'pl-12':''} h-5 `,\n      {\n        \"text-primary font-bold\": isClient && activeSlug === item.slug,\n      }\n    )}\n      href={`#${item.slug}`}\n    >\n      item.value}\n    </Link>\n  </li>)}\n</ul>\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "list",
-        "slug": "list"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev",
-    "slug": "dev",
-    "segments": [
-      "dev"
-    ],
-    "filePath": "docs/zh/dev/index.mdx",
-    "meta": {
-      "title": "dev",
-      "description": null,
-      "created_at": "2025-03-21T09:48:56.000Z",
-      "updated_at": "2025-03-21T09:48:56.000Z",
-      "tags": [
-        "dev"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 常用框架\\库\\module\n\n- [Next.js](https://nextjs.org/)\n- [Hono.js](https://hono.dev/)\n- [FastApi](https://fastapi.tiangolo.com/)\n- [Pytorch](https://pytorch.org/)\n- [Tensorflow](https://www.tensorflow.org/)\n\n## 常用工具\n\n- [github copilot](https://copilot.github.com/)\n- [git](./git)\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "常用框架\\库\\module",
-        "slug": "常用框架\\库\\module"
-      },
-      {
-        "depth": 2,
-        "value": "常用工具",
-        "slug": "常用工具"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/about",
-    "slug": "about",
-    "segments": [
-      "about"
-    ],
-    "filePath": "docs/zh/about/index.mdx",
-    "meta": {
-      "title": "关于",
-      "description": "关于本软件的开发",
-      "created_at": "2025-03-21T13:49:29.000Z",
-      "updated_at": "2025-03-21T13:49:29.000Z",
-      "tags": [
-        "about"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "本仓库内的文件监视功能",
-        "slug": "本仓库内的文件监视功能"
       }
     ]
   },
@@ -436,74 +329,79 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/x",
-    "slug": "dev/x",
+    "url": "/zh/docs/dev/test",
+    "slug": "dev/test",
     "segments": [
       "dev",
-      "x"
+      "test"
     ],
-    "filePath": "docs/zh/dev/x.mdx",
+    "filePath": "docs/zh/dev/test.mdx",
     "meta": {
-      "title": "x",
-      "description": "x",
-      "created_at": "2025-03-22T19:57:35.000Z",
-      "updated_at": "2025-03-22T19:57:35.000Z",
-      "tags": []
-    },
-    "order": 99,
-    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg",
-    "slug": "alg",
-    "segments": [
-      "alg"
-    ],
-    "filePath": "docs/zh/alg/index.mdx",
-    "meta": {
-      "title": "算法",
-      "description": "alg 即 algorithm",
-      "created_at": "2025-03-22T05:35:44.000Z",
-      "updated_at": "2025-03-22T05:35:44.000Z",
+      "title": "测试",
+      "description": "用于测试 mdx",
+      "created_at": "2025-03-22T00:42:34.000Z",
+      "updated_at": "2025-03-22T00:42:34.000Z",
       "tags": [
-        "alg"
+        "test"
       ]
     },
     "order": 99,
-    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "content": "\n> [!NOTE] 提示\n> 本来页面用户测试显示效果\n\n## markdown\n\n### 标题\n\n#### 四级标题1\n\n### 三级 标题\n\n#### 四级 标题2\n\n##### 五级 标题\n\n###### 六级 标题\n\n## GitHub flavored markdown (GFM)\n\n### 三级标题\n\n## 代码块\n\n## 图表\n",
     "toc": [
       {
         "depth": 2,
-        "value": "基础",
-        "slug": "基础"
+        "value": "markdown",
+        "slug": "markdown"
       },
       {
         "depth": 3,
-        "value": "动态规划",
-        "slug": "动态规划"
+        "value": "标题",
+        "slug": "标题"
+      },
+      {
+        "depth": 4,
+        "value": "四级标题1",
+        "slug": "四级标题1"
       },
       {
         "depth": 3,
-        "value": "贪心算法",
-        "slug": "贪心算法"
+        "value": "三级 标题",
+        "slug": "三级-标题"
       },
       {
-        "depth": 3,
-        "value": "分治法",
-        "slug": "分治法"
+        "depth": 4,
+        "value": "四级 标题2",
+        "slug": "四级-标题2"
+      },
+      {
+        "depth": 5,
+        "value": "五级 标题",
+        "slug": "五级-标题"
+      },
+      {
+        "depth": 6,
+        "value": "六级 标题",
+        "slug": "六级-标题"
       },
       {
         "depth": 2,
-        "value": "时间复杂度和空间复杂度",
-        "slug": "时间复杂度和空间复杂度"
+        "value": "GitHub flavored markdown (GFM)",
+        "slug": "github-flavored-markdown-(gfm)"
+      },
+      {
+        "depth": 3,
+        "value": "三级标题",
+        "slug": "三级标题"
       },
       {
         "depth": 2,
-        "value": "常见问题",
-        "slug": "常见问题"
+        "value": "代码块",
+        "slug": "代码块"
+      },
+      {
+        "depth": 2,
+        "value": "图表",
+        "slug": "图表"
       }
     ]
   },
@@ -604,6 +502,111 @@
         "depth": 2,
         "value": "next",
         "slug": "next"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/x",
+    "slug": "dev/x",
+    "segments": [
+      "dev",
+      "x"
+    ],
+    "filePath": "docs/zh/dev/x.mdx",
+    "meta": {
+      "title": "x",
+      "description": "x",
+      "created_at": "2025-03-22T19:57:35.000Z",
+      "updated_at": "2025-03-22T19:57:35.000Z",
+      "tags": []
+    },
+    "order": 99,
+    "content": "\nedu注册\nhttps://cmsweb.csun.edu/psp/CNRPRD/EMPLOYEE/SA/c/NR_SSS_LAUNCH_MENU.NR_SSS_QKADMIT_CMP.GBL?\n学生登录\nhttps://shibboleth.csun.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s2\n.me域名注册\nhttps://nc.me/\nnamecheap登录页面\nhttps://www.namecheap.com/myaccount/login/?ReturnUrl=%2F",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/about",
+    "slug": "about",
+    "segments": [
+      "about"
+    ],
+    "filePath": "docs/zh/about/index.mdx",
+    "meta": {
+      "title": "关于",
+      "description": "关于本软件的开发",
+      "created_at": "2025-03-21T13:49:29.000Z",
+      "updated_at": "2025-03-21T13:49:29.000Z",
+      "tags": [
+        "about"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 本仓库内的文件监视功能\n\n`contentlayer` 会监视本仓库内的文件变化，当文件变化时，会自动更新数据层。这意味着你可以在本地编辑 Markdown 文件，然后在浏览器中查看更改。 但是 对于 `turbopack` 可能无效\n\n`next-mdx-remote` 貌似也不行, 同时为了降低本地的内存和计算资源的占用，采取使用 next 直接支持的 `@next/mdx`\n\n```math\ny= x^2\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "本仓库内的文件监视功能",
+        "slug": "本仓库内的文件监视功能"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/blog",
+    "slug": "alg/blog",
+    "segments": [
+      "alg",
+      "blog"
+    ],
+    "filePath": "docs/zh/alg/blog.mdx",
+    "meta": {
+      "title": "日志",
+      "description": null,
+      "created_at": "2025-03-22T06:07:24.000Z",
+      "updated_at": "2025-03-22T06:07:24.000Z",
+      "tags": [
+        "alg",
+        "log",
+        "blog"
+      ]
+    },
+    "order": 99,
+    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
+    "toc": [
+      {
+        "depth": 3,
+        "value": "1. 算法文档（docs）",
+        "slug": "1.-算法文档（docs）"
+      },
+      {
+        "depth": 3,
+        "value": "2. 算法日志（blog）",
+        "slug": "2.-算法日志（blog）"
+      },
+      {
+        "depth": 3,
+        "value": "3. 两者的区别",
+        "slug": "3.-两者的区别"
+      },
+      {
+        "depth": 3,
+        "value": "4. 如何结合使用",
+        "slug": "4.-如何结合使用"
+      },
+      {
+        "depth": 3,
+        "value": "5. 工具推荐",
+        "slug": "5.-工具推荐"
+      },
+      {
+        "depth": 3,
+        "value": "总结",
+        "slug": "总结"
       }
     ]
   },
@@ -719,62 +722,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/alg/blog",
-    "slug": "alg/blog",
-    "segments": [
-      "alg",
-      "blog"
-    ],
-    "filePath": "docs/zh/alg/blog.mdx",
-    "meta": {
-      "title": "日志",
-      "description": null,
-      "created_at": "2025-03-22T06:07:24.000Z",
-      "updated_at": "2025-03-22T06:07:24.000Z",
-      "tags": [
-        "alg",
-        "log",
-        "blog"
-      ]
-    },
-    "order": 99,
-    "content": "\n### 1. **算法文档（`docs`）**\n- **内容**：\n  - 详细描述算法的原理、实现步骤、复杂度分析等。\n  - 适合作为参考资料或学习材料。\n  - 结构化、系统化，便于长期维护和扩展。\n\n- **适合放入 `docs` 的内容**：\n  - 算法的理论基础（如动态规划、贪心算法、分治法等）。\n  - 算法的实现细节（如伪代码、代码示例）。\n  - 算法的时间复杂度和空间复杂度分析。\n  - 常见问题和解决方案。\n\n- **示例目录结构**：\n  ```\n  docs/\n  ├── sorting/\n  │   ├── bubble-sort.md\n  │   ├── quick-sort.md\n  │   └── merge-sort.md\n  ├── graph/\n  │   ├── dijkstra.md\n  │   ├── floyd-warshall.md\n  │   └── kruskal.md\n  └── dynamic-programming/\n      ├── knapsack.md\n      ├── longest-common-subsequence.md\n      └── matrix-chain-multiplication.md\n  ```\n\n---\n\n### 2. **算法日志（`blog`）**\n- **内容**：\n  - 记录你在学习、实现或优化算法过程中的思考、问题和解决方案。\n  - 更加个人化，适合分享经验和心得。\n  - 可能包含一些非正式的内容，如调试过程、踩坑记录等。\n\n- **适合放入 `blog` 的内容**：\n  - 学习某个算法时的心得体会。\n  - 实现算法时遇到的困难和解决方法。\n  - 对某个算法的优化过程。\n  - 算法在实际项目中的应用案例。\n\n- **示例目录结构**：\n  ```\n  blog/\n  ├── 2025-03-22-why-i-love-dijkstra.md\n  ├── 2025-03-15-optimizing-quick-sort.md\n  ├── 2025-03-10-debugging-knapsack.md\n  └── 2025-03-05-how-i-learned-dynamic-programming.md\n  ```\n\n---\n\n### 3. **两者的区别**\n| **方面**       | **算法文档（`docs`）**                          | **算法日志（`blog`）**                          |\n|----------------|-----------------------------------------------|-----------------------------------------------|\n| **目的**       | 系统化记录算法知识，作为参考资料。               | 记录个人学习和实践过程，分享经验和心得。         |\n| **风格**       | 正式、结构化、面向读者。                        | 非正式、个人化、面向分享。                     |\n| **内容**       | 理论、实现、复杂度分析等。                       | 学习过程、调试记录、优化心得等。                |\n| **读者**       | 需要学习或参考算法的开发者。                     | 对你的学习过程或经验感兴趣的读者。              |\n\n---\n\n### 4. **如何结合使用**\n- 在 `docs` 中提供系统化的算法知识。\n- 在 `blog` 中分享你在学习或实现这些算法时的个人经验。\n- 可以在 `blog` 中链接到相关的 `docs`，为读者提供更深入的参考资料。\n\n---\n\n### 5. **工具推荐**\n如果你使用静态网站生成器（如 [Docusaurus](https://docusaurus.io/) 或 [Hugo](https://gohugo.io/)），可以轻松地将 `docs` 和 `blog` 分开管理：\n- `docs` 用于存放文档。\n- `blog` 用于存放日志。\n\n---\n\n### 总结\n- **算法文档**：放到 `docs` 中，作为系统化的参考资料。\n- **算法日志**：放到 `blog` 中，记录个人学习和实践过程。\n\n这种组织方式清晰且易于维护，适合长期使用。如果你有更多需求或问题，请随时告诉我！",
-    "toc": [
-      {
-        "depth": 3,
-        "value": "1. 算法文档（docs）",
-        "slug": "1.-算法文档（docs）"
-      },
-      {
-        "depth": 3,
-        "value": "2. 算法日志（blog）",
-        "slug": "2.-算法日志（blog）"
-      },
-      {
-        "depth": 3,
-        "value": "3. 两者的区别",
-        "slug": "3.-两者的区别"
-      },
-      {
-        "depth": 3,
-        "value": "4. 如何结合使用",
-        "slug": "4.-如何结合使用"
-      },
-      {
-        "depth": 3,
-        "value": "5. 工具推荐",
-        "slug": "5.-工具推荐"
-      },
-      {
-        "depth": 3,
-        "value": "总结",
-        "slug": "总结"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/python",
     "slug": "alg/python",
     "segments": [
@@ -814,204 +761,6 @@
         "depth": 3,
         "value": "range{:py}",
         "slug": "range{:py}"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux",
-    "slug": "linux",
-    "segments": [
-      "linux"
-    ],
-    "filePath": "docs/zh/linux/index.mdx",
-    "meta": {
-      "title": "linux",
-      "description": "linux 简介",
-      "created_at": "2025-03-22T05:22:44.000Z",
-      "updated_at": "2025-03-22T05:22:44.000Z",
-      "tags": [
-        "linux"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next/15",
-    "slug": "next/15",
-    "segments": [
-      "next",
-      "15"
-    ],
-    "filePath": "docs/zh/next/15.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "nextjs15",
-        "slug": "nextjs15"
-      },
-      {
-        "depth": 2,
-        "value": "原生支持 pwa",
-        "slug": "原生支持-pwa"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/next",
-    "slug": "next",
-    "segments": [
-      "next"
-    ],
-    "filePath": "docs/zh/next/index.mdx",
-    "meta": {
-      "title": "Nextjs",
-      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
-      "created_at": "2025-03-22T05:21:31.000Z",
-      "updated_at": "2025-03-22T05:21:31.000Z",
-      "tags": [
-        "next",
-        "ts",
-        "react",
-        "web"
-      ]
-    },
-    "order": 99,
-    "content": "",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/async",
-    "slug": "ts/async",
-    "segments": [
-      "ts",
-      "async"
-    ],
-    "filePath": "docs/zh/ts/async.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "ts/async",
-        "slug": "ts/async"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/paper",
-    "slug": "paper",
-    "segments": [
-      "paper"
-    ],
-    "filePath": "docs/zh/paper/index.mdx",
-    "meta": {
-      "title": "论文",
-      "description": "论文",
-      "created_at": "2025-03-22T05:31:40.000Z",
-      "updated_at": "2025-03-22T05:31:40.000Z",
-      "tags": [
-        "math， paper"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 数据集\n\n中国老年人健康数据\n",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "数据集",
-        "slug": "数据集"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/system_time",
-    "slug": "linux/system_time",
-    "segments": [
-      "linux",
-      "system_time"
-    ],
-    "filePath": "docs/zh/linux/system_time.mdx",
-    "meta": {
-      "title": "系统时间",
-      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
-      "created_at": "2025-03-22T03:26:09.000Z",
-      "updated_at": "2025-03-22T03:26:09.000Z",
-      "tags": [
-        "linux",
-        "os",
-        "time"
-      ]
-    },
-    "order": 99,
-    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
-    "toc": []
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/ts/tsconfig",
-    "slug": "ts/tsconfig",
-    "segments": [
-      "ts",
-      "tsconfig"
-    ],
-    "filePath": "docs/zh/ts/tsconfig.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "tsconfig",
-        "slug": "tsconfig"
-      },
-      {
-        "depth": 2,
-        "value": "compilerOptions",
-        "slug": "compileroptions"
-      },
-      {
-        "depth": 3,
-        "value": "moduleResolution",
-        "slug": "moduleresolution"
-      },
-      {
-        "depth": 4,
-        "value": "moduleResolution: node",
-        "slug": "moduleresolution:-node"
-      },
-      {
-        "depth": 5,
-        "value": "特点",
-        "slug": "特点"
-      },
-      {
-        "depth": 4,
-        "value": "moduleResolution: bundler",
-        "slug": "moduleresolution:-bundler"
-      },
-      {
-        "depth": 5,
-        "value": "特点",
-        "slug": "特点"
       }
     ]
   },
@@ -1108,6 +857,28 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux",
+    "slug": "linux",
+    "segments": [
+      "linux"
+    ],
+    "filePath": "docs/zh/linux/index.mdx",
+    "meta": {
+      "title": "linux",
+      "description": "linux 简介",
+      "created_at": "2025-03-22T05:22:44.000Z",
+      "updated_at": "2025-03-22T05:22:44.000Z",
+      "tags": [
+        "linux"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/linux/systemd-timesyncd",
     "slug": "linux/systemd-timesyncd",
     "segments": [
@@ -1129,18 +900,253 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/docs",
-    "slug": "dev/md/docs",
+    "url": "/zh/docs/linux/system_time",
+    "slug": "linux/system_time",
     "segments": [
-      "dev",
-      "md",
-      "docs"
+      "linux",
+      "system_time"
     ],
-    "filePath": "docs/zh/dev/md/docs.mdx",
-    "meta": {},
+    "filePath": "docs/zh/linux/system_time.mdx",
+    "meta": {
+      "title": "系统时间",
+      "description": "在操作系统中，时间（时钟）取决于三个部分：时间值（本地时间或 UTC 等）、时区及夏令时（DST，需要时应用，在中国已废止）。本文将分别介绍各个部分的定义及如何设置和读取它们。系统中也存在两种时钟：硬件时钟和系统时钟，下文也将进行详细描述。",
+      "created_at": "2025-03-22T03:26:09.000Z",
+      "updated_at": "2025-03-22T03:26:09.000Z",
+      "tags": [
+        "linux",
+        "os",
+        "time"
+      ]
+    },
+    "order": 99,
+    "content": "大部分操作系统的时间管理包括如下方面：\n\n- 启动时根据硬件时钟设置系统时间\n- 保持系统时钟准确，细节请参考#时钟同步\n- 关机时根据系统时钟设置硬件时钟",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg",
+    "slug": "alg",
+    "segments": [
+      "alg"
+    ],
+    "filePath": "docs/zh/alg/index.mdx",
+    "meta": {
+      "title": "算法",
+      "description": "alg 即 algorithm",
+      "created_at": "2025-03-22T05:35:44.000Z",
+      "updated_at": "2025-03-22T05:35:44.000Z",
+      "tags": [
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 基础\n\n### 动态规划\n\n###  贪心算法\n\n### 分治法\n\n## 时间复杂度和空间复杂度\n\n## 常见问题\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "基础",
+        "slug": "基础"
+      },
+      {
+        "depth": 3,
+        "value": "动态规划",
+        "slug": "动态规划"
+      },
+      {
+        "depth": 3,
+        "value": "贪心算法",
+        "slug": "贪心算法"
+      },
+      {
+        "depth": 3,
+        "value": "分治法",
+        "slug": "分治法"
+      },
+      {
+        "depth": 2,
+        "value": "时间复杂度和空间复杂度",
+        "slug": "时间复杂度和空间复杂度"
+      },
+      {
+        "depth": 2,
+        "value": "常见问题",
+        "slug": "常见问题"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next",
+    "slug": "next",
+    "segments": [
+      "next"
+    ],
+    "filePath": "docs/zh/next/index.mdx",
+    "meta": {
+      "title": "Nextjs",
+      "description": "The React Framework for the Web, Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components.",
+      "created_at": "2025-03-22T05:21:31.000Z",
+      "updated_at": "2025-03-22T05:21:31.000Z",
+      "tags": [
+        "next",
+        "ts",
+        "react",
+        "web"
+      ]
+    },
     "order": 99,
     "content": "",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/next/15",
+    "slug": "next/15",
+    "segments": [
+      "next",
+      "15"
+    ],
+    "filePath": "docs/zh/next/15.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# nextjs15\n\n## 原生支持 pwa\n\n如果你已经有使用 `next-pwa` 的项目，它仍然是有效的解决方案，但对于新项目，你可以考虑使用 Next.js 的原生功能结合 Serwist（如果需要完整的离线支持）",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "nextjs15",
+        "slug": "nextjs15"
+      },
+      {
+        "depth": 2,
+        "value": "原生支持 pwa",
+        "slug": "原生支持-pwa"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts",
+    "slug": "ts",
+    "segments": [
+      "ts"
+    ],
+    "filePath": "docs/zh/ts/index.mdx",
+    "meta": {
+      "title": "TypeScript",
+      "description": "TypeScript 是 JavaScript 的超集，可以编译成纯 JavaScript 代码, 也可以直接使用 deno, ts-node, bun 等运行",
+      "created_at": "2025-03-22T05:20:06.000Z",
+      "updated_at": "2025-03-22T05:20:06.000Z",
+      "tags": [
+        "ts"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/async",
+    "slug": "ts/async",
+    "segments": [
+      "ts",
+      "async"
+    ],
+    "filePath": "docs/zh/ts/async.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# ts/async\n\n```ts filename=main.ts\nimport u, { learnAsync1 } from \"./utils.ts\";\n\nconst main = async () => {\n  // const message = await learnAsync();\n  // const message2 = await u();\n  await Promise.all([learnAsync1(), u()]);\n}\nmain();\n```\n\n```ts filename=utils.ts\nexport const learnAsync1 = () => {\n  const learnAsyncRet = new Promise<string>((resolve, reject) => {\n    setTimeout(() => {\n      const success = Math.random() > 0.1; // 10% 的概率成功\n      if (success) {\n        // console.log('learnAsync1: I have learned async!');\n        console.log('learnAsync1: 3秒');\n        resolve('learnAsync1: I have learned async!');\n      } else {\n        reject('Failed to learn async.');\n      }\n    }, 3000);\n  });\n  return learnAsyncRet\n}\n\nconst learnAsync2 = async () => {\n  // 延时一秒, 后打印 已延时一秒\n  await new Promise((resolve) => {\n    setTimeout(() => {\n      console.log('learnAsync2: 已延时一秒');\n      resolve(\"learnAsync2: Promise: OK\");\n    }, 1000);\n  });\n  // 延时3秒, 后打印 已延时1+3秒\n  setTimeout(() => {\n      console.log('learnAsync2: 已延时1+3秒');\n  }, 3000);\n  const ret = \"learnAsync2, 共花费4秒\"\n  return ret\n};\nexport default learnAsync2\n```\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "ts/async",
+        "slug": "ts/async"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/paper",
+    "slug": "paper",
+    "segments": [
+      "paper"
+    ],
+    "filePath": "docs/zh/paper/index.mdx",
+    "meta": {
+      "title": "论文",
+      "description": "论文",
+      "created_at": "2025-03-22T05:31:40.000Z",
+      "updated_at": "2025-03-22T05:31:40.000Z",
+      "tags": [
+        "math， paper"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 数据集\n\n中国老年人健康数据\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "数据集",
+        "slug": "数据集"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/ts/tsconfig",
+    "slug": "ts/tsconfig",
+    "segments": [
+      "ts",
+      "tsconfig"
+    ],
+    "filePath": "docs/zh/ts/tsconfig.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# tsconfig\n\n```jsonc filename=\"tsconfig.json\"\n{\n  \"compilerOptions\": {\n    // 在 TypeScript 中，moduleResolution 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 node 和 bundler。\n    \"moduleResolution\": \"bundler\"\n  }\n}\n```\n\n## compilerOptions\n\n### moduleResolution\n\n在 TypeScript `中，moduleResolution` 选项用于指定模块解析策略。不同的模块解析策略会影响 TypeScript 如何查找和解析模块。常见的模块解析策略包括 `node` 和 `bundler`, `classic`, `nodenext`, `node10`, `node16`\n\n#### `moduleResolution: node`\n\n`node` 模块解析策略模拟了 Node.js 的模块解析逻辑。这是 TypeScript 的默认解析策略，适用于大多数 Node.js 项目。\n\n##### 特点\n\n1. **Node.js 风格的模块解析**：\n   - TypeScript 会按照 Node.js 的方式查找模块，包括查找 node_modules 目录和解析文件扩展名（如 `.js`、`.ts`、`.json` 等）。\n   \n2. **支持 package.json 中的 `main` 字段**：\n   - TypeScript 会读取 package.json 文件中的 `main` 字段，以确定模块的入口文件。\n\n3. **支持相对路径和绝对路径**：\n   - TypeScript 支持使用相对路径（如 `./module`）和绝对路径（如 `/module`）来导入模块。\n\n#### `moduleResolution: bundler`\n\n`bundler` 模块解析策略是为现代打包工具（如 Webpack、Rollup、Vite 等）设计的。它与 `node` 模块解析策略类似，但在某些方面进行了优化，以更好地支持这些打包工具。\n\n##### 特点\n\n1. **优化的模块解析**：\n   - `bundler` 策略在解析模块时会考虑打包工具的特性，可能会更高效地处理模块解析。\n\n2. **支持 `exports` 和 `imports` 字段**：\n   - `bundler` 策略支持 package.json 文件中的 `exports` 和 `imports` 字段，这些字段是现代打包工具用来定义模块入口和导入路径的。\n\n3. **更好的兼容性**：\n   - `bundler` 策略可能会更好地兼容现代打包工具的模块解析逻辑，减少与打包工具的冲突。\n",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "tsconfig",
+        "slug": "tsconfig"
+      },
+      {
+        "depth": 2,
+        "value": "compilerOptions",
+        "slug": "compileroptions"
+      },
+      {
+        "depth": 3,
+        "value": "moduleResolution",
+        "slug": "moduleresolution"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: node",
+        "slug": "moduleresolution:-node"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      },
+      {
+        "depth": 4,
+        "value": "moduleResolution: bundler",
+        "slug": "moduleresolution:-bundler"
+      },
+      {
+        "depth": 5,
+        "value": "特点",
+        "slug": "特点"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -1169,24 +1175,194 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/ts",
-    "slug": "ts",
+    "url": "/zh/docs/dev/md/code-blocks",
+    "slug": "dev/md/code-blocks",
     "segments": [
-      "ts"
+      "dev",
+      "md",
+      "code-blocks"
     ],
-    "filePath": "docs/zh/ts/index.mdx",
+    "filePath": "docs/zh/dev/md/code-blocks.mdx",
     "meta": {
-      "title": "TypeScript",
-      "description": "TypeScript 是 JavaScript 的超集，可以编译成纯 JavaScript 代码, 也可以直接使用 deno, ts-node, bun 等运行",
-      "created_at": "2025-03-22T05:20:06.000Z",
-      "updated_at": "2025-03-22T05:20:06.000Z",
+      "title": "code blocks",
+      "created_at": "2024-10-04",
+      "updated_at": "2024-11-09T13:04:17Z",
       "tags": [
-        "ts"
+        "mdx",
+        "sugar-high"
+      ],
+      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
+    },
+    "order": 99,
+    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "syntax highlighting",
+        "slug": "syntax-highlighting"
+      },
+      {
+        "depth": 3,
+        "value": "Prism.js",
+        "slug": "prism.js"
+      },
+      {
+        "depth": 4,
+        "value": "prismjs",
+        "slug": "prismjs"
+      },
+      {
+        "depth": 4,
+        "value": "rehype-prism-plus",
+        "slug": "rehype-prism-plus"
+      },
+      {
+        "depth": 4,
+        "value": "如何协同工作",
+        "slug": "如何协同工作"
+      },
+      {
+        "depth": 4,
+        "value": "prism-react-renderer",
+        "slug": "prism-react-renderer"
+      },
+      {
+        "depth": 3,
+        "value": "Highlight.js",
+        "slug": "highlight.js"
+      },
+      {
+        "depth": 3,
+        "value": "monaco-editor",
+        "slug": "monaco-editor"
+      },
+      {
+        "depth": 2,
+        "value": "test",
+        "slug": "test"
+      },
+      {
+        "depth": 3,
+        "value": "示例代码",
+        "slug": "示例代码"
+      },
+      {
+        "depth": 2,
+        "value": "mdx",
+        "slug": "mdx"
+      },
+      {
+        "depth": 3,
+        "value": "compile time",
+        "slug": "compile-time"
+      },
+      {
+        "depth": 3,
+        "value": "runtime",
+        "slug": "runtime"
+      },
+      {
+        "depth": 2,
+        "value": "vscode-theme",
+        "slug": "vscode-theme"
+      },
+      {
+        "depth": 3,
+        "value": "VS Code 主题",
+        "slug": "vs-code-主题"
+      },
+      {
+        "depth": 3,
+        "value": "Monaco Editor 主题",
+        "slug": "monaco-editor-主题"
+      },
+      {
+        "depth": 3,
+        "value": "示例",
+        "slug": "示例"
+      },
+      {
+        "depth": 4,
+        "value": "VS Code 主题示例",
+        "slug": "vs-code-主题示例"
+      },
+      {
+        "depth": 4,
+        "value": "Monaco Editor 主题示例",
+        "slug": "monaco-editor-主题示例"
+      },
+      {
+        "depth": 3,
+        "value": "code-demo",
+        "slug": "code-demo"
+      },
+      {
+        "depth": 4,
+        "value": "python",
+        "slug": "python"
+      },
+      {
+        "depth": 4,
+        "value": "tsx",
+        "slug": "tsx"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/github",
+    "slug": "dev/md/github",
+    "segments": [
+      "dev",
+      "md",
+      "github"
+    ],
+    "filePath": "docs/zh/dev/md/github.mdx",
+    "meta": {
+      "title": "GitHub",
+      "description": "GitHub flavored markdown (GFM)",
+      "created_at": "2025-03-17T14:44:46.000Z",
+      "updated_at": "2025-03-17T14:55:01.000Z",
+      "tags": [
+        "markdown",
+        "github"
       ]
     },
     "order": 99,
-    "content": "",
-    "toc": []
+    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Autolink literals",
+        "slug": "autolink-literals"
+      },
+      {
+        "depth": 2,
+        "value": "Footnote",
+        "slug": "footnote"
+      },
+      {
+        "depth": 2,
+        "value": "Strikethrough",
+        "slug": "strikethrough"
+      },
+      {
+        "depth": 2,
+        "value": "Table",
+        "slug": "table"
+      },
+      {
+        "depth": 2,
+        "value": "Tasklist",
+        "slug": "tasklist"
+      },
+      {
+        "depth": 2,
+        "value": "Alerts",
+        "slug": "alerts"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -1199,6 +1375,22 @@
       "mdx"
     ],
     "filePath": "docs/zh/dev/md/mdx.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "",
+    "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/docs",
+    "slug": "dev/md/docs",
+    "segments": [
+      "dev",
+      "md",
+      "docs"
+    ],
+    "filePath": "docs/zh/dev/md/docs.mdx",
     "meta": {},
     "order": 99,
     "content": "",
@@ -1229,6 +1421,91 @@
     "order": 99,
     "content": "\n我们的文件来自与 各处: 本地\\远程\\数据库\\文件系统\\等等\n\n我们的文件名包括文件夹名，可能是\n```yml\n- prefix/\n  - index.mdx\n  - 01-start.mdx\n  - 02-install.mdx\n  - 03-usage/\n    - index.mdx\n    - 01-contribution-guide.mdx\n    - 02-advanced.mdx\n```\n\n\n```tsx  showLineNumbers fileame=\"src/app/docs/[...slug]/page.tsx\"\nexport const generateStaticParams = async() => {\n  return [{ slug: ['a', '1'] }, { slug: ['b'] }, { slug: ['c', '3'] }, { slug: ['d', '4', 'c'] }]\n}\n\nexport default async function Page ({\n  params,\n}: {\n  params: Promise<{ slug: string[] }>,\n}) {\n  const { slug } = await params\n  \n  return <Suspense fallback={<LoadingS />}>\n    <h1>Page</h1>\n    <p>This is the Page page.</p>\n  </Suspense>\n}\n```",
     "toc": []
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/alg/greedy",
+    "slug": "alg/greedy",
+    "segments": [
+      "alg",
+      "greedy"
+    ],
+    "filePath": "docs/zh/alg/greedy/index.mdx",
+    "meta": {
+      "title": "贪心算法",
+      "description": "贪心算法（Greedy Algorithm）是一种在每一步选择中都做出局部最优解的算法. 它的核心思想是通过局部最优解，尝试得到全局最优解. 简单高效，适合某些特定问题. 需要证明贪心选择的正确性",
+      "created_at": "2025-03-23T22:32:27.000Z",
+      "updated_at": "2025-03-23T22:32:27.000Z",
+      "tags": [
+        "greedy",
+        "alg"
+      ]
+    },
+    "order": 99,
+    "content": "\n## 为什么学习贪心算法？\n\n## 例题\n\n### 2024_CA_省C.训练士兵\n\n- 题目连接:洛谷: https://www.luogu.com.cn/problem/P10387\n\n#### 题目描述\n\n在蓝桥王国中，有 $n$ 名士兵，这些士兵需要接受一系列特殊的训练，以提升他们的战斗技能。对于第 $i$ 名士兵来说，进行一次训练所需的成本为 $p_i$ 枚金币，而要想成为顶尖战士，他至少需要进行 $c_i$ 次训练。  \n为了确保训练的高效性，王国推出了一种组团训练的方案。该方案包含每位士兵所需的一次训练，且总共只需支付 $S$ 枚金币（组团训练方案可以多次购买，即士兵可以进行多次组团训练）。  \n作为训练指挥官，请你计算出最少需要花费多少金币，才能使得所有的士兵都成为顶尖战士？\n\n#### 输入格式\n\n输入的第一行包含两个整数 $n$ 和 $S $，用一个空格分隔，表示士兵的数量和进行一次组团训练所需的金币数。  \n接下来的 $n$ 行，每行包含两个整数 $p_i$ 和 $c_i$，用一个空格分隔，表示第 $i$ 名士兵进行一次训练的金币成本和要成为顶尖战士所需的训练次数。\n\n#### 输出格式\n\n输出一行包含一个整数，表示使所有士兵成为顶尖战士所需的最少金币数。\n\n#### 输入输出样例\n\n##### 输入\n\n```\n3 6\n5 2\n2 4\n3 2\n```\n\n##### 输出\n\n```\n16\n```\n\n#### 说明/提示\n\n花费金币最少的训练方式为：进行 $2$ 次组团训练，花费 $2 × 6 = 12$ 枚金币，此时士兵 $1, 3$ 已成为顶尖战士；再花费 $4$ 枚金币，让士兵 $2$ 进行两次训练，成为顶尖战士。总花费为 $12 + 4 = 16$。\n\n对于 $40\\%$ 的评测用例，$1 ≤ n ≤ 10^3，1 ≤ p_i\n, c_i ≤ 10^5，1 ≤ S ≤ 10^7$。\n\n对于所有评测用例，$1 ≤ n ≤ 10^5，1 ≤ p_i\n, c_i ≤ 10^6，1 ≤ S ≤ 10^{10}$。\n\n#### 思路\n\n- 按照需要训练的次数 $c_i$ 从升序排序\n- 维护一个动态的 $cnt$, 表示已经组团训练的次数\n- 维护一个动态的 $tot$, 表示当前训练所有士兵一次的总成本, 用于和 $S$ 比较\n- 初始化总花费 $res=0$, 遍历一遍 n, 表示按照 $c_i$ 的顺序训练士兵时, 选择组团训练还是单独训练\n  - 如果 $S \\leq tot$, 表示当前组团训练比单独训练剩下的士兵要便宜\n    - 则选择组团训练 $c_i-cnt$ 次, $res := res + (c_i-cnt) \\times S$\n    - 并更新 $cnt:=c_i$\n  - 否则, 表示当前训练所有士兵一次的总成本大于 $S$, 则选择单独训练\n    - 则单独将这个人训练 $c_i$ 次, $res := res + (c_i-cnt) \\times p_i$\n  - 这次迭代结束说明 第 $i$ 个士兵训练完成, 更新 $tot$\n    - $tot := tot - p_i$\n#### 代码示例: \n```py\n# 获得输入\nn, S = map(int, input().split())\nmatrix_p_c = [[0,0]] * n\nfor i in range(n):\n    matrix_p_c[i] = list(map(int, input().split()))\n# 按照需要训练的次数 $c_i$ 从升序排序\np, c = [0] * n, [0] * n\nmatrix_p_c.sort(key=lambda x: x[1])\nfor i in range(n):\n    p[i], c[i] = matrix_p_c[i][0], matrix_p_c[i][1]\n# 初始化\nres, cnt, tot = 0, 0, sum(p)\n# 遍历\nfor i in range(n):\n    if S <= tot:\n        res += (c[i] - cnt) * S\n        cnt = c[i]\n    else:\n        res += (c[i] - cnt) * p[i]\n    tot -= p[i]\nprint(res)\n```\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "为什么学习贪心算法？",
+        "slug": "为什么学习贪心算法？"
+      },
+      {
+        "depth": 2,
+        "value": "例题",
+        "slug": "例题"
+      },
+      {
+        "depth": 3,
+        "value": "2024_CA_省C.训练士兵",
+        "slug": "2024_ca_省c.训练士兵"
+      },
+      {
+        "depth": 4,
+        "value": "题目描述",
+        "slug": "题目描述"
+      },
+      {
+        "depth": 4,
+        "value": "输入格式",
+        "slug": "输入格式"
+      },
+      {
+        "depth": 4,
+        "value": "输出格式",
+        "slug": "输出格式"
+      },
+      {
+        "depth": 4,
+        "value": "输入输出样例",
+        "slug": "输入输出样例"
+      },
+      {
+        "depth": 5,
+        "value": "输入",
+        "slug": "输入"
+      },
+      {
+        "depth": 5,
+        "value": "输出",
+        "slug": "输出"
+      },
+      {
+        "depth": 4,
+        "value": "说明/提示",
+        "slug": "说明/提示"
+      },
+      {
+        "depth": 4,
+        "value": "思路",
+        "slug": "思路"
+      },
+      {
+        "depth": 4,
+        "value": "代码示例:",
+        "slug": "代码示例:"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -1393,194 +1670,6 @@
         "depth": 3,
         "value": "Voice",
         "slug": "voice"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/dev/md/github",
-    "slug": "dev/md/github",
-    "segments": [
-      "dev",
-      "md",
-      "github"
-    ],
-    "filePath": "docs/zh/dev/md/github.mdx",
-    "meta": {
-      "title": "GitHub",
-      "description": "GitHub flavored markdown (GFM)",
-      "created_at": "2025-03-17T14:44:46.000Z",
-      "updated_at": "2025-03-17T14:55:01.000Z",
-      "tags": [
-        "markdown",
-        "github"
-      ]
-    },
-    "order": 99,
-    "content": "## Autolink literals\n\nwww.example.com, https://example.com, and contact@example.com.\n\n## Footnote\n\nA note[^1]\n\n[^1]: Big note.\n\n## Strikethrough\n\n~one~ or ~~two~~ tildes.\n\n## Table\n\n| a | b  |  c |  d  |\n| - | :- | -: | :-: |\n\n## Tasklist\n\n> Checkboxes\n\n* [ ] to do\n* [x] done\n\n## Alerts\n> [!NOTE]\n> Hello, world!\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n> [!IMPORTANT]\n> This is important.\n\n> [!WARNING]\n> This is a warning.\n\n\n> [!CAUTION]\n> This is caution.",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "Autolink literals",
-        "slug": "autolink-literals"
-      },
-      {
-        "depth": 2,
-        "value": "Footnote",
-        "slug": "footnote"
-      },
-      {
-        "depth": 2,
-        "value": "Strikethrough",
-        "slug": "strikethrough"
-      },
-      {
-        "depth": 2,
-        "value": "Table",
-        "slug": "table"
-      },
-      {
-        "depth": 2,
-        "value": "Tasklist",
-        "slug": "tasklist"
-      },
-      {
-        "depth": 2,
-        "value": "Alerts",
-        "slug": "alerts"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/alg/greedy",
-    "slug": "alg/greedy",
-    "segments": [
-      "alg",
-      "greedy"
-    ],
-    "filePath": "docs/zh/alg/greedy/index.mdx",
-    "meta": {
-      "title": "贪心算法",
-      "description": "贪心算法（Greedy Algorithm）是一种在每一步选择中都做出局部最优解的算法. 它的核心思想是通过局部最优解，尝试得到全局最优解. 简单高效，适合某些特定问题. 需要证明贪心选择的正确性",
-      "created_at": "2025-03-23T22:32:27.000Z",
-      "updated_at": "2025-03-23T22:32:27.000Z",
-      "tags": [
-        "greedy",
-        "alg"
-      ]
-    },
-    "order": 99,
-    "content": "\n## 为什么学习贪心算法？\n\n## 例题\n\n### 2024_CA_省C.训练士兵\n\n#### 题目描述\n\n在蓝桥王国中，有 $n$ 名士兵，这些士兵需要接受一系列特殊的训练，以提升他们的战斗技能。对于第 $i$ 名士兵来说，进行一次训练所需的成本为 $p_i$ 枚金币，而要想成为顶尖战士，他至少需要进行 $c_i$ 次训练。  \n为了确保训练的高效性，王国推出了一种组团训练的方案。该方案包含每位士兵所需的一次训练，且总共只需支付 $S$ 枚金币（组团训练方案可以多次购买，即士兵可以进行多次组团训练）。  \n作为训练指挥官，请你计算出最少需要花费多少金币，才能使得所有的士兵都成为顶尖战士？\n\n#### 输入格式\n\n输入的第一行包含两个整数 $n$ 和 $S $，用一个空格分隔，表示士兵的数量和进行一次组团训练所需的金币数。  \n接下来的 $n$ 行，每行包含两个整数 $p_i$ 和 $c_i$，用一个空格分隔，表示第 $i$ 名士兵进行一次训练的金币成本和要成为顶尖战士所需的训练次数。\n\n#### 输出格式\n\n输出一行包含一个整数，表示使所有士兵成为顶尖战士所需的最少金币数。\n\n#### 输入输出样例\n\n##### 输入\n\n```\n3 6\n5 2\n2 4\n3 2\n```\n\n##### 输出\n\n```\n16\n```\n\n#### 说明/提示\n\n花费金币最少的训练方式为：进行 $2$ 次组团训练，花费 $2 × 6 = 12$ 枚金币，此时士兵 $1, 3$ 已成为顶尖战士；再花费 $4$ 枚金币，让士兵 $2$ 进行两次训练，成为顶尖战士。总花费为 $12 + 4 = 16$。\n\n对于 $40\\%$ 的评测用例，$1 ≤ n ≤ 10^3，1 ≤ p_i\n, c_i ≤ 10^5，1 ≤ S ≤ 10^7$。\n\n对于所有评测用例，$1 ≤ n ≤ 10^5，1 ≤ p_i\n, c_i ≤ 10^6，1 ≤ S ≤ 10^{10}$。\n\ndeploy",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "为什么学习贪心算法？",
-        "slug": "为什么学习贪心算法？"
-      },
-      {
-        "depth": 2,
-        "value": "例题",
-        "slug": "例题"
-      },
-      {
-        "depth": 3,
-        "value": "2024_CA_省C.训练士兵",
-        "slug": "2024_ca_省c.训练士兵"
-      },
-      {
-        "depth": 4,
-        "value": "题目描述",
-        "slug": "题目描述"
-      },
-      {
-        "depth": 4,
-        "value": "输入格式",
-        "slug": "输入格式"
-      },
-      {
-        "depth": 4,
-        "value": "输出格式",
-        "slug": "输出格式"
-      },
-      {
-        "depth": 4,
-        "value": "输入输出样例",
-        "slug": "输入输出样例"
-      },
-      {
-        "depth": 5,
-        "value": "输入",
-        "slug": "输入"
-      },
-      {
-        "depth": 5,
-        "value": "输出",
-        "slug": "输出"
-      },
-      {
-        "depth": 4,
-        "value": "说明/提示",
-        "slug": "说明/提示"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/network/NTP",
-    "slug": "linux/network/NTP",
-    "segments": [
-      "linux",
-      "network",
-      "NTP"
-    ],
-    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
-    "meta": {
-      "title": "时间同步",
-      "description": "时间同步",
-      "created_at": "2025-03-22T01:12:59.000Z",
-      "updated_at": "2025-03-22T01:12:59.000Z",
-      "tags": [
-        "linux",
-        "time"
-      ],
-      "related": {
-        "links": [
-          "linux/systemd-timesyncd",
-          "linux/system_time"
-        ]
-      }
-    },
-    "order": 1,
-    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "安装",
-        "slug": "安装"
-      },
-      {
-        "depth": 2,
-        "value": "配置",
-        "slug": "配置"
-      },
-      {
-        "depth": 3,
-        "value": "连接到 NTP 服务器",
-        "slug": "连接到-ntp-服务器"
-      },
-      {
-        "depth": 3,
-        "value": "NTP 服务器模式",
-        "slug": "ntp-服务器模式"
-      },
-      {
-        "depth": 2,
-        "value": "使用",
-        "slug": "使用"
       }
     ]
   },
@@ -1757,213 +1846,6 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/code-blocks",
-    "slug": "dev/md/code-blocks",
-    "segments": [
-      "dev",
-      "md",
-      "code-blocks"
-    ],
-    "filePath": "docs/zh/dev/md/code-blocks.mdx",
-    "meta": {
-      "title": "code blocks",
-      "created_at": "2024-10-04",
-      "updated_at": "2024-11-09T13:04:17Z",
-      "tags": [
-        "mdx",
-        "sugar-high"
-      ],
-      "description": "mdx代码高亮, Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码"
-    },
-    "order": 99,
-    "content": "\n## syntax highlighting\n\n> [!TIP]\n> To preserve your formatting within a list, make sure to indent non-fenced code blocks by eight spaces.\n\n### Prism.js\n\nhttps://prismjs.com\n\n#### prismjs\n\n`prismjs` 是一个轻量级、可扩展的语法高亮库。它提供了多种编程语言的语法高亮支持，并且可以通过插件和主题进行扩展和自定义。 `prismjs` 主要负责实际的语法高亮逻辑和样式。\n\n- **作用**：提供语法高亮的核心功能和样式。\n- **使用**：你需要在项目中引入 `prismjs` 的核心库和样式文件，以便在页面上应用语法高亮。\n\n#### rehype-prism-plus\n\n`rehype-prism-plus` 是一个 Rehype 插件，用于在处理 MDX 或 Markdown 文件时，自动为代码块添加语法高亮。它基于 `prismjs`，并在处理 HTML AST（抽象语法树）时，应用 `prismjs` 的语法高亮功能。\n\n- **作用**：在 MDX 或 Markdown 文件的编译过程中，自动为代码块添加语法高亮。\n- **使用**：你需要在 MDX 或 Markdown 文件的编译配置中引入 `rehype-prism-plus`，以便在编译过程中应用语法高亮。\n\n#### 如何协同工作\n\n1. **Prism.js** 提供语法高亮的核心功能和样式。\n2. **rehype-prism-plus** 在编译 MDX 或 Markdown 文件时，使用 `prismjs` 为代码块添加语法高亮。\n\n引入 Prism.js 样式：\n\n```css\n@import 'prismjs/themes/prism.css';\n```\n\n#### prism-react-renderer\n\n```sh\npnpm add prism-react-renderer\n```\n\n### Highlight.js\n\n### monaco-editor\n\n使用 Monaco Editor 实现代码高亮和语法解析。\n\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n\n## test\n\n```md\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n```mdx\n# code-highlight with monaco-editor\n> Monaco Editor 使用 TextMate 语法高亮规则和 Tree-sitter 解析器来解析和高亮代码。\n```\n\n```html\n<!--  -->\n```\n\n$y = sin(x)$\n\n$$\ny = e^x\n$$\n\n要在 MDX 渲染的前端代码块中实现代码提示效果，可以使用以下工具和库：\n\n1. **Prism.js**:\n   - Prism.js 是一个轻量级、可扩展的语法高亮库，适用于现代 web 开发。它支持多种语言和插件，能提供良好的代码高亮效果。\n   - 官网：[Prism.js](https://prismjs.com)\n\n2. **react-syntax-highlighter**:\n   - 这是一个基于 React 的语法高亮组件，支持多种语法高亮库（包括 Prism.js 和 Highlight.js）。\n   - GitHub 仓库：[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)\n\n3. **Monaco Editor**:\n   - Monaco Editor 是 Visual Studio Code 使用的代码编辑器，支持丰富的代码提示和语法高亮功能。可以嵌入到 web 应用中。\n   - 官网：[Monaco Editor](https://microsoft.github.io/monaco-editor/)\n\n4. **CodeMirror**:\n   - CodeMirror 是一个用于在浏览器中实现代码编辑功能的库，支持多种语言的语法高亮和代码提示。\n   - 官网：[CodeMirror](https://codemirror.net/)\n\n### 示例代码\n\n以下是一个使用 `react-syntax-highlighter` 和 `Prism.js` 实现代码高亮的示例：\n\n```jsx name=\"CodeBlock.jsx\"\nimport { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';\nimport { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';\n\nconst codeString = `\n/// <reference types=\"node\" />\nconst fs = require('fs');\n`;\n\nconst CodeBlock = () => (\n  <SyntaxHighlighter language=\"javascript\" style={okaidia}>\n    {codeString}\n  </SyntaxHighlighter>\n);\n\nexport default CodeBlock;\n```\n\n将上述代码块嵌入到你的 MDX 文件中即可实现代码高亮效果。你可以根据需要选择不同的语法高亮库和样式。\n\n```sh\nnpm install @monaco-editor/react\n```\n\n## mdx\n\n### compile time\n\n### runtime\n\n````mdx\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\nto\n```jsx\n<>\n<pre copy=\"true\" path=\"example.py\"><code class=\"language-py\">def foo():\n  return 'bar'\n</code></pre>\n</>\n```\n````\n\n\n\n```py copy=\"true\" path=\"example.py\"\ndef foo():\n  return 'bar'\n```\n\n## vscode-theme\n\n### VS Code 主题\n\n1. **配置文件**：\n   - VS Code 主题通常使用 JSON 文件来定义颜色和样式。\n   - 主题文件通常位于 `.vscode` 文件夹中，或者作为 VS Code 扩展的一部分发布。\n\n2. **作用范围**：\n   - VS Code 主题不仅影响代码编辑器，还影响整个 VS Code 界面，包括侧边栏、状态栏、活动栏等。\n\n3. **语法高亮**：\n   - VS Code 使用 TextMate 语法定义文件（通常是 `.tmLanguage` 或 `.plist` 文件）来定义语法高亮规则。\n   - 主题文件中可以指定不同语法元素的颜色和样式。\n\n4. **扩展性**：\n   - 可以通过 VS Code 扩展市场发布和分享主题。\n   - 可以使用 VS Code API 来动态更改主题设置。\n\n### Monaco Editor 主题\n\n1. **配置文件**：\n   - Monaco Editor 主题通常使用 JavaScript 或 JSON 文件来定义颜色和样式。\n   - 主题文件通常直接在代码中定义，并通过 Monaco Editor 的 API 应用。\n\n2. **作用范围**：\n   - Monaco Editor 主题仅影响代码编辑器本身，不影响其他 UI 元素。\n\n3. **语法高亮**：\n   - Monaco Editor 使用内置的语法解析器和高亮规则。\n   - 可以通过 Monaco Editor 的 API 自定义语法高亮规则。\n\n4. **扩展性**：\n   - 主题通常作为应用的一部分，而不是单独的扩展。\n   - 可以通过 Monaco Editor 的 API 动态更改主题设置。\n\n### 示例\n\n#### VS Code 主题示例\n\n```ts copy=\"ture\" path=\"type.ts\" onOpen={props.openDemo} {...props}\ntype vscodeThemeJSON = {\n  name: string\n  type: 'dark' | 'light'\n  semanticHighlighting: boolean // 是否启用语义高亮(即将使用语言服务器提供的语义信息来高亮)\n  colors: {\n    [key: string]: string\n  };\n  tokenColors: {\n    name?: string\n    scope: string | string[]\n    settings: {\n      [key: string]: string\n    };\n  }[];\n};\n```\n\n```jsonc copy=\"ture\" path=\"aa-theme.json\"  onOpen={props.openDemo} {...props}\n{\n  \"name\": \"aa Theme\",\n  \"type\": \"dark\",\n  \"colors\": {\n    \"editor.background\": \"#1E1E1E\", // 编辑器背景颜色\n    \"editor.foreground\": \"#D4D4D4\", // 编辑器前景颜色（默认文本颜色）\n    \"editor.lineHighlightBackground\": \"#3A3D41\", // 当前行高亮背景颜色\n    \"editor.selectionBackground\": \"#264F78\", // 选中文本背景颜色\n    \"editorCursor.foreground\": \"#528BFF\", // 光标颜色\n    \"editorWhitespace.foreground\": \"#3B3A32\", // 空白字符颜色\n    \"editorIndentGuide.background\": \"#3B3A32\", // 缩进指导线颜色\n    \"editorLineNumber.foreground\": \"#858585\", // 行号颜色\n  },\n  \"tokenColors\": [\n    {\n      \"scope\": \"comment\",\n      \"settings\": {\n        \"foreground\": \"#848bbd\",\n        \"fontStyle\": \"italic\"\n      }\n    },\n    {\n      \"scope\": \"keyword\",\n      \"settings\": {\n        \"foreground\": \"#569CD6\"\n      }\n    }\n  ]\n}\n```\n\n#### Monaco Editor 主题示例\n\n```js\nmonaco.editor.defineTheme('myCoolTheme', {\n  base: 'vs-dark',\n  inherit: true,\n  rules: [\n    { token: 'comment', foreground: '6A9955' },\n    { token: 'keyword', foreground: '569CD6' }\n  ],\n  colors: {\n    'editor.background': '#1E1E1E',\n    'editor.foreground': '#D4D4D4'\n  }\n});\n\nmonaco.editor.setTheme('myCoolTheme');\n```\n\n\n\n### code-demo\n\n#### python\n    \n```py\n# 这是一个单行注释 NOTE|XXX|HACK|FIXME|BUG|TODO\n#NOTE|XXX|HACK|FIXME|BUG|TODO\n#这是NOTE|XXX|HACK|FIXME|BUG|TODO\n# type: python xxx\n#type: python\n\"\"\"\n这是一个多行注释（文档字符串）\n\"\"\"\n; # type: ignore\na = 'a'  # type: str\n# keyword.control.import.python \t\n# keyword.control.flow.python\n# from, as 可能来自于扩展\nfrom xxlimited import foo\nimport numpy as np  # 导入模块\n# 导入变量, 函数, 类,模块\nfrom numpy import exp, array, random\nimport scrapy\n\nwith open('file.txt', 'r') as file:  # 打开文件\n    for line in file:  # 循环\n        print(line)  # 打印\n\nasync def bar():\n    pass\n\nclass MyClass(object):  # 类声明\n    \"\"\"\n    usage:\n    >>> my_instance = MyClass(10)\n    \"\"\"\n    def __init__(self, value):  # 函数声明\n        self.value = value  # 赋值操作符\n        self.attribute = 0  # 赋值操作符\n\n    def my_method(self):  # 函数声明\n        # 生成器表达式\n        return (x * x for x in range(10))\n\n    @staticmethod\n    def static_method():  # 静态方法\n        pass\n\n    @classmethod\n    def class_method(cls):  # 类方法\n        pass\n\n    @property\n    def my_property(self):  # 属性\n        return self.value\n\n# 语句关键字\nif __name__ == \"__main__\":\n    PI = 3.14159  # 变量声明\n    my_instance = MyClass(10)  # 赋值操作符\n    print(my_instance.my_method())  # 函数调用\n    print(my_instance.my_property)  # 属性访问\n\n    # 使用分号分隔语句\n    a = 1; b = 2; c = a + b\n\n    # 文档字符串\n    def example_function():\n        \"\"\"\n        这是一个文档字符串\n        \"\"\"\n        pass\n\n    # 装饰器\n    @example_function\n    def decorated_function():\n        pass\n\n    # 生成器\n    def generator():\n        yield 1\n        yield 2\n        yield 3\n\n    for value in generator():\n        print(value)\n```\n\n#### tsx\n```tsx\n<EmptyLines count=\"2\" />\n\n<EmptyLines count=\"2\" />\n```",
-    "toc": [
-      {
-        "depth": 2,
-        "value": "syntax highlighting",
-        "slug": "syntax-highlighting"
-      },
-      {
-        "depth": 3,
-        "value": "Prism.js",
-        "slug": "prism.js"
-      },
-      {
-        "depth": 4,
-        "value": "prismjs",
-        "slug": "prismjs"
-      },
-      {
-        "depth": 4,
-        "value": "rehype-prism-plus",
-        "slug": "rehype-prism-plus"
-      },
-      {
-        "depth": 4,
-        "value": "如何协同工作",
-        "slug": "如何协同工作"
-      },
-      {
-        "depth": 4,
-        "value": "prism-react-renderer",
-        "slug": "prism-react-renderer"
-      },
-      {
-        "depth": 3,
-        "value": "Highlight.js",
-        "slug": "highlight.js"
-      },
-      {
-        "depth": 3,
-        "value": "monaco-editor",
-        "slug": "monaco-editor"
-      },
-      {
-        "depth": 2,
-        "value": "test",
-        "slug": "test"
-      },
-      {
-        "depth": 3,
-        "value": "示例代码",
-        "slug": "示例代码"
-      },
-      {
-        "depth": 2,
-        "value": "mdx",
-        "slug": "mdx"
-      },
-      {
-        "depth": 3,
-        "value": "compile time",
-        "slug": "compile-time"
-      },
-      {
-        "depth": 3,
-        "value": "runtime",
-        "slug": "runtime"
-      },
-      {
-        "depth": 2,
-        "value": "vscode-theme",
-        "slug": "vscode-theme"
-      },
-      {
-        "depth": 3,
-        "value": "VS Code 主题",
-        "slug": "vs-code-主题"
-      },
-      {
-        "depth": 3,
-        "value": "Monaco Editor 主题",
-        "slug": "monaco-editor-主题"
-      },
-      {
-        "depth": 3,
-        "value": "示例",
-        "slug": "示例"
-      },
-      {
-        "depth": 4,
-        "value": "VS Code 主题示例",
-        "slug": "vs-code-主题示例"
-      },
-      {
-        "depth": 4,
-        "value": "Monaco Editor 主题示例",
-        "slug": "monaco-editor-主题示例"
-      },
-      {
-        "depth": 3,
-        "value": "code-demo",
-        "slug": "code-demo"
-      },
-      {
-        "depth": 4,
-        "value": "python",
-        "slug": "python"
-      },
-      {
-        "depth": 4,
-        "value": "tsx",
-        "slug": "tsx"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/command/readme",
-    "slug": "linux/command/readme",
-    "segments": [
-      "linux",
-      "command",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/command/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "command",
-        "slug": "command"
-      },
-      {
-        "depth": 2,
-        "value": "file",
-        "slug": "file"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/input/readme",
-    "slug": "linux/input/readme",
-    "segments": [
-      "linux",
-      "input",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/input/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# input\n",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "input",
-        "slug": "input"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
-    "url": "/zh/docs/linux/file_systems/readme",
-    "slug": "linux/file_systems/readme",
-    "segments": [
-      "linux",
-      "file_systems",
-      "readme"
-    ],
-    "filePath": "docs/zh/linux/file_systems/readme.mdx",
-    "meta": {},
-    "order": 99,
-    "content": "# file_systems",
-    "toc": [
-      {
-        "depth": 1,
-        "value": "file_systems",
-        "slug": "file_systems"
-      }
-    ]
-  },
-  {
-    "locale": "zh",
-    "type": "docs",
     "url": "/zh/docs/alg/lanqiao",
     "slug": "alg/lanqiao",
     "segments": [
@@ -2034,6 +1916,112 @@
   {
     "locale": "zh",
     "type": "docs",
+    "url": "/zh/docs/linux/command/readme",
+    "slug": "linux/command/readme",
+    "segments": [
+      "linux",
+      "command",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/command/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# command\n\n## file\n\n| action | bash | zsh | cmd | powershell |\n| --- | --- | --- | --- | --- |\n| list file\\dir | `ls` | `ls` | `dir` | `Get-ChildItem` |\n| create file | `touch filename` | `touch filename` | `echo.>filename` | `New-Item -Type file filename` |\n| create dir | `mkdir dirname` | `mkdir dirname` | `md dirname` | `New-Item -Type directory dirname` |\n| copy file | `cp file1 file2` | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` |\n| copy dir | `cp -r dir1 dir2` | `cp -r dir1 dir2` | `xcopy dir1 dir2 /s` | `Copy-Item -Recurse dir1 dir2` |\n| move file | `mv file1 file2` | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` |\n| move dir | `mv dir1 dir2` | `mv dir1 dir2` | `move dir1 dir2` | `Move-Item dir1 dir2` |\n| remove file | `rm filename` | `rm filename` | `del filename` | `Remove-Item filename` |\n| remove dir | `rm -r dirname` | `rm -r dirname` | `rd dirname /s /q` | `Remove-Item -Recurse dirname` |\n| remove dir/* | `rm -r dirname/*` | `rm -r dirname/*` | `del dirname\\*.*` | `Remove-Item -Recurse dirname\\*` |",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "command",
+        "slug": "command"
+      },
+      {
+        "depth": 2,
+        "value": "file",
+        "slug": "file"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/file_systems/readme",
+    "slug": "linux/file_systems/readme",
+    "segments": [
+      "linux",
+      "file_systems",
+      "readme"
+    ],
+    "filePath": "docs/zh/linux/file_systems/readme.mdx",
+    "meta": {},
+    "order": 99,
+    "content": "# file_systems",
+    "toc": [
+      {
+        "depth": 1,
+        "value": "file_systems",
+        "slug": "file_systems"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/linux/network/NTP",
+    "slug": "linux/network/NTP",
+    "segments": [
+      "linux",
+      "network",
+      "NTP"
+    ],
+    "filePath": "docs/zh/linux/08-network/01-NTP.mdx",
+    "meta": {
+      "title": "时间同步",
+      "description": "时间同步",
+      "created_at": "2025-03-22T01:12:59.000Z",
+      "updated_at": "2025-03-22T01:12:59.000Z",
+      "tags": [
+        "linux",
+        "time"
+      ],
+      "related": {
+        "links": [
+          "linux/systemd-timesyncd",
+          "linux/system_time"
+        ]
+      }
+    },
+    "order": 1,
+    "content": "[NTP](https://wiki.archlinuxcn.org/wiki/Network_Time_Protocol_daemon), 是最常用的网络同步时间协议\n\n[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (网络时间协议) 是 GUN/linux 系统通过互联网时间服务器同步系统[软件时钟](https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F)的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。 \n\n[NTP 项目](https://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project)提供了一个名为简单 NTP 的参考实现。本文介绍如何设置和运行服务器和客户端 NTP 进程。 \n\n## 安装\n\n[安装 ntp](https://archlinux.org/packages/?name=ntp) 软件包。如果不做任何配置， ntpd 默认工作于客户端模式。如果使用 Arch Linux 默认的配置，请跳转到 [#使用](#使用)。作为服务器的配置，请参阅 [#NTP 服务器模式](#ntp-服务器模式)。\n\n## 配置\n\n### 连接到 NTP 服务器\n\n### NTP 服务器模式\n\n## 使用\n\narchlinux 软件包默认包含客户端模式的配置，并且使用单独的用户和群组，启动时就会移除 root 权限。如果在终端中启动，请使用 `-u` 选项: \n```sh\nntpd -u ntp:ntp\n```\nsystemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(panic-gate). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。 \n> [!warning] 警告: 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。\n\n两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "安装",
+        "slug": "安装"
+      },
+      {
+        "depth": 2,
+        "value": "配置",
+        "slug": "配置"
+      },
+      {
+        "depth": 3,
+        "value": "连接到 NTP 服务器",
+        "slug": "连接到-ntp-服务器"
+      },
+      {
+        "depth": 3,
+        "value": "NTP 服务器模式",
+        "slug": "ntp-服务器模式"
+      },
+      {
+        "depth": 2,
+        "value": "使用",
+        "slug": "使用"
+      }
+    ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
     "url": "/zh/docs/linux/console/Command-line_shell",
     "slug": "linux/console/Command-line_shell",
     "segments": [
@@ -2092,178 +2080,22 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/deploy/Kubernetes",
-    "slug": "dev/deploy/Kubernetes",
+    "url": "/zh/docs/linux/input/readme",
+    "slug": "linux/input/readme",
     "segments": [
-      "dev",
-      "deploy",
-      "Kubernetes"
+      "linux",
+      "input",
+      "readme"
     ],
-    "filePath": "docs/zh/dev/deploy/Kubernetes/index.mdx",
-    "meta": {
-      "title": "Kubernetes",
-      "description": "Kubernetes (简称 K8s) 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用程序。它最初由 Google 开发，现在由 CNCF (Cloud Native Computing Foundation) 维护。",
-      "created_at": "2025-03-24T13:16:07.000Z",
-      "updated_at": "2025-03-24T13:16:07.000Z",
-      "tags": []
-    },
+    "filePath": "docs/zh/linux/input/readme.mdx",
+    "meta": {},
     "order": 99,
-    "content": "\n**核心功能**:\n- **容器编排**：管理多个容器的部署、运行和通信。\n- **自动化**：自动处理容器的启动、停止、扩展和故障恢复。\n- **负载均衡**：分配流量到多个容器实例，确保高可用性。\n- **弹性伸缩**：根据负载动态扩展或缩减容器数量。\n- **服务发现**：通过 DNS 或 IP 自动发现服务。\n- **存储管理**：支持挂载本地存储、云存储（如 AWS EBS、GCP Persistent Disk）等。\n\n\n## Kubernetes 的用途\n\nKubernetes 的主要用途是帮助开发者和运维人员高效地管理容器化应用程序，尤其是在分布式系统中。以下是一些典型的应用场景：\n\n### 容器化应用的部署和管理\n- 自动化部署容器化应用程序。\n- 管理应用程序的生命周期（启动、停止、更新）。\n\n### 高可用性和容错\n- 如果某个容器实例崩溃，Kubernetes 会自动重新启动或替换它。\n- 通过负载均衡和健康检查，确保服务的高可用性。\n\n### 弹性伸缩\n- 根据流量或资源使用情况，动态扩展或缩减容器实例数量。\n\n### 多云和混合云支持\n- Kubernetes 可以运行在本地数据中心、公有云（如 AWS、GCP、Azure）或混合云环境中。\n\n### 微服务架构支持\n- Kubernetes 非常适合管理微服务架构，支持服务发现、负载均衡和跨服务通信。\n\n##  Kubernetes 的核心概念\n\n学习 Kubernetes 需要理解以下核心概念：\n\n### Pod\n- Pod 是 Kubernetes 中的最小部署单元，通常包含一个或多个容器。\n- 同一个 Pod 中的容器共享网络和存储。\n\n### Node\n- Node 是 Kubernetes 集群中的工作节点，可以是物理机或虚拟机。\n- 每个 Node 上运行容器，并由 Kubernetes 管理。\n\n### Cluster\n- Cluster 是由多个 Node 组成的 Kubernetes 集群，用于运行容器化应用。\n\n### Deployment\n- Deployment 用于管理 Pod 的部署和更新。\n- 支持滚动更新和回滚。\n\n### Service\n- Service 提供 Pod 的网络访问，支持负载均衡和服务发现。\n\n### ConfigMap 和 Secret\n- ConfigMap：用于存储非敏感的配置信息。\n- Secret: 用于存储敏感信息（如密码、API 密钥）。\n\n### Namespace\n- Namespace 用于逻辑隔离 Kubernetes 集群中的资源。\n\n### Ingress\n- Ingress 是一种 API 对象，用于管理外部 HTTP/HTTPS 流量到集群内部服务的路由\n\n## 学习 Kubernetes 的步骤\n\n### 基础知识准备\n在学习 Kubernetes 之前，建议先掌握以下基础知识：\n1. **容器化技术**：\n   - 学习 Docker，理解容器的基本概念和操作（如镜像、容器、网络、存储）。\n2. **Linux 基础**：\n   - 熟悉 Linux 命令行操作和网络基础。\n3. **云计算基础**：\n   - 了解云计算的基本概念（如虚拟机、负载均衡、存储）。\n\n### 学习 Kubernetes 核心概念\n1. 学习 Kubernetes 的基本架构和核心组件。\n2. 理解 Pod、Deployment、Service 等核心资源的作用和用法。\n\n### 实践 Kubernetes\n1. **安装 Kubernetes**：\n   - 使用 Minikube 或 Kind 在本地搭建 Kubernetes 集群。\n   - 或者使用云服务提供的 Kubernetes（如 AWS EKS、GCP GKE、Azure AKS）。\n2. **部署应用**：\n   - 部署一个简单的容器化应用（如 Nginx）。\n   - 学习如何使用 `kubectl` 命令管理 Kubernetes 资源。\n3. **配置和管理**：\n   - 学习如何使用 ConfigMap 和 Secret 配置应用。\n   - 学习如何使用 Ingress 暴露服务。\n\n### 学习高级功能\n1. **弹性伸缩**：\n   - 学习 Horizontal Pod Autoscaler（HPA）。\n2. **监控和日志**：\n   - 使用工具（如 Prometheus、Grafana）监控 Kubernetes 集群。\n   - 学习如何查看 Pod 的日志。\n3. **持久化存储**：\n   - 学习如何使用 PersistentVolume 和 PersistentVolumeClaim 管理存储。\n4. **安全性**：\n   - 学习 RBAC（基于角色的访问控制）。\n   - 学习如何使用 Secret 管理敏感信息。\n\n### 学习 Kubernetes 生态系统\n1. **Helm**：\n   - 学习 Helm，用于管理 Kubernetes 应用的包管理工具。\n2. **CI/CD 集成**：\n   - 学习如何将 Kubernetes 集成到 CI/CD 流程中。\n3. **服务网格（Service Mesh）**：\n   - 学习 Istio 或 Linkerd，用于管理微服务的通信。\n\n---\n\n## 学习 Kubernetes 的资源\n\n### 官方文档\n- Kubernetes 官方文档是最权威的学习资源：\n  - [Kubernetes 官方文档](https://kubernetes.io/)\n\n### 在线课程\n- **免费课程**：\n  - [Kubernetes Basics by Google Cloud](https://kubernetes.io/docs/tutorials/kubernetes-basics/)\n- **付费课程**：\n  - Udemy 上的 Kubernetes 入门课程。\n  - Pluralsight 的 Kubernetes 系列课程。\n\n### 实践工具\n- **Minikube**：\n  - 在本地运行 Kubernetes 集群。\n  - [Minikube 官方文档](https://minikube.sigs.k8s.io/docs/)\n- **Kind**：\n  - 使用 Docker 容器运行 Kubernetes 集群。\n  - [Kind 官方文档](https://kind.sigs.k8s.io/)\n\n### 学习书籍\n- 《Kubernetes in Action》\n- 《Kubernetes Up & Running》\n\n### 社区资源\n- Kubernetes 官方 Slack 社区。\n- CNCF（Cloud Native Computing Foundation）资源。\n\n## Kubernetes 的优缺点\n\n### 优点\n1. **自动化**：自动化部署、扩展和管理容器化应用。\n2. **高可用性**：支持容错和负载均衡。\n3. **跨平台支持**：支持多云和混合云环境。\n4. **生态系统丰富**：与 Helm、Prometheus、Istio 等工具集成良好。\n\n### 缺点\n1. **学习曲线陡峭**：需要掌握大量概念和工具。\n2. **复杂性**：对于小型项目可能显得过于复杂。\n3. **资源消耗**：运行 Kubernetes 集群需要较高的资源。\n\n## 总结\n\n- **Kubernetes 是什么**：\n  - Kubernetes 是一个容器编排平台，用于自动化部署、扩展和管理容器化应用。\n\n- **Kubernetes 的用途**：\n  - 管理容器化应用的生命周期。\n  - 提供高可用性、弹性伸缩和服务发现。\n\n- **如何学习 Kubernetes**：\n  1. 掌握基础知识（Docker、Linux、云计算）。\n  2. 学习 Kubernetes 核心概念（Pod、Deployment、Service 等）。\n  3. 通过 Minikube 或云服务实践 Kubernetes。\n  4. 学习高级功能（弹性伸缩、监控、持久化存储等）。\n\n{/* ```mermaid\ngraph TD\n    User[用户请求] --> DNS[DNS解析]\n    DNS --> VIP[\"VIP (keepalived 提供)\"]\n    VIP --> LBService[\"Service (负载均衡到 Ingress Controller)\"]\n    LBService --> IngressController[Nginx Ingress Controller]\n    IngressController --> BackendService[\"Service (负载均衡到具体服务)\"]\n    BackendService --> Pod[\"Pod (运行具体应用)\"]\n``` */}\n",
+    "content": "# input\n",
     "toc": [
       {
-        "depth": 2,
-        "value": "Kubernetes 的用途",
-        "slug": "kubernetes-的用途"
-      },
-      {
-        "depth": 3,
-        "value": "容器化应用的部署和管理",
-        "slug": "容器化应用的部署和管理"
-      },
-      {
-        "depth": 3,
-        "value": "高可用性和容错",
-        "slug": "高可用性和容错"
-      },
-      {
-        "depth": 3,
-        "value": "弹性伸缩",
-        "slug": "弹性伸缩"
-      },
-      {
-        "depth": 3,
-        "value": "多云和混合云支持",
-        "slug": "多云和混合云支持"
-      },
-      {
-        "depth": 3,
-        "value": "微服务架构支持",
-        "slug": "微服务架构支持"
-      },
-      {
-        "depth": 2,
-        "value": "Kubernetes 的核心概念",
-        "slug": "kubernetes-的核心概念"
-      },
-      {
-        "depth": 3,
-        "value": "Pod",
-        "slug": "pod"
-      },
-      {
-        "depth": 3,
-        "value": "Node",
-        "slug": "node"
-      },
-      {
-        "depth": 3,
-        "value": "Cluster",
-        "slug": "cluster"
-      },
-      {
-        "depth": 3,
-        "value": "Deployment",
-        "slug": "deployment"
-      },
-      {
-        "depth": 3,
-        "value": "Service",
-        "slug": "service"
-      },
-      {
-        "depth": 3,
-        "value": "ConfigMap 和 Secret",
-        "slug": "configmap-和-secret"
-      },
-      {
-        "depth": 3,
-        "value": "Namespace",
-        "slug": "namespace"
-      },
-      {
-        "depth": 3,
-        "value": "Ingress",
-        "slug": "ingress"
-      },
-      {
-        "depth": 2,
-        "value": "学习 Kubernetes 的步骤",
-        "slug": "学习-kubernetes-的步骤"
-      },
-      {
-        "depth": 3,
-        "value": "基础知识准备",
-        "slug": "基础知识准备"
-      },
-      {
-        "depth": 3,
-        "value": "学习 Kubernetes 核心概念",
-        "slug": "学习-kubernetes-核心概念"
-      },
-      {
-        "depth": 3,
-        "value": "实践 Kubernetes",
-        "slug": "实践-kubernetes"
-      },
-      {
-        "depth": 3,
-        "value": "学习高级功能",
-        "slug": "学习高级功能"
-      },
-      {
-        "depth": 3,
-        "value": "学习 Kubernetes 生态系统",
-        "slug": "学习-kubernetes-生态系统"
-      },
-      {
-        "depth": 2,
-        "value": "学习 Kubernetes 的资源",
-        "slug": "学习-kubernetes-的资源"
-      },
-      {
-        "depth": 3,
-        "value": "官方文档",
-        "slug": "官方文档"
-      },
-      {
-        "depth": 3,
-        "value": "在线课程",
-        "slug": "在线课程"
-      },
-      {
-        "depth": 3,
-        "value": "实践工具",
-        "slug": "实践工具"
-      },
-      {
-        "depth": 3,
-        "value": "学习书籍",
-        "slug": "学习书籍"
-      },
-      {
-        "depth": 3,
-        "value": "社区资源",
-        "slug": "社区资源"
-      },
-      {
-        "depth": 2,
-        "value": "Kubernetes 的优缺点",
-        "slug": "kubernetes-的优缺点"
-      },
-      {
-        "depth": 3,
-        "value": "优点",
-        "slug": "优点"
-      },
-      {
-        "depth": 3,
-        "value": "缺点",
-        "slug": "缺点"
-      },
-      {
-        "depth": 2,
-        "value": "总结",
-        "slug": "总结"
+        "depth": 1,
+        "value": "input",
+        "slug": "input"
       }
     ]
   },
@@ -2519,27 +2351,180 @@
   {
     "locale": "zh",
     "type": "docs",
-    "url": "/zh/docs/dev/md/css",
-    "slug": "dev/md/css",
+    "url": "/zh/docs/dev/deploy/Kubernetes",
+    "slug": "dev/deploy/Kubernetes",
     "segments": [
       "dev",
-      "md",
-      "css"
+      "deploy",
+      "Kubernetes"
     ],
-    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "filePath": "docs/zh/dev/deploy/Kubernetes/index.mdx",
     "meta": {
-      "title": "md css",
-      "description": null,
-      "created_at": "2025-03-21T23:23:27.000Z",
-      "updated_at": "2025-03-21T23:23:27.000Z",
-      "tags": [
-        "md",
-        "css"
-      ]
+      "title": "Kubernetes",
+      "description": "Kubernetes (简称 K8s) 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用程序。它最初由 Google 开发，现在由 CNCF (Cloud Native Computing Foundation) 维护。",
+      "created_at": "2025-03-24T13:16:07.000Z",
+      "updated_at": "2025-03-24T13:16:07.000Z",
+      "tags": []
     },
     "order": 99,
-    "content": "",
-    "toc": []
+    "content": "\n**核心功能**:\n- **容器编排**：管理多个容器的部署、运行和通信。\n- **自动化**：自动处理容器的启动、停止、扩展和故障恢复。\n- **负载均衡**：分配流量到多个容器实例，确保高可用性。\n- **弹性伸缩**：根据负载动态扩展或缩减容器数量。\n- **服务发现**：通过 DNS 或 IP 自动发现服务。\n- **存储管理**：支持挂载本地存储、云存储（如 AWS EBS、GCP Persistent Disk）等。\n\n\n## Kubernetes 的用途\n\nKubernetes 的主要用途是帮助开发者和运维人员高效地管理容器化应用程序，尤其是在分布式系统中。以下是一些典型的应用场景：\n\n### 容器化应用的部署和管理\n- 自动化部署容器化应用程序。\n- 管理应用程序的生命周期（启动、停止、更新）。\n\n### 高可用性和容错\n- 如果某个容器实例崩溃，Kubernetes 会自动重新启动或替换它。\n- 通过负载均衡和健康检查，确保服务的高可用性。\n\n### 弹性伸缩\n- 根据流量或资源使用情况，动态扩展或缩减容器实例数量。\n\n### 多云和混合云支持\n- Kubernetes 可以运行在本地数据中心、公有云（如 AWS、GCP、Azure）或混合云环境中。\n\n### 微服务架构支持\n- Kubernetes 非常适合管理微服务架构，支持服务发现、负载均衡和跨服务通信。\n\n##  Kubernetes 的核心概念\n\n学习 Kubernetes 需要理解以下核心概念：\n\n### Pod\n- Pod 是 Kubernetes 中的最小部署单元，通常包含一个或多个容器。\n- 同一个 Pod 中的容器共享网络和存储。\n\n### Node\n- Node 是 Kubernetes 集群中的工作节点，可以是物理机或虚拟机。\n- 每个 Node 上运行容器，并由 Kubernetes 管理。\n\n### Cluster\n- Cluster 是由多个 Node 组成的 Kubernetes 集群，用于运行容器化应用。\n\n### Deployment\n- Deployment 用于管理 Pod 的部署和更新。\n- 支持滚动更新和回滚。\n\n### Service\n- Service 提供 Pod 的网络访问，支持负载均衡和服务发现。\n\n### ConfigMap 和 Secret\n- ConfigMap：用于存储非敏感的配置信息。\n- Secret: 用于存储敏感信息（如密码、API 密钥）。\n\n### Namespace\n- Namespace 用于逻辑隔离 Kubernetes 集群中的资源。\n\n### Ingress\n- Ingress 是一种 API 对象，用于管理外部 HTTP/HTTPS 流量到集群内部服务的路由\n\n## 学习 Kubernetes 的步骤\n\n### 基础知识准备\n在学习 Kubernetes 之前，建议先掌握以下基础知识：\n1. **容器化技术**：\n   - 学习 Docker，理解容器的基本概念和操作（如镜像、容器、网络、存储）。\n2. **Linux 基础**：\n   - 熟悉 Linux 命令行操作和网络基础。\n3. **云计算基础**：\n   - 了解云计算的基本概念（如虚拟机、负载均衡、存储）。\n\n### 学习 Kubernetes 核心概念\n1. 学习 Kubernetes 的基本架构和核心组件。\n2. 理解 Pod、Deployment、Service 等核心资源的作用和用法。\n\n### 实践 Kubernetes\n1. **安装 Kubernetes**：\n   - 使用 Minikube 或 Kind 在本地搭建 Kubernetes 集群。\n   - 或者使用云服务提供的 Kubernetes（如 AWS EKS、GCP GKE、Azure AKS）。\n2. **部署应用**：\n   - 部署一个简单的容器化应用（如 Nginx）。\n   - 学习如何使用 `kubectl` 命令管理 Kubernetes 资源。\n3. **配置和管理**：\n   - 学习如何使用 ConfigMap 和 Secret 配置应用。\n   - 学习如何使用 Ingress 暴露服务。\n\n### 学习高级功能\n1. **弹性伸缩**：\n   - 学习 Horizontal Pod Autoscaler（HPA）。\n2. **监控和日志**：\n   - 使用工具（如 Prometheus、Grafana）监控 Kubernetes 集群。\n   - 学习如何查看 Pod 的日志。\n3. **持久化存储**：\n   - 学习如何使用 PersistentVolume 和 PersistentVolumeClaim 管理存储。\n4. **安全性**：\n   - 学习 RBAC（基于角色的访问控制）。\n   - 学习如何使用 Secret 管理敏感信息。\n\n### 学习 Kubernetes 生态系统\n1. **Helm**：\n   - 学习 Helm，用于管理 Kubernetes 应用的包管理工具。\n2. **CI/CD 集成**：\n   - 学习如何将 Kubernetes 集成到 CI/CD 流程中。\n3. **服务网格（Service Mesh）**：\n   - 学习 Istio 或 Linkerd，用于管理微服务的通信。\n\n---\n\n## 学习 Kubernetes 的资源\n\n### 官方文档\n- Kubernetes 官方文档是最权威的学习资源：\n  - [Kubernetes 官方文档](https://kubernetes.io/)\n\n### 在线课程\n- **免费课程**：\n  - [Kubernetes Basics by Google Cloud](https://kubernetes.io/docs/tutorials/kubernetes-basics/)\n- **付费课程**：\n  - Udemy 上的 Kubernetes 入门课程。\n  - Pluralsight 的 Kubernetes 系列课程。\n\n### 实践工具\n- **Minikube**：\n  - 在本地运行 Kubernetes 集群。\n  - [Minikube 官方文档](https://minikube.sigs.k8s.io/docs/)\n- **Kind**：\n  - 使用 Docker 容器运行 Kubernetes 集群。\n  - [Kind 官方文档](https://kind.sigs.k8s.io/)\n\n### 学习书籍\n- 《Kubernetes in Action》\n- 《Kubernetes Up & Running》\n\n### 社区资源\n- Kubernetes 官方 Slack 社区。\n- CNCF（Cloud Native Computing Foundation）资源。\n\n## Kubernetes 的优缺点\n\n### 优点\n1. **自动化**：自动化部署、扩展和管理容器化应用。\n2. **高可用性**：支持容错和负载均衡。\n3. **跨平台支持**：支持多云和混合云环境。\n4. **生态系统丰富**：与 Helm、Prometheus、Istio 等工具集成良好。\n\n### 缺点\n1. **学习曲线陡峭**：需要掌握大量概念和工具。\n2. **复杂性**：对于小型项目可能显得过于复杂。\n3. **资源消耗**：运行 Kubernetes 集群需要较高的资源。\n\n## 总结\n\n- **Kubernetes 是什么**：\n  - Kubernetes 是一个容器编排平台，用于自动化部署、扩展和管理容器化应用。\n\n- **Kubernetes 的用途**：\n  - 管理容器化应用的生命周期。\n  - 提供高可用性、弹性伸缩和服务发现。\n\n- **如何学习 Kubernetes**：\n  1. 掌握基础知识（Docker、Linux、云计算）。\n  2. 学习 Kubernetes 核心概念（Pod、Deployment、Service 等）。\n  3. 通过 Minikube 或云服务实践 Kubernetes。\n  4. 学习高级功能（弹性伸缩、监控、持久化存储等）。\n\n{/* ```mermaid\ngraph TD\n    User[用户请求] --> DNS[DNS解析]\n    DNS --> VIP[\"VIP (keepalived 提供)\"]\n    VIP --> LBService[\"Service (负载均衡到 Ingress Controller)\"]\n    LBService --> IngressController[Nginx Ingress Controller]\n    IngressController --> BackendService[\"Service (负载均衡到具体服务)\"]\n    BackendService --> Pod[\"Pod (运行具体应用)\"]\n``` */}\n",
+    "toc": [
+      {
+        "depth": 2,
+        "value": "Kubernetes 的用途",
+        "slug": "kubernetes-的用途"
+      },
+      {
+        "depth": 3,
+        "value": "容器化应用的部署和管理",
+        "slug": "容器化应用的部署和管理"
+      },
+      {
+        "depth": 3,
+        "value": "高可用性和容错",
+        "slug": "高可用性和容错"
+      },
+      {
+        "depth": 3,
+        "value": "弹性伸缩",
+        "slug": "弹性伸缩"
+      },
+      {
+        "depth": 3,
+        "value": "多云和混合云支持",
+        "slug": "多云和混合云支持"
+      },
+      {
+        "depth": 3,
+        "value": "微服务架构支持",
+        "slug": "微服务架构支持"
+      },
+      {
+        "depth": 2,
+        "value": "Kubernetes 的核心概念",
+        "slug": "kubernetes-的核心概念"
+      },
+      {
+        "depth": 3,
+        "value": "Pod",
+        "slug": "pod"
+      },
+      {
+        "depth": 3,
+        "value": "Node",
+        "slug": "node"
+      },
+      {
+        "depth": 3,
+        "value": "Cluster",
+        "slug": "cluster"
+      },
+      {
+        "depth": 3,
+        "value": "Deployment",
+        "slug": "deployment"
+      },
+      {
+        "depth": 3,
+        "value": "Service",
+        "slug": "service"
+      },
+      {
+        "depth": 3,
+        "value": "ConfigMap 和 Secret",
+        "slug": "configmap-和-secret"
+      },
+      {
+        "depth": 3,
+        "value": "Namespace",
+        "slug": "namespace"
+      },
+      {
+        "depth": 3,
+        "value": "Ingress",
+        "slug": "ingress"
+      },
+      {
+        "depth": 2,
+        "value": "学习 Kubernetes 的步骤",
+        "slug": "学习-kubernetes-的步骤"
+      },
+      {
+        "depth": 3,
+        "value": "基础知识准备",
+        "slug": "基础知识准备"
+      },
+      {
+        "depth": 3,
+        "value": "学习 Kubernetes 核心概念",
+        "slug": "学习-kubernetes-核心概念"
+      },
+      {
+        "depth": 3,
+        "value": "实践 Kubernetes",
+        "slug": "实践-kubernetes"
+      },
+      {
+        "depth": 3,
+        "value": "学习高级功能",
+        "slug": "学习高级功能"
+      },
+      {
+        "depth": 3,
+        "value": "学习 Kubernetes 生态系统",
+        "slug": "学习-kubernetes-生态系统"
+      },
+      {
+        "depth": 2,
+        "value": "学习 Kubernetes 的资源",
+        "slug": "学习-kubernetes-的资源"
+      },
+      {
+        "depth": 3,
+        "value": "官方文档",
+        "slug": "官方文档"
+      },
+      {
+        "depth": 3,
+        "value": "在线课程",
+        "slug": "在线课程"
+      },
+      {
+        "depth": 3,
+        "value": "实践工具",
+        "slug": "实践工具"
+      },
+      {
+        "depth": 3,
+        "value": "学习书籍",
+        "slug": "学习书籍"
+      },
+      {
+        "depth": 3,
+        "value": "社区资源",
+        "slug": "社区资源"
+      },
+      {
+        "depth": 2,
+        "value": "Kubernetes 的优缺点",
+        "slug": "kubernetes-的优缺点"
+      },
+      {
+        "depth": 3,
+        "value": "优点",
+        "slug": "优点"
+      },
+      {
+        "depth": 3,
+        "value": "缺点",
+        "slug": "缺点"
+      },
+      {
+        "depth": 2,
+        "value": "总结",
+        "slug": "总结"
+      }
+    ]
   },
   {
     "locale": "zh",
@@ -2568,6 +2553,31 @@
         "slug": "colors"
       }
     ]
+  },
+  {
+    "locale": "zh",
+    "type": "docs",
+    "url": "/zh/docs/dev/md/css",
+    "slug": "dev/md/css",
+    "segments": [
+      "dev",
+      "md",
+      "css"
+    ],
+    "filePath": "docs/zh/dev/md/css/index.mdx",
+    "meta": {
+      "title": "md css",
+      "description": null,
+      "created_at": "2025-03-21T23:23:27.000Z",
+      "updated_at": "2025-03-21T23:23:27.000Z",
+      "tags": [
+        "md",
+        "css"
+      ]
+    },
+    "order": 99,
+    "content": "",
+    "toc": []
   },
   {
     "locale": "zh",

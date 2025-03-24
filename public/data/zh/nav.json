@@ -1,5 +1,13 @@
 [
   {
+    "segment": "learn",
+    "title": "学习",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/learn",
+    "type": "file"
+  },
+  {
     "segment": "i18n",
     "title": "i18 国际化",
     "order": 99,
@@ -29,14 +37,6 @@
         "type": "file"
       },
       {
-        "segment": "test",
-        "title": "测试",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/test",
-        "type": "file"
-      },
-      {
         "segment": "search",
         "title": "增添搜索引擎",
         "order": 99,
@@ -45,11 +45,11 @@
         "type": "file"
       },
       {
-        "segment": "x",
-        "title": "x",
+        "segment": "test",
+        "title": "测试",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/dev/x",
+        "url": "/zh/docs/dev/test",
         "type": "file"
       },
       {
@@ -61,32 +61,41 @@
         "type": "file"
       },
       {
+        "segment": "x",
+        "title": "x",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/x",
+        "type": "file"
+      },
+      {
+        "segment": "deploy",
+        "title": "部署",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Kubernetes",
+            "title": "Kubernetes",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/deploy/Kubernetes",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/dev/deploy",
+        "type": "dir"
+      },
+      {
         "segment": "md",
         "title": "md",
         "order": 99,
         "children": [
           {
-            "segment": "docs",
-            "title": "docs",
+            "segment": "code-blocks",
+            "title": "code blocks",
             "order": 99,
             "children": [],
-            "url": "/zh/docs/dev/md/docs",
-            "type": "file"
-          },
-          {
-            "segment": "mdx",
-            "title": "mdx",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/mdx",
-            "type": "file"
-          },
-          {
-            "segment": "slug",
-            "title": "md slug",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/slug",
+            "url": "/zh/docs/dev/md/code-blocks",
             "type": "file"
           },
           {
@@ -98,11 +107,27 @@
             "type": "file"
           },
           {
-            "segment": "code-blocks",
-            "title": "code blocks",
+            "segment": "mdx",
+            "title": "mdx",
             "order": 99,
             "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
+            "url": "/zh/docs/dev/md/mdx",
+            "type": "file"
+          },
+          {
+            "segment": "docs",
+            "title": "docs",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/docs",
+            "type": "file"
+          },
+          {
+            "segment": "slug",
+            "title": "md slug",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/slug",
             "type": "file"
           },
           {
@@ -133,35 +158,10 @@
         ],
         "url": "/zh/docs/dev/md",
         "type": "dir"
-      },
-      {
-        "segment": "deploy",
-        "title": "部署",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Kubernetes",
-            "title": "Kubernetes",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/deploy/Kubernetes",
-            "type": "dir"
-          }
-        ],
-        "url": "/zh/docs/dev/deploy",
-        "type": "dir"
       }
     ],
     "url": "/zh/docs/dev",
     "type": "dir"
-  },
-  {
-    "segment": "learn",
-    "title": "学习",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/learn",
-    "type": "file"
   },
   {
     "segment": "html",
@@ -199,23 +199,23 @@
   },
   {
     "segment": "alg",
-    "title": "算法",
+    "title": "alg",
     "order": 99,
     "children": [
-      {
-        "segment": "Array",
-        "title": "线性结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/Array",
-        "type": "file"
-      },
       {
         "segment": "blog",
         "title": "日志",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
+        "segment": "Array",
+        "title": "线性结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/Array",
         "type": "file"
       },
       {
@@ -268,14 +268,6 @@
     "order": 99,
     "children": [
       {
-        "segment": "system_time",
-        "title": "系统时间",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/linux/system_time",
-        "type": "file"
-      },
-      {
         "segment": "systemd-timesyncd",
         "title": "systemd-timesyncd",
         "order": 99,
@@ -284,21 +276,12 @@
         "type": "file"
       },
       {
-        "segment": "network",
-        "title": "network",
+        "segment": "system_time",
+        "title": "系统时间",
         "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
-        "type": "dir"
+        "children": [],
+        "url": "/zh/docs/linux/system_time",
+        "type": "file"
       },
       {
         "segment": "command",
@@ -318,23 +301,6 @@
         "type": "dir"
       },
       {
-        "segment": "input",
-        "title": "input",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/input/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/input",
-        "type": "dir"
-      },
-      {
         "segment": "file_systems",
         "title": "file_systems",
         "order": 99,
@@ -349,6 +315,23 @@
           }
         ],
         "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
         "type": "dir"
       },
       {
@@ -375,6 +358,23 @@
         ],
         "url": "/zh/docs/linux/console",
         "type": "dir"
+      },
+      {
+        "segment": "input",
+        "title": "input",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/input/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/input",
+        "type": "dir"
       }
     ],
     "url": "/zh/docs/linux",
@@ -382,7 +382,7 @@
   },
   {
     "segment": "next",
-    "title": "next",
+    "title": "Nextjs",
     "order": 99,
     "children": [
       {
@@ -486,7 +486,7 @@
   },
   {
     "segment": "ts",
-    "title": "ts",
+    "title": "TypeScript",
     "order": 99,
     "children": [
       {
