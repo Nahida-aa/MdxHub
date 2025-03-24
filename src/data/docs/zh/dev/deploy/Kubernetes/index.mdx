@@ -1,0 +1,184 @@
+---
+title: Kubernetes
+description: Kubernetes (简称 K8s) 是一个开源的容器编排平台，用于自动化部署、扩展和管理容器化应用程序。它最初由 Google 开发，现在由 CNCF (Cloud Native Computing Foundation) 维护。
+created_at: 2025-03-24T13:16:07Z
+updated_at: 2025-03-24T13:16:07Z
+tags: []
+---
+
+**核心功能**:
+- **容器编排**：管理多个容器的部署、运行和通信。
+- **自动化**：自动处理容器的启动、停止、扩展和故障恢复。
+- **负载均衡**：分配流量到多个容器实例，确保高可用性。
+- **弹性伸缩**：根据负载动态扩展或缩减容器数量。
+- **服务发现**：通过 DNS 或 IP 自动发现服务。
+- **存储管理**：支持挂载本地存储、云存储（如 AWS EBS、GCP Persistent Disk）等。
+
+
+## Kubernetes 的用途
+
+Kubernetes 的主要用途是帮助开发者和运维人员高效地管理容器化应用程序，尤其是在分布式系统中。以下是一些典型的应用场景：
+
+### 容器化应用的部署和管理
+- 自动化部署容器化应用程序。
+- 管理应用程序的生命周期（启动、停止、更新）。
+
+### 高可用性和容错
+- 如果某个容器实例崩溃，Kubernetes 会自动重新启动或替换它。
+- 通过负载均衡和健康检查，确保服务的高可用性。
+
+### 弹性伸缩
+- 根据流量或资源使用情况，动态扩展或缩减容器实例数量。
+
+### 多云和混合云支持
+- Kubernetes 可以运行在本地数据中心、公有云（如 AWS、GCP、Azure）或混合云环境中。
+
+### 微服务架构支持
+- Kubernetes 非常适合管理微服务架构，支持服务发现、负载均衡和跨服务通信。
+
+##  Kubernetes 的核心概念
+
+学习 Kubernetes 需要理解以下核心概念：
+
+### Pod
+- Pod 是 Kubernetes 中的最小部署单元，通常包含一个或多个容器。
+- 同一个 Pod 中的容器共享网络和存储。
+
+### Node
+- Node 是 Kubernetes 集群中的工作节点，可以是物理机或虚拟机。
+- 每个 Node 上运行容器，并由 Kubernetes 管理。
+
+### Cluster
+- Cluster 是由多个 Node 组成的 Kubernetes 集群，用于运行容器化应用。
+
+### Deployment
+- Deployment 用于管理 Pod 的部署和更新。
+- 支持滚动更新和回滚。
+
+### Service
+- Service 提供 Pod 的网络访问，支持负载均衡和服务发现。
+
+### ConfigMap 和 Secret
+- ConfigMap：用于存储非敏感的配置信息。
+- Secret: 用于存储敏感信息（如密码、API 密钥）。
+
+### Namespace
+- Namespace 用于逻辑隔离 Kubernetes 集群中的资源。
+
+### Ingress
+- Ingress 是一种 API 对象，用于管理外部 HTTP/HTTPS 流量到集群内部服务的路由
+
+## 学习 Kubernetes 的步骤
+
+### 基础知识准备
+在学习 Kubernetes 之前，建议先掌握以下基础知识：
+1. **容器化技术**：
+   - 学习 Docker，理解容器的基本概念和操作（如镜像、容器、网络、存储）。
+2. **Linux 基础**：
+   - 熟悉 Linux 命令行操作和网络基础。
+3. **云计算基础**：
+   - 了解云计算的基本概念（如虚拟机、负载均衡、存储）。
+
+### 学习 Kubernetes 核心概念
+1. 学习 Kubernetes 的基本架构和核心组件。
+2. 理解 Pod、Deployment、Service 等核心资源的作用和用法。
+
+### 实践 Kubernetes
+1. **安装 Kubernetes**：
+   - 使用 Minikube 或 Kind 在本地搭建 Kubernetes 集群。
+   - 或者使用云服务提供的 Kubernetes（如 AWS EKS、GCP GKE、Azure AKS）。
+2. **部署应用**：
+   - 部署一个简单的容器化应用（如 Nginx）。
+   - 学习如何使用 `kubectl` 命令管理 Kubernetes 资源。
+3. **配置和管理**：
+   - 学习如何使用 ConfigMap 和 Secret 配置应用。
+   - 学习如何使用 Ingress 暴露服务。
+
+### 学习高级功能
+1. **弹性伸缩**：
+   - 学习 Horizontal Pod Autoscaler（HPA）。
+2. **监控和日志**：
+   - 使用工具（如 Prometheus、Grafana）监控 Kubernetes 集群。
+   - 学习如何查看 Pod 的日志。
+3. **持久化存储**：
+   - 学习如何使用 PersistentVolume 和 PersistentVolumeClaim 管理存储。
+4. **安全性**：
+   - 学习 RBAC（基于角色的访问控制）。
+   - 学习如何使用 Secret 管理敏感信息。
+
+### 学习 Kubernetes 生态系统
+1. **Helm**：
+   - 学习 Helm，用于管理 Kubernetes 应用的包管理工具。
+2. **CI/CD 集成**：
+   - 学习如何将 Kubernetes 集成到 CI/CD 流程中。
+3. **服务网格（Service Mesh）**：
+   - 学习 Istio 或 Linkerd，用于管理微服务的通信。
+
+---
+
+## 学习 Kubernetes 的资源
+
+### 官方文档
+- Kubernetes 官方文档是最权威的学习资源：
+  - [Kubernetes 官方文档](https://kubernetes.io/)
+
+### 在线课程
+- **免费课程**：
+  - [Kubernetes Basics by Google Cloud](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+- **付费课程**：
+  - Udemy 上的 Kubernetes 入门课程。
+  - Pluralsight 的 Kubernetes 系列课程。
+
+### 实践工具
+- **Minikube**：
+  - 在本地运行 Kubernetes 集群。
+  - [Minikube 官方文档](https://minikube.sigs.k8s.io/docs/)
+- **Kind**：
+  - 使用 Docker 容器运行 Kubernetes 集群。
+  - [Kind 官方文档](https://kind.sigs.k8s.io/)
+
+### 学习书籍
+- 《Kubernetes in Action》
+- 《Kubernetes Up & Running》
+
+### 社区资源
+- Kubernetes 官方 Slack 社区。
+- CNCF（Cloud Native Computing Foundation）资源。
+
+## Kubernetes 的优缺点
+
+### 优点
+1. **自动化**：自动化部署、扩展和管理容器化应用。
+2. **高可用性**：支持容错和负载均衡。
+3. **跨平台支持**：支持多云和混合云环境。
+4. **生态系统丰富**：与 Helm、Prometheus、Istio 等工具集成良好。
+
+### 缺点
+1. **学习曲线陡峭**：需要掌握大量概念和工具。
+2. **复杂性**：对于小型项目可能显得过于复杂。
+3. **资源消耗**：运行 Kubernetes 集群需要较高的资源。
+
+## 总结
+
+- **Kubernetes 是什么**：
+  - Kubernetes 是一个容器编排平台，用于自动化部署、扩展和管理容器化应用。
+
+- **Kubernetes 的用途**：
+  - 管理容器化应用的生命周期。
+  - 提供高可用性、弹性伸缩和服务发现。
+
+- **如何学习 Kubernetes**：
+  1. 掌握基础知识（Docker、Linux、云计算）。
+  2. 学习 Kubernetes 核心概念（Pod、Deployment、Service 等）。
+  3. 通过 Minikube 或云服务实践 Kubernetes。
+  4. 学习高级功能（弹性伸缩、监控、持久化存储等）。
+
+{/* ```mermaid
+graph TD
+    User[用户请求] --> DNS[DNS解析]
+    DNS --> VIP["VIP (keepalived 提供)"]
+    VIP --> LBService["Service (负载均衡到 Ingress Controller)"]
+    LBService --> IngressController[Nginx Ingress Controller]
+    IngressController --> BackendService["Service (负载均衡到具体服务)"]
+    BackendService --> Pod["Pod (运行具体应用)"]
+``` */}

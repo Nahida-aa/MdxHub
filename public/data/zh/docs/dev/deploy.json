@@ -1,0 +1,24 @@
+{
+  "locale": "zh",
+  "type": "docs",
+  "url": "/zh/docs/dev/deploy",
+  "slug": "dev/deploy",
+  "segments": [
+    "dev",
+    "deploy"
+  ],
+  "filePath": "docs/zh/dev/deploy/index.mdx",
+  "meta": {
+    "title": "部署",
+    "description": null,
+    "created_at": "2025-03-24T13:15:49.000Z",
+    "updated_at": "2025-03-24T13:15:49.000Z",
+    "tags": [
+      "dev",
+      "deploy"
+    ]
+  },
+  "order": 99,
+  "content": "",
+  "toc": []
+}

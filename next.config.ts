@@ -105,7 +105,7 @@ const withMDX = createMDX({
 let plugins: any[] = []
 
 // 检查是否在 GitHub 环境中
-console.log('process.env:', process.env);
+// console.log('process.env:', process.env);
 if (process.env.GITHUB_ACTIONS) { // ‘true
   const envPath = '.env.github';
   console.log('GitHub Actions detected, loading environment variables from:', envPath);

@@ -8,89 +8,6 @@
     "type": "file"
   },
   {
-    "segment": "alg",
-    "title": "算法",
-    "order": 99,
-    "children": [
-      {
-        "segment": "Array",
-        "title": "线性结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/Array",
-        "type": "file"
-      },
-      {
-        "segment": "blog",
-        "title": "日志",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/blog",
-        "type": "file"
-      },
-      {
-        "segment": "python",
-        "title": "python",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/python",
-        "type": "file"
-      },
-      {
-        "segment": "struct",
-        "title": "数据结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/struct",
-        "type": "file"
-      },
-      {
-        "segment": "lanqiao",
-        "title": "蓝桥杯",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/lanqiao",
-        "type": "file"
-      },
-      {
-        "segment": "enum",
-        "title": "穷举法",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/enum",
-        "type": "file"
-      }
-    ],
-    "url": "/zh/docs/alg",
-    "type": "file"
-  },
-  {
-    "segment": "about",
-    "title": "关于",
-    "order": 99,
-    "children": [
-      {
-        "segment": "community",
-        "title": "community",
-        "order": 99,
-        "children": [
-          {
-            "segment": "contribution-guide",
-            "title": "贡献 指南",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/about/community/contribution-guide",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/about/community",
-        "type": "dir"
-      }
-    ],
-    "url": "/zh/docs/about",
-    "type": "file"
-  },
-  {
     "segment": "dev",
     "title": "dev",
     "order": 99,
@@ -120,19 +37,19 @@
         "type": "file"
       },
       {
-        "segment": "x",
-        "title": "x",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/x",
-        "type": "file"
-      },
-      {
         "segment": "search",
         "title": "增添搜索引擎",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/search",
+        "type": "file"
+      },
+      {
+        "segment": "x",
+        "title": "x",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/x",
         "type": "file"
       },
       {
@@ -181,6 +98,14 @@
             "type": "file"
           },
           {
+            "segment": "code-blocks",
+            "title": "code blocks",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/code-blocks",
+            "type": "file"
+          },
+          {
             "segment": "css",
             "title": "css",
             "order": 99,
@@ -204,17 +129,26 @@
             ],
             "url": "/zh/docs/dev/md/css",
             "type": "dir"
-          },
-          {
-            "segment": "code-blocks",
-            "title": "code blocks",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/code-blocks",
-            "type": "file"
           }
         ],
         "url": "/zh/docs/dev/md",
+        "type": "dir"
+      },
+      {
+        "segment": "deploy",
+        "title": "部署",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Kubernetes",
+            "title": "Kubernetes",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/deploy/Kubernetes",
+            "type": "dir"
+          }
+        ],
+        "url": "/zh/docs/dev/deploy",
         "type": "dir"
       }
     ],
@@ -235,7 +169,98 @@
     "order": 99,
     "children": [],
     "url": "/zh/docs/html",
-    "type": "file"
+    "type": "dir"
+  },
+  {
+    "segment": "about",
+    "title": "关于",
+    "order": 99,
+    "children": [
+      {
+        "segment": "community",
+        "title": "community",
+        "order": 99,
+        "children": [
+          {
+            "segment": "contribution-guide",
+            "title": "贡献 指南",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/about/community/contribution-guide",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/about/community",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/about",
+    "type": "dir"
+  },
+  {
+    "segment": "alg",
+    "title": "算法",
+    "order": 99,
+    "children": [
+      {
+        "segment": "Array",
+        "title": "线性结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/Array",
+        "type": "file"
+      },
+      {
+        "segment": "blog",
+        "title": "日志",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/blog",
+        "type": "file"
+      },
+      {
+        "segment": "python",
+        "title": "python",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/python",
+        "type": "file"
+      },
+      {
+        "segment": "struct",
+        "title": "数据结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/struct",
+        "type": "file"
+      },
+      {
+        "segment": "greedy",
+        "title": "贪心算法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/greedy",
+        "type": "dir"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/enum",
+        "type": "dir"
+      },
+      {
+        "segment": "lanqiao",
+        "title": "蓝桥杯",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/lanqiao",
+        "type": "dir"
+      }
+    ],
+    "url": "/zh/docs/alg",
+    "type": "dir"
   },
   {
     "segment": "linux",
@@ -259,6 +284,23 @@
         "type": "file"
       },
       {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      },
+      {
         "segment": "command",
         "title": "command",
         "order": 99,
@@ -273,6 +315,23 @@
           }
         ],
         "url": "/zh/docs/linux/command",
+        "type": "dir"
+      },
+      {
+        "segment": "input",
+        "title": "input",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/input/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/input",
         "type": "dir"
       },
       {
@@ -315,40 +374,6 @@
           }
         ],
         "url": "/zh/docs/linux/console",
-        "type": "dir"
-      },
-      {
-        "segment": "input",
-        "title": "input",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/input/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/input",
-        "type": "dir"
-      },
-      {
-        "segment": "network",
-        "title": "network",
-        "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
         "type": "dir"
       }
     ],
@@ -460,14 +485,6 @@
     "type": "dir"
   },
   {
-    "segment": "paper",
-    "title": "论文",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/paper",
-    "type": "file"
-  },
-  {
     "segment": "ts",
     "title": "ts",
     "order": 99,
@@ -490,6 +507,14 @@
       }
     ],
     "url": "/zh/docs/ts",
+    "type": "dir"
+  },
+  {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
     "type": "dir"
   }
 ]

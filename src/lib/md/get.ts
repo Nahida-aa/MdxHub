@@ -65,8 +65,13 @@ const buildNavTree = (docs: DocSearchValueBase[]): NavNode[] => {
           node.title = doc.title || segment
           node.url = doc.url
           node.order = doc.order
-          node.type = "file"
-        } else { // 否则说明
+          // 判断是否是文件还是目录
+          if (doc.filePath.endsWith("index.mdx")) {
+            node.type = "dir";
+          } else {
+            node.type = "file";
+          }
+        } else { // 否则说明 url 不存在, 不存在的 url 一定是 button (dir)
           // console.log('buildNavTree:locale: ', locale, 'type: ', type, 'path: ', path)
           // console.log('buildNavTree:url: ', `$/{locale}/${type}/${path}`)
           node.url = `/${locale}/${type}/${path}`
