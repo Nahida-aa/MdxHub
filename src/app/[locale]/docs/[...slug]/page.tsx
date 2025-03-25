@@ -38,7 +38,7 @@ export default async function Page ({
 }) {
   const { locale, slug } = await params
   const dslug = slug.join('/')
-  console.log("docs[]:locale: ", locale, "slug: ", slug)
+  // console.log("docs[]:locale: ", locale, "slug: ", slug)
   // const importPath = getImportPath(locale, slug)
   // const { default: Content, frontmatter: metadata } = await import(`@/data/docs/${importPath}`) as MdxComp
   try {
@@ -47,7 +47,7 @@ export default async function Page ({
     const file_path  = docObj.filePath.replace('.mdx', '')
     // const file_path  = `docs/zh/${dslug}/index.mdx`
    // docs/xxx.mdx 
-    console.log("file_path: ", file_path)
+    // console.log("file_path: ", file_path)
     const { default: Content, frontmatter: metadata } = await import(`@/data/${file_path}.mdx`) as MdxComp
     // console.log("Page:import:rest: ", rest)
   // const docObj = await getDocBySlug(locale, 'docs', dslug)
@@ -63,7 +63,7 @@ export default async function Page ({
     <article className="prose dark:prose-invert  col-span-12 lg:col-span-9 lg:px-4 xl:col-span-9 xl:px-8
     mx-auto w-full min-w-0 max-w-full ">
       <h1 className={`${title()} flex justify-center `}>
-        {metadata.title}
+        {metadata?.title||'Title'}
         </h1>
         <p>{metadata.description}</p>
         {/* <TailwindBG2 /> */}
