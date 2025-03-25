@@ -55,19 +55,19 @@
         "type": "file"
       },
       {
-        "segment": "array",
-        "title": "线性结构",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/array",
-        "type": "file"
-      },
-      {
         "segment": "python",
         "title": "python",
         "order": 99,
         "children": [],
         "url": "/zh/docs/alg/python",
+        "type": "file"
+      },
+      {
+        "segment": "array",
+        "title": "线性结构",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/array",
         "type": "file"
       },
       {
@@ -87,47 +87,6 @@
         "type": "file"
       },
       {
-        "segment": "enum",
-        "title": "enum",
-        "order": 99,
-        "children": [
-          {
-            "segment": "g",
-            "title": "g",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/alg/enum/g",
-            "type": "file"
-          },
-          {
-            "segment": "pruning",
-            "title": "剪枝",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/alg/enum/pruning",
-            "type": "file"
-          },
-          {
-            "segment": "if",
-            "title": "条件判断",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/alg/enum/if",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/alg/enum",
-        "type": "dir"
-      },
-      {
-        "segment": "bisect",
-        "title": "bisect",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/alg/bisect",
-        "type": "dir"
-      },
-      {
         "segment": "greedy",
         "title": "贪心算法",
         "order": 99,
@@ -142,6 +101,47 @@
           }
         ],
         "url": "/zh/docs/alg/greedy",
+        "type": "dir"
+      },
+      {
+        "segment": "bisect",
+        "title": "bisect",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/alg/bisect",
+        "type": "dir"
+      },
+      {
+        "segment": "enum",
+        "title": "穷举法",
+        "order": 99,
+        "children": [
+          {
+            "segment": "pruning",
+            "title": "剪枝",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/pruning",
+            "type": "file"
+          },
+          {
+            "segment": "g",
+            "title": "g",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/g",
+            "type": "file"
+          },
+          {
+            "segment": "if",
+            "title": "条件判断",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/alg/enum/if",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/alg/enum",
         "type": "dir"
       },
       {
@@ -173,14 +173,6 @@
     "type": "dir"
   },
   {
-    "segment": "html",
-    "title": "html",
-    "order": 99,
-    "children": [],
-    "url": "/zh/docs/html",
-    "type": "dir"
-  },
-  {
     "segment": "dev",
     "title": "dev",
     "order": 99,
@@ -194,19 +186,19 @@
         "type": "file"
       },
       {
-        "segment": "data",
-        "title": "数据存储",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/data",
-        "type": "file"
-      },
-      {
         "segment": "test",
         "title": "测试",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/test",
+        "type": "file"
+      },
+      {
+        "segment": "todo",
+        "title": "todo",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/todo",
         "type": "file"
       },
       {
@@ -218,19 +210,19 @@
         "type": "file"
       },
       {
+        "segment": "data",
+        "title": "数据存储",
+        "order": 99,
+        "children": [],
+        "url": "/zh/docs/dev/data",
+        "type": "file"
+      },
+      {
         "segment": "x",
         "title": "x",
         "order": 99,
         "children": [],
         "url": "/zh/docs/dev/x",
-        "type": "file"
-      },
-      {
-        "segment": "todo",
-        "title": "todo",
-        "order": 99,
-        "children": [],
-        "url": "/zh/docs/dev/todo",
         "type": "file"
       },
       {
@@ -264,19 +256,19 @@
             "type": "file"
           },
           {
-            "segment": "mdx",
-            "title": "mdx",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/dev/md/mdx",
-            "type": "file"
-          },
-          {
             "segment": "github",
             "title": "GitHub",
             "order": 99,
             "children": [],
             "url": "/zh/docs/dev/md/github",
+            "type": "file"
+          },
+          {
+            "segment": "mdx",
+            "title": "mdx",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/dev/md/mdx",
             "type": "file"
           },
           {
@@ -301,19 +293,19 @@
             "order": 99,
             "children": [
               {
-                "segment": "color",
-                "title": "color",
-                "order": 99,
-                "children": [],
-                "url": "/zh/docs/dev/md/css/color",
-                "type": "file"
-              },
-              {
                 "segment": "tailwind",
                 "title": "tailwind",
                 "order": 99,
                 "children": [],
                 "url": "/zh/docs/dev/md/css/tailwind",
+                "type": "file"
+              },
+              {
+                "segment": "color",
+                "title": "color",
+                "order": 99,
+                "children": [],
+                "url": "/zh/docs/dev/md/css/color",
                 "type": "file"
               }
             ],
@@ -329,41 +321,134 @@
     "type": "dir"
   },
   {
-    "segment": "paper",
-    "title": "论文",
+    "segment": "html",
+    "title": "html",
     "order": 99,
     "children": [],
-    "url": "/zh/docs/paper",
+    "url": "/zh/docs/html",
     "type": "dir"
   },
   {
-    "segment": "ts",
-    "title": "ts",
+    "segment": "linux",
+    "title": "linux",
     "order": 99,
     "children": [
       {
-        "segment": "async",
-        "title": "async",
+        "segment": "system_time",
+        "title": "系统时间",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/ts/async",
+        "url": "/zh/docs/linux/system_time",
         "type": "file"
       },
       {
-        "segment": "tsconfig",
-        "title": "tsconfig",
+        "segment": "systemd-timesyncd",
+        "title": "systemd-timesyncd",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/ts/tsconfig",
+        "url": "/zh/docs/linux/systemd-timesyncd",
         "type": "file"
+      },
+      {
+        "segment": "command",
+        "title": "command",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/command/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/command",
+        "type": "dir"
+      },
+      {
+        "segment": "console",
+        "title": "console",
+        "order": 99,
+        "children": [
+          {
+            "segment": "Command-line_shell",
+            "title": "Command-line_shell",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/Command-line_shell",
+            "type": "file"
+          },
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/console/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/console",
+        "type": "dir"
+      },
+      {
+        "segment": "network",
+        "title": "network",
+        "order": 99,
+        "children": [
+          {
+            "segment": "NTP",
+            "title": "时间同步",
+            "order": 1,
+            "children": [],
+            "url": "/zh/docs/linux/network/NTP",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/network",
+        "type": "dir"
+      },
+      {
+        "segment": "file_systems",
+        "title": "file_systems",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/file_systems/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/file_systems",
+        "type": "dir"
+      },
+      {
+        "segment": "input",
+        "title": "input",
+        "order": 99,
+        "children": [
+          {
+            "segment": "readme",
+            "title": "readme",
+            "order": 99,
+            "children": [],
+            "url": "/zh/docs/linux/input/readme",
+            "type": "file"
+          }
+        ],
+        "url": "/zh/docs/linux/input",
+        "type": "dir"
       }
     ],
-    "url": "/zh/docs/ts",
+    "url": "/zh/docs/linux",
     "type": "dir"
   },
   {
     "segment": "next",
-    "title": "Nextjs",
+    "title": "next",
     "order": 99,
     "children": [
       {
@@ -466,121 +551,36 @@
     "type": "dir"
   },
   {
-    "segment": "linux",
-    "title": "linux",
+    "segment": "ts",
+    "title": "ts",
     "order": 99,
     "children": [
       {
-        "segment": "system_time",
-        "title": "系统时间",
+        "segment": "async",
+        "title": "async",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/linux/system_time",
+        "url": "/zh/docs/ts/async",
         "type": "file"
       },
       {
-        "segment": "systemd-timesyncd",
-        "title": "systemd-timesyncd",
+        "segment": "tsconfig",
+        "title": "tsconfig",
         "order": 99,
         "children": [],
-        "url": "/zh/docs/linux/systemd-timesyncd",
+        "url": "/zh/docs/ts/tsconfig",
         "type": "file"
-      },
-      {
-        "segment": "file_systems",
-        "title": "file_systems",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/file_systems/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/file_systems",
-        "type": "dir"
-      },
-      {
-        "segment": "console",
-        "title": "console",
-        "order": 99,
-        "children": [
-          {
-            "segment": "Command-line_shell",
-            "title": "Command-line_shell",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/Command-line_shell",
-            "type": "file"
-          },
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/console/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/console",
-        "type": "dir"
-      },
-      {
-        "segment": "network",
-        "title": "network",
-        "order": 99,
-        "children": [
-          {
-            "segment": "NTP",
-            "title": "时间同步",
-            "order": 1,
-            "children": [],
-            "url": "/zh/docs/linux/network/NTP",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/network",
-        "type": "dir"
-      },
-      {
-        "segment": "command",
-        "title": "command",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/command/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/command",
-        "type": "dir"
-      },
-      {
-        "segment": "input",
-        "title": "input",
-        "order": 99,
-        "children": [
-          {
-            "segment": "readme",
-            "title": "readme",
-            "order": 99,
-            "children": [],
-            "url": "/zh/docs/linux/input/readme",
-            "type": "file"
-          }
-        ],
-        "url": "/zh/docs/linux/input",
-        "type": "dir"
       }
     ],
-    "url": "/zh/docs/linux",
+    "url": "/zh/docs/ts",
+    "type": "dir"
+  },
+  {
+    "segment": "paper",
+    "title": "论文",
+    "order": 99,
+    "children": [],
+    "url": "/zh/docs/paper",
     "type": "dir"
   }
 ]

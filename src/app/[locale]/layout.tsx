@@ -111,7 +111,8 @@ export default async function RootLayout({params, children }: { params: Promise<
   // ${space_grotesk.variable}
   return <html lang={locale} dir={dir(locale)} className={`${myFont.className} scroll-smooth bg-background`} suppressHydrationWarning>
     <Head />
-    <body className={`antialiased max-h-screen `} ><TranslationsProvider
+    <body className={`antialiased max-h-screen `} >
+      <TranslationsProvider
       namespaces={['common']}
       locale={locale}
       resources={resources}>

@@ -165,7 +165,7 @@ def countFairPairs(self, nums: List[int], lower: int, upper: int) -> int:
   return res
 ```
 
-## 朴素二分查找
+## 自己实现二分查找
 python3.12 给 `bisect` 增加了 参数 `key: func`, 但是 python3.8 只有4个参数: `a, x, lo=0, hi=None`,
 
 因此需要学会自己实现二分查找, 以应对更多的情况
@@ -183,4 +183,57 @@ def bisect(a, x, lo=0, hi=None, key=lambda f: f):
     if x < key(a[mid]): hi = mid # 补上未来版本的 key
     else: lo = mid + 1
   return lo
+```
+
+## leetCode 2226
+
+[LeetCode 2226. 每个小孩最多能分到多少糖果](https://leetcode-cn.com/problems/maximum-candies-allocated-to-k-children/description/)
+
+给你一个 **下标从 0 开始** 的整数数组 `candies` 。数组中的每个元素表示大小为 `candies[i]` 的一堆糖果。你可以将每堆糖果分成任意数量的 **子堆** ，但 **无法** 再将两堆合并到一起。
+
+另给你一个整数 k 。你需要将这些糖果分配给 k 个小孩，使每个小孩分到 **相同** 数量的糖果。每个小孩可以拿走 **至多一堆** 糖果，有些糖果可能会不被分配。
+
+返回每个小孩可以拿走的 **最大糖果数目** 。
+
+**示例 1:**
+> 输入: `candies = [5,8,6], k = 3`
+> 输出: `5`
+> 解释: 可以将 `candies[1]` 分成大小分别为 5 和 3 的两堆，然后把 `candies[2]` 分成大小分别为 5 和 1 的两堆。现在就有五堆大小分别为 5、5、3、5 和 1 的糖果。可以把 3 堆大小为 5 的糖果分给 3 个小孩。可以证明无法让每个小孩得到超过 5 颗糖果。
+**示例 2:**
+> 输入: `candies = [2,5], k = 11`
+> 输出: `0`
+> 解释: 总共有 11 个小孩，但只有 7 颗糖果，但如果要分配糖果的话，必须保证每个小孩至少能得到 1 颗糖果。因此，最后每个小孩都没有得到糖果，答案是 0 。
+**示例 3:**
+- `1 <= candies.length <= 10^5`
+- `1 <= candies[i] <= 10^7`
+- `1 <= k <= 10^12`
+
+题解:
+```py
+# 可知问题解一定在 [0, max(candies)] 之间
+# 答案就是寻找有多个 能被 res 整除的数 在[0, max(candies)] 之间
+# def bisect(x,lo=0,hi=None,key=lambda f: f):
+# #   if hi is None: hi = len(a)
+#   while lo < hi:
+#     mid = (lo + hi) >> 1
+#     if x > key(mid): hi = mid
+#     else: lo = mid + 1
+#   return lo
+
+class Solution:
+    def maximumCandies(self, candies: List[int], k: int) -> int:
+        tot = sum(candies)
+        r = tot//k
+        if r==1: return 1
+        elif tot<k: return 0
+        lo = 1
+        hi = 10**12+10
+        key = lambda x: sum([i//x for i in candies])
+        while lo < hi:
+            mid = (lo + hi) >> 1
+            if k > key(mid): hi = mid
+            else: lo = mid + 1
+        return lo - 1
+        # res = bisect(k, lo=1, hi=max(candies)+1, key=)
+        # return res -1
 ```
