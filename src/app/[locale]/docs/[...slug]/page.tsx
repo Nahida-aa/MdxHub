@@ -65,7 +65,7 @@ export default async function Page ({
       <h1 className={`${title()} flex justify-center `}>
         {metadata?.title||'Title'}
         </h1>
-        <p>{metadata.description}</p>
+        <p>{metadata?.description|| 'description'}</p>
         {/* <TailwindBG2 /> */}
       <Content />
       {/* {JSXContent} */}
