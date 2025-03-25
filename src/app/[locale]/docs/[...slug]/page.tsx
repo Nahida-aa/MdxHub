@@ -23,11 +23,11 @@ export const generateStaticParams = async() => {
   return params
 }
 
-const getImportPath = (locale: string, slug: string[]) => {
-  const dslug = slug.join('/')
-  const importPath = dslug.endsWith('.mdx')? `${locale}/${dslug}` : `${locale}/${dslug}/index.mdx`
-  return importPath
-}
+// const getImportPath = (locale: string, slug: string[]) => {
+//   const dslug = slug.join('/')
+//   const importPath = dslug.endsWith('.mdx')? `${locale}/${dslug}` : `${locale}/${dslug}/index.mdx`
+//   return importPath
+// }
 
 export default async function Page ({
   params,

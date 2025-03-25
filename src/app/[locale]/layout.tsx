@@ -125,7 +125,7 @@ export default async function RootLayout({params, children }: { params: Promise<
             <section className="flex  items-center pb-[30vh] -mb-[30vh] h-gradient "></section>
             <TailwindBG />
           <SidebarProvider>
-            <AppSidebar locale={locale} />
+            {/* <AppSidebar locale={locale} /> */}
             {/* <ScrollShadow className='h-svh' > */}
             <SidebarInset className=' justify-between bg-transparent'>
               <Suspense fallback={<LoadingS />}>
