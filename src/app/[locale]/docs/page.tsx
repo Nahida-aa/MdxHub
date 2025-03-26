@@ -6,18 +6,15 @@ import { LoadingS } from '@/components/ui/loading/Loading';
 export const metadata = genPageMetadata({ title: 'Docs' })
 
 export default async function Page ({
-  params,
-  searchParams,
+  // params,
 }: {
-  params: Promise<{ locale: string }>,
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  // params: Promise<{ locale: string }>,
 }) {
   const demoList: string[] = [
     'dev/search',
     'dev/todo',
   ]
-  const { locale } = await params
-  const { page = '1', sort = 'asc', query = '' } = await searchParams
+  // const { locale } = await params
   return <Suspense fallback={<LoadingS />}>
     <h1>Page</h1>
     <p>This is the Page page.</p>

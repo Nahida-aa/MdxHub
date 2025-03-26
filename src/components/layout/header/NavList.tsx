@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next"
 
 export const NavList = () => {
   const pathname = usePathname()
-  const locale = useParams()?.locale
+  // const locale = useParams()?.locale
   const { t } = useTranslation(['common'])
   return <>
     {headerNavLinks.map((link) => (

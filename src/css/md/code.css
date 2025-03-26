@@ -1,21 +1,27 @@
+/* .prose {
+  overflow: visible; 确保父元素不会裁剪子元素 
+} */
+
+.prose code {
+  --shiki-dark: #adbac7;
+  --shiki-light: #24292e;
+  --shiki-dark-bg: #22272e;
+  --shiki-light-bg: #fff;
+}
+
 .prose pre[data-theme] {
     /* @apply bg-transparent; */
 }
 
 .prose pre {
-    @apply !p-0 rounded-lg;
+  @apply !p-0 my-4  rounded-lg;
 }
 .prose pre code {
-  @apply py-3;
+  @apply py-3 rounded-lg;
 }
 
 .prose pre [data-line] {
     @apply px-4 border-l-2 border-l-transparent;
-}
-
-.prose pre [data-highlighted-line] {
-    background: rgba(200, 200, 255, 0.1);
-    @apply border-l-blue-400;
 }
 
 code[data-theme] {
@@ -26,26 +32,63 @@ code[data-theme*=" "],
 code[data-theme*=" "] span {
   color: var(--shiki-light);
   /* background-color: var(--shiki-light-bg); */
-  background-color: hsl(60, 47%, 97%);
+  /* background-color: hsl(60, 47%, 97%); */
+}
+    /* 行高亮 */
+.prose pre [data-highlighted-line] {
+  background: rgba(200, 200, 255, 0.3);
+  @apply border-l-blue-400;
 }
  
 @media (prefers-color-scheme:dark) {
-  .dark {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark);
-      background-color: var(--shiki-dark-bg);
+.dark {
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
+  code[data-theme*=" "] span span {
+    @apply bg-transparent;
+  }
+  /* 行高亮 */
+  .prose pre {
+    [data-highlighted-chars],
+    [data-highlighted-line] {
+      background: rgba(200, 200, 255, 0.1);
+      @apply border-l-blue-400;
     }
     span code[data-theme],
-    .prose [data-highlighted-chars] {
-      @apply 
-      /* !bg-zinc-600/50 */
-       rounded;
-      /* box-shadow: 0 0 0 2px rgb(82 82 91 / 0.5); */
-      box-shadow: 0 0 0 2px var(--shiki-dark-bg)/0.5;
+    
+    mark[data-chars-id="g"],
+    span[data-highlighted-line-id="g"] {
+      @apply bg-green-400/20 border-l-green-400;
+    }
+    mark[data-chars-id="r"],
+    span[data-highlighted-line-id="r"] {
+      @apply bg-red-400/20 border-l-red-400;
+    }
+    mark[data-chars-id="y"],
+    span[data-highlighted-line-id="y"] {
+      @apply bg-yellow-400/20 border-l-yellow-400;
+    }
+  
+    span[data-highlighted-line-id="b"] {
+      @apply bg-blue-400/20 border-l-blue-400;
+    }
+  
+    mark[data-chars-id="b"]{
+      @apply !bg-blue-400/20;
+      box-shadow: 0 0 0 2px var(--color-blue-400)/20;
     }
   }
-}
+  .prose [data-highlighted-chars] {
+    @apply 
+    /* !bg-zinc-600/50 */
+      rounded;
+    /* box-shadow: 0 0 0 2px rgb(82 82 91 / 0.5); */
+    box-shadow: 0 0 0 2px rgba(200, 200, 255, 0.1);
+  }
+}}
 
 
 

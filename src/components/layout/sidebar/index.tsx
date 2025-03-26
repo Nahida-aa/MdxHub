@@ -19,7 +19,7 @@ import {ScrollShadow} from "@heroui/scroll-shadow";
 import { generateNav } from "@/app/[locale]/docs/lib/gen";
 import { NavNode } from "@/lib/md/get";
 import { ContentNavTree } from "./nav-tree";
-import { headers, cookies } from 'next/headers'
+// import { headers, cookies } from 'next/headers'
 import { Button } from "@/components/ui/button";
 import { Settings } from "lucide-react";
 import { ModeToggleGradientIcon } from "@/components/common/ModeToggle";
@@ -30,8 +30,10 @@ type AppSidebarProps = React.ComponentProps<typeof Sidebar> & {
   locale: string
 }
 export async function AppSidebar({ locale, ...props }: AppSidebarProps) {
-  const cookieStore = await cookies()
-  const type = cookieStore.get('type')?.value || types[0]
+  // const cookieStore = await cookies()
+
+  // const type = cookieStore.get('type')?.value || types[0]
+  const type =  types[0]
   console.log("AppSidebar: ", locale, type)
   const navTreeObj = {} as { [key: string]: NavNode[] }
   for (const type of types) {

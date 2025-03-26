@@ -75,7 +75,8 @@ const getFileIconByName = (name: string): React.ElementType => {
     return iconFileMap[name]
   }
   // 根据文件后缀名映射图标
-  const extension = Object.keys(iconFileExtensionMap).find(ext => name.endsWith(ext)) || null
+  // const extension = Object.keys(iconFileExtensionMap).find(ext => name.endsWith(ext)) || null
+  const extension =  null
   if (extension) {
     return iconFileExtensionMap[extension]
   }

@@ -73,7 +73,7 @@ The matrix of regressors $\mathbf{X}$ is a $n \times k$ matrix (or each row is a
 \end{array}\right]
 ```
 
-$$
+```math
 \mathbf{X} = \left[\begin{array}
   {ccccc}
   x_{11} & . & . & . & x_{1k} \\
@@ -90,7 +90,7 @@ $$
   . \\
   \mathbf{x}'_n
 \end{array}\right]
-$$
+```
 
 The vector of error terms $\mathbf{U}$ is also a $n \times 1$ matrix.
 
@@ -111,12 +111,12 @@ $$y_i = \mathbf{x}'_i \beta + u_i$$
 **Aim**:  
 Find $\beta$ that minimises the sum of squared errors:
 
-$$
+```math
 Q = \sum_{i=1}^{n}{u_i^2} = \sum_{i=1}^{n}{(y_i - \mathbf{x}'_i\beta)^2} = (Y-X\beta)'(Y-X\beta)
-$$
+```
 
 **Solution**:  
-Hints: $Q$ is a $1 \times 1$ scalar, by symmetry $\frac{\partial b'Ab}{\partial b} = 2Ab$.
+Hints: $Q$ is a $1 \times 1$ scalar, by symmetry {`$\frac{\text{partial b'Ab}}{\partial b} = 2Ab$ .`}
 
 Take matrix derivative w.r.t $\beta$:
 
@@ -131,7 +131,7 @@ Take matrix derivative w.r.t $\beta$:
 \end{aligned}
 ```
 
-$$
+```math
 \begin{aligned}
   \min Q           & = \min_{\beta} \mathbf{Y}'\mathbf{Y} - 2\beta'\mathbf{X}'\mathbf{Y} +
   \beta'\mathbf{X}'\mathbf{X}\beta \\
@@ -140,4 +140,4 @@ $$
   \hat{\beta}      & = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}                              \\
                    & = (\sum^{n} \mathbf{x}_i \mathbf{x}'_i)^{-1} \sum^{n} \mathbf{x}_i y_i
 \end{aligned}
-$$
+```

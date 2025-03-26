@@ -1,14 +1,17 @@
+"use client";
 import Link from 'src/components/Link'
 import initTranslations from '../i18n/i18n';
-import { headers, cookies } from 'next/headers'
 import { i18nConfig } from '../i18n/i18nConfig';
 import { ToPrevPageButton } from '@/components/common/button';
 import { button as buttonStyles } from "@heroui/theme";
 import { SearchButton } from '@/components/search/search-button';
+import { useTranslation } from 'react-i18next';
 export default async function NotFound() {
-  const cookieStore = await cookies()
-  const locale = cookieStore.get('NEXT_LOCALE')?.value || i18nConfig.defaultLocale
-  const { t, resources } = await initTranslations(locale, ['common']);
+  // const { locale } = await params
+  // const cookieStore = await cookies()
+  // const locale = cookieStore.get('NEXT_LOCALE')?.value || i18nConfig.defaultLocale
+  const { t } = useTranslation(['common'])
+  // const { t } = await initTranslations(locale, ['common']);
   return (<section className='mx-auto'>
       <SearchButton text={t('Quick_search')} className='w-full' />
     <div className="flex flex-col items-center justify-center md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">

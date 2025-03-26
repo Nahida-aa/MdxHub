@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation';
 import { getAllDocs, getDocBySlug } from '@/lib/md/get';
 import { DocsToc } from '../_comp/DocsToc';
 // import DocsJson from '@/../public/gen/docs.json' 
-
+export const dynamic = 'force-static'; // 强制静态渲染
 export const generateStaticParams = async() => {
   const locales = ["zh", "en"]; // 根据支持的语言列表动态加载
   const params: { locale: string; slug: string[] }[] = [];
