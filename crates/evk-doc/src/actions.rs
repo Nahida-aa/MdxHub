@@ -1,6 +1,8 @@
 use gpui::actions;
 
 actions!(app, [
+    /// Show the About Evk dialog.
+    AboutEvk,
     /// Open a markdown file.
     OpenFile,
     /// Save the current file.

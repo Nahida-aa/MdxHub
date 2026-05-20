@@ -1,11 +1,11 @@
 use gpui::Hsla;
 
+use crate::styles::ThemeColors;
+
 fn hex(s: &str) -> Hsla {
     let rgba = gpui::Rgba::try_from(s).expect("invalid hex color");
     rgba.into()
 }
-
-use crate::styles::ThemeColors;
 
 impl ThemeColors {
     pub fn dark() -> Self {

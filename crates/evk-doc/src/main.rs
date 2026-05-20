@@ -4,7 +4,6 @@ mod assets;
 mod constants;
 mod file_ops;
 mod keybinds;
-mod theme;
 mod tree;
 
 use actions::*;
@@ -18,6 +17,7 @@ fn main() {
         .run(|cx| {
             gpui_component::init(cx);
             theme::init(cx);
+            theme_settings::init(cx);
 
             cx.on_action(|_: &Quit, cx| cx.quit());
 
@@ -25,6 +25,8 @@ fn main() {
                 Menu {
                     name: "evk".into(),
                     items: vec![
+                        MenuItem::action("About Evk", AboutEvk),
+                        MenuItem::separator(),
                         MenuItem::submenu(Menu {
                             name: "Theme".into(),
                             items: vec![

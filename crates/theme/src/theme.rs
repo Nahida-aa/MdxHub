@@ -1,8 +1,13 @@
+mod default_colors;
+pub mod schema;
+pub mod styles;
+
+pub use schema::*;
+pub use styles::*;
+
 use std::sync::Arc;
 
 use gpui::{App, Global, SharedString, WindowAppearance};
-
-use crate::styles::{ThemeColors, ThemeStyles};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Appearance {
@@ -43,6 +48,23 @@ impl Theme {
     }
 }
 
+pub(crate) fn default_theme() -> Theme {
+    Theme {
+        id: "aa-dark".into(),
+        name: "Aa Dark".into(),
+        appearance: Appearance::Dark,
+        styles: ThemeStyles {
+            window_background_appearance: WindowBackgroundAppearance::Opaque,
+            system: SystemColors::default(),
+            colors: ThemeColors::dark(),
+            accents: AccentColors::empty(),
+            status: StatusColors::dark(),
+            player: PlayerColors::empty(),
+            syntax: SyntaxTheme::default_dark(),
+        },
+    }
+}
+
 #[derive(Debug, Clone)]
 pub struct GlobalTheme {
     theme: Arc<Theme>,
@@ -58,6 +80,12 @@ impl GlobalTheme {
     pub fn theme(cx: &App) -> Arc<Theme> {
         cx.global::<Self>().theme.clone()
     }
+}
+
+pub fn init(cx: &mut App) {
+    cx.set_global(GlobalTheme {
+        theme: Arc::new(default_theme()),
+    });
 }
 
 pub trait ActiveTheme {

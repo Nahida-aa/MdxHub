@@ -1,13 +1,13 @@
 [package]
-name = "theme"
+name = "theme_settings"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-name = "theme"
-path = "src/theme.rs"
+name = "theme_settings"
+path = "src/theme_settings.rs"
 
 [dependencies]
 gpui = "0.2"
 gpui-component = { version = "0.5" }
-anyhow = "1"
+serde_json = "1"

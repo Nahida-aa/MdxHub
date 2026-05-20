@@ -1,32 +1,18 @@
 use gpui::Hsla;
 use std::sync::Arc;
 
-use super::{AccentColors, PlayerColors, StatusColors, SystemColors};
 use super::syntax::SyntaxTheme;
+use super::{AccentColors, PlayerColors, StatusColors, SystemColors};
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct ThemeStyles {
     pub window_background_appearance: WindowBackgroundAppearance,
     pub system: SystemColors,
-    pub accents: AccentColors,
     pub colors: ThemeColors,
+    pub accents: AccentColors,
     pub status: StatusColors,
     pub player: PlayerColors,
     pub syntax: Arc<SyntaxTheme>,
-}
-
-impl Default for ThemeStyles {
-    fn default() -> Self {
-        Self {
-            window_background_appearance: WindowBackgroundAppearance::default(),
-            system: SystemColors::default(),
-            accents: AccentColors::empty(),
-            colors: ThemeColors::default(),
-            status: StatusColors::dark(),
-            player: PlayerColors::empty(),
-            syntax: SyntaxTheme::default_dark(),
-        }
-    }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
@@ -129,10 +115,4 @@ pub struct ThemeColors {
     pub terminal_ansi_bright_white: Hsla,
     pub terminal_ansi_dim_white: Hsla,
     pub link_text_hover: Hsla,
-}
-
-impl Default for ThemeColors {
-    fn default() -> Self {
-        Self::dark()
-    }
 }

@@ -134,6 +134,24 @@ impl MarkdownApp {
         crate::tree::toggle_tree(self);
         cx.notify();
     }
+
+    fn handle_about(&mut self, _: &AboutEvk, _window: &mut Window, cx: &mut Context<Self>) {
+        let bounds = Bounds::centered(None, size(px(320.), px(200.)), &**cx);
+        cx.open_window(
+            WindowOptions {
+                titlebar: Some(TitlebarOptions {
+                    title: Some("About Evk".into()),
+                    ..TitlebarOptions::default()
+                }),
+                window_bounds: Some(WindowBounds::Windowed(bounds)),
+                is_resizable: false,
+                is_minimizable: false,
+                ..Default::default()
+            },
+            |_, cx| cx.new(|cx| AboutWindow { focus: cx.focus_handle() }),
+        )
+        .unwrap();
+    }
 }
 
 impl Render for MarkdownApp {
@@ -222,6 +240,8 @@ impl Render for MarkdownApp {
             .on_action(cx.listener(Self::handle_set_theme_dark))
             .on_action(cx.listener(Self::handle_set_theme_light))
             .on_action(cx.listener(Self::handle_toggle_tree))
+            .on_action(cx.listener(Self::handle_about))
+            .relative()
             .flex()
             .flex_col()
             .size_full()
@@ -281,6 +301,41 @@ impl Render for MarkdownApp {
                                 .scrollable(true),
                             ),
                     ),
+            )
+    }
+}
+
+pub struct AboutWindow {
+    focus: FocusHandle,
+}
+
+impl Focusable for AboutWindow {
+    fn focus_handle(&self, _: &App) -> FocusHandle {
+        self.focus.clone()
+    }
+}
+
+impl Render for AboutWindow {
+    fn render(&mut self, _window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+        div()
+            .id("about")
+            .track_focus(&self.focus)
+            .w_full()
+            .h_full()
+            .flex()
+            .flex_col()
+            .items_center()
+            .justify_center()
+            .bg(cx.theme().colors.background)
+            .child(
+                div()
+                    .text_xl()
+                    .child("Evk"),
+            )
+            .child(
+                div()
+                    .text_color(cx.theme().colors.muted_foreground)
+                    .child(format!("Version {}", env!("CARGO_PKG_VERSION"))),
             )
     }
 }
