@@ -1,0 +1,17 @@
+{
+  "name": "evk-doc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cargo run",
+    "build": "cargo build",
+    "release": "cargo build --release",
+    "watch": "cargo watch -x run",
+    "check": "cargo check",
+    "fmt": "cargo fmt",
+    "lint": "cargo clippy",
+    "test": "cargo test",
+    "clean": "cargo clean",
+    "update": "cargo update"
+  }
+}
