@@ -1,0 +1,19 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Editor
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.o
+*.so
+*.dylib
