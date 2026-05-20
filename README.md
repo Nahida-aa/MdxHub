@@ -6,9 +6,11 @@ A **Markdown editor** built with [GPUI](https://github.com/zed-industries/gpui) 
 
 - **Split-pane editing** — Edit Markdown on the left, see live preview on the right
 - **Syntax highlighting** — Code blocks with language-aware highlighting
-- **Resizable panels** — Drag the divider to adjust panel widths
-- **File operations** — Open and save `.md` files
+- **Resizable panels** — Drag the divider to resize; panel ratio constrained between 15%–85% with a 200px minimum
+- **File operations** — Open, save, and save-as `.md` files via system dialogs
 - **Dark / Light theme** — Toggle between themes with a shortcut
+- **Line numbers** — Editor shows line numbers for reference
+- **Live preview** — Preview updates in real time as you type
 - **Keyboard shortcuts**
 
 | Shortcut | Action |
