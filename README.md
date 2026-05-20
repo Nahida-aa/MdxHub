@@ -41,14 +41,18 @@ cargo build --release
 
 ```
 evk-doc/
-├── Cargo.toml          # Workspace manifest
+├── Cargo.toml              # Workspace manifest
 ├── crates/
-│   └── evk-doc/        # Main application crate
+│   └── evk-doc/            # Main application crate
 │       ├── Cargo.toml
 │       └── src/
-│           ├── main.rs  # Entry point
-│           ├── app.rs   # MarkdownApp — UI & logic
-│           └── theme.rs # Theme initialization
+│           ├── main.rs       # Entry point, window setup
+│           ├── app.rs        # MarkdownApp — UI state & layout
+│           ├── constants.rs  # Demo markdown content
+│           ├── file_ops.rs   # Open / save / save-as logic
+│           ├── keybinds.rs   # Keyboard shortcut dispatch
+│           ├── theme.rs      # Theme initialization
+│           └── tree.rs       # File tree sidebar (scan, render, open)
 ```
 
 ## Built With

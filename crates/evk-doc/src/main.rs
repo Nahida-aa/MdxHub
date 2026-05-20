@@ -1,5 +1,9 @@
 mod app;
+mod constants;
+mod file_ops;
+mod keybinds;
 mod theme;
+mod tree;
 
 use app::MarkdownApp;
 use gpui::*;
