@@ -12,6 +12,8 @@
     "lint": "cargo clippy",
     "test": "cargo test",
     "clean": "cargo clean",
-    "update": "cargo update"
+    "update": "cargo update",
+    "stats": "cloc . --exclude-dir=node_modules,dist,.output,.tanstack,.content-collections,project.inlang,data,paraglide,vendor,.turbo,.next",
+    "stats:git": "cloc . --exclude-dir=node_modules,dist,.output,.tanstack,.content-collections,project.inlang,data,paraglide,vendor,.turbo,.next --vcs git"
   }
 }

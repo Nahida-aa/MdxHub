@@ -1,7 +1,9 @@
+use crate::actions::*;
 use gpui::prelude::FluentBuilder;
 use gpui::*;
 use gpui_component::{
     input::{Input, InputEvent, InputState},
+    menu::AppMenuBar,
     text::TextView,
     tree::TreeState,
     ActiveTheme,
@@ -25,10 +27,13 @@ pub struct MarkdownApp {
     pub tree_visible: bool,
     pub pending_tree_open: Option<PathBuf>,
     pub open_folder_path: Option<PathBuf>,
+    pub menu_bar: Entity<AppMenuBar>,
 }
 
 impl MarkdownApp {
     pub fn new(window: &mut Window, cx: &mut Context<Self>) -> Self {
+        let menu_bar = AppMenuBar::new(window, cx);
+
         let editor = cx.new(|cx| {
             InputState::new(window, cx)
                 .code_editor("markdown")
@@ -62,11 +67,71 @@ impl MarkdownApp {
             tree_visible: false,
             pending_tree_open: None,
             open_folder_path: None,
+            menu_bar,
         }
     }
 
     fn start_drag(&mut self, _window: &mut Window, cx: &mut Context<Self>) {
         self.is_dragging = true;
+        cx.notify();
+    }
+
+    fn handle_open_file(&mut self, _: &OpenFile, window: &mut Window, cx: &mut Context<Self>) {
+        crate::file_ops::open_file(self, window, cx);
+    }
+
+    fn handle_save_file(&mut self, _: &SaveFile, _window: &mut Window, cx: &mut Context<Self>) {
+        crate::file_ops::save_file(self, _window, cx);
+    }
+
+    fn handle_save_file_as(
+        &mut self,
+        _: &SaveFileAs,
+        window: &mut Window,
+        cx: &mut Context<Self>,
+    ) {
+        crate::file_ops::save_file_as(self, window, cx);
+    }
+
+    fn handle_open_folder(&mut self, _: &OpenFolder, window: &mut Window, cx: &mut Context<Self>) {
+        crate::tree::open_folder(window, cx);
+    }
+
+    fn handle_toggle_theme(
+        &mut self,
+        _: &ToggleTheme,
+        window: &mut Window,
+        cx: &mut Context<Self>,
+    ) {
+        let theme = cx.theme();
+        let new_mode = if theme.is_dark() {
+            gpui_component::ThemeMode::Light
+        } else {
+            gpui_component::ThemeMode::Dark
+        };
+        gpui_component::Theme::change(new_mode, Some(window), cx);
+    }
+
+    fn handle_set_theme_dark(
+        &mut self,
+        _: &SetThemeDark,
+        window: &mut Window,
+        cx: &mut Context<Self>,
+    ) {
+        gpui_component::Theme::change(gpui_component::ThemeMode::Dark, Some(window), cx);
+    }
+
+    fn handle_set_theme_light(
+        &mut self,
+        _: &SetThemeLight,
+        window: &mut Window,
+        cx: &mut Context<Self>,
+    ) {
+        gpui_component::Theme::change(gpui_component::ThemeMode::Light, Some(window), cx);
+    }
+
+    fn handle_toggle_tree(&mut self, _: &ToggleTree, _window: &mut Window, cx: &mut Context<Self>) {
+        crate::tree::toggle_tree(self);
         cx.notify();
     }
 }
@@ -149,40 +214,72 @@ impl Render for MarkdownApp {
         div()
             .id("root")
             .capture_key_down(cx.listener(crate::keybinds::handle_key_down))
+            .on_action(cx.listener(Self::handle_open_file))
+            .on_action(cx.listener(Self::handle_save_file))
+            .on_action(cx.listener(Self::handle_save_file_as))
+            .on_action(cx.listener(Self::handle_open_folder))
+            .on_action(cx.listener(Self::handle_toggle_theme))
+            .on_action(cx.listener(Self::handle_set_theme_dark))
+            .on_action(cx.listener(Self::handle_set_theme_light))
+            .on_action(cx.listener(Self::handle_toggle_tree))
             .flex()
-            .flex_row()
+            .flex_col()
             .size_full()
             .bg(bg)
-            .when_some(tree_sidebar, |root, sidebar| root.child(sidebar))
+            .child(title_bar::render_title_bar(
+                window,
+                cx,
+                [self.menu_bar.clone().into_any_element()],
+            ))
             .child(
                 div()
+                    .flex()
+                    .flex_row()
                     .flex_1()
-                    .w(left_w)
-                    .min_w(min_panel)
-                    .child(Input::new(&self.editor).h_full().bordered(false).appearance(false)),
-            )
-            .child(
-                div()
-                    .id("divider")
-                    .on_mouse_down(
-                        MouseButton::Left,
-                        cx.listener(|this, _ev: &MouseDownEvent, window, cx| {
-                            this.start_drag(window, cx);
-                        }),
-                    )
-                    .w(px(DIVIDER_W))
-                    .h_full()
-                    .bg(divider_color)
-                    .hover(|s| s.cursor(CursorStyle::ResizeLeftRight)),
-            )
-            .child(
-                div()
-                    .flex_1()
-                    .min_w(min_panel)
-                    .p_4()
+                    .overflow_hidden()
+                    .when_some(tree_sidebar, |content, sidebar| {
+                        content.child(sidebar)
+                    })
                     .child(
-                        TextView::markdown("preview", self.markdown_content.clone(), window, cx)
-                            .scrollable(true),
+                        div()
+                            .flex_1()
+                            .w(left_w)
+                            .min_w(min_panel)
+                            .child(
+                                Input::new(&self.editor)
+                                    .h_full()
+                                    .bordered(false)
+                                    .appearance(false),
+                            ),
+                    )
+                    .child(
+                        div()
+                            .id("divider")
+                            .on_mouse_down(
+                                MouseButton::Left,
+                                cx.listener(|this, _ev: &MouseDownEvent, window, cx| {
+                                    this.start_drag(window, cx);
+                                }),
+                            )
+                            .w(px(DIVIDER_W))
+                            .h_full()
+                            .bg(divider_color)
+                            .hover(|s| s.cursor(CursorStyle::ResizeLeftRight)),
+                    )
+                    .child(
+                        div()
+                            .flex_1()
+                            .min_w(min_panel)
+                            .p_4()
+                            .child(
+                                TextView::markdown(
+                                    "preview",
+                                    self.markdown_content.clone(),
+                                    window,
+                                    cx,
+                                )
+                                .scrollable(true),
+                            ),
                     ),
             )
     }

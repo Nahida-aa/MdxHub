@@ -6,3 +6,5 @@ edition = "2021"
 [dependencies]
 gpui = "0.2"
 gpui-component = { version = "0.5", features = ["tree-sitter-languages"] }
+serde_json = "1"
+title-bar = { path = "../title_bar" }
