@@ -8,6 +8,7 @@ A **Markdown editor** built with [GPUI](https://github.com/zed-industries/gpui) 
 - **Syntax highlighting** — Code blocks with language-aware highlighting
 - **Resizable panels** — Drag the divider to resize; panel ratio constrained between 15%–85% with a 200px minimum
 - **File operations** — Open, save, and save-as `.md` files via system dialogs
+- **File tree sidebar** — Open a folder to browse and open Markdown files in a tree view (`Ctrl+B` to toggle)
 - **Dark / Light theme** — Toggle between themes with a shortcut
 - **Line numbers** — Editor shows line numbers for reference
 - **Live preview** — Preview updates in real time as you type
@@ -18,6 +19,8 @@ A **Markdown editor** built with [GPUI](https://github.com/zed-industries/gpui) 
 | `Ctrl+O` | Open file |
 | `Ctrl+S` | Save file |
 | `Ctrl+Shift+S` | Save as… |
+| `Ctrl+Shift+O` | Open folder (populate tree) |
+| `Ctrl+B` | Toggle file tree sidebar |
 | `Ctrl+T` | Toggle theme |
 
 ## Getting Started

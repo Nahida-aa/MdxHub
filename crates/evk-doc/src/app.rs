@@ -1,10 +1,13 @@
+use gpui::prelude::FluentBuilder;
 use gpui::*;
 use gpui_component::{
     input::{Input, InputEvent, InputState},
+    list::ListItem,
     text::TextView,
+    tree::{Tree, TreeEntry, TreeItem, TreeState},
     ActiveTheme, Theme, ThemeMode,
 };
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 const DEMO_MD: &str = "\
 # Welcome to EVK Docs
@@ -38,6 +41,40 @@ const DIVIDER_W: f32 = 8.;
 const MIN_PANEL_W: f32 = 200.;
 const SPLIT_MIN: f32 = 0.15;
 const SPLIT_MAX: f32 = 0.85;
+const TREE_W: f32 = 250.;
+
+fn is_markdown(path: &Path) -> bool {
+    matches!(
+        path.extension().and_then(|e| e.to_str()),
+        Some("md" | "markdown")
+    )
+}
+
+fn scan_directory(dir: &Path) -> Vec<TreeItem> {
+    let mut items = Vec::new();
+    if let Ok(entries) = std::fs::read_dir(dir) {
+        let mut entries: Vec<_> = entries.filter_map(|e| e.ok()).collect();
+        entries.sort_by_key(|e| {
+            let dir_first = !e.path().is_dir();
+            let name = e.file_name().to_string_lossy().to_string();
+            (dir_first, name)
+        });
+        for entry in entries {
+            let path = entry.path();
+            let name = entry.file_name().to_string_lossy().to_string();
+            if name.starts_with('.') {
+                continue;
+            }
+            if path.is_dir() {
+                let children = scan_directory(&path);
+                items.push(TreeItem::new(path.display().to_string(), name).children(children));
+            } else if is_markdown(&path) {
+                items.push(TreeItem::new(path.display().to_string(), name));
+            }
+        }
+    }
+    items
+}
 
 pub struct MarkdownApp {
     editor: Entity<InputState>,
@@ -46,6 +83,10 @@ pub struct MarkdownApp {
     split_ratio: f32,
     is_dragging: bool,
     _subscriptions: Vec<Subscription>,
+    tree_state: Option<Entity<TreeState>>,
+    tree_visible: bool,
+    pending_tree_open: Option<PathBuf>,
+    open_folder_path: Option<PathBuf>,
 }
 
 impl MarkdownApp {
@@ -79,6 +120,10 @@ impl MarkdownApp {
             split_ratio: 0.5,
             is_dragging: false,
             _subscriptions,
+            tree_state: None,
+            tree_visible: false,
+            pending_tree_open: None,
+            open_folder_path: None,
         }
     }
 
@@ -153,10 +198,52 @@ impl MarkdownApp {
         self.is_dragging = true;
         cx.notify();
     }
+
+    fn open_folder(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        let receiver = cx.prompt_for_paths(PathPromptOptions {
+            files: false,
+            directories: true,
+            multiple: false,
+            prompt: None,
+        });
+        let app_entity = cx.entity();
+        window
+            .spawn(cx, async move |cx| {
+                if let Ok(Ok(Some(paths))) = receiver.await {
+                    let root = paths[0].clone();
+                    let items = scan_directory(&root);
+                    let _ = app_entity.update_in(cx, |app, _w, cx| {
+                        app.open_folder_path = Some(root);
+                        app.tree_state = Some(cx.new(|cx| TreeState::new(cx).items(items)));
+                        app.tree_visible = true;
+                        cx.notify();
+                    });
+                }
+            })
+            .detach();
+    }
+
+    fn toggle_tree(&mut self) {
+        self.tree_visible = !self.tree_visible;
+    }
 }
 
 impl Render for MarkdownApp {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+        // Handle pending file open from tree click
+        if let Some(path) = self.pending_tree_open.take() {
+            match std::fs::read_to_string(&path) {
+                Ok(text) => {
+                    self.editor.update(cx, |ed, cx| {
+                        ed.set_value(&text, window, cx);
+                    });
+                    self.markdown_content = text.into();
+                    self.current_path = Some(path);
+                }
+                Err(err) => eprintln!("Error opening file from tree: {}", err),
+            }
+        }
+
         if self.is_dragging {
             let entity = cx.entity();
             let entity2 = entity.clone();
@@ -189,8 +276,75 @@ impl Render for MarkdownApp {
         };
 
         let total_f32: f32 = f32::from(window.bounds().size.width);
-        let left_w = px((total_f32 - DIVIDER_W) * self.split_ratio);
+        let avail_f32 = if self.tree_visible {
+            total_f32 - TREE_W
+        } else {
+            total_f32
+        };
+        let left_w = px((avail_f32 - DIVIDER_W) * self.split_ratio);
         let min_panel = px(MIN_PANEL_W);
+
+        // Build tree sidebar
+        let tree_sidebar = if self.tree_visible {
+            if let Some(ref state) = self.tree_state {
+                let entity = cx.entity();
+                let sbg = cx.theme().colors.sidebar;
+                let tree_view = Tree::new(
+                    state,
+                    move |ix: usize, entry: &TreeEntry, selected: bool, _window: &mut Window, _cx: &mut App| {
+                        let item = entry.item();
+                        let indent = px(16.) * entry.depth() as f32;
+                        let mut list_item = ListItem::new(ix)
+                            .selected(selected)
+                            .pl(indent)
+                            .child(item.label.clone());
+
+                        if !entry.is_folder() {
+                            let entity = entity.clone();
+                            let path = item.id.to_string();
+                            list_item = list_item.on_click(move |_, _, cx| {
+                                let path = PathBuf::from(&path);
+                                let _ = entity.update(cx, |this, cx| {
+                                    this.pending_tree_open = Some(path);
+                                    cx.notify();
+                                });
+                            });
+                        }
+                        list_item
+                    },
+                );
+
+                let root_name = self
+                    .open_folder_path
+                    .as_ref()
+                    .and_then(|p| p.file_name())
+                    .map(|n| n.to_string_lossy().to_string())
+                    .unwrap_or_default();
+
+                Some(
+                    div()
+                        .id("tree-sidebar")
+                        .flex_none()
+                        .w(px(TREE_W))
+                        .h_full()
+                        .flex_col()
+                        .bg(sbg)
+                        .child(
+                            div()
+                                .px_3()
+                                .py_2()
+                                .text_sm()
+                                .text_color(cx.theme().colors.sidebar_foreground)
+                                .child(root_name),
+                        )
+                        .child(div().flex_1().overflow_hidden().child(tree_view.h_full())),
+                )
+            } else {
+                None
+            }
+        } else {
+            None
+        };
 
         div()
             .id("root")
@@ -206,13 +360,19 @@ impl Render for MarkdownApp {
                             "o" => this.open_file(window, cx),
                             "s" => this.save_file(window, cx),
                             "t" => this.toggle_theme(window, cx),
+                            "b" => {
+                                this.toggle_tree();
+                                cx.notify();
+                            }
                             _ => {}
                         }
                     } else if event.keystroke.modifiers.control
                         && event.keystroke.modifiers.shift
                     {
-                        if event.keystroke.key.as_str() == "s" {
-                            this.save_file_as(window, cx);
+                        match event.keystroke.key.as_str() {
+                            "s" => this.save_file_as(window, cx),
+                            "O" => this.open_folder(window, cx),
+                            _ => {}
                         }
                     }
                 },
@@ -221,6 +381,7 @@ impl Render for MarkdownApp {
             .flex_row()
             .size_full()
             .bg(bg)
+            .when_some(tree_sidebar, |root, sidebar| root.child(sidebar))
             .child(
                 div()
                     .flex_1()
