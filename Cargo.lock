@@ -76,6 +76,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c"
 
 [[package]]
+name = "app_tracing"
+version = "0.1.0"
+dependencies = [
+ "app_tracing_macro",
+]
+
+[[package]]
+name = "app_tracing_macro"
+version = "0.1.0"
+
+[[package]]
 name = "ar_archive_writer"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -395,6 +406,20 @@ dependencies = [
  "pin-utils",
  "slab",
  "wasm-bindgen-futures",
+]
+
+[[package]]
+name = "async-tar"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1937db2d56578aa3919b9bdb0e5100693fd7d1c0f145c53eb81fbb03e217550"
+dependencies = [
+ "async-std",
+ "filetime",
+ "libc",
+ "pin-project",
+ "redox_syscall 0.2.16",
+ "xattr",
 ]
 
 [[package]]
@@ -931,6 +956,7 @@ dependencies = [
 name = "collections"
 version = "0.1.0"
 dependencies = [
+ "indexmap",
  "rustc-hash 2.1.2",
 ]
 
@@ -1405,6 +1431,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0881ea181b1df73ff77ffaaf9c7544ecc11e82fba9b5f27b262a3c73a332555"
 
 [[package]]
+name = "ec4rs"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3b31a881d38439026e3d5dd938ab20328d36e23caca8fd5981c42e4b677f5842"
+
+[[package]]
 name = "either"
 version = "1.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1811,6 +1843,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "fs"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-tar",
+ "async-trait",
+ "futures",
+ "gpui",
+ "rope",
+ "serde",
+ "text",
+]
+
+[[package]]
 name = "fsevent-sys"
 version = "4.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2141,7 +2187,7 @@ dependencies = [
  "gpui_refineable",
  "gpui_semantic_version",
  "gpui_sum_tree",
- "gpui_util",
+ "gpui_util 0.2.2",
  "gpui_util_macros",
  "image",
  "inventory",
@@ -2164,7 +2210,7 @@ dependencies = [
  "rand 0.9.4",
  "raw-window-handle",
  "resvg",
- "schemars 1.2.1",
+ "schemars",
  "seahash",
  "serde",
  "serde_json",
@@ -2221,7 +2267,7 @@ dependencies = [
  "regex",
  "ropey",
  "rust-i18n",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "serde_json",
  "serde_repr",
@@ -2319,7 +2365,7 @@ dependencies = [
  "bytes",
  "derive_more",
  "futures",
- "gpui_util",
+ "gpui_util 0.2.2",
  "http",
  "http-body",
  "log",
@@ -2392,6 +2438,14 @@ dependencies = [
 
 [[package]]
 name = "gpui_util"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "log",
+]
+
+[[package]]
+name = "gpui_util"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68faea25903ae524de9af83990b9aa51bcbc8dd085929ac0aea7fd41905e05c3"
@@ -2412,7 +2466,7 @@ dependencies = [
  "nix 0.29.0",
  "regex",
  "rust-embed",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "serde_json",
  "serde_json_lenient 0.2.4",
@@ -2484,6 +2538,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "hash32"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "47d60b12902ba28e2730cd37e95b8c9223af2808df9e902d4df49588d1470606"
+dependencies = [
+ "byteorder",
+]
+
+[[package]]
 name = "hashbrown"
 version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2503,6 +2566,16 @@ name = "hashbrown"
 version = "0.17.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
+
+[[package]]
+name = "heapless"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4"
+dependencies = [
+ "hash32",
+ "stable_deref_trait",
+]
 
 [[package]]
 name = "heck"
@@ -4100,6 +4173,11 @@ version = "0.1.0"
 dependencies = [
  "gpui",
  "gpui-component",
+ "gui",
+ "settings",
+ "smallvec",
+ "ui",
+ "workspace",
 ]
 
 [[package]]
@@ -4256,6 +4334,14 @@ checksum = "4488a4a36b9a4ba6b9334a32a39971f77c1436ec82c38707bce707699cc3bbcb"
 dependencies = [
  "quote",
  "syn 2.0.117",
+]
+
+[[package]]
+name = "project"
+version = "0.1.0"
+dependencies = [
+ "collections",
+ "gpui",
 ]
 
 [[package]]
@@ -4662,6 +4748,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rope"
+version = "0.1.0"
+dependencies = [
+ "heapless",
+ "sum_tree",
+ "util",
+]
+
+[[package]]
 name = "ropey"
 version = "2.0.0-beta.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4935,18 +5030,6 @@ dependencies = [
 
 [[package]]
 name = "schemars"
-version = "0.8.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3fbf2ae1b8bc8e02df939598064d22402220cd5bbcca1c76f7d6a310974d5615"
-dependencies = [
- "dyn-clone",
- "schemars_derive 0.8.22",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "schemars"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2b42f36aa1cd011945615b92222f6bf73c599a102a300334cd7f8dbeec726cc"
@@ -4954,21 +5037,9 @@ dependencies = [
  "dyn-clone",
  "indexmap",
  "ref-cast",
- "schemars_derive 1.2.1",
+ "schemars_derive",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "schemars_derive"
-version = "0.8.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32e265784ad618884abaea0600a9adf15393368d840e0222d101a072f3f7534d"
-dependencies = [
- "proc-macro2",
- "quote",
- "serde_derive_internals",
- "syn 2.0.117",
 ]
 
 [[package]]
@@ -5216,10 +5287,17 @@ dependencies = [
 name = "settings"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
+ "collections",
+ "ec4rs",
+ "fs",
  "futures",
  "gpui",
+ "serde",
  "settings_content",
  "settings_macros",
+ "smallvec",
+ "util",
 ]
 
 [[package]]
@@ -5227,14 +5305,16 @@ name = "settings_content"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "collections",
  "gpui",
  "gui",
- "schemars 0.8.22",
+ "schemars",
  "serde",
  "serde_json",
  "serde_json_lenient 0.1.8",
  "settings_macros",
- "strum 0.24.1",
+ "strum 0.27.2",
+ "util",
 ]
 
 [[package]]
@@ -5500,15 +5580,6 @@ dependencies = [
 
 [[package]]
 name = "strum"
-version = "0.24.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "063e6045c0e62079840579a7e47a355ae92f60eb74daaf156fb1e84ba164e63f"
-dependencies = [
- "strum_macros 0.24.3",
-]
-
-[[package]]
-name = "strum"
 version = "0.26.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8fec0f0aef304996cf250b31b5a10dee7980c85da9d759361292b8bca5a18f06"
@@ -5523,19 +5594,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af23d6f6c1a224baef9d3f61e287d2761385a5b88fdab4eb4c6f11aeb54c4bcf"
 dependencies = [
  "strum_macros 0.27.2",
-]
-
-[[package]]
-name = "strum_macros"
-version = "0.24.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e385be0d24f186b4ce2f9982191e7101bb737312ad61c1f2f984f34bcf85d59"
-dependencies = [
- "heck 0.4.1",
- "proc-macro2",
- "quote",
- "rustversion",
- "syn 1.0.109",
 ]
 
 [[package]]
@@ -5568,6 +5626,15 @@ name = "subtle"
 version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
+
+[[package]]
+name = "sum_tree"
+version = "0.1.0"
+dependencies = [
+ "app_tracing",
+ "heapless",
+ "rayon",
+]
 
 [[package]]
 name = "sval"
@@ -5824,6 +5891,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "text"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "collections",
+ "rope",
+ "util",
+]
+
+[[package]]
 name = "theme"
 version = "0.1.0"
 dependencies = [
@@ -5959,14 +6036,18 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 name = "title-bar"
 version = "0.1.0"
 dependencies = [
+ "arrayvec",
  "gpui",
  "gpui-component",
  "gui",
  "platform_title_bar",
+ "project",
  "settings",
  "settings_content",
  "settings_macros",
+ "smallvec",
  "ui",
+ "workspace",
 ]
 
 [[package]]
@@ -6543,8 +6624,13 @@ dependencies = [
 name = "ui"
 version = "0.1.0"
 dependencies = [
+ "collections",
  "gpui",
  "gpui-component",
+ "gui",
+ "schemars",
+ "serde",
+ "smallvec",
 ]
 
 [[package]]
@@ -6706,6 +6792,7 @@ name = "util"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "gpui_util 0.1.0",
  "serde",
 ]
 
@@ -7723,6 +7810,15 @@ dependencies = [
  "serde_json",
  "unicode-xid",
  "wasmparser",
+]
+
+[[package]]
+name = "workspace"
+version = "0.1.0"
+dependencies = [
+ "gpui",
+ "project",
+ "settings",
 ]
 
 [[package]]

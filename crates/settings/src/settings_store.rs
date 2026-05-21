@@ -1,11 +1,15 @@
+use crate::private::inventory;
+use anyhow::{Context as _, Result};
 use collections::{
-    // btree_map, hash_map, BTreeMap,
+    BTreeMap,
     HashMap,
+    // btree_map,
+    hash_map,
 };
 use futures::{
+    FutureExt, StreamExt,
     channel::{mpsc, oneshot},
     future::LocalBoxFuture,
-    FutureExt, StreamExt,
 };
 use gpui::{
     App, AppContext, AsyncApp, BorrowAppContext, Entity, Global, SharedString, Task, UpdateGlobal,
@@ -13,11 +17,11 @@ use gpui::{
 use settings_content::{
     // merge_from::MergeFrom, ExtensionsSettingsContent, ProfileBase, ProjectSettingsContent,
     // RootUserSettings,
-    SettingsContent,
-    // UserSettingsContent,
+    ParseStatus,
+    SettingsContent, // UserSettingsContent,
 };
 use std::{
-    any::{type_name, Any, TypeId},
+    any::{Any, TypeId, type_name},
     fmt::Debug,
     ops::Range,
     path::{Path, PathBuf},
@@ -31,6 +35,7 @@ use util::{
     // schemars::{AllowTrailingCommas, DefaultDenyUnknownFields, replace_subschema},
 };
 // use settings_content::{ActionName, ParseStatus};
+use crate::editorconfig_store::EditorconfigStore;
 
 use crate::{
     // settings_content::{
@@ -44,6 +49,12 @@ use crate::{
     // UserSettingsContentExt, VsCodeSettings,
     WorktreeId,
 };
+
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
+pub enum LocalSettingsPath {
+    InWorktree(Arc<RelPath>),
+    OutsideWorktree(Arc<Path>),
+}
 
 /// A value that can be defined as a user setting.
 ///
@@ -131,6 +142,22 @@ pub struct RegisteredSetting {
     pub id: fn() -> TypeId,
 }
 
+inventory::collect!(RegisteredSetting);
+
+#[derive(Clone, Copy, Debug)]
+pub struct SettingsLocation<'a> {
+    pub worktree_id: WorktreeId,
+    pub path: &'a RelPath,
+}
+
+#[doc(hidden)]
+#[derive(Debug)]
+pub struct SettingValue<T> {
+    #[doc(hidden)]
+    pub global_value: Option<T>,
+    #[doc(hidden)]
+    pub local_values: Vec<(WorktreeId, Arc<RelPath>, T)>,
+}
 #[doc(hidden)]
 pub trait AnySettingValue: 'static + Send + Sync {
     fn setting_type_name(&self) -> &'static str;
@@ -168,6 +195,9 @@ pub struct SettingsStore {
         mpsc::UnboundedSender<Box<dyn FnOnce(AsyncApp) -> LocalBoxFuture<'static, Result<()>>>>,
     file_errors: BTreeMap<SettingsFile, SettingsParseResult>,
 }
+
+impl Global for SettingsStore {}
+
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub enum SettingsFile {
     Default,
@@ -202,5 +232,133 @@ impl SettingsStore {
             from_settings: |content| Box::new(T::from_settings(content)),
             id: || TypeId::of::<T>(),
         });
+    }
+
+    /// Get the value of a setting.
+    ///
+    /// Panics if the given setting type has not been registered, or if there is no
+    /// value for this setting.
+    pub fn get<T: Settings>(&self, path: Option<SettingsLocation>) -> &T {
+        self.setting_values
+            .get(&TypeId::of::<T>())
+            .unwrap_or_else(|| panic!("unregistered setting type {}", type_name::<T>()))
+            .value_for_path(path)
+            .downcast_ref::<T>()
+            .expect("no default value for setting type")
+    }
+
+    /// Get the value of a setting.
+    ///
+    /// Does not panic
+    pub fn try_get<T: Settings>(&self, path: Option<SettingsLocation>) -> Option<&T> {
+        self.setting_values
+            .get(&TypeId::of::<T>())
+            .map(|value| value.value_for_path(path))
+            .and_then(|value| value.downcast_ref::<T>())
+    }
+
+    /// Override the global value for a setting.
+    ///
+    /// The given value will be overwritten if the user settings file changes.
+    pub fn override_global<T: Settings>(&mut self, value: T) {
+        self.setting_values
+            .get_mut(&TypeId::of::<T>())
+            .unwrap_or_else(|| panic!("unregistered setting type {}", type_name::<T>()))
+            .set_global_value(Box::new(value))
+    }
+}
+
+#[derive(Debug, Clone, PartialEq)]
+pub enum InvalidSettingsError {
+    LocalSettings {
+        path: Arc<RelPath>,
+        message: String,
+    },
+    UserSettings {
+        message: String,
+    },
+    ServerSettings {
+        message: String,
+    },
+    DefaultSettings {
+        message: String,
+    },
+    Editorconfig {
+        path: LocalSettingsPath,
+        message: String,
+    },
+    Tasks {
+        path: PathBuf,
+        message: String,
+    },
+    Debug {
+        path: PathBuf,
+        message: String,
+    },
+}
+/// The result of parsing settings, including any migration attempts
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SettingsParseResult {
+    /// The result of parsing the settings file (possibly after migration)
+    pub parse_status: ParseStatus,
+    /// The result of attempting to migrate the settings file
+    pub migration_status: MigrationStatus,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum MigrationStatus {
+    /// No migration was needed - settings are up to date
+    NotNeeded,
+    /// Settings were automatically migrated in memory, but the file needs to be updated
+    Succeeded,
+    /// Migration was attempted but failed. Original settings were parsed instead.
+    Failed { error: String },
+}
+
+impl<T: Settings> AnySettingValue for SettingValue<T> {
+    fn from_settings(&self, s: &SettingsContent) -> Box<dyn Any> {
+        Box::new(T::from_settings(s)) as _
+    }
+    fn setting_type_name(&self) -> &'static str {
+        type_name::<T>()
+    }
+
+    fn all_local_values(&self) -> Vec<(WorktreeId, Arc<RelPath>, &dyn Any)> {
+        self.local_values
+            .iter()
+            .map(|(id, path, value)| (*id, path.clone(), value as _))
+            .collect()
+    }
+    fn value_for_path(&self, path: Option<SettingsLocation>) -> &dyn Any {
+        if let Some(SettingsLocation { worktree_id, path }) = path {
+            for (settings_root_id, settings_path, value) in self.local_values.iter().rev() {
+                if worktree_id == *settings_root_id && path.starts_with(settings_path) {
+                    return value;
+                }
+            }
+        }
+
+        self.global_value
+            .as_ref()
+            .unwrap_or_else(|| panic!("no default value for setting {}", self.setting_type_name()))
+    }
+
+    fn set_global_value(&mut self, value: Box<dyn Any>) {
+        self.global_value = Some(*value.downcast().unwrap());
+    }
+
+    fn set_local_value(&mut self, root_id: WorktreeId, path: Arc<RelPath>, value: Box<dyn Any>) {
+        let value = *value.downcast().unwrap();
+        match self
+            .local_values
+            .binary_search_by_key(&(root_id, &path), |e| (e.0, &e.1))
+        {
+            Ok(ix) => self.local_values[ix].2 = value,
+            Err(ix) => self.local_values.insert(ix, (root_id, path, value)),
+        }
+    }
+    fn clear_local_values(&mut self, root_id: WorktreeId) {
+        self.local_values
+            .retain(|(worktree_id, _, _)| *worktree_id != root_id);
     }
 }

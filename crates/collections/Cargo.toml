@@ -16,3 +16,4 @@ test-support = []
 
 [dependencies]
 rustc-hash = "2.1"
+indexmap = "2.0"

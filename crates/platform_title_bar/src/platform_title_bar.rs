@@ -1,66 +1,62 @@
+mod system_window_tabs;
+use crate::{
+    // platforms::{platform_linux, platform_windows},
+    system_window_tabs::SystemWindowTabs,
+};
 use gpui::prelude::*;
 use gpui::*;
-use gpui_component::{h_flex, ActiveTheme, Icon, IconName, InteractiveElementExt, Sizable};
+use gpui_component::{ActiveTheme, Icon, IconName, InteractiveElementExt, Sizable, h_flex};
+use gui::WindowButtonLayout;
+use smallvec::SmallVec;
+use ui::PlatformStyle;
+use workspace::MultiWorkspace;
+
+pub struct PlatformTitleBar {
+    id: ElementId,
+    platform_style: PlatformStyle,
+    children: SmallVec<[AnyElement; 2]>,
+    should_move: bool,
+    system_window_tabs: Entity<SystemWindowTabs>,
+    button_layout: Option<WindowButtonLayout>,
+    multi_workspace: Option<WeakEntity<MultiWorkspace>>,
+}
+impl PlatformTitleBar {
+    pub fn new(id: impl Into<ElementId>, cx: &mut Context<Self>) -> Self {
+        let platform_style = PlatformStyle::platform();
+        let system_window_tabs = cx.new(|_cx| SystemWindowTabs::new());
+
+        Self {
+            id: id.into(),
+            platform_style,
+            children: SmallVec::new(),
+            should_move: false,
+            system_window_tabs,
+            button_layout: None,
+            multi_workspace: None,
+        }
+    }
+    pub fn set_children<T>(&mut self, children: T)
+    where
+        T: IntoIterator<Item = AnyElement>,
+    {
+        self.children = children.into_iter().collect();
+    }
+    pub fn set_button_layout(&mut self, button_layout: Option<WindowButtonLayout>) {
+        self.button_layout = button_layout;
+    }
+
+    pub fn with_multi_workspace(mut self, multi_workspace: WeakEntity<MultiWorkspace>) -> Self {
+        self.multi_workspace = Some(multi_workspace);
+        self
+    }
+    pub fn init(cx: &mut App) {
+        SystemWindowTabs::init(cx);
+    }
+}
 
 pub const TITLE_BAR_HEIGHT: Pixels = px(34.);
 
 pub fn init(_cx: &mut App) {}
-
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
-pub enum PlatformStyle {
-    Mac,
-    Linux,
-    Windows,
-}
-
-impl PlatformStyle {
-    fn platform() -> Self {
-        if cfg!(any(target_os = "linux", target_os = "freebsd")) {
-            Self::Linux
-        } else if cfg!(target_os = "windows") {
-            Self::Windows
-        } else {
-            Self::Mac
-        }
-    }
-}
-
-#[allow(dead_code)]
-pub struct PlatformTitleBar {
-    children: Vec<AnyElement>,
-    should_move: bool,
-    platform_style: PlatformStyle,
-    id: ElementId,
-}
-
-impl PlatformTitleBar {
-    pub fn new(
-        id: impl Into<ElementId>,
-        children: impl IntoIterator<Item = AnyElement>,
-        _cx: &mut Context<Self>,
-    ) -> Self {
-        Self {
-            id: id.into(),
-            children: children.into_iter().collect(),
-            should_move: false,
-            platform_style: PlatformStyle::platform(),
-        }
-    }
-    pub fn title_bar_color(&self, window: &mut Window, cx: &mut Context<Self>) -> Hsla {
-        if cfg!(any(target_os = "linux", target_os = "freebsd")) {
-            if window.is_window_active() && !self.should_move {
-                cx.theme().title_bar
-            } else {
-                cx.theme().title_bar.opacity(0.85)
-            }
-        } else {
-            cx.theme().title_bar
-        }
-    }
-    pub fn set_children(&mut self, children: impl IntoIterator<Item = AnyElement>) {
-        self.children = children.into_iter().collect();
-    }
-}
 
 impl Render for PlatformTitleBar {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {

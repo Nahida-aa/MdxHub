@@ -321,6 +321,23 @@ impl Borrow<RelPath> for RelPathBuf {
         self.as_rel_path()
     }
 }
+impl PartialOrd for RelPath {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for RelPath {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        self.components().cmp(other.components())
+    }
+}
+
+impl fmt::Debug for RelPath {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        fmt::Debug::fmt(&self.0, f)
+    }
+}
 impl AsRef<RelPath> for RelPathBuf {
     fn as_ref(&self) -> &RelPath {
         self.as_rel_path()
@@ -372,11 +389,7 @@ impl<'a> DoubleEndedIterator for RelPathComponents<'a> {
         }
     }
 }
-impl fmt::Debug for RelPath {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        fmt::Debug::fmt(&self.0, f)
-    }
-}
+
 impl fmt::Debug for RelPathBuf {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         fmt::Debug::fmt(&self.0, f)

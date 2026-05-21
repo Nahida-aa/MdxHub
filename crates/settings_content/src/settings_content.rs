@@ -2,15 +2,15 @@ mod fallible_options;
 pub mod merge_from;
 mod project;
 mod title_bar;
-
+mod workspace;
 pub use fallible_options::*;
 pub use merge_from::MergeFrom as MergeFromTrait;
 pub use project::*;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
-pub use title_bar::*;
-
 use settings_macros::{MergeFrom, with_fallible_options};
+pub use title_bar::*;
+pub use workspace::*;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum ParseStatus {
@@ -33,9 +33,8 @@ pub struct SettingsContent {
 
     //     #[serde(flatten)]
     //     pub extension: ExtensionSettingsContent,
-
-    //     #[serde(flatten)]
-    //     pub workspace: WorkspaceSettingsContent,
+    #[serde(flatten)]
+    pub workspace: WorkspaceSettingsContent,
 
     //     #[serde(flatten)]
     //     pub editor: EditorSettingsContent,

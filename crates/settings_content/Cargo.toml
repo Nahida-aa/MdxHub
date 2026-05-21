@@ -18,3 +18,4 @@ collections.workspace = true
 strum = { version = "0.27", features = ["derive"] }
 anyhow = "1.0"
 serde_json_lenient = "0.1"
+util.workspace = true

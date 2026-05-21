@@ -1,0 +1,17 @@
+[package]
+name = "sum_tree"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[lib]
+
+[dependencies]
+heapless = "0.9"
+rayon = '1.11'
+app_tracing.workspace = true
+
+[dev-dependencies]

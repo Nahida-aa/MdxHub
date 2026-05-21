@@ -1,0 +1,18 @@
+[package]
+name = "project"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+doctest = false
+test = false
+
+[features]
+
+[dependencies]
+gpui = "0.2"
+collections.workspace = true

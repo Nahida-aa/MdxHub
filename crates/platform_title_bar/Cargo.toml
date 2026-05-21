@@ -9,3 +9,8 @@ doctest = false
 [dependencies]
 gpui = "0.2.2"
 gpui-component = { version = "0.5" }
+gui.workspace = true
+workspace.workspace = true
+settings.workspace = true
+smallvec = "1.10"
+ui.workspace = true

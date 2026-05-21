@@ -15,6 +15,17 @@ settings = { path = "crates/settings" }
 settings_json = { path = "crates/settings_json" }
 gui = { path = "crates/gui" }
 util = { path = "crates/util" }
+collections = { path = "crates/collections" }
+gpui_util = { path = "crates/gpui_util" }
+fs = { path = "crates/fs" }
+text = { path = "crates/text" }
+rope = { path = "crates/rope" }
+sum_tree = { path = "crates/sum_tree" }
+app_tracing_macro = { path = "crates/app_tracing_macro" }
+app_tracing = { path = "crates/app_tracing" }
+project = { path = "crates/project" }
+workspace = { path = "crates/workspace" }
+title_bar = { path = "crates/title_bar" }
 
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }

@@ -1,7 +1,35 @@
 use gui::WindowButtonLayout;
-use schemars::{JsonSchema, SchemaGenerator};
+use schemars::{JsonSchema, Schema, SchemaGenerator, json_schema};
 use serde::{Deserialize, Serialize};
 use settings_macros::{MergeFrom, with_fallible_options};
+
+fn window_button_layout_schema(_: &mut SchemaGenerator) -> Schema {
+    json_schema!({
+        "anyOf": [
+            { "enum": ["platform_default", "standard"] },
+            { "type": "string" }
+        ]
+    })
+}
+impl From<WindowButtonLayoutContent> for String {
+    fn from(value: WindowButtonLayoutContent) -> Self {
+        match value {
+            WindowButtonLayoutContent::PlatformDefault => "platform_default".to_string(),
+            WindowButtonLayoutContent::Standard => "standard".to_string(),
+            WindowButtonLayoutContent::Custom(s) => s,
+        }
+    }
+}
+
+impl From<String> for WindowButtonLayoutContent {
+    fn from(layout_string: String) -> Self {
+        match layout_string.as_str() {
+            "platform_default" => Self::PlatformDefault,
+            "standard" => Self::Standard,
+            _ => Self::Custom(layout_string),
+        }
+    }
+}
 
 /// The layout of window control buttons as represented by user settings.
 ///
@@ -31,8 +59,20 @@ pub enum WindowButtonLayoutContent {
     Custom(String),
 }
 
+impl WindowButtonLayoutContent {
+    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+    pub fn into_layout(self) -> Option<WindowButtonLayout> {
+        use util::ResultExt;
+
+        match self {
+            Self::PlatformDefault => None,
+            Self::Standard => Some(WindowButtonLayout::linux_default()),
+            Self::Custom(layout) => WindowButtonLayout::parse(&layout).log_err(),
+        }
+    }
+}
 // #[with_fallible_options]
-#[derive(Debug, Clone, Serialize, Deserialize, JsonSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, MergeFrom, JsonSchema)]
 pub struct TitleBarSettingsContent {
     // / Whether to show git status indicators on the branch icon in the title bar.
     // / When enabled, the branch icon changes to reflect the current repository
@@ -47,15 +87,15 @@ pub struct TitleBarSettingsContent {
     // /// Whether to show user avatar in the title bar.
     // ///
     // /// Default: true
-    // pub show_user_picture: Option<bool>,
-    // /// Whether to show the branch name button in the titlebar.
-    // ///
-    // /// Default: true
-    // pub show_branch_name: Option<bool>,
-    // /// Whether to show the project host and name in the titlebar.
-    // ///
-    // /// Default: true
-    // pub show_project_items: Option<bool>,
+    pub show_user_picture: Option<bool>,
+    /// Whether to show the branch name button in the titlebar.
+    ///
+    /// Default: true
+    pub show_branch_name: Option<bool>,
+    /// Whether to show the project host and name in the titlebar.
+    ///
+    /// Default: true
+    pub show_project_items: Option<bool>,
     // /// Whether to show the sign in button in the title bar.
     // ///
     // /// Default: true
@@ -64,10 +104,10 @@ pub struct TitleBarSettingsContent {
     // ///
     // /// Default: true
     // pub show_user_menu: Option<bool>,
-    // /// Whether to show the menus in the title bar.
-    // ///
-    // /// Default: false
-    // pub show_menus: Option<bool>,
+    /// Whether to show the menus in the title bar.
+    ///
+    /// Default: false
+    pub show_menus: Option<bool>,
     /// The layout of window control buttons in the title bar (Linux only).
     ///
     /// This can be set to "platform_default" to follow the system configuration, or

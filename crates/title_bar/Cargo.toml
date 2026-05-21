@@ -20,3 +20,7 @@ settings_content.workspace = true
 settings_macros.workspace = true
 settings.workspace = true
 gui.workspace = true
+arrayvec = "0.7.6"
+project.workspace = true
+workspace.workspace = true
+smallvec = "1.10"
