@@ -18,6 +18,7 @@ fn main() {
             gpui_component::init(cx);
             theme::init(cx);
             theme_settings::init(cx);
+            title_bar::init(cx);
 
             cx.on_action(|_: &Quit, cx| cx.quit());
 

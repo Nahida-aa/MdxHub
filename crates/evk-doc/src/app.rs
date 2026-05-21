@@ -9,6 +9,7 @@ use gpui_component::{
     ActiveTheme,
 };
 use std::path::PathBuf;
+use title_bar::TitleBar;
 
 const DIVIDER_W: f32 = 8.;
 const MIN_PANEL_W: f32 = 200.;
@@ -28,11 +29,16 @@ pub struct MarkdownApp {
     pub pending_tree_open: Option<PathBuf>,
     pub open_folder_path: Option<PathBuf>,
     pub menu_bar: Entity<AppMenuBar>,
+    pub title_bar: Entity<TitleBar>,
 }
 
 impl MarkdownApp {
     pub fn new(window: &mut Window, cx: &mut Context<Self>) -> Self {
         let menu_bar = AppMenuBar::new(window, cx);
+
+        let title_bar = cx.new(|cx| {
+            TitleBar::new([menu_bar.clone().into_any_element()], window, cx)
+        });
 
         let editor = cx.new(|cx| {
             InputState::new(window, cx)
@@ -68,6 +74,7 @@ impl MarkdownApp {
             pending_tree_open: None,
             open_folder_path: None,
             menu_bar,
+            title_bar,
         }
     }
 
@@ -156,6 +163,11 @@ impl MarkdownApp {
 
 impl Render for MarkdownApp {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+        let menu_bar_element = self.menu_bar.clone().into_any_element();
+        self.title_bar.update(cx, |tb, cx| {
+            tb.set_children([menu_bar_element], cx);
+        });
+
         if let Some(path) = self.pending_tree_open.take() {
             match std::fs::read_to_string(&path) {
                 Ok(text) => {
@@ -246,11 +258,7 @@ impl Render for MarkdownApp {
             .flex_col()
             .size_full()
             .bg(bg)
-            .child(title_bar::render_title_bar(
-                window,
-                cx,
-                [self.menu_bar.clone().into_any_element()],
-            ))
+            .child(self.title_bar.clone().into_any_element())
             .child(
                 div()
                     .flex()
