@@ -1,11 +1,16 @@
 [package]
-name = "platform_title_bar"
+name = "ui"
 version = "0.1.0"
 edition.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
 [lib]
-path = "src/platform_title_bar.rs"
-doctest = false
+name = "ui"
+path = "src/ui.rs"
 
 [dependencies]
-gpui = "0.2.2"
+gpui = "0.2"
 gpui-component = { version = "0.5" }

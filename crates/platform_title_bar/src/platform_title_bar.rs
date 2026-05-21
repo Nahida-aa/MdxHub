@@ -46,7 +46,17 @@ impl PlatformTitleBar {
             platform_style: PlatformStyle::platform(),
         }
     }
-
+    pub fn title_bar_color(&self, window: &mut Window, cx: &mut Context<Self>) -> Hsla {
+        if cfg!(any(target_os = "linux", target_os = "freebsd")) {
+            if window.is_window_active() && !self.should_move {
+                cx.theme().title_bar
+            } else {
+                cx.theme().title_bar.opacity(0.85)
+            }
+        } else {
+            cx.theme().title_bar
+        }
+    }
     pub fn set_children(&mut self, children: impl IntoIterator<Item = AnyElement>) {
         self.children = children.into_iter().collect();
     }
@@ -81,11 +91,10 @@ impl Render for PlatformTitleBar {
             .h(TITLE_BAR_HEIGHT);
 
         // 3-step drag-to-move pattern (required for Wayland)
-        title_bar = title_bar.on_mouse_down_out(
-            cx.listener(|this, _: &MouseDownEvent, _window, _cx| {
+        title_bar =
+            title_bar.on_mouse_down_out(cx.listener(|this, _: &MouseDownEvent, _window, _cx| {
                 this.should_move = false;
-            }),
-        );
+            }));
         title_bar = title_bar.on_mouse_up(
             MouseButton::Left,
             cx.listener(|this, _: &MouseUpEvent, _window, _cx| {
@@ -98,14 +107,12 @@ impl Render for PlatformTitleBar {
                 this.should_move = true;
             }),
         );
-        title_bar = title_bar.on_mouse_move(
-            cx.listener(|this, _: &MouseMoveEvent, window, _| {
-                if this.should_move {
-                    this.should_move = false;
-                    window.start_window_move();
-                }
-            }),
-        );
+        title_bar = title_bar.on_mouse_move(cx.listener(|this, _: &MouseMoveEvent, window, _| {
+            if this.should_move {
+                this.should_move = false;
+                window.start_window_move();
+            }
+        }));
 
         title_bar = title_bar
             .on_double_click(|_, window, _| {
@@ -115,13 +122,7 @@ impl Render for PlatformTitleBar {
             .bg(cx.theme().title_bar)
             .border_b_1()
             .border_color(cx.theme().title_bar_border)
-            .child(
-                h_flex()
-                    .id("bar")
-                    .flex_1()
-                    .h_full()
-                    .children(children),
-            );
+            .child(h_flex().id("bar").flex_1().h_full().children(children));
 
         if is_client {
             title_bar = title_bar.child(

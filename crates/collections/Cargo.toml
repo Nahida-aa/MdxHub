@@ -1,0 +1,18 @@
+[package]
+name = "collections"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/collections.rs"
+doctest = false
+
+[features]
+test-support = []
+
+[dependencies]
+rustc-hash = "2.1"

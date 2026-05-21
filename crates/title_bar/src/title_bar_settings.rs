@@ -1,4 +1,4 @@
-use gpui::WindowButtonLayout;
+use gui::WindowButtonLayout;
 use settings::{RegisterSetting, Settings, SettingsContent};
 
 #[derive(Copy, Clone, Debug, RegisterSetting)]

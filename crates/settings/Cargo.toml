@@ -1,0 +1,17 @@
+[package]
+name = "settings"
+version = "0.1.0"
+edition = "2021"
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/settings.rs"
+doctest = false
+
+[dependencies]
+gpui = "0.2"
+settings_content.workspace = true
+settings_macros.workspace = true
+futures = "0.3"

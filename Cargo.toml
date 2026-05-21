@@ -1,3 +1,24 @@
 [workspace]
 members = ["crates/*"]
 resolver = "2"
+
+[workspace.package]
+publish = false
+edition = "2024"
+
+[workspace.dependencies]
+platform_title_bar = { path = "crates/platform_title_bar" }
+ui = { path = "crates/ui" }
+settings_content = { path = "crates/settings_content" }
+settings_macros = { path = "crates/settings_macros" }
+settings = { path = "crates/settings" }
+settings_json = { path = "crates/settings_json" }
+gui = { path = "crates/gui" }
+util = { path = "crates/util" }
+
+[workspace.lints.rust]
+unexpected_cfgs = { level = "allow" }
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
