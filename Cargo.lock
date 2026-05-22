@@ -2561,6 +2561,7 @@ dependencies = [
  "serde_json",
  "smallvec",
  "taffy 0.10.1",
+ "uuid",
 ]
 
 [[package]]

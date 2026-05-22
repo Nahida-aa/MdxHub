@@ -1,4 +1,50 @@
-use anyhow::{Result, bail}; // 提供 anyhow::Result<T>、anyhow::Error、bail!()、context() 等，方便错误传播
+use anyhow::{Result, bail};
+use gpui::SourceMetadata; // 提供 anyhow::Result<T>、anyhow::Error、bail!()、context() 等，方便错误传播
+use std::{
+    fmt::{self, Debug},
+    ops::Range,
+    path::{Path, PathBuf},
+    rc::Rc,
+    sync::Arc,
+};
+use uuid::Uuid;
+
+use crate::{Bounds, DEFAULT_WINDOW_SIZE, Pixels, point};
+
+/// An opaque identifier for a hardware display
+#[derive(PartialEq, Eq, Hash, Copy, Clone)]
+pub struct DisplayId(pub(crate) u64);
+
+/// A handle to a platform's display, e.g. a monitor or laptop screen.
+pub trait PlatformDisplay: Debug {
+    /// Get the ID for this display
+    fn id(&self) -> DisplayId;
+
+    /// Returns a stable identifier for this display that can be persisted and used
+    /// across system restarts.
+    fn uuid(&self) -> Result<Uuid>;
+
+    /// Get the bounds for this display
+    fn bounds(&self) -> Bounds<Pixels>;
+
+    /// Get the visible bounds for this display, excluding taskbar/dock areas.
+    /// This is the usable area where windows can be placed without being obscured.
+    /// Defaults to the full display bounds if not overridden.
+    fn visible_bounds(&self) -> Bounds<Pixels> {
+        self.bounds()
+    }
+
+    /// Get the default bounds for this display to place a window
+    fn default_bounds(&self) -> Bounds<Pixels> {
+        let bounds = self.bounds();
+        let center = bounds.center();
+        let clipped_window_size = DEFAULT_WINDOW_SIZE.min(&bounds.size);
+
+        let offset = clipped_window_size / 2.0;
+        let origin = point(center.x - offset.width, center.y - offset.height);
+        Bounds::new(origin, clipped_window_size)
+    }
+}
 
 /// A window control button type used in [`WindowButtonLayout`].
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
