@@ -2251,7 +2251,7 @@ dependencies = [
  "rand 0.9.4",
  "raw-window-handle",
  "resvg",
- "schemars 1.2.1",
+ "schemars",
  "seahash",
  "serde",
  "serde_json",
@@ -2260,7 +2260,7 @@ dependencies = [
  "smol",
  "stacksafe",
  "strum 0.27.2",
- "taffy",
+ "taffy 0.9.0",
  "thiserror 2.0.18",
  "usvg",
  "uuid",
@@ -2308,7 +2308,7 @@ dependencies = [
  "regex",
  "ropey",
  "rust-i18n",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "serde_json",
  "serde_repr",
@@ -2507,7 +2507,7 @@ dependencies = [
  "nix 0.29.0",
  "regex",
  "rust-embed",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "serde_json",
  "serde_json_lenient 0.2.4",
@@ -2539,18 +2539,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12101ecc8225ea6d675bc70263074eab6169079621c2186fe0c66590b2df9681"
 
 [[package]]
+name = "grid"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b40ca9252762c466af32d0b1002e91e4e1bc5398f77455e55474deb466355ff5"
+
+[[package]]
 name = "gui"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "collections",
  "derive_more 2.1.1",
  "gpui",
  "gpui-component",
- "gpui_refineable",
- "gpui_util 0.1.0",
+ "gpui_util 0.2.2",
  "itertools 0.14.0",
+ "refineable",
+ "schemars",
  "serde",
+ "serde_json",
  "smallvec",
+ "taffy 0.10.1",
 ]
 
 [[package]]
@@ -5084,18 +5094,6 @@ dependencies = [
 
 [[package]]
 name = "schemars"
-version = "0.8.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3fbf2ae1b8bc8e02df939598064d22402220cd5bbcca1c76f7d6a310974d5615"
-dependencies = [
- "dyn-clone",
- "schemars_derive 0.8.22",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "schemars"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2b42f36aa1cd011945615b92222f6bf73c599a102a300334cd7f8dbeec726cc"
@@ -5103,21 +5101,9 @@ dependencies = [
  "dyn-clone",
  "indexmap",
  "ref-cast",
- "schemars_derive 1.2.1",
+ "schemars_derive",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "schemars_derive"
-version = "0.8.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32e265784ad618884abaea0600a9adf15393368d840e0222d101a072f3f7534d"
-dependencies = [
- "proc-macro2",
- "quote",
- "serde_derive_internals",
- "syn 2.0.117",
 ]
 
 [[package]]
@@ -5386,7 +5372,7 @@ dependencies = [
  "collections",
  "gpui",
  "gui",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "serde_json",
  "serde_json_lenient 0.1.8",
@@ -5912,7 +5898,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a13e5d13f79d558b5d353a98072ca8ca0e99da429467804de959aa8c83c9a004"
 dependencies = [
  "arrayvec",
- "grid",
+ "grid 0.18.0",
+ "serde",
+ "slotmap",
+]
+
+[[package]]
+name = "taffy"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aea22054047c16c3f34d3ac473a2170be1424b1115b2a3adcf28cfb067c88859"
+dependencies = [
+ "arrayvec",
+ "grid 1.0.1",
  "serde",
  "slotmap",
 ]
@@ -5985,7 +5983,7 @@ dependencies = [
  "anyhow",
  "gpui",
  "gpui-component",
- "schemars 0.8.22",
+ "schemars",
  "serde",
 ]
 
@@ -6709,7 +6707,7 @@ dependencies = [
  "gpui-component",
  "gpui-macros",
  "gui",
- "schemars 1.2.1",
+ "schemars",
  "serde",
  "smallvec",
  "theme",

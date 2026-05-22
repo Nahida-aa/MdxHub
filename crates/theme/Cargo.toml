@@ -11,5 +11,5 @@ path = "src/theme.rs"
 gpui = "0.2"
 gpui-component = { version = "0.5" }
 anyhow = "1"
-schemars = "0.8"
+schemars = "1"
 serde = { version = "1", features = ["derive"] }

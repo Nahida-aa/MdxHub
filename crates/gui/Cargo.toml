@@ -18,6 +18,10 @@ anyhow = "1.0"
 smallvec = "1.10"
 derive_more = { version = "2.1.1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
-refineable = { version = "0.2.2", package = "gpui_refineable" }
+refineable.workspace = true
 itertools = "0.14"
-gpui_util.workspace = true
+gpui_util = "0.2.2"
+collections.workspace = true
+schemars = { version = "1", features = ["derive"] }
+serde_json = "1.0"
+taffy = "0.10"
