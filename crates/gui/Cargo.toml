@@ -15,3 +15,9 @@ path = "src/gui.rs"
 gpui = "0.2.2"
 gpui-component = { version = "0.5" }
 anyhow = "1.0"
+smallvec = "1.10"
+derive_more = { version = "2.1.1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+refineable = { version = "0.2.2", package = "gpui_refineable" }
+itertools = "0.14"
+gpui_util.workspace = true

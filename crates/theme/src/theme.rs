@@ -1,13 +1,17 @@
 mod default_colors;
 pub mod schema;
 pub mod styles;
-
+mod theme_settings_provider;
+use gpui::Hsla;
 pub use schema::*;
 pub use styles::*;
-
-use std::sync::Arc;
-
+mod ui_density;
+pub use crate::theme_settings_provider::*;
+pub use crate::ui_density::*;
 use gpui::{App, Global, SharedString, WindowAppearance};
+use std::sync::Arc;
+mod scale;
+pub use crate::scale::*;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Appearance {
@@ -45,6 +49,27 @@ pub struct Theme {
 impl Theme {
     pub fn colors(&self) -> &ThemeColors {
         &self.styles.colors
+    }
+    /// Returns the [`StatusColors`] for the theme.
+    #[inline(always)]
+    pub fn status(&self) -> &StatusColors {
+        &self.styles.status
+    }
+
+    /// Darkens the color by reducing its lightness.
+    /// The resulting lightness is clamped to ensure it doesn't go below 0.0.
+    ///
+    /// The first value darkens light appearance mode, the second darkens appearance dark mode.
+    ///
+    /// Note: This is a tentative solution and may be replaced with a more robust color system.
+    pub fn darken(&self, color: Hsla, light_amount: f32, dark_amount: f32) -> Hsla {
+        let amount = match self.appearance {
+            Appearance::Light => light_amount,
+            Appearance::Dark => dark_amount,
+        };
+        let mut hsla = color;
+        hsla.l = (hsla.l - amount).max(0.0);
+        hsla
     }
 }
 

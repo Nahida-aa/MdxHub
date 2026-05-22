@@ -1,9 +1,10 @@
 use crate::title_bar_settings::TitleBarSettings;
 use gpui::{
     Action, App, Context, Div, Entity, InteractiveElement, IntoElement, OwnedMenu, OwnedMenuItem,
-    ParentElement, Render, SharedString, Styled, Window, actions, div, prelude::FluentBuilder,
+    ParentElement, Render, SharedString, StatefulInteractiveElement, Styled, Window, actions, div,
+    prelude::FluentBuilder,
 };
-use gpui_component::{menu::PopupMenu, tooltip::Tooltip};
+use gpui_component::{Icon, button::ButtonVariants, menu::PopupMenu, tooltip::Tooltip};
 use settings::Settings;
 use smallvec::SmallVec;
 use ui::{PopoverMenu, PopoverMenuHandle};
@@ -128,12 +129,9 @@ impl ApplicationMenu {
                         Self::build_menu_from_items(entry.clone(), window, cx).into()
                     })
                     .trigger_with_tooltip(
-                        IconButton::new(
-                            SharedString::from(format!("{}-menu-trigger", menu_name)),
-                            ui::IconName::Menu,
-                        )
-                        .style(ButtonStyle::Subtle)
-                        .icon_size(IconSize::Small),
+                        Button::new(SharedString::from(format!("{}-menu-trigger", menu_name)))
+                            .ghost()
+                            .child(Icon::new(ui::IconName::Menu).size(IconSize::Small)),
                         Tooltip::text("Open Application Menu"),
                     )
                     .with_handle(handle),
@@ -161,12 +159,10 @@ impl ApplicationMenu {
                         Self::build_menu_from_items(entry.clone(), window, cx).into()
                     })
                     .trigger(
-                        Button::new(
-                            SharedString::from(format!("{}-menu-trigger", menu_name)),
-                            menu_name,
-                        )
-                        .style(ButtonStyle::Subtle)
-                        .label_size(LabelSize::Small),
+                        Button::new(SharedString::from(format!("{}-menu-trigger", menu_name)))
+                            .label(menu_name)
+                            .ghost()
+                            .text_size(LabelSize::Small),
                     )
                     .with_handle(current_handle.clone()),
             )

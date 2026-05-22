@@ -55,6 +55,10 @@ pub struct ThemeColors {
     pub icon_disabled: Hsla,
     pub icon_placeholder: Hsla,
     pub icon_accent: Hsla,
+    /// Color used to accent some debugger elements
+    /// Is used by breakpoints
+    pub debugger_accent: Hsla,
+
     pub status_bar_background: Hsla,
     pub title_bar_background: Hsla,
     pub title_bar_inactive_background: Hsla,
@@ -115,4 +119,25 @@ pub struct ThemeColors {
     pub terminal_ansi_bright_white: Hsla,
     pub terminal_ansi_dim_white: Hsla,
     pub link_text_hover: Hsla,
+
+    /// Represents an added entry or hunk in vcs, like git.
+    pub version_control_added: Hsla,
+    /// Represents a deleted entry in version control systems.
+    pub version_control_deleted: Hsla,
+    /// Represents a modified entry in version control systems.
+    pub version_control_modified: Hsla,
+    /// Represents a renamed entry in version control systems.
+    pub version_control_renamed: Hsla,
+    /// Represents a conflicting entry in version control systems.
+    pub version_control_conflict: Hsla,
+    /// Represents an ignored entry in version control systems.
+    pub version_control_ignored: Hsla,
+    /// Represents an added word in a word diff.
+    pub version_control_word_added: Hsla,
+    /// Represents a deleted word in a word diff.
+    pub version_control_word_deleted: Hsla,
+    /// Represents the "ours" region of a merge conflict.
+    pub version_control_conflict_marker_ours: Hsla,
+    /// Represents the "theirs" region of a merge conflict.
+    pub version_control_conflict_marker_theirs: Hsla,
 }

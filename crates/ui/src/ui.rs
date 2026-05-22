@@ -3,3 +3,8 @@ pub mod utils;
 pub use styles::*;
 mod components;
 pub use components::*;
+pub mod prelude;
+mod traits;
+pub use prelude::*;
+pub use traits::*;
+pub mod component_prelude;

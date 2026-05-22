@@ -26,6 +26,10 @@ app_tracing = { path = "crates/app_tracing" }
 project = { path = "crates/project" }
 workspace = { path = "crates/workspace" }
 title_bar = { path = "crates/title_bar" }
+theme = { path = "crates/theme" }
+refineable = { path = "crates/refineable" }
+derive_refineable = { path = "crates/refineable/derive_refineable" }
+ui_macros = { path = "crates/ui_macros" }
 
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }

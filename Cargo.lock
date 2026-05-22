@@ -1030,6 +1030,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
 
 [[package]]
+name = "convert_case"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "633458d4ef8c78b72454de2d54fd6ab2e60f9e02be22f3c6104cdc8a4e0fceb9"
+dependencies = [
+ "unicode-segmentation",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1290,10 +1299,42 @@ version = "0.99.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6edb4b64a43d977b8e99788fe3a04d483834fba1215a7e02caa415b626497f7f"
 dependencies = [
- "convert_case",
+ "convert_case 0.4.0",
  "proc-macro2",
  "quote",
  "rustc_version",
+ "syn 2.0.117",
+]
+
+[[package]]
+name = "derive_more"
+version = "2.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d751e9e49156b02b44f9c1815bcb94b984cdcc4396ecc32521c739452808b134"
+dependencies = [
+ "derive_more-impl",
+]
+
+[[package]]
+name = "derive_more-impl"
+version = "2.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "799a97264921d8623a957f6c3b9011f3b5492f557bbb7a5a19b7fa6d06ba8dcb"
+dependencies = [
+ "convert_case 0.10.0",
+ "proc-macro2",
+ "quote",
+ "rustc_version",
+ "syn 2.0.117",
+ "unicode-xid",
+]
+
+[[package]]
+name = "derive_refineable"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
  "syn 2.0.117",
 ]
 
@@ -2173,7 +2214,7 @@ dependencies = [
  "core-video",
  "cosmic-text",
  "ctor",
- "derive_more",
+ "derive_more 0.99.20",
  "embed-resource",
  "etagere",
  "filedescriptor",
@@ -2210,7 +2251,7 @@ dependencies = [
  "rand 0.9.4",
  "raw-window-handle",
  "resvg",
- "schemars",
+ "schemars 1.2.1",
  "seahash",
  "serde",
  "serde_json",
@@ -2267,7 +2308,7 @@ dependencies = [
  "regex",
  "ropey",
  "rust-i18n",
- "schemars",
+ "schemars 1.2.1",
  "serde",
  "serde_json",
  "serde_repr",
@@ -2363,7 +2404,7 @@ dependencies = [
  "async-compression",
  "async-fs",
  "bytes",
- "derive_more",
+ "derive_more 0.99.20",
  "futures",
  "gpui_util 0.2.2",
  "http",
@@ -2466,7 +2507,7 @@ dependencies = [
  "nix 0.29.0",
  "regex",
  "rust-embed",
- "schemars",
+ "schemars 1.2.1",
  "serde",
  "serde_json",
  "serde_json_lenient 0.2.4",
@@ -2502,8 +2543,14 @@ name = "gui"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "derive_more 2.1.1",
  "gpui",
  "gpui-component",
+ "gpui_refineable",
+ "gpui_util 0.1.0",
+ "itertools 0.14.0",
+ "serde",
+ "smallvec",
 ]
 
 [[package]]
@@ -4682,6 +4729,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "refineable"
+version = "0.1.0"
+dependencies = [
+ "derive_refineable",
+]
+
+[[package]]
 name = "regex"
 version = "1.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5030,6 +5084,18 @@ dependencies = [
 
 [[package]]
 name = "schemars"
+version = "0.8.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3fbf2ae1b8bc8e02df939598064d22402220cd5bbcca1c76f7d6a310974d5615"
+dependencies = [
+ "dyn-clone",
+ "schemars_derive 0.8.22",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "schemars"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2b42f36aa1cd011945615b92222f6bf73c599a102a300334cd7f8dbeec726cc"
@@ -5037,9 +5103,21 @@ dependencies = [
  "dyn-clone",
  "indexmap",
  "ref-cast",
- "schemars_derive",
+ "schemars_derive 1.2.1",
  "serde",
  "serde_json",
+]
+
+[[package]]
+name = "schemars_derive"
+version = "0.8.22"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "32e265784ad618884abaea0600a9adf15393368d840e0222d101a072f3f7534d"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "serde_derive_internals",
+ "syn 2.0.117",
 ]
 
 [[package]]
@@ -5308,7 +5386,7 @@ dependencies = [
  "collections",
  "gpui",
  "gui",
- "schemars",
+ "schemars 1.2.1",
  "serde",
  "serde_json",
  "serde_json_lenient 0.1.8",
@@ -5907,6 +5985,8 @@ dependencies = [
  "anyhow",
  "gpui",
  "gpui-component",
+ "schemars 0.8.22",
+ "serde",
 ]
 
 [[package]]
@@ -6627,10 +6707,22 @@ dependencies = [
  "collections",
  "gpui",
  "gpui-component",
+ "gpui-macros",
  "gui",
- "schemars",
+ "schemars 1.2.1",
  "serde",
  "smallvec",
+ "theme",
+ "ui_macros",
+]
+
+[[package]]
+name = "ui_macros"
+version = "0.1.0"
+dependencies = [
+ "quote",
+ "syn 2.0.117",
+ "ui",
 ]
 
 [[package]]

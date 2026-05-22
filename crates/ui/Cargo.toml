@@ -19,3 +19,6 @@ serde = { version = "1.0", features = ["derive"] }
 collections.workspace = true
 smallvec = "1.10"
 gui.workspace = true
+theme.workspace = true
+gpui-macros = "0.2.2"
+ui_macros.workspace = true

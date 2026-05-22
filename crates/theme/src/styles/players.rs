@@ -22,4 +22,8 @@ impl PlayerColors {
             selection: Hsla::transparent_black(),
         })
     }
+    pub fn color_for_participant(&self, participant_index: u32) -> PlayerColor {
+        let len = self.0.len() - 1;
+        self.0[(participant_index as usize % len) + 1]
+    }
 }
