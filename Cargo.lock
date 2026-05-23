@@ -3438,7 +3438,9 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clock",
+ "collections",
  "fs",
+ "futures",
  "gpui",
  "language_core",
  "lsp",

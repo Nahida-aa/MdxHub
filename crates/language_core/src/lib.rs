@@ -19,3 +19,5 @@ pub mod highlight_map;
 pub use highlight_map::{HighlightId, HighlightMap};
 pub mod queries;
 pub use queries::{LanguageQueries, QUERY_FILENAME_PREFIXES};
+pub mod manifest;
+pub use manifest::ManifestName;

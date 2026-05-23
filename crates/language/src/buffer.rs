@@ -28,7 +28,7 @@ use std::{
     time::{Duration, Instant},
     vec,
 };
-pub use text::{ Buffer as TextBuffer, BufferId};
+pub use text::{ Anchor,Buffer as TextBuffer, BufferId};
 use util::{paths::PathStyle, rel_path::RelPath};
 
 /// Indicate whether a [`Buffer`] has permissions to edit.
@@ -172,4 +172,39 @@ pub enum DiskState {
     /// An old version of a file that was previously present
     /// usually from a version control system. e.g. A git blob
     Historic { was_deleted: bool },
+}
+
+#[derive(Clone)]
+struct AutoindentRequest {
+    before_edit: BufferSnapshot,
+    entries: Vec<AutoindentRequestEntry>,
+    is_block_mode: bool,
+    ignore_empty_lines: bool,
+}
+
+#[derive(Debug, Clone)]
+struct AutoindentRequestEntry {
+    /// A range of the buffer whose indentation should be adjusted.
+    range: Range<Anchor>,
+    /// The row of the edit start in the buffer before the edit was applied.
+    /// This is stored here because the anchor in range is created after
+    /// the edit, so it cannot be used with the before_edit snapshot.
+    old_row: Option<u32>,
+    indent_size: IndentSize,
+    original_indent_column: Option<u32>,
+}
+
+/// An immutable, cheaply cloneable representation of a fixed
+/// state of a buffer.
+pub struct BufferSnapshot {
+    pub text: text::BufferSnapshot,
+    pub(crate) syntax: SyntaxSnapshot,
+    tree_sitter_data: Arc<TreeSitterData>,
+    diagnostics: TreeMap<LanguageServerId, DiagnosticSet>,
+    remote_selections: TreeMap<ReplicaId, SelectionSet>,
+    language: Option<Arc<Language>>,
+    file: Option<Arc<dyn File>>,
+    non_text_state_update_count: usize,
+    pub capability: Capability,
+    modeline: Option<Arc<ModelineSettings>>,
 }

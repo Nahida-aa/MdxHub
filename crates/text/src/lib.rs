@@ -1,3 +1,6 @@
+mod anchor;
+
+pub use anchor::*;
 pub use patch::Patch;
 use postage::{oneshot, prelude::*};
 use smallvec::SmallVec;
@@ -59,6 +62,12 @@ pub struct BufferSnapshot {
     replica_id: ReplicaId,
     line_ending: LineEnding,
 }
+impl BufferSnapshot {
+    /// Returns an anchor for the given input position that is anchored to the text before the position.
+    pub fn anchor_before<T: ToOffset>(&self, position: T) -> Anchor {
+        self.anchor_at(position, Bias::Left)
+    }
+}
 
 pub type TransactionId = clock::Lamport;
 
@@ -84,6 +93,12 @@ struct History {
     redo_stack: Vec<HistoryEntry>,
     transaction_depth: usize,
     group_interval: Duration,
+}
+
+impl From<BufferId> for u64 {
+    fn from(id: BufferId) -> Self {
+        id.0.get()
+    }
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -311,5 +326,21 @@ impl sum_tree::Item for InsertionFragment {
             timestamp: self.timestamp,
             split_offset: self.split_offset,
         }
+    }
+}
+
+pub trait ToOffset {
+    fn to_offset(&self, snapshot: &BufferSnapshot) -> usize;
+    /// Turns this point into the next offset in the buffer that comes after this, respecting utf8 boundaries.
+    fn to_next_offset(&self, snapshot: &BufferSnapshot) -> usize {
+        snapshot
+            .visible_text
+            .ceil_char_boundary(self.to_offset(snapshot) + 1)
+    }
+    /// Turns this point into the previous offset in the buffer that comes before this, respecting utf8 boundaries.
+    fn to_previous_offset(&self, snapshot: &BufferSnapshot) -> usize {
+        snapshot
+            .visible_text
+            .floor_char_boundary(self.to_offset(snapshot).saturating_sub(1))
     }
 }

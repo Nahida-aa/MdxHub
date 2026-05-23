@@ -18,9 +18,12 @@ util.workspace = true
 gpui.workspace = true
 settings.workspace = true
 fs.workspace = true
-anyhow = "1.0"
-serde = { version = "1", features = ["derive"] }
+anyhow.workspace = true
+serde.workspace = true
 lsp.workspace = true
 clock.workspace = true
 text.workspace = true
 language_core.workspace = true
+futures.workspace = true
+collections.workspace = true
+# ui.workspace = true

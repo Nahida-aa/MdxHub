@@ -10,6 +10,7 @@ pub use chunk::{
 };
 use sum_tree::{
     // Bias, Dimension, Dimensions,
+    Bias,
     SumTree,
 };
 
@@ -18,6 +19,21 @@ pub use point::Point;
 #[derive(Clone, Default)]
 pub struct Rope {
     chunks: SumTree<Chunk>,
+}
+impl Rope {
+    pub fn len(&self) -> usize {
+        self.chunks.extent(())
+    }
+    pub fn ceil_char_boundary(&self, index: usize) -> usize {
+        if index > self.len() {
+            self.len()
+        } else {
+            let (start, _, item) = self.chunks.find::<usize, _>((), &index, Bias::Left);
+            let chunk_offset = index - start;
+            let upper_idx = item.map(|chunk| chunk.text.ceil_char_boundary(chunk_offset));
+            upper_idx.map_or_else(|| self.len(), |idx| start + idx)
+        }
+    }
 }
 
 impl sum_tree::Item for Chunk {

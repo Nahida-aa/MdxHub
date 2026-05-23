@@ -80,7 +80,6 @@ tree-sitter-html = "0.23"
 tree-sitter-jsdoc = "0.23"
 tree-sitter-css = "0.23"
 tree-sitter-elixir = "0.3"
-
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 
