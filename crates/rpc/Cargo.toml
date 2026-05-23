@@ -14,5 +14,6 @@ doctest = false
 [features]
 
 [dependencies]
-collections.workspace = true
+parking_lotcollections.workspace = true
 gpui = "0.2.2"
+parking_lot.workspace = true

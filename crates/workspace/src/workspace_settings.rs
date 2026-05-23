@@ -1,3 +1,6 @@
+use std::time::Duration;
+
+use serde::Deserialize;
 pub use settings::{
     // ActionName, AutosaveSetting, BottomDockLayout, EncodingDisplayOptions, InactiveOpacity,
     // PaneSplitDirectionHorizontal, PaneSplitDirectionVertical,
@@ -18,4 +21,10 @@ impl Settings for WorkspaceSettings {
             use_system_window_tabs: workspace.use_system_window_tabs.unwrap(),
         }
     }
+}
+
+#[derive(Copy, Clone, Deserialize)]
+pub struct FocusFollowsMouse {
+    pub enabled: bool,
+    pub debounce: Duration,
 }

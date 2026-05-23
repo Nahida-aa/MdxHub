@@ -1,6 +1,8 @@
+mod agent;
 mod fallible_options;
 pub mod merge_from;
 mod project;
+pub use agent::*;
 mod title_bar;
 mod workspace;
 pub use fallible_options::*;

@@ -37,6 +37,13 @@ remote = { path = "crates/remote" }
 rpc = { path = "crates/rpc" }
 client = { path = "crates/client" }
 fuzzy = { path = "crates/fuzzy" }
+worktree = { path = "crates/worktree" }
+lsp = { path = "crates/lsp" }
+lsp-types = { git = "https://github.com/zed-industries/lsp-types", rev = "f4dfa89a21ca35cd929b70354b1583fabae325f8" }
+parking_lot = "0.12"
+gpui = "0.2"
+gpui-component = { version = "0.5", features = ["all"] }
+
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 

@@ -19,7 +19,7 @@ use project::{
 };
 use settings::Settings as _; // Rust 里调用 trait 方法需要 trait 本身在当前作用域可见
 use title_bar_settings::TitleBarSettings;
-use ui::{Button, Color, LabelSize, PlatformStyle, utils::platform_title_bar_height};
+use ui::{Button, Color, LabelSize, PlatformStyle, PopoverMenu, utils::platform_title_bar_height};
 use workspace::{MultiWorkspace, Workspace};
 
 const MAX_PROJECT_NAME_LENGTH: usize = 40;
@@ -376,5 +376,61 @@ impl TitleBar {
         }
 
         project.visible_worktrees(cx).next()
+    }
+
+    fn render_recent_projects_popover(
+        &self,
+        display_name: String,
+        is_project_selected: bool,
+        cx: &mut Context<Self>,
+    ) -> impl IntoElement {
+        let workspace = self.workspace.clone();
+
+        let focus_handle = workspace
+            .upgrade()
+            .map(|w| w.read(cx).focus_handle(cx))
+            .unwrap_or_else(|| cx.focus_handle());
+
+        let window_project_groups: Vec<_> = self
+            .multi_workspace
+            .as_ref()
+            .and_then(|mw| mw.upgrade())
+            .map(|mw| mw.read(cx).project_group_keys())
+            .unwrap_or_default();
+
+        PopoverMenu::new("sidebar-title-recent-projects-menu")
+            .menu(move |window, cx| {
+                Some(recent_projects::RecentProjects::popover(
+                    workspace.clone(),
+                    window_project_groups.clone(),
+                    false,
+                    focus_handle.clone(),
+                    window,
+                    cx,
+                ))
+            })
+            .trigger_with_tooltip(
+                Button::new("project_name_trigger", display_name)
+                    .label_size(LabelSize::Small)
+                    .when(self.worktree_count(cx) > 1, |this| {
+                        this.end_icon(
+                            Icon::new(IconName::ChevronDown)
+                                .size(IconSize::XSmall)
+                                .color(Color::Muted),
+                        )
+                    })
+                    .selected_style(ButtonStyle::Tinted(TintColor::Accent))
+                    .when(!is_project_selected, |s| s.color(Color::Muted)),
+                move |_window, cx| {
+                    Tooltip::for_action(
+                        "Recent Projects",
+                        &zed_actions::OpenRecent {
+                            create_new_window: false,
+                        },
+                        cx,
+                    )
+                },
+            )
+            .anchor(gpui::Anchor::TopLeft)
     }
 }

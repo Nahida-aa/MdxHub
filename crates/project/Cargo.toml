@@ -22,3 +22,6 @@ remote.workspace = true
 client.workspace = true
 settings_macros.workspace = true
 settings.workspace = true
+worktree.workspace = true
+util.workspace = true
+anyhow = "1"

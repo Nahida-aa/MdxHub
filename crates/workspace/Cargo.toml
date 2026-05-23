@@ -16,3 +16,11 @@ doctest = false
 settings.workspace = true
 gpui = "0.2"
 project.workspace = true
+ui.workspace = true
+collections.workspace = true
+schemars = "1"
+serde = { version = "1", features = ["derive"] }
+language.workspace = true
+smallvec = "1"
+anyhow = "1"
+client.workspace = true

@@ -2,16 +2,28 @@ use std::sync::Arc;
 
 use client::user::Collaborator;
 use clock::ReplicaId;
-use gpui::{App, Entity};
+use gpui::{App, Entity, Task};
 use language::Capability;
 use remote::remote_client::RemoteClient;
+use settings::WorktreeId;
 use settings_macros::RegisterSetting;
 
+use anyhow::{Context as _, Result, anyhow};
 pub mod trusted_worktrees;
+use util::rel_path::RelPath;
 pub use worktree::{
-    Entry, EntryKind, FS_WATCH_LATENCY, File, LocalWorktree, PathChange, ProjectEntryId,
-    UpdatedEntriesSet, UpdatedGitRepositoriesSet, Worktree, WorktreeId, WorktreeSettings,
-    discover_root_repo_common_dir,
+    Entry,
+    EntryKind,
+    //  FS_WATCH_LATENCY, File,
+    LocalWorktree,
+    PathChange,
+    ProjectEntryId,
+    UpdatedEntriesSet,
+    // UpdatedGitRepositoriesSet,
+    Worktree,
+    // WorktreeId,
+    WorktreeSettings,
+    // discover_root_repo_common_dir,
 };
 
 #[derive(Debug)]
@@ -103,3 +115,56 @@ impl settings::Settings for DisableAiSettings {
 //         Self::get(location, cx).disable_ai
 //     }
 // }
+
+#[derive(Clone, Debug, Eq, PartialEq, Hash, PartialOrd, Ord)]
+pub struct ProjectPath {
+    pub worktree_id: WorktreeId,
+    pub path: Arc<RelPath>,
+}
+
+impl ProjectPath {
+    pub fn from_file(value: &dyn language::File, cx: &App) -> Self {
+        ProjectPath {
+            worktree_id: value.worktree_id(cx),
+            path: value.path().clone(),
+        }
+    }
+
+    // pub fn from_proto(p: proto::ProjectPath) -> Option<Self> {
+    //     Some(Self {
+    //         worktree_id: WorktreeId::from_proto(p.worktree_id),
+    //         path: RelPath::from_proto(&p.path).log_err()?,
+    //     })
+    // }
+
+    // pub fn to_proto(&self) -> proto::ProjectPath {
+    //     proto::ProjectPath {
+    //         worktree_id: self.worktree_id.to_proto(),
+    //         path: self.path.as_ref().to_proto(),
+    //     }
+    // }
+
+    pub fn root_path(worktree_id: WorktreeId) -> Self {
+        Self {
+            worktree_id,
+            path: RelPath::empty().into(),
+        }
+    }
+
+    pub fn starts_with(&self, other: &ProjectPath) -> bool {
+        self.worktree_id == other.worktree_id && self.path.starts_with(&other.path)
+    }
+}
+
+pub trait ProjectItem: 'static {
+    fn try_open(
+        project: &Entity<Project>,
+        path: &ProjectPath,
+        cx: &mut App,
+    ) -> Option<Task<Result<Entity<Self>>>>
+    where
+        Self: Sized;
+    fn entry_id(&self, cx: &App) -> Option<ProjectEntryId>;
+    fn project_path(&self, cx: &App) -> Option<ProjectPath>;
+    fn is_dirty(&self) -> bool;
+}
