@@ -5189,6 +5189,7 @@ name = "rope"
 version = "0.1.0"
 dependencies = [
  "heapless",
+ "log",
  "sum_tree",
  "util",
 ]

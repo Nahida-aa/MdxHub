@@ -24,6 +24,45 @@ impl Rope {
     pub fn len(&self) -> usize {
         self.chunks.extent(())
     }
+    #[track_caller]
+    #[inline(always)]
+    pub fn assert_char_boundary<const PANIC: bool>(&self, offset: usize) -> bool {
+        if self.chunks.is_empty() && offset == 0 {
+            return true;
+        }
+        let (start, _, item) = self.chunks.find::<usize, _>((), &offset, Bias::Left);
+        match item {
+            Some(chunk) => {
+                let chunk_offset = offset - start;
+                chunk.assert_char_boundary::<PANIC>(chunk_offset)
+            }
+            None if PANIC => {
+                panic!(
+                    "byte index {} is out of bounds of rope (length: {})",
+                    offset,
+                    self.len()
+                );
+            }
+            None => {
+                log::error!(
+                    "byte index {} is out of bounds of rope (length: {})",
+                    offset,
+                    self.len()
+                );
+                false
+            }
+        }
+    }
+    pub fn floor_char_boundary(&self, index: usize) -> usize {
+        if index >= self.len() {
+            self.len()
+        } else {
+            let (start, _, item) = self.chunks.find::<usize, _>((), &index, Bias::Left);
+            let chunk_offset = index - start;
+            let lower_idx = item.map(|chunk| chunk.text.floor_char_boundary(chunk_offset));
+            lower_idx.map_or_else(|| self.len(), |idx| start + idx)
+        }
+    }
     pub fn ceil_char_boundary(&self, index: usize) -> usize {
         if index > self.len() {
             self.len()
@@ -57,6 +96,16 @@ impl sum_tree::ContextLessSummary for ChunkSummary {
 
     fn add_summary(&mut self, summary: &Self) {
         self.text += &summary.text;
+    }
+}
+
+impl<'a> sum_tree::Dimension<'a, ChunkSummary> for usize {
+    fn zero(_cx: ()) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, summary: &'a ChunkSummary, _: ()) {
+        *self += summary.text.len;
     }
 }
 

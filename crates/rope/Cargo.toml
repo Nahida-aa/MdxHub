@@ -10,5 +10,6 @@ workspace = true
 [dependencies]
 util.workspace = true
 sum_tree.workspace = true
-heapless = "0.9"
+heapless.workspace = true
+log.workspace = true
 [dev-dependencies]

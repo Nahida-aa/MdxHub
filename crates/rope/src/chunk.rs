@@ -54,6 +54,74 @@ impl Chunk {
             text: &self.text,
         }
     }
+
+    #[inline(always)]
+    pub fn is_char_boundary(&self, offset: usize) -> bool {
+        (1 as Bitmap).unbounded_shl(offset as u32) & self.chars != 0 || offset == self.text.len()
+    }
+
+    #[track_caller]
+    #[inline(always)]
+    pub fn assert_char_boundary<const PANIC: bool>(&self, offset: usize) -> bool {
+        if self.is_char_boundary(offset) {
+            return true;
+        }
+        if PANIC || cfg!(debug_assertions) {
+            panic_char_boundary(&self.text, offset);
+        } else {
+            log_err_char_boundary(&self.text, offset);
+            false
+        }
+    }
+}
+
+#[cold]
+#[inline(never)]
+#[track_caller]
+fn panic_char_boundary(text: &str, offset: usize) -> ! {
+    if offset > text.len() {
+        panic!(
+            "byte index {} is out of bounds of `{:?}` (length: {})",
+            offset,
+            text,
+            text.len()
+        );
+    }
+    // find the character
+    let char_start = text.floor_char_boundary(offset);
+    // `char_start` must be less than len and a char boundary
+    let ch = text.get(char_start..).unwrap().chars().next().unwrap();
+    let char_range = char_start..char_start + ch.len_utf8();
+    panic!(
+        "byte index {} is not a char boundary; it is inside {:?} (bytes {:?})",
+        offset, ch, char_range,
+    );
+}
+
+#[cold]
+#[inline(never)]
+#[track_caller]
+fn log_err_char_boundary(text: &str, offset: usize) {
+    if offset >= text.len() {
+        log::error!(
+            "byte index {} is out of bounds of `{:?}` (length: {})",
+            offset,
+            text,
+            text.len()
+        );
+        return;
+    }
+    // find the character
+    let char_start = text.floor_char_boundary(offset);
+    // `char_start` must be less than len and a char boundary
+    let ch = text.get(char_start..).unwrap().chars().next().unwrap();
+    let char_range = char_start..char_start + ch.len_utf8();
+    log::error!(
+        "byte index {} is not a char boundary; it is inside {:?} (bytes {:?})",
+        offset,
+        ch,
+        char_range,
+    );
 }
 
 #[derive(Clone, Copy, Debug)]

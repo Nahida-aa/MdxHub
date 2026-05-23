@@ -29,6 +29,18 @@ impl Locator {
         // SAFETY: 1 is <= 2
         Self(unsafe { SmallVec::from_const_with_len_unchecked([u64::MIN; 2], 1) })
     }
+    pub const fn max() -> Self {
+        // SAFETY: 1 is <= 2
+        Self(unsafe { SmallVec::from_const_with_len_unchecked([u64::MAX; 2], 1) })
+    }
+
+    pub const fn min_ref() -> &'static Self {
+        const { &Self::min() }
+    }
+
+    pub const fn max_ref() -> &'static Self {
+        const { &Self::max() }
+    }
     pub fn assign(&mut self, other: &Self) {
         self.0.resize(other.0.len(), 0);
         self.0.copy_from_slice(&other.0);

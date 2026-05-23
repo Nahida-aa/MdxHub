@@ -19,6 +19,7 @@ use std::{
     time::{Duration, Instant},
 };
 use undo_map::UndoMap;
+use util::debug_panic;
 pub mod operation_queue;
 mod patch;
 pub mod subscription;
@@ -27,7 +28,7 @@ use clock::{Lamport, ReplicaId};
 use collections::{HashMap, HashSet};
 use operation_queue::OperationQueue;
 use rope::Rope;
-use sum_tree::{SumTree, TreeMap, TreeSet};
+use sum_tree::{Bias, SumTree, TreeMap, TreeSet};
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LineEnding {
     Unix,
@@ -63,9 +64,123 @@ pub struct BufferSnapshot {
     line_ending: LineEnding,
 }
 impl BufferSnapshot {
+    pub fn len(&self) -> usize {
+        self.visible_text.len()
+    }
+
+    /// Returns an anchor for the given input position that is anchored to the text after the position.
+    pub fn anchor_after<T: ToOffset>(&self, position: T) -> Anchor {
+        self.anchor_at(position, Bias::Right)
+    }
+
+    pub fn anchor_at<T: ToOffset>(&self, position: T, bias: Bias) -> Anchor {
+        self.anchor_at_offset(position.to_offset(self), bias)
+    }
+
+    fn anchor_at_offset(&self, mut offset: usize, bias: Bias) -> Anchor {
+        if bias == Bias::Left && offset == 0 {
+            Anchor::min_for_buffer(self.remote_id)
+        } else if bias == Bias::Right
+            && ((!cfg!(debug_assertions) && offset >= self.len()) || offset == self.len())
+        {
+            Anchor::max_for_buffer(self.remote_id)
+        } else {
+            if !self
+                .visible_text
+                .assert_char_boundary::<{ cfg!(debug_assertions) }>(offset)
+            {
+                offset = match bias {
+                    Bias::Left => self.visible_text.floor_char_boundary(offset),
+                    Bias::Right => self.visible_text.ceil_char_boundary(offset),
+                };
+            }
+            let (start, _, item) = self.fragments.find::<usize, _>(&None, &offset, bias);
+            let Some(fragment) = item else {
+                // We got a bad offset, likely out of bounds
+                debug_panic!(
+                    "Failed to find fragment at offset {} (len: {})",
+                    offset,
+                    self.len()
+                );
+                return Anchor::max_for_buffer(self.remote_id);
+            };
+            let overshoot = offset - start;
+            Anchor::new(
+                fragment.timestamp,
+                fragment.insertion_offset + overshoot as u32,
+                bias,
+                self.remote_id,
+            )
+        }
+    }
+
     /// Returns an anchor for the given input position that is anchored to the text before the position.
     pub fn anchor_before<T: ToOffset>(&self, position: T) -> Anchor {
         self.anchor_at(position, Bias::Left)
+    }
+
+    #[cold]
+    fn panic_bad_anchor(&self, anchor: &Anchor) -> ! {
+        if anchor.buffer_id != self.remote_id {
+            panic!(
+                "invalid anchor - buffer id does not match: anchor {anchor:?}; buffer id: {}, version: {:?}",
+                self.remote_id, self.version
+            );
+        } else if !self.version.observed(anchor.timestamp()) {
+            panic!(
+                "invalid anchor - snapshot has not observed lamport: {:?}; version: {:?}",
+                anchor, self.version
+            );
+        } else {
+            panic!(
+                "invalid anchor {:?}. buffer id: {}, version: {:?}",
+                anchor, self.remote_id, self.version
+            );
+        }
+    }
+    fn fragment_id_for_anchor(&self, anchor: &Anchor) -> &Locator {
+        self.try_fragment_id_for_anchor(anchor)
+            .unwrap_or_else(|| self.panic_bad_anchor(anchor))
+    }
+
+    fn try_fragment_id_for_anchor(&self, anchor: &Anchor) -> Option<&Locator> {
+        if anchor.is_min() {
+            Some(Locator::min_ref())
+        } else if anchor.is_max() {
+            Some(Locator::max_ref())
+        } else {
+            let item = self.try_find_fragment(anchor);
+            item.filter(|insertion| {
+                !cfg!(debug_assertions) || insertion.timestamp == anchor.timestamp()
+            })
+            .map(|insertion| &insertion.fragment_id)
+        }
+    }
+
+    fn try_find_fragment(&self, anchor: &Anchor) -> Option<&InsertionFragment> {
+        let anchor_key = InsertionFragmentKey {
+            timestamp: anchor.timestamp(),
+            split_offset: anchor.offset,
+        };
+        match self.insertions.find_with_prev::<InsertionFragmentKey, _>(
+            (),
+            &anchor_key,
+            anchor.bias,
+        ) {
+            (_, _, Some((prev, insertion))) => {
+                let comparison = sum_tree::KeyedItem::key(insertion).cmp(&anchor_key);
+                if comparison == Ordering::Greater
+                    || (anchor.bias == Bias::Left
+                        && comparison == Ordering::Equal
+                        && anchor.offset > 0)
+                {
+                    prev
+                } else {
+                    Some(insertion)
+                }
+            }
+            _ => self.insertions.last(),
+        }
     }
 }
 
