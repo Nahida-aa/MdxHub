@@ -3301,9 +3301,29 @@ dependencies = [
  "clock",
  "fs",
  "gpui",
+ "language_core",
  "lsp",
  "serde",
  "settings",
+ "text",
+ "util",
+]
+
+[[package]]
+name = "language_core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "collections",
+ "gpui",
+ "log",
+ "lsp",
+ "parking_lot",
+ "regex",
+ "schemars",
+ "serde",
+ "serde_json",
+ "toml 0.8.23",
  "util",
 ]
 
@@ -3440,7 +3460,10 @@ checksum = "112b39cec0b298b6c1999fee3e31427f74f676e4cb9879ed1a121b43661a4154"
 name = "lsp"
 version = "0.1.0"
 dependencies = [
+ "gpui",
  "lsp-types 0.95.1",
+ "schemars",
+ "serde",
 ]
 
 [[package]]

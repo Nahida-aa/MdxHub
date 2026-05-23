@@ -1,11 +1,15 @@
 use anyhow::{Context as _, Result};
+use clock::Lamport;
 use fs::MTime;
-use gpui::{App, Task};
+use gpui::{App, Entity, Task};
 pub use lsp::DiagnosticSeverity;
 use serde::{
     Deserialize, Deserializer, Serialize,
     de::{self, Error as Error_},
 };
+pub use crate::{
+    // Grammar, HighlightId, HighlightMap, 
+    Language, }
 use settings::WorktreeId;
 use std::{
     any::Any,
@@ -24,6 +28,7 @@ use std::{
     time::{Duration, Instant},
     vec,
 };
+pub use text::{ Buffer as TextBuffer, BufferId};
 use util::{paths::PathStyle, rel_path::RelPath};
 
 /// Indicate whether a [`Buffer`] has permissions to edit.
@@ -88,6 +93,11 @@ pub struct Buffer {
     encoding: &'static Encoding,
     has_bom: bool,
     reload_with_encoding_txns: HashMap<TransactionId, (&'static Encoding, bool)>,
+}
+
+struct BufferBranchState {
+    base_buffer: Entity<Buffer>,
+    merged_operations: Vec<Lamport>,
 }
 
 /// The file associated with a buffer.

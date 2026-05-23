@@ -68,6 +68,9 @@ fancy-regex = "0.17.0"
 rand = "0.9"
 smallvec = "1.10"
 regex = "1.12"
+toml = "0.8"
+language_core = { path = "crates/language_core" }
+tree-sitter = "0.26"
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 
