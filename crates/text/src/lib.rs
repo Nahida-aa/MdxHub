@@ -133,6 +133,14 @@ pub enum Operation {
     Edit(EditOperation),
     Undo(UndoOperation),
 }
+impl operation_queue::Operation for Operation {
+    fn lamport_timestamp(&self) -> clock::Lamport {
+        match self {
+            Operation::Edit(edit) => edit.timestamp,
+            Operation::Undo(undo) => undo.timestamp,
+        }
+    }
+}
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct EditOperation {
@@ -158,6 +166,58 @@ struct Fragment {
     visible: bool,
     deletions: SmallVec<[clock::Lamport; 2]>,
     max_undos: clock::Global,
+}
+impl sum_tree::Item for Fragment {
+    type Summary = FragmentSummary;
+
+    fn summary(&self, _cx: &Option<clock::Global>) -> Self::Summary {
+        let mut max_version = clock::Global::new();
+        max_version.observe(self.timestamp);
+        for deletion in &self.deletions {
+            max_version.observe(*deletion);
+        }
+        max_version.join(&self.max_undos);
+
+        let mut min_insertion_version = clock::Global::new();
+        min_insertion_version.observe(self.timestamp);
+        let max_insertion_version = min_insertion_version.clone();
+        if self.visible {
+            FragmentSummary {
+                max_id: self.id.clone(),
+                text: FragmentTextSummary {
+                    visible: self.len as usize,
+                    deleted: 0,
+                },
+                max_version,
+                min_insertion_version,
+                max_insertion_version,
+            }
+        } else {
+            FragmentSummary {
+                max_id: self.id.clone(),
+                text: FragmentTextSummary {
+                    visible: 0,
+                    deleted: self.len as usize,
+                },
+                max_version,
+                min_insertion_version,
+                max_insertion_version,
+            }
+        }
+    }
+}
+
+impl sum_tree::ContextLessSummary for InsertionFragmentKey {
+    fn zero() -> Self {
+        InsertionFragmentKey {
+            timestamp: Lamport::MIN,
+            split_offset: 0,
+        }
+    }
+
+    fn add_summary(&mut self, summary: &Self) {
+        *self = *summary;
+    }
 }
 
 #[derive(Eq, PartialEq, Clone, Debug)]
