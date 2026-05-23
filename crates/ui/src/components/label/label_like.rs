@@ -21,7 +21,17 @@ pub enum LabelSize {
     /// An arbitrary custom size specified in rems.
     Custom(Rems),
 }
-
+impl LabelSize {
+    pub fn rems(self) -> Rems {
+        match self {
+            LabelSize::Default => rems(0.825), // same as text_ui default
+            LabelSize::Large => rems(1.0),
+            LabelSize::Small => rems(0.75),
+            LabelSize::XSmall => rems(0.625),
+            LabelSize::Custom(r) => r,
+        }
+    }
+}
 /// Sets the line height of a label
 #[derive(Default, PartialEq, Copy, Clone)]
 pub enum LineHeightStyle {

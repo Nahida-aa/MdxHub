@@ -5,6 +5,12 @@ use heapless::Vec as ArrayVec;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator as _};
 use std::mem;
 use std::{cmp::Ordering, fmt, iter::FromIterator, sync::Arc};
+mod tree_map;
+pub use tree_map::{
+    // MapSeekTarget,
+    TreeMap,
+    // TreeSet
+};
 
 #[cfg(test)]
 pub const TREE_BASE: usize = 2;
@@ -19,6 +25,13 @@ impl<T> CapacityResultExt for Result<(), T> {
     fn unwrap_oob(self) {
         self.unwrap_or_else(|_| panic!("item should fit into fixed size ArrayVec"))
     }
+}
+
+/// An [`Item`] whose summary has a specific key that can be used to identify it
+pub trait KeyedItem: Item {
+    type Key: for<'a> Dimension<'a, Self::Summary> + Ord;
+
+    fn key(&self) -> Self::Key;
 }
 
 /// A type that describes the Sum of all [`Item`]s in a subtree of the [`SumTree`]
@@ -1122,6 +1135,14 @@ where
     }
     sum
 }
+
+impl<T: Item + PartialEq> PartialEq for SumTree<T> {
+    fn eq(&self, other: &Self) -> bool {
+        self.iter().eq(other.iter())
+    }
+}
+
+impl<T: Item + Eq> Eq for SumTree<T> {}
 
 impl<T: Item> Node<T> {
     fn is_leaf(&self) -> bool {

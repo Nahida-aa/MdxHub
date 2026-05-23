@@ -14,3 +14,5 @@ workspace.workspace = true
 settings.workspace = true
 smallvec = "1.10"
 ui.workspace = true
+settings_content.workspace = true
+project.workspace = true

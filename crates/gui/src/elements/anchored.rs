@@ -7,7 +7,7 @@ use gpui::{
 use smallvec::SmallVec;
 use std::ops::{Add, AddAssign, Div, DivAssign, Mul, Neg, Sub, SubAssign};
 
-use crate::{Anchor, BoundsExt};
+use crate::{Anchor, patch::bounds::BoundsExt};
 
 /// The state that the anchored element element uses to track its children.
 pub struct AnchoredState {

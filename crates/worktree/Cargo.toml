@@ -1,0 +1,29 @@
+[package]
+name = "worktree"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[lib]
+doctest = false
+test = false
+
+[lints]
+workspace = true
+
+[features]
+
+[dependencies]
+collections.workspace = true
+settings.workspace = true
+util.workspace = true
+fuzzy.workspace = true
+gpui = "0.2.2"
+fs.workspace = true
+sum_tree.workspace = true
+ignore = "0.4"
+anyhow = "1.0"
+futures = "0.3"
+postage = "0.5"
+async-channel = "2.5"
+smallvec = "1.10"

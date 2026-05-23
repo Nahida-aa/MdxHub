@@ -11,3 +11,4 @@ mod color;
 mod text_system;
 mod window;
 pub use window::*;
+pub mod patch;

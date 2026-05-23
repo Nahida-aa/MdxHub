@@ -1,4 +1,6 @@
+use crate::fixed::FixedWidth;
 use crate::toggleable::Toggleable;
+use crate::visible_on_hover::VisibleOnHover;
 use crate::{
     // DynamicSpacing, ElevationIndex,
     Color,
@@ -13,6 +15,11 @@ use gpui::{
 
 use gpui_component::Disableable;
 use smallvec::SmallVec;
+
+/// A trait for buttons that can be Selected. Enables setting the [`ButtonStyle`] of a button when it is selected.
+pub trait SelectableButton: Toggleable {
+    fn selected_style(self, style: ButtonStyle) -> Self;
+}
 
 #[derive(Default, Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy)]
 pub enum KeybindingPosition {
@@ -57,6 +64,27 @@ impl TintColor {
                 label_color: cx.theme().colors().text,
                 icon_color: cx.theme().colors().text,
             },
+        }
+    }
+}
+
+impl From<TintColor> for Color {
+    fn from(tint: TintColor) -> Self {
+        match tint {
+            TintColor::Accent => Color::Accent,
+            TintColor::Error => Color::Error,
+            TintColor::Warning => Color::Warning,
+            TintColor::Success => Color::Success,
+        }
+    }
+}
+
+// Used to go from ButtonStyle -> Color through tint colors.
+impl From<ButtonStyle> for Color {
+    fn from(style: ButtonStyle) -> Self {
+        match style {
+            ButtonStyle::Tinted(tint) => tint.into(),
+            _ => Color::Default,
         }
     }
 }
@@ -306,6 +334,26 @@ pub(crate) struct ButtonLikeRounding {
     /// Bottom-left corner rounding
     pub bottom_left: bool,
 }
+impl ButtonLikeRounding {
+    pub const ALL: Self = Self {
+        top_left: true,
+        top_right: true,
+        bottom_right: true,
+        bottom_left: true,
+    };
+    pub const LEFT: Self = Self {
+        top_left: true,
+        top_right: false,
+        bottom_right: false,
+        bottom_left: true,
+    };
+    pub const RIGHT: Self = Self {
+        top_left: false,
+        top_right: true,
+        bottom_right: true,
+        bottom_left: false,
+    };
+}
 
 /// The height of a button.
 ///
@@ -361,6 +409,119 @@ pub struct ButtonLike {
     on_right_click: Option<Box<dyn Fn(&ClickEvent, &mut Window, &mut App) + 'static>>,
     children: SmallVec<[AnyElement; 2]>,
     focus_handle: Option<FocusHandle>,
+}
+impl ButtonLike {
+    pub fn new(id: impl Into<ElementId>) -> Self {
+        Self {
+            base: div(),
+            id: id.into(),
+            style: ButtonStyle::default(),
+            disabled: false,
+            selected: false,
+            selected_style: None,
+            width: None,
+            height: None,
+            size: ButtonSize::Default,
+            rounding: Some(ButtonLikeRounding::ALL),
+            tooltip: None,
+            hoverable_tooltip: None,
+            children: SmallVec::new(),
+            cursor_style: CursorStyle::PointingHand,
+            on_click: None,
+            on_right_click: None,
+            layer: None,
+            tab_index: None,
+            focus_handle: None,
+        }
+    }
+
+    pub fn height(mut self, height: DefiniteLength) -> Self {
+        self.height = Some(height);
+        self
+    }
+
+    pub fn on_right_click(
+        mut self,
+        handler: impl Fn(&ClickEvent, &mut Window, &mut App) + 'static,
+    ) -> Self {
+        self.on_right_click = Some(Box::new(handler));
+        self
+    }
+}
+impl SelectableButton for ButtonLike {
+    fn selected_style(mut self, style: ButtonStyle) -> Self {
+        self.selected_style = Some(style);
+        self
+    }
+}
+impl Disableable for ButtonLike {
+    fn disabled(mut self, disabled: bool) -> Self {
+        self.disabled = disabled;
+        self
+    }
+}
+impl Clickable for ButtonLike {
+    fn on_click(mut self, handler: impl Fn(&ClickEvent, &mut Window, &mut App) + 'static) -> Self {
+        self.on_click = Some(Box::new(handler));
+        self
+    }
+
+    fn cursor_style(mut self, cursor_style: CursorStyle) -> Self {
+        self.cursor_style = cursor_style;
+        self
+    }
+}
+impl FixedWidth for ButtonLike {
+    fn width(mut self, width: impl Into<DefiniteLength>) -> Self {
+        self.width = Some(width.into());
+        self
+    }
+
+    fn full_width(mut self) -> Self {
+        self.width = Some(relative(1.));
+        self
+    }
+}
+impl ButtonCommon for ButtonLike {
+    fn id(&self) -> &ElementId {
+        &self.id
+    }
+
+    fn style(mut self, style: ButtonStyle) -> Self {
+        self.style = style;
+        self
+    }
+    fn size(mut self, size: ButtonSize) -> Self {
+        self.size = size;
+        self
+    }
+
+    fn tooltip(mut self, tooltip: impl Fn(&mut Window, &mut App) -> AnyView + 'static) -> Self {
+        self.tooltip = Some(Box::new(tooltip));
+        self
+    }
+
+    fn tab_index(mut self, tab_index: impl Into<isize>) -> Self {
+        self.tab_index = Some(tab_index.into());
+        self
+    }
+
+    fn layer(mut self, elevation: ElevationIndex) -> Self {
+        self.layer = Some(elevation);
+        self
+    }
+
+    fn track_focus(mut self, focus_handle: &gpui::FocusHandle) -> Self {
+        self.focus_handle = Some(focus_handle.clone());
+        self
+    }
+}
+
+impl VisibleOnHover for ButtonLike {
+    fn visible_on_hover(mut self, group_name: impl Into<SharedString>) -> Self {
+        self.base = self.base.visible_on_hover(group_name);
+        self
+    }
 }
 
 impl RenderOnce for ButtonLike {

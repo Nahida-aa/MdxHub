@@ -1,0 +1,18 @@
+[package]
+description = "Shared logic for communication"
+edition.workspace = true
+name = "rpc"
+version = "0.1.0"
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+doctest = false
+
+[features]
+
+[dependencies]
+collections.workspace = true
+gpui = "0.2.2"

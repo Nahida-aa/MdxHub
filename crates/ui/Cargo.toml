@@ -22,3 +22,5 @@ gui.workspace = true
 theme.workspace = true
 gpui-macros = "0.2.2"
 ui_macros.workspace = true
+itertools = "0.14"
+icons.workspace = true

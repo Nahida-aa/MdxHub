@@ -7,6 +7,8 @@ use gpui::prelude::*;
 use gpui::*;
 use gpui_component::{ActiveTheme, Icon, IconName, InteractiveElementExt, Sizable, h_flex};
 use gui::WindowButtonLayout;
+use project::DisableAiSettings;
+use settings::Settings as _;
 use smallvec::SmallVec;
 use ui::PlatformStyle;
 use workspace::MultiWorkspace;
@@ -51,6 +53,9 @@ impl PlatformTitleBar {
     }
     pub fn init(cx: &mut App) {
         SystemWindowTabs::init(cx);
+    }
+    pub fn is_multi_workspace_enabled(cx: &App) -> bool {
+        !DisableAiSettings::get_global(cx).disable_ai
     }
 }
 

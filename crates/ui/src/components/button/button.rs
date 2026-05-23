@@ -1,22 +1,23 @@
 use std::time::Duration;
 
 use crate::animation_ext::CommonAnimationExt as _;
-use crate::component_prelude::*;
+use crate::{
+    ButtonCommon, ButtonSize, ButtonStyle, ElevationIndex, KeyBinding, component_prelude::*,
+};
 use crate::{
     ButtonLike, Color, DynamicSpacing, KeybindingPosition, LabelSize,
     clickable::Clickable,
-    disableable::Disableable,
-    icon::{Icon, IconSize},
-    label::Label,
     prelude::*,
     toggleable::Toggleable,
+    {Icon, IconName, IconSize},
 };
+use gpui::AnyView;
 use gpui::{
-    Animation, AnimationExt, App, ClickEvent, CursorStyle, Div, IntoElement, KeyBinding,
-    ParentElement, RenderOnce, SharedString, Styled as _, Transform, Window,
-    prelude::FluentBuilder as _,
+    Animation, AnimationExt, App, ClickEvent, CursorStyle, Div, IntoElement, ParentElement,
+    RenderOnce, SharedString, Styled as _, Transform, Window, prelude::FluentBuilder as _,
 };
-use gpui_component::{IconName, Selectable, Sizable, Size, h_flex};
+use gpui_component::label::Label;
+use gpui_component::{Disableable, Selectable, Sizable, Size, h_flex};
 use ui_macros::RegisterComponent;
 
 /// An element that creates a button with a label and optional icons.
@@ -107,6 +108,53 @@ pub struct Button {
     loading: bool,
 }
 
+impl Button {
+    /// Creates a new [`Button`] with a specified identifier and label.
+    ///
+    /// This is the primary constructor for a [`Button`] component. It initializes
+    /// the button with the provided identifier and label text, setting all other
+    /// properties to their default values, which can be customized using the
+    /// builder pattern methods provided by this struct.
+    pub fn new(id: impl Into<ElementId>, label: impl Into<SharedString>) -> Self {
+        Self {
+            base: ButtonLike::new(id),
+            label: label.into(),
+            label_color: None,
+            label_size: None,
+            selected_label: None,
+            selected_label_color: None,
+            start_icon: None,
+            end_icon: None,
+            key_binding: None,
+            key_binding_position: KeybindingPosition::default(),
+            alpha: None,
+            truncate: false,
+            loading: false,
+        }
+    }
+
+    /// Sets the color of the button's label.
+    pub fn color(mut self, label_color: impl Into<Option<Color>>) -> Self {
+        self.label_color = label_color.into();
+        self
+    }
+    /// Defines the size of the button's label.
+    pub fn label_size(mut self, label_size: impl Into<Option<LabelSize>>) -> Self {
+        self.label_size = label_size.into();
+        self
+    }
+}
+
+impl Selectable for Button {
+    fn selected(mut self, selected: bool) -> Self {
+        self.base = self.base.toggle_state(selected);
+        self
+    }
+    fn is_selected(&self) -> bool {
+        self.base.selected
+    }
+}
+
 impl Toggleable for Button {
     /// Sets the selected state of the button.
     ///
@@ -134,17 +182,92 @@ impl Toggleable for Button {
     }
 }
 
-// impl Clickable for ButtonLike {
-//     fn on_click(mut self, handler: impl Fn(&ClickEvent, &mut Window, &mut App) + 'static) -> Self {
-//         self.on_click = Some(Box::new(handler));
-//         self
-//     }
+impl Disableable for Button {
+    /// Disables the button, preventing interaction and changing its appearance.
+    ///
+    /// When disabled, the button's icon and label will use `Color::Disabled`.
+    ///
+    /// # Examples
+    ///
+    /// Create a disabled button:
+    ///
+    /// ```
+    /// use ui::prelude::*;
+    ///
+    /// Button::new("disabled_button", "Can't Click Me")
+    ///     .disabled(true);
+    /// ```
+    fn disabled(mut self, disabled: bool) -> Self {
+        self.base = self.base.disabled(disabled);
+        self
+    }
+}
 
-//     fn cursor_style(mut self, cursor_style: CursorStyle) -> Self {
-//         self.cursor_style = cursor_style;
-//         self
-//     }
-// }
+impl Clickable for Button {
+    fn on_click(
+        mut self,
+        handler: impl Fn(&gpui::ClickEvent, &mut Window, &mut App) + 'static,
+    ) -> Self {
+        self.base = self.base.on_click(handler);
+        self
+    }
+
+    fn cursor_style(mut self, cursor_style: gpui::CursorStyle) -> Self {
+        self.base = self.base.cursor_style(cursor_style);
+        self
+    }
+}
+
+impl ButtonCommon for Button {
+    fn id(&self) -> &ElementId {
+        self.base.id()
+    }
+
+    /// Sets the visual style of the button.
+    fn style(mut self, style: ButtonStyle) -> Self {
+        self.base = self.base.style(style);
+        self
+    }
+
+    /// Sets the size of the button.
+    fn size(mut self, size: ButtonSize) -> Self {
+        self.base = self.base.size(size);
+        self
+    }
+
+    /// Sets a tooltip that appears on hover.
+    ///
+    /// # Examples
+    ///
+    /// Add a tooltip to a button:
+    ///
+    /// ```
+    /// use ui::{Tooltip, prelude::*};
+    ///
+    /// Button::new("tooltip_button", "Hover Me")
+    ///     .tooltip(Tooltip::text("This is a tooltip"));
+    /// ```
+    fn tooltip(mut self, tooltip: impl Fn(&mut Window, &mut App) -> AnyView + 'static) -> Self {
+        self.base = self.base.tooltip(tooltip);
+        self
+    }
+
+    fn tab_index(mut self, tab_index: impl Into<isize>) -> Self {
+        self.base = self.base.tab_index(tab_index);
+        self
+    }
+
+    fn layer(mut self, elevation: ElevationIndex) -> Self {
+        self.base = self.base.layer(elevation);
+        self
+    }
+
+    fn track_focus(mut self, focus_handle: &gpui::FocusHandle) -> Self {
+        self.base = self.base.track_focus(focus_handle);
+        self
+    }
+}
+
 impl RenderOnce for Button {
     #[allow(refining_impl_trait)]
     fn render(self, _window: &mut Window, cx: &mut App) -> ButtonLike {
@@ -172,7 +295,7 @@ impl RenderOnce for Button {
                     self.loading,
                     |this| {
                         this.child(
-                            Icon::new(IconName::LoaderCircle)
+                            Icon::new(IconName::LoadCircle)
                                 .size(IconSize::Small)
                                 .color(Color::Muted)
                                 .with_rotate_animation(2),
@@ -199,9 +322,9 @@ impl RenderOnce for Button {
                         .justify_between()
                         .child(
                             Label::new(label)
-                                .color(label_color)
-                                .size(self.label_size.unwrap_or_default())
-                                .when_some(self.alpha, |this, alpha| this.alpha(alpha))
+                                .text_color(label_color.color(cx))
+                                .text_size(self.label_size.unwrap_or_default().rems())
+                                .when_some(self.alpha, |this, alpha| this.opacity(alpha))
                                 .when(self.truncate, |this| this.truncate()),
                         )
                         .children(self.key_binding),

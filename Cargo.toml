@@ -30,7 +30,13 @@ theme = { path = "crates/theme" }
 refineable = { path = "crates/refineable" }
 derive_refineable = { path = "crates/refineable/derive_refineable" }
 ui_macros = { path = "crates/ui_macros" }
-
+icons = { path = "crates/icons" }
+language = { path = "crates/language" }
+clock = { path = "crates/clock" }
+remote = { path = "crates/remote" }
+rpc = { path = "crates/rpc" }
+client = { path = "crates/client" }
+fuzzy = { path = "crates/fuzzy" }
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 

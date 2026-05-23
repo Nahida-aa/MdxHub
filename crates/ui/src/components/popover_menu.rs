@@ -4,15 +4,16 @@ use gpui::{
     AnyElement, AnyView, App, Bounds, ClickEvent, Corner, DismissEvent, DispatchPhase, Div,
     Element, ElementId, Entity, Focusable, GlobalElementId, HitboxBehavior, HitboxId,
     InteractiveElement, IntoElement, LayoutId, Length, ManagedView, MouseDownEvent, ParentElement,
-    Pixels, Point, StatefulInteractiveElement, Style, Window, anchored, deferred, div, point,
+    Pixels, Point, StatefulInteractiveElement, Style, Window, deferred, div, point,
     prelude::FluentBuilder, px, relative, size,
 };
 use gpui_component::{Selectable, button::Button, menu::PopupMenu};
-// use gui::{Anchor, anchored};
+use gui::{Anchor, anchored};
 
 use crate::{ButtonCommon, clickable::Clickable, rems_from_px, toggleable::Toggleable};
 
 pub trait PopoverTrigger: IntoElement + Clickable + Selectable + FluentBuilder + 'static {}
+impl<T: IntoElement + Clickable + Selectable + 'static> PopoverTrigger for T {}
 
 pub struct PopoverMenuHandle<M>(Rc<RefCell<Option<PopoverMenuHandleState<M>>>>);
 

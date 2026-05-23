@@ -26,4 +26,10 @@ use gpui::{
 
 pub struct MultiWorkspace {
     window_id: WindowId,
+    sidebar_open: bool,
+}
+impl MultiWorkspace {
+    pub fn sidebar_open(&self) -> bool {
+        self.sidebar_open
+    }
 }

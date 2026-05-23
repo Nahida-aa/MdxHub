@@ -24,3 +24,4 @@ arrayvec = "0.7.6"
 project.workspace = true
 workspace.workspace = true
 smallvec = "1.10"
+util.workspace = true

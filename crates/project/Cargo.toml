@@ -16,3 +16,9 @@ test = false
 [dependencies]
 gpui = "0.2"
 collections.workspace = true
+language.workspace = true
+clock.workspace = true
+remote.workspace = true
+client.workspace = true
+settings_macros.workspace = true
+settings.workspace = true

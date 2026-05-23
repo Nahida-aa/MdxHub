@@ -20,5 +20,12 @@ pub use crate::styles::{
     vw,
 };
 pub use crate::traits::styled_ext::*;
+pub use crate::{ButtonCommon, Color};
+pub use crate::{
+    Icon,
+    IconName,
+    // IconPosition,
+    IconSize,
+};
 
 pub use theme::ActiveTheme;

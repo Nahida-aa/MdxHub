@@ -1,3 +1,11 @@
+use core::fmt::Debug;
+use gpui::{App, Axis, Bounds, DisplayId, Half, Pixels, Point, Position, Size, point, px};
+use refineable::Refineable;
+use serde::{Deserialize, Deserializer, Serialize, Serializer, de};
+use std::ops::{Add, AddAssign, Div, DivAssign, Mul, Neg, Sub, SubAssign};
+
+use crate::Anchor;
+
 pub trait BoundsExt<T: Clone + Debug + Default + PartialEq> {
     fn from_anchor_and_size(anchor: Anchor, offset: Point<T>, size: Size<T>) -> Bounds<T>;
 }

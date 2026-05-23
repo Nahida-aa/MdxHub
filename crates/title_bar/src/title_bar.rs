@@ -6,7 +6,7 @@ use crate::application_menu::{
 use arrayvec::ArrayVec;
 use gpui::prelude::*;
 use gpui::*;
-use gpui_component::{h_flex, v_flex};
+use gpui_component::{Disableable as _, h_flex, v_flex};
 use platform_title_bar::PlatformTitleBar;
 mod title_bar_settings;
 use gpui::{
@@ -19,8 +19,10 @@ use project::{
 };
 use settings::Settings as _; // Rust 里调用 trait 方法需要 trait 本身在当前作用域可见
 use title_bar_settings::TitleBarSettings;
-use ui::{PlatformStyle, utils::platform_title_bar_height};
+use ui::{Button, Color, LabelSize, PlatformStyle, utils::platform_title_bar_height};
 use workspace::{MultiWorkspace, Workspace};
+
+const MAX_PROJECT_NAME_LENGTH: usize = 40;
 
 pub fn title_bar_options() -> TitlebarOptions {
     TitlebarOptions {
@@ -42,8 +44,8 @@ pub struct TitleBar {
     project: Entity<Project>,                    // 当前项目
     // user_store: Entity<UserStore>,                // 用户系统（头像、登录）
     // client: Arc<Client>,                          // 网络客户端（协作）
-    // workspace: WeakEntity<Workspace>,             // 所属窗口
-    // multi_workspace: Option<WeakEntity<MultiWorkspace>>,
+    workspace: WeakEntity<Workspace>, // 所属窗口
+    multi_workspace: Option<WeakEntity<MultiWorkspace>>,
     application_menu: Option<Entity<ApplicationMenu>>, // 主菜单
                                                        // update_version: Entity<UpdateVersion>,        // 更新提示
                                                        // banner: Option<Entity<OnboardingBanner>>,     // 新手引导条
@@ -64,6 +66,11 @@ impl Render for TitleBar {
         // - 右侧：连接状态、更新提示、用户菜单按钮
         let show_menus = false; // show_menus(cx);
         let mut children = <ArrayVec<_, 4>>::new();
+
+        let mut project_name = None;
+        let mut repository = None;
+        let mut linked_worktree_name = None;
+        if let Some(worktree) = self.effective_active_worktree(cx) {}
         // 应用菜单：只在 show_menus = false（紧凑模式）时显示，同时通过 menu.all_menus_shown() 检测是否有菜单展开，展开时隐藏项目信息腾出空间
         // 受限模式：render_restricted_mode() 渲染一个指示器
         // 阻止点击穿透：on_mouse_down 调用 stop_propagation()，防止点击标题栏中间区域触发窗口拖动
@@ -148,8 +155,10 @@ impl TitleBar {
             }
         };
         let mut this = Self {
-            application_menu,
             platform_titlebar,
+            application_menu,
+            workspace: workspace.weak_handle(),
+            multi_workspace,
             project,
         };
 
@@ -204,5 +213,168 @@ impl TitleBar {
         // } else {
         //     Some(button.into_any_element())
         // }
+    }
+
+    pub fn render_project_host(&self, cx: &mut Context<Self>) -> Option<AnyElement> {
+        // if self.project.read(cx).is_via_remote_server() {
+        //     return self.render_remote_project_connection(cx);
+        // }
+
+        // if self.project.read(cx).is_disconnected(cx) {
+        //     return Some(
+        //         Button::new("disconnected", "Disconnected")
+        //             .disabled(true)
+        //             .color(Color::Disabled)
+        //             .label_size(LabelSize::Small)
+        //             .into_any_element(),
+        //     );
+        // }
+        return Some(
+            Button::new("disconnected", "Disconnected")
+                .disabled(true)
+                .color(Color::Disabled)
+                .label_size(LabelSize::Small)
+                .into_any_element(),
+        );
+
+        // let host = self.project.read(cx).host()?;
+        // let host_user = self.user_store.read(cx).get_cached_user(host.user_id)?;
+        // let participant_index = self
+        //     .user_store
+        //     .read(cx)
+        //     .participant_indices()
+        //     .get(&host_user.legacy_id)?;
+
+        // Some(
+        //     Button::new("project_owner_trigger", host_user.github_login.clone())
+        //         .color(Color::Player(participant_index.0))
+        //         .label_size(LabelSize::Small)
+        //         .tooltip(move |_, cx| {
+        //             let tooltip_title = format!(
+        //                 "{} is sharing this project. Click to follow.",
+        //                 host_user.github_login
+        //             );
+
+        //             Tooltip::with_meta(tooltip_title, None, "Click to Follow", cx)
+        //         })
+        //         .on_click({
+        //             let host_peer_id = host.peer_id;
+        //             cx.listener(move |this, _, window, cx| {
+        //                 this.workspace
+        //                     .update(cx, |workspace, cx| {
+        //                         workspace.follow(host_peer_id, window, cx);
+        //                     })
+        //                     .log_err();
+        //             })
+        //         })
+        //         .into_any_element(),
+        // )
+    }
+
+    fn render_project_name(
+        &self,
+        name: Option<SharedString>,
+        _: &mut Window,
+        cx: &mut Context<Self>,
+    ) -> impl IntoElement {
+        let workspace = self.workspace.clone();
+
+        let is_project_selected = name.is_some();
+
+        let display_name = if let Some(ref name) = name {
+            util::truncate_and_trailoff(name, MAX_PROJECT_NAME_LENGTH)
+        } else {
+            "Open Recent Project".to_string()
+        };
+
+        let is_sidebar_open = self
+            .multi_workspace
+            .as_ref()
+            .and_then(|mw| mw.upgrade())
+            .map(|mw| mw.read(cx).sidebar_open())
+            .unwrap_or(false)
+            && PlatformTitleBar::is_multi_workspace_enabled(cx);
+
+        let is_threads_list_view_active = self
+            .multi_workspace
+            .as_ref()
+            .and_then(|mw| mw.upgrade())
+            .map(|mw| mw.read(cx).is_threads_list_view_active(cx))
+            .unwrap_or(false);
+
+        if is_sidebar_open && is_threads_list_view_active {
+            return self
+                .render_recent_projects_popover(display_name, is_project_selected, cx)
+                .into_any_element();
+        }
+
+        let focus_handle = workspace
+            .upgrade()
+            .map(|w| w.read(cx).focus_handle(cx))
+            .unwrap_or_else(|| cx.focus_handle());
+
+        let window_project_groups: Vec<_> = self
+            .multi_workspace
+            .as_ref()
+            .and_then(|mw| mw.upgrade())
+            .map(|mw| mw.read(cx).project_group_keys())
+            .unwrap_or_default();
+
+        PopoverMenu::new("recent-projects-menu")
+            .menu(move |window, cx| {
+                Some(recent_projects::RecentProjects::popover(
+                    workspace.clone(),
+                    window_project_groups.clone(),
+                    false,
+                    focus_handle.clone(),
+                    window,
+                    cx,
+                ))
+            })
+            .trigger_with_tooltip(
+                Button::new("project_name_trigger", display_name)
+                    .label_size(LabelSize::Small)
+                    .when(self.worktree_count(cx) > 1, |this| {
+                        this.end_icon(
+                            Icon::new(IconName::ChevronDown)
+                                .size(IconSize::XSmall)
+                                .color(Color::Muted),
+                        )
+                    })
+                    .selected_style(ButtonStyle::Tinted(TintColor::Accent))
+                    .when(!is_project_selected, |s| s.color(Color::Muted)),
+                move |_window, cx| {
+                    Tooltip::for_action(
+                        "Recent Projects",
+                        &zed_actions::OpenRecent {
+                            create_new_window: false,
+                        },
+                        cx,
+                    )
+                },
+            )
+            .anchor(gpui::Corner::TopLeft)
+            .into_any_element()
+    }
+
+    /// Returns the worktree to display in the title bar.
+    /// - Prefer the worktree owning the project's active repository
+    /// - Fall back to the first visible worktree
+    pub fn effective_active_worktree(&self, cx: &App) -> Option<Entity<project::Worktree>> {
+        let project = self.project.read(cx);
+
+        if let Some(repo) = project.active_repository(cx) {
+            let repo = repo.read(cx);
+            let repo_path = &repo.work_directory_abs_path;
+
+            for worktree in project.visible_worktrees(cx) {
+                let worktree_path = worktree.read(cx).abs_path();
+                if worktree_path == *repo_path || worktree_path.starts_with(repo_path.as_ref()) {
+                    return Some(worktree);
+                }
+            }
+        }
+
+        project.visible_worktrees(cx).next()
     }
 }

@@ -11,6 +11,16 @@ use serde::{Deserialize, Serialize};
 use settings_macros::{MergeFrom, with_fallible_options};
 pub use title_bar::*;
 pub use workspace::*;
+mod language;
+pub use language::*;
+mod terminal;
+pub use terminal::*;
+mod theme;
+pub use theme::*;
+mod serde_helper;
+pub use serde_helper::{
+    serialize_f32_with_two_decimal_places, serialize_optional_f32_with_two_decimal_places,
+};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum ParseStatus {
@@ -25,8 +35,8 @@ pub enum ParseStatus {
 // #[with_fallible_options]
 #[derive(Debug, Clone, Serialize, Deserialize, JsonSchema, MergeFrom)]
 pub struct SettingsContent {
-    //     #[serde(flatten)]
-    //     pub project: ProjectSettingsContent,
+    #[serde(flatten)]
+    pub project: ProjectSettingsContent,
 
     //     #[serde(flatten)]
     //     pub theme: Box<ThemeSettingsContent>,
@@ -171,4 +181,66 @@ pub struct SettingsContent {
     //     /// Settings for developer-oriented instrumentation tools (profilers,
     //     /// tracers, etc.) that can be toggled at runtime.
     //     pub instrumentation: Option<InstrumentationSettingsContent>,
+}
+
+#[with_fallible_options]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Deserialize, Serialize, JsonSchema, MergeFrom)]
+pub struct SshPortForwardOption {
+    pub local_host: Option<String>,
+    pub local_port: u16,
+    pub remote_host: Option<String>,
+    pub remote_port: u16,
+}
+
+// A SaturatingBool in the settings can only ever be set to true,
+// later attempts to set it to false will be ignored.
+//
+// Used by `disable_ai`.
+#[derive(Debug, Default, Copy, Clone, PartialEq, Serialize, Deserialize, JsonSchema)]
+pub struct SaturatingBool(pub bool);
+
+impl From<bool> for SaturatingBool {
+    fn from(value: bool) -> Self {
+        SaturatingBool(value)
+    }
+}
+
+impl From<SaturatingBool> for bool {
+    fn from(value: SaturatingBool) -> bool {
+        value.0
+    }
+}
+
+impl merge_from::MergeFrom for SaturatingBool {
+    fn merge_from(&mut self, other: &Self) {
+        self.0 |= other.0
+    }
+}
+
+// An ExtendingVec in the settings can only accumulate new values.
+//
+// This is useful for things like private files where you only want
+// to allow new values to be added.
+//
+// Consider using a HashMap<String, bool> instead of this type
+// (like auto_install_extensions) so that user settings files can both add
+// and remove values from the set.
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize, JsonSchema)]
+pub struct ExtendingVec<T>(pub Vec<T>);
+
+impl<T> Into<Vec<T>> for ExtendingVec<T> {
+    fn into(self) -> Vec<T> {
+        self.0
+    }
+}
+impl<T> From<Vec<T>> for ExtendingVec<T> {
+    fn from(vec: Vec<T>) -> Self {
+        ExtendingVec(vec)
+    }
+}
+
+impl<T: Clone> merge_from::MergeFrom for ExtendingVec<T> {
+    fn merge_from(&mut self, other: &Self) {
+        self.0.extend_from_slice(other.0.as_slice());
+    }
 }
