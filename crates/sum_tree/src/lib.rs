@@ -1203,3 +1203,17 @@ where
         Self::new(())
     }
 }
+
+#[derive(Debug)]
+pub enum Edit<T: KeyedItem> {
+    Insert(T),
+    Remove(T::Key),
+}
+impl<T: KeyedItem> Edit<T> {
+    fn key(&self) -> T::Key {
+        match self {
+            Edit::Insert(item) => item.key(),
+            Edit::Remove(key) => key.clone(),
+        }
+    }
+}

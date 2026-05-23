@@ -70,6 +70,10 @@ impl Clone for Global {
     }
 }
 impl Global {
+    /// Fetches the sequence number for the given replica ID.
+    pub fn get(&self, replica_id: ReplicaId) -> Seq {
+        self.values.get(replica_id.0 as usize).copied().unwrap_or(0) as Seq
+    }
     /// Iterates all replicas observed by this global as well as any unobserved replicas whose ID is lower than the highest observed replica.
     pub fn iter(&self) -> impl Iterator<Item = Lamport> + '_ {
         self.values
@@ -79,6 +83,9 @@ impl Global {
                 replica_id: ReplicaId(replica_id as u16),
                 value: *seq,
             })
+    }
+    pub fn observed(&self, timestamp: Lamport) -> bool {
+        self.get(timestamp.replica_id) >= timestamp.value
     }
 }
 

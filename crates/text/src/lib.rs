@@ -4,9 +4,15 @@ use smallvec::SmallVec;
 pub mod locator;
 use locator::Locator;
 use std::{
+    borrow::Cow,
+    cmp::{self, Ordering, Reverse},
+    fmt::Display,
+    future::Future,
+    iter::Iterator,
     num::NonZeroU64,
-    ops::{self, Range},
-    sync::Arc,
+    ops::{self, Deref, Range, Sub},
+    str,
+    sync::{Arc, LazyLock},
     time::{Duration, Instant},
 };
 use undo_map::UndoMap;
@@ -14,7 +20,7 @@ pub mod operation_queue;
 mod patch;
 pub mod subscription;
 mod undo_map;
-use clock::ReplicaId;
+use clock::{Lamport, ReplicaId};
 use collections::{HashMap, HashSet};
 use operation_queue::OperationQueue;
 use rope::Rope;
@@ -90,6 +96,36 @@ struct InsertionSlice {
     insertion_id_value: clock::Seq,
     insertion_id_replica_id: ReplicaId,
     range: Range<u32>,
+}
+impl Ord for InsertionSlice {
+    fn cmp(&self, other: &Self) -> Ordering {
+        Lamport {
+            value: self.edit_id_value,
+            replica_id: self.edit_id_replica_id,
+        }
+        .cmp(&Lamport {
+            value: other.edit_id_value,
+            replica_id: other.edit_id_replica_id,
+        })
+        .then_with(|| {
+            Lamport {
+                value: self.insertion_id_value,
+                replica_id: self.insertion_id_replica_id,
+            }
+            .cmp(&Lamport {
+                value: other.insertion_id_value,
+                replica_id: other.insertion_id_replica_id,
+            })
+        })
+        .then_with(|| self.range.start.cmp(&other.range.start))
+        .then_with(|| self.range.end.cmp(&other.range.end))
+    }
+}
+
+impl PartialOrd for InsertionSlice {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
 }
 
 #[derive(Clone, Debug, Eq, PartialEq)]
@@ -170,4 +206,21 @@ impl ops::AddAssign<usize> for FullOffset {
 pub struct Edit<D> {
     pub old: Range<D>,
     pub new: Range<D>,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+struct InsertionFragmentKey {
+    timestamp: clock::Lamport,
+    split_offset: u32,
+}
+
+impl sum_tree::Item for InsertionFragment {
+    type Summary = InsertionFragmentKey;
+
+    fn summary(&self, _cx: ()) -> Self::Summary {
+        InsertionFragmentKey {
+            timestamp: self.timestamp,
+            split_offset: self.split_offset,
+        }
+    }
 }

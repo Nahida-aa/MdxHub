@@ -1,3 +1,19 @@
+use crate::UndoOperation;
+use clock::Lamport;
+use std::cmp;
+use sum_tree::{Bias, SumTree};
+
+#[derive(Copy, Clone, Debug)]
+struct UndoMapEntry {
+    key: UndoMapKey,
+    undo_count: u32,
+}
+#[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
+struct UndoMapKey {
+    edit_id: clock::Lamport,
+    undo_id: clock::Lamport,
+}
+
 #[derive(Clone, Default)]
 pub struct UndoMap(SumTree<UndoMapEntry>);
 
