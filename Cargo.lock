@@ -4929,6 +4929,7 @@ version = "0.1.0"
 dependencies = [
  "collections",
  "gpui",
+ "parking_lot",
 ]
 
 [[package]]
