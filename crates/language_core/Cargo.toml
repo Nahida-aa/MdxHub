@@ -18,5 +18,6 @@ serde_json.workspace = true
 toml.workspace = true
 util.workspace = true
 gpui.workspace = true
+gpui_util.workspace = true
 tree-sitter.workspace = true
 [features]

@@ -8,6 +8,7 @@ pub mod redact;
 pub mod rel_path;
 pub mod serde;
 pub use gpui_util::*;
+pub use gpui_util::debug_panic;
 pub trait RangeExt<T> {
     fn sorted(&self) -> Self;
     fn to_inclusive(&self) -> RangeInclusive<T>;

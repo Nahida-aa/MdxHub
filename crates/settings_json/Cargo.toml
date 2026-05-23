@@ -20,6 +20,6 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 serde_json_lenient = "0.2"
 serde_path_to_error = "0.1"
-tree-sitter = "0.25"
-tree-sitter-json = "0.24"
+tree-sitter.workspace = true
+tree-sitter-json = "0.23"
 util.workspace = true
