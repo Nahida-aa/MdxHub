@@ -1,4 +1,6 @@
-use std::sync::{Arc, atomic::AtomicU64};
+use std::sync::{Arc, RwLock, atomic::AtomicU64};
+
+use rpc::Peer;
 
 pub mod user;
 
@@ -35,6 +37,6 @@ pub struct Client {
         >,
     >,
 
-    // #[cfg(any(test, feature = "test-support"))]
+    #[cfg(any(test, feature = "test-support"))]
     rpc_url: RwLock<Option<Url>>,
 }

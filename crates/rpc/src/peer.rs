@@ -1,6 +1,20 @@
+// use super::{
+//     // Connection,
+//     // message_stream::{
+//     //     // Message,
+//     //     // MessageStream
+//     // },
+// };
 use collections::HashMap;
 use parking_lot::{Mutex, RwLock};
-use std::sync::atomic::AtomicU32;
+use std::sync::{Arc, atomic::AtomicU32};
+
+use futures::{
+    FutureExt, SinkExt, StreamExt, TryFutureExt,
+    channel::{mpsc, oneshot},
+    stream::BoxStream,
+};
+use serde::{Serialize, ser::SerializeStruct};
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug, Serialize)]
 pub struct ConnectionId {
@@ -16,28 +30,28 @@ pub struct Peer {
 
 #[derive(Clone, Serialize)]
 pub struct ConnectionState {
-    #[serde(skip)]
-    outgoing_tx: mpsc::UnboundedSender<Message>,
+    // #[serde(skip)]
+    // outgoing_tx: mpsc::UnboundedSender<Message>,
     next_message_id: Arc<AtomicU32>,
-    #[allow(clippy::type_complexity)]
-    #[serde(skip)]
-    response_channels: Arc<
-        Mutex<
-            Option<
-                HashMap<
-                    u32,
-                    oneshot::Sender<(proto::Envelope, std::time::Instant, oneshot::Sender<()>)>,
-                >,
-            >,
-        >,
-    >,
-    #[allow(clippy::type_complexity)]
-    #[serde(skip)]
-    stream_response_channels: Arc<
-        Mutex<
-            Option<
-                HashMap<u32, mpsc::UnboundedSender<(Result<proto::Envelope>, oneshot::Sender<()>)>>,
-            >,
-        >,
-    >,
+    // #[allow(clippy::type_complexity)]
+    // #[serde(skip)]
+    // response_channels: Arc<
+    //     Mutex<
+    //         Option<
+    //             HashMap<
+    //                 u32,
+    //                 oneshot::Sender<(proto::Envelope, std::time::Instant, oneshot::Sender<()>)>,
+    //             >,
+    //         >,
+    //     >,
+    // >,
+    // #[allow(clippy::type_complexity)]
+    // #[serde(skip)]
+    // stream_response_channels: Arc<
+    //     Mutex<
+    //         Option<
+    //             HashMap<u32, mpsc::UnboundedSender<(Result<proto::Envelope>, oneshot::Sender<()>)>>,
+    //         >,
+    //     >,
+    // >,
 }

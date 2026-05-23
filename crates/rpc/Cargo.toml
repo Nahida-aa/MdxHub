@@ -16,4 +16,6 @@ doctest = false
 [dependencies]
 parking_lot.workspace = true
 collections.workspace = true
-gpui = "0.2.2"
+gpui.workspace = true
+serde.workspace = true
+futures.workspace = true

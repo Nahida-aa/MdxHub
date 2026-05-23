@@ -14,3 +14,4 @@ doctest = false
 
 [dependencies]
 clock.workspace = true
+rpc.workspace = true

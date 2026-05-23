@@ -886,6 +886,7 @@ name = "client"
 version = "0.1.0"
 dependencies = [
  "clock",
+ "rpc",
 ]
 
 [[package]]
@@ -4928,8 +4929,10 @@ name = "rpc"
 version = "0.1.0"
 dependencies = [
  "collections",
+ "futures",
  "gpui",
  "parking_lot",
+ "serde",
 ]
 
 [[package]]
