@@ -207,6 +207,35 @@ impl sum_tree::Item for Fragment {
     }
 }
 
+impl sum_tree::Summary for FragmentSummary {
+    type Context<'a> = &'a Option<clock::Global>;
+
+    fn zero(_cx: Self::Context<'_>) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, other: &Self, _: Self::Context<'_>) {
+        self.max_id.assign(&other.max_id);
+        self.text.visible += &other.text.visible;
+        self.text.deleted += &other.text.deleted;
+        self.max_version.join(&other.max_version);
+        self.min_insertion_version
+            .meet(&other.min_insertion_version);
+        self.max_insertion_version
+            .join(&other.max_insertion_version);
+    }
+}
+impl Default for FragmentSummary {
+    fn default() -> Self {
+        FragmentSummary {
+            max_id: Locator::min(),
+            text: FragmentTextSummary::default(),
+            max_version: clock::Global::new(),
+            min_insertion_version: clock::Global::new(),
+            max_insertion_version: clock::Global::new(),
+        }
+    }
+}
 impl sum_tree::ContextLessSummary for InsertionFragmentKey {
     fn zero() -> Self {
         InsertionFragmentKey {

@@ -24,3 +24,13 @@ impl Clone for Locator {
         self.0.clone_from(&source.0);
     }
 }
+impl Locator {
+    pub const fn min() -> Self {
+        // SAFETY: 1 is <= 2
+        Self(unsafe { SmallVec::from_const_with_len_unchecked([u64::MIN; 2], 1) })
+    }
+    pub fn assign(&mut self, other: &Self) {
+        self.0.resize(other.0.len(), 0);
+        self.0.copy_from_slice(&other.0);
+    }
+}

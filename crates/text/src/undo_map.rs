@@ -30,6 +30,19 @@ struct UndoMapKey {
     undo_id: clock::Lamport,
 }
 
+impl sum_tree::ContextLessSummary for UndoMapKey {
+    fn zero() -> Self {
+        UndoMapKey {
+            edit_id: Lamport::MIN,
+            undo_id: Lamport::MIN,
+        }
+    }
+
+    fn add_summary(&mut self, summary: &Self) {
+        *self = cmp::max(*self, *summary);
+    }
+}
+
 #[derive(Clone, Default)]
 pub struct UndoMap(SumTree<UndoMapEntry>);
 

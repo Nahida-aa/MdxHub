@@ -70,9 +70,28 @@ impl Clone for Global {
     }
 }
 impl Global {
+    pub fn new() -> Self {
+        Self::default()
+    }
     /// Fetches the sequence number for the given replica ID.
     pub fn get(&self, replica_id: ReplicaId) -> Seq {
         self.values.get(replica_id.0 as usize).copied().unwrap_or(0) as Seq
+    }
+
+    /// Observe the lamport timestamp.
+    ///
+    /// This sets the current sequence number of the observed replica ID to the maximum of this global's observed sequence and the observed timestamp.
+    pub fn observe(&mut self, timestamp: Lamport) {
+        debug_assert_ne!(timestamp.replica_id, Lamport::MAX.replica_id);
+        if timestamp.value > 0 {
+            let new_len = timestamp.replica_id.0 as usize + 1;
+            if new_len > self.values.len() {
+                self.values.resize(new_len, 0);
+            }
+
+            let entry = &mut self.values[timestamp.replica_id.0 as usize];
+            *entry = cmp::max(*entry, timestamp.value);
+        }
     }
     /// Iterates all replicas observed by this global as well as any unobserved replicas whose ID is lower than the highest observed replica.
     pub fn iter(&self) -> impl Iterator<Item = Lamport> + '_ {
@@ -86,6 +105,50 @@ impl Global {
     }
     pub fn observed(&self, timestamp: Lamport) -> bool {
         self.get(timestamp.replica_id) >= timestamp.value
+    }
+
+    /// Join another global.
+    ///
+    /// This observes all timestamps from the other global.
+    #[doc(alias = "synchronize")]
+    pub fn join(&mut self, other: &Self) {
+        if other.values.len() > self.values.len() {
+            self.values.resize(other.values.len(), 0);
+        }
+
+        for (left, right) in self.values.iter_mut().zip(&other.values) {
+            *left = cmp::max(*left, *right);
+        }
+    }
+
+    /// Meet another global.
+    ///
+    /// Sets all unobserved timestamps of this global to the sequences of other and sets all observed timestamps of this global to the minimum observed of both globals.
+    pub fn meet(&mut self, other: &Self) {
+        if other.values.len() > self.values.len() {
+            self.values.resize(other.values.len(), 0);
+        }
+
+        let mut new_len = 0;
+        for (ix, (left, &right)) in self.values.iter_mut().zip(&other.values).enumerate() {
+            match (*left, right) {
+                // left has not observed the replica
+                (0, _) => *left = right,
+                // right has not observed the replica
+                (_, 0) => (),
+                (_, _) => *left = cmp::min(*left, right),
+            }
+            if *left != 0 {
+                new_len = ix + 1;
+            }
+        }
+        if other.values.len() == self.values.len() {
+            // only truncate if other was equal or shorter (which at this point
+            // cant be due to the resize above) to `self` as otherwise we would
+            // truncate the unprocessed tail that is guaranteed to contain
+            // non-null timestamps
+            self.values.truncate(new_len);
+        }
     }
 }
 
