@@ -517,3 +517,10 @@ impl ToOffset for Anchor {
         snapshot.summary_for_anchor(self)
     }
 }
+
+impl<T: ToOffset> ToOffset for &T {
+    #[inline]
+    fn to_offset(&self, content: &BufferSnapshot) -> usize {
+        (*self).to_offset(content)
+    }
+}

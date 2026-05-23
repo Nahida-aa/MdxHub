@@ -229,3 +229,17 @@ impl<'a> Cursor<'a> {
         summary
     }
 }
+
+impl TextDimension for usize {
+    fn from_text_summary(summary: &TextSummary) -> Self {
+        summary.len
+    }
+
+    fn from_chunk(chunk: ChunkSlice) -> Self {
+        chunk.len()
+    }
+
+    fn add_assign(&mut self, other: &Self) {
+        *self += other;
+    }
+}
