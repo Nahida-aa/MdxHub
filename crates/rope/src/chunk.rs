@@ -3,9 +3,8 @@ use std::ops::Range;
 use crate::{
     OffsetUtf16,
     Point,
-    // PointUtf16,
-    TextSummary,
-    // Unclipped
+    PointUtf16,
+    TextSummary, // Unclipped
 };
 use heapless::String as ArrayString;
 
@@ -276,5 +275,26 @@ impl<'a> ChunkSlice<'a> {
     #[inline(always)]
     pub fn last_line_len_utf16(&self) -> u32 {
         (self.chars_utf16 & saturating_shr_mask(self.newlines.leading_zeros())).count_ones()
+    }
+
+    #[inline(always)]
+    pub fn offset_to_point(&self, offset: usize) -> Point {
+        let mask = (1 as Bitmap).unbounded_shl(offset as u32).wrapping_sub(1);
+        let row = (self.newlines & mask).count_ones();
+        let newline_ix = Bitmap::BITS - (self.newlines & mask).leading_zeros();
+        let column = (offset - newline_ix as usize) as u32;
+        Point::new(row, column)
+    }
+    #[inline(always)]
+    pub fn offset_to_point_utf16(&self, offset: usize) -> PointUtf16 {
+        let mask = saturating_shl_mask(offset as u32);
+        let row = (self.newlines & saturating_shl_mask(offset as u32)).count_ones();
+        let newline_ix = Bitmap::BITS - (self.newlines & mask).leading_zeros();
+        let column = if newline_ix as usize == MAX_BASE {
+            0
+        } else {
+            ((self.chars_utf16 & mask) >> newline_ix).count_ones()
+        };
+        PointUtf16::new(row, column)
     }
 }

@@ -27,3 +27,6 @@ language_core.workspace = true
 futures.workspace = true
 collections.workspace = true
 # ui.workspace = true
+tree-sitter.workspace = true
+sum_tree.workspace = true
+streaming-iterator.workspace = true

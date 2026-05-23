@@ -1,15 +1,14 @@
+pub use crate::{Grammar, HighlightId, HighlightMap, Language};
 use anyhow::{Context as _, Result};
 use clock::Lamport;
 use fs::MTime;
 use gpui::{App, Entity, Task};
 pub use lsp::DiagnosticSeverity;
+use parking_lot::Mutex;
 use serde::{
     Deserialize, Deserializer, Serialize,
     de::{self, Error as Error_},
 };
-pub use crate::{
-    // Grammar, HighlightId, HighlightMap, 
-    Language, }
 use settings::WorktreeId;
 use std::{
     any::Any,
@@ -28,7 +27,7 @@ use std::{
     time::{Duration, Instant},
     vec,
 };
-pub use text::{ Anchor,Buffer as TextBuffer, BufferId};
+pub use text::{Anchor, Buffer as TextBuffer, BufferId};
 use util::{paths::PathStyle, rel_path::RelPath};
 
 /// Indicate whether a [`Buffer`] has permissions to edit.
@@ -67,32 +66,32 @@ pub struct Buffer {
     reload_task: Option<Task<Result<()>>>,
     language: Option<Arc<Language>>,
     autoindent_requests: Vec<Arc<AutoindentRequest>>,
-    wait_for_autoindent_txs: Vec<oneshot::Sender<()>>,
+    // wait_for_autoindent_txs: Vec<oneshot::Sender<()>>,
     pending_autoindent: Option<Task<()>>,
     sync_parse_timeout: Option<Duration>,
-    syntax_map: Mutex<SyntaxMap>,
+    // syntax_map: Mutex<SyntaxMap>,
     reparse: Option<Task<()>>,
-    parse_status: (watch::Sender<ParseStatus>, watch::Receiver<ParseStatus>),
+    // parse_status: (watch::Sender<ParseStatus>, watch::Receiver<ParseStatus>),
     non_text_state_update_count: usize,
-    diagnostics: TreeMap<LanguageServerId, DiagnosticSet>,
-    remote_selections: TreeMap<ReplicaId, SelectionSet>,
+    // diagnostics: TreeMap<LanguageServerId, DiagnosticSet>,
+    // remote_selections: TreeMap<ReplicaId, SelectionSet>,
     diagnostics_timestamp: clock::Lamport,
     completion_triggers: BTreeSet<String>,
-    completion_triggers_per_language_server: HashMap<LanguageServerId, BTreeSet<String>>,
+    // completion_triggers_per_language_server: HashMap<LanguageServerId, BTreeSet<String>>,
     completion_triggers_timestamp: clock::Lamport,
-    deferred_ops: OperationQueue<Operation>,
+    // deferred_ops: OperationQueue<Operation>,
     capability: Capability,
     has_conflict: bool,
     /// Memoize calls to has_changes_since(saved_version).
     /// The contents of a cell are (self.version, has_changes) at the time of a last call.
     has_unsaved_edits: Cell<(clock::Global, bool)>,
     change_bits: Vec<rc::Weak<Cell<bool>>>,
-    modeline: Option<Arc<ModelineSettings>>,
+    // modeline: Option<Arc<ModelineSettings>>,
     _subscriptions: Vec<gpui::Subscription>,
-    tree_sitter_data: Arc<TreeSitterData>,
-    encoding: &'static Encoding,
+    // tree_sitter_data: Arc<TreeSitterData>,
+    // encoding: &'static Encoding,
     has_bom: bool,
-    reload_with_encoding_txns: HashMap<TransactionId, (&'static Encoding, bool)>,
+    // reload_with_encoding_txns: HashMap<TransactionId, (&'static Encoding, bool)>,
 }
 
 struct BufferBranchState {
@@ -193,6 +192,24 @@ struct AutoindentRequestEntry {
     indent_size: IndentSize,
     original_indent_column: Option<u32>,
 }
+/// The kind and amount of indentation in a particular line. For now,
+/// assumes that indentation is all the same character.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Default)]
+pub struct IndentSize {
+    /// The number of bytes that comprise the indentation.
+    pub len: u32,
+    /// The kind of whitespace used for indentation.
+    pub kind: IndentKind,
+}
+/// A whitespace character that's used for indentation.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, Default)]
+pub enum IndentKind {
+    /// An ASCII space character.
+    #[default]
+    Space,
+    /// An ASCII tab character.
+    Tab,
+}
 
 /// An immutable, cheaply cloneable representation of a fixed
 /// state of a buffer.
@@ -207,4 +224,21 @@ pub struct BufferSnapshot {
     non_text_state_update_count: usize,
     pub capability: Capability,
     modeline: Option<Arc<ModelineSettings>>,
+}
+
+impl Clone for BufferSnapshot {
+    fn clone(&self) -> Self {
+        Self {
+            text: self.text.clone(),
+            syntax: self.syntax.clone(),
+            file: self.file.clone(),
+            remote_selections: self.remote_selections.clone(),
+            diagnostics: self.diagnostics.clone(),
+            language: self.language.clone(),
+            tree_sitter_data: self.tree_sitter_data.clone(),
+            non_text_state_update_count: self.non_text_state_update_count,
+            capability: self.capability,
+            modeline: self.modeline.clone(),
+        }
+    }
 }

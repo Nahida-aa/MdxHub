@@ -3446,7 +3446,10 @@ dependencies = [
  "lsp",
  "serde",
  "settings",
+ "streaming-iterator",
+ "sum_tree",
  "text",
+ "tree-sitter",
  "util",
 ]
 

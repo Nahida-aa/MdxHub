@@ -1,9 +1,5 @@
-use crate::{
-    BufferId,
-    BufferSnapshot,
-    // Point, PointUtf16, TextDimension, ToOffset, ToPoint, ToPointUtf16,
-    locator::Locator,
-};
+use crate::{BufferId, BufferSnapshot, ToOffset, locator::Locator};
+use rope::{Point, PointUtf16};
 use std::{cmp::Ordering, fmt::Debug, ops::Range};
 use sum_tree::{
     Bias,
@@ -205,30 +201,30 @@ impl Anchor {
     }
 }
 
-// pub trait OffsetRangeExt {
-//     fn to_offset(&self, snapshot: &BufferSnapshot) -> Range<usize>;
-//     fn to_point(&self, snapshot: &BufferSnapshot) -> Range<Point>;
-//     fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> Range<PointUtf16>;
-// }
+pub trait OffsetRangeExt {
+    fn to_offset(&self, snapshot: &BufferSnapshot) -> Range<usize>;
+    fn to_point(&self, snapshot: &BufferSnapshot) -> Range<Point>;
+    fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> Range<PointUtf16>;
+}
 
-// impl<T> OffsetRangeExt for Range<T>
-// where
-//     T: ToOffset,
-// {
-//     fn to_offset(&self, snapshot: &BufferSnapshot) -> Range<usize> {
-//         self.start.to_offset(snapshot)..self.end.to_offset(snapshot)
-//     }
+impl<T> OffsetRangeExt for Range<T>
+where
+    T: ToOffset,
+{
+    fn to_offset(&self, snapshot: &BufferSnapshot) -> Range<usize> {
+        self.start.to_offset(snapshot)..self.end.to_offset(snapshot)
+    }
 
-//     fn to_point(&self, snapshot: &BufferSnapshot) -> Range<Point> {
-//         self.start.to_offset(snapshot).to_point(snapshot)
-//             ..self.end.to_offset(snapshot).to_point(snapshot)
-//     }
+    fn to_point(&self, snapshot: &BufferSnapshot) -> Range<Point> {
+        self.start.to_offset(snapshot).to_point(snapshot)
+            ..self.end.to_offset(snapshot).to_point(snapshot)
+    }
 
-//     fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> Range<PointUtf16> {
-//         self.start.to_offset(snapshot).to_point_utf16(snapshot)
-//             ..self.end.to_offset(snapshot).to_point_utf16(snapshot)
-//     }
-// }
+    fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> Range<PointUtf16> {
+        self.start.to_offset(snapshot).to_point_utf16(snapshot)
+            ..self.end.to_offset(snapshot).to_point_utf16(snapshot)
+    }
+}
 
 pub trait AnchorRangeExt {
     fn cmp(&self, b: &Range<Anchor>, buffer: &BufferSnapshot) -> Ordering;

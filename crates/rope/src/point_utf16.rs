@@ -1,53 +1,26 @@
 use std::{
     cmp::Ordering,
-    fmt::{self, Debug},
-    ops::{Add, AddAssign, Range, Sub},
+    ops::{Add, AddAssign, Sub},
 };
 
-/// A zero-indexed point in a text buffer consisting of a row and column.
-#[derive(Clone, Copy, Default, Eq, PartialEq, Hash)]
-pub struct Point {
+#[derive(Clone, Copy, Default, Eq, PartialEq, Debug, Hash)]
+pub struct PointUtf16 {
     pub row: u32,
     pub column: u32,
 }
 
-impl Debug for Point {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "Point({}:{})", self.row, self.column)
-    }
-}
-
-impl Point {
+impl PointUtf16 {
     pub const MAX: Self = Self {
         row: u32::MAX,
         column: u32::MAX,
     };
 
     pub fn new(row: u32, column: u32) -> Self {
-        Point { row, column }
-    }
-
-    pub fn row_range(range: Range<u32>) -> Range<Self> {
-        Point {
-            row: range.start,
-            column: 0,
-        }..Point {
-            row: range.end,
-            column: 0,
-        }
+        PointUtf16 { row, column }
     }
 
     pub fn zero() -> Self {
-        Point::new(0, 0)
-    }
-
-    pub fn parse_str(s: &str) -> Self {
-        let mut point = Self::zero();
-        for (row, line) in s.split('\n').enumerate() {
-            point.row = row as u32;
-            point.column = line.len() as u32;
-        }
-        point
+        PointUtf16::new(0, 0)
     }
 
     pub fn is_zero(&self) -> bool {
@@ -63,55 +36,55 @@ impl Point {
     }
 }
 
-impl<'a> Add<&'a Self> for Point {
-    type Output = Point;
+impl<'a> Add<&'a Self> for PointUtf16 {
+    type Output = PointUtf16;
 
     fn add(self, other: &'a Self) -> Self::Output {
         self + *other
     }
 }
 
-impl Add for Point {
-    type Output = Point;
+impl Add for PointUtf16 {
+    type Output = PointUtf16;
 
     fn add(self, other: Self) -> Self::Output {
         if other.row == 0 {
-            Point::new(self.row, self.column + other.column)
+            PointUtf16::new(self.row, self.column + other.column)
         } else {
-            Point::new(self.row + other.row, other.column)
+            PointUtf16::new(self.row + other.row, other.column)
         }
     }
 }
 
-impl<'a> Sub<&'a Self> for Point {
-    type Output = Point;
+impl<'a> Sub<&'a Self> for PointUtf16 {
+    type Output = PointUtf16;
 
     fn sub(self, other: &'a Self) -> Self::Output {
         self - *other
     }
 }
 
-impl Sub for Point {
-    type Output = Point;
+impl Sub for PointUtf16 {
+    type Output = PointUtf16;
 
     fn sub(self, other: Self) -> Self::Output {
         debug_assert!(other <= self);
 
         if self.row == other.row {
-            Point::new(0, self.column - other.column)
+            PointUtf16::new(0, self.column - other.column)
         } else {
-            Point::new(self.row - other.row, self.column)
+            PointUtf16::new(self.row - other.row, self.column)
         }
     }
 }
 
-impl<'a> AddAssign<&'a Self> for Point {
+impl<'a> AddAssign<&'a Self> for PointUtf16 {
     fn add_assign(&mut self, other: &'a Self) {
         *self += *other;
     }
 }
 
-impl AddAssign<Self> for Point {
+impl AddAssign<Self> for PointUtf16 {
     fn add_assign(&mut self, other: Self) {
         if other.row == 0 {
             self.column += other.column;
@@ -122,22 +95,22 @@ impl AddAssign<Self> for Point {
     }
 }
 
-impl PartialOrd for Point {
-    fn partial_cmp(&self, other: &Point) -> Option<Ordering> {
+impl PartialOrd for PointUtf16 {
+    fn partial_cmp(&self, other: &PointUtf16) -> Option<Ordering> {
         Some(self.cmp(other))
     }
 }
 
-impl Ord for Point {
+impl Ord for PointUtf16 {
     #[cfg(target_pointer_width = "64")]
-    fn cmp(&self, other: &Point) -> Ordering {
+    fn cmp(&self, other: &PointUtf16) -> Ordering {
         let a = ((self.row as usize) << 32) | self.column as usize;
         let b = ((other.row as usize) << 32) | other.column as usize;
         a.cmp(&b)
     }
 
     #[cfg(target_pointer_width = "32")]
-    fn cmp(&self, other: &Point) -> Ordering {
+    fn cmp(&self, other: &PointUtf16) -> Ordering {
         match self.row.cmp(&other.row) {
             Ordering::Equal => self.column.cmp(&other.column),
             comparison @ _ => comparison,

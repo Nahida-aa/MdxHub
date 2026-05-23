@@ -27,7 +27,7 @@ mod undo_map;
 use clock::{Lamport, ReplicaId};
 use collections::{HashMap, HashSet};
 use operation_queue::OperationQueue;
-use rope::{Rope, TextDimension};
+use rope::{Point, Rope, TextDimension};
 use sum_tree::{Bias, Dimensions, SumTree, TreeMap, TreeSet};
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LineEnding {
@@ -50,6 +50,12 @@ pub struct Buffer {
 #[derive(Clone, Copy, Debug, Hash, PartialEq, PartialOrd, Ord, Eq)]
 pub struct BufferId(NonZeroU64);
 
+impl Display for BufferId {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.0)
+    }
+}
+
 #[derive(Clone)]
 pub struct BufferSnapshot {
     visible_text: Rope,
@@ -64,6 +70,9 @@ pub struct BufferSnapshot {
     line_ending: LineEnding,
 }
 impl BufferSnapshot {
+    pub fn as_rope(&self) -> &Rope {
+        &self.visible_text
+    }
     pub fn len(&self) -> usize {
         self.visible_text.len()
     }
@@ -232,6 +241,14 @@ impl BufferSnapshot {
             }
             fragment_offset
         }
+    }
+
+    pub fn offset_to_point(&self, offset: usize) -> Point {
+        self.visible_text.offset_to_point(offset)
+    }
+
+    pub fn offset_to_point_utf16(&self, offset: usize) -> ToPointUtf16 {
+        self.visible_text.offset_to_point_utf16(offset)
     }
 }
 
@@ -494,6 +511,13 @@ impl sum_tree::Item for InsertionFragment {
         }
     }
 }
+impl sum_tree::KeyedItem for InsertionFragment {
+    type Key = InsertionFragmentKey;
+
+    fn key(&self) -> Self::Key {
+        sum_tree::Item::summary(self, ())
+    }
+}
 
 pub trait ToOffset {
     fn to_offset(&self, snapshot: &BufferSnapshot) -> usize;
@@ -522,5 +546,61 @@ impl<T: ToOffset> ToOffset for &T {
     #[inline]
     fn to_offset(&self, content: &BufferSnapshot) -> usize {
         (*self).to_offset(content)
+    }
+}
+
+impl ToOffset for usize {
+    #[track_caller]
+    fn to_offset(&self, snapshot: &BufferSnapshot) -> usize {
+        if !snapshot
+            .as_rope()
+            .assert_char_boundary::<{ cfg!(debug_assertions) }>(*self)
+        {
+            snapshot.as_rope().floor_char_boundary(*self)
+        } else {
+            *self
+        }
+    }
+}
+
+impl sum_tree::Dimension<'_, FragmentSummary> for usize {
+    fn zero(_: &Option<clock::Global>) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, summary: &FragmentSummary, _: &Option<clock::Global>) {
+        *self += summary.text.visible;
+    }
+}
+
+impl<'a> sum_tree::Dimension<'a, FragmentSummary> for Option<&'a Locator> {
+    fn zero(_: &Option<clock::Global>) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, summary: &'a FragmentSummary, _: &Option<clock::Global>) {
+        *self = Some(&summary.max_id);
+    }
+}
+
+pub trait ToPoint {
+    fn to_point(&self, snapshot: &BufferSnapshot) -> Point;
+}
+
+impl ToPoint for usize {
+    #[inline]
+    fn to_point(&self, snapshot: &BufferSnapshot) -> Point {
+        snapshot.offset_to_point(*self)
+    }
+}
+
+pub trait ToPointUtf16 {
+    fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> PointUtf16;
+}
+
+impl ToPointUtf16 for Anchor {
+    #[inline]
+    fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> PointUtf16 {
+        snapshot.summary_for_anchor(self)
     }
 }

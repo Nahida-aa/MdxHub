@@ -81,6 +81,7 @@ tree-sitter-jsdoc = "0.23"
 tree-sitter-css = "0.23"
 tree-sitter-elixir = "0.3"
 heapless = "0.9"
+streaming-iterator = "0.1.9"
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 

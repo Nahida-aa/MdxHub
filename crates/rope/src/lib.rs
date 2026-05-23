@@ -1,21 +1,22 @@
 mod offset_utf16;
 mod point;
 use std::{cmp, ops};
-
+mod point_utf16;
 pub use offset_utf16::OffsetUtf16;
 mod chunk;
 pub use chunk::{
     Chunk,
     // ChunkSlice
 };
+pub use point::Point;
+pub use point_utf16::PointUtf16;
 use sum_tree::{
     // Bias, Dimension, Dimensions,
     Bias,
     Dimension,
+    Dimensions,
     SumTree,
 };
-
-pub use point::Point;
 
 use crate::chunk::ChunkSlice;
 
@@ -26,6 +27,9 @@ pub struct Rope {
 impl Rope {
     pub fn len(&self) -> usize {
         self.chunks.extent(())
+    }
+    pub fn summary(&self) -> TextSummary {
+        self.chunks.summary().text
     }
     #[track_caller]
     #[inline(always)]
@@ -79,6 +83,34 @@ impl Rope {
 
     pub fn cursor(&self, offset: usize) -> Cursor<'_> {
         Cursor::new(self, offset)
+    }
+
+    pub fn offset_to_point(&self, offset: usize) -> Point {
+        if offset >= self.summary().len {
+            return self.summary().lines;
+        }
+        let (start, _, item) =
+            self.chunks
+                .find::<Dimensions<usize, Point>, _>((), &offset, Bias::Left);
+        let overshoot = offset - start.0;
+        start.1
+            + item.map_or(Point::zero(), |chunk| {
+                chunk.as_slice().offset_to_point(overshoot)
+            })
+    }
+
+    pub fn offset_to_point_utf16(&self, offset: usize) -> PointUtf16 {
+        if offset >= self.summary().len {
+            return self.summary().lines_utf16();
+        }
+        let (start, _, item) =
+            self.chunks
+                .find::<Dimensions<usize, PointUtf16>, _>((), &offset, Bias::Left);
+        let overshoot = offset - start.0;
+        start.1
+            + item.map_or(PointUtf16::zero(), |chunk| {
+                chunk.as_slice().offset_to_point_utf16(overshoot)
+            })
     }
 }
 
@@ -140,6 +172,14 @@ pub struct TextSummary {
     pub longest_row: u32,
     /// How many `char`s are in the longest row
     pub longest_row_chars: u32,
+}
+impl TextSummary {
+    pub fn lines_utf16(&self) -> PointUtf16 {
+        PointUtf16 {
+            row: self.lines.row,
+            column: self.last_line_len_utf16,
+        }
+    }
 }
 impl<'a> ops::AddAssign<&'a Self> for TextSummary {
     fn add_assign(&mut self, other: &'a Self) {
