@@ -212,6 +212,26 @@ impl<'a> ops::AddAssign<&'a Self> for TextSummary {
     }
 }
 
+impl<'a> sum_tree::Dimension<'a, ChunkSummary> for Point {
+    fn zero(_cx: ()) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, summary: &'a ChunkSummary, _: ()) {
+        *self += summary.text.lines;
+    }
+}
+
+impl<'a> sum_tree::Dimension<'a, ChunkSummary> for PointUtf16 {
+    fn zero(_cx: ()) -> Self {
+        Default::default()
+    }
+
+    fn add_summary(&mut self, summary: &'a ChunkSummary, _: ()) {
+        *self += summary.text.lines_utf16();
+    }
+}
+
 pub trait TextDimension:
     'static + Clone + Copy + Default + for<'a> Dimension<'a, ChunkSummary> + std::fmt::Debug
 {
@@ -267,6 +287,37 @@ impl<'a> Cursor<'a> {
 
         self.offset = end_offset;
         summary
+    }
+}
+
+impl TextDimension for Point {
+    fn from_text_summary(summary: &TextSummary) -> Self {
+        summary.lines
+    }
+
+    fn from_chunk(chunk: ChunkSlice) -> Self {
+        chunk.lines()
+    }
+
+    fn add_assign(&mut self, other: &Self) {
+        *self += other;
+    }
+}
+
+impl TextDimension for PointUtf16 {
+    fn from_text_summary(summary: &TextSummary) -> Self {
+        summary.lines_utf16()
+    }
+
+    fn from_chunk(chunk: ChunkSlice) -> Self {
+        PointUtf16 {
+            row: chunk.lines().row,
+            column: chunk.last_line_len_utf16(),
+        }
+    }
+
+    fn add_assign(&mut self, other: &Self) {
+        *self += other;
     }
 }
 

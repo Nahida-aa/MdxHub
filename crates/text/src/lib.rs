@@ -6,6 +6,7 @@ use postage::{oneshot, prelude::*};
 use smallvec::SmallVec;
 pub mod locator;
 use locator::Locator;
+pub use rope::*;
 use std::{
     borrow::Cow,
     cmp::{self, Ordering, Reverse},
@@ -27,7 +28,7 @@ mod undo_map;
 use clock::{Lamport, ReplicaId};
 use collections::{HashMap, HashSet};
 use operation_queue::OperationQueue;
-use rope::{Point, Rope, TextDimension};
+
 use sum_tree::{Bias, Dimensions, SumTree, TreeMap, TreeSet};
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LineEnding {
@@ -247,7 +248,7 @@ impl BufferSnapshot {
         self.visible_text.offset_to_point(offset)
     }
 
-    pub fn offset_to_point_utf16(&self, offset: usize) -> ToPointUtf16 {
+    pub fn offset_to_point_utf16(&self, offset: usize) -> PointUtf16 {
         self.visible_text.offset_to_point_utf16(offset)
     }
 }
@@ -591,6 +592,13 @@ impl ToPoint for usize {
     #[inline]
     fn to_point(&self, snapshot: &BufferSnapshot) -> Point {
         snapshot.offset_to_point(*self)
+    }
+}
+
+impl ToPointUtf16 for usize {
+    #[inline]
+    fn to_point_utf16(&self, snapshot: &BufferSnapshot) -> PointUtf16 {
+        snapshot.offset_to_point_utf16(*self)
     }
 }
 

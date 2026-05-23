@@ -1,4 +1,4 @@
-use crate::{BufferId, BufferSnapshot, ToOffset, locator::Locator};
+use crate::{BufferId, BufferSnapshot, ToOffset, ToPoint, ToPointUtf16, locator::Locator};
 use rope::{Point, PointUtf16};
 use std::{cmp::Ordering, fmt::Debug, ops::Range};
 use sum_tree::{

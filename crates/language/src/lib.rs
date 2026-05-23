@@ -3,7 +3,7 @@ use std::sync::Arc;
 mod syntax_map;
 pub use buffer::*;
 mod manifest;
-use language_core::{Grammar, LanguageConfig, LanguageId};
+use language_core::{Grammar, InjectionConfig, LanguageConfig, LanguageId};
 pub use manifest::{ManifestDelegate, ManifestName, ManifestProvider, ManifestQuery};
 // use syntax_map::{QueryCursorHandle, SyntaxSnapshot};
 pub struct Language {
@@ -17,3 +17,8 @@ pub struct Language {
 // pub use syntax_map::{
 //     OwnedSyntaxLayer, SyntaxLayer, SyntaxMapMatches, ToTreeSitterPoint, TreeSitterOptions,
 // };
+mod language_registry;
+
+pub use language_registry::{
+    LanguageName, LanguageServerStatusUpdate, LoadedLanguage, ServerHealth,
+};
