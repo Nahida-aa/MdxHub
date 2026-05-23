@@ -58,6 +58,10 @@ serde_json_lenient = { version = "0.2", features = [
     "raw_value",
 ] }
 url = "2.2"
+serde_urlencoded = "0.7"
+bytes = "1.0"
+http_client = { path = "crates/http_client" }
+postage = "0.5"
 
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
