@@ -40,3 +40,4 @@ unicase.workspace = true
 serde_json.workspace = true
 async-trait.workspace = true
 regex.workspace = true
+task.workspace = true

@@ -8,6 +8,9 @@ publish = false
 [lints]
 workspace = true
 
+[features]
+test-support = []
+
 [lib]
 path = "src/util.rs"
 doctest = true
