@@ -14,7 +14,7 @@ test = false
 [features]
 
 [dependencies]
-gpui = "0.2"
+gpui.workspace = true
 collections.workspace = true
 language.workspace = true
 clock.workspace = true
@@ -22,6 +22,8 @@ remote.workspace = true
 client.workspace = true
 settings_macros.workspace = true
 settings.workspace = true
+aho-corasick.workspace = true
 worktree.workspace = true
 util.workspace = true
-anyhow = "1"
+anyhow.workspace = true
+fancy-regex.workspace = true

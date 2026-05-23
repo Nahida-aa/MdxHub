@@ -2,6 +2,7 @@ pub mod item;
 mod multi_workspace;
 pub mod pane;
 pub mod pane_group;
+pub mod searchable;
 mod toolbar;
 pub use item::{
     // FollowableItem, FollowableItemHandle, Item, ItemHandle, ItemSettings, PreviewTabsSettings,

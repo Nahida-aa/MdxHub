@@ -14,7 +14,7 @@ doctest = false
 
 [dependencies]
 settings.workspace = true
-gpui = "0.2"
+gpui.workspace = true
 project.workspace = true
 ui.workspace = true
 collections.workspace = true
@@ -24,3 +24,4 @@ language.workspace = true
 smallvec = "1"
 anyhow = "1"
 client.workspace = true
+any_vec.workspace = true

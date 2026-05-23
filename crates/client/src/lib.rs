@@ -3,7 +3,6 @@ use std::{
     time::Instant,
 };
 
-#[cfg(any(test, feature = "test-support"))]
 use gpui::{AsyncApp, Task};
 use http_client::HttpClientWithUrl;
 #[cfg(any(test, feature = "test-support"))]

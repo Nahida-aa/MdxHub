@@ -17,7 +17,11 @@ pub struct TreeMap<K, V>(SumTree<MapEntry<K, V>>)
 where
     K: Clone + Ord,
     V: Clone;
-
+impl<K: Clone + Ord, V: Clone> TreeMap<K, V> {
+    pub fn iter(&self) -> impl Iterator<Item = (&K, &V)> + '_ {
+        self.0.iter().map(|entry| (&entry.key, &entry.value))
+    }
+}
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct MapEntry<K, V> {
     key: K,
@@ -32,6 +36,11 @@ impl<K> Default for MapKey<K> {
         Self(None)
     }
 }
+
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct TreeSet<K>(TreeMap<K, ()>)
+where
+    K: Clone + Ord;
 
 impl<K, V> Item for MapEntry<K, V>
 where
@@ -67,5 +76,15 @@ where
 
     fn add_summary(&mut self, summary: &Self) {
         *self = summary.clone()
+    }
+}
+
+impl<K, V> Debug for TreeMap<K, V>
+where
+    K: Clone + Debug + Ord,
+    V: Clone + Debug,
+{
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_map().entries(self.iter()).finish()
     }
 }

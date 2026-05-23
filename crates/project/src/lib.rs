@@ -7,7 +7,7 @@ use language::Capability;
 use remote::remote_client::RemoteClient;
 use settings::WorktreeId;
 use settings_macros::RegisterSetting;
-
+pub mod search;
 use anyhow::{Context as _, Result, anyhow};
 pub mod trusted_worktrees;
 use util::rel_path::RelPath;

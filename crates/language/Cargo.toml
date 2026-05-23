@@ -15,9 +15,10 @@ doctest = false
 
 [dependencies]
 util.workspace = true
-gpui = "0.2"
+gpui.workspace = true
 settings.workspace = true
 fs.workspace = true
 anyhow = "1.0"
 serde = { version = "1", features = ["derive"] }
 lsp.workspace = true
+clock.workspace = true

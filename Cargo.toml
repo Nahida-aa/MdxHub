@@ -62,7 +62,12 @@ serde_urlencoded = "0.7"
 bytes = "1.0"
 http_client = { path = "crates/http_client" }
 postage = "0.5"
-
+any_vec = "0.14"
+aho-corasick = "1.1"
+fancy-regex = "0.17.0"
+rand = "0.9"
+smallvec = "1.10"
+regex = "1.12"
 [workspace.lints.rust]
 unexpected_cfgs = { level = "allow" }
 

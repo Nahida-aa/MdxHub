@@ -226,3 +226,15 @@ pub trait FollowableItemHandle: ItemHandle {
     ) -> Option<Dedup>;
     fn update_agent_location(&self, location: language::Anchor, window: &mut Window, cx: &mut App);
 }
+
+pub trait SerializableItemHandle: ItemHandle {
+    fn serialized_item_kind(&self) -> &'static str;
+    fn serialize(
+        &self,
+        workspace: &mut Workspace,
+        closing: bool,
+        window: &mut Window,
+        cx: &mut App,
+    ) -> Option<Task<Result<()>>>;
+    fn should_serialize(&self, event: &dyn Any, cx: &App) -> bool;
+}

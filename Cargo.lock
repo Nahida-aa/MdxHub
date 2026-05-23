@@ -70,6 +70,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "any_vec"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34cd60c5e3152cef0a592f1b296f1cc93715d89d2551d85315828c3a09575ff4"
+
+[[package]]
 name = "anyhow"
 version = "1.0.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1695,6 +1701,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "fancy-regex"
+version = "0.17.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72cf461f865c862bb7dc573f643dd6a2b6842f7c30b07882b56bd148cc2761b8"
+dependencies = [
+ "bit-set",
+ "regex-automata",
+ "regex-syntax",
+]
+
+[[package]]
 name = "fastrand"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3281,6 +3298,7 @@ name = "language"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "clock",
  "fs",
  "gpui",
  "lsp",
@@ -4486,10 +4504,12 @@ dependencies = [
 name = "project"
 version = "0.1.0"
 dependencies = [
+ "aho-corasick",
  "anyhow",
  "client",
  "clock",
  "collections",
+ "fancy-regex",
  "gpui",
  "language",
  "remote",
@@ -6097,8 +6117,16 @@ name = "text"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "clock",
  "collections",
+ "log",
+ "parking_lot",
+ "postage",
+ "rand 0.9.4",
+ "regex",
  "rope",
+ "smallvec",
+ "sum_tree",
  "util",
 ]
 
@@ -8036,6 +8064,7 @@ dependencies = [
 name = "workspace"
 version = "0.1.0"
 dependencies = [
+ "any_vec",
  "anyhow",
  "client",
  "collections",

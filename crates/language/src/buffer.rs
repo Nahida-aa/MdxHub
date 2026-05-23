@@ -43,6 +43,53 @@ impl Capability {
     }
 }
 
+/// An in-memory representation of a source code file, including its text,
+/// syntax trees, git status, and diagnostics.
+pub struct Buffer {
+    text: TextBuffer,
+    branch_state: Option<BufferBranchState>,
+    /// Filesystem state, `None` when there is no path.
+    file: Option<Arc<dyn File>>,
+    /// The mtime of the file when this buffer was last loaded from
+    /// or saved to disk.
+    saved_mtime: Option<MTime>,
+    /// The version vector when this buffer was last loaded from
+    /// or saved to disk.
+    saved_version: clock::Global,
+    preview_version: clock::Global,
+    transaction_depth: usize,
+    was_dirty_before_starting_transaction: Option<bool>,
+    reload_task: Option<Task<Result<()>>>,
+    language: Option<Arc<Language>>,
+    autoindent_requests: Vec<Arc<AutoindentRequest>>,
+    wait_for_autoindent_txs: Vec<oneshot::Sender<()>>,
+    pending_autoindent: Option<Task<()>>,
+    sync_parse_timeout: Option<Duration>,
+    syntax_map: Mutex<SyntaxMap>,
+    reparse: Option<Task<()>>,
+    parse_status: (watch::Sender<ParseStatus>, watch::Receiver<ParseStatus>),
+    non_text_state_update_count: usize,
+    diagnostics: TreeMap<LanguageServerId, DiagnosticSet>,
+    remote_selections: TreeMap<ReplicaId, SelectionSet>,
+    diagnostics_timestamp: clock::Lamport,
+    completion_triggers: BTreeSet<String>,
+    completion_triggers_per_language_server: HashMap<LanguageServerId, BTreeSet<String>>,
+    completion_triggers_timestamp: clock::Lamport,
+    deferred_ops: OperationQueue<Operation>,
+    capability: Capability,
+    has_conflict: bool,
+    /// Memoize calls to has_changes_since(saved_version).
+    /// The contents of a cell are (self.version, has_changes) at the time of a last call.
+    has_unsaved_edits: Cell<(clock::Global, bool)>,
+    change_bits: Vec<rc::Weak<Cell<bool>>>,
+    modeline: Option<Arc<ModelineSettings>>,
+    _subscriptions: Vec<gpui::Subscription>,
+    tree_sitter_data: Arc<TreeSitterData>,
+    encoding: &'static Encoding,
+    has_bom: bool,
+    reload_with_encoding_txns: HashMap<TransactionId, (&'static Encoding, bool)>,
+}
+
 /// The file associated with a buffer.
 pub trait File: Send + Sync + Any {
     /// Returns the [`LocalFile`] associated with this file, if the
