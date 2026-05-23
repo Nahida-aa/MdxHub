@@ -1,3 +1,5 @@
+pub mod diagnostic;
+pub use diagnostic::{Diagnostic, DiagnosticSourceKind};
 pub mod language_name;
 pub use language_name::{LanguageId, LanguageName};
 pub mod language_config;
@@ -21,3 +23,12 @@ pub mod queries;
 pub use queries::{LanguageQueries, QUERY_FILENAME_PREFIXES};
 pub mod manifest;
 pub use manifest::ManifestName;
+pub mod lsp_adapter;
+
+pub use lsp_adapter::{
+    BinaryStatus, LanguageServerStatusUpdate, PromptResponseContext, ServerHealth, ToLspPosition,
+};
+pub mod code_label;
+pub use code_label::{CodeLabel, CodeLabelBuilder, Symbol};
+pub mod toolchain;
+pub use toolchain::{Toolchain, ToolchainList, ToolchainMetadata, ToolchainScope};

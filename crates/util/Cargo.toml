@@ -13,8 +13,12 @@ path = "src/util.rs"
 doctest = true
 
 [dependencies]
-serde = { version = "1.0", features = ["derive"] }
+serde.workspace = true
 anyhow = "1.0"
 gpui_util.workspace = true
 regex = "1.12"
-globset = "0.4"
+globset.workspace = true
+schemars.workspace = true
+which.workspace = true
+log.workspace = true
+shlex.workspace = true

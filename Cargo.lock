@@ -3437,19 +3437,29 @@ name = "language"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-trait",
  "clock",
  "collections",
  "fs",
  "futures",
+ "globset",
  "gpui",
  "language_core",
  "lsp",
+ "parking_lot",
+ "postage",
+ "regex",
+ "semver",
  "serde",
+ "serde_json",
  "settings",
+ "smallvec",
  "streaming-iterator",
  "sum_tree",
  "text",
+ "theme",
  "tree-sitter",
+ "unicase",
  "util",
 ]
 
@@ -3612,6 +3622,7 @@ checksum = "112b39cec0b298b6c1999fee3e31427f74f676e4cb9879ed1a121b43661a4154"
 name = "lsp"
 version = "0.1.0"
 dependencies = [
+ "collections",
  "gpui",
  "lsp-types 0.95.1",
  "schemars",
@@ -5581,6 +5592,10 @@ name = "semver"
 version = "1.0.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8a7852d02fc848982e0c167ef163aaff9cd91dc640ba85e263cb1ce46fae51cd"
+dependencies = [
+ "serde",
+ "serde_core",
+]
 
 [[package]]
 name = "serde"
@@ -7030,8 +7045,12 @@ dependencies = [
  "anyhow",
  "globset",
  "gpui_util 0.1.0",
+ "log",
  "regex",
+ "schemars",
  "serde",
+ "shlex",
+ "which",
 ]
 
 [[package]]

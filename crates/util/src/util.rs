@@ -1,13 +1,20 @@
 use std::{
     borrow::Cow,
     cmp::{self, Ordering},
-    ops::{Range, RangeInclusive},
+    ops::{AddAssign, Range, RangeInclusive},
 };
 pub mod paths;
 pub mod redact;
 pub mod rel_path;
 pub mod serde;
+pub mod shell;
 pub use gpui_util::*;
+
+pub fn post_inc<T: From<u8> + AddAssign<T> + Copy>(value: &mut T) -> T {
+    let prev = *value;
+    *value += T::from(1);
+    prev
+}
 
 pub trait RangeExt<T> {
     fn sorted(&self) -> Self;
@@ -48,6 +55,23 @@ impl<T: Ord + Clone> RangeExt<T> for RangeInclusive<T> {
     fn contains_inclusive(&self, other: &Range<T>) -> bool {
         self.start() <= &other.start && &other.end <= self.end()
     }
+}
+
+/// Expands to an immediately-invoked function expression. Good for using the ? operator
+/// in functions which do not return an Option or Result.
+///
+/// Accepts a normal block, an async block, or an async move block.
+#[macro_export]
+macro_rules! maybe {
+    ($block:block) => {
+        (|| $block)()
+    };
+    (async $block:block) => {
+        (async || $block)()
+    };
+    (async move $block:block) => {
+        (async move || $block)()
+    };
 }
 
 /// Removes characters from the end of the string if its length is greater than `max_chars` and
