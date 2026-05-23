@@ -1,3 +1,5 @@
+use std::ops::Range;
+
 use crate::{
     OffsetUtf16,
     Point,
@@ -53,6 +55,11 @@ impl Chunk {
             tabs: self.tabs,
             text: &self.text,
         }
+    }
+
+    #[inline(always)]
+    pub fn slice(&self, range: Range<usize>) -> ChunkSlice<'_> {
+        self.as_slice().slice(range)
     }
 
     #[inline(always)]
@@ -133,6 +140,58 @@ pub struct ChunkSlice<'a> {
     text: &'a str,
 }
 impl<'a> ChunkSlice<'a> {
+    #[inline(always)]
+    pub fn is_char_boundary(&self, offset: usize) -> bool {
+        (1 as Bitmap).unbounded_shl(offset as u32) & self.chars != 0 || offset == self.text.len()
+    }
+
+    #[inline(always)]
+    pub fn slice(self, mut range: Range<usize>) -> Self {
+        if range.start == MAX_BASE {
+            Self {
+                chars: 0,
+                chars_utf16: 0,
+                newlines: 0,
+                tabs: 0,
+                text: "",
+            }
+        } else {
+            if !self.assert_char_boundary::<false>(range.start) {
+                range.start = self.text.ceil_char_boundary(range.start);
+            }
+            if !self.assert_char_boundary::<false>(range.end) {
+                range.end = if range.end < range.start {
+                    range.start
+                } else {
+                    self.text.floor_char_boundary(range.end)
+                };
+            }
+            let mask = (1 as Bitmap)
+                .unbounded_shl(range.end as u32)
+                .wrapping_sub(1);
+            Self {
+                chars: (self.chars & mask) >> range.start,
+                chars_utf16: (self.chars_utf16 & mask) >> range.start,
+                newlines: (self.newlines & mask) >> range.start,
+                tabs: (self.tabs & mask) >> range.start,
+                text: &self.text[range],
+            }
+        }
+    }
+
+    #[track_caller]
+    #[inline(always)]
+    pub fn assert_char_boundary<const PANIC: bool>(&self, offset: usize) -> bool {
+        if self.is_char_boundary(offset) {
+            return true;
+        }
+        if PANIC {
+            panic_char_boundary(self.text, offset);
+        } else {
+            log_err_char_boundary(self.text, offset);
+            false
+        }
+    }
     /// Get the longest row in the chunk and its length in characters.
     /// Calculate the total number of characters in the chunk along the way.
     #[inline(always)]

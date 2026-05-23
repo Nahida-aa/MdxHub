@@ -27,8 +27,8 @@ mod undo_map;
 use clock::{Lamport, ReplicaId};
 use collections::{HashMap, HashSet};
 use operation_queue::OperationQueue;
-use rope::Rope;
-use sum_tree::{Bias, SumTree, TreeMap, TreeSet};
+use rope::{Rope, TextDimension};
+use sum_tree::{Bias, Dimensions, SumTree, TreeMap, TreeSet};
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LineEnding {
     Unix,
@@ -180,6 +180,57 @@ impl BufferSnapshot {
                 }
             }
             _ => self.insertions.last(),
+        }
+    }
+
+    pub fn text_summary_for_range<D, O: ToOffset>(&self, range: Range<O>) -> D
+    where
+        D: TextDimension,
+    {
+        self.visible_text
+            .cursor(range.start.to_offset(self))
+            .summary(range.end.to_offset(self))
+    }
+    pub fn summary_for_anchor<D>(&self, anchor: &Anchor) -> D
+    where
+        D: TextDimension,
+    {
+        self.text_summary_for_range(0..self.offset_for_anchor(anchor))
+    }
+
+    pub fn offset_for_anchor(&self, anchor: &Anchor) -> usize {
+        if anchor.is_min() {
+            0
+        } else if anchor.is_max() {
+            self.visible_text.len()
+        } else {
+            debug_assert_eq!(anchor.buffer_id, self.remote_id);
+            debug_assert!(
+                self.version.observed(anchor.timestamp()),
+                "Anchor timestamp {:?} not observed by buffer {:?}",
+                anchor.timestamp(),
+                self.version
+            );
+            let item = self.try_find_fragment(anchor);
+            let Some(insertion) =
+                item.filter(|insertion| insertion.timestamp == anchor.timestamp())
+            else {
+                self.panic_bad_anchor(anchor);
+            };
+
+            let (start, _, item) = self
+                .fragments
+                .find::<Dimensions<Option<&Locator>, usize>, _>(
+                    &None,
+                    &Some(&insertion.fragment_id),
+                    Bias::Left,
+                );
+            let fragment = item.unwrap();
+            let mut fragment_offset = start.1;
+            if fragment.visible {
+                fragment_offset += (anchor.offset - insertion.split_offset) as usize;
+            }
+            fragment_offset
         }
     }
 }
@@ -457,5 +508,12 @@ pub trait ToOffset {
         snapshot
             .visible_text
             .floor_char_boundary(self.to_offset(snapshot).saturating_sub(1))
+    }
+}
+
+impl ToOffset for Anchor {
+    #[inline]
+    fn to_offset(&self, snapshot: &BufferSnapshot) -> usize {
+        snapshot.summary_for_anchor(self)
     }
 }

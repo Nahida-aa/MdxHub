@@ -115,6 +115,9 @@ where
     }
 }
 
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, PartialOrd, Ord)]
+pub struct Dimensions<D1, D2, D3 = ()>(pub D1, pub D2, pub D3);
+
 /// Bias is used to settle ambiguities when determining positions in an ordered sequence.
 ///
 /// The primary use case is for text, where Bias influences

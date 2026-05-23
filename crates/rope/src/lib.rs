@@ -1,6 +1,6 @@
 mod offset_utf16;
 mod point;
-use std::ops;
+use std::{cmp, ops};
 
 pub use offset_utf16::OffsetUtf16;
 mod chunk;
@@ -11,10 +11,13 @@ pub use chunk::{
 use sum_tree::{
     // Bias, Dimension, Dimensions,
     Bias,
+    Dimension,
     SumTree,
 };
 
 pub use point::Point;
+
+use crate::chunk::ChunkSlice;
 
 #[derive(Clone, Default)]
 pub struct Rope {
@@ -72,6 +75,10 @@ impl Rope {
             let upper_idx = item.map(|chunk| chunk.text.ceil_char_boundary(chunk_offset));
             upper_idx.map_or_else(|| self.len(), |idx| start + idx)
         }
+    }
+
+    pub fn cursor(&self, offset: usize) -> Cursor<'_> {
+        Cursor::new(self, offset)
     }
 }
 
@@ -162,5 +169,63 @@ impl<'a> ops::AddAssign<&'a Self> for TextSummary {
         self.len += other.len;
         self.len_utf16 += other.len_utf16;
         self.lines += other.lines;
+    }
+}
+
+pub trait TextDimension:
+    'static + Clone + Copy + Default + for<'a> Dimension<'a, ChunkSummary> + std::fmt::Debug
+{
+    fn from_text_summary(summary: &TextSummary) -> Self;
+    fn from_chunk(chunk: ChunkSlice) -> Self;
+    fn add_assign(&mut self, other: &Self);
+}
+
+pub struct Cursor<'a> {
+    rope: &'a Rope,
+    chunks: sum_tree::Cursor<'a, 'static, Chunk, usize>,
+    offset: usize,
+}
+
+impl<'a> Cursor<'a> {
+    pub fn new(rope: &'a Rope, offset: usize) -> Self {
+        let mut chunks = rope.chunks.cursor(());
+        chunks.seek(&offset, Bias::Right);
+        Self {
+            rope,
+            chunks,
+            offset,
+        }
+    }
+
+    pub fn summary<D: TextDimension>(&mut self, end_offset: usize) -> D {
+        assert!(
+            end_offset >= self.offset,
+            "cannot summarize backward from {} to {}",
+            self.offset,
+            end_offset
+        );
+        assert!(
+            end_offset <= self.rope.len(),
+            "cannot summarize past end of rope"
+        );
+
+        let mut summary = D::zero(());
+        if let Some(start_chunk) = self.chunks.item() {
+            let start_ix = self.offset - self.chunks.start();
+            let end_ix = cmp::min(end_offset, self.chunks.end()) - self.chunks.start();
+            summary.add_assign(&D::from_chunk(start_chunk.slice(start_ix..end_ix)));
+        }
+
+        if end_offset > self.chunks.end() {
+            self.chunks.next();
+            summary.add_assign(&self.chunks.summary(&end_offset, Bias::Right));
+            if let Some(end_chunk) = self.chunks.item() {
+                let end_ix = end_offset - self.chunks.start();
+                summary.add_assign(&D::from_chunk(end_chunk.slice(0..end_ix)));
+            }
+        }
+
+        self.offset = end_offset;
+        summary
     }
 }
