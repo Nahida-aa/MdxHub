@@ -15,3 +15,7 @@ pub use grammar::{
     NEXT_GRAMMAR_ID, OutlineConfig, OverrideConfig, OverrideEntry, RedactionConfig,
     RunnableCapture, RunnableConfig, TextObject, TextObjectConfig,
 };
+pub mod highlight_map;
+pub use highlight_map::{HighlightId, HighlightMap};
+pub mod queries;
+pub use queries::{LanguageQueries, QUERY_FILENAME_PREFIXES};

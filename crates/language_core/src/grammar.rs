@@ -1,10 +1,6 @@
 use crate::{
-    // HighlightId, HighlightMap,
-    LanguageConfig,
-    LanguageConfigOverride,
-    LanguageName,
-    // LanguageQueries,
-    language_config::BracketPairConfig,
+    HighlightId, HighlightMap, LanguageConfig, LanguageConfigOverride, LanguageName,
+    LanguageQueries, language_config::BracketPairConfig,
 };
 use anyhow::{Context as _, Result};
 use collections::HashMap;
